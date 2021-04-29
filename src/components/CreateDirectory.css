@@ -1,0 +1,56 @@
+body {
+  width: 800px;
+  min-width: auto;
+}
+.contentList {
+  max-height: 93px;
+}
+.search {
+  float: left;
+  width: 142px;
+  margin-left: 5px;
+}
+.innerPad .DivSelectyze .selectyzeValue {
+  width: 650px;
+}
+
+.popLayerWrap .contents {
+  max-height: 490px;
+  min-height: 490px;
+}
+
+.safe_btn_box a.btn_safe1.disabled,
+.safe_btn_box .btn_safe2.disabled {
+  cursor: default;
+  color: #9a9a9a;
+  background-position: 0 -40px;
+}
+.safe_btn_box a.btn_safe3.disabled,
+.safe_btn_box a.btn_safe3.off {
+  cursor: default;
+  color: #9a9a9a;
+  background-position: -242px -40px;
+}
+.safe_btn_box a.btn_safe4.disabled,
+.safe_btn_box a.btn_safe4.off {
+  cursor: default;
+  color: #9a9a9a;
+  background-position: -356px -40px;
+}
+.safe_btn_box a.btn_safe5.disabled,
+.safe_btn_box a.btn_safe5.off {
+  cursor: default;
+  color: #9a9a9a;
+  background-position: -469px -40px;
+}
+.safe_btn_box a.btn_safe6.disabled,
+.safe_btn_box a.btn_safe6.off {
+  cursor: default;
+  color: #9a9a9a;
+  background-position: -589px -40px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: revert;
+}

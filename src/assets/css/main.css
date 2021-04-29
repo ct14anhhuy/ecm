@@ -1,0 +1,2245 @@
+@charset "utf-8";
+
+@import url(global.css);
+@import url(layout.css);
+/* @import url(bbs.css); */
+
+/* 옵션박스 속 셀렉트 */
+.optionBox .DivSelectyze {
+  position: relative;
+  z-index: 5;
+}
+.optionBox .DivSelectyze .selectyzeValue {
+  padding-left: 3px;
+  height: 21px;
+  color: #fff;
+  background: url(../img/main/bg/bg_selectTypeA_L.png) 0 0 no-repeat;
+  display: inline-block;
+}
+.optionBox .DivSelectyze .selectyzeValue span {
+  min-width: 170px;
+  height: 17px;
+  padding: 4px 0 0 7px;
+  background: url(../img/main/bg/bg_selectTypeA_R.png) right 0 no-repeat;
+  display: inline-block;
+}
+.optionBox .DivSelectyze .btnValue span {
+  min-width: 170px;
+  height: 17px;
+  padding: 4px 0 0 7px;
+  background: url(../img/main/bg/bg_btnTypeA_R.png) right 0 no-repeat;
+  display: inline-block;
+}
+.optionBox .DivSelectyze .UlSelectize {
+  position: absolute;
+  top: 20px;
+  min-width: 180px;
+  border-top: 1px solid #616873;
+  border-radius: 0 0 5px 5px;
+  background-color: #767e88;
+  display: none;
+}
+.optionBox .DivSelectyze .UlSelectize li {
+  height: 23px;
+  line-height: 23px;
+  cursor: pointer;
+}
+.optionBox .DivSelectyze .UlSelectize li a {
+  padding-left: 10px; /* color:#c1c5c9; [2012.12.04 수정] */
+  color: #fff;
+  white-space: nowrap;
+  word-break: break-all;
+  display: block;
+}
+.optionBox .DivSelectyze .UlSelectize li a:hover {
+  background-color: #8d949d;
+}
+
+/* 셀렉트박스 트리 속 셀렉트 */
+.treeView .DivSelectyze {
+  position: relative;
+  z-index: 5;
+}
+.treeView .DivSelectyze .selectyzeValue {
+  padding-left: 3px;
+  height: 25px;
+  color: #222;
+  background: url(../img/main/bg/bg_selectTypeB_L.png) 0 0 no-repeat;
+  display: block;
+  cursor: pointer;
+}
+.treeView .DivSelectyze .selectyzeValue span {
+  min-width: 170px;
+  height: 19px;
+  padding: 6px 0 0 7px;
+  background: url(../img/main/bg/bg_selectTypeB_R.png) right 0 no-repeat;
+  display: block;
+}
+.treeView .DivSelectyze .UlSelectize {
+  position: absolute;
+  left: -1px;
+  top: 24px;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #648ec3;
+  border-radius: 0 0 5px 5px;
+  background-color: #f8f8f8;
+  overflow-y: scroll;
+  display: none;
+}
+.treeView .DivSelectyze .UlSelectize li {
+  height: 23px;
+  line-height: 23px;
+}
+.treeView .DivSelectyze .UlSelectize li a {
+  padding-left: 10px;
+  color: #222;
+  white-space: nowrap;
+  word-break: break-all;
+  display: block;
+}
+.treeView .DivSelectyze .UlSelectize li a:hover {
+  background-color: #e4f0fd;
+}
+
+/* 기타 버튼*/
+.optionBox .right a {
+  height: 13px;
+  margin: 6px 0 0 13px;
+  padding: 0 0 0 18px;
+  color: #222;
+  display: inline-block;
+  letter-spacing: -1px;
+}
+.optionBox .right a:hover,
+.optionBox .right a.crt {
+  background-position: 0 100%;
+}
+.optionBox .fPlus {
+  background: url(../img/main/bg/bg_folder_plus.gif) 0 0 no-repeat;
+}
+.optionBox .fChg {
+  background: url(../img/main/bg/bg_folder_chk.gif) 0 0 no-repeat;
+}
+.optionBox .fDel {
+  background: url(../img/main/bg/bg_folder_del.gif) 0 0 no-repeat;
+}
+.optionBox .fMove {
+  background: url(../img/main/bg/bg_folder_move.gif) 0 0 no-repeat;
+}
+.optionBox .tAttr {
+  background: url(../img/main/bg/bg_folder_prop.gif) 0 0 no-repeat;
+}
+
+.treeCon a.fPlus {
+  padding: 5px 0 0 18px;
+  color: #555;
+  display: inline-block;
+}
+.treeCon .fPlus {
+  background: url(../img/main/bg/bg_fPlus.png) 0 10px no-repeat;
+}
+
+/* 라디오&체크 */
+label.c_on {
+  background: url(../img/form/check-on.png) no-repeat;
+}
+label.r_on {
+  background: url(../img/form/radio-on.png) no-repeat;
+}
+label {
+  display: block;
+  padding-bottom: 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+.i_check input,
+.i_radio input {
+  margin-right: 5px;
+}
+.i_check,
+.i_radio {
+  padding-left: 25px;
+  height: 20px;
+}
+.i_radio {
+  background: url(../img/form/radio-off.png) no-repeat;
+}
+.i_check {
+  background: url(../img/form/check-off.png) no-repeat;
+}
+.i_check input,
+.i_radio input {
+  position: absolute;
+  left: -9999px;
+}
+
+/* 화이트1 버튼 S */
+.btn_whiteS_typeA {
+  position: relative;
+  height: 25px;
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 2px;
+  background: url(../img/form/btn_white_S.png) no-repeat;
+}
+.btn_whiteS_typeA button,
+.btn_whiteS_typeA a,
+.btn_whiteS_typeA span,
+.btn_whiteS_typeA input {
+  display: block;
+  background: url(../img/form/btn_white_S.png) no-repeat 100% 0;
+  color: #222 !important;
+  border: none;
+  cursor: pointer;
+}
+.btn_whiteS_typeA button {
+  height: 25px;
+  padding: 0 10px 0 8px;
+}
+.btn_whiteS_typeA a {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+.btn_whiteS_typeA input {
+  height: 25px;
+  padding: 1px 10px 0 8px;
+}
+.btn_whiteS_typeA span {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+
+.btn_whiteS_typeA02 {
+  position: relative;
+  height: 25px;
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 2px;
+  background: url(../img/form/btn_white_S02.png) no-repeat;
+}
+.btn_whiteS_typeA02 button,
+.btn_whiteS_typeA02 a,
+.btn_whiteS_typeA02 span,
+.btn_whiteS_typeA02 input {
+  display: block;
+  background: url(../img/form/btn_white_S02.png) no-repeat 100% 0;
+  color: #222 !important;
+  border: none;
+  cursor: pointer;
+}
+.btn_whiteS_typeA02 button {
+  height: 25px;
+  padding: 0 10px 0 8px;
+}
+.btn_whiteS_typeA02 a {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+.btn_whiteS_typeA02 input {
+  height: 25px;
+  padding: 1px 10px 0 8px;
+}
+.btn_whiteS_typeA02 span {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+
+/* 챗봇검색 버튼 */
+.btn_whiteS_typeA.ic_chatbot > button {
+  position: relative;
+  padding-left: 32px;
+}
+.btn_whiteS_typeA.ic_chatbot > button:before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+}
+
+.btn_whiteS_typeB {
+  position: relative;
+  height: 25px;
+  display: inline-block;
+  height: 25px;
+  overflow: hidden;
+  padding-left: 2px;
+  background: url(../img/form/btn_white2_S.png) no-repeat;
+}
+.btn_whiteS_typeB button,
+.btn_whiteS_typeB a,
+.btn_whiteS_typeB span,
+.btn_whiteS_typeB input {
+  display: block;
+  background: url(../img/form/btn_white2_S.png) no-repeat 100% 0;
+  color: #222 !important;
+  border: none;
+  cursor: pointer;
+}
+.btn_whiteS_typeB button {
+  height: 25px;
+  padding: 0 10px 0 8px;
+}
+.btn_whiteS_typeB a {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+.btn_whiteS_typeB input {
+  height: 25px;
+  padding: 1px 10px 0 8px;
+}
+.btn_whiteS_typeB span {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+
+/* 화이트3 버튼 S */
+.btn_whiteS_typeC {
+  position: relative;
+  height: 25px;
+  display: inline-block;
+  height: 25px;
+  overflow: hidden;
+  padding-left: 2px;
+  background: url(../img/form/btn_white2_S.png) no-repeat;
+}
+.btn_whiteS_typeC button,
+.btn_whiteS_typeC a,
+.btn_whiteS_typeC span,
+.btn_whiteS_typeC input {
+  display: block;
+  background: url(../img/form/btn_white2_S.png) no-repeat 100% 0;
+  color: #1169c2 !important;
+  border: none;
+  cursor: pointer;
+}
+.btn_whiteS_typeC button {
+  height: 25px;
+  padding: 0 10px 0 8px;
+}
+.btn_whiteS_typeC a {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+.btn_whiteS_typeC input {
+  height: 25px;
+  padding: 1px 10px 0 8px;
+}
+.btn_whiteS_typeC span {
+  height: 12px;
+  padding: 6px 10px 7px 8px;
+}
+
+/* ecm 메인(중앙) 2012-11-08 채승훈 , 수정 20160428 : btn_areaL btn_areaR 을 top 위치를 32에서 265px 로 바꿈 문서갯수가 30개이상보여주기때문.  */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.btn_areaL {
+  position: absolute;
+  left: 0;
+  top: 265px;
+  width: 13px;
+  height: 53px;
+  margin-top: -25px;
+  display: inline-block;
+}
+.btn_areaR {
+  position: absolute;
+  right: 0;
+  top: 265px;
+  width: 13px;
+  height: 53px;
+  margin-top: -25px;
+  display: inline-block;
+}
+
+.areaCBox .treeBox {
+  width: 100%;
+  padding: 0 1px;
+  height: 36px;
+  margin: 0 0 23px 0px;
+  background: url(../img/main/bg/bg_tree.gif) 0 0 repeat-x;
+}
+.areaCBox .treeBox .baseFolder {
+  position: relative;
+  height: 34px;
+  padding: 0 117px 0 37px;
+  background: url(../img/main/bg/bg_folder.gif) 13px 9px no-repeat;
+}
+.areaCBox .treeBox .baseFolder .txt {
+  height: 36px;
+  color: #fff;
+  line-height: 36px;
+}
+.areaCBox .treeBox .baseFolder .txt span {
+  float: left;
+  width: 90%;
+  height: 36px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.areaCBox .treeBox .baseFolder .txt .icoStar {
+  float: right;
+  padding: 8px;
+}
+.areaCBox .treeBox .baseFolder .folderLink {
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 117px;
+  height: 36px;
+  color: #fff;
+  text-align: center;
+  line-height: 35px;
+  background: url(../img/main/bg/bg_folderLink.gif) 0 0 no-repeat;
+  display: block;
+}
+.areaCBox .treeBox .baseFolder .all {
+  text-indent: -12px;
+  background: url(../img/main/bg/bg_folderLink_all.gif) 0 0 no-repeat;
+}
+.areaCBox .treeBox .baseFolder .treeView {
+  position: absolute;
+  left: -1px;
+  top: 34px;
+  width: 100%;
+  height: 354px;
+  border: 1px solid #3375bf;
+  display: none;
+}
+.areaCBox .treeBox .baseFolder .treeView .contentSelect {
+  position: relative;
+  height: 25px;
+  padding: 8px 10px 9px 12px;
+  background-color: #e7e7e8;
+}
+.areaCBox .treeBox .baseFolder .treeView .contentSelect em {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  line-height: 25px;
+  font-weight: bold;
+  color: #3375bf;
+}
+.areaCBox .treeBox .baseFolder .treeView .contentSelect .DivSelectyze {
+  margin-left: 90px;
+}
+.areaCBox .treeBox .baseFolder .treeConBox {
+  height: 312px;
+  background-color: #f6f6f6;
+  overflow: scroll;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon {
+  color: #000;
+  background: url(../img/main/bg/bg_treeCon.gif) 0 0 repeat;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon img {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon li {
+  line-height: 26px;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon > li {
+  padding-left: 36px;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon > li ol li {
+  padding-left: 24px;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon > li ol {
+  display: none;
+}
+.areaCBox .treeBox .baseFolder .treeConBox .treeCon li a.on {
+  color: #2e83de;
+}
+.treeCon .btnMove {
+  min-width: 38px;
+  height: 18px;
+  padding-right: 11px;
+  background: url(../img/main/btn/btn_treeMove_R.png) right 0 no-repeat;
+  cursor: pointer;
+  display: inline-block;
+}
+.treeCon .btnMove button {
+  min-width: 38px;
+  height: 18px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #cedff2;
+  background: url(../img/main/btn/btn_treeMove_L.png) 0 0 no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.listContent {
+  padding: 0 20px;
+}
+.listContent .optionBox {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.listContent .optionBox .style02 {
+  border: 1px solid #ececec;
+  background: #fdfdfd;
+  line-height: 21px;
+}
+.listContent .optionBox:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.listContent .optionBox h2 {
+  font-size: 14px;
+  line-height: 21px;
+}
+.listContent .optionBox .btnGray {
+  display: inline-block;
+  padding-left: 8px;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: normal;
+  background: url(../img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
+}
+.listContent .optionBox .btnGray span {
+  display: inline-block;
+  height: 16px;
+  padding: 4px 8px 0 0;
+  color: #222;
+  background: url(../img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
+}
+/*.listContent .optionBox .right .listSearchT{right:20px;left:auto;margin-left:0;margin-top:-4px;} /* 2014-07-14 추가 */
+.listContent .optionBox .right .listSearchT {
+  position: static;
+  left: auto;
+  margin-left: 0;
+} /* 2015-02-27 수정 */
+
+/* 통합검색 탭추가 - 2014-07-17 추가 */
+.listContent .optionBox .left .ecmTab {
+  margin: -1px;
+  height: 35px;
+}
+.listContent .optionBox .left .ecmTab li {
+  float: left;
+  text-align: center;
+  width: 180px;
+}
+.listContent .optionBox .left .ecmTab li a {
+  padding: 10px 0;
+  display: block;
+  background: url(../img/form/tab_off.png) right 0 no-repeat;
+}
+.listContent .optionBox .left .ecmTab li:first-child a {
+  background-position: left 0;
+}
+.listContent .optionBox .left .ecmTab li a span {
+  font-weight: bold;
+}
+.listContent .optionBox .left .ecmTab li.on a {
+  background: url(../img/form/tab_on.png) right 0 no-repeat;
+}
+.listContent .optionBox .left .ecmTab li.on a span {
+  color: #fff;
+}
+.listContent .optionBox .right {
+  height: 25px;
+  overflow: hidden; /*padding-top: 6px;*/
+} /* 2015-02-27 수정 */
+.listContent .optionBox .right .btn_detail {
+  padding: 5px 4px 0 0;
+}
+.listContent .optionBox .right .ico_error {
+  width: 19px;
+  height: 35px;
+  background: url(../img/main/ico/ico_error.png) 0 2px no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.listContent .searchBox {
+  height: 25px;
+  margin-bottom: 7px;
+  padding: 5px;
+  color: #000;
+  text-align: right;
+  border: 1px solid #ebebeb;
+  background-color: #f2f3f4;
+}
+.listContent .searchBox .i_input {
+  height: 23px;
+  line-height: 23px;
+  text-indent: 10px;
+  border: 1px solid #c8c8c8;
+}
+.listContent .searchBox .btn_whiteS_typeA,
+.listContent .searchBox .btn_whiteS_typeB {
+  vertical-align: middle;
+  *vertical-align: top;
+}
+
+.listContent .normalList .scrollBox {
+  margin-bottom: 15px;
+  overflow-x: scroll;
+}
+
+/* 썸네일 형 */
+.listContent {
+  padding: 0 20px;
+  padding-bottom: 10px;
+} /* 2016-04-15 count 100 개가 넘어가면서 bottom 10을 줌. */
+.listContent .optionBox {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.listContent .optionBox:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* 정렬 아이콘 */
+.sortingBox {
+  height: 31px;
+  border: 1px solid #e6e6e6;
+  border-width: 1px 1px 0 1px;
+  overflow: hidden;
+}
+.sortingBox .icoBtn {
+  float: left;
+}
+.sortingBox .icoBtn li {
+  float: left;
+  margin-left: -1px;
+  background: url(../img/main/bg/bg_sorting.gif) 0 8px no-repeat;
+}
+.sortingBox .icoBtn li a {
+  padding: 7px 12px 8px 12px;
+  display: inline-block;
+}
+.sortingBox .dayBtn {
+  float: right;
+  font-size: 13px;
+}
+.sortingBox .dayBtn li {
+  float: left;
+  margin-right: -1px;
+  background: url(../img/main/bg/bg_sortingS.gif) right 11px no-repeat;
+}
+.sortingBox .dayBtn li a {
+  min-width: 33px;
+  padding: 10px 5px 8px 5px;
+  text-align: center;
+  color: #999;
+  display: inline-block;
+}
+.sortingBox .dayBtn li a.on {
+  color: #3275c0;
+}
+
+.listContent .thumnList {
+  position: relative;
+}
+.listContent .thumnList .thumn {
+  margin-right: -12px;
+  padding-bottom: 18px;
+  *zoom: 1;
+}
+.listContent .thumnList .thumn:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.listContent .thumnList .thumn > li {
+  position: relative;
+  float: left;
+  width: 172px;
+  height: 122px;
+  margin: 0 12px 12px 0;
+  padding-top: 31px;
+  background: url(../img/contents/ecmMain/bg_list_thumnBox.png) 0 0 no-repeat;
+}
+.listContent .thumnList .thumn > li .i_check {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+}
+.listContent .thumnList .thumn > li .icoStar {
+  position: absolute;
+  right: 7px;
+  top: 5px;
+}
+.listContent .thumnList .thumn > li .imgTitle {
+  height: 87px;
+  text-align: center;
+}
+.listContent .thumnList .thumn > li .imgTitle dt {
+  position: relative;
+  height: 38px;
+  margin-bottom: 15px;
+}
+.listContent .thumnList .thumn > li .imgTitle dt .icoLock {
+  position: absolute;
+  right: 54px;
+  top: -3px;
+}
+.listContent .thumnList .thumn > li .text {
+  position: relative;
+  height: 33px;
+  margin: 0 1px;
+  border-top: 1px solid #ebebeb;
+  background-color: #f0f0f0;
+}
+.listContent .thumnList .thumn > li .text > a {
+  float: left;
+  width: 57px;
+  height: 23px;
+  margin-right: -1px;
+  padding-top: 10px;
+  text-align: center;
+  background: url(../img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
+}
+.listContent .thumnList .thumn > li .text > a:hover {
+  color: #018dee;
+}
+.listContent .thumnList .thumn > li .text > a.info {
+  width: 47px;
+  padding-right: 10px;
+  color: #018dee;
+  background: url(../img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
+}
+.listContent .thumnList .thumn > li .text > a.infoOn {
+  position: relative;
+  width: 47px;
+  padding-right: 10px;
+  margin-top: -1px;
+  color: #018dee;
+  border: 1px solid #648ec3;
+  border-width: 1px 1px 0 1px;
+  background: #fff url(../img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
+  z-index: 20;
+}
+
+.infoMenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 32px;
+  width: 165px;
+  padding: 7px 2px;
+  text-align: left;
+  border: 1px solid #648ec3;
+  background-color: #fff;
+  z-index: 15;
+}
+.infoMenu2 {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 32px;
+  width: 254px;
+  padding: 7px 2px;
+  text-align: left;
+  border: 1px solid #648ec3;
+  background-color: #fff;
+  z-index: 15;
+}
+.infoMenu a {
+  display: block;
+  height: 25px;
+  padding: 0 7px;
+  line-height: 25px;
+  color: #222;
+}
+.infoMenu a:hover {
+  background-color: #dfe6f1;
+}
+.infoMenu span {
+  display: block;
+  height: 25px;
+  padding: 0 7px;
+  line-height: 25px;
+  color: #222;
+  color: gray;
+  size: 12px;
+}
+.infoMenu li {
+  position: relative;
+}
+.infoMenu li .infoMenuMore {
+  display: none;
+  position: absolute;
+  left: 167px;
+  bottom: 0;
+  width: 165px;
+  padding: 7px 2px;
+  border: 1px solid #648ec3;
+  background-color: #fff;
+}
+.folderText .infoMenu {
+  background: #fff url(../img/contents/ecmMain/bg_dotBlue.gif) 0 0 repeat-x;
+}
+.btnAdd .infoMenu {
+  top: 23px;
+}
+
+/* 폴더 상세 */
+.listContent .thumnList .thumn li .folderText {
+  position: relative;
+  height: 33px;
+  margin: 0 1px;
+  border-top: 1px solid #ebebeb;
+  background-color: #f0f0f0;
+}
+.listContent .thumnList .thumn li .folderText .info {
+  display: block;
+  height: 23px;
+  padding: 10px 9px 0 0;
+  text-align: center;
+  color: #018dee;
+  background: url(../img/contents/ecmMain/bg_info.png) 98px 15px no-repeat;
+}
+.listContent .thumnList .thumn li .folderText .infoOn {
+  display: block;
+  position: relative;
+  width: 160px;
+  *width: 158px;
+  height: 23px;
+  margin-top: -1px;
+  padding: 10px 9px 0 0;
+  *padding: 10px 11px 0 0;
+  color: #018dee;
+  text-align: center;
+  border: 1px solid #648ec3;
+  border-width: 1px 1px 0 1px;
+  background: #fff url(../img/contents/ecmMain/bg_info.png) 97px 15px no-repeat;
+  z-index: 20;
+}
+
+/* 휴지통 메뉴 */
+.listContent .thumnList .thumn > li .wasteText {
+  height: 33px;
+  margin: 0 1px;
+  border-top: 1px solid #ebebeb;
+  background-color: #f0f0f0;
+}
+.listContent .thumnList .thumn > li .wasteText > a {
+  float: left;
+  width: 86px;
+  height: 23px;
+  margin-right: -1px;
+  padding-top: 10px;
+  text-align: center;
+  background: url(../img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
+}
+.listContent .thumnList .thumn > li .wasteText > a:hover {
+  color: #018dee;
+}
+/* 지금 휴지통 비우기 버튼 - 2014-07-08 추가 */
+.wasteBtn {
+  display: inline-block;
+  margin: 4px 3px 0 0;
+}
+
+/* 일반 형 (테이블) */
+.normalTb {
+  margin-bottom: 25px;
+  table-layout: fixed;
+  border: 1px solid #cdcdce;
+}
+.normalTb thead tr th {
+  padding: 10px 0;
+  color: #000;
+  border-left: 1px solid #d7d9dc;
+  border-bottom: 1px solid #cdcdce;
+  background-color: #dfe1e4;
+}
+.normalTb thead tr th:first-child {
+  border-left: none;
+}
+.normalTb thead tr th .allCheck {
+  position: relative;
+}
+.normalTb thead tr th .allCheck span {
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+.normalTb thead tr th .icoSort {
+  padding-right: 13px;
+  background: url("../img/main/ico/sort-down.png") right 0 no-repeat;
+}
+.normalTb thead tr th .icoSortOnUp {
+  color: #3375bf;
+  background: url("../img/main/ico/sort-up.png") right 0 no-repeat;
+}
+.normalTb thead tr th .icoSortOnDw {
+  color: #3375bf;
+  background: url("../img/main/ico/sort-down.png") right 0 no-repeat;
+}
+.normalTb tr th .columnHL,
+.normalTb tr td .columnHL,
+.normalTb tr th .columnHR,
+.normalTb tr td .columnHR,
+.normalTb tr th .columnHL2,
+.normalTb tr td .columnHL2,
+.normalTb tr th .columnHR2,
+.normalTb tr td .columnHR2 {
+  float: left;
+  height: 24px;
+  margin: -10px 0;
+  padding-top: 10px;
+  white-space: nowrap;
+}
+.normalTb tr th .columnHL,
+.normalTb tr td .columnHL {
+  width: 100%;
+}
+.normalTb tr th .columnHR {
+  width: 20%;
+  border-left: 1px solid #d7d9dc;
+  display: none;
+}
+.normalTb tr td .columnHR {
+  width: 20%;
+  height: 26px;
+  border-left: 1px solid #e6e6e6;
+  display: none;
+}
+
+.normalTb tr th .columnHL2,
+.normalTb tr td .columnHL2 {
+  width: 100%;
+}
+.normalTb tr th .columnHR2 {
+  width: 40%;
+  border-left: 1px solid #d7d9dc;
+  display: none;
+}
+.normalTb tr td .columnHR2 {
+  width: 40%;
+  height: 26px;
+  border-left: 1px solid #e6e6e6;
+  display: none;
+}
+
+.normalTb tbody tr.old {
+  background-color: #fafafa;
+}
+.normalTb tbody tr:hover {
+  background-color: #e8e8e8;
+}
+.normalTb tbody tr.selected {
+  background-color: #e4f0fd;
+}
+.normalTb tbody tr.selected .contentTitle {
+  font-weight: bold;
+}
+.normalTb tbody td {
+  padding: 10px 0;
+  border-left: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  text-align: center;
+}
+.normalTb tbody td.date {
+  color: #222;
+}
+.normalTb tbody tr td:first-child {
+  border-left: none;
+}
+.normalTb tbody td .contentsBox {
+  position: relative;
+  width: 100%;
+}
+
+.normalTb tbody td .contentTitle {
+  float: left;
+  width: 88%;
+  height: 16px;
+  padding-left: 10px;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis; /*overflow:hidden;*/
+}
+.normalTb tbody td .contentTitle:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.normalTb tbody td .contentTitle .i_radio,
+.normalTb tbody td .contentTitle .i_check {
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px 0 0px;
+  padding: 0;
+  *float: none;
+  *display: inline-block;
+}
+.normalTb tbody td .contentTitle a {
+  color: #000;
+  line-height: 16px;
+}
+.normalTb tbody td .contentTitle a {
+  display: inline-block;
+  max-width: 88%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.normalTb tbody td .contentTitle a.red {
+  color: #e93c3c;
+}
+.normalTb tbody td .contentTitle a.blue {
+  color: #4175e0;
+}
+.normalTb tbody td .contentTitle a img {
+  margin: -1px 8px 0 0;
+  vertical-align: middle;
+}
+.normalTb tbody td .listInfo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px 10px;
+}
+.normalTb tbody td .infoMenu {
+  left: auto;
+  right: 0;
+  top: 16px;
+}
+
+.wAuto {
+  float: none !important;
+  width: auto !important;
+  padding: 0 20px 0 10px !important;
+}
+
+.normalTb tbody td .contentTitle .ico_fav {
+  display: inline;
+  width: 16px;
+  height: 20px;
+  text-indent: -9999px;
+  vertical-align: top;
+}
+.normalTb tbody td .contentTitle .ico_fav.on {
+  width: 16px;
+  height: 20px;
+  background: url(../img/main/ico/ico_fav_blue_on.png) no-repeat 0 0;
+}
+.normalTb tbody td .contentTitle .ico_fav_2 {
+  display: inline;
+  width: 18px;
+  height: 20px;
+  background: url(../img/main/ico/ico_fav_2.png) no-repeat;
+  text-indent: -9999px;
+  vertical-align: top;
+}
+.normalTb tbody td .contentTitle .ico_fav_2.on {
+  width: 18px;
+  height: 20px;
+  background: url(../img/main/ico/ico_fav_2_on.png) no-repeat 0 0;
+}
+
+/* 2016-11-25 phykang */
+.normalTb tbody td .contentTitle .ic_favorites {
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: top;
+}
+.normalTb tbody td .contentTitle .ico_fav_3 {
+  display: inline;
+  width: 16px;
+  height: 20px;
+  background: url(../img/favorites/ic_favorites_no.png) no-repeat;
+  text-indent: -9999px;
+  vertical-align: top;
+}
+.normalTb tbody td .contentTitle .ico_fav_3.on {
+  width: 16px;
+  height: 20px;
+  background: url(../img/favorites/ic_favorites.png) no-repeat 0 0;
+  cursor: default;
+}
+
+.printTb thead tr th {
+  border-left: 1px solid #cdcdce;
+  border-bottom: 1px solid #cdcdce;
+}
+.printTb thead tr.printTR th {
+  font-weight: normal;
+  background-color: #e9eaec;
+}
+.printTb thead tr.printTR th:first-child {
+  border-left: 1px solid #cdcdce;
+}
+.printTb tfoot tr td {
+  padding: 10px 0;
+  border-left: 1px solid #e0e0e1;
+  border-top: 1px solid #e0e0e1;
+  text-align: center;
+  font-weight: bold;
+  background-color: #e9eaec;
+}
+
+/* 테이블 추가 버튼 */
+.normalTb tbody tr.btnAdd {
+  display: none;
+}
+.normalTb tbody tr.btnAddOn .red {
+  color: #e93c3c;
+}
+.normalTb tbody tr.btnAddOn td,
+.normalTb tbody tr.btnAdd td {
+  background-color: #f6f6f6;
+}
+.normalTb tbody tr.btnAddOn .cA5a5a5 button {
+  color: #a5a5a5 !important;
+}
+.normalTb tbody tr.btnAddOn td .btn_whiteS_typeC,
+.normalTb tbody tr.btnAddOn td .btn_whiteS_typeA,
+.normalTb tbody tr.btnAdd td .btn_whiteS_typeC,
+.normalTb tbody tr.btnAdd td .btn_whiteS_typeA {
+  margin-bottom: -4px;
+}
+.normalTb tbody tr.btnAddOn td .addBox,
+.normalTb tbody tr.btnAdd td .addBox {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  vertical-align: top;
+}
+.normalTb tbody tr.btnAddOn td .addBox .btn_sel,
+.normalTb tbody tr.btnAdd td .addBox .btn_sel {
+  display: inline-block;
+  width: 159px;
+  height: 19px;
+  padding: 3px 0 0 10px;
+  text-align: left;
+  line-height: 19px;
+  border: 1px solid #c7cacd;
+  background: url(../img/contents/ecmMain/bg_btn_sel.gif) right 0 no-repeat;
+}
+.normalTb tbody tr.btnAddOn td .addBox .infoMenu {
+  top: 23px;
+}
+.normalTb tbody .btnView {
+  display: inline-block;
+  width: 43px;
+  height: 24px;
+  margin: -3px 0;
+  color: #222;
+  line-height: 24px;
+  background: url(../img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
+} /* [2012.10.09 추가] */
+.normalTb tbody .btnAsk {
+  display: inline-block;
+  margin: -10px 0 -10px -10px;
+}
+
+/* 게시판 UL형 [2012.10.04 추가] */
+.normalUL {
+  position: relative;
+  margin-bottom: 25px;
+  border-right: 1px solid #d6d6d6;
+  *z-index: 5;
+  *zoom: 1;
+}
+.normalUL:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.listColumn {
+  position: relative;
+  float: left;
+  margin-right: -1px;
+  border: 1px solid #d6d6d6;
+  border-width: 1px 0 0 1px;
+}
+.listColumn > li {
+  position: relative;
+  display: block;
+  height: 17px;
+  padding: 10px 1px;
+  line-height: 17px;
+  text-align: center;
+  border-bottom: 1px solid #d6d6d6;
+  *vertical-align: top;
+} /* [2012.10.05 수정] */
+.listColumn > li:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.listColumn > li:first-child {
+  height: 17px;
+  font-weight: bold;
+  color: #222;
+  background-color: #f2f2f2;
+}
+.listColumn > li > span {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+} /* [2012.10.05 추가 - 크롬 말줄임] */
+.listColumn li .contentTitle {
+  float: left;
+  width: 82%;
+  height: 17px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.listColumn li .contentTitle img {
+  margin: -1px 8px 0 0;
+  vertical-align: top;
+}
+.listColumn li .listInfo {
+  float: right;
+  margin-left: -10px;
+  padding: 6px 10px;
+  *padding: 0 10px 6px 10px;
+}
+.listColumn li .i_check {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  padding: 0;
+}
+.listColumn li .allCheck {
+  position: relative;
+  text-align: center;
+}
+.listColumn li .allCheck .i_check {
+  position: absolute;
+  left: 0;
+}
+.listColumn li a {
+  color: #222;
+  line-height: 16px;
+}
+.listColumn li a.red {
+  color: #e93c3c;
+}
+.listColumn li a.blue {
+  color: #4175e0;
+}
+.listTitle li {
+  text-align: left;
+}
+.listTitle .infoMenu {
+  left: auto;
+  right: 1px;
+  top: 26px;
+}
+.listTitle .infoMenu li a {
+  line-height: 25px;
+}
+.normalUL .last {
+  position: absolute;
+  right: 1px;
+}
+.listColumn .btnView {
+  display: inline-block;
+  width: 40px;
+  height: 17px;
+  margin: -2px 0 -1px 0;
+  padding-top: 3px;
+  color: #fff;
+  vertical-align: top;
+  background: url(../img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
+}
+
+/* ecm 메인(우측) 2012-09-24 채승훈 */
+.areaR .btnAdmin {
+  display: block;
+  width: 113px;
+  height: 21px;
+  margin-bottom: 6px;
+  padding: 6px 0 0 83px;
+  background: url(../img/contents/ecmMain/bg_admin.png) 0 0 no-repeat;
+}
+.areaR .btnSetup {
+  display: block;
+  width: 113px;
+  height: 21px;
+  margin-bottom: 18px;
+  padding: 6px 0 0 83px;
+  background: url(../img/contents/ecmMain/bg_setupB.png) 0 0 no-repeat;
+}
+
+.bestBox {
+  margin-bottom: 10px;
+}
+.bestBox .bgBoxLayout {
+  position: relative;
+  padding-top: 27px;
+  background: url(../img/contents/ecmMain/bg_boxTop_blue.png) 0 0 no-repeat;
+}
+.bestBox .bgBoxLayout .tabText {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  color: #222;
+}
+.bestBox .bgBoxLayout .tabText a {
+  color: #222;
+  font-size: 13px;
+}
+.bestBox .bgBoxLayout .tabText a.on {
+  font-weight: bold;
+  color: #018dee;
+}
+
+.best {
+  *position: relative;
+  width: 195px;
+  margin-left: 1px;
+  padding-bottom: 5px;
+  border-top: 1px solid #c9cacc;
+  overflow: hidden;
+}
+.best:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.best > li {
+  position: relative;
+  float: left;
+  width: 97px;
+  height: 122px;
+  margin: -1px 0 0 -1px;
+  border-top: 1px solid #e3e3e3;
+  border-left: 1px solid #e3e3e3;
+}
+.best > li .num {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 19px;
+  height: 17px;
+  color: #222;
+  font: bold 9px/17px "Verdana";
+  text-align: center;
+  background: url(../img/contents/ecmMain/bg_num.gif) 0 0 no-repeat;
+}
+.best li .imgTitle {
+  padding-top: 14px;
+  text-align: center;
+}
+.best li .imgTitle dt {
+  margin-bottom: 6px;
+}
+.best li .text {
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 100%;
+  height: 34px;
+  padding-top: 6px;
+  border-top: 1px solid #ebebeb;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+.best li .text li {
+  float: left;
+  width: 32px;
+  margin-left: -1px;
+  text-align: center;
+  font-size: 13px;
+  border-left: 1px solid #e2e2e2;
+}
+.best li .text li span {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: bold;
+  color: #018dee;
+}
+.best li .text li a {
+  color: #999;
+}
+.best .btn,
+.myContentBox .btn {
+  width: 100%;
+  height: 33px;
+  padding: 6px 0;
+  text-align: center;
+  border: none;
+}
+.best .btn a,
+.myContentBox .btn a {
+  width: 116px;
+  font-weight: bold;
+}
+
+a.btn_content {
+  display: block;
+  width: 182px;
+  height: 33px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 33px;
+  letter-spacing: -1px;
+  background: url(../img/contents/ecmMain/bg_content.png) 0 0 no-repeat;
+}
+a.btn_content:hover {
+  color: #fff;
+}
+
+.myContentBox .bgBoxContent {
+  padding-bottom: 5px;
+}
+.myContentTb {
+  width: 190px;
+  margin-left: 3px;
+}
+.myContentTb th,
+.myContentTb td {
+  padding: 8px 0;
+  border-bottom: 1px solid #e3e3e3;
+  text-align: center;
+}
+.myContentTb td .inPad {
+  padding-right: 10px;
+}
+
+/* 팝업창 선택한 컨텐츠 리스트 */
+.choiceBox {
+  padding-top: 20px;
+}
+.choiceBox .choiceTitle {
+  position: relative;
+  height: 31px;
+  background: url(../img/contents/ecmMain/bg_choiceTitleC.png) 0 0 no-repeat;
+}
+.choiceBox .choiceTitle a.btnTitle {
+  display: block;
+  width: 200px;
+  padding: 4px 0 0 14px;
+  font-weight: bold;
+  line-height: 27px;
+  color: #fff;
+  background: url(../img/contents/ecmMain/bg_choiceArrow.gif) 190px 15px
+    no-repeat;
+}
+.popLayerWrap .choiceBox .choiceTitle a.btnTitle {
+  background: none;
+}
+.choiceBox .choiceTitle a.btnCancel {
+  position: absolute;
+  right: 30px;
+  top: 6px;
+  display: block;
+  width: 129px;
+  height: 15px;
+  padding-top: 5px;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  background-color: #3672d3;
+}
+.choiceBox .choice {
+  position: relative;
+  padding: 10px 25px 10px 29px;
+  border: 1px solid #518ef1;
+  background-color: #f6f6f6;
+}
+.choiceBox .choice .btn_choiceL {
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+.choiceBox .choice .btn_choiceR {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.choiceBox .choice .choOutline {
+  *position: relative;
+  width: 663px;
+  height: 87px;
+  overflow: hidden;
+} /* 2012.10.03 수정 */
+.choiceBox .choice ul {
+  *zoom: 1;
+}
+.choiceBox .choice ul:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.choiceBox .choice ul li {
+  position: relative;
+  float: left;
+  width: 185px;
+  margin: 0 4px 4px 0;
+  padding: 0 20px 0 10px;
+  line-height: 23px;
+  border: 1px solid #bbb;
+}
+.choiceBox .choice ul li span {
+  display: block;
+  width: 185px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.choiceBox .choice ul li a {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.choiceBox .length2 ul li,
+.choiceBox .length2 ul li span {
+  width: 295px;
+}
+.choiceBox .iconAdd ul li span {
+  width: 165px;
+  padding-left: 20px;
+}
+.choiceBox .iconAdd ul li span.iconHtml {
+  background: url(../img/contents/ecmMain/ico_pop_html.png) 0 3px no-repeat;
+}
+.choiceBox .iconAdd ul li span.iconLock {
+  background: url(../img/contents/ecmMain/ico_pop_lock.png) 0 3px no-repeat;
+}
+.choiceBox .iconAdd ul li span.iconUnlock {
+  background: url(../img/contents/ecmMain/ico_pop_unlock.png) 0 3px no-repeat;
+}
+
+/* 일반 선택한 컨텐츠 리스트 */
+.ecmWrap .choiceBox {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 720px;
+  height: 0;
+  margin-left: -360px;
+  padding: 0 10px;
+  background: url(../img/contents/ecmMain/bg_choiceBox.png) 10px 0 no-repeat;
+  overflow: hidden;
+  z-index: 10000;
+}
+.ecmWrap .choiceBox .choice {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #518ef1;
+  background-color: #fff;
+}
+.ecmWrap .choiceBox .choice ul {
+  *padding-bottom: 4px;
+}
+.ecmWrap .choiceBox .choice .btnSpe,
+.ecmWrap .choiceBox .choice .btnEtc {
+  margin: 6px -20px 0 -24px;
+  padding-top: 17px;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+}
+.ecmWrap .choiceBox .choice .btnEtc a {
+  display: inline-block;
+  width: 138px;
+  font-weight: bold;
+  line-height: 28px;
+  color: #fff;
+  background-color: #6a8fcb;
+}
+.ecmWrap .choiceBox .choice .btnSpe a {
+  display: inline-block;
+  padding: 0 7px;
+  font-weight: bold;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  line-height: 28px;
+  color: #fff;
+  letter-spacing: -1px;
+  background-color: #6a8fcb;
+}
+.ecmWrap .choiceBox .choice .btnSpe a:hover,
+.ecmWrap .choiceBox .choice .btnEtc a:hover {
+  background-color: #3672d3;
+}
+
+/* ECP - 알림 */
+.areaCBox .headTitle {
+  margin-bottom: 14px;
+  border-bottom: 1px solid #d5d5d5;
+}
+.areaCBox .headTitle h2 {
+  padding-bottom: 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #4c86c9;
+}
+
+/* 검색 */
+.listSearch {
+  position: absolute;
+  left: 50%;
+  margin-left: -120px;
+}
+.listSearch .i_input {
+  float: left;
+  width: 163px;
+  height: 23px;
+  margin-right: 5px;
+  padding: 0 10px;
+  line-height: 23px;
+  border: 1px solid #c8c8c8; /*color:#555;*/
+}
+
+/* 페이징 */
+.paging {
+  overflow: hidden;
+  text-align: center;
+}
+.paging a {
+  background: url(../img/common/paging_bg.gif) left top no-repeat;
+  width: 30px;
+  height: 14px;
+  display: inline-block;
+  border: 1px solid #cbcbcb;
+  padding: 6px 0 4px 0;
+  text-align: center;
+  color: #222;
+  font-weight: bold;
+  margin: 0 2px;
+  text-indent: -1px;
+}
+.paging a:hover {
+  border: 1px solid #648ec3;
+  color: #1169c2;
+}
+.paging a.act {
+  border: 1px solid #648ec3;
+  color: #1169c2;
+}
+.paging a.first {
+  background: url(../img/common/paging_first.gif) left top no-repeat;
+}
+.paging a:hover.first {
+  background: url(../img/common/paging_first_on.gif) left top no-repeat;
+}
+.paging a.prev {
+  background: url(../img/common/paging_prv.gif) left top no-repeat;
+  margin: 0 14px 0 0;
+}
+.paging a:hover.prev {
+  background: url(../img/common/paging_prv_on.gif) left top no-repeat;
+}
+.paging a.next {
+  background: url(../img/common/paging_nxt.gif) left top no-repeat;
+  margin: 0 0 0 14px;
+}
+.paging a:hover.next {
+  background: url(../img/common/paging_nxt_on.gif) left top no-repeat;
+}
+.paging a.end {
+  background: url(../img/common/paging_end.gif) left top no-repeat;
+}
+.paging a:hover.end {
+  background: url(../img/common/paging_end_on.gif) left top no-repeat;
+}
+
+/* popup 기본 레이어 */
+.layerBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  z-index: 10000;
+}
+
+.popLayerWrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+}
+.popLayerWrap .header {
+  position: relative;
+  width: 100%;
+  height: 41px;
+  background: #545861;
+}
+.popLayerWrap .header .tit {
+  position: absolute;
+  left: 30px;
+  top: 13px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.popLayerWrap .header .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+.popLayerWrap .contents {
+  padding: 25px 40px 25px 40px;
+  background: #fff;
+}
+
+.stateBtnWrap {
+  float: right;
+  margin: 0 6px 0 10px;
+}
+.stateBtnWrap .btnRefresh {
+  display: inline-block;
+  width: 25px;
+  height: 19px;
+  background: url(../img/main/btn/btn_refresh.png) 0 0 no-repeat;
+  overflow: hidden;
+}
+.stateBtnWrap .btnRefresh:hover {
+  background-position: 0 100%;
+}
+.stateBtnWrap .btnRefresh em {
+  display: none;
+}
+.stateBtnWrap .btnRefresh.new {
+  width: 23px;
+  height: 19px;
+}
+.stateBtnWrap .btnRefresh.new:hover {
+  background-position: -29px 0;
+}
+.stateBtnWrap .viewMode {
+  display: inline-block;
+  width: 23px;
+  height: 19px;
+  vertical-align: top;
+  text-indent: -9999px;
+}
+.stateBtnWrap .viewMode:hover {
+  background-position: -148px 0;
+}
+.stateBtnWrap .viewMode.table {
+  background-position: -58px 0;
+}
+.stateBtnWrap .viewMode.table:hover {
+  background-position: -88px 0;
+}
+
+.sorting_btn {
+  float: left;
+}
+.sorting_btn a {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 10px;
+  background: url(../img/main/btn/btn_bluebd.gif) no-repeat 0 0;
+  color: #3375bf;
+  margin: 5px;
+}
+.sorting_btn a span {
+  display: inline-block;
+  height: 25px;
+  padding-right: 10px;
+  line-height: 25px;
+  background: url(../img/main/btn/btn_bluebd.gif) no-repeat 100% 0;
+}
+.sorting_btn a em {
+  padding-left: 15px;
+}
+.sorting_btn a em.add {
+  background: url(../img/main/btn/bg_add.gif) no-repeat 0 50%;
+}
+.sorting_btn a em.new {
+  background: url(../img/main/btn/bg_new.gif) no-repeat 0 50%;
+}
+.sorting_btn a em.movie {
+  background: url(../img/main/btn/bg_movie.gif) no-repeat 0 50%;
+}
+
+.placeholder {
+  color: #aaa !important;
+}
+.placeholderFocus {
+  color: #555 !important;
+}
+
+.viewCountBtnWrap {
+  float: right;
+  margin: 3px 6px 0 0;
+  width: 100px;
+}
+
+.mainViewCount {
+  position: absolute;
+}
+
+.am_DivSelectyze {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+.am_DivSelectyze .am_selectyzeValue {
+  position: relative;
+  z-index: 10;
+  display: block;
+  text-decoration: none;
+}
+.am_DivSelectyze ul {
+  list-style: none;
+}
+.am_DivSelectyze .am_UlSelectize {
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+.am_DivSelectyze li a {
+  display: block;
+  text-decoration: none;
+}
+.am_optgroupTitle {
+  display: block;
+}
+
+.am_grey .am_selectyzeValue {
+  color: #555;
+  display: inline-block;
+  min-width: 60px;
+  height: 13px;
+  padding: 5px 30px 5px 7px;
+  border: 1px solid #c8c8c8;
+  background: url(../img/am_common/select_bg.gif) no-repeat 100% 50%;
+  border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+}
+.am_grey .am_UlSelectize {
+  top: 25px;
+  left: 0px;
+  color: #c8c8c8;
+  min-width: 97px;
+  border: 1px solid #d2d2d2;
+  background-color: #fff;
+  border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+}
+.am_grey li {
+  width: 100%;
+  display: block !important;
+}
+.am_grey li a {
+  color: #555;
+  padding: 4px;
+  white-space: nowrap;
+  word-break: break-all;
+  display: block !important;
+}
+.am_grey li a:hover {
+  color: #fff;
+  background-color: #858585; /** gradient bgcolors */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#7c7c7c),
+    to(#858585)
+  );
+  background-image: -webkit-linear-gradient(top, #7c7c7c #858585);
+  background-image: -moz-linear-gradient(top, #7c7c7c, #858585); /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #7c7c7c, #858585); /* IE10 */
+  background-image: -o-linear-gradient(top, #7c7c7c, #858585);
+}
+.am_grey .am_optgroupTitle {
+  font-size: 20px;
+  padding-left: 10px;
+  background-color: #858585;
+  color: #fff;
+}
+
+.favoritesWrap .header {
+  position: relative;
+  width: 100%;
+  height: 41px;
+  background: #545861;
+}
+.favoritesWrap .header .tit {
+  position: absolute;
+  left: 30px;
+  top: 13px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.favoritesWrap .header .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+.favoritesWrap .header .util {
+  position: absolute;
+  top: 8px;
+  right: 25px;
+}
+
+.sorting_btn a em.fav_del {
+  background: url(../img/favorites/ic_fav_del.png) no-repeat 0 50%;
+}
+.normalTb tbody td .contentTitle .ic_expiration {
+  margin-right: 7px;
+  vertical-align: top;
+}
+
+.resize-bar {
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: transparent;
+  cursor: e-resize;
+}
+.btn_areaL_favorites {
+  position: absolute;
+  left: 0;
+  top: 265px;
+  width: 13px;
+  height: 53px;
+  margin-top: -25px;
+  display: inline-block;
+  background: url(../img/main/btn/btn_areaL.png) no-repeat;
+}
+.btn_areaL_favorites.hided {
+  background: url(../img/main/btn/btn_areaL_on.png) no-repeat;
+}
+
+.btn_areaR_preview {
+  position: absolute;
+  right: 0;
+  top: 240px;
+}
+
+#viewer_preview {
+  position: relative;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+}
+.preview_wrap {
+  box-sizing: border-box;
+  width: 180px;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 5px 0 40px;
+}
+.preview_wrap .btns {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.preview_wrap .title {
+  height: 36px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 18px;
+  font-weight: bold;
+  color: #427fc4;
+}
+.preview_wrap > ul > li {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.preview_wrap > ul > li.blank {
+  position: relative;
+  height: 124px;
+  background: #fff;
+  border: 2px dashed #ddd;
+}
+.preview_wrap > ul > li.blank .message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #888;
+}
+.preview_wrap > ul > li > a {
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+.preview_wrap > ul > li > a > img {
+  max-width: 100%;
+  max-height: 178px;
+}
+.preview_scroll {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.preview_scroll > a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 1px;
+  text-indent: -9999px;
+}
+.preview_scroll > a.scroll_down {
+  background-position: -35px 0;
+}
+
+.thumbList_checkAll {
+  padding: 10px 20px 0;
+  border: 1px solid #e6e6e6;
+  border-width: 1px 1px 0;
+}
+.thumbList_checkAll .cb {
+  position: relative;
+  display: inline-block;
+  padding-top: 1px;
+  color: #555;
+}
+.thumbList_checkAll .cb > input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: -1px 0 0;
+  opacity: 0;
+  vertical-align: top;
+}
+.thumbList_checkAll .cb > em {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: url(../img/form/check-off.png) no-repeat;
+}
+.thumbList_checkAll .cb > input[type="checkbox"]:checked + em {
+  background: url(../img/form/check-on.png) no-repeat;
+}
+.thumbList {
+  margin-bottom: 15px;
+  padding: 0 10px 10px;
+  border: 1px solid #e6e6e6;
+  border-width: 0 1px 1px;
+}
+.thumbList:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.thumbList > li {
+  float: left;
+  width: 202px;
+  margin: 10px 10px 15px;
+}
+.thumbList .head {
+  position: relative;
+  height: 16px;
+  padding: 5px 10px 7px;
+  border: 1px solid #ddd;
+  border-width: 1px 1px 0;
+}
+.thumbList > li:hover .head {
+  border-color: #7c7c7c;
+}
+.thumbList > li.selected .head {
+  border-color: #4a96ec;
+}
+.thumbList .head:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+.thumbList .head > label,
+.thumbList .head > span,
+.thumbList .head > a {
+  float: left;
+  margin-right: 5px;
+}
+.thumbList .head .cb {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  vertical-align: top;
+}
+.thumbList .head .cb > input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  opacity: 0;
+}
+.thumbList .head .cb > em {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: url(../img/form/check-off.png) no-repeat;
+}
+.thumbList .head .cb > input[type="checkbox"]:checked + em {
+  background: url(../img/form/check-on.png) no-repeat;
+}
+.thumbList .head .ipc {
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  vertical-align: top;
+  text-indent: -9999px;
+}
+.thumbList .head .ipc.active {
+  background-position: -30px 0;
+}
+.thumbList .head .fvc {
+  display: inline-block;
+  width: 15px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: top;
+  text-indent: -9999px;
+}
+.thumbList .head .opc {
+  display: inline-block;
+  width: 14px;
+  height: 16px;
+  vertical-align: top;
+  text-indent: -9999px;
+}
+.thumbList .head .util {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 28px;
+  margin: 0;
+  text-indent: -9999px;
+}
+.thumbList .head .util.active {
+  background-position: -140px 5px;
+}
+
+.thumbList .head .infoMenu {
+  left: auto;
+  right: -1px;
+  top: 28px;
+  width: 165px;
+}
+.thumbList .head .infoMenu a,
+.thumbList .head .infoMenu span {
+  height: 23px;
+  line-height: 23px;
+}
+.thumbList .head .infoMenu a {
+  font-weight: bold;
+}
+.thumbList .head .infoMenu a:hover {
+  background: #d9ebff;
+}
+.thumbList .head .infoMenuMore {
+  left: 167px;
+  top: auto;
+  bottom: -8px;
+  width: 165px;
+}
+
+.thumbList > li > a {
+  display: block;
+}
+.thumbList .thumb_box {
+  position: relative;
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 7px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+.thumbList > li:hover .thumb_box {
+  background-color: #dedede;
+  border-color: #7c7c7c;
+}
+.thumbList > li.selected .thumb_box {
+  background-color: #d9ebff;
+  border-color: #4a96ec;
+}
+.thumbList .thumb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  max-width: calc(100% - 20px);
+  max-height: calc(100% - 20px);
+  border: 1px solid #ddd;
+}
+.thumbList .message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #888;
+}
+.thumbList .file {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.thumbList .foot {
+  display: block;
+  height: 54px;
+  line-height: 18px;
+}
+.thumbList .title {
+  display: block;
+  height: 36px;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-weight: bold;
+  color: #000;
+}
+.thumbList .info {
+  display: block;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #888;
+}
