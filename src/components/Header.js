@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as act from "../store/employee/actions";
 
-const Header = () => {
+const Header = (props) => {
+  const employee = props.employee;
+
   return (
     <div id="header">
       <div className="infoArea clfix">
@@ -27,10 +31,15 @@ const Header = () => {
           <div className="topRt">
             <div className="psnName showHideTrg">
               <Link className="trg" to="/">
-                <strong>Hwang Man Gi</strong>
+                <strong>{employee.lastName + " " + employee.firstName}</strong>
               </Link>
             </div>
-            <Link to="/">
+            <Link
+              to="/"
+              onClick={() => {
+                props.logout();
+              }}
+            >
               <img
                 alt=""
                 src={require("../assets/img/layout/ico_help02.png").default}
@@ -43,4 +52,16 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    employee: state.employeeReducers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(act.logout()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

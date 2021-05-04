@@ -3,17 +3,19 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
-import combineReducers from "./store/combineReducers";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { store, sagaMiddleware, persistor } from "./store/configureStore";
+import rootSaga from "./sagas";
+import { PersistGate } from "redux-persist/integration/react"; 
 
-const store = createStore(combineReducers, composeWithDevTools());
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

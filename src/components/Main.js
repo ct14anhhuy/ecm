@@ -13,16 +13,20 @@ import { MainContext } from "../context";
 import CreateDirectory from "./CreateDirectory";
 import Paging from "./Paging";
 import * as exts from "../utils/extTypes";
+import OpenContent from "./OpenContent";
 
 const App = () => {
   const [showAddFileModal, setShowAddFileModal] = useState(false);
   const [showCreateDirectoryModal, setShowCreateDirectoryModal] = useState(
     false
   );
+  const [showOpenContent, setShowOpenContent] = useState(false);
+
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [headerPath, setHeaderPath] = useState("My Contents");
   const [filterExt, setFilterExt] = useState(exts.ALL);
   const [searchStr, setSearchStr] = useState(null);
+  const [selectedItem, setSelectedItem] = useState({});
 
   return (
     <React.Fragment>
@@ -74,7 +78,14 @@ const App = () => {
                     <div className="normalList">
                       <Filter setFilterExt={setFilterExt} />
                       <div>
-                        <MainTable filterExt={filterExt} searchStr={searchStr} />
+                        <MainContext.Provider
+                          value={{ setSelectedItem, setShowOpenContent }}
+                        >
+                          <MainTable
+                            filterExt={filterExt}
+                            searchStr={searchStr}
+                          />
+                        </MainContext.Provider>
                       </div>
                       <Paging />
                     </div>
@@ -88,7 +99,7 @@ const App = () => {
       </div>
 
       {showAddFileModal ? (
-        <MainContext.Provider value={setShowAddFileModal}>
+        <MainContext.Provider value={{ setShowAddFileModal }}>
           <AddFile />
         </MainContext.Provider>
       ) : (
@@ -98,6 +109,15 @@ const App = () => {
       {showCreateDirectoryModal ? (
         <CreateDirectory
           setShowCreateDirectoryModal={setShowCreateDirectoryModal}
+        />
+      ) : (
+        ""
+      )}
+
+      {showOpenContent ? (
+        <OpenContent
+          selectedItem={selectedItem}
+          setShowOpenContent={setShowOpenContent}
         />
       ) : (
         ""

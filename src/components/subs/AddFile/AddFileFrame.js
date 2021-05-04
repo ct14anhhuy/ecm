@@ -16,7 +16,7 @@ import addFileStyles from "!!raw-loader!./AddFileFrame.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const AddFileFrame = () => {
-  var contextData = useContext(MainContext);
+  const contextData = useContext(MainContext);
   const [showListDirectory, setShowListDirectory] = useState(false);
   const [editFileName, setEditFileName] = useState(false);
   const [selectedPath, setSelectedPath] = useState({
@@ -29,7 +29,7 @@ const AddFileFrame = () => {
     setSelectedPath({ id: selectedId, path: path });
   };
 
-  const body = (
+  const bodyFrame = (
     <div>
       <div
         className="popLayerWrap"
@@ -37,7 +37,7 @@ const AddFileFrame = () => {
       >
         <div className="header">
           <h1 className="tit">Add Content</h1>
-          <Link className="close" to="/" onClick={() => contextData(false)}>
+          <Link className="close" to="/" onClick={() => contextData.setShowAddFileModal(false)}>
             <img
               alt="닫기"
               src={
@@ -386,7 +386,7 @@ const AddFileFrame = () => {
         </style>
       }
     >
-      {body}
+      {bodyFrame}
     </Frame>
   );
 };

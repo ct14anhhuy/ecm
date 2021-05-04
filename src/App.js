@@ -1,12 +1,18 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import Error from "./components/common/Error";
+import Login from "./components/common/Login";
+import PrivateRoute from "./components/common/PrivateRoute";
 import Main from "./components/Main";
-import "./assets/font-awesome/css/all.min.css";
 
 const App = () => {
   return (
     <Switch>
-      <Route path="/" component={Main} exact />
+      <Route path="/redirect/:token" component={Login} />
+      <PrivateRoute path="/">
+        <Main />
+      </PrivateRoute>
+      <Route component={Error} />
     </Switch>
   );
 };

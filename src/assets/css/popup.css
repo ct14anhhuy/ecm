@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+.popup_layer_typeB {
+  top: 0;
+  left: 0;
+  min-width: 375px;
+  background: #fff;
+  position: relative;
+}
+.popup_layer_typeB .grey_shadow td.top_left {
+  width: 20px;
+  height: 20px;
+  background: url(/posco/images/ep/layer_pop_top_left.png) no-repeat;
+}
+.popup_layer_typeB .grey_shadow td.top_mid {
+  display: block;
+  height: 20px;
+  background: url(/posco/images/ep/layer_pop_top_mid.png) repeat-x;
+}
+.popup_layer_typeB .grey_shadow td.top_right {
+  width: 20px;
+  height: 20px;
+  background: url(/posco/images/ep/layer_pop_top_right.png) no-repeat;
+}
+.popup_layer_typeB .grey_shadow td.center_left {
+  width: 20px;
+  background: url(/posco/images/ep/layer_pop_center_left.png) repeat-y;
+}
+.popup_layer_typeB .grey_shadow td.center_mid {
+  text-align: left;
+  position: relative;
+}
+.popup_layer_typeB .grey_shadow td.center_right {
+  width: 20px;
+  background: url(/posco/images/ep/layer_pop_center_right.png) repeat-y;
+}
+.popup_layer_typeB .grey_shadow td.bot_left {
+  width: 20px;
+  height: 20px;
+  background: url(/posco/images/ep/layer_pop_bot_left.png) no-repeat;
+}
+.popup_layer_typeB .grey_shadow td.bot_mid {
+  display: block;
+  height: 20px;
+  background: url(/posco/images/ep/layer_pop_bot_mid.png) repeat-x;
+}
+.popup_layer_typeB .grey_shadow td.bot_right {
+  width: 20px;
+  height: 20px;
+  background: url(/posco/images/ep/layer_pop_bot_right.png) no-repeat;
+}
+
+.popup_layer_typeB .grey_shadow .dragger_container {
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  width: 7px;
+  margin: 10px 0 0 0;
+  cursor: pointer;
+}
+.popup_layer_typeB .grey_shadow .dragger_wr {
+  background: url(/posco/images/ep/sc_top.gif) left top no-repeat;
+  width: 7px;
+  padding: 4px 0 0 0;
+}
+.popup_layer_typeB .grey_shadow .dragger {
+  background: url(/posco/images/ep/sc_bot.gif) left bottom no-repeat;
+  width: 7px;
+  cursor: pointer;
+}
+
+.pop_wr {
+  padding: 20px;
+}
+.pop_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+} /* z-index:2; [2012.06.28 추가. 한성희] 크롬에서 X가 안눌림*/
+.pop_tit {
+  width: 100%;
+  border-bottom: 6px solid #1559b1;
+  padding: 0 0 5px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.pop_con {
+  padding: 15px 0 0 0;
+  overflow: hidden;
+}
+.pop_sign {
+  border-top: 1px solid #d5d5d5;
+  padding: 10px 0;
+  margin: 15px 0 -10px 0;
+}
+.pop_sign input {
+  vertical-align: middle;
+  padding: 1px 0 0 2px;
+  height: 19px;
+  border: 1px solid #d5d5d5;
+}
+.pop_sign .name_dot {
+  background: url(/posco/images/ep/ico_dott04.gif) left 4px no-repeat;
+  padding: 0 0 0 10px;
+  display: inline-block;
+}
+.pop_sign .btn_blueS_typeB {
+  vertical-align: middle;
+}
+
+.pop_detail {
+  overflow: hidden;
+  position: relative;
+  min-height: 70px;
+}
+.pop_detail p {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.pop_detail dl {
+  margin: 0 100px 0 0;
+}
+.pop_detail dt {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+.pop_detail dd {
+  line-height: 16px;
+}
+.pop_detail dd.star_wr {
+  height: 16px;
+}
+.pop_detail dd.star_wr img {
+  margin: 2px 0 0 0;
+}
+.pop_detail dd span.col_blue {
+  color: #1169c2;
+}
+.pop_detail02 li {
+  line-height: 16px;
+}
+
+.apps_wr_layer03 {
+  overflow: hidden;
+  width: 100%;
+}
+.apps_wr_layer03 li {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  padding: 5px 0 0 0;
+  width: 176px;
+}
+.apps_wr_layer03 li dl {
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+.apps_wr_layer03 li dt {
+  margin: 0 0 10px 0;
+  line-height: 16px;
+}
+.apps_wr_layer03 li dt.bg_power04 {
+  background: url(/posco/images/ep/bg_power04.png) 48px top no-repeat;
+  height: 63px;
+  padding: 17px 0 0 0;
+  color: #fff;
+  font-weight: bold;
+}
+.apps_wr_layer03 li dt img {
+  vertical-align: top;
+}
+.apps_wr_layer03 li dd.star_wr {
+  height: 16px;
+}
+.apps_wr_layer03 li dd.star_wr img {
+  margin: 2px 0 0 0;
+}
+.apps_wr_layer03 li dd span.col_blue {
+  color: #1169c2;
+}
+.apps_wr_layer03 dd .btn_whiteS_typeA button {
+  padding: 0 6px 2px 5px;
+}
+.apps_wr_layer03 dd .btn_blueS_typeB button {
+  padding: 0 6px 2px 5px;
+}
+.apps_wr_layer03 dd.over_hide {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.apps_wr_layer03 .over_layer_wr02 {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  width: 176px;
+}
+.apps_wr_layer03 .over_layer02 {
+  background: #dee0e2;
+  float: normal;
+  border: none;
+  padding: 15px 10px;
+  min-height: 150px;
+}
+.apps_wr_layer03 .over_layer02 {
+  margin: 0;
+}
+.apps_wr_layer03 .over_layer02 dt {
+  font-weight: bold;
+}
+
+.locate_apps {
+  background: url(/posco/images/ep/ico_arrow02.gif) right 3px no-repeat;
+  padding: 0 10px 10px 0;
+  color: #333;
+  display: inline-block;
+}
+
+.pop_portlet_text {
+  position: absolute;
+  left: 50%;
+  padding: 0 0 0 30px;
+  width: 290px;
+}
+.pop_portlet_text dt {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #1169c2;
+  margin: 0 0 20px 0;
+}
+.pop_portlet_text dd {
+  line-height: 16px;
+}
+
+.agreement_box {
+  border: 1px solid #e4e4e4;
+  padding: 20px;
+  margin: 15px 0 0 0;
+  position: relative;
+}
+.popup_layer_typeB .grey_shadow .agreement_box .dragger_container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 7px;
+  margin: 10px 0 0 0;
+  cursor: pointer;
+}
+.popup_layer_typeB .grey_shadow .agreement_box .dragger_wr {
+  background: url(/posco/images/ep/sc_top.gif) left top no-repeat;
+  width: 7px;
+  padding: 4px 0 0 0;
+}
+.popup_layer_typeB .grey_shadow .agreement_box .dragger {
+  background: url(/posco/images/ep/sc_bot.gif) left bottom no-repeat;
+  width: 7px;
+  cursor: pointer;
+}
+
+.policy {
+  color: #666;
+  line-height: 20px;
+}
+.policy h2,
+.policy h3,
+.policy h4 {
+  font-size: 12px;
+  font-weight: normal;
+  color: #666;
+  line-height: 20px;
+  border: none;
+}
+.policy h2,
+.policy p {
+  margin-bottom: 10px;
+  color: #666;
+  line-height: 20px;
+}
+.policy h2,
+.policy h4 {
+  margin-bottom: 5px;
+  color: #666;
+  line-height: 20px;
+}
+.policy table {
+  margin: 10px 0;
+}
+.policy th {
+  text-align: center;
+}
+.policy th,
+.policy td {
+  line-height: 20px;
+}
+.ckAgree {
+  margin-top: 15px;
+  color: #323232;
+  text-align: center;
+  color: #666;
+  line-height: 20px;
+}
+.ckAgree input {
+  vertical-align: -1px;
+  color: #666;
+  line-height: 20px;
+}
+.btnC {
+  margin-top: 15px;
+  text-align: center;
+  color: #666;
+  line-height: 20px;
+}
+.policy label {
+  display: inline;
+}
+.agreement_bot {
+  width: 90px;
+  margin: 25px auto 0;
+}
+
+.pop_bot {
+  padding: 15px 0 0 0;
+  border-top: 2px solid #1559b1;
+  margin: 15px 0 0 0;
+}

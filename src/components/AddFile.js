@@ -40,7 +40,6 @@ const AddFile = () => {
       >
         <div
           className="popup_layer_typeB"
-          id="layerPopup"
           style={{ display: "block" }}
         >
           <AddFileFrame />
