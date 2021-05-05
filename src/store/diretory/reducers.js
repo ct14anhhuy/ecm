@@ -1,10 +1,12 @@
-import { directory } from "../../mock/directory";
+import * as types from "./types";
 
-const directoryReducers = (state = directory, action)=>{
-    switch (action.type) {
-        default:
-            return state
-    }
-}
+const directoryReducers = (state = [], action) => {
+  switch (action.type) {
+    case types.GET_DIRECTORIES:
+      return action.payload.directories;
+    default:
+      return state;
+  }
+};
 
 export default directoryReducers;

@@ -1,18 +1,17 @@
 import * as types from "./types";
+import { employeeService } from "../../services/employeeService";
 
-const loginRequest = (token) => {
-  return {
-    type: types.LOGIN_REQUEST,
-    payload: {
-      token,
-    },
-  };
-};
-
-const loginSuccess = (employee) => {
-  return {
-    type: types.LOGIN_SUCCESS,
-    payload: employee,
+const login = () => {
+  return async (dispatch) => {
+    try {
+      const employee = await employeeService.login();
+      dispatch({
+        type: types.LOGIN_SUCCESS,
+        payload: { employee },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
@@ -22,4 +21,4 @@ const logout = () => {
   };
 };
 
-export { loginRequest, loginSuccess, logout };
+export { login, logout };

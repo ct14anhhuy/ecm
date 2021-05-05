@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/main.css";
 import Header from "./Header";
@@ -15,18 +15,26 @@ import Paging from "./Paging";
 import * as exts from "../utils/extTypes";
 import OpenContent from "./OpenContent";
 
-const App = () => {
+import { connect } from "react-redux";
+import { getDirectories } from "../store/diretory/actions";
+import { getMyContents } from "../store/fileInfo/actions";
+
+const App = (props) => {
   const [showAddFileModal, setShowAddFileModal] = useState(false);
   const [showCreateDirectoryModal, setShowCreateDirectoryModal] = useState(
     false
   );
   const [showOpenContent, setShowOpenContent] = useState(false);
-
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [headerPath, setHeaderPath] = useState("My Contents");
   const [filterExt, setFilterExt] = useState(exts.ALL);
   const [searchStr, setSearchStr] = useState(null);
   const [selectedItem, setSelectedItem] = useState({});
+
+  useEffect(() => {
+    props.getDirectories();
+    props.getMyContents();
+  }, [props]);
 
   return (
     <React.Fragment>
@@ -126,4 +134,11 @@ const App = () => {
   );
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getDirectories: () => dispatch(getDirectories()),
+    getMyContents: () => dispatch(getMyContents()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);

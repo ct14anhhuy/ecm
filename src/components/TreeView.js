@@ -4,18 +4,30 @@ import { connect } from "react-redux";
 
 const TreeView = (props) => {
   const [state, setState] = useState({
-    flatTree: props.directories.map((node) => ({
-      id: node.Id,
-      key: node.Id,
-      name: node.Name,
-      title: node.Name,
-      parentId: node.ParentId,
-      children: [],
-    })),
+    flatTree: [],
     hirarchicalTree: [],
     newNodeName: "",
     selectedId: 0,
   });
+
+  useEffect(() => {
+    const res = props.directories.map((node) => ({
+      id: node.id,
+      key: node.id,
+      name: node.name,
+      title: node.name,
+      parentId: node.parentId,
+      children: [],
+    }));
+
+    setState((state) => ({
+      ...state,
+      flatTree: res,
+    }));
+
+    const hirarchicalTree = flatToHierarchy(res);
+    setState((state) => ({ ...state, hirarchicalTree: hirarchicalTree }));
+  }, [props.directories]);
 
   const flatToHierarchy = (flat) => {
     var roots = [];
@@ -23,7 +35,6 @@ const TreeView = (props) => {
     [...flat].forEach((item) => {
       all[item.id] = { ...item };
     });
-
     Object.keys(all).forEach((id) => {
       var item = all[id];
       if (item.parentId === null) {
@@ -38,12 +49,6 @@ const TreeView = (props) => {
     });
     return roots;
   };
-
-  useEffect(() => {
-    const hirarchicalTree = flatToHierarchy(state.flatTree);
-    setState({ ...state, hirarchicalTree });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const getPath = (tree, nodesProp, prop, value) => {
     const path = [];
@@ -78,7 +83,7 @@ const TreeView = (props) => {
     setState({ ...state, selectedId });
     const path = getPath(state.hirarchicalTree, "children", "id", e.node.id);
     if (props.handleOnSelect) {
-      props.handleOnSelect(path);
+      props.handleOnSelect(selectedId, path);
     }
   };
 

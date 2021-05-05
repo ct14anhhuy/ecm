@@ -4,16 +4,13 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store, sagaMiddleware, persistor } from "./store/configureStore";
-import rootSaga from "./sagas";
-import { PersistGate } from "redux-persist/integration/react"; 
-
-sagaMiddleware.run(rootSaga);
+import { store, persistedStore } from "./store/configureStore";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={null} persistor={persistedStore}>
         <App />
       </PersistGate>
     </BrowserRouter>

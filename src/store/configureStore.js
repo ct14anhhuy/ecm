@@ -4,8 +4,22 @@ import directoryReducers from "./diretory/reducers";
 import employeeReducers from "./employee/reducers";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import createSagaMiddleware from "redux-saga";
+import thunkMiddleware from "redux-thunk";
 import { createStore, compose, applyMiddleware } from "redux";
+
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["employeeReducers"],
+};
+
+const rootReducer = combineReducers({
+  fileInfoReducers,
+  directoryReducers,
+  employeeReducers,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const composeSetup =
   process.env.NODE_ENV !== "production" &&
@@ -14,30 +28,14 @@ const composeSetup =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     : compose;
 
-const rootReducer = combineReducers({
-  fileInfoReducers,
-  directoryReducers,
-  employeeReducers,
-});
+const configureStore = () => {
+  const middlewares = [thunkMiddleware];
+  const middlewareEnhancer = applyMiddleware(...middlewares);
 
-const persistConfig = {
-  key: "root",
-  storage,
-  whitelist: "employeeReducers",
+  return createStore(persistedReducer, composeSetup(middlewareEnhancer));
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-const sagaMiddleware = createSagaMiddleware();
-let store = createStore(
-  persistedReducer,
-  composeSetup(applyMiddleware(sagaMiddleware))
-);
-let persistor = persistStore(store);
+const store = configureStore();
+const persistedStore = persistStore(store);
 
-export default combineReducers({
-  fileInfoReducers,
-  directoryReducers,
-  employeeReducers,
-});
-
-export { store, persistor, sagaMiddleware };
+export { store, persistedStore };

@@ -1,3 +1,3 @@
-const GET_ALL = "GET_ALL";
+const GET_DIRECTORIES = "GET_DIRECTORIES";
 
-export { GET_ALL };
+export { GET_DIRECTORIES };

@@ -39,7 +39,7 @@ const OpenContent = (props) => {
                 <th style={{ width: 150 }}>File Name</th>
                 <td style={{ msWordBreak: "break-all" }}>
                   <div className="conText">
-                    <span>{props.selectedItem.Name}</span>
+                    <span>{props.selectedItem.name}</span>
                   </div>
                 </td>
               </tr>

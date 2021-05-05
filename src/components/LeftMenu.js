@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import Frame from "react-frame-component";
-import { Link } from "react-router-dom";
 import TreeView from "./TreeView";
+import {
+  getMyContents,
+  getImportantContents,
+  getFavoriteContents,
+  getSharedContents,
+  getDepartmentContents,
+  getTrashContents,
+  getContentsFromPath,
+} from "../store/fileInfo/actions";
+import { connect } from "react-redux";
 
 /* eslint import/no-webpack-loader-syntax: off */
 import globalStyles from "!!raw-loader!../assets/css/global.css";
@@ -14,11 +23,12 @@ const LeftMenu = (props) => {
   const [selectedTab, setSelectedTab] = useState(true);
 
   const handleSelectedRoute = (e) => {
-    props.setHeaderPath(e.target.text);
+    props.setHeaderPath(e.target.innerText);
   };
 
-  const handleOnSelect = (path) => {
+  const handleOnSelect = (id, path) => {
     props.setHeaderPath(path);
+    props.getContentsFromPath(id);
   };
 
   const bodyFrame = (
@@ -26,26 +36,24 @@ const LeftMenu = (props) => {
       <div className="bgBoxLayout">
         <ul className="tab_more">
           <li>
-            <Link
+            <span
               className={selectedTab ? "tabon" : ""}
-              to="/"
               onClick={() => {
                 setSelectedTab(true);
               }}
             >
               Shortcut
-            </Link>
+            </span>
           </li>
           <li>
-            <Link
+            <span
               className={selectedTab ? "" : "tabon"}
-              to="/"
               onClick={() => {
                 setSelectedTab(false);
               }}
             >
               Content Box
-            </Link>
+            </span>
           </li>
         </ul>
       </div>
@@ -61,18 +69,20 @@ const LeftMenu = (props) => {
               }) left top no-repeat`,
             }}
           >
-            <Link
+            <span
               className="btn_01"
-              to="/"
               style={{
                 background: `url(${
                   require("../assets/img/main/left/ico_go_cnt01.png").default
                 }) 15px center no-repeat`,
               }}
-              onClick={(e) => handleSelectedRoute(e)}
+              onClick={(e) => {
+                handleSelectedRoute(e);
+                props.getMyContents();
+              }}
             >
               My Contents
-            </Link>
+            </span>
           </li>
           <li
             className="newWin"
@@ -82,18 +92,20 @@ const LeftMenu = (props) => {
               }) left top no-repeat`,
             }}
           >
-            <Link
+            <span
               className="btn_30"
-              to="/"
               style={{
                 background: `url(${
                   require("../assets/img/main/left/ico_go_cnt30.png").default
                 }) 15px center no-repeat`,
               }}
-              onClick={(e) => handleSelectedRoute(e)}
+              onClick={(e) => {
+                handleSelectedRoute(e);
+                props.getImportantContents();
+              }}
             >
               Impotant Contents
-            </Link>
+            </span>
           </li>
           <li
             style={{
@@ -102,18 +114,20 @@ const LeftMenu = (props) => {
               }) left top no-repeat`,
             }}
           >
-            <Link
+            <span
               className="btn_06"
-              to="/"
               style={{
                 background: `url(${
                   require("../assets/img/main/left/ico_go_cnt26.png").default
                 }) 15px center no-repeat`,
               }}
-              onClick={(e) => handleSelectedRoute(e)}
+              onClick={(e) => {
+                handleSelectedRoute(e);
+                props.getFavoriteContents();
+              }}
             >
               Favorite Contents
-            </Link>
+            </span>
           </li>
           <li
             style={{
@@ -122,18 +136,20 @@ const LeftMenu = (props) => {
               }) left top no-repeat`,
             }}
           >
-            <Link
+            <span
               className="btn_07"
-              to="/"
               style={{
                 background: `url(${
                   require("../assets/img/main/left/ico_go_cnt27.png").default
                 }) 15px center no-repeat`,
               }}
-              onClick={(e) => handleSelectedRoute(e)}
+              onClick={(e) => {
+                handleSelectedRoute(e);
+                props.getSharedContents();
+              }}
             >
               Shared Contents
-            </Link>
+            </span>
           </li>
           <li
             style={{
@@ -142,18 +158,20 @@ const LeftMenu = (props) => {
               }) left top no-repeat`,
             }}
           >
-            <Link
+            <span
               className="btn_16"
-              to="/"
               style={{
                 background: `url(${
                   require("../assets/img/main/left/ico_go_cnt16.png").default
                 }) 15px center no-repeat`,
               }}
-              onClick={(e) => handleSelectedRoute(e)}
+              onClick={(e) => {
+                handleSelectedRoute(e);
+                props.getDepartmentContents();
+              }}
             >
               Departments Contents
-            </Link>
+            </span>
           </li>
           <li
             style={{
@@ -162,18 +180,20 @@ const LeftMenu = (props) => {
               }) left top no-repeat`,
             }}
           >
-            <Link
+            <span
               className="btn_rcb"
-              to="/"
               style={{
                 background: `url(${
                   require("../assets/img/main/left/ico_go_rcb.png").default
                 }) 15px center no-repeat`,
               }}
-              onClick={(e) => handleSelectedRoute(e)}
+              onClick={(e) => {
+                handleSelectedRoute(e);
+                props.getTrashContents();
+              }}
             >
               Trash
-            </Link>
+            </span>
           </li>
         </ul>
       </div>
@@ -218,4 +238,16 @@ const LeftMenu = (props) => {
   );
 };
 
-export default LeftMenu;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getMyContents: () => dispatch(getMyContents()),
+    getImportantContents: () => dispatch(getImportantContents()),
+    getFavoriteContents: () => dispatch(getFavoriteContents()),
+    getSharedContents: () => dispatch(getSharedContents()),
+    getDepartmentContents: () => dispatch(getDepartmentContents()),
+    getTrashContents: () => dispatch(getTrashContents()),
+    getContentsFromPath: (dirId) => dispatch(getContentsFromPath(dirId)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LeftMenu);

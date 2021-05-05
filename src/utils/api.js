@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
+const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer " + localStorage.getItem("accessToken"),
+  },
 });
 
-const login = async () =>
-  await axiosInstance.get("/Employee/GetEmployeeFromToken");
-
-export { axiosInstance, login };
+export { api };

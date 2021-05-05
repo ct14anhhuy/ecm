@@ -21,7 +21,7 @@ const MainTable = (props) => {
       default:
         setFileInfos(
           fi.filter((fileInfo) => {
-            return fe.includes(fileInfo.Name.split(".").pop());
+            return fe.includes(fileInfo.name.split(".").pop());
           })
         );
         break;
@@ -37,8 +37,8 @@ const MainTable = (props) => {
       setFileInfos(
         fi.filter((fileInfo) => {
           return (
-            fileInfo.Name.toLowerCase().includes(searchStr) ||
-            fileInfo.Owner.toLowerCase().includes(searchStr)
+            fileInfo.name.toLowerCase().includes(searchStr) ||
+            fileInfo.owner.toLowerCase().includes(searchStr)
           );
         })
       );
@@ -48,7 +48,7 @@ const MainTable = (props) => {
   const handleShowInfo = (id) => {
     setFileInfos(
       fileInfos.map((fi) =>
-        fi.Id === id ? { ...fi, showInfo: !fi.showInfo } : { ...fi, showInfo: false }
+        fi.id === id ? { ...fi, showInfo: !fi.showInfo } : { ...fi, showInfo: false }
       )
     );
   };
@@ -119,7 +119,7 @@ const MainTable = (props) => {
       <tbody>
         {fileInfos.map((fileInfo) => (
           <MainTableItem
-            key={fileInfo.Id}
+            key={fileInfo.id}
             selectAll={selectAll}
             fileInfo={fileInfo}
             handleShowInfo={handleShowInfo}

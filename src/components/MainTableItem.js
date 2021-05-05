@@ -4,7 +4,7 @@ import { changeFavorite, changeImportant } from "../store/fileInfo/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { MainContext } from "../context";
-import { GetBackgroundIconFromExtension } from "../utils/fileInfo";
+import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
 
 const MainTableItem = (props) => {
   var contextData = useContext(MainContext);
@@ -17,8 +17,8 @@ const MainTableItem = (props) => {
   }, [props.selectAll]);
 
   const handleOnCopyUrl = () => {
-    navigator.clipboard.writeText(fileInfo.Id);
-    props.handleShowInfo(fileInfo.Id);
+    navigator.clipboard.writeText(fileInfo.id);
+    props.handleShowInfo(fileInfo.id);
   };
 
   return (
@@ -38,12 +38,12 @@ const MainTableItem = (props) => {
             <Link
               className="ico_fav_3"
               to="/"
-              onClick={() => props.changeImportant(fileInfo.Id)}
+              onClick={() => props.changeImportant(fileInfo.id)}
             >
               <img
                 alt=""
                 src={
-                  fileInfo.IsImportant
+                  fileInfo.isImportant
                     ? require("../assets/img/main/left/ico_fix_on.png").default
                     : require("../assets/img/main/left/ico_fix.png").default
                 }
@@ -52,12 +52,12 @@ const MainTableItem = (props) => {
             <Link
               className="ico_fav"
               to="/"
-              onClick={() => props.changeFavorite(fileInfo.Id)}
+              onClick={() => props.changeFavorite(fileInfo.id)}
             >
               <img
                 alt=""
                 src={
-                  fileInfo.IsFavorite
+                  fileInfo.isFavorite
                     ? require("../assets/img/main/ico/ico_fav_blue_on.png")
                         .default
                     : require("../assets/img/main/ico/ico_fav.png").default
@@ -71,15 +71,15 @@ const MainTableItem = (props) => {
                 contextData.setShowOpenContent(true);
               }}
             >
-              <GetBackgroundIconFromExtension fileName={fileInfo.Name} />
-              {fileInfo.Name}
+              <GetBackgroundIconFromExtension fileName={fileInfo.name} />
+              {fileInfo.name}
             </Link>
           </div>
           <Link
             className="listInfo"
             to="/"
             onClick={() => {
-              props.handleShowInfo(fileInfo.Id);
+              props.handleShowInfo(fileInfo.id);
             }}
           >
             <img
@@ -105,12 +105,12 @@ const MainTableItem = (props) => {
           </ul>
         </div>
       </td>
-      <td>{fileInfo.Owner}</td>
-      <td>{fileInfo.Modifier}</td>
-      <td>{fileInfo.Size}KB</td>
-      <td>{fileInfo.SecurityLevel}</td>
-      <td>{fileInfo.Version}</td>
-      <td>{moment(fileInfo.ModifiedDate).format("DD/MM/YYYY")}</td>
+      <td>{fileInfo.owner}</td>
+      <td>{fileInfo.modifier}</td>
+      <td>{fileInfo.size}KB</td>
+      <td>{fileInfo.securityLevel}</td>
+      <td>{fileInfo.version}</td>
+      <td>{moment(fileInfo.modifiedDate).format("DD/MM/YYYY")}</td>
     </tr>
   );
 };
