@@ -100,7 +100,7 @@
   padding-left: 3px;
   font-weight: normal;
   color: #3375bf !important;
-  background: url(../img/popup/bg/bg_whiteBtn_L.png) 0 0 no-repeat;
+  background: url(assets/img/popup/bg/bg_whiteBtn_L.png) 0 0 no-repeat;
   display: inline-block;
 }
 .btnWhite span {
@@ -108,7 +108,7 @@
   padding: 6px 3px 5px 0;
   line-height: 14px;
   text-align: center;
-  background: url(../img/popup/bg/bg_whiteBtn_R.png) right 0 no-repeat;
+  background: url(assets/img/popup/bg/bg_whiteBtn_R.png) right 0 no-repeat;
   display: inline-block;
 }
 .btnWhite span img {
@@ -120,14 +120,14 @@
 }
 .popSubTitle02 .tit {
   padding: 8px 0 0 15px;
-  background: url(../img/popup/bg/bg_redDot.gif) 6px 13px no-repeat;
+  background: url(assets/img/popup/bg/bg_redDot.gif) 6px 13px no-repeat;
   font-weight: bold;
 }
 .btnWhiteS a {
   display: inline-block;
   padding-left: 2px;
   font-size: 13px;
-  background: url(../img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
 }
 .btnWhiteS a span {
   display: inline-block;
@@ -135,7 +135,7 @@
   padding: 0 8px;
   line-height: 20px;
   color: #222;
-  background: url(../img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
   font-weight: normal;
 }
 
@@ -147,7 +147,7 @@
 }
 .contentList .list {
   width: 100%;
-  background: url(../img/popup/bg/bg_contentList.gif) 0 0 repeat;
+  background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
 }
 .contentList .list li {
   *float: left;
@@ -210,12 +210,12 @@
   line-height: 26px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background: url(../img/popup/bg/bg_folder.png) 13px 5px no-repeat;
+  background: url(assets/img/popup/bg/bg_folder.png) 13px 5px no-repeat;
 }
 .saveBox .DivSelectyze .selectyzeValue span {
   height: 26px;
   margin-right: 2px;
-  background: url(../img/popup/bg/bg_saveSelect.gif) right 1px no-repeat;
+  background: url(assets/img/popup/bg/bg_saveSelect.gif) right 1px no-repeat;
   display: block;
 } /*[1111_수정]*/
 .saveBox .DivSelectyze .UlSelectize {
@@ -259,7 +259,7 @@
 }
 .saveBox .treeConBox .treeCon {
   color: #000;
-  background: url(../img/main/bg/bg_treeCon.gif) 0 0 repeat;
+  background: url(assets/img/main/bg/bg_treeCon.gif) 0 0 repeat;
 }
 .saveBox .treeConBox .treeCon img {
   vertical-align: middle;
@@ -284,7 +284,7 @@
   min-width: 38px;
   height: 18px;
   padding-right: 11px;
-  background: url(../img/main/btn/btn_treeMove_R.png) right 0 no-repeat;
+  background: url(assets/img/main/btn/btn_treeMove_R.png) right 0 no-repeat;
   cursor: pointer;
   display: inline-block;
 }
@@ -294,7 +294,7 @@
   font-size: 11px;
   line-height: 18px;
   color: #cedff2;
-  background: url(../img/main/btn/btn_treeMove_L.png) 0 0 no-repeat;
+  background: url(assets/img/main/btn/btn_treeMove_L.png) 0 0 no-repeat;
   cursor: pointer;
   overflow: hidden;
   display: inline-block;
@@ -429,7 +429,7 @@
   font-weight: normal;
   color: #222;
   border: 1px solid #c8c8c8;
-  background: url(../img/popup/bg/bg_btnGray.gif) 0 0 repeat;
+  background: url(assets/img/popup/bg/bg_btnGray.gif) 0 0 repeat;
 }
 
 /* 조직 찾기 */
@@ -657,7 +657,7 @@
 .innerPad .DivSelectyze .selectyzeValue span {
   height: 26px;
   margin-right: 2px;
-  background: url(../img/popup/bg/bg_partSelect_bold.gif) right 0 no-repeat;
+  background: url(assets/img/popup/bg/bg_partSelect_bold.gif) right 0 no-repeat;
   display: block;
 }
 .innerPad .DivSelectyze .UlSelectize {
@@ -729,7 +729,7 @@
 .selectPart .DivSelectyze .selectyzeValue span {
   height: 26px;
   margin-right: 2px;
-  background: url(../img/popup/bg/bg_partSelect_bold.gif) right 0 no-repeat;
+  background: url(assets/img/popup/bg/bg_partSelect_bold.gif) right 0 no-repeat;
   display: block;
 }
 .selectPart .DivSelectyze .UlSelectize {
@@ -831,7 +831,7 @@
 } /* [1111_수정] */
 .latelyBox ul {
   width: 100%;
-  background: url(../img/popup/bg/bg_contentList.gif) 0 0 repeat;
+  background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
 }
 .latelyBox ul:after {
   clear: both;
@@ -941,7 +941,7 @@
   color: #555555;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url(../img/common/select_bg.gif) no-repeat scroll 100% 50%
+  background: url(assets/img/common/select_bg.gif) no-repeat scroll 100% 50%
     transparent;
 }
 .tblPerson .DivSelectyze .UlSelectize {
@@ -1012,10 +1012,10 @@
 
 /* 라디오&체크 */
 label.c_on {
-  background: url(../img/form/check-on.png) no-repeat;
+  background: url(assets/img/form/check-on.png) no-repeat;
 }
 label.r_on {
-  background: url(../img/form/radio-on.png) no-repeat;
+  background: url(assets/img/form/radio-on.png) no-repeat;
 }
 label {
   display: block;
@@ -1036,7 +1036,7 @@ label {
   display: inline-block;
 }
 .i_radio {
-  background: url(../img/form/radio-off.png) no-repeat;
+  background: url(assets/img/form/radio-off.png) no-repeat;
 }
 .i_check input,
 .i_radio input {
@@ -1049,7 +1049,7 @@ label {
   padding-left: 20px;
   line-height: 16px;
   display: inline-block;
-  background: url(../img/form/check-off.png) no-repeat;
+  background: url(assets/img/form/check-off.png) no-repeat;
 }
 .radio-type1 input {
   position: absolute;
@@ -1264,7 +1264,7 @@ label {
   font-weight: normal;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url(../img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
+  background: url(assets/img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
     transparent;
 }
 .popProperty01 .biodata .basicM01 .blueSel01 .DivSelectyze .UlSelectize {
@@ -1314,7 +1314,7 @@ label {
   font-weight: normal;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url(../img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
+  background: url(assets/img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
     transparent;
 }
 .popProperty01
@@ -1401,14 +1401,14 @@ label {
   font-size: 13px;
   font-weight: bold;
   padding: 9px 0 7px 24px;
-  background: url(../img/popup/bg/bg_redDot.gif) no-repeat 15px 13px #f6f6f6;
+  background: url(assets/img/popup/bg/bg_redDot.gif) no-repeat 15px 13px #f6f6f6;
 }
 .popProperty01 .biodata h3.white {
   color: #222;
   font-size: 13px;
   font-weight: bold;
   padding: 19px 0 9px 15px;
-  background: url(../img/popup/bg/bg_redDot.gif) no-repeat 7px 24px;
+  background: url(assets/img/popup/bg/bg_redDot.gif) no-repeat 7px 24px;
 }
 .popProperty01 .biodata .btnBox {
   position: absolute;
@@ -1420,7 +1420,7 @@ label {
   height: 18px;
   line-height: 18px;
   border: 1px solid #c8c8c8;
-  background: url(../img/popup/bg/bg_btnGray.gif) repeat-x left top;
+  background: url(assets/img/popup/bg/bg_btnGray.gif) repeat-x left top;
   padding: 0 7px 0;
   margin-left: 5px;
   color: #222;
@@ -1457,7 +1457,7 @@ label {
 }
 .popProperty01 .biodata .changeT01 .btnGray {
   border: 1px solid #c8c8c8;
-  background: url(../img/popup/bg/bg_btnGray.gif) repeat-x left top;
+  background: url(assets/img/popup/bg/bg_btnGray.gif) repeat-x left top;
   padding: 3px 7px 2px;
   margin-left: 15px;
   color: #222;
@@ -1532,30 +1532,30 @@ label {
   color: #1169c2;
 }
 .paging a.first {
-  background: url(../img/popup/bg/paging_first.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_first.gif) left top no-repeat;
 }
 .paging a:hover.first {
-  background: url(../img/popup/bg/paging_first_on.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_first_on.gif) left top no-repeat;
 }
 .paging a.prev {
-  background: url(../img/popup/bg/paging_prv.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_prv.gif) left top no-repeat;
   margin: 0 14px 0 0;
 }
 .paging a:hover.prev {
-  background: url(../img/popup/bg/paging_prv_on.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_prv_on.gif) left top no-repeat;
 }
 .paging a.next {
-  background: url(../img/popup/bg/paging_nxt.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_nxt.gif) left top no-repeat;
   margin: 0 0 0 14px;
 }
 .paging a:hover.next {
-  background: url(../img/popup/bg/paging_nxt_on.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_nxt_on.gif) left top no-repeat;
 }
 .paging a.end {
-  background: url(../img/popup/bg/paging_end.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_end.gif) left top no-repeat;
 }
 .paging a:hover.end {
-  background: url(../img/popup/bg/paging_end_on.gif) left top no-repeat;
+  background: url(assets/img/popup/bg/paging_end_on.gif) left top no-repeat;
 }
 
 /*1111_역할자 선택_ecm_popup02 */
@@ -1630,11 +1630,11 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .treeConBox .contentSelect .DivSelectyze .selectyzeValue {
   width: 350px;
   padding-left: 3px;
-  background: url(../img/main/bg/bg_selectTypeB_L.png) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_selectTypeB_L.png) 0 0 no-repeat;
   border: none;
 }
 .treeConBox .contentSelect .DivSelectyze .selectyzeValue span {
-  background: url(../img/main/bg/bg_selectTypeB_R.png) right 0 no-repeat;
+  background: url(assets/img/main/bg/bg_selectTypeB_R.png) right 0 no-repeat;
   padding-left: 7px;
 }
 .treeConBox .contentSelect .DivSelectyze .UlSelectize {
@@ -1718,7 +1718,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   height: 100px;
 }
 .viewL .maxH .marR17 {
-  background: url(../img/popup/bg/bg_personTD02.gif) 0 1px repeat;
+  background: url(assets/img/popup/bg/bg_personTD02.gif) 0 1px repeat;
 }
 .viewL .maxH .marR17 table td {
   padding: 0;
@@ -1856,7 +1856,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 } /*[2020-11-30 수정]*/
 .latelyHistoryBox ul {
   width: 100%;
-  background: url(../img/popup/bg/bg_contentList.gif) 0 0 repeat;
+  background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
 }
 .latelyHistoryBox ul:after {
   clear: both;
@@ -1904,7 +1904,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .latelyFileTypeBox ul {
   width: 100%;
-  background: url(../img/popup/bg/bg_contentList.gif) 0 0 repeat;
+  background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
 }
 .latelyFileTypeBox ul:after {
   clear: both;
@@ -2086,11 +2086,11 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   width: 17px;
   height: 33px;
   padding: 0 10px;
-  background: url(../img/popup/bg/ico_fix.png) no-repeat 50% 50%;
+  background: url(assets/img/popup/bg/ico_fix.png) no-repeat 50% 50%;
   cursor: pointer;
 } /* 2015-02-27 수정 */
 .rai-list li .b_mark.on {
-  background: url(../img/popup/bg/ico_fix_on.png) no-repeat 50% 50%;
+  background: url(assets/img/popup/bg/ico_fix_on.png) no-repeat 50% 50%;
 } /* 2015-02-27 수정 */
 .saveBox .selectyze.type_2 .DivSelectyze .selectyzeValue {
   border-radius: 0;
@@ -2104,7 +2104,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   border-radius: 0;
 }
 .saveBox.type_2 .DivSelectyze .selectyzeValue span {
-  background: url(../img/popup/bg/bg_saveSelect.gif) right 0 no-repeat;
+  background: url(assets/img/popup/bg/bg_saveSelect.gif) right 0 no-repeat;
 }
 .saveBox.type_2 .DivSelectyze .UlSelectize {
   width: 438px;
@@ -2224,7 +2224,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   width: 14px;
   height: 13px;
   margin-left: 2px;
-  background: url(../img/popup/ico/ico_help.png) no-repeat;
+  background: url(assets/img/popup/ico/ico_help.png) no-repeat;
 }
 .help_txt {
   display: none;
@@ -2234,7 +2234,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   top: 16px;
   padding: 10px 10px 10px 29px;
   border: 1px solid #4c86c9;
-  background: url(../img/popup/ico/ico_help.png) no-repeat 10px 10px #fff;
+  background: url(assets/img/popup/ico/ico_help.png) no-repeat 10px 10px #fff;
 } /* 2015-02-16 수정 */
 .help_txt .bg {
   position: absolute;
@@ -2242,7 +2242,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   left: 109px;
   width: 8px;
   height: 7px;
-  background: url(../img/popup/bg/bg_layerpop.png) no-repeat;
+  background: url(assets/img/popup/bg/bg_layerpop.png) no-repeat;
 } /* 2015-02-16 수정 */
 .account .innerPad {
   padding-left: 10px;
@@ -2334,7 +2334,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   font-size: 13px;
   font-weight: bold;
   padding: 9px 0 7px 0;
-  background: url(../img/popup/bg/bg_redDot.gif) no-repeat 15px 13px #f6f6f6;
+  background: url(assets/img/popup/bg/bg_redDot.gif) no-repeat 15px 13px #f6f6f6;
   text-indent: 24px;
 } /* 2015-02-16 수정 */
 .contents.type_2 h3.white {
@@ -2342,7 +2342,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   font-size: 13px;
   font-weight: bold;
   padding: 19px 0 9px 15px;
-  background: url(../img/popup/bg/bg_redDot.gif) no-repeat 7px 24px;
+  background: url(assets/img/popup/bg/bg_redDot.gif) no-repeat 7px 24px;
 }
 .contents.type_2 .btnBox {
   position: absolute;
@@ -2354,7 +2354,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   height: 18px;
   line-height: 18px;
   border: 1px solid #c8c8c8;
-  background: url(../img/popup/bg/bg_btnGray.gif) repeat-x left top;
+  background: url(assets/img/popup/bg/bg_btnGray.gif) repeat-x left top;
   padding: 0 7px 0;
   margin-left: 5px;
   color: #222;
@@ -2391,7 +2391,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .contents.type_2 .changeT01 .btnGray {
   border: 1px solid #c8c8c8;
-  background: url(../img/popup/bg/bg_btnGray.gif) repeat-x left top;
+  background: url(assets/img/popup/bg/bg_btnGray.gif) repeat-x left top;
   padding: 3px 7px 2px;
   margin-left: 15px;
   color: #222;
@@ -2453,7 +2453,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   font-weight: normal;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url(../img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
+  background: url(assets/img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
     transparent;
 }
 .select_owner .DivSelectyze .UlSelectize {
@@ -2561,7 +2561,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .btn_delall span {
   padding-right: 12px;
-  background: url(../img/popup/bg/bg_delall.png) no-repeat 100% 2px;
+  background: url(assets/img/popup/bg/bg_delall.png) no-repeat 100% 2px;
 }
 .positionBox.type_2 .positionSearch .part_R .sub strong {
   margin-right: 7px;
@@ -2691,7 +2691,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   display: block;
   float: left;
   height: 38px;
-  background: url(../img/popup/bg/bg_safe_btn.png) no-repeat 0 0;
+  background: url(assets/img/popup/bg/bg_safe_btn.png) no-repeat 0 0;
   margin-right: 5px;
   line-height: 39px;
   text-align: center;
@@ -2948,7 +2948,7 @@ a.btn_in_td {
   display: inline-block;
   margin-left: 10px;
   padding: 2px 5px;
-  background: url(../img/favorites/btn_fav_loca_go.png) repeat-x 0 100%;
+  background: url(assets/img/favorites/btn_fav_loca_go.png) repeat-x 0 100%;
   border: 1px solid #c8c8c8;
 }
 
@@ -2979,7 +2979,7 @@ a.btn_in_td {
 .tree_box li.root .folder {
   width: 21px;
   height: 27px;
-  background: url(../img/favorites/ic_ftree_tit.png) no-repeat 0 4px;
+  background: url(assets/img/favorites/ic_ftree_tit.png) no-repeat 0 4px;
 }
 
 .tree_box ul {
@@ -3013,43 +3013,43 @@ a.btn_in_td {
 }
 
 .tree_box ul li span.folder_a {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 0;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 0;
 }
 .tree_box ul li span.folder_a.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -27px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -27px;
 }
 .tree_box ul li span.folder_a.no_folder {
-  background: url(../img/am_common/ico_folder_a_blank.png) no-repeat 0 6px;
+  background: url(assets/img/am_common/ico_folder_a_blank.png) no-repeat 0 6px;
 }
 .tree_box ul li a span.folder_b {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -54px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -54px;
 }
 .tree_box ul li a span.folder_b.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -81px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -81px;
 }
 .tree_box ul li a span.folder_c {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -108px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -108px;
 }
 .tree_box ul li a span.folder_c.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -135px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -135px;
 }
 .tree_box ul li a span.folder_d {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -162px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -162px;
 }
 .tree_box ul li a span.folder_d.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -189px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -189px;
 }
 .tree_box ul li a span.folder_e {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -214px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -214px;
 }
 .tree_box ul li a span.folder_e.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -239px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -239px;
 }
 .tree_box ul li a span.folder_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -293px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -293px;
 }
 .tree_box ul li a span.folder_f.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -318px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -318px;
 }
 
 .tree_box ul.depth_1 li ul.depth_2 li a {

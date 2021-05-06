@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as act from "../store/employee/actions";
+import * as act from "store/employee/actions";
 
 const Header = (props) => {
   const employee = props.employee;
@@ -15,7 +15,7 @@ const Header = (props) => {
                 <img
                   alt="With POSCO"
                   src={
-                    require("../assets/img/layout/posco-the-great-logo.png")
+                    require("assets/img/layout/posco-the-great-logo.png")
                       .default
                   }
                 />
@@ -23,7 +23,7 @@ const Header = (props) => {
               <Link className="logo_sys" to="/">
                 <img
                   alt="ECM"
-                  src={require("../assets/img/layout/logo_ecm.png").default}
+                  src={require("assets/img/layout/logo_ecm.png").default}
                 />
               </Link>
             </h1>
@@ -42,7 +42,7 @@ const Header = (props) => {
             >
               <img
                 alt=""
-                src={require("../assets/img/layout/ico_help02.png").default}
+                src={require("assets/img/layout/ico_help02.png").default}
               />
             </Link>
           </div>

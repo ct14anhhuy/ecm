@@ -1,9 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import { connect } from "react-redux";
-import { changeFavorite, changeImportant } from "../store/fileInfo/actions";
+import { changeFavorite, changeImportant } from "store/fileInfo/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { MainContext } from "../context";
+import { MainContext } from "context";
 import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
 
 const MainTableItem = (props) => {
@@ -44,8 +44,8 @@ const MainTableItem = (props) => {
                 alt=""
                 src={
                   fileInfo.isImportant
-                    ? require("../assets/img/main/left/ico_fix_on.png").default
-                    : require("../assets/img/main/left/ico_fix.png").default
+                    ? require("assets/img/main/left/ico_fix_on.png").default
+                    : require("assets/img/main/left/ico_fix.png").default
                 }
               />
             </Link>
@@ -58,9 +58,8 @@ const MainTableItem = (props) => {
                 alt=""
                 src={
                   fileInfo.isFavorite
-                    ? require("../assets/img/main/ico/ico_fav_blue_on.png")
-                        .default
-                    : require("../assets/img/main/ico/ico_fav.png").default
+                    ? require("assets/img/main/ico/ico_fav_blue_on.png").default
+                    : require("assets/img/main/ico/ico_fav.png").default
                 }
               />
             </Link>
@@ -84,9 +83,7 @@ const MainTableItem = (props) => {
           >
             <img
               alt=""
-              src={
-                require("../assets/img/contents/ecmMain/bg_info.png").default
-              }
+              src={require("assets/img/contents/ecmMain/bg_info.png").default}
             />
           </Link>
           <ul

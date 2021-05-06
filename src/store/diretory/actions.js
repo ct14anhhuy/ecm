@@ -1,4 +1,4 @@
-import { directoryService } from "../../services/directoryService";
+import { directoryService } from "services/directoryService";
 import * as types from "./types";
 
 const getDirectories = () => {

@@ -3,10 +3,10 @@ import { Route } from "react-router-dom";
 import Error from "./Error";
 
 const PrivateRoute = (props) => {
-  const employee = props.employee;
+  const { employee, children } = props;
 
   return (
-    <Route render={() => (employee.id > 0 ? props.children : <Error />)}></Route>
+    <Route render={() => (employee.id > 0 ? children : <Error />)}></Route>
   );
 };
 

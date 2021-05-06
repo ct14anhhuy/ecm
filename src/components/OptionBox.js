@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { searchContents } from "store/fileInfo/actions";
 
 const OptionBox = (props) => {
   const [inpSearch, setInpSearch] = useState(null);
@@ -44,8 +46,8 @@ const OptionBox = (props) => {
             style={{ background: "none", marginLeft: "-2px" }}
             type="image"
             alt=""
-            src={require("../assets/img/main/btn/btn_search.gif").default}
-            onClick={() => props.setSearchStr(inpSearch)}
+            src={require("assets/img/main/btn/btn_search.gif").default}
+            onClick={() => props.searchContents(inpSearch)}
           />
         </div>
       </div>
@@ -53,4 +55,10 @@ const OptionBox = (props) => {
   );
 };
 
-export default OptionBox;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    searchContents: (searchStr) => dispatch(searchContents(searchStr)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(OptionBox);

@@ -1,6 +1,6 @@
 import * as types from "./types";
 
-const empployeeReducers = (state = {}, action) => {
+const employeeReducers = (state = {}, action) => {
   switch (action.type) {
     case types.LOGIN_SUCCESS:
       return action.payload.employee;
@@ -11,4 +11,4 @@ const empployeeReducers = (state = {}, action) => {
   }
 };
 
-export default empployeeReducers;
+export default employeeReducers;

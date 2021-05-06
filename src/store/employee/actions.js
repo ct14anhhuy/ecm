@@ -1,5 +1,5 @@
 import * as types from "./types";
-import { employeeService } from "../../services/employeeService";
+import { employeeService } from "services/employeeService";
 
 const login = () => {
   return async (dispatch) => {

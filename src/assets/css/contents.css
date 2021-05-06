@@ -20,7 +20,7 @@
   color: #fff;
   font-weight: bold;
   text-indent: 11px;
-  background: url(../img/contents/bg_cloud_tip.gif) 0 0 no-repeat;
+  background: url(assets/img/contents/bg_cloud_tip.gif) 0 0 no-repeat;
 }
 .sequence dd a {
   display: inline-block;
@@ -37,7 +37,7 @@
   height: 27px;
   border: solid #d5d5d5;
   border-width: 1px 0;
-  background: url(../img/contents/bg_rt_top.gif) 0 0 repeat-x;
+  background: url(assets/img/contents/bg_rt_top.gif) 0 0 repeat-x;
 }
 .expertWrap .tit strong {
   display: inline-block;
@@ -45,7 +45,7 @@
   line-height: 27px;
 }
 .expertWrap .expertCnt {
-  background: url(../img/contents/bg_rt_cnt.gif) 0 0 repeat-x;
+  background: url(assets/img/contents/bg_rt_cnt.gif) 0 0 repeat-x;
 }
 .expertWrap .viewMore {
   position: absolute;
@@ -63,7 +63,7 @@
   padding-right: 13px;
   font-size: 13px;
   color: #5f84bb !important;
-  background: url(../img/common/bu_blue_r_arrw.gif) 100% 1px no-repeat;
+  background: url(assets/img/common/bu_blue_r_arrw.gif) 100% 1px no-repeat;
 }
 
 .listTpA li {
@@ -115,7 +115,7 @@
   color: #fff;
   font-weight: bold;
   text-align: center;
-  background: url(../img/contents/bg_rt_num01.gif) left top repeat-x;
+  background: url(assets/img/contents/bg_rt_num01.gif) left top repeat-x;
 }
 .numberingList li span {
   display: inline-block;
@@ -132,7 +132,7 @@
 }
 
 .ratingBox {
-  background: url(../img/common/ico_star.gif) no-repeat left top;
+  background: url(assets/img/common/ico_star.gif) no-repeat left top;
   width: 59px;
   height: 10px;
   display: inline-block;
@@ -142,7 +142,7 @@
 }
 .ratingBox em {
   height: 10px;
-  background: url(../img/common/ico_star_on.gif) no-repeat left top;
+  background: url(assets/img/common/ico_star_on.gif) no-repeat left top;
   font-size: 0;
   display: block;
 }
@@ -150,7 +150,7 @@
   display: inline-block;
   height: 14px;
   padding-left: 5px;
-  background: url(../img/common/bg_ss_btn01.gif) no-repeat left top;
+  background: url(assets/img/common/bg_ss_btn01.gif) no-repeat left top;
 }
 .btnDesc em {
   display: inline-block;
@@ -159,7 +159,7 @@
   font-size: 13px;
   color: #fff;
   padding-right: 5px;
-  background: url(../img/common/bg_ss_btn01.gif) no-repeat right top;
+  background: url(assets/img/common/bg_ss_btn01.gif) no-repeat right top;
 }
 
 .cntViewList {
@@ -185,7 +185,7 @@
 }
 .knowSrcRst dt {
   padding-left: 12px;
-  background: url(../img/common/ln_blue_sq01.gif) left 4px no-repeat;
+  background: url(assets/img/common/ln_blue_sq01.gif) left 4px no-repeat;
 }
 .knowSrcRst dt strong {
   margin-right: 7px;
@@ -197,13 +197,13 @@
 }
 .knowSrcRst .icoDash {
   padding-left: 10px;
-  background: url(../img/common/ln_gy_minus.gif) left 6px no-repeat;
+  background: url(assets/img/common/ln_gy_minus.gif) left 6px no-repeat;
 }
 .knowSrcRst .date {
   padding-left: 5px;
   margin-left: 5px;
   color: #222;
-  background: url(../img/common/ln_gy_11.gif) left top no-repeat;
+  background: url(assets/img/common/ln_gy_11.gif) left top no-repeat;
 }
 .knowSrcRst .gyTxt {
   color: #222;
@@ -227,10 +227,10 @@
 }
 
 label.c_on {
-  background: url(../img/form/check-on.png) no-repeat;
+  background: url(assets/img/form/check-on.png) no-repeat;
 }
 label.r_on {
-  background: url(../img/form/radio-on.png) no-repeat;
+  background: url(assets/img/form/radio-on.png) no-repeat;
 }
 label {
   display: block;
@@ -249,10 +249,10 @@ label {
   height: 20px;
 }
 .i_radio {
-  background: url(../img/form/radio-off.png) no-repeat;
+  background: url(assets/img/form/radio-off.png) no-repeat;
 }
 .i_check {
-  background: url(../img/form/check-off.png) no-repeat;
+  background: url(assets/img/form/check-off.png) no-repeat;
 }
 .i_check input,
 .i_radio input {
@@ -267,14 +267,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue_S.png) no-repeat 0 0;
+  background: url(assets/img/form/btn_blue_S.png) no-repeat 0 0;
 }
 .btn_blueS_typeA button,
 .btn_blueS_typeA a,
 .btn_blueS_typeA span,
 .btn_blueS_typeA input {
   display: block;
-  background: url(../img/form/btn_blue_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue_S.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -303,14 +303,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue_M.png) no-repeat;
+  background: url(assets/img/form/btn_blue_M.png) no-repeat;
 }
 .btn_blueM_typeA button,
 .btn_blueM_typeA a,
 .btn_blueM_typeA span,
 .btn_blueM_typeA input {
   display: block;
-  background: url(../img/form/btn_blue_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue_M.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -339,14 +339,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue_L.png) no-repeat;
+  background: url(assets/img/form/btn_blue_L.png) no-repeat;
 }
 .btn_blueL_typeA button,
 .btn_blueL_typeA a,
 .btn_blueL_typeA span,
 .btn_blueL_typeA input {
   display: block;
-  background: url(../img/form/btn_blue_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue_L.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -375,14 +375,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue2_S.png) no-repeat;
+  background: url(assets/img/form/btn_blue2_S.png) no-repeat;
 }
 .btn_blueS_typeB button,
 .btn_blueS_typeB a,
 .btn_blueS_typeB span,
 .btn_blueS_typeB input {
   display: block;
-  background: url(../img/form/btn_blue2_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue2_S.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -411,14 +411,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue2_M.png) no-repeat;
+  background: url(assets/img/form/btn_blue2_M.png) no-repeat;
 }
 .btn_blueM_typeB button,
 .btn_blueM_typeB a,
 .btn_blueM_typeB span,
 .btn_blueM_typeB input {
   display: block;
-  background: url(../img/form/btn_blue2_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue2_M.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -447,14 +447,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue2_L.png) no-repeat;
+  background: url(assets/img/form/btn_blue2_L.png) no-repeat;
 }
 .btn_blueL_typeC button,
 .btn_blueL_typeC a,
 .btn_blueL_typeC span,
 .btn_blueL_typeC input {
   display: block;
-  background: url(../img/form/btn_blue2_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue2_L.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -482,14 +482,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_blue2_M.png) no-repeat;
+  background: url(assets/img/form/btn_blue2_M.png) no-repeat;
 }
 .btn_blueM_typeB_ps button,
 .btn_blueM_typeB_ps a,
 .btn_blueM_typeB_ps span,
 .btn_blueM_typeB_ps input {
   display: block;
-  background: url(../img/form/btn_blue2_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_blue2_M.png) no-repeat 100% 0;
   color: #fff !important;
   border: none;
   cursor: pointer;
@@ -516,14 +516,14 @@ label {
   display: inline-block;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white_S.png) no-repeat;
+  background: url(assets/img/form/btn_white_S.png) no-repeat;
 }
 .btn_whiteS_typeA button,
 .btn_whiteS_typeA a,
 .btn_whiteS_typeA span,
 .btn_whiteS_typeA input {
   display: block;
-  background: url(../img/form/btn_white_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white_S.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -551,14 +551,14 @@ label {
   display: inline-block;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white_S02.png) no-repeat;
+  background: url(assets/img/form/btn_white_S02.png) no-repeat;
 }
 .btn_whiteS_typeA02 button,
 .btn_whiteS_typeA02 a,
 .btn_whiteS_typeA02 span,
 .btn_whiteS_typeA02 input {
   display: block;
-  background: url(../img/form/btn_white_S02.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white_S02.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -587,14 +587,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white_M.png) no-repeat;
+  background: url(assets/img/form/btn_white_M.png) no-repeat;
 }
 .btn_whiteM_typeA button,
 .btn_whiteM_typeA a,
 .btn_whiteM_typeA span,
 .btn_whiteM_typeA input {
   display: block;
-  background: url(../img/form/btn_white_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white_M.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -623,14 +623,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white_L.png) no-repeat;
+  background: url(assets/img/form/btn_white_L.png) no-repeat;
 }
 .btn_whiteL_typeA button,
 .btn_whiteL_typeA a,
 .btn_whiteL_typeA span,
 .btn_whiteL_typeA input {
   display: block;
-  background: url(../img/form/btn_white_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white_L.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -660,14 +660,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_S.png) no-repeat;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat;
 }
 .btn_whiteS_typeB button,
 .btn_whiteS_typeB a,
 .btn_whiteS_typeB span,
 .btn_whiteS_typeB input {
   display: block;
-  background: url(../img/form/btn_white2_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -697,14 +697,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_M.png) no-repeat;
+  background: url(assets/img/form/btn_white2_M.png) no-repeat;
 }
 .btn_whiteM_typeB button,
 .btn_whiteM_typeB a,
 .btn_whiteM_typeB span,
 .btn_whiteM_typeB input {
   display: block;
-  background: url(../img/form/btn_white2_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_M.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -734,14 +734,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_M.png) no-repeat;
+  background: url(assets/img/form/btn_white2_M.png) no-repeat;
 }
 .btn_whiteM_typeB_ps button,
 .btn_whiteM_typeB_ps a,
 .btn_whiteM_typeB_ps span,
 .btn_whiteM_typeB_ps input {
   display: block;
-  background: url(../img/form/btn_white2_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_M.png) no-repeat 100% 0;
   color: #227cdb !important;
   border: none;
   cursor: pointer;
@@ -771,14 +771,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_L.png) no-repeat;
+  background: url(assets/img/form/btn_white2_L.png) no-repeat;
 }
 .btn_whiteL_typeB button,
 .btn_whiteL_typeB a,
 .btn_whiteL_typeB span,
 .btn_whiteL_typeB input {
   display: block;
-  background: url(../img/form/btn_white2_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_L.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -808,14 +808,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_S.png) no-repeat;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat;
 }
 .btn_whiteS_typeC button,
 .btn_whiteS_typeC a,
 .btn_whiteS_typeC span,
 .btn_whiteS_typeC input {
   display: block;
-  background: url(../img/form/btn_white2_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat 100% 0;
   color: #1169c2 !important;
   border: none;
   cursor: pointer;
@@ -845,14 +845,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_M.png) no-repeat;
+  background: url(assets/img/form/btn_white2_M.png) no-repeat;
 }
 .btn_whiteM_typeC button,
 .btn_whiteM_typeC a,
 .btn_whiteM_typeC span,
 .btn_whiteM_typeC input {
   display: block;
-  background: url(../img/form/btn_white2_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_M.png) no-repeat 100% 0;
   color: #1169c2 !important;
   border: none;
   cursor: pointer;
@@ -882,14 +882,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_L.png) no-repeat;
+  background: url(assets/img/form/btn_white2_L.png) no-repeat;
 }
 .btn_whiteL_typeC button,
 .btn_whiteL_typeC a,
 .btn_whiteL_typeC span,
 .btn_whiteL_typeC input {
   display: block;
-  background: url(../img/form/btn_white2_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_L.png) no-repeat 100% 0;
   color: #1169c2 !important;
   border: none;
   cursor: pointer;
@@ -919,14 +919,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_black_S.png) no-repeat;
+  background: url(assets/img/form/btn_black_S.png) no-repeat;
 }
 .btn_blackS_typeA button,
 .btn_blackS_typeA a,
 .btn_blackS_typeA span,
 .btn_blackS_typeA input {
   display: block;
-  background: url(../img/form/btn_black_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_black_S.png) no-repeat 100% 0;
   color: #a5acb9 !important;
   border: none;
   cursor: pointer;
@@ -955,14 +955,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_black_S1.png) no-repeat;
+  background: url(assets/img/form/btn_black_S1.png) no-repeat;
 }
 .btn_blackS_typeA_1 button,
 .btn_blackS_typeA_1 a,
 .btn_blackS_typeA_1 span,
 .btn_blackS_typeA_1 input {
   display: block;
-  background: url(../img/form/btn_black_S1.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_black_S1.png) no-repeat 100% 0;
   color: #a5acb9 !important;
   border: none;
   cursor: pointer;
@@ -992,14 +992,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_black_M.png) no-repeat;
+  background: url(assets/img/form/btn_black_M.png) no-repeat;
 }
 .btn_blackM_typeA button,
 .btn_blackM_typeA a,
 .btn_blackM_typeA span,
 .btn_blackM_typeA input {
   display: block;
-  background: url(../img/form/btn_black_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_black_M.png) no-repeat 100% 0;
   color: #a5acb9 !important;
   border: none;
   cursor: pointer;
@@ -1029,14 +1029,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_black_L.png) no-repeat;
+  background: url(assets/img/form/btn_black_L.png) no-repeat;
 }
 .btn_blackL_typeA button,
 .btn_blackL_typeA a,
 .btn_blackL_typeA span,
 .btn_blackL_typeA input {
   display: block;
-  background: url(../img/form/btn_black_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_black_L.png) no-repeat 100% 0;
   color: #a5acb9 !important;
   border: none;
   cursor: pointer;
@@ -1066,14 +1066,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_red_S.png) no-repeat;
+  background: url(assets/img/form/btn_red_S.png) no-repeat;
 }
 .btn_redS_typeA button,
 .btn_redS_typeA a,
 .btn_redS_typeA span,
 .btn_redS_typeA input {
   display: block;
-  background: url(../img/form/btn_red_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_red_S.png) no-repeat 100% 0;
   color: #f04c42 !important;
   border: none;
   cursor: pointer;
@@ -1103,14 +1103,14 @@ label {
   height: 33px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_red_M.png) no-repeat;
+  background: url(assets/img/form/btn_red_M.png) no-repeat;
 }
 .btn_redM_typeA button,
 .btn_redM_typeA a,
 .btn_redM_typeA span,
 .btn_redM_typeA input {
   display: block;
-  background: url(../img/form/btn_red_M.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_red_M.png) no-repeat 100% 0;
   color: #f04c42 !important;
   border: none;
   cursor: pointer;
@@ -1140,14 +1140,14 @@ label {
   height: 53px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_red_L.png) no-repeat;
+  background: url(assets/img/form/btn_red_L.png) no-repeat;
 }
 .btn_redL_typeA button,
 .btn_redL_typeA a,
 .btn_redL_typeA span,
 .btn_redL_typeA input {
   display: block;
-  background: url(../img/form/btn_red_L.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_red_L.png) no-repeat 100% 0;
   color: #f04c42 !important;
   border: none;
   cursor: pointer;
@@ -1224,14 +1224,14 @@ label {
 
 .bgBoxLayout {
   padding-top: 6px;
-  background: url("../img/contents/ecmMain/bg_boxTop.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_boxTop.png") 0 0 no-repeat;
 }
 .bgBoxLayout .bgBoxContent {
-  background: url("../img/contents/ecmMain/bg_boxBot.png") 0 bottom no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_boxBot.png") 0 bottom no-repeat;
   *zoom: 1;
 }
 .bgBoxLayout .bgBoxContent .alim {
-  background: url("../img/contents/ecmMain/bg_alim02.gif") 2px 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_alim02.gif") 2px 0 no-repeat;
   *zoom: 1;
 }
 .bgBoxLayout .bgBoxContent .alim:after {
@@ -1246,7 +1246,7 @@ label {
   padding-bottom: 3px;
 }
 .bgBoxLayout .bgBoxContent .alim span.bgTxt01 {
-  background: url("../img/contents/ecmMain/ico_alim_01.png") no-repeat center
+  background: url("assets/img/contents/ecmMain/ico_alim_01.png") no-repeat center
     7px;
   color: #222;
   font-size: 13px;
@@ -1258,7 +1258,7 @@ label {
   width: 54px;
 }
 .bgBoxLayout .bgBoxContent .alim span.bgTxt02 {
-  background: url("../img/contents/ecmMain/ico_alim_03.png") no-repeat center
+  background: url("assets/img/contents/ecmMain/ico_alim_03.png") no-repeat center
     7px;
   color: #222;
   font-size: 13px;
@@ -1270,7 +1270,7 @@ label {
   width: 54px;
 }
 .bgBoxLayout .bgBoxContent .alim span.bgTxt03 {
-  background: url("../img/contents/ecmMain/ico_alim_04.png") no-repeat center
+  background: url("assets/img/contents/ecmMain/ico_alim_04.png") no-repeat center
     7px;
   color: #222;
   font-size: 13px;
@@ -1326,13 +1326,13 @@ label {
   color: #222;
 }
 .areaL .btnBox li a.btn_01 {
-  background: url("../img/contents/ecmMain/bg_btnBox01.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnBox01.png") 0 0 no-repeat;
 }
 .areaL .btnBox li a.btn_02 {
-  background: url("../img/contents/ecmMain/bg_btnBox02.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnBox02.png") 0 0 no-repeat;
 }
 .areaL .btnBox li a.btn_03 {
-  background: url("../img/contents/ecmMain/bg_btnBox03.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnBox03.png") 0 0 no-repeat;
 }
 
 .ecmContent .favoritesBox {
@@ -1405,7 +1405,7 @@ label {
   width: 157px;
   padding: 4px 30px 6px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("../img/contents/ecmMain/bg_select.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/bg_select.gif") no-repeat
     right 3px;
 }
 .ecmWrap .selectyzeValue span {
@@ -1477,7 +1477,7 @@ label {
 .areaCBox .btnHead .type {
   float: right;
   margin-top: 8px;
-  background: url("../img/contents/ecmMain/bg_type_line.gif") 38px 2px
+  background: url("assets/img/contents/ecmMain/bg_type_line.gif") 38px 2px
     no-repeat;
 }
 .areaCBox .btnHead .type a {
@@ -1490,7 +1490,7 @@ label {
   height: 26px;
   line-height: 26px;
   border: 1px solid #c7cacd;
-  background: #fff url("../img/contents/ecmMain/bg_select.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/bg_select.gif") no-repeat
     right 3px;
   z-index: 11;
 }
@@ -1514,11 +1514,11 @@ label {
   width: 24px;
   text-indent: -999px;
   vertical-align: top;
-  background: url("../img/contents/ecmMain/bg_depth_off.png") 6px 9px
+  background: url("assets/img/contents/ecmMain/bg_depth_off.png") 6px 9px
     no-repeat;
 }
 .selectBoxC .stepBox > li.select_folder a.on {
-  background: url("../img/contents/ecmMain/bg_depth_on.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_depth_on.png") 0 0 no-repeat;
 }
 .selectBoxC .stepBox > li.select_folder .subStep {
   right: -140px;
@@ -1536,10 +1536,10 @@ label {
 .selectBoxC .stepBox > li > a.btnSub {
   width: 20px;
   text-indent: -999px;
-  background: url("../img/contents/ecmMain/bg_arrowR.png") 6px 8px no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_arrowR.png") 6px 8px no-repeat;
 }
 .selectBoxC .stepBox > li > a.on {
-  background: url("../img/contents/ecmMain/bg_select.gif") -5px 4px no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_select.gif") -5px 4px no-repeat;
 }
 .selectBoxC .stepBox > li .subStep {
   display: none;
@@ -1572,7 +1572,7 @@ label {
 .selectBoxC .baseLink {
   display: block;
   padding-left: 34px;
-  background: url("../img/contents/ecmMain/ico_folder01.png") 12px 5px
+  background: url("assets/img/contents/ecmMain/ico_folder01.png") 12px 5px
     no-repeat;
 }
 .selectBoxC .baseBox {
@@ -1599,43 +1599,43 @@ label {
   color: #222;
 }
 .selectBoxC .baseBox ul li a.icoFolder01 {
-  background: url("../img/contents/ecmMain/ico_folder02.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder02.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder02 {
-  background: url("../img/contents/ecmMain/ico_folder03.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder03.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder03 {
-  background: url("../img/contents/ecmMain/ico_folder04.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder04.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder04 {
-  background: url("../img/contents/ecmMain/ico_folder05.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder05.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder05 {
-  background: url("../img/contents/ecmMain/ico_folder06.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder06.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder06 {
-  background: url("../img/contents/ecmMain/ico_folder07.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder07.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder07 {
-  background: url("../img/contents/ecmMain/ico_folder08.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder08.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder08 {
-  background: url("../img/contents/ecmMain/ico_folder09.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder09.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder09 {
-  background: url("../img/contents/ecmMain/ico_folder10.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder10.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder10 {
-  background: url("../img/contents/ecmMain/ico_folder11.png") 10px 4px
+  background: url("assets/img/contents/ecmMain/ico_folder11.png") 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a:hover {
@@ -1664,24 +1664,24 @@ label {
   margin-right: 5px;
   padding-left: 12px;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_register.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_register.gif") 0 0 no-repeat;
 }
 .areaCTop .btnBox .btn .btnPersonalRegister {
   width: 80px;
   margin-right: 5px;
   padding-left: 12px;
   color: #555;
-  background: url("../img/contents/ecmMain/bg_register.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_register.gif") 0 0 no-repeat;
 }
 .areaCTop .btnBox .btn .btnDelete {
   width: 78px;
   text-align: center;
   font-size: 13px;
-  background: url("../img/contents/ecmMain/bg_delete.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_delete.gif") 0 0 no-repeat;
 }
 /* [2012.11.01 수정]
 .areaCTop .btnBox .btn .btnCreate, 
-.areaCTop .btnBox .btn .btnAttr {width:78px; margin-right:5px; text-align:center; font-size:13px; background:url("../img/contents/ecmMain/bg_create.gif") 0 0 no-repeat;}
+.areaCTop .btnBox .btn .btnAttr {width:78px; margin-right:5px; text-align:center; font-size:13px; background:url("assets/img/contents/ecmMain/bg_create.gif") 0 0 no-repeat;}
 */
 
 .btnBlueTypeOn {
@@ -1689,7 +1689,7 @@ label {
   min-width: 78px;
   margin-right: 5px;
   padding-left: 3px;
-  background: url("../img/contents/ecmMain/bg_btnBlueTypeL_on.png") 0 0
+  background: url("assets/img/contents/ecmMain/bg_btnBlueTypeL_on.png") 0 0
     no-repeat;
 } /* [2012.11.01 추가] */
 .btnBlueTypeOn span {
@@ -1699,7 +1699,7 @@ label {
   text-align: center;
   font-size: 13px;
   color: #fff;
-  background: url("../img/contents/ecmMain/bg_btnBlueTypeR_on.png") right 0
+  background: url("assets/img/contents/ecmMain/bg_btnBlueTypeR_on.png") right 0
     no-repeat;
 } /* [2012.11.01 추가] */
 
@@ -1708,7 +1708,7 @@ label {
   min-width: 78px;
   margin-right: 5px;
   padding-left: 3px;
-  background: url("../img/contents/ecmMain/bg_btnBlueTypeL_off.png") 0 0
+  background: url("assets/img/contents/ecmMain/bg_btnBlueTypeL_off.png") 0 0
     no-repeat;
 } /* [2012.11.01 추가] */
 .btnBlueTypeOff span {
@@ -1718,7 +1718,7 @@ label {
   text-align: center;
   font-size: 13px;
   color: #fff;
-  background: url("../img/contents/ecmMain/bg_btnBlueTypeR_off.png") right 0
+  background: url("assets/img/contents/ecmMain/bg_btnBlueTypeR_off.png") right 0
     no-repeat;
 } /* [2012.11.01 추가] */
 
@@ -1764,7 +1764,7 @@ label {
   width: 22px;
   height: 22px;
   text-indent: -5000px;
-  background: url("../img/contents/ecmMain/btn_refresh.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/btn_refresh.png") 0 0 no-repeat;
   overflow: hidden;
 } /* [2012.10.26 추가] */
 .areaCTop .btnBox .date .btnRefresh:hover {
@@ -1779,7 +1779,7 @@ label {
   width: 22px;
   height: 22px;
   text-indent: -5000px;
-  background: url("../img/contents/ecmMain/btn_refresh.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/btn_refresh.png") 0 0 no-repeat;
   overflow: hidden;
 } /* [2012.10.26 추가] */
 .areaCTop .btnBox .dateAlim .btnRefresh:hover {
@@ -1800,7 +1800,7 @@ label {
   margin-left: -1px;
   padding: 0 8px;
   font-size: 13px;
-  background: url("../img/contents/ecmMain/bg_date_line.gif") left 1px
+  background: url("assets/img/contents/ecmMain/bg_date_line.gif") left 1px
     no-repeat;
 }
 .areaCTop .btnBox .date ul li a.on {
@@ -1848,7 +1848,7 @@ label {
   height: 122px;
   margin: 0 12px 12px 0;
   padding-top: 31px;
-  background: url("../img/contents/ecmMain/bg_list_thumnBox.png") 0 0
+  background: url("assets/img/contents/ecmMain/bg_list_thumnBox.png") 0 0
     no-repeat;
 }
 .listContent .thumnList .thumn > li .i_check {
@@ -1889,7 +1889,7 @@ label {
   margin-right: -1px;
   padding-top: 10px;
   text-align: center;
-  background: url("../img/contents/ecmMain/bg_text_line.gif") right 3px
+  background: url("assets/img/contents/ecmMain/bg_text_line.gif") right 3px
     no-repeat;
 }
 .listContent .thumnList .thumn > li .text > a:hover {
@@ -1899,7 +1899,7 @@ label {
   width: 47px;
   padding-right: 10px;
   color: #018dee;
-  background: url("../img/contents/ecmMain/bg_info.png") 40px 15px no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_info.png") 40px 15px no-repeat;
 }
 .listContent .thumnList .thumn > li .text > a.infoOn {
   position: relative;
@@ -1909,7 +1909,7 @@ label {
   color: #018dee;
   border: 1px solid #648ec3;
   border-width: 1px 1px 0 1px;
-  background: #fff url("../img/contents/ecmMain/bg_info.png") 40px 15px
+  background: #fff url("assets/img/contents/ecmMain/bg_info.png") 40px 15px
     no-repeat;
   z-index: 20;
 }
@@ -1963,7 +1963,7 @@ label {
   background-color: #fff;
 }
 .folderText .infoMenu {
-  background: #fff url("../img/contents/ecmMain/bg_dotBlue.gif") 0 0 repeat-x;
+  background: #fff url("assets/img/contents/ecmMain/bg_dotBlue.gif") 0 0 repeat-x;
 }
 .btnAdd .infoMenu {
   top: 23px;
@@ -1983,7 +1983,7 @@ label {
   padding: 10px 9px 0 0;
   text-align: center;
   color: #018dee;
-  background: url("../img/contents/ecmMain/bg_info.png") 98px 15px no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_info.png") 98px 15px no-repeat;
 }
 .listContent .thumnList .thumn li .folderText .infoOn {
   display: block;
@@ -1998,7 +1998,7 @@ label {
   text-align: center;
   border: 1px solid #648ec3;
   border-width: 1px 1px 0 1px;
-  background: #fff url("../img/contents/ecmMain/bg_info.png") 97px 15px
+  background: #fff url("assets/img/contents/ecmMain/bg_info.png") 97px 15px
     no-repeat;
   z-index: 20;
 }
@@ -2017,7 +2017,7 @@ label {
   margin-right: -1px;
   padding-top: 10px;
   text-align: center;
-  background: url("../img/contents/ecmMain/bg_text_line.gif") right 3px
+  background: url("assets/img/contents/ecmMain/bg_text_line.gif") right 3px
     no-repeat;
 }
 .listContent .thumnList .thumn > li .wasteText > a:hover {
@@ -2192,7 +2192,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: left;
   line-height: 19px;
   border: 1px solid #c7cacd;
-  background: url("../img/contents/ecmMain/bg_btn_sel.gif") right 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btn_sel.gif") right 0 no-repeat;
 }
 .normalTb tbody tr.btnAddOn td .addBox .infoMenu {
   top: 23px;
@@ -2204,7 +2204,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   margin: -3px 0;
   color: #222;
   line-height: 24px;
-  background: url("../img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
 } /* [2012.10.09 추가] */
 .normalTb tbody .btnAsk {
   display: inline-block;
@@ -2324,7 +2324,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   padding-top: 3px;
   color: #fff;
   vertical-align: top;
-  background: url("../img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
 }
 
 /* ecm 메인(우측) 2012-09-24 채승훈 */
@@ -2334,7 +2334,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   height: 21px;
   margin-bottom: 18px;
   padding: 6px 0 0 83px;
-  background: url("../img/contents/ecmMain/bg_admin.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_admin.png") 0 0 no-repeat;
 }
 .areaR .btnSetup {
   display: block;
@@ -2342,7 +2342,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   height: 21px;
   margin-bottom: 18px;
   padding: 6px 0 0 83px;
-  background: url("../img/contents/ecmMain/bg_setupB.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_setupB.png") 0 0 no-repeat;
 }
 
 .bestBox {
@@ -2352,7 +2352,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .bestBox .bgBoxLayout {
   position: relative;
   padding-top: 27px;
-  background: url("../img/contents/ecmMain/bg_boxTop_blue.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_boxTop_blue.png") 0 0 no-repeat;
 }
 .bestBox .bgBoxLayout .tabText {
   position: absolute;
@@ -2400,7 +2400,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #222;
   font: bold 9px/17px "Verdana";
   text-align: center;
-  background: url("../img/contents/ecmMain/bg_num.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_num.gif") 0 0 no-repeat;
 }
 .best li .imgTitle {
   padding-top: 14px;
@@ -2461,7 +2461,7 @@ a.btn_content {
   color: #fff;
   line-height: 33px;
   letter-spacing: -1px;
-  background: url("../img/contents/ecmMain/bg_content.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_content.png") 0 0 no-repeat;
 }
 a.btn_content:hover {
   color: #fff;
@@ -2517,7 +2517,7 @@ a.btn_content:hover {
   padding-left: 10px;
   font-weight: bold;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_redDot.gif") 0 5px no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_redDot.gif") 0 5px no-repeat;
 }
 .popLayerWrap .contents .popSubTitle .etc {
   position: absolute;
@@ -2570,7 +2570,7 @@ a.btn_content:hover {
   height: 22px;
   margin-right: 0;
   padding: 4px 9px 0 29px;
-  background: url(../img/popup/ico/ico_reset.png) no-repeat 15px 8px;
+  background: url(assets/img/popup/ico/ico_reset.png) no-repeat 15px 8px;
   border: 1px solid #5491b1;
   color: #5491b1;
 } /* 2014-11-05 수정 */
@@ -2658,7 +2658,7 @@ a.btn_content:hover {
 #popLayerB .contents {
   height: 559px;
   padding: 0;
-  background: #fff url("../img/contents/ecmMain/bg_popContent.gif") 0 0
+  background: #fff url("assets/img/contents/ecmMain/bg_popContent.gif") 0 0
     repeat-y;
 }
 #popLayerB .contents .columnL {
@@ -2690,7 +2690,7 @@ a.btn_content:hover {
   margin-right: -14px;
   font-weight: bold;
   color: #fff;
-  background: url("../img/contents/ecmMain/bg_popMenuOn.gif") 0 0 repeat-y;
+  background: url("assets/img/contents/ecmMain/bg_popMenuOn.gif") 0 0 repeat-y;
 }
 
 #popLayerB .contents .columnR {
@@ -2715,14 +2715,14 @@ a.btn_content:hover {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("../img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
 }
 #popLayerB .contents .popSubTitle .etc span {
   display: inline-block;
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
 }
 #popLayerB .contents .contentName {
   padding: 10px;
@@ -2817,7 +2817,7 @@ a.btn_content:hover {
   color: #555555;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url("../img/common/select_bg.gif") no-repeat scroll 100% 50%
+  background: url("assets/img/common/select_bg.gif") no-repeat scroll 100% 50%
     transparent;
 }
 #popLayerB .DivSelectyze .UlSelectize {
@@ -2895,7 +2895,7 @@ a.btn_content:hover {
   height: 31px;
   margin-top: 5px;
   line-height: 31px;
-  background: url("../img/contents/ecmMain/bg_guide_off.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_guide_off.gif") 0 0 no-repeat;
 }
 #popLayerC .guideBox .guide .standard {
   display: inline-block;
@@ -2909,7 +2909,7 @@ a.btn_content:hover {
   color: #222;
 }
 #popLayerC .guideBox .on {
-  background: url("../img/contents/ecmMain/bg_guide_on.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_guide_on.gif") 0 0 no-repeat;
 }
 #popLayerC .guideBox .on .info,
 #popLayerC .guideBox .on .standard {
@@ -2928,7 +2928,7 @@ a.btn_content:hover {
 #popLayerC .guideBox .guideEx ul > li {
   padding: 0 26px 17px 26px;
   line-height: 18px;
-  background: url("../img/contents/ecmMain/bg_blueDot.gif") 20px 7px
+  background: url("assets/img/contents/ecmMain/bg_blueDot.gif") 20px 7px
     no-repeat;
 }
 #popLayerC .guideBox .guideEx ul > li .dep2 {
@@ -3005,7 +3005,7 @@ a.btn_content:hover {
   margin-bottom: 25px;
   padding-bottom: 22px;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_columnBox.gif") 0 bottom
+  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 bottom
     repeat-x;
   *zoom: 1;
 } /* [2012.10.09 수정] */
@@ -3132,7 +3132,7 @@ a.btn_content:hover {
 .choiceBox .choiceTitle {
   position: relative;
   height: 31px;
-  background: url("../img/contents/ecmMain/bg_choiceTitleC.png") 0 0
+  background: url("assets/img/contents/ecmMain/bg_choiceTitleC.png") 0 0
     no-repeat;
 }
 .choiceBox .choiceTitle a.btnTitle {
@@ -3142,7 +3142,7 @@ a.btn_content:hover {
   font-weight: bold;
   line-height: 27px;
   color: #fff;
-  background: url("../img/contents/ecmMain/bg_choiceArrow.gif") 190px 15px
+  background: url("assets/img/contents/ecmMain/bg_choiceArrow.gif") 190px 15px
     no-repeat;
 }
 .popLayerWrap .choiceBox .choiceTitle a.btnTitle {
@@ -3261,7 +3261,7 @@ a.btn_content:hover {
 /* 탭스타일2 2014-07-16추가 */
 #popLayerA .contents .tabBox2 {
   height: 33px;
-  background: url("../img/popup/btn/bg_tab.gif") 0 0 repeat-x;
+  background: url("assets/img/popup/btn/bg_tab.gif") 0 0 repeat-x;
   border: 1px solid #d9d9d9;
   margin-bottom: 3px;
 }
@@ -3276,7 +3276,7 @@ a.btn_content:hover {
   font-weight: bold;
 }
 #popLayerA .contents .tabBox2 li.on {
-  background: url("../img/popup/btn/bg_tab_on.gif") 0 0 no-repeat;
+  background: url("assets/img/popup/btn/bg_tab_on.gif") 0 0 no-repeat;
   margin: -1px;
 }
 #popLayerA .contents .tabBox2 li.on a {
@@ -3356,7 +3356,7 @@ a.btn_content:hover {
   color: #222;
   border: 1px solid #c7cacd;
   vertical-align: top;
-  background: #fff url("../img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
     right -1px;
 }
 
@@ -3429,7 +3429,7 @@ a.btn_content:hover {
   text-overflow: ellipsis;
   width: 320px;
   display: block;
-  background: url("../img/contents/ecmMain/ico_folder01.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/ico_folder01.png") 0 0 no-repeat;
   padding-left: 25px;
   margin-left: 10px;
 }
@@ -3472,7 +3472,7 @@ a.btn_content:hover {
   margin-top: 3px;
   border: 1px solid #c8c8c8;
   border-width: 1px 1px 1px 0;
-  background: #fff url(../img/popup/ico/calendar.png) 50% 50% no-repeat;
+  background: #fff url(assets/img/popup/ico/calendar.png) 50% 50% no-repeat;
   text-indent: -9999px;
   overflow: hidden;
 }
@@ -3576,7 +3576,7 @@ a.btn_content:hover {
 }
 .myconList .treeConBox .treeCon {
   color: #000;
-  background: url("../img/main/bg/bg_treeCon.gif") 0 0 repeat;
+  background: url("assets/img/main/bg/bg_treeCon.gif") 0 0 repeat;
 }
 .myconList .treeConBox .treeCon img {
   vertical-align: middle;
@@ -3611,7 +3611,7 @@ a.btn_content:hover {
   width: 290px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("../img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
     right -1px;
 }
 .normalPopTb .selectyzeValue span {
@@ -3675,7 +3675,7 @@ normalPopTb .UlSelectize .optgroupTitle {
   height: 0;
   margin-left: -360px;
   padding: 0 10px;
-  background: url("../img/contents/ecmMain/bg_choiceBox.png") 10px 0
+  background: url("assets/img/contents/ecmMain/bg_choiceBox.png") 10px 0
     no-repeat;
   overflow: hidden;
   z-index: 10000;
@@ -3739,7 +3739,7 @@ normalPopTb .UlSelectize .optgroupTitle {
   width: 60px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("../img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
     right -1px;
 }
 .popSearchBox .selectyzeValue span {
@@ -3841,7 +3841,7 @@ normalPopTb .UlSelectize .optgroupTitle {
   text-align: center;
 }
 .paging a {
-  background: url(../img/common/paging_bg.gif) left top no-repeat;
+  background: url(assets/img/common/paging_bg.gif) left top no-repeat;
   width: 30px;
   height: 14px;
   display: inline-block;
@@ -3862,30 +3862,30 @@ normalPopTb .UlSelectize .optgroupTitle {
   color: #1169c2;
 }
 .paging a.first {
-  background: url(../img/common/paging_first.gif) left top no-repeat;
+  background: url(assets/img/common/paging_first.gif) left top no-repeat;
 }
 .paging a:hover.first {
-  background: url(../img/common/paging_first_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_first_on.gif) left top no-repeat;
 }
 .paging a.prev {
-  background: url(../img/common/paging_prv.gif) left top no-repeat;
+  background: url(assets/img/common/paging_prv.gif) left top no-repeat;
   margin: 0 14px 0 0;
 }
 .paging a:hover.prev {
-  background: url(../img/common/paging_prv_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_prv_on.gif) left top no-repeat;
 }
 .paging a.next {
-  background: url(../img/common/paging_nxt.gif) left top no-repeat;
+  background: url(assets/img/common/paging_nxt.gif) left top no-repeat;
   margin: 0 0 0 14px;
 }
 .paging a:hover.next {
-  background: url(../img/common/paging_nxt_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_nxt_on.gif) left top no-repeat;
 }
 .paging a.end {
-  background: url(../img/common/paging_end.gif) left top no-repeat;
+  background: url(assets/img/common/paging_end.gif) left top no-repeat;
 }
 .paging a:hover.end {
-  background: url(../img/common/paging_end_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_end_on.gif) left top no-repeat;
 }
 
 .lineH18 {
@@ -3907,7 +3907,7 @@ normalPopTb .UlSelectize .optgroupTitle {
   margin-top: 18px;
   display: inline-block;
   padding: 0 0 10px 15px;
-  background: url(../img/contents/ecmMain/bg_redDot.gif) no-repeat 7px 5px;
+  background: url(assets/img/contents/ecmMain/bg_redDot.gif) no-repeat 7px 5px;
 }
 .partTitle span.etc {
   position: absolute;
@@ -4014,7 +4014,7 @@ normalPopTb .UlSelectize .optgroupTitle {
   text-align: left;
   padding: 6px 0 0 12px;
   margin-bottom: 5px;
-  background: url("../img/contents/ecmMain/btn_partBg.gif") repeat-x left top;
+  background: url("assets/img/contents/ecmMain/btn_partBg.gif") repeat-x left top;
   display: inline-block;
 }
 
@@ -4055,7 +4055,7 @@ p.completion {
   position: relative;
   margin-top: 20px;
   padding-top: 10px;
-  background: url("../img/contents/ecmMain/bg_columnBox.gif") repeat-x left
+  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") repeat-x left
     top;
   height: 28px;
 }
@@ -4300,7 +4300,7 @@ table.raiT3 tbody td .i_check em {
   display: inline-block;
   height: 20px;
   padding-left: 9px;
-  background: url(../img/form/btn_gray_ss.gif) left top no-repeat;
+  background: url(assets/img/form/btn_gray_ss.gif) left top no-repeat;
 }
 .btnGrayS a {
   display: inline-block;
@@ -4311,7 +4311,7 @@ table.raiT3 tbody td .i_check em {
   font-weight: normal;
   color: #222;
   letter-spacing: -1px;
-  background: url(../img/form/btn_gray_ss.gif) right top no-repeat;
+  background: url(assets/img/form/btn_gray_ss.gif) right top no-repeat;
 }
 
 .wid96 {
@@ -4470,7 +4470,7 @@ table.raiT3 tbody td .i_check em {
   margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 24px;
-  background: url("../img/contents/ecmMain/bg_columnBox.gif") repeat-x left
+  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") repeat-x left
     top;
   height: 28px;
 }
@@ -4647,7 +4647,7 @@ table.conDel01 .maxH {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("../img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
 }
 #popLayerA .contents .popSubTitle .etc span {
   display: inline-block;
@@ -4655,7 +4655,7 @@ table.conDel01 .maxH {
   line-height: 20px;
   padding: 0 8px 0 0;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
 }
 
 .executive .partBox01 {
@@ -4675,7 +4675,7 @@ table.conDel01 .maxH {
 }
 .executive .partBox02 a,
 .columnBox .partBox02 a {
-  background: url("../img/contents/ecmMain/btn_partBg02.gif") no-repeat left
+  background: url("assets/img/contents/ecmMain/btn_partBg02.gif") no-repeat left
     top;
   padding-left: 11px;
   width: 51px;
@@ -4692,7 +4692,7 @@ table.conDel01 .maxH {
 }
 .centerBtn {
   text-align: center;
-  background: url("../img/contents/ecmMain/bg_columnBox.gif") 0 top repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 top repeat-x;
   padding-top: 25px;
   margin-top: 20px;
 }
@@ -4716,7 +4716,7 @@ table.conDel01 .maxH {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("../img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
   font-weight: normal;
 }
 #popLayerB .columnR .columnBox .title a.addBtn span {
@@ -4724,7 +4724,7 @@ table.conDel01 .maxH {
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
 }
 
 #popLayerB .contents .contentName {
@@ -4806,7 +4806,7 @@ table.conDel01 .maxH {
   text-align: left;
   padding: 6px 0 0 5px;
   margin-bottom: 5px;
-  background: url("../img/contents/ecmMain/btn_partBg.gif") no-repeat left
+  background: url("assets/img/contents/ecmMain/btn_partBg.gif") no-repeat left
     top;
   display: inline-block;
 }
@@ -4883,7 +4883,7 @@ table.apprT td .selectyzeValue {
   width: 60px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("../img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
     right -1px;
 }
 table.apprT td .selectyzeValue span {
@@ -4936,7 +4936,7 @@ table.apprT td .flTxt {
   display: inline-block;
   padding-left: 2px;
   font-size: 13px;
-  background: url("../img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
 }
 #popLayerA .contents .converg01 a span {
   display: inline-block;
@@ -4944,7 +4944,7 @@ table.apprT td .flTxt {
   padding: 0 8px;
   line-height: 20px;
   color: #222;
-  background: url("../img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
   font-weight: normal;
 }
 
@@ -4973,7 +4973,7 @@ table.subL td img {
 
 /* 1011_ecm_popup23.html */
 .folderTxt span {
-  background: url("../img/contents/ecmMain/img_folderTxt.png") right center
+  background: url("assets/img/contents/ecmMain/img_folderTxt.png") right center
     no-repeat;
   padding-right: 17px;
   margin-right: 9px;
@@ -4999,7 +4999,7 @@ table.subL td img {
   color: #555555;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url("../img/common/select_bg.gif") no-repeat scroll 100% 50%
+  background: url("assets/img/common/select_bg.gif") no-repeat scroll 100% 50%
     transparent;
 }
 .pop28 .DivSelectyze {
@@ -5078,7 +5078,7 @@ table.subL td img {
   text-align: left;
   padding: 6px 0 0 5px;
   margin-bottom: 5px;
-  background: url("../img/contents/ecmMain/btn_partBg.gif") no-repeat left
+  background: url("assets/img/contents/ecmMain/btn_partBg.gif") no-repeat left
     top;
   display: inline-block;
 }
@@ -5092,7 +5092,7 @@ table.subL td img {
   color: #555555;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url("../img/common/select_bg.gif") no-repeat scroll 100% 50%
+  background: url("assets/img/common/select_bg.gif") no-repeat scroll 100% 50%
     transparent;
 }
 #popLayerA .DivSelectyze .UlSelectize {
@@ -5246,14 +5246,14 @@ table.subL td img {
   font-size: 11px;
   line-height: 14px;
   font-weight: normal;
-  background: url("../img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
 }
 .printingContent .optionBox .btnGray span {
   display: inline-block;
   height: 16px;
   padding: 4px 8px 0 0;
   color: #555;
-  background: url("../img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
 }
 
 .printingContent .term01 {
@@ -5337,7 +5337,7 @@ table.subL td img {
   color: #555555;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url("../img/common/select_bg.gif") no-repeat scroll 100% 50%
+  background: url("assets/img/common/select_bg.gif") no-repeat scroll 100% 50%
     transparent;
 }
 .printingContent .selBox .DivSelectyze .UlSelectize {
@@ -5389,18 +5389,18 @@ table.subL td img {
   font-size: 12px;
   line-height: 15px;
   font-weight: normal;
-  background: url("../img/contents/ecmMain/bg_btnTxt.gif") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btnTxt.gif") 0 0 no-repeat;
 } /*2013-01-09 수정*/
 #printLayer .optionBox .btnGray span {
   display: inline-block;
   height: 17px;
   padding: 4px 8px 0 0;
   color: #555;
-  background: url("../img/contents/ecmMain/bg_btnTxt.gif") right 0 repeat-x;
+  background: url("assets/img/contents/ecmMain/bg_btnTxt.gif") right 0 repeat-x;
 } /*2013-01-09 수정*/
 #printLayer .optionBox .tit {
   padding-right: 7px;
-  background: url(../img/contents/ecmMain/bg_2x10_333333.gif) 100% 50%
+  background: url(assets/img/contents/ecmMain/bg_2x10_333333.gif) 100% 50%
     no-repeat;
 } /*2013-01-09 수정*/
 #printLayer .optionBox .tit-part {
@@ -5416,7 +5416,7 @@ table.subL td img {
   color: #555555;
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url("../img/common/select_bg.gif") no-repeat scroll 100% 50%
+  background: url("assets/img/common/select_bg.gif") no-repeat scroll 100% 50%
     transparent;
 }
 #printLayer .DivSelectyze .UlSelectize {
@@ -5603,11 +5603,11 @@ table.subL td img {
   margin: 0;
 } /*2013-01-23 수정 : 선택자 수정*/
 #printLayer .tbl-type1 tbody td.btn-arrow-on {
-  background: url(../img/contents/ecmInform/btn_arrow_on.gif) 98% 50%
+  background: url(assets/img/contents/ecmInform/btn_arrow_on.gif) 98% 50%
     no-repeat;
 }
 #printLayer .tbl-type1 tbody td.btn-arrow-off {
-  background: url(../img/contents/ecmInform/btn_arrow_off.gif) 98% 50%
+  background: url(assets/img/contents/ecmInform/btn_arrow_off.gif) 98% 50%
     no-repeat;
 }
 #printLayer .tbl-type1 tbody tr.con-info {
@@ -5640,10 +5640,10 @@ table.subL td img {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url(../img/popup/btn/check02-off.gif) 0 0 no-repeat;
+  background: url(assets/img/popup/btn/check02-off.gif) 0 0 no-repeat;
 }
 #printLayer .check-type1.on {
-  background: url(../img/popup/btn/check02-on.gif) 0 0 no-repeat;
+  background: url(assets/img/popup/btn/check02-on.gif) 0 0 no-repeat;
 }
 #printLayer .check-type1 input.check {
   border: 0 none;
@@ -5664,7 +5664,7 @@ table.subL td img {
 #printLayer .box-type1 .tit {
   margin-right: 8px;
   padding-right: 11px;
-  background: url(../img/popup/bg/bg_1x11_000000.gif) 100% 2px no-repeat;
+  background: url(assets/img/popup/bg/bg_1x11_000000.gif) 100% 2px no-repeat;
 }
 #printLayer .box-type1 label {
   display: inline;
@@ -5738,7 +5738,7 @@ table.subL td img {
 .sortingBox .icoBtn li {
   float: left;
   margin-left: -1px;
-  background: url("../img/main/bg/bg_sorting.gif") 0 8px no-repeat;
+  background: url("assets/img/main/bg/bg_sorting.gif") 0 8px no-repeat;
 }
 .sortingBox .icoBtn li a {
   padding: 6px 12px 8px 12px;
@@ -5752,7 +5752,7 @@ table.subL td img {
 .sortingBox .dayBtn li {
   float: left;
   margin-right: -1px;
-  background: url("../img/main/bg/bg_sortingS.gif") right 11px no-repeat;
+  background: url("assets/img/main/bg/bg_sortingS.gif") right 11px no-repeat;
 }
 .sortingBox .dayBtn li a {
   min-width: 33px;
@@ -5791,7 +5791,7 @@ table.subL td img {
   height: 25px;
   line-height: 25px;
   padding-left: 10px;
-  background: url(../img/main/btn/btn_bluebd.gif) no-repeat 0 0;
+  background: url(assets/img/main/btn/btn_bluebd.gif) no-repeat 0 0;
   color: #3375bf;
 }
 .sorting_btn a span {
@@ -5799,19 +5799,19 @@ table.subL td img {
   height: 25px;
   padding-right: 10px;
   line-height: 25px;
-  background: url(../img/main/btn/btn_bluebd.gif) no-repeat 100% 0;
+  background: url(assets/img/main/btn/btn_bluebd.gif) no-repeat 100% 0;
 }
 .sorting_btn a em {
   padding-left: 15px;
 }
 .sorting_btn a em.add {
-  background: url(../img/main/btn/bg_add.gif) no-repeat 0 50%;
+  background: url(assets/img/main/btn/bg_add.gif) no-repeat 0 50%;
 }
 .sorting_btn a em.new {
-  background: url(../img/main/btn/bg_new.gif) no-repeat 0 50%;
+  background: url(assets/img/main/btn/bg_new.gif) no-repeat 0 50%;
 }
 .sorting_btn a em.movie {
-  background: url(../img/main/btn/bg_movie.gif) no-repeat 0 50%;
+  background: url(assets/img/main/btn/bg_movie.gif) no-repeat 0 50%;
 }
 /* //2015-11-17 추가 */
 
@@ -5823,7 +5823,7 @@ table.subL td img {
 .tree_box li.root .folder {
   width: 21px;
   height: 27px;
-  background: url(../img/favorites/ic_ftree_tit.png) no-repeat 0 4px;
+  background: url(assets/img/favorites/ic_ftree_tit.png) no-repeat 0 4px;
 }
 
 .tree_box ul {
@@ -5857,43 +5857,43 @@ table.subL td img {
 }
 
 .tree_box ul li span.folder_a {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 0;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 0;
 }
 .tree_box ul li span.folder_a.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -27px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -27px;
 }
 .tree_box ul li span.folder_a.no_folder {
-  background: url(../img/am_common/ico_folder_a_blank.png) no-repeat 0 6px;
+  background: url(assets/img/am_common/ico_folder_a_blank.png) no-repeat 0 6px;
 }
 .tree_box ul li a span.folder_b {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -54px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -54px;
 }
 .tree_box ul li a span.folder_b.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -81px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -81px;
 }
 .tree_box ul li a span.folder_c {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -108px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -108px;
 }
 .tree_box ul li a span.folder_c.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -135px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -135px;
 }
 .tree_box ul li a span.folder_d {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -162px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -162px;
 }
 .tree_box ul li a span.folder_d.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -189px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -189px;
 }
 .tree_box ul li a span.folder_e {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -214px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -214px;
 }
 .tree_box ul li a span.folder_e.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -239px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -239px;
 }
 .tree_box ul li a span.folder_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -293px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -293px;
 }
 .tree_box ul li a span.folder_f.last_f {
-  background: url(../img/am_common/ico_folder.png) no-repeat 0 -318px;
+  background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -318px;
 }
 
 .tree_box ul.depth_1 li ul.depth_2 li a {
@@ -6000,7 +6000,7 @@ table.subL td img {
   width: 127px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("../img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
     right -1px;
 }
 .normalTb .selectyzeValue span {
@@ -6130,7 +6130,7 @@ table.subL td img {
   top: 3px;
   right: 3px;
   border: 1px solid #c8c8c8;
-  background: url("../img/am_popup/bg_btnGray.gif") 0 0 repeat;
+  background: url("assets/img/am_popup/bg_btnGray.gif") 0 0 repeat;
   line-height: 1;
   font-size: 11px;
 }
@@ -6223,7 +6223,7 @@ table.subL td img {
   margin-left: 1px;
   text-indent: -9999px;
   cursor: pointer;
-  background: url(../img/popup/btn/btn_del_hashtag.png) no-repeat 50% 5px;
+  background: url(assets/img/popup/btn/btn_del_hashtag.png) no-repeat 50% 5px;
 }
 .hashtag_inputer .inputed.target {
   color: #fff;

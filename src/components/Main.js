@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../assets/css/main.css";
+import "assets/css/main.css";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
 import Filter from "./Filter";
@@ -9,15 +9,14 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import OptionBox from "./OptionBox";
 import MainTable from "./MainTable";
-import { MainContext } from "../context";
+import { MainContext } from "context";
 import CreateDirectory from "./CreateDirectory";
-import Paging from "./Paging";
-import * as exts from "../utils/extTypes";
+import Pagination from "./Pagination";
+import * as exts from "utils/extTypes";
 import OpenContent from "./OpenContent";
-
 import { connect } from "react-redux";
-import { getDirectories } from "../store/diretory/actions";
-import { getMyContents } from "../store/fileInfo/actions";
+import { getDirectories } from "store/diretory/actions";
+import { getMyContents } from "store/fileInfo/actions";
 
 const App = (props) => {
   const [showAddFileModal, setShowAddFileModal] = useState(false);
@@ -28,7 +27,6 @@ const App = (props) => {
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [headerPath, setHeaderPath] = useState("My Contents");
   const [filterExt, setFilterExt] = useState(exts.ALL);
-  const [searchStr, setSearchStr] = useState(null);
   const [selectedItem, setSelectedItem] = useState({});
 
   useEffect(() => {
@@ -70,9 +68,7 @@ const App = (props) => {
                 >
                   <img
                     alt=""
-                    src={
-                      require("../assets/img/main/btn/btn_areaL.png").default
-                    }
+                    src={require("assets/img/main/btn/btn_areaL.png").default}
                   />
                 </Link>
                 <div className="areaCBox">
@@ -81,7 +77,6 @@ const App = (props) => {
                     <OptionBox
                       setShowAddModal={setShowAddFileModal}
                       setShowCreateDirectoryModal={setShowCreateDirectoryModal}
-                      setSearchStr={setSearchStr}
                     />
                     <div className="normalList">
                       <Filter setFilterExt={setFilterExt} />
@@ -91,11 +86,10 @@ const App = (props) => {
                         >
                           <MainTable
                             filterExt={filterExt}
-                            searchStr={searchStr}
                           />
                         </MainContext.Provider>
                       </div>
-                      <Paging />
+                      <Pagination />
                     </div>
                   </div>
                 </div>

@@ -3,15 +3,15 @@ import Frame from "react-frame-component";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import RoleAssignEdit from "./RoleAssignEdit";
-import { MainContext } from "../../../context";
-import TreeView from "../../TreeView";
+import { MainContext } from "context";
+import TreeView from "components/TreeView";
 
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!../../../assets/css/global.css";
-import layoutStyles from "!!raw-loader!../../../assets/css/layout.css";
-import bbsStyles from "!!raw-loader!../../../assets/css/bbs.css";
-import calendaStyles from "!!raw-loader!../../../assets/css/calenda.css";
-import ecmPopupStyles from "!!raw-loader!../../../assets/css/ecm_popup.css";
+import globalStyles from "!!raw-loader!assets/css/global.css";
+import layoutStyles from "!!raw-loader!assets/css/layout.css";
+import bbsStyles from "!!raw-loader!assets/css/bbs.css";
+import calendaStyles from "!!raw-loader!assets/css/calenda.css";
+import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
 import addFileStyles from "!!raw-loader!./AddFileFrame.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
@@ -41,7 +41,7 @@ const AddFileFrame = () => {
             <img
               alt="닫기"
               src={
-                require("../../../assets/img/contents/ecmMain/img_close.gif")
+                require("assets/img/contents/ecmMain/img_close.gif")
                   .default
               }
             />
@@ -56,7 +56,7 @@ const AddFileFrame = () => {
                   className="btnBlack"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_blackBtn_L.png")
+                      require("assets/img/popup/bg/bg_blackBtn_L.png")
                         .default
                     }) right 0 no-repeat`,
                   }}
@@ -65,7 +65,7 @@ const AddFileFrame = () => {
                   <span
                     style={{
                       background: `url(${
-                        require("../../../assets/img/popup/bg/bg_blackBtn_R.png")
+                        require("assets/img/popup/bg/bg_blackBtn_R.png")
                           .default
                       }) right 0 no-repeat`,
                     }}
@@ -100,7 +100,7 @@ const AddFileFrame = () => {
                           alt=""
                           style={{ width: 16, height: 16 }}
                           src={
-                            require("../../../assets/img/fileicons/pdf.png")
+                            require("assets/img/fileicons/pdf.png")
                               .default
                           }
                         />
@@ -118,7 +118,7 @@ const AddFileFrame = () => {
                         <img
                           alt=""
                           src={
-                            require("../../../assets/img/popup/ico/ico_contentList_edit.png")
+                            require("assets/img/popup/ico/ico_contentList_edit.png")
                               .default
                           }
                         />
@@ -127,7 +127,7 @@ const AddFileFrame = () => {
                         <img
                           alt=""
                           src={
-                            require("../../../assets/img/popup/ico/ico_contentList_del.png")
+                            require("assets/img/popup/ico/ico_contentList_del.png")
                               .default
                           }
                         />
@@ -146,7 +146,7 @@ const AddFileFrame = () => {
                           alt=""
                           style={{ width: 16, height: 16 }}
                           src={
-                            require("../../../assets/img/fileicons/pdf.png")
+                            require("assets/img/fileicons/pdf.png")
                               .default
                           }
                         />
@@ -168,7 +168,7 @@ const AddFileFrame = () => {
                         <img
                           alt=""
                           src={
-                            require("../../../assets/img/popup/ico/ico_check.png")
+                            require("assets/img/popup/ico/ico_check.png")
                               .default
                           }
                         />
@@ -177,7 +177,7 @@ const AddFileFrame = () => {
                         <img
                           alt=""
                           src={
-                            require("../../../assets/img/popup/ico/ico_contentList_del.png")
+                            require("assets/img/popup/ico/ico_contentList_del.png")
                               .default
                           }
                         />
@@ -260,7 +260,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_safe_btn.png")
+                      require("assets/img/popup/bg/bg_safe_btn.png")
                         .default
                     }) no-repeat 0 0`,
                   }}
@@ -272,7 +272,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_safe_btn.png")
+                      require("assets/img/popup/bg/bg_safe_btn.png")
                         .default
                     }) no-repeat 0 0`,
                   }}
@@ -284,7 +284,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_safe_btn.png")
+                      require("assets/img/popup/bg/bg_safe_btn.png")
                         .default
                     }) no-repeat 0 0`,
                   }}
@@ -296,7 +296,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_safe_btn.png")
+                      require("assets/img/popup/bg/bg_safe_btn.png")
                         .default
                     }) no-repeat 0 0`,
                   }}
@@ -308,7 +308,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_safe_btn.png")
+                      require("assets/img/popup/bg/bg_safe_btn.png")
                         .default
                     }) no-repeat 0 0`,
                   }}
@@ -320,7 +320,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("../../../assets/img/popup/bg/bg_safe_btn.png")
+                      require("assets/img/popup/bg/bg_safe_btn.png")
                         .default
                     }) no-repeat 0 0`,
                   }}
@@ -355,7 +355,7 @@ const AddFileFrame = () => {
             to="/"
             style={{
               background: `url(${
-                require("../../../assets/img/popup/bg/bg_modifyBtn.gif").default
+                require("assets/img/popup/bg/bg_modifyBtn.gif").default
               }) no-repeat left top #2768b2`,
             }}
           >

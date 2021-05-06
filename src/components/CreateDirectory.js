@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import TreeView from "./TreeView";
 
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!../assets/css/global.css";
-import layoutStyles from "!!raw-loader!../assets/css/layout.css";
-import bbsStyles from "!!raw-loader!../assets/css/bbs.css";
-import ecmPopupStyles from "!!raw-loader!../assets/css/ecm_popup.css";
-import calendaStyles from "!!raw-loader!../assets/css/calenda.css";
+import globalStyles from "!!raw-loader!assets/css/global.css";
+import layoutStyles from "!!raw-loader!assets/css/layout.css";
+import bbsStyles from "!!raw-loader!assets/css/bbs.css";
+import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
+import calendaStyles from "!!raw-loader!assets/css/calenda.css";
 import createDirectoryStyles from "!!raw-loader!./CreateDirectory.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
@@ -39,7 +39,7 @@ const CreateDirectory = (props) => {
           <img
             alt=""
             src={
-              require("../assets/img/contents/ecmMain/img_close.gif").default
+              require("assets/img/contents/ecmMain/img_close.gif").default
             }
           />
         </Link>
@@ -126,7 +126,7 @@ const CreateDirectory = (props) => {
           to="/"
           style={{
             background: `url(${
-              require("../assets/img/popup/bg/bg_modifyBtn.gif").default
+              require("assets/img/popup/bg/bg_modifyBtn.gif").default
             }) no-repeat left top #2768b2`,
           }}
         >

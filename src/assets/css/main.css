@@ -13,21 +13,21 @@
   padding-left: 3px;
   height: 21px;
   color: #fff;
-  background: url(../img/main/bg/bg_selectTypeA_L.png) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_selectTypeA_L.png) 0 0 no-repeat;
   display: inline-block;
 }
 .optionBox .DivSelectyze .selectyzeValue span {
   min-width: 170px;
   height: 17px;
   padding: 4px 0 0 7px;
-  background: url(../img/main/bg/bg_selectTypeA_R.png) right 0 no-repeat;
+  background: url(assets/img/main/bg/bg_selectTypeA_R.png) right 0 no-repeat;
   display: inline-block;
 }
 .optionBox .DivSelectyze .btnValue span {
   min-width: 170px;
   height: 17px;
   padding: 4px 0 0 7px;
-  background: url(../img/main/bg/bg_btnTypeA_R.png) right 0 no-repeat;
+  background: url(assets/img/main/bg/bg_btnTypeA_R.png) right 0 no-repeat;
   display: inline-block;
 }
 .optionBox .DivSelectyze .UlSelectize {
@@ -64,7 +64,7 @@
   padding-left: 3px;
   height: 25px;
   color: #222;
-  background: url(../img/main/bg/bg_selectTypeB_L.png) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_selectTypeB_L.png) 0 0 no-repeat;
   display: block;
   cursor: pointer;
 }
@@ -72,7 +72,7 @@
   min-width: 170px;
   height: 19px;
   padding: 6px 0 0 7px;
-  background: url(../img/main/bg/bg_selectTypeB_R.png) right 0 no-repeat;
+  background: url(assets/img/main/bg/bg_selectTypeB_R.png) right 0 no-repeat;
   display: block;
 }
 .treeView .DivSelectyze .UlSelectize {
@@ -116,19 +116,19 @@
   background-position: 0 100%;
 }
 .optionBox .fPlus {
-  background: url(../img/main/bg/bg_folder_plus.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folder_plus.gif) 0 0 no-repeat;
 }
 .optionBox .fChg {
-  background: url(../img/main/bg/bg_folder_chk.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folder_chk.gif) 0 0 no-repeat;
 }
 .optionBox .fDel {
-  background: url(../img/main/bg/bg_folder_del.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folder_del.gif) 0 0 no-repeat;
 }
 .optionBox .fMove {
-  background: url(../img/main/bg/bg_folder_move.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folder_move.gif) 0 0 no-repeat;
 }
 .optionBox .tAttr {
-  background: url(../img/main/bg/bg_folder_prop.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folder_prop.gif) 0 0 no-repeat;
 }
 
 .treeCon a.fPlus {
@@ -137,15 +137,15 @@
   display: inline-block;
 }
 .treeCon .fPlus {
-  background: url(../img/main/bg/bg_fPlus.png) 0 10px no-repeat;
+  background: url(assets/img/main/bg/bg_fPlus.png) 0 10px no-repeat;
 }
 
 /* 라디오&체크 */
 label.c_on {
-  background: url(../img/form/check-on.png) no-repeat;
+  background: url(assets/img/form/check-on.png) no-repeat;
 }
 label.r_on {
-  background: url(../img/form/radio-on.png) no-repeat;
+  background: url(assets/img/form/radio-on.png) no-repeat;
 }
 label {
   display: block;
@@ -163,10 +163,10 @@ label {
   height: 20px;
 }
 .i_radio {
-  background: url(../img/form/radio-off.png) no-repeat;
+  background: url(assets/img/form/radio-off.png) no-repeat;
 }
 .i_check {
-  background: url(../img/form/check-off.png) no-repeat;
+  background: url(assets/img/form/check-off.png) no-repeat;
 }
 .i_check input,
 .i_radio input {
@@ -181,14 +181,14 @@ label {
   display: inline-block;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white_S.png) no-repeat;
+  background: url(assets/img/form/btn_white_S.png) no-repeat;
 }
 .btn_whiteS_typeA button,
 .btn_whiteS_typeA a,
 .btn_whiteS_typeA span,
 .btn_whiteS_typeA input {
   display: block;
-  background: url(../img/form/btn_white_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white_S.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -216,14 +216,14 @@ label {
   display: inline-block;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white_S02.png) no-repeat;
+  background: url(assets/img/form/btn_white_S02.png) no-repeat;
 }
 .btn_whiteS_typeA02 button,
 .btn_whiteS_typeA02 a,
 .btn_whiteS_typeA02 span,
 .btn_whiteS_typeA02 input {
   display: block;
-  background: url(../img/form/btn_white_S02.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white_S02.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -266,14 +266,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_S.png) no-repeat;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat;
 }
 .btn_whiteS_typeB button,
 .btn_whiteS_typeB a,
 .btn_whiteS_typeB span,
 .btn_whiteS_typeB input {
   display: block;
-  background: url(../img/form/btn_white2_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat 100% 0;
   color: #222 !important;
   border: none;
   cursor: pointer;
@@ -303,14 +303,14 @@ label {
   height: 25px;
   overflow: hidden;
   padding-left: 2px;
-  background: url(../img/form/btn_white2_S.png) no-repeat;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat;
 }
 .btn_whiteS_typeC button,
 .btn_whiteS_typeC a,
 .btn_whiteS_typeC span,
 .btn_whiteS_typeC input {
   display: block;
-  background: url(../img/form/btn_white2_S.png) no-repeat 100% 0;
+  background: url(assets/img/form/btn_white2_S.png) no-repeat 100% 0;
   color: #1169c2 !important;
   border: none;
   cursor: pointer;
@@ -363,13 +363,14 @@ label {
   padding: 0 1px;
   height: 36px;
   margin: 0 0 23px 0px;
-  background: url(../img/main/bg/bg_tree.gif) 0 0 repeat-x;
+  background: url(assets/img/main/bg/bg_tree.gif) 0 0 repeat-x;
 }
 .areaCBox .treeBox .baseFolder {
   position: relative;
   height: 34px;
   padding: 0 117px 0 37px;
-  background: url(../img/main/bg/bg_folder.gif) 13px 9px no-repeat;
+  /* background: url(assets/img/main/bg/bg_folder.gif) 13px 9px no-repeat; */
+  background: url(assets/img/main/bg/bg_folder.gif) 13px 9px no-repeat;
 }
 .areaCBox .treeBox .baseFolder .txt {
   height: 36px;
@@ -397,12 +398,12 @@ label {
   color: #fff;
   text-align: center;
   line-height: 35px;
-  background: url(../img/main/bg/bg_folderLink.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folderLink.gif) 0 0 no-repeat;
   display: block;
 }
 .areaCBox .treeBox .baseFolder .all {
   text-indent: -12px;
-  background: url(../img/main/bg/bg_folderLink_all.gif) 0 0 no-repeat;
+  background: url(assets/img/main/bg/bg_folderLink_all.gif) 0 0 no-repeat;
 }
 .areaCBox .treeBox .baseFolder .treeView {
   position: absolute;
@@ -437,7 +438,7 @@ label {
 }
 .areaCBox .treeBox .baseFolder .treeConBox .treeCon {
   color: #000;
-  background: url(../img/main/bg/bg_treeCon.gif) 0 0 repeat;
+  background: url(assets/img/main/bg/bg_treeCon.gif) 0 0 repeat;
 }
 .areaCBox .treeBox .baseFolder .treeConBox .treeCon img {
   vertical-align: middle;
@@ -462,7 +463,7 @@ label {
   min-width: 38px;
   height: 18px;
   padding-right: 11px;
-  background: url(../img/main/btn/btn_treeMove_R.png) right 0 no-repeat;
+  background: url(assets/img/main/btn/btn_treeMove_R.png) right 0 no-repeat;
   cursor: pointer;
   display: inline-block;
 }
@@ -472,7 +473,7 @@ label {
   font-size: 13px;
   line-height: 18px;
   color: #cedff2;
-  background: url(../img/main/btn/btn_treeMove_L.png) 0 0 no-repeat;
+  background: url(assets/img/main/btn/btn_treeMove_L.png) 0 0 no-repeat;
   cursor: pointer;
   overflow: hidden;
   display: inline-block;
@@ -505,14 +506,14 @@ label {
   font-size: 11px;
   line-height: 14px;
   font-weight: normal;
-  background: url(../img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
 }
 .listContent .optionBox .btnGray span {
   display: inline-block;
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url(../img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
 }
 /*.listContent .optionBox .right .listSearchT{right:20px;left:auto;margin-left:0;margin-top:-4px;} /* 2014-07-14 추가 */
 .listContent .optionBox .right .listSearchT {
@@ -534,7 +535,7 @@ label {
 .listContent .optionBox .left .ecmTab li a {
   padding: 10px 0;
   display: block;
-  background: url(../img/form/tab_off.png) right 0 no-repeat;
+  background: url(assets/img/form/tab_off.png) right 0 no-repeat;
 }
 .listContent .optionBox .left .ecmTab li:first-child a {
   background-position: left 0;
@@ -543,7 +544,7 @@ label {
   font-weight: bold;
 }
 .listContent .optionBox .left .ecmTab li.on a {
-  background: url(../img/form/tab_on.png) right 0 no-repeat;
+  background: url(assets/img/form/tab_on.png) right 0 no-repeat;
 }
 .listContent .optionBox .left .ecmTab li.on a span {
   color: #fff;
@@ -558,7 +559,7 @@ label {
 .listContent .optionBox .right .ico_error {
   width: 19px;
   height: 35px;
-  background: url(../img/main/ico/ico_error.png) 0 2px no-repeat;
+  background: url(assets/img/main/ico/ico_error.png) 0 2px no-repeat;
   display: inline-block;
   text-indent: -9999px;
   overflow: hidden;
@@ -619,7 +620,7 @@ label {
 .sortingBox .icoBtn li {
   float: left;
   margin-left: -1px;
-  background: url(../img/main/bg/bg_sorting.gif) 0 8px no-repeat;
+  background: url(assets/img/main/bg/bg_sorting.gif) 0 8px no-repeat;
 }
 .sortingBox .icoBtn li a {
   padding: 7px 12px 8px 12px;
@@ -632,7 +633,7 @@ label {
 .sortingBox .dayBtn li {
   float: left;
   margin-right: -1px;
-  background: url(../img/main/bg/bg_sortingS.gif) right 11px no-repeat;
+  background: url(assets/img/main/bg/bg_sortingS.gif) right 11px no-repeat;
 }
 .sortingBox .dayBtn li a {
   min-width: 33px;
@@ -665,7 +666,7 @@ label {
   height: 122px;
   margin: 0 12px 12px 0;
   padding-top: 31px;
-  background: url(../img/contents/ecmMain/bg_list_thumnBox.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_list_thumnBox.png) 0 0 no-repeat;
 }
 .listContent .thumnList .thumn > li .i_check {
   position: absolute;
@@ -705,7 +706,7 @@ label {
   margin-right: -1px;
   padding-top: 10px;
   text-align: center;
-  background: url(../img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
 }
 .listContent .thumnList .thumn > li .text > a:hover {
   color: #018dee;
@@ -714,7 +715,7 @@ label {
   width: 47px;
   padding-right: 10px;
   color: #018dee;
-  background: url(../img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
 }
 .listContent .thumnList .thumn > li .text > a.infoOn {
   position: relative;
@@ -724,7 +725,7 @@ label {
   color: #018dee;
   border: 1px solid #648ec3;
   border-width: 1px 1px 0 1px;
-  background: #fff url(../img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
+  background: #fff url(assets/img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
   z-index: 20;
 }
 
@@ -785,7 +786,7 @@ label {
   background-color: #fff;
 }
 .folderText .infoMenu {
-  background: #fff url(../img/contents/ecmMain/bg_dotBlue.gif) 0 0 repeat-x;
+  background: #fff url(assets/img/contents/ecmMain/bg_dotBlue.gif) 0 0 repeat-x;
 }
 .btnAdd .infoMenu {
   top: 23px;
@@ -805,7 +806,7 @@ label {
   padding: 10px 9px 0 0;
   text-align: center;
   color: #018dee;
-  background: url(../img/contents/ecmMain/bg_info.png) 98px 15px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_info.png) 98px 15px no-repeat;
 }
 .listContent .thumnList .thumn li .folderText .infoOn {
   display: block;
@@ -820,7 +821,7 @@ label {
   text-align: center;
   border: 1px solid #648ec3;
   border-width: 1px 1px 0 1px;
-  background: #fff url(../img/contents/ecmMain/bg_info.png) 97px 15px no-repeat;
+  background: #fff url(assets/img/contents/ecmMain/bg_info.png) 97px 15px no-repeat;
   z-index: 20;
 }
 
@@ -838,7 +839,7 @@ label {
   margin-right: -1px;
   padding-top: 10px;
   text-align: center;
-  background: url(../img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
 }
 .listContent .thumnList .thumn > li .wasteText > a:hover {
   color: #018dee;
@@ -875,15 +876,15 @@ label {
 }
 .normalTb thead tr th .icoSort {
   padding-right: 13px;
-  background: url("../img/main/ico/sort-down.png") right 0 no-repeat;
+  background: url("assets/img/main/ico/sort-down.png") right 0 no-repeat;
 }
 .normalTb thead tr th .icoSortOnUp {
   color: #3375bf;
-  background: url("../img/main/ico/sort-up.png") right 0 no-repeat;
+  background: url("assets/img/main/ico/sort-up.png") right 0 no-repeat;
 }
 .normalTb thead tr th .icoSortOnDw {
   color: #3375bf;
-  background: url("../img/main/ico/sort-down.png") right 0 no-repeat;
+  background: url("assets/img/main/ico/sort-down.png") right 0 no-repeat;
 }
 .normalTb tr th .columnHL,
 .normalTb tr td .columnHL,
@@ -1033,20 +1034,20 @@ label {
 .normalTb tbody td .contentTitle .ico_fav.on {
   width: 16px;
   height: 20px;
-  background: url(../img/main/ico/ico_fav_blue_on.png) no-repeat 0 0;
+  background: url(assets/img/main/ico/ico_fav_blue_on.png) no-repeat 0 0;
 }
 .normalTb tbody td .contentTitle .ico_fav_2 {
   display: inline;
   width: 18px;
   height: 20px;
-  background: url(../img/main/ico/ico_fav_2.png) no-repeat;
+  background: url(assets/img/main/ico/ico_fav_2.png) no-repeat;
   text-indent: -9999px;
   vertical-align: top;
 }
 .normalTb tbody td .contentTitle .ico_fav_2.on {
   width: 18px;
   height: 20px;
-  background: url(../img/main/ico/ico_fav_2_on.png) no-repeat 0 0;
+  background: url(assets/img/main/ico/ico_fav_2_on.png) no-repeat 0 0;
 }
 
 /* 2016-11-25 phykang */
@@ -1059,14 +1060,14 @@ label {
   display: inline;
   width: 16px;
   height: 20px;
-  background: url(../img/favorites/ic_favorites_no.png) no-repeat;
+  background: url(assets/img/favorites/ic_favorites_no.png) no-repeat;
   text-indent: -9999px;
   vertical-align: top;
 }
 .normalTb tbody td .contentTitle .ico_fav_3.on {
   width: 16px;
   height: 20px;
-  background: url(../img/favorites/ic_favorites.png) no-repeat 0 0;
+  background: url(assets/img/favorites/ic_favorites.png) no-repeat 0 0;
   cursor: default;
 }
 
@@ -1126,7 +1127,7 @@ label {
   text-align: left;
   line-height: 19px;
   border: 1px solid #c7cacd;
-  background: url(../img/contents/ecmMain/bg_btn_sel.gif) right 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btn_sel.gif) right 0 no-repeat;
 }
 .normalTb tbody tr.btnAddOn td .addBox .infoMenu {
   top: 23px;
@@ -1138,7 +1139,7 @@ label {
   margin: -3px 0;
   color: #222;
   line-height: 24px;
-  background: url(../img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
 } /* [2012.10.09 추가] */
 .normalTb tbody .btnAsk {
   display: inline-block;
@@ -1258,7 +1259,7 @@ label {
   padding-top: 3px;
   color: #fff;
   vertical-align: top;
-  background: url(../img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
 }
 
 /* ecm 메인(우측) 2012-09-24 채승훈 */
@@ -1268,7 +1269,7 @@ label {
   height: 21px;
   margin-bottom: 6px;
   padding: 6px 0 0 83px;
-  background: url(../img/contents/ecmMain/bg_admin.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_admin.png) 0 0 no-repeat;
 }
 .areaR .btnSetup {
   display: block;
@@ -1276,7 +1277,7 @@ label {
   height: 21px;
   margin-bottom: 18px;
   padding: 6px 0 0 83px;
-  background: url(../img/contents/ecmMain/bg_setupB.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_setupB.png) 0 0 no-repeat;
 }
 
 .bestBox {
@@ -1285,7 +1286,7 @@ label {
 .bestBox .bgBoxLayout {
   position: relative;
   padding-top: 27px;
-  background: url(../img/contents/ecmMain/bg_boxTop_blue.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_boxTop_blue.png) 0 0 no-repeat;
 }
 .bestBox .bgBoxLayout .tabText {
   position: absolute;
@@ -1333,7 +1334,7 @@ label {
   color: #222;
   font: bold 9px/17px "Verdana";
   text-align: center;
-  background: url(../img/contents/ecmMain/bg_num.gif) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_num.gif) 0 0 no-repeat;
 }
 .best li .imgTitle {
   padding-top: 14px;
@@ -1394,7 +1395,7 @@ a.btn_content {
   color: #fff;
   line-height: 33px;
   letter-spacing: -1px;
-  background: url(../img/contents/ecmMain/bg_content.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_content.png) 0 0 no-repeat;
 }
 a.btn_content:hover {
   color: #fff;
@@ -1424,7 +1425,7 @@ a.btn_content:hover {
 .choiceBox .choiceTitle {
   position: relative;
   height: 31px;
-  background: url(../img/contents/ecmMain/bg_choiceTitleC.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_choiceTitleC.png) 0 0 no-repeat;
 }
 .choiceBox .choiceTitle a.btnTitle {
   display: block;
@@ -1433,7 +1434,7 @@ a.btn_content:hover {
   font-weight: bold;
   line-height: 27px;
   color: #fff;
-  background: url(../img/contents/ecmMain/bg_choiceArrow.gif) 190px 15px
+  background: url(assets/img/contents/ecmMain/bg_choiceArrow.gif) 190px 15px
     no-repeat;
 }
 .popLayerWrap .choiceBox .choiceTitle a.btnTitle {
@@ -1512,13 +1513,13 @@ a.btn_content:hover {
   padding-left: 20px;
 }
 .choiceBox .iconAdd ul li span.iconHtml {
-  background: url(../img/contents/ecmMain/ico_pop_html.png) 0 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/ico_pop_html.png) 0 3px no-repeat;
 }
 .choiceBox .iconAdd ul li span.iconLock {
-  background: url(../img/contents/ecmMain/ico_pop_lock.png) 0 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/ico_pop_lock.png) 0 3px no-repeat;
 }
 .choiceBox .iconAdd ul li span.iconUnlock {
-  background: url(../img/contents/ecmMain/ico_pop_unlock.png) 0 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/ico_pop_unlock.png) 0 3px no-repeat;
 }
 
 /* 일반 선택한 컨텐츠 리스트 */
@@ -1530,7 +1531,7 @@ a.btn_content:hover {
   height: 0;
   margin-left: -360px;
   padding: 0 10px;
-  background: url(../img/contents/ecmMain/bg_choiceBox.png) 10px 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_choiceBox.png) 10px 0 no-repeat;
   overflow: hidden;
   z-index: 10000;
 }
@@ -1606,7 +1607,7 @@ a.btn_content:hover {
   text-align: center;
 }
 .paging a {
-  background: url(../img/common/paging_bg.gif) left top no-repeat;
+  background: url(assets/img/common/paging_bg.gif) left top no-repeat;
   width: 30px;
   height: 14px;
   display: inline-block;
@@ -1627,30 +1628,30 @@ a.btn_content:hover {
   color: #1169c2;
 }
 .paging a.first {
-  background: url(../img/common/paging_first.gif) left top no-repeat;
+  background: url(assets/img/common/paging_first.gif) left top no-repeat;
 }
 .paging a:hover.first {
-  background: url(../img/common/paging_first_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_first_on.gif) left top no-repeat;
 }
 .paging a.prev {
-  background: url(../img/common/paging_prv.gif) left top no-repeat;
+  background: url(assets/img/common/paging_prv.gif) left top no-repeat;
   margin: 0 14px 0 0;
 }
 .paging a:hover.prev {
-  background: url(../img/common/paging_prv_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_prv_on.gif) left top no-repeat;
 }
 .paging a.next {
-  background: url(../img/common/paging_nxt.gif) left top no-repeat;
+  background: url(assets/img/common/paging_nxt.gif) left top no-repeat;
   margin: 0 0 0 14px;
 }
 .paging a:hover.next {
-  background: url(../img/common/paging_nxt_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_nxt_on.gif) left top no-repeat;
 }
 .paging a.end {
-  background: url(../img/common/paging_end.gif) left top no-repeat;
+  background: url(assets/img/common/paging_end.gif) left top no-repeat;
 }
 .paging a:hover.end {
-  background: url(../img/common/paging_end_on.gif) left top no-repeat;
+  background: url(assets/img/common/paging_end_on.gif) left top no-repeat;
 }
 
 /* popup 기본 레이어 */
@@ -1704,7 +1705,7 @@ a.btn_content:hover {
   display: inline-block;
   width: 25px;
   height: 19px;
-  background: url(../img/main/btn/btn_refresh.png) 0 0 no-repeat;
+  background: url(assets/img/main/btn/btn_refresh.png) 0 0 no-repeat;
   overflow: hidden;
 }
 .stateBtnWrap .btnRefresh:hover {
@@ -1745,7 +1746,7 @@ a.btn_content:hover {
   height: 25px;
   line-height: 25px;
   padding-left: 10px;
-  background: url(../img/main/btn/btn_bluebd.gif) no-repeat 0 0;
+  background: url(assets/img/main/btn/btn_bluebd.gif) no-repeat 0 0;
   color: #3375bf;
   margin: 5px;
 }
@@ -1754,19 +1755,19 @@ a.btn_content:hover {
   height: 25px;
   padding-right: 10px;
   line-height: 25px;
-  background: url(../img/main/btn/btn_bluebd.gif) no-repeat 100% 0;
+  background: url(assets/img/main/btn/btn_bluebd.gif) no-repeat 100% 0;
 }
 .sorting_btn a em {
   padding-left: 15px;
 }
 .sorting_btn a em.add {
-  background: url(../img/main/btn/bg_add.gif) no-repeat 0 50%;
+  background: url(assets/img/main/btn/bg_add.gif) no-repeat 0 50%;
 }
 .sorting_btn a em.new {
-  background: url(../img/main/btn/bg_new.gif) no-repeat 0 50%;
+  background: url(assets/img/main/btn/bg_new.gif) no-repeat 0 50%;
 }
 .sorting_btn a em.movie {
-  background: url(../img/main/btn/bg_movie.gif) no-repeat 0 50%;
+  background: url(assets/img/main/btn/bg_movie.gif) no-repeat 0 50%;
 }
 
 .placeholder {
@@ -1820,7 +1821,7 @@ a.btn_content:hover {
   height: 13px;
   padding: 5px 30px 5px 7px;
   border: 1px solid #c8c8c8;
-  background: url(../img/am_common/select_bg.gif) no-repeat 100% 50%;
+  background: url(assets/img/am_common/select_bg.gif) no-repeat 100% 50%;
   border-radius: 0.3em;
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
@@ -1895,7 +1896,7 @@ a.btn_content:hover {
 }
 
 .sorting_btn a em.fav_del {
-  background: url(../img/favorites/ic_fav_del.png) no-repeat 0 50%;
+  background: url(assets/img/favorites/ic_fav_del.png) no-repeat 0 50%;
 }
 .normalTb tbody td .contentTitle .ic_expiration {
   margin-right: 7px;
@@ -1920,10 +1921,10 @@ a.btn_content:hover {
   height: 53px;
   margin-top: -25px;
   display: inline-block;
-  background: url(../img/main/btn/btn_areaL.png) no-repeat;
+  background: url(assets/img/main/btn/btn_areaL.png) no-repeat;
 }
 .btn_areaL_favorites.hided {
-  background: url(../img/main/btn/btn_areaL_on.png) no-repeat;
+  background: url(assets/img/main/btn/btn_areaL_on.png) no-repeat;
 }
 
 .btn_areaR_preview {
@@ -2034,10 +2035,10 @@ a.btn_content:hover {
   top: 0;
   width: 16px;
   height: 16px;
-  background: url(../img/form/check-off.png) no-repeat;
+  background: url(assets/img/form/check-off.png) no-repeat;
 }
 .thumbList_checkAll .cb > input[type="checkbox"]:checked + em {
-  background: url(../img/form/check-on.png) no-repeat;
+  background: url(assets/img/form/check-on.png) no-repeat;
 }
 .thumbList {
   margin-bottom: 15px;
@@ -2103,10 +2104,10 @@ a.btn_content:hover {
   top: 0;
   width: 16px;
   height: 16px;
-  background: url(../img/form/check-off.png) no-repeat;
+  background: url(assets/img/form/check-off.png) no-repeat;
 }
 .thumbList .head .cb > input[type="checkbox"]:checked + em {
-  background: url(../img/form/check-on.png) no-repeat;
+  background: url(assets/img/form/check-on.png) no-repeat;
 }
 .thumbList .head .ipc {
   display: inline-block;

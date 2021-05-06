@@ -11,7 +11,7 @@
 }
 .infoArea {
   height: 48px;
-  background: url(../img/layout/bg_header.gif) left top repeat-x;
+  background: url(assets/img/layout/bg_header.gif) left top repeat-x;
   border-bottom: 2px solid #3275c0;
 }
 .topLt {
@@ -30,7 +30,7 @@
   height: 23px;
   padding: 1px 0 0 1px;
   margin-right: 10px;
-  background: url(../img/layout/bg_top_blue_src.png) left top no-repeat;
+  background: url(assets/img/layout/bg_top_blue_src.png) left top no-repeat;
 }
 .topSrcArea .srcIpt {
   width: 210px;
@@ -55,7 +55,7 @@
   height: 24px;
   border: 0;
   cursor: pointer;
-  background: url(../img/layout/bg_top_blue_src.png) left top no-repeat;
+  background: url(assets/img/layout/bg_top_blue_src.png) left top no-repeat;
 }
 
 .alertTxt {
@@ -166,7 +166,7 @@
   min-width: 1024px;
   margin-bottom: -40px;
   padding-top: 2px;
-  background: url("../img/layout/bg_ecmWrap.gif") 0 0 repeat-x;
+  background: url("assets/img/layout/bg_ecmWrap.gif") 0 0 repeat-x;
 }
 .ecmWrap .ecmContent {
   padding: 0 222px;
@@ -306,7 +306,7 @@ a:hover {
   height: 23px;
   padding: 1px 0 0 1px;
   margin-right: 10px;
-  background: url(../img/gnbBar/bg_top_blue_src.png) left top no-repeat;
+  background: url(assets/img/gnbBar/bg_top_blue_src.png) left top no-repeat;
 }
 .topSrcArea .srcIpt {
   width: 210px;
@@ -337,7 +337,7 @@ a:hover {
   padding: 0 0 0 16px;
   margin-top: 6px;
   margin-left: 14px;
-  background: url(../img/gnbBar/bg_logo_bar.gif) no-repeat 0 0;
+  background: url(assets/img/gnbBar/bg_logo_bar.gif) no-repeat 0 0;
 }
 .logo .logo_sys > img {
   margin: 0 0 -1px;
@@ -375,14 +375,14 @@ a:hover {
   font-size: 9px;
   color: #fff;
   letter-spacing: -2px;
-  background: url(../img/gnbBar/bg_fav_count.gif) left top no-repeat;
+  background: url(assets/img/gnbBar/bg_fav_count.gif) left top no-repeat;
 }
 .favMoreView {
   float: left;
   width: 7px;
   height: 4px;
   margin: 11px 0 0 4px;
-  background: url(../img/gnbBar/btn_fav_arrw01.gif) left top no-repeat;
+  background: url(assets/img/gnbBar/btn_fav_arrw01.gif) left top no-repeat;
 }
 .favMoreView em {
   display: none;
@@ -546,7 +546,7 @@ body {
   display: inline-block;
   width: 22px;
   height: 22px;
-  background: url(../img/gnbBar/btn_chg_lang.png) left top no-repeat;
+  background: url(assets/img/gnbBar/btn_chg_lang.png) left top no-repeat;
 }
 .goog-te-menu-value span {
   display: none;

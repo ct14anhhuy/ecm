@@ -16,6 +16,8 @@ const fileInfoReducers = (state = [], action) => {
       return [...action.payload.fileInfos];
     case types.GET_CONTENTS_FROM_PATH:
       return [...action.payload.fileInfos];
+    case types.SEARCH_CONTENTS:
+      return [...action.payload.fileInfos];
     case types.CHANGE_FAVORITE:
       const stateFav = [...state];
       const idEditFav = stateFav.findIndex((f) => f.id === action.payload.id);

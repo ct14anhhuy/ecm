@@ -3,10 +3,10 @@ import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
 
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!../assets/css/global.css";
-import layoutStyles from "!!raw-loader!../assets/css/layout.css";
-import popupStyles from "!!raw-loader!../assets/css/popup.css";
-import contentsStyles from "!!raw-loader!../assets/css/contents.css";
+import globalStyles from "!!raw-loader!assets/css/global.css";
+import layoutStyles from "!!raw-loader!assets/css/layout.css";
+import popupStyles from "!!raw-loader!assets/css/popup.css";
+import contentsStyles from "!!raw-loader!assets/css/contents.css";
 import openContentStyles from "!!raw-loader!./OpenContent.css";
 
 const OpenContent = (props) => {
@@ -22,7 +22,7 @@ const OpenContent = (props) => {
           <img
             alt=""
             src={
-              require("../assets/img/contents/ecmMain/img_close.gif").default
+              require("assets/img/contents/ecmMain/img_close.gif").default
             }
           />
         </Link>

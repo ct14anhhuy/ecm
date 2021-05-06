@@ -1,11 +1,18 @@
 const GetBackgroundIconFromExtension = ({ fileName }) => {
   let extension = fileName.split(".").pop();
+  let img = (
+    <img
+      alt=""
+      style={{ width: 16, height: 16 }}
+      src={require("assets/img/main/ico/ico_all_on.png").default}
+    />
+  );
   if (extension === "doc" || extension === "docx") {
-    return (
+    img = (
       <img
         alt=""
         style={{ width: 16, height: 16 }}
-        src={require("../../assets/img/main/ico/ico_doc_on.png").default}
+        src={require("assets/img/main/ico/ico_doc_on.png").default}
       />
     );
   } else if (
@@ -14,19 +21,19 @@ const GetBackgroundIconFromExtension = ({ fileName }) => {
     extension === "xlsm" ||
     extension === "csv"
   ) {
-    return (
+    img = (
       <img
         alt=""
         style={{ width: 16, height: 16 }}
-        src={require("../../assets/img/main/ico/ico_xlsx_on.png").default}
+        src={require("assets/img/main/ico/ico_xlsx_on.png").default}
       />
     );
   } else if (extension === "ppt" || extension === "pptx") {
-    return (
+    img = (
       <img
         alt=""
         style={{ width: 16, height: 16 }}
-        src={require("../../assets/img/main/ico/ico_ppt_on.png").default}
+        src={require("assets/img/main/ico/ico_ppt_on.png").default}
       />
     );
   } else if (
@@ -35,29 +42,23 @@ const GetBackgroundIconFromExtension = ({ fileName }) => {
     extension === "png" ||
     extension === "jpeg"
   ) {
-    return (
+    img = (
       <img
         alt=""
         style={{ width: 16, height: 16 }}
-        src={require("../../assets/img/main/ico/ico_img_on.png").default}
+        src={require("assets/img/main/ico/ico_img_on.png").default}
       />
     );
   } else if (extension === "pdf") {
-    return (
+    img = (
       <img
         alt=""
         style={{ width: 16, height: 16 }}
-        src={require("../../assets/img/main/ico/ico_pdf_on.png").default}
+        src={require("assets/img/main/ico/ico_pdf_on.png").default}
       />
     );
   }
-  return (
-    <img
-      alt=""
-      style={{ width: 16, height: 16 }}
-      src={require("../../assets/img/main/ico/ico_all_on.png").default}
-    />
-  );
+  return img;
 };
 
 export default GetBackgroundIconFromExtension;

@@ -9,13 +9,13 @@ import {
   getDepartmentContents,
   getTrashContents,
   getContentsFromPath,
-} from "../store/fileInfo/actions";
+} from "store/fileInfo/actions";
 import { connect } from "react-redux";
 
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!../assets/css/global.css";
-import layoutStyles from "!!raw-loader!../assets/css/layout.css";
-import bbsStyles from "!!raw-loader!../assets/css/bbs.css";
+import globalStyles from "!!raw-loader!assets/css/global.css";
+import layoutStyles from "!!raw-loader!assets/css/layout.css";
+import bbsStyles from "!!raw-loader!assets/css/bbs.css";
 import leftMenuStyles from "!!raw-loader!./LeftMenu.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
@@ -65,7 +65,7 @@ const LeftMenu = (props) => {
           <li
             style={{
               background: `url(${
-                require("../assets/img/main/left/bg_go_cnt.png").default
+                require("assets/img/main/left/bg_go_cnt.png").default
               }) left top no-repeat`,
             }}
           >
@@ -73,7 +73,7 @@ const LeftMenu = (props) => {
               className="btn_01"
               style={{
                 background: `url(${
-                  require("../assets/img/main/left/ico_go_cnt01.png").default
+                  require("assets/img/main/left/ico_go_cnt01.png").default
                 }) 15px center no-repeat`,
               }}
               onClick={(e) => {
@@ -88,7 +88,7 @@ const LeftMenu = (props) => {
             className="newWin"
             style={{
               background: `url(${
-                require("../assets/img/main/left/bg_go_newwin_cnt.png").default
+                require("assets/img/main/left/bg_go_newwin_cnt.png").default
               }) left top no-repeat`,
             }}
           >
@@ -96,7 +96,7 @@ const LeftMenu = (props) => {
               className="btn_30"
               style={{
                 background: `url(${
-                  require("../assets/img/main/left/ico_go_cnt30.png").default
+                  require("assets/img/main/left/ico_go_cnt30.png").default
                 }) 15px center no-repeat`,
               }}
               onClick={(e) => {
@@ -110,7 +110,7 @@ const LeftMenu = (props) => {
           <li
             style={{
               background: `url(${
-                require("../assets/img/main/left/bg_go_cnt.png").default
+                require("assets/img/main/left/bg_go_cnt.png").default
               }) left top no-repeat`,
             }}
           >
@@ -118,7 +118,7 @@ const LeftMenu = (props) => {
               className="btn_06"
               style={{
                 background: `url(${
-                  require("../assets/img/main/left/ico_go_cnt26.png").default
+                  require("assets/img/main/left/ico_go_cnt26.png").default
                 }) 15px center no-repeat`,
               }}
               onClick={(e) => {
@@ -132,7 +132,7 @@ const LeftMenu = (props) => {
           <li
             style={{
               background: `url(${
-                require("../assets/img/main/left/bg_go_cnt.png").default
+                require("assets/img/main/left/bg_go_cnt.png").default
               }) left top no-repeat`,
             }}
           >
@@ -140,7 +140,7 @@ const LeftMenu = (props) => {
               className="btn_07"
               style={{
                 background: `url(${
-                  require("../assets/img/main/left/ico_go_cnt27.png").default
+                  require("assets/img/main/left/ico_go_cnt27.png").default
                 }) 15px center no-repeat`,
               }}
               onClick={(e) => {
@@ -154,7 +154,7 @@ const LeftMenu = (props) => {
           <li
             style={{
               background: `url(${
-                require("../assets/img/main/left/bg_go_cnt.png").default
+                require("assets/img/main/left/bg_go_cnt.png").default
               }) left top no-repeat`,
             }}
           >
@@ -162,7 +162,7 @@ const LeftMenu = (props) => {
               className="btn_16"
               style={{
                 background: `url(${
-                  require("../assets/img/main/left/ico_go_cnt16.png").default
+                  require("assets/img/main/left/ico_go_cnt16.png").default
                 }) 15px center no-repeat`,
               }}
               onClick={(e) => {
@@ -176,7 +176,7 @@ const LeftMenu = (props) => {
           <li
             style={{
               background: `url(${
-                require("../assets/img/main/left/bg_go_cnt.png").default
+                require("assets/img/main/left/bg_go_cnt.png").default
               }) left top no-repeat`,
             }}
           >
@@ -184,7 +184,7 @@ const LeftMenu = (props) => {
               className="btn_rcb"
               style={{
                 background: `url(${
-                  require("../assets/img/main/left/ico_go_rcb.png").default
+                  require("assets/img/main/left/ico_go_rcb.png").default
                 }) 15px center no-repeat`,
               }}
               onClick={(e) => {

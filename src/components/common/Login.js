@@ -1,6 +1,6 @@
 import { useParams, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { login } from "../../store/employee/actions";
+import { login } from "store/employee/actions";
 
 const Login = (props) => {
   const { token } = useParams();

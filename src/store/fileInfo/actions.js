@@ -1,5 +1,5 @@
 import * as types from "./types";
-import { fileInfoService } from "../../services/fileInfoService";
+import { fileInfoService } from "services/fileInfoService";
 
 const getMyContents = () => {
   return async (dispatch) => {
@@ -113,6 +113,23 @@ const getContentsFromPath = (dirId) => {
   };
 };
 
+const searchContents = (searchStr) => {
+  return async (dispatch) => {
+    try {
+      if (!searchStr || searchStr.trim().length < 1) return;
+      const obj = await fileInfoService.searchContents(searchStr);
+      dispatch({
+        type: types.SEARCH_CONTENTS,
+        payload: {
+          fileInfos: obj.fileInfos,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 const changeFavorite = (id) => {
   return {
     type: types.CHANGE_FAVORITE,
@@ -139,6 +156,7 @@ export {
   getDepartmentContents,
   getTrashContents,
   getContentsFromPath,
+  searchContents,
   changeFavorite,
   changeImportant,
 };

@@ -3,10 +3,10 @@ import { useState } from "react";
 import Frame from "react-frame-component";
 
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!../../../assets/css/global.css";
-import layoutStyles from "!!raw-loader!../../../assets/css/layout.css";
-import bbsStyles from "!!raw-loader!../../../assets/css/bbs.css";
-import ecmPopupStyles from "!!raw-loader!../../../assets/css/ecm_popup.css";
+import globalStyles from "!!raw-loader!assets/css/global.css";
+import layoutStyles from "!!raw-loader!assets/css/layout.css";
+import bbsStyles from "!!raw-loader!assets/css/bbs.css";
+import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
 import roleAssignEditStyles from "!!raw-loader!./RoleAssignEdit.css";
 
 const RoleAssignEdit = () => {
@@ -58,7 +58,7 @@ const RoleAssignEdit = () => {
                 style={{ marginTop: 6 }}
                 alt=""
                 src={
-                  require("../../../assets/img/popup/bg/bg_search.gif").default
+                  require("assets/img/popup/bg/bg_search.gif").default
                 }
               />
             </Link>
@@ -70,7 +70,7 @@ const RoleAssignEdit = () => {
                     style={{
                       marginLeft: 2,
                       background: `url(${
-                        require("../../../assets/img/form/check-off.png")
+                        require("assets/img/form/check-off.png")
                           .default
                       }) no-repeat`,
                     }}
@@ -90,7 +90,7 @@ const RoleAssignEdit = () => {
                 to="/"
                 style={{
                   background: `url(${
-                    require("../../../assets/img/popup/bg/bg_btnGray.gif")
+                    require("assets/img/popup/bg/bg_btnGray.gif")
                       .default
                   }) 0 0 repeat`,
                 }}
@@ -117,7 +117,7 @@ const RoleAssignEdit = () => {
                 style={{ marginTop: 5 }}
                 alt=""
                 src={
-                  require("../../../assets/img/popup/bg/bg_search.gif").default
+                  require("assets/img/popup/bg/bg_search.gif").default
                 }
               />
             </Link>
@@ -153,7 +153,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -166,7 +166,7 @@ const RoleAssignEdit = () => {
                         <img
                           alt=""
                           src={
-                            require("../../../assets/img/form/ico_tree_on.gif")
+                            require("assets/img/form/ico_tree_on.gif")
                               .default
                           }
                         />
@@ -177,7 +177,7 @@ const RoleAssignEdit = () => {
                           <img
                             alt=""
                             src={
-                              require("../../../assets/img/icon/btn_show_peo.gif")
+                              require("assets/img/icon/btn_show_peo.gif")
                                 .default
                             }
                           />
@@ -192,7 +192,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -207,7 +207,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("../../../assets/img/form/ico_tree_off.gif")
+                            require("assets/img/form/ico_tree_off.gif")
                               .default
                           }
                         />
@@ -224,7 +224,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -239,7 +239,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("../../../assets/img/form/ico_tree_off.gif")
+                            require("assets/img/form/ico_tree_off.gif")
                               .default
                           }
                         />
@@ -250,7 +250,7 @@ const RoleAssignEdit = () => {
                           <img
                             alt=""
                             src={
-                              require("../../../assets/img/icon/btn_show_peo.gif")
+                              require("assets/img/icon/btn_show_peo.gif")
                                 .default
                             }
                           />
@@ -266,7 +266,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -289,7 +289,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -304,7 +304,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("../../../assets/img/form/ico_tree_off.gif")
+                            require("assets/img/form/ico_tree_off.gif")
                               .default
                           }
                         />
@@ -315,7 +315,7 @@ const RoleAssignEdit = () => {
                           <img
                             alt=""
                             src={
-                              require("../../../assets/img/icon/btn_show_peo.gif")
+                              require("assets/img/icon/btn_show_peo.gif")
                                 .default
                             }
                           />
@@ -330,7 +330,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -345,7 +345,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("../../../assets/img/form/ico_tree_off.gif")
+                            require("assets/img/form/ico_tree_off.gif")
                               .default
                           }
                         />
@@ -356,7 +356,7 @@ const RoleAssignEdit = () => {
                           <img
                             alt=""
                             src={
-                              require("../../../assets/img/icon/btn_show_peo.gif")
+                              require("assets/img/icon/btn_show_peo.gif")
                                 .default
                             }
                           />
@@ -371,7 +371,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("../../../assets/img/form/check-off.png")
+                                require("assets/img/form/check-off.png")
                                   .default
                               }) no-repeat`,
                             }}
@@ -386,7 +386,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("../../../assets/img/form/ico_tree_off.gif")
+                            require("assets/img/form/ico_tree_off.gif")
                               .default
                           }
                         />
@@ -397,7 +397,7 @@ const RoleAssignEdit = () => {
                           <img
                             alt=""
                             src={
-                              require("../../../assets/img/icon/btn_show_peo.gif")
+                              require("assets/img/icon/btn_show_peo.gif")
                                 .default
                             }
                           />
@@ -418,7 +418,7 @@ const RoleAssignEdit = () => {
                 <img
                   alt=""
                   src={
-                    require("../../../assets/img/popup/btn/btn_personR.png")
+                    require("assets/img/popup/btn/btn_personR.png")
                       .default
                   }
                 />
@@ -427,7 +427,7 @@ const RoleAssignEdit = () => {
                 <img
                   alt=""
                   src={
-                    require("../../../assets/img/popup/btn/btn_personL.png")
+                    require("assets/img/popup/btn/btn_personL.png")
                       .default
                   }
                 />
@@ -438,7 +438,7 @@ const RoleAssignEdit = () => {
                 <img
                   alt=""
                   src={
-                    require("../../../assets/img/popup/btn/btn_personR.png")
+                    require("assets/img/popup/btn/btn_personR.png")
                       .default
                   }
                 />
@@ -447,7 +447,7 @@ const RoleAssignEdit = () => {
                 <img
                   alt=""
                   src={
-                    require("../../../assets/img/popup/btn/btn_personL.png")
+                    require("assets/img/popup/btn/btn_personL.png")
                       .default
                   }
                 />
@@ -466,7 +466,7 @@ const RoleAssignEdit = () => {
                 to="/"
                 style={{
                   background: `url(${
-                    require("../../../assets/img/popup/bg/bg_btnGray.gif")
+                    require("assets/img/popup/bg/bg_btnGray.gif")
                       .default
                   }) 0 0 repeat`,
                 }}
@@ -491,7 +491,7 @@ const RoleAssignEdit = () => {
               <img
                 alt=""
                 src={
-                  require("../../../assets/img/popup/btn/btn_personD.png")
+                  require("assets/img/popup/btn/btn_personD.png")
                     .default
                 }
               />
@@ -500,7 +500,7 @@ const RoleAssignEdit = () => {
               <img
                 alt=""
                 src={
-                  require("../../../assets/img/popup/btn/btn_personU.png")
+                  require("assets/img/popup/btn/btn_personU.png")
                     .default
                 }
               />
@@ -509,7 +509,7 @@ const RoleAssignEdit = () => {
               <img
                 alt=""
                 src={
-                  require("../../../assets/img/popup/btn/btn_personB.png")
+                  require("assets/img/popup/btn/btn_personB.png")
                     .default
                 }
               />
@@ -526,7 +526,7 @@ const RoleAssignEdit = () => {
                 to="/"
                 style={{
                   background: `url(${
-                    require("../../../assets/img/popup/bg/bg_btnGray.gif")
+                    require("assets/img/popup/bg/bg_btnGray.gif")
                       .default
                   }) 0 0 repeat`,
                 }}

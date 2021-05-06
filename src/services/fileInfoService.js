@@ -1,4 +1,4 @@
-import { api } from "../utils/api";
+import { api } from "utils/api";
 
 const getMyContents = async () => {
   return await api.get("/FileInfo/GetFileInfos").then((response) => {
@@ -44,6 +44,14 @@ const getContentsFromPath = async (dirId) => {
     });
 };
 
+const searchContents = async (searchStr) => {
+  return await api
+    .get("/FileInfo/Search?searchContent=" + searchStr)
+    .then((response) => {
+      return response.data;
+    });
+};
+
 export const fileInfoService = {
   getMyContents,
   getImportantContents,
@@ -51,5 +59,6 @@ export const fileInfoService = {
   getSharedContents,
   getDepartmentContents,
   getTrashContents,
-  getContentsFromPath
+  getContentsFromPath,
+  searchContents,
 };

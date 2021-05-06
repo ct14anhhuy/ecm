@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
-import * as exts from "../utils/extTypes";
+import * as exts from "utils/extTypes";
 
 const MainTable = (props) => {
   const [fileInfos, setFileInfos] = useState(
@@ -27,23 +27,6 @@ const MainTable = (props) => {
         break;
     }
   }, [props.fileInfos, props.filterExt]);
-
-  useEffect(() => {
-    const fi = props.fileInfos;
-    if (!props.searchStr || props.searchStr.trim() === "") {
-      setFileInfos(fi);
-    } else {
-      const searchStr = props.searchStr.trim().toLowerCase();
-      setFileInfos(
-        fi.filter((fileInfo) => {
-          return (
-            fileInfo.name.toLowerCase().includes(searchStr) ||
-            fileInfo.owner.toLowerCase().includes(searchStr)
-          );
-        })
-      );
-    }
-  }, [props.fileInfos, props.searchStr]);
 
   const handleShowInfo = (id) => {
     setFileInfos(
