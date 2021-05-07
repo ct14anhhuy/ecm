@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as exts from "utils/extTypes";
+import { connect } from "react-redux";
+import * as act from "store/pagination/actions";
 
 const Filter = (props) => {
   const [showListRow, setShowListRow] = useState(false);
-  const [showNumOfElems, setShowNumOfElems] = useState("Show");
+  const { pageLimit, updatePageLimit, setFilterExt } = props;
 
   return (
     <div className="sortingBox" style={{ display: "block" }}>
       <ul className="icoBtn" style={{ display: "block" }}>
         <li>
-          <Link to="/" onClick={() => props.setFilterExt(exts.ALL)}>
+          <Link to="/" onClick={() => setFilterExt(exts.ALL)}>
             <img
               alt=""
               title="All"
@@ -19,7 +21,7 @@ const Filter = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => props.setFilterExt(exts.POWERPOINT)}>
+          <Link to="/" onClick={() => setFilterExt(exts.POWERPOINT)}>
             <img
               alt=""
               title="Powerpoint"
@@ -28,7 +30,7 @@ const Filter = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => props.setFilterExt(exts.EXCEL)}>
+          <Link to="/" onClick={() => setFilterExt(exts.EXCEL)}>
             <img
               alt=""
               title="Excel"
@@ -37,7 +39,7 @@ const Filter = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => props.setFilterExt(exts.WORD)}>
+          <Link to="/" onClick={() => setFilterExt(exts.WORD)}>
             <img
               alt=""
               title="Word"
@@ -46,7 +48,7 @@ const Filter = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => props.setFilterExt(exts.PDF)}>
+          <Link to="/" onClick={() => setFilterExt(exts.PDF)}>
             <img
               alt=""
               title="PDF"
@@ -55,7 +57,7 @@ const Filter = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => props.setFilterExt(exts.IMAGE)}>
+          <Link to="/" onClick={() => setFilterExt(exts.IMAGE)}>
             <img
               alt=""
               title="Image"
@@ -67,6 +69,7 @@ const Filter = (props) => {
       <div className="viewCountBtnWrap">
         <div className="mainViewCount">
           <div className="am_DivSelectyze am_grey" style={{ zIndex: 10 }}>
+            <span>Show </span>
             <Link
               className="am_selectyzeValue"
               onClick={() => {
@@ -74,7 +77,7 @@ const Filter = (props) => {
               }}
               to="/"
             >
-              {showNumOfElems}
+              {pageLimit}
             </Link>
             <ul
               className="am_UlSelectize"
@@ -83,7 +86,7 @@ const Filter = (props) => {
               <li
                 onClick={() => {
                   setShowListRow(false);
-                  setShowNumOfElems("15 rows");
+                  updatePageLimit(15);
                 }}
               >
                 <Link to="/">15</Link>
@@ -91,7 +94,7 @@ const Filter = (props) => {
               <li
                 onClick={() => {
                   setShowListRow(false);
-                  setShowNumOfElems("30 rows");
+                  updatePageLimit(30);
                 }}
               >
                 <Link to="/">30</Link>
@@ -99,7 +102,7 @@ const Filter = (props) => {
               <li
                 onClick={() => {
                   setShowListRow(false);
-                  setShowNumOfElems("50 rows");
+                  updatePageLimit(50);
                 }}
               >
                 <Link to="/">50</Link>
@@ -107,12 +110,13 @@ const Filter = (props) => {
               <li
                 onClick={() => {
                   setShowListRow(false);
-                  setShowNumOfElems("100 rows");
+                  updatePageLimit(100);
                 }}
               >
                 <Link to="/">100</Link>
               </li>
             </ul>
+            <span> Rows</span>
           </div>
         </div>
       </div>
@@ -120,4 +124,16 @@ const Filter = (props) => {
   );
 };
 
-export default Filter;
+const mapStateToProps = (state) => {
+  return {
+    pageLimit: state.paginationReducers.pageLimit,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updatePageLimit: (pageLimit) => dispatch(act.updatePageLimit(pageLimit)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

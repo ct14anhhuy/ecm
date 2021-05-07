@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import fileInfoReducers from "./fileInfo/reducers";
 import directoryReducers from "./diretory/reducers";
 import employeeReducers from "./employee/reducers";
+import paginationReducers from "./pagination/reducers";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import thunkMiddleware from "redux-thunk";
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   fileInfoReducers,
   directoryReducers,
   employeeReducers,
+  paginationReducers,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -31,7 +33,6 @@ const composeSetup =
 const configureStore = () => {
   const middlewares = [thunkMiddleware];
   const middlewareEnhancer = applyMiddleware(...middlewares);
-
   return createStore(persistedReducer, composeSetup(middlewareEnhancer));
 };
 

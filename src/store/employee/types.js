@@ -1,5 +1,3 @@
-const LOGIN_REQUEST = "LOGIN";
-const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-const LOGOUT = "LOGOUT";
-
-export { LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT };
+export const LOGIN_REQUEST = "LOGIN";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGOUT = "LOGOUT";

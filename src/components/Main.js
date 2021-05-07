@@ -11,7 +11,7 @@ import OptionBox from "./OptionBox";
 import MainTable from "./MainTable";
 import { MainContext } from "context";
 import CreateDirectory from "./CreateDirectory";
-import Pagination from "./Pagination";
+import Paging from "./Paging";
 import * as exts from "utils/extTypes";
 import OpenContent from "./OpenContent";
 import { connect } from "react-redux";
@@ -89,7 +89,7 @@ const App = (props) => {
                           />
                         </MainContext.Provider>
                       </div>
-                      <Pagination />
+                      <Paging />
                     </div>
                   </div>
                 </div>

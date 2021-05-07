@@ -3,17 +3,20 @@ import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
 import * as exts from "utils/extTypes";
+import * as act from "store/pagination/actions";
 
 const MainTable = (props) => {
   const [fileInfos, setFileInfos] = useState(
     props.fileInfos.map((fi) => Object.assign(fi, { showInfo: false }))
   );
   const [selectAll, setSelectAll] = useState(false);
+  const [currentFiles, setCurrentFiles] = useState([]);
+  const { updateTotalRecords, updateTotalPages, updatePageNeighbours } = props;
+  const { pageLimit, currentPage, pageNeighbours } = props.pagination;
 
   useEffect(() => {
     const fe = props.filterExt;
     const fi = props.fileInfos;
-
     switch (fe) {
       case exts.ALL:
         setFileInfos(fi);
@@ -28,10 +31,23 @@ const MainTable = (props) => {
     }
   }, [props.fileInfos, props.filterExt]);
 
+  useEffect(() => {
+    let totalRecords = fileInfos.length;
+    let totalPages = Math.ceil(totalRecords / pageLimit);
+    const offset = (currentPage - 1) * pageLimit;
+    const currentFiles = fileInfos.slice(offset, offset + pageLimit);
+    updateTotalRecords(totalRecords);
+    updateTotalPages(totalPages);
+    updatePageNeighbours(Math.max(0, Math.min(pageNeighbours, 2)));
+    setCurrentFiles(currentFiles);
+  }, [currentPage, fileInfos, pageLimit, pageNeighbours, updatePageNeighbours, updateTotalPages, updateTotalRecords]);
+
   const handleShowInfo = (id) => {
     setFileInfos(
       fileInfos.map((fi) =>
-        fi.id === id ? { ...fi, showInfo: !fi.showInfo } : { ...fi, showInfo: false }
+        fi.id === id
+          ? { ...fi, showInfo: !fi.showInfo }
+          : { ...fi, showInfo: false }
       )
     );
   };
@@ -100,7 +116,7 @@ const MainTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {fileInfos.map((fileInfo) => (
+        {currentFiles.map((fileInfo) => (
           <MainTableItem
             key={fileInfo.id}
             selectAll={selectAll}
@@ -116,7 +132,19 @@ const MainTable = (props) => {
 const mapStateToProps = (state) => {
   return {
     fileInfos: state.fileInfoReducers,
+    pagination: state.paginationReducers,
   };
 };
 
-export default connect(mapStateToProps, null)(MainTable);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateTotalRecords: (totalRecords) =>
+      dispatch(act.updateTotalRecords(totalRecords)),
+    updateTotalPages: (totalPages) =>
+      dispatch(act.updateTotalPages(totalPages)),
+    updatePageNeighbours: (pageNeighbours) =>
+      dispatch(act.updatePageNeighbours(pageNeighbours)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainTable);
