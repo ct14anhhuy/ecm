@@ -14,11 +14,11 @@ import calendaStyles from "!!raw-loader!assets/css/calenda.css";
 import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
 import addFileStyles from "!!raw-loader!./AddFileFrame.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
+import SelectFile from "./SelectFile";
 
 const AddFileFrame = () => {
   const contextData = useContext(MainContext);
   const [showListDirectory, setShowListDirectory] = useState(false);
-  const [editFileName, setEditFileName] = useState(false);
   const [selectedPath, setSelectedPath] = useState({
     id: null,
     path: "",
@@ -37,13 +37,14 @@ const AddFileFrame = () => {
       >
         <div className="header">
           <h1 className="tit">Add Content</h1>
-          <Link className="close" to="/" onClick={() => contextData.setShowAddFileModal(false)}>
+          <Link
+            className="close"
+            to="/"
+            onClick={() => contextData.setShowAddFileModal(false)}
+          >
             <img
-              alt="닫기"
-              src={
-                require("assets/img/contents/ecmMain/img_close.gif")
-                  .default
-              }
+              alt=""
+              src={require("assets/img/contents/ecmMain/img_close.gif").default}
             />
           </Link>
         </div>
@@ -56,8 +57,7 @@ const AddFileFrame = () => {
                   className="btnBlack"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_blackBtn_L.png")
-                        .default
+                      require("assets/img/popup/bg/bg_blackBtn_L.png").default
                     }) right 0 no-repeat`,
                   }}
                   to="/"
@@ -65,8 +65,7 @@ const AddFileFrame = () => {
                   <span
                     style={{
                       background: `url(${
-                        require("assets/img/popup/bg/bg_blackBtn_R.png")
-                          .default
+                        require("assets/img/popup/bg/bg_blackBtn_R.png").default
                       }) right 0 no-repeat`,
                     }}
                   >
@@ -77,114 +76,7 @@ const AddFileFrame = () => {
             </p>
             <div className="contentList">
               <ul className="list">
-                <li>
-                  <span
-                    className="contentsNameView"
-                    style={
-                      editFileName ? { display: "none" } : { display: "block" }
-                    }
-                  >
-                    <Link
-                      className="title"
-                      style={{
-                        width: "93%",
-                        overflow: "hidden",
-                        display: "block",
-                        whiteSpace: "nowrap",
-                        msTextOverflow: "ellipsis",
-                      }}
-                      to="/"
-                    >
-                      <span className="contentsExtImage">
-                        <img
-                          alt=""
-                          style={{ width: 16, height: 16 }}
-                          src={
-                            require("assets/img/fileicons/pdf.png")
-                              .default
-                          }
-                        />
-                      </span>
-                      <span className="contentsNameViewTitle">
-                        20210105_2021년 구정휴무일정 공지문.pdf
-                      </span>
-                    </Link>
-                    <span className="floatR">
-                      <Link
-                        className="btnChk"
-                        to="/"
-                        onClick={() => setEditFileName(!editFileName)}
-                      >
-                        <img
-                          alt=""
-                          src={
-                            require("assets/img/popup/ico/ico_contentList_edit.png")
-                              .default
-                          }
-                        />
-                      </Link>
-                      <Link className="btnDel" to="/">
-                        <img
-                          alt=""
-                          src={
-                            require("assets/img/popup/ico/ico_contentList_del.png")
-                              .default
-                          }
-                        />
-                      </Link>
-                    </span>
-                  </span>
-                  <span
-                    className="contentsNameEdit"
-                    style={
-                      editFileName ? { display: "block" } : { display: "none" }
-                    }
-                  >
-                    <span className="title floatL">
-                      <span className="contentsExtImageEdit">
-                        <img
-                          alt=""
-                          style={{ width: 16, height: 16 }}
-                          src={
-                            require("assets/img/fileicons/pdf.png")
-                              .default
-                          }
-                        />
-                      </span>
-                      <input
-                        className="contentsNameEditTitle"
-                        style={{ msImeMode: "active" }}
-                        type="text"
-                        size={100}
-                        defaultValue="20210105_2021년 구정휴무일정 공지문.pdf"
-                      />
-                    </span>
-                    <span className="floatR">
-                      <Link
-                        className="btnChk"
-                        to="/"
-                        onClick={() => setEditFileName(!editFileName)}
-                      >
-                        <img
-                          alt=""
-                          src={
-                            require("assets/img/popup/ico/ico_check.png")
-                              .default
-                          }
-                        />
-                      </Link>
-                      <Link className="btnDel" to="/">
-                        <img
-                          alt=""
-                          src={
-                            require("assets/img/popup/ico/ico_contentList_del.png")
-                              .default
-                          }
-                        />
-                      </Link>
-                    </span>
-                  </span>
-                </li>
+                <SelectFile />
               </ul>
             </div>
             <p className="popSubTitle">
@@ -260,8 +152,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png")
-                        .default
+                      require("assets/img/popup/bg/bg_safe_btn.png").default
                     }) no-repeat 0 0`,
                   }}
                 >
@@ -272,8 +163,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png")
-                        .default
+                      require("assets/img/popup/bg/bg_safe_btn.png").default
                     }) no-repeat 0 0`,
                   }}
                 >
@@ -284,8 +174,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png")
-                        .default
+                      require("assets/img/popup/bg/bg_safe_btn.png").default
                     }) no-repeat 0 0`,
                   }}
                 >
@@ -296,8 +185,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png")
-                        .default
+                      require("assets/img/popup/bg/bg_safe_btn.png").default
                     }) no-repeat 0 0`,
                   }}
                 >
@@ -308,8 +196,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png")
-                        .default
+                      require("assets/img/popup/bg/bg_safe_btn.png").default
                     }) no-repeat 0 0`,
                   }}
                 >
@@ -320,8 +207,7 @@ const AddFileFrame = () => {
                   to="/"
                   style={{
                     background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png")
-                        .default
+                      require("assets/img/popup/bg/bg_safe_btn.png").default
                     }) no-repeat 0 0`,
                   }}
                 >
