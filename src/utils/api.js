@@ -1,6 +1,6 @@
 import axios from "axios";
 import { store } from "store/configureStore";
-import { logout } from "store/employee/actions";
+import { logout } from "store/user/actions";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,

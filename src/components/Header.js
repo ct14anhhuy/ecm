@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as act from "store/employee/actions";
+import * as act from "store/user/actions";
 
 const Header = (props) => {
-  const employee = props.employee;
+  const user = props.user;
 
   return (
     <div id="header">
@@ -31,7 +31,7 @@ const Header = (props) => {
           <div className="topRt">
             <div className="psnName showHideTrg">
               <Link className="trg" to="/">
-                <strong>{employee.lastName + " " + employee.firstName}</strong>
+                <strong>{user.lastName + " " + user.firstName}</strong>
               </Link>
             </div>
             <Link
@@ -54,7 +54,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    employee: state.employeeReducers,
+    user: state.userReducers,
   };
 };
 

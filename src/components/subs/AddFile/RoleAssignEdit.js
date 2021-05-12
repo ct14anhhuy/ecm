@@ -1,16 +1,29 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Frame from "react-frame-component";
+import { connect } from "react-redux";
+import * as act from "store/employee/actions";
 
 /* eslint import/no-webpack-loader-syntax: off */
 import globalStyles from "!!raw-loader!assets/css/global.css";
 import layoutStyles from "!!raw-loader!assets/css/layout.css";
 import bbsStyles from "!!raw-loader!assets/css/bbs.css";
+import popColumnRStyles from "!!raw-loader!assets/css/popColumnR.css";
 import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
 import roleAssignEditStyles from "!!raw-loader!./RoleAssignEdit.css";
 
-const RoleAssignEdit = () => {
+const RoleAssignEdit = (props) => {
+  const [employees, setEmployees] = useState([]);
   const [selectName, setSelectName] = useState(true);
+  const [searchStr, setSearchStr] = useState("");
+
+  useEffect(() => {
+    // props.initState();
+  });
+
+  useEffect(() => {
+    setEmployees(props.employees);
+  }, [props.employees]);
 
   const tabRoleBody = (
     <div className="positionBox type_2" style={{ width: 800 }}>
@@ -33,12 +46,20 @@ const RoleAssignEdit = () => {
           <div className="contents">
             <ul className="tabUL">
               <li>
-                <Link className="on" to="/" onClick={() => setSelectName(true)}>
+                <Link
+                  className={selectName ? "on" : ""}
+                  to="/"
+                  onClick={() => setSelectName(true)}
+                >
                   Name
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={() => setSelectName(false)}>
+                <Link
+                  to="/"
+                  className={selectName ? "" : "on"}
+                  onClick={() => setSelectName(false)}
+                >
                   Department
                 </Link>
               </li>
@@ -52,14 +73,16 @@ const RoleAssignEdit = () => {
               className="search"
               style={{ msImeMode: "active" }}
               type="text"
+              defaultValue={searchStr}
+              onChange={(e) => {
+                setSearchStr(e.target.value);
+              }}
             />
-            <Link to="/">
+            <Link to="/" onClick={() => props.searchByName(searchStr)}>
               <img
                 style={{ marginTop: 6 }}
                 alt=""
-                src={
-                  require("assets/img/popup/bg/bg_search.gif").default
-                }
+                src={require("assets/img/popup/bg/bg_search.gif").default}
               />
             </Link>
             <div className="count_box">
@@ -70,8 +93,7 @@ const RoleAssignEdit = () => {
                     style={{
                       marginLeft: 2,
                       background: `url(${
-                        require("assets/img/form/check-off.png")
-                          .default
+                        require("assets/img/form/check-off.png").default
                       }) no-repeat`,
                     }}
                   >
@@ -90,8 +112,7 @@ const RoleAssignEdit = () => {
                 to="/"
                 style={{
                   background: `url(${
-                    require("assets/img/popup/bg/bg_btnGray.gif")
-                      .default
+                    require("assets/img/popup/bg/bg_btnGray.gif").default
                   }) 0 0 repeat`,
                 }}
               >
@@ -101,7 +122,31 @@ const RoleAssignEdit = () => {
             <div className="maxH type_2">
               <div className="marR16">
                 <table className="normalTb" style={{ width: "100%" }}>
-                  <tbody></tbody>
+                  <tbody>
+                    {employees.map((emp) => (
+                      <tr key={emp.id}>
+                        <td>
+                          <div className="contentTitle">
+                            <label
+                              className="i_check"
+                              style={{
+                                marginLeft: 10,
+                                background: `url(${
+                                  require("assets/img/form/check-off.png")
+                                    .default
+                                }) no-repeat`,
+                              }}
+                            >
+                              <input name="checkbox" type="checkbox" />
+                            </label>
+                            <span className="checkTxt">
+                              {`${emp.lastName} ${emp.firstName}`}
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -116,9 +161,7 @@ const RoleAssignEdit = () => {
               <img
                 style={{ marginTop: 5 }}
                 alt=""
-                src={
-                  require("assets/img/popup/bg/bg_search.gif").default
-                }
+                src={require("assets/img/popup/bg/bg_search.gif").default}
               />
             </Link>
             <div className="maxH type_4">
@@ -153,8 +196,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -166,8 +208,7 @@ const RoleAssignEdit = () => {
                         <img
                           alt=""
                           src={
-                            require("assets/img/form/ico_tree_on.gif")
-                              .default
+                            require("assets/img/form/ico_tree_on.gif").default
                           }
                         />
                       </td>
@@ -192,8 +233,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -207,8 +247,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("assets/img/form/ico_tree_off.gif")
-                              .default
+                            require("assets/img/form/ico_tree_off.gif").default
                           }
                         />
                       </td>
@@ -224,8 +263,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -239,8 +277,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("assets/img/form/ico_tree_off.gif")
-                              .default
+                            require("assets/img/form/ico_tree_off.gif").default
                           }
                         />
                       </td>
@@ -266,8 +303,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -289,8 +325,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -304,8 +339,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("assets/img/form/ico_tree_off.gif")
-                              .default
+                            require("assets/img/form/ico_tree_off.gif").default
                           }
                         />
                       </td>
@@ -330,8 +364,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -345,8 +378,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("assets/img/form/ico_tree_off.gif")
-                              .default
+                            require("assets/img/form/ico_tree_off.gif").default
                           }
                         />
                       </td>
@@ -371,8 +403,7 @@ const RoleAssignEdit = () => {
                             style={{
                               marginLeft: 2,
                               background: `url(${
-                                require("assets/img/form/check-off.png")
-                                  .default
+                                require("assets/img/form/check-off.png").default
                               }) no-repeat`,
                             }}
                           >
@@ -386,8 +417,7 @@ const RoleAssignEdit = () => {
                           style={{ cursor: "pointer" }}
                           alt=""
                           src={
-                            require("assets/img/form/ico_tree_off.gif")
-                              .default
+                            require("assets/img/form/ico_tree_off.gif").default
                           }
                         />
                       </td>
@@ -417,19 +447,13 @@ const RoleAssignEdit = () => {
               <Link to="/">
                 <img
                   alt=""
-                  src={
-                    require("assets/img/popup/btn/btn_personR.png")
-                      .default
-                  }
+                  src={require("assets/img/popup/btn/btn_personR.png").default}
                 />
               </Link>
               <Link to="/">
                 <img
                   alt=""
-                  src={
-                    require("assets/img/popup/btn/btn_personL.png")
-                      .default
-                  }
+                  src={require("assets/img/popup/btn/btn_personL.png").default}
                 />
               </Link>
             </p>
@@ -437,19 +461,13 @@ const RoleAssignEdit = () => {
               <Link to="/">
                 <img
                   alt=""
-                  src={
-                    require("assets/img/popup/btn/btn_personR.png")
-                      .default
-                  }
+                  src={require("assets/img/popup/btn/btn_personR.png").default}
                 />
               </Link>
               <Link to="/">
                 <img
                   alt=""
-                  src={
-                    require("assets/img/popup/btn/btn_personL.png")
-                      .default
-                  }
+                  src={require("assets/img/popup/btn/btn_personL.png").default}
                 />
               </Link>
             </p>
@@ -466,8 +484,7 @@ const RoleAssignEdit = () => {
                 to="/"
                 style={{
                   background: `url(${
-                    require("assets/img/popup/bg/bg_btnGray.gif")
-                      .default
+                    require("assets/img/popup/bg/bg_btnGray.gif").default
                   }) 0 0 repeat`,
                 }}
               >
@@ -490,28 +507,19 @@ const RoleAssignEdit = () => {
             <Link to="/">
               <img
                 alt=""
-                src={
-                  require("assets/img/popup/btn/btn_personD.png")
-                    .default
-                }
+                src={require("assets/img/popup/btn/btn_personD.png").default}
               />
             </Link>
             <Link to="/">
               <img
                 alt=""
-                src={
-                  require("assets/img/popup/btn/btn_personU.png")
-                    .default
-                }
+                src={require("assets/img/popup/btn/btn_personU.png").default}
               />
             </Link>
             <Link to="/">
               <img
                 alt=""
-                src={
-                  require("assets/img/popup/btn/btn_personB.png")
-                    .default
-                }
+                src={require("assets/img/popup/btn/btn_personB.png").default}
               />
             </Link>
           </p>
@@ -526,8 +534,7 @@ const RoleAssignEdit = () => {
                 to="/"
                 style={{
                   background: `url(${
-                    require("assets/img/popup/bg/bg_btnGray.gif")
-                      .default
+                    require("assets/img/popup/bg/bg_btnGray.gif").default
                   }) 0 0 repeat`,
                 }}
               >
@@ -537,7 +544,6 @@ const RoleAssignEdit = () => {
           </div>
           <div className="roleT">
             <table className="personTb">
-              <caption>사람 목록</caption>
               <colgroup>
                 <col width={50} />
                 <col width="*" />
@@ -561,6 +567,7 @@ const RoleAssignEdit = () => {
           {globalStyles}
           {layoutStyles}
           {bbsStyles}
+          {popColumnRStyles}
           {ecmPopupStyles}
           {roleAssignEditStyles}
         </style>
@@ -571,4 +578,17 @@ const RoleAssignEdit = () => {
   );
 };
 
-export default RoleAssignEdit;
+const mapStateToProps = (state) => {
+  return {
+    employees: state.employeeReducers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    initState: () => dispatch(act.initState()),
+    searchByName: (name) => dispatch(act.searchByName(name)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RoleAssignEdit);

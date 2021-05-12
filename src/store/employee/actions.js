@@ -1,13 +1,21 @@
 import * as types from "./types";
 import { employeeService } from "services/employeeService";
 
-const login = () => {
+const initState = () => {
+  return {
+    type: types.INIT_STATE,
+  };
+};
+
+const searchByName = (name) => {
   return async (dispatch) => {
     try {
-      const employee = await employeeService.login();
+      const employees = await employeeService.searchByName(name);
       dispatch({
-        type: types.LOGIN_SUCCESS,
-        payload: { employee },
+        type: types.SEARCH_BY_NAME,
+        payload: {
+          employees,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -15,10 +23,4 @@ const login = () => {
   };
 };
 
-const logout = () => {
-  return {
-    type: types.LOGOUT,
-  };
-};
-
-export { login, logout };
+export { initState, searchByName };

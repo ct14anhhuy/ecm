@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import fileInfoReducers from "./fileInfo/reducers";
 import directoryReducers from "./diretory/reducers";
+import userReducers from "./user/reducers";
 import employeeReducers from "./employee/reducers";
 import paginationReducers from "./pagination/reducers";
 import { persistStore, persistReducer } from "redux-persist";
@@ -11,12 +12,13 @@ import { createStore, compose, applyMiddleware } from "redux";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["employeeReducers"],
+  whitelist: ["userReducers"],
 };
 
 const rootReducer = combineReducers({
   fileInfoReducers,
   directoryReducers,
+  userReducers,
   employeeReducers,
   paginationReducers,
 });

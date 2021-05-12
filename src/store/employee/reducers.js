@@ -1,11 +1,11 @@
 import * as types from "./types";
 
-const employeeReducers = (state = {}, action) => {
+const employeeReducers = (state = [], action) => {
   switch (action.type) {
-    case types.LOGIN_SUCCESS:
-      return action.payload.employee;
-    case types.LOGOUT:
-      return {};
+    case types.INIT_STATE:
+      return [];
+    case types.SEARCH_BY_NAME:
+      return [...action.payload.employees];
     default:
       return state;
   }

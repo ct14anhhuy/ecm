@@ -1,3 +1,2 @@
-export const LOGIN_REQUEST = "LOGIN";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGOUT = "LOGOUT";
+export const INIT_STATE = "INIT_STATE";
+export const SEARCH_BY_NAME = "SEARCH_BY_NAME";

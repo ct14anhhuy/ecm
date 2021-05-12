@@ -336,7 +336,7 @@ const AddFileFrame = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    owner: state.employeeReducers.id,
+    owner: state.userReducers.id,
   };
 };
 
