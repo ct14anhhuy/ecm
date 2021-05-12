@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Frame from "react-frame-component";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import RoleAssignEdit from "./RoleAssignEdit";
 import { MainContext } from "context";
 import TreeView from "components/TreeView";
+import { connect } from "react-redux";
+import SelectFile from "./SelectFile";
 
 /* eslint import/no-webpack-loader-syntax: off */
 import globalStyles from "!!raw-loader!assets/css/global.css";
@@ -14,19 +16,55 @@ import calendaStyles from "!!raw-loader!assets/css/calenda.css";
 import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
 import addFileStyles from "!!raw-loader!./AddFileFrame.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
-import SelectFile from "./SelectFile";
 
-const AddFileFrame = () => {
+const AddFileFrame = (props) => {
+  const fileRef = useRef();
   const contextData = useContext(MainContext);
-  const [showListDirectory, setShowListDirectory] = useState(false);
-  const [selectedPath, setSelectedPath] = useState({
-    id: null,
-    path: "",
+
+  const [state, setState] = useState({
+    owner: null,
+    tag: "#",
+    directoryId: null,
+    securityLevel: "Public",
+    files: [],
   });
+  const [showListDirectory, setShowListDirectory] = useState(false);
+  const [selectedPath, setSelectedPath] = useState("");
+
+  useEffect(() => {
+    setState((state) => ({ ...state, owner: props.owner }));
+  }, [props.owner]);
+
+  const handleChangeFileName = (key, fileName) => {
+    const arr = [...state.files];
+    const idEdit = arr.findIndex((f) => f.key === key);
+    arr[idEdit] = { ...state.files[idEdit], name: fileName };
+    setState({ ...state, files: arr });
+  };
+
+  const handleDeleteFile = (key) => {
+    const arr = state.files.filter((f) => f.key !== key);
+    setState({
+      ...state,
+      files: arr,
+    });
+  };
+
+  const handleSelectFile = (e) => {
+    if (!e.target.files[0]) return;
+    setState({
+      ...state,
+      files: [
+        ...state.files,
+        Object.assign(e.target.files[0], { key: new Date().getTime() }),
+      ],
+    });
+  };
 
   const handleOnSelectPath = (selectedId, path) => {
     setShowListDirectory(false);
-    setSelectedPath({ id: selectedId, path: path });
+    setSelectedPath(path);
+    setState({ ...state, directoryId: selectedId });
   };
 
   const bodyFrame = (
@@ -61,6 +99,9 @@ const AddFileFrame = () => {
                     }) right 0 no-repeat`,
                   }}
                   to="/"
+                  onClick={() => {
+                    fileRef.current.click();
+                  }}
                 >
                   <span
                     style={{
@@ -73,10 +114,24 @@ const AddFileFrame = () => {
                   </span>
                 </Link>
               </span>
+              <input
+                type="file"
+                id="file"
+                ref={fileRef}
+                style={{ display: "none" }}
+                onChange={handleSelectFile}
+              />
             </p>
             <div className="contentList">
               <ul className="list">
-                <SelectFile />
+                {state.files.map((file) => (
+                  <SelectFile
+                    key={file.key}
+                    file={file}
+                    handleChangeFileName={handleChangeFileName}
+                    handleDeleteFile={handleDeleteFile}
+                  />
+                ))}
               </ul>
             </div>
             <p className="popSubTitle">
@@ -88,7 +143,7 @@ const AddFileFrame = () => {
                   <tbody>
                     <tr>
                       <td style={{ paddingLeft: 5 }}>
-                        <label className="label">{selectedPath.path}</label>
+                        <label className="label">{selectedPath}</label>
                       </td>
                       <td width={63}>
                         <Link
@@ -222,11 +277,13 @@ const AddFileFrame = () => {
               </span>
             </p>
             <div className="hashtag_inputer">
-              <span className="inputer">
-                <em className="clone" />
-                <em className="marker">#</em>
-                <input type="text" maxLength={20} />
-              </span>
+              <input
+                type="text"
+                value={state.tag}
+                onChange={(e) => {
+                  setState({ ...state, tag: e.target.value });
+                }}
+              />
             </div>
             <p className="popSubTitle">
               <span className="subtype_2">Permission Setting</span>
@@ -277,4 +334,10 @@ const AddFileFrame = () => {
   );
 };
 
-export default AddFileFrame;
+const mapStateToProps = (state) => {
+  return {
+    owner: state.employeeReducers.id,
+  };
+};
+
+export default connect(mapStateToProps, null)(AddFileFrame);

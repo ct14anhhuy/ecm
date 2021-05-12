@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { connect } from "react-redux";
 import { changeFavorite, changeImportant } from "store/fileInfo/actions";
 import { Link } from "react-router-dom";
@@ -12,13 +12,28 @@ const MainTableItem = (props) => {
   const fileInfo = props.fileInfo;
   const [fileChecked, setFileChecked] = useState(false);
 
+  const node = useRef();
+
   useEffect(() => {
     setFileChecked(props.selectAll);
   }, [props.selectAll]);
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
+
+  const handleClick = (e) => {
+    if (node.current.contains(e.target)) {
+      return;
+    }
+    node.current.style.display = "none";
+  };
+
   const handleOnCopyUrl = () => {
     navigator.clipboard.writeText(fileInfo.id);
-    props.handleShowInfo(fileInfo.id);
   };
 
   return (
@@ -78,7 +93,7 @@ const MainTableItem = (props) => {
             className="listInfo"
             to="/"
             onClick={() => {
-              props.handleShowInfo(fileInfo.id);
+              node.current.style.display = "block";
             }}
           >
             <img
@@ -88,11 +103,9 @@ const MainTableItem = (props) => {
           </Link>
           <ul
             className="infoMenu"
-            style={
-              fileInfo.showInfo
-                ? { top: 16, display: "block" }
-                : { top: 16, display: "none" }
-            }
+            ref={node}
+            style={{ top: 16, display: "none" }}
+            onClick={()=>{node.current.style.display = "none";}}
           >
             <li style={{ fontWeight: "bold" }}>
               <Link to="/" onClick={handleOnCopyUrl}>

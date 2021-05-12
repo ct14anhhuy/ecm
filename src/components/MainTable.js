@@ -6,9 +6,7 @@ import * as exts from "utils/extTypes";
 import * as act from "store/pagination/actions";
 
 const MainTable = (props) => {
-  const [fileInfos, setFileInfos] = useState(
-    props.fileInfos.map((fi) => Object.assign(fi, { showInfo: false }))
-  );
+  const [fileInfos, setFileInfos] = useState(props.fileInfos);
   const [selectAll, setSelectAll] = useState(false);
   const [currentFiles, setCurrentFiles] = useState([]);
   const { updateTotalRecords, updateTotalPages, updatePageNeighbours } = props;
@@ -41,16 +39,6 @@ const MainTable = (props) => {
     updatePageNeighbours(Math.max(0, Math.min(pageNeighbours, 2)));
     setCurrentFiles(currentFiles);
   }, [currentPage, fileInfos, pageLimit, pageNeighbours, updatePageNeighbours, updateTotalPages, updateTotalRecords]);
-
-  const handleShowInfo = (id) => {
-    setFileInfos(
-      fileInfos.map((fi) =>
-        fi.id === id
-          ? { ...fi, showInfo: !fi.showInfo }
-          : { ...fi, showInfo: false }
-      )
-    );
-  };
 
   return (
     <table className="normalTb" style={{ marginBottom: 15 }}>
@@ -121,7 +109,6 @@ const MainTable = (props) => {
             key={fileInfo.id}
             selectAll={selectAll}
             fileInfo={fileInfo}
-            handleShowInfo={handleShowInfo}
           />
         ))}
       </tbody>

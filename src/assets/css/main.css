@@ -2,9 +2,7 @@
 
 @import url(global.css);
 @import url(layout.css);
-/* @import url(bbs.css); */
 
-/* 옵션박스 속 셀렉트 */
 .optionBox .DivSelectyze {
   position: relative;
   z-index: 5;
@@ -45,7 +43,7 @@
   cursor: pointer;
 }
 .optionBox .DivSelectyze .UlSelectize li a {
-  padding-left: 10px; /* color:#c1c5c9; [2012.12.04 수정] */
+  padding-left: 10px;
   color: #fff;
   white-space: nowrap;
   word-break: break-all;
@@ -55,7 +53,6 @@
   background-color: #8d949d;
 }
 
-/* 셀렉트박스 트리 속 셀렉트 */
 .treeView .DivSelectyze {
   position: relative;
   z-index: 5;
@@ -102,7 +99,6 @@
   background-color: #e4f0fd;
 }
 
-/* 기타 버튼*/
 .optionBox .right a {
   height: 13px;
   margin: 6px 0 0 13px;
@@ -140,7 +136,6 @@
   background: url(assets/img/main/bg/bg_fPlus.png) 0 10px no-repeat;
 }
 
-/* 라디오&체크 */
 label.c_on {
   background: url(assets/img/form/check-on.png) no-repeat;
 }
@@ -174,7 +169,6 @@ label {
   left: -9999px;
 }
 
-/* 화이트1 버튼 S */
 .btn_whiteS_typeA {
   position: relative;
   height: 25px;
@@ -245,7 +239,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 챗봇검색 버튼 */
 .btn_whiteS_typeA.ic_chatbot > button {
   position: relative;
   padding-left: 32px;
@@ -295,7 +288,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 화이트3 버튼 S */
 .btn_whiteS_typeC {
   position: relative;
   height: 25px;
@@ -332,7 +324,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* ecm 메인(중앙) 2012-11-08 채승훈 , 수정 20160428 : btn_areaL btn_areaR 을 top 위치를 32에서 265px 로 바꿈 문서갯수가 30개이상보여주기때문.  */
 .left {
   float: left;
 }
@@ -369,7 +360,6 @@ label {
   position: relative;
   height: 34px;
   padding: 0 117px 0 37px;
-  /* background: url(assets/img/main/bg/bg_folder.gif) 13px 9px no-repeat; */
   background: url(assets/img/main/bg/bg_folder.gif) 13px 9px no-repeat;
 }
 .areaCBox .treeBox .baseFolder .txt {
@@ -515,14 +505,13 @@ label {
   color: #222;
   background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
 }
-/*.listContent .optionBox .right .listSearchT{right:20px;left:auto;margin-left:0;margin-top:-4px;} /* 2014-07-14 추가 */
+
 .listContent .optionBox .right .listSearchT {
   position: static;
   left: auto;
   margin-left: 0;
-} /* 2015-02-27 수정 */
+}
 
-/* 통합검색 탭추가 - 2014-07-17 추가 */
 .listContent .optionBox .left .ecmTab {
   margin: -1px;
   height: 35px;
@@ -551,8 +540,8 @@ label {
 }
 .listContent .optionBox .right {
   height: 25px;
-  overflow: hidden; /*padding-top: 6px;*/
-} /* 2015-02-27 수정 */
+  overflow: hidden;
+}
 .listContent .optionBox .right .btn_detail {
   padding: 5px 4px 0 0;
 }
@@ -592,11 +581,10 @@ label {
   overflow-x: scroll;
 }
 
-/* 썸네일 형 */
 .listContent {
   padding: 0 20px;
   padding-bottom: 10px;
-} /* 2016-04-15 count 100 개가 넘어가면서 bottom 10을 줌. */
+}
 .listContent .optionBox {
   width: 100%;
   margin-bottom: 10px;
@@ -607,7 +595,6 @@ label {
   display: block;
 }
 
-/* 정렬 아이콘 */
 .sortingBox {
   height: 31px;
   border: 1px solid #e6e6e6;
@@ -792,7 +779,6 @@ label {
   top: 23px;
 }
 
-/* 폴더 상세 */
 .listContent .thumnList .thumn li .folderText {
   position: relative;
   height: 33px;
@@ -825,7 +811,6 @@ label {
   z-index: 20;
 }
 
-/* 휴지통 메뉴 */
 .listContent .thumnList .thumn > li .wasteText {
   height: 33px;
   margin: 0 1px;
@@ -844,13 +829,11 @@ label {
 .listContent .thumnList .thumn > li .wasteText > a:hover {
   color: #018dee;
 }
-/* 지금 휴지통 비우기 버튼 - 2014-07-08 추가 */
 .wasteBtn {
   display: inline-block;
   margin: 4px 3px 0 0;
 }
 
-/* 일반 형 (테이블) */
 .normalTb {
   margin-bottom: 25px;
   table-layout: fixed;
@@ -968,7 +951,7 @@ label {
   padding-left: 10px;
   text-align: left;
   white-space: nowrap;
-  text-overflow: ellipsis; /*overflow:hidden;*/
+  text-overflow: ellipsis;
 }
 .normalTb tbody td .contentTitle:after {
   clear: both;
@@ -1050,7 +1033,6 @@ label {
   background: url(assets/img/main/ico/ico_fav_2_on.png) no-repeat 0 0;
 }
 
-/* 2016-11-25 phykang */
 .normalTb tbody td .contentTitle .ic_favorites {
   display: inline-block;
   margin-right: 8px;
@@ -1091,7 +1073,6 @@ label {
   background-color: #e9eaec;
 }
 
-/* 테이블 추가 버튼 */
 .normalTb tbody tr.btnAdd {
   display: none;
 }
@@ -1140,13 +1121,12 @@ label {
   color: #222;
   line-height: 24px;
   background: url(assets/img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
-} /* [2012.10.09 추가] */
+}
 .normalTb tbody .btnAsk {
   display: inline-block;
   margin: -10px 0 -10px -10px;
 }
 
-/* 게시판 UL형 [2012.10.04 추가] */
 .normalUL {
   position: relative;
   margin-bottom: 25px;
@@ -1175,7 +1155,7 @@ label {
   text-align: center;
   border-bottom: 1px solid #d6d6d6;
   *vertical-align: top;
-} /* [2012.10.05 수정] */
+}
 .listColumn > li:after {
   clear: both;
   content: "";
@@ -1192,7 +1172,7 @@ label {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-} /* [2012.10.05 추가 - 크롬 말줄임] */
+}
 .listColumn li .contentTitle {
   float: left;
   width: 82%;
@@ -1262,7 +1242,6 @@ label {
   background: url(assets/img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
 }
 
-/* ecm 메인(우측) 2012-09-24 채승훈 */
 .areaR .btnAdmin {
   display: block;
   width: 113px;
@@ -1418,7 +1397,6 @@ a.btn_content:hover {
   padding-right: 10px;
 }
 
-/* 팝업창 선택한 컨텐츠 리스트 */
 .choiceBox {
   padding-top: 20px;
 }
@@ -1474,7 +1452,7 @@ a.btn_content:hover {
   width: 663px;
   height: 87px;
   overflow: hidden;
-} /* 2012.10.03 수정 */
+}
 .choiceBox .choice ul {
   *zoom: 1;
 }
@@ -1522,7 +1500,6 @@ a.btn_content:hover {
   background: url(assets/img/contents/ecmMain/ico_pop_unlock.png) 0 3px no-repeat;
 }
 
-/* 일반 선택한 컨텐츠 리스트 */
 .ecmWrap .choiceBox {
   position: fixed;
   bottom: 0;
@@ -1574,7 +1551,6 @@ a.btn_content:hover {
   background-color: #3672d3;
 }
 
-/* ECP - 알림 */
 .areaCBox .headTitle {
   margin-bottom: 14px;
   border-bottom: 1px solid #d5d5d5;
@@ -1585,7 +1561,6 @@ a.btn_content:hover {
   border-bottom: 1px solid #4c86c9;
 }
 
-/* 검색 */
 .listSearch {
   position: absolute;
   left: 50%;
@@ -1598,10 +1573,9 @@ a.btn_content:hover {
   margin-right: 5px;
   padding: 0 10px;
   line-height: 23px;
-  border: 1px solid #c8c8c8; /*color:#555;*/
+  border: 1px solid #c8c8c8;
 }
 
-/* 페이징 */
 .paging {
   overflow: hidden;
   text-align: center;
@@ -1654,7 +1628,6 @@ a.btn_content:hover {
   background: url(assets/img/common/paging_end_on.gif) left top no-repeat;
 }
 
-/* popup 기본 레이어 */
 .layerBg {
   position: fixed;
   top: 0;
@@ -1850,7 +1823,7 @@ a.btn_content:hover {
 }
 .am_grey li a:hover {
   color: #fff;
-  background-color: #858585; /** gradient bgcolors */
+  background-color: #858585; 
   background-image: -webkit-gradient(
     linear,
     left top,
@@ -1859,8 +1832,8 @@ a.btn_content:hover {
     to(#858585)
   );
   background-image: -webkit-linear-gradient(top, #7c7c7c #858585);
-  background-image: -moz-linear-gradient(top, #7c7c7c, #858585); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #7c7c7c, #858585); /* IE10 */
+  background-image: -moz-linear-gradient(top, #7c7c7c, #858585);
+  background-image: -ms-linear-gradient(top, #7c7c7c, #858585);
   background-image: -o-linear-gradient(top, #7c7c7c, #858585);
 }
 .am_grey .am_optgroupTitle {

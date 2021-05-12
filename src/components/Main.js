@@ -20,9 +20,8 @@ import { getMyContents } from "store/fileInfo/actions";
 
 const App = (props) => {
   const [showAddFileModal, setShowAddFileModal] = useState(false);
-  const [showCreateDirectoryModal, setShowCreateDirectoryModal] = useState(
-    false
-  );
+  const [showCreateDirectoryModal, setShowCreateDirectoryModal] =
+    useState(false);
   const [showOpenContent, setShowOpenContent] = useState(false);
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [headerPath, setHeaderPath] = useState("My Contents");
@@ -68,7 +67,12 @@ const App = (props) => {
                 >
                   <img
                     alt=""
-                    src={require("assets/img/main/btn/btn_areaL.png").default}
+                    src={
+                      visibleLeftMenu
+                        ? require("assets/img/main/btn/btn_areaL.png").default
+                        : require("assets/img/main/btn/btn_areaL_on.png")
+                            .default
+                    }
                   />
                 </Link>
                 <div className="areaCBox">
@@ -84,9 +88,7 @@ const App = (props) => {
                         <MainContext.Provider
                           value={{ setSelectedItem, setShowOpenContent }}
                         >
-                          <MainTable
-                            filterExt={filterExt}
-                          />
+                          <MainTable filterExt={filterExt} />
                         </MainContext.Provider>
                       </div>
                       <Paging />

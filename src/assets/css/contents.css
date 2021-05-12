@@ -652,7 +652,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 화이트2 버튼 S */
 .btn_whiteS_typeB {
   position: relative;
   height: 25px;
@@ -689,7 +688,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 화이트2 버튼 M */
 .btn_whiteM_typeB {
   position: relative;
   height: 25px;
@@ -726,7 +724,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 화이트2 버튼 M_작은패딩 */
 .btn_whiteM_typeB_ps {
   position: relative;
   height: 25px;
@@ -763,7 +760,6 @@ label {
   padding: 10px 12px 11px 10px;
 }
 
-/* 화이트2 버튼 L */
 .btn_whiteL_typeB {
   position: relative;
   height: 25px;
@@ -800,7 +796,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 화이트3 버튼 S */
 .btn_whiteS_typeC {
   position: relative;
   height: 25px;
@@ -837,7 +832,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 화이트3 버튼 M */
 .btn_whiteM_typeC {
   position: relative;
   height: 25px;
@@ -874,7 +868,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 화이트3 버튼 L */
 .btn_whiteL_typeC {
   position: relative;
   height: 25px;
@@ -911,7 +904,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 블랙1 버튼 S */
 .btn_blackS_typeA {
   position: relative;
   height: 25px;
@@ -984,7 +976,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 블랙1 버튼 M */
 .btn_blackM_typeA {
   position: relative;
   height: 25px;
@@ -1021,7 +1012,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 블랙1 버튼 L */
 .btn_blackL_typeA {
   position: relative;
   height: 25px;
@@ -1058,7 +1048,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 레드1 버튼 S */
 .btn_redS_typeA {
   position: relative;
   height: 25px;
@@ -1095,7 +1084,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 레드1 버튼 M */
 .btn_redM_typeA {
   position: relative;
   height: 25px;
@@ -1132,7 +1120,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 레드1 버튼 L */
 .btn_redL_typeA {
   position: relative;
   height: 25px;
@@ -1169,7 +1156,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 개인화 - 테마 설정 2012-09-20 채승훈 */
 .themaLayoutTb th {
   font-weight: normal;
   background-color: #f2f2f2;
@@ -1227,7 +1213,8 @@ label {
   background: url("assets/img/contents/ecmMain/bg_boxTop.png") 0 0 no-repeat;
 }
 .bgBoxLayout .bgBoxContent {
-  background: url("assets/img/contents/ecmMain/bg_boxBot.png") 0 bottom no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_boxBot.png") 0 bottom
+    no-repeat;
   *zoom: 1;
 }
 .bgBoxLayout .bgBoxContent .alim {
@@ -1246,8 +1233,8 @@ label {
   padding-bottom: 3px;
 }
 .bgBoxLayout .bgBoxContent .alim span.bgTxt01 {
-  background: url("assets/img/contents/ecmMain/ico_alim_01.png") no-repeat center
-    7px;
+  background: url("assets/img/contents/ecmMain/ico_alim_01.png") no-repeat
+    center 7px;
   color: #222;
   font-size: 13px;
   text-align: center;
@@ -1258,8 +1245,8 @@ label {
   width: 54px;
 }
 .bgBoxLayout .bgBoxContent .alim span.bgTxt02 {
-  background: url("assets/img/contents/ecmMain/ico_alim_03.png") no-repeat center
-    7px;
+  background: url("assets/img/contents/ecmMain/ico_alim_03.png") no-repeat
+    center 7px;
   color: #222;
   font-size: 13px;
   text-align: center;
@@ -1270,8 +1257,8 @@ label {
   width: 54px;
 }
 .bgBoxLayout .bgBoxContent .alim span.bgTxt03 {
-  background: url("assets/img/contents/ecmMain/ico_alim_04.png") no-repeat center
-    7px;
+  background: url("assets/img/contents/ecmMain/ico_alim_04.png") no-repeat
+    center 7px;
   color: #222;
   font-size: 13px;
   text-align: center;
@@ -1377,7 +1364,7 @@ label {
   width: 114px;
 }
 .bgBoxLayout .recom li dl dt {
-  margin: 4px 0; /* font-weight:bold; */
+  margin: 4px 0;
   word-wrap: break-word;
 }
 .bgBoxLayout .recom li dl dd {
@@ -1553,7 +1540,7 @@ label {
   border: 1px solid #648ec3;
   background-color: #fff;
   z-index: 10;
-} /* [2012.10.04 수정] */
+}
 .selectBoxC .stepBox > li .subStep li a {
   display: block;
   padding: 0 10px;
@@ -1648,7 +1635,7 @@ label {
   height: 20px;
   margin-bottom: 6px;
   padding-top: 6px;
-  *z-index: 10;
+  z-index: 10;
 }
 .areaCTop .btnBox .btn {
   position: relative;
@@ -1679,10 +1666,6 @@ label {
   font-size: 13px;
   background: url("assets/img/contents/ecmMain/bg_delete.gif") 0 0 no-repeat;
 }
-/* [2012.11.01 수정]
-.areaCTop .btnBox .btn .btnCreate, 
-.areaCTop .btnBox .btn .btnAttr {width:78px; margin-right:5px; text-align:center; font-size:13px; background:url("assets/img/contents/ecmMain/bg_create.gif") 0 0 no-repeat;}
-*/
 
 .btnBlueTypeOn {
   display: inline-block;
@@ -1691,7 +1674,7 @@ label {
   padding-left: 3px;
   background: url("assets/img/contents/ecmMain/bg_btnBlueTypeL_on.png") 0 0
     no-repeat;
-} /* [2012.11.01 추가] */
+}
 .btnBlueTypeOn span {
   display: block;
   min-width: 72px;
@@ -1701,7 +1684,7 @@ label {
   color: #fff;
   background: url("assets/img/contents/ecmMain/bg_btnBlueTypeR_on.png") right 0
     no-repeat;
-} /* [2012.11.01 추가] */
+}
 
 .btnBlueTypeOff {
   display: inline-block;
@@ -1710,7 +1693,7 @@ label {
   padding-left: 3px;
   background: url("assets/img/contents/ecmMain/bg_btnBlueTypeL_off.png") 0 0
     no-repeat;
-} /* [2012.11.01 추가] */
+}
 .btnBlueTypeOff span {
   display: block;
   min-width: 72px;
@@ -1720,7 +1703,7 @@ label {
   color: #fff;
   background: url("assets/img/contents/ecmMain/bg_btnBlueTypeR_off.png") right 0
     no-repeat;
-} /* [2012.11.01 추가] */
+}
 
 .areaCTop .btnBox .btn ul {
   display: none;
@@ -1755,7 +1738,7 @@ label {
   margin-top: -4px;
   padding-right: 30px;
 }
-/* .areaCTop .btnBox .date .btn_refresh {position:absolute; right:0; top:-8px;} [2012.10.26 수정] */
+
 .areaCTop .btnBox .date .btnRefresh {
   display: block;
   position: absolute;
@@ -1766,11 +1749,11 @@ label {
   text-indent: -5000px;
   background: url("assets/img/contents/ecmMain/btn_refresh.png") 0 0 no-repeat;
   overflow: hidden;
-} /* [2012.10.26 추가] */
+}
 .areaCTop .btnBox .date .btnRefresh:hover {
   background-position: 0 -23px;
-} /* [2012.10.26 추가] */
-/* .areaCTop .btnBox .dateAlim .btn_refresh {position:absolute; right:0; top:-4px;} [2012.10.26 수정] */
+}
+
 .areaCTop .btnBox .dateAlim .btnRefresh {
   display: block;
   position: absolute;
@@ -1781,10 +1764,10 @@ label {
   text-indent: -5000px;
   background: url("assets/img/contents/ecmMain/btn_refresh.png") 0 0 no-repeat;
   overflow: hidden;
-} /* [2012.10.26 추가] */
+}
 .areaCTop .btnBox .dateAlim .btnRefresh:hover {
   background-position: 0 -23px;
-} /* [2012.10.26 추가] */
+}
 .areaCTop .btnBox .date ul,
 .areaCTop .btnBox .dateAlim ul {
   overflow: hidden;
@@ -1913,11 +1896,6 @@ label {
     no-repeat;
   z-index: 20;
 }
-/*
-.listContent .thumnList .thumn > li .infoMenu {display:none; position:absolute; left:0; top:32px; width:165px; padding:7px 2px; border:1px solid #648ec3; background-color:#fff; z-index:15;}
-.listContent .thumnList .thumn > li .infoMenu a {display:block; padding:0 7px; line-height:25px; color:#222;}
-.listContent .thumnList .thumn > li .infoMenu a:hover {background-color:#dfe6f1;}
-*/
 .infoMenu {
   display: none;
   position: absolute;
@@ -1963,13 +1941,13 @@ label {
   background-color: #fff;
 }
 .folderText .infoMenu {
-  background: #fff url("assets/img/contents/ecmMain/bg_dotBlue.gif") 0 0 repeat-x;
+  background: #fff url("assets/img/contents/ecmMain/bg_dotBlue.gif") 0 0
+    repeat-x;
 }
 .btnAdd .infoMenu {
   top: 23px;
 }
 
-/* 폴더 상세 */
 .listContent .thumnList .thumn li .folderText {
   position: relative;
   height: 33px;
@@ -2003,7 +1981,6 @@ label {
   z-index: 20;
 }
 
-/* 휴지통 메뉴 */
 .listContent .thumnList .thumn > li .wasteText {
   height: 33px;
   margin: 0 1px;
@@ -2024,7 +2001,6 @@ label {
   color: #018dee;
 }
 
-/* 일반 형 (테이블) */
 .listContent .normalList {
   padding-top: 1px;
 }
@@ -2054,7 +2030,7 @@ label {
 
 .normalTb tbody tr:hover {
   background-color: #e4f0fd;
-} /* [2012.10.12 추가] */
+}
 .normalTb tbody td {
   padding: 6px 0;
   line-height: 12px;
@@ -2100,7 +2076,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-} /* 2012.10.03 추가 */
+}
 .normalTb tbody td .contentTitle a.red {
   color: #e93c3c;
 }
@@ -2110,7 +2086,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .normalTb tbody td .contentTitle a img {
   margin: -2px 8px 0 0;
   vertical-align: middle;
-} /* [2012.10.22 수정] */
+}
 .normalTb tbody td .contentTitle2 {
   float: left;
   width: 95%;
@@ -2145,18 +2121,11 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   right: 0;
   top: 16px;
 }
-/* 체크박스 있으면서 텍스트 중앙일 경우 */
 .wAuto {
   float: none !important;
   width: auto !important;
   padding: 0 20px 0 10px !important;
 }
-
-/* .normalTb tbody td .alignL {padding-left:10px; text-align:left;} [2012.12.21 추가]
-.normalTb tbody td .alignC {padding-left:10px; text-align:center;} [2012.12.21 추가]
- */
-
-/* 테이블 추가 버튼 */
 .normalTb tbody tr.btnAdd {
   display: none;
 }
@@ -2192,7 +2161,8 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: left;
   line-height: 19px;
   border: 1px solid #c7cacd;
-  background: url("assets/img/contents/ecmMain/bg_btn_sel.gif") right 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btn_sel.gif") right 0
+    no-repeat;
 }
 .normalTb tbody tr.btnAddOn td .addBox .infoMenu {
   top: 23px;
@@ -2205,13 +2175,12 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #222;
   line-height: 24px;
   background: url("assets/img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
-} /* [2012.10.09 추가] */
+}
 .normalTb tbody .btnAsk {
   display: inline-block;
   margin: -10px 0 -10px -10px;
 }
 
-/* 게시판 UL형 [2012.10.04 추가] */
 .normalUL {
   position: relative;
   margin-bottom: 25px;
@@ -2240,7 +2209,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: center;
   border-bottom: 1px solid #d6d6d6;
   *vertical-align: top;
-} /* [2012.10.05 수정] */
+}
 .listColumn > li:after {
   clear: both;
   content: "";
@@ -2257,7 +2226,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-} /* [2012.10.05 추가 - 크롬 말줄임] */
+}
 .listColumn li .contentTitle {
   float: left;
   width: 82%;
@@ -2327,7 +2296,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   background: url("assets/img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
 }
 
-/* ecm 메인(우측) 2012-09-24 채승훈 */
 .areaR .btnAdmin {
   display: block;
   width: 113px;
@@ -2352,7 +2320,8 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .bestBox .bgBoxLayout {
   position: relative;
   padding-top: 27px;
-  background: url("assets/img/contents/ecmMain/bg_boxTop_blue.png") 0 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_boxTop_blue.png") 0 0
+    no-repeat;
 }
 .bestBox .bgBoxLayout .tabText {
   position: absolute;
@@ -2484,7 +2453,6 @@ a.btn_content:hover {
   padding-right: 10px;
 }
 
-/* 레이어 팝업 */
 .popLayerWrap {
   width: 100%;
 }
@@ -2532,7 +2500,7 @@ a.btn_content:hover {
 .btnAlignR {
   height: 30px;
   text-align: right;
-} /* [2012.10.12 추가] */
+}
 .layerBg {
   position: absolute;
   top: 0;
@@ -2547,7 +2515,7 @@ a.btn_content:hover {
 .popLayerWrap .btnBox {
   position: relative;
   text-align: center;
-} /* 2014-11-05 수정 */
+}
 .popLayerWrap .btnBox a {
   display: inline-block;
   min-width: 58px;
@@ -2558,7 +2526,7 @@ a.btn_content:hover {
   line-height: 20px;
   color: #fff;
   background-color: #0976b2;
-} /* [2012.10.10 수정] */
+}
 .popLayerWrap .btnBox a.grayB {
   background-color: #afafaf;
 }
@@ -2573,7 +2541,7 @@ a.btn_content:hover {
   background: url(assets/img/popup/ico/ico_reset.png) no-repeat 15px 8px;
   border: 1px solid #5491b1;
   color: #5491b1;
-} /* 2014-11-05 수정 */
+}
 
 .popLayerWrap .contents .date {
   position: relative;
@@ -2620,7 +2588,8 @@ a.btn_content:hover {
   width: 610px;
   margin-left: -305px;
   z-index: 10005;
-} /* [2012.10.10 수정] */
+}
+
 #popLayerA .contents {
   padding: 25px;
 }
@@ -2637,7 +2606,7 @@ a.btn_content:hover {
   width: 970px;
   margin-left: -485px;
   z-index: 10005;
-} /* [2012.10.04 수정] [2012.10.10 수정] */
+}
 #popLayerA .contents {
   padding: 25px;
 }
@@ -2654,7 +2623,7 @@ a.btn_content:hover {
   width: 970px;
   margin-left: -485px;
   z-index: 10005;
-} /* [2012.10.04 수정] */
+}
 #popLayerB .contents {
   height: 559px;
   padding: 0;
@@ -2700,7 +2669,7 @@ a.btn_content:hover {
   height: 535px;
   padding: 24px 24px 0 30px;
   overflow-y: scroll;
-} /* [2012.10.04 수정] */
+}
 #popLayerB .contents .columnR .title {
   padding-bottom: 12px;
   font-weight: bold;
@@ -2808,7 +2777,6 @@ a.btn_content:hover {
   text-align: center;
 }
 
-/* 팝업 셀렉트 - 컨텐츠 등록 */
 #popLayerB .grey .selectyzeValue {
   display: inline-block;
   min-width: 140px;
@@ -2839,7 +2807,6 @@ a.btn_content:hover {
   background-color: #858585;
 }
 
-/* [2012.10.12 추가] */
 #popLayerB .selectWidth290 {
   position: relative;
 }
@@ -2872,7 +2839,6 @@ a.btn_content:hover {
   width: 657px;
 }
 
-/* 팝업 - 보안 등급 판단 기준 [2012.10.12 추가] */
 #popLayerC {
   display: none;
   position: absolute;
@@ -2976,7 +2942,6 @@ a.btn_content:hover {
   width: 610px;
 }
 
-/* 팝업 - 화면 항목 설명 [2012.10.12 추가] */
 #popLayerD {
   display: none;
   position: absolute;
@@ -3008,7 +2973,7 @@ a.btn_content:hover {
   background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 bottom
     repeat-x;
   *zoom: 1;
-} /* [2012.10.09 수정] */
+}
 .columnBox:after,
 .columnBoxs:after {
   clear: both;
@@ -3057,7 +3022,6 @@ a.btn_content:hover {
   width: 271px;
 }
 
-/* [2012.10.09 추가] */
 .columnBox .columnTxtCenter {
   text-align: center;
   line-height: 18px;
@@ -3101,13 +3065,11 @@ a.btn_content:hover {
 .columnBoxs .normalTb {
   margin-bottom: -1px;
 }
-/* 2015-11-17 수정 */
 .columnBoxs .normalTb_wrap {
   overflow: auto;
   height: 165px;
   border: 2px solid #5d6b7a;
 }
-/* //2015-11-17 수정 */
 
 .popSearchBox {
   margin-bottom: 17px;
@@ -3125,7 +3087,6 @@ a.btn_content:hover {
   border-width: 0 1px 1px 1px;
 }
 
-/* 팝업창 선택한 컨텐츠 리스트 */
 .choiceBox {
   padding-top: 20px;
 }
@@ -3179,12 +3140,12 @@ a.btn_content:hover {
   top: 10px;
 }
 .choiceBox .choice .choOutline {
-  position: relative; /* width:663px; */
+  position: relative;
   height: 89px;
   overflow: hidden;
-} /* 2012.10.03 수정 */
+}
 .choiceBox .choice ul {
-  *zoom: 1;
+  zoom: 1;
 }
 .choiceBox .choice ul:after {
   clear: both;
@@ -3256,9 +3217,8 @@ a.btn_content:hover {
 }
 .popLayerWrap .contents .tabCon {
   display: none;
-} /* [2012.10.12 추가] */
+}
 
-/* 탭스타일2 2014-07-16추가 */
 #popLayerA .contents .tabBox2 {
   height: 33px;
   background: url("assets/img/popup/btn/bg_tab.gif") 0 0 repeat-x;
@@ -3283,7 +3243,6 @@ a.btn_content:hover {
   color: #fff;
 }
 
-/* 팝업창 테이블 - 기본형 [2012.10.10 수정] */
 .normalPopTb {
   color: #222;
   border: 1px solid #d6d6d6;
@@ -3317,7 +3276,7 @@ a.btn_content:hover {
 .normalPopTb tbody td .conText .editComment {
   width: 300px;
   height: 130px;
-} /* 2015-01-15 수정 */
+}
 .normalPopTb tbody td .conText .etcInfoText {
   padding-top: 6px;
   font-size: 13px;
@@ -3360,7 +3319,6 @@ a.btn_content:hover {
     right -1px;
 }
 
-/* 팝업창 테이블 - style02 : 2014-07-17 추가 */
 .normalPopTb.style02 {
   table-layout: fixed;
 }
@@ -3373,9 +3331,9 @@ a.btn_content:hover {
 }
 .normalPopTb.style02 tbody td .conText .i_radio {
   display: inline-block;
-  height: 16px; /* padding-right:5px; */
+  height: 16px;
   padding-left: 20px;
-} /* 2014-08-18 수정 */
+}
 .normalPopTb.style02 tbody td .conText.inputM2 {
   margin: -5px 0 !important;
   padding-top: 10px;
@@ -3399,7 +3357,7 @@ a.btn_content:hover {
   height: 236px;
   overflow-y: scroll;
   overflow-x: hidden;
-} /* 2014-08-18 수정 */
+}
 .normalPopTb.style02 tbody td .check_list li {
   padding-top: 10px;
 }
@@ -3419,7 +3377,7 @@ a.btn_content:hover {
   padding: 4px 0 4px 7px;
   width: 380px;
   display: block;
-} /* 2014-08-18 수정 */
+}
 .normalPopTb.style02 .borderTn {
   border-top: none;
 }
@@ -3449,7 +3407,6 @@ a.btn_content:hover {
   text-align: center;
   float: left;
 }
-/* 2014-08-18 추가 */
 .normalPopTb.style02 tbody td .selDay {
   padding: 0 0 0 14px;
 }
@@ -3490,7 +3447,7 @@ a.btn_content:hover {
   height: 28px;
   overflow: hidden;
   padding: 0 10px 5px 10px;
-} /* 2014-08-18 수정 */
+}
 .fdTit .i_radio {
   padding: 5px 0 0 22px !important;
   background-position: 0 7px;
@@ -3503,7 +3460,7 @@ a.btn_content:hover {
   width: 309px;
   height: 26px;
   line-height: 26px;
-} /* 2014-08-18 수정 */
+}
 
 .fdTree {
   overflow: hidden;
@@ -3522,19 +3479,19 @@ a.btn_content:hover {
   border: 1px solid #aeaeae;
   overflow-x: auto;
   overflow-y: auto;
-} /* 2014-08-18 수정 */
+}
 .fdTree .DivSelectyze.grey {
   margin-right: 0;
 }
 .fdTree .grey .selectyzeValue {
   border-radius: 0 !important;
   width: 373px;
-} /* 2014-08-18 수정 */
+}
 .fdTree .DivSelectyze .UlSelectize {
   width: 410px !important;
   height: 150px;
   overflow: auto;
-} /* 2014-08-18 수정 */
+}
 
 .inBlock .i_radio {
   display: inline-block;
@@ -3548,7 +3505,6 @@ a.btn_content:hover {
   margin-right: 10px;
 }
 
-/* 서치셀렉트 - 2014-07-17 추가 */
 .searchResult {
   width: 339px;
   height: 187px;
@@ -3560,7 +3516,7 @@ a.btn_content:hover {
   right: 11px;
   padding: 7px 9px;
   z-index: 9999;
-} /* 2014-08-18 수정 */
+}
 .searchResult li {
   line-height: 21px;
   white-space: nowrap;
@@ -3569,7 +3525,6 @@ a.btn_content:hover {
   text-decoration: underline;
 }
 
-/* 파일트리 - 2014-07-17 추가 */
 .myconList .treeConBox {
   height: 220px;
   width: auto;
@@ -3599,7 +3554,6 @@ a.btn_content:hover {
   color: #2e83de;
 }
 
-/* 팝업 셀렉트 스타일 [2012.10.10 추가] */
 .normalPopTb .DivSelectyze {
   position: relative;
   float: left;
@@ -3629,7 +3583,7 @@ a.btn_content:hover {
   margin-top: -1px;
   border: 1px solid #d2d2d2;
   background-color: #fff;
-} /*2013-01-04 수정*/
+}
 .normalPopTb .UlSelectize li a {
   display: block;
   color: #222;
@@ -3924,7 +3878,7 @@ normalPopTb .UlSelectize .optgroupTitle {
 }
 
 .partBox01 {
-  width: 276px; /* width:259px;[수정_1006]*/
+  width: 276px;
   float: left;
 }
 .partBox02 {
@@ -4014,7 +3968,8 @@ normalPopTb .UlSelectize .optgroupTitle {
   text-align: left;
   padding: 6px 0 0 12px;
   margin-bottom: 5px;
-  background: url("assets/img/contents/ecmMain/btn_partBg.gif") repeat-x left top;
+  background: url("assets/img/contents/ecmMain/btn_partBg.gif") repeat-x left
+    top;
   display: inline-block;
 }
 
@@ -4359,7 +4314,6 @@ table.raiT3 tbody td .i_check em {
   width: 41px;
 }
 
-/* 컨텐츠등록_1004_ecm_popup_content02 */
 .tabDiv .columnBoxs {
   margin-bottom: 20px;
   *zoom: 1;
@@ -4480,7 +4434,6 @@ table.raiT3 tbody td .i_check em {
   margin-right: 0;
 }
 
-/* 트리구조_ecm_popup_content04 */
 .bdr0 {
   border-right: 0 !important;
 }
@@ -4735,12 +4688,12 @@ table.conDel01 .maxH {
 
 #popLayerB .contents .popCon {
   *zoom: 1;
-} /* [2012.10.12 추가] */
+}
 #popLayerB .contents .popCon:after {
   clear: both;
   content: "";
   display: block;
-} /* [2012.10.12 추가] */
+}
 #popLayerB .contents .popCon ul.contentList {
   padding-bottom: 10px;
 }
@@ -4811,7 +4764,6 @@ table.conDel01 .maxH {
   display: inline-block;
 }
 
-/* ecm_popup09.html */
 .textRSearch {
   overflow: hidden;
   height: 24px;
@@ -4923,7 +4875,6 @@ table.apprT td .flTxt {
   padding-top: 7px;
 }
 
-/* 1006_ecm_popup11 */
 #popLayerA .contents .converg01 {
   position: relative;
 }
@@ -4962,7 +4913,6 @@ table.subL td img {
   width: 300px;
 }
 
-/* 1011_ecm_popup22.html */
 .longTxt {
   padding: 0 14px;
   line-height: 20px;
@@ -4971,7 +4921,6 @@ table.subL td img {
   overflow-y: auto;
 }
 
-/* 1011_ecm_popup23.html */
 .folderTxt span {
   background: url("assets/img/contents/ecmMain/img_folderTxt.png") right center
     no-repeat;
@@ -5032,7 +4981,6 @@ table.subL td img {
   margin: 0 6px;
 }
 
-/* ecm_popup_attr05.html [2012.10.18] */
 #ecm_popup_attr05 .partBox01 .tabBox {
   margin-bottom: 20px;
   *zoom: 1;
@@ -5048,7 +4996,7 @@ table.subL td img {
 }
 #ecm_popup_attr05 .partBox01 .tabBox li a {
   display: block;
-  width: 98px; /* width:85px;[수정_1006] */
+  width: 98px;
   margin-right: -1px;
   font-weight: bold;
   font-size: 13px;
@@ -5083,7 +5031,6 @@ table.subL td img {
   display: inline-block;
 }
 
-/* 팝업 셀렉트 - 컨텐츠 등록 */
 #popLayerA .grey .selectyzeValue {
   display: inline-block;
   min-width: 140px;
@@ -5114,7 +5061,6 @@ table.subL td img {
   background-color: #858585;
 }
 
-/* 팝업 - 부서관리자 검색 [2012.10.31 추가] */
 .partAdminBox {
   border: 1px solid #d5d5d5;
 }
@@ -5188,7 +5134,6 @@ table.subL td img {
   width: 87px;
 }
 
-/* 2014-10-17 추가 ( 일반 사용자 관리자 검색 프로젝트 문서함 조회 하는 부분 추가시 사용된 부분 ) */
 .part_tab li {
   float: left;
   width: 198px;
@@ -5209,19 +5154,17 @@ table.subL td img {
   background-color: #e4f0fd;
 }
 
-/* ecm_popup_attr05.html 추가 */
 .etcAttr05 {
   margin-bottom: 18px;
   padding: 6px 14px;
   line-height: 12px;
   color: #4c86c9;
   background-color: #f6f6f6;
-} /* [2012.12.21 수정] */
+}
 .etcAttr05 span {
   font-size: 13px;
 }
 
-/* 1221_ecm_popup38 */
 .printingContent .optionBox {
   width: 100%;
   margin-bottom: 15px;
@@ -5325,7 +5268,6 @@ table.subL td img {
   background-color: #e9eaec;
 }
 
-/* 1221_ecm_popup39 */
 .minWid72 {
   min-width: 720px;
 }
@@ -5359,9 +5301,8 @@ table.subL td img {
   background-color: #858585;
 }
 
-/*2013-01-07*/
 #printLayer {
-  width: 100%; /*min-width:800px;*/
+  width: 100%;
 }
 #printLayer .printingContent {
   width: 100%;
@@ -5390,23 +5331,23 @@ table.subL td img {
   line-height: 15px;
   font-weight: normal;
   background: url("assets/img/contents/ecmMain/bg_btnTxt.gif") 0 0 no-repeat;
-} /*2013-01-09 수정*/
+}
 #printLayer .optionBox .btnGray span {
   display: inline-block;
   height: 17px;
   padding: 4px 8px 0 0;
   color: #555;
   background: url("assets/img/contents/ecmMain/bg_btnTxt.gif") right 0 repeat-x;
-} /*2013-01-09 수정*/
+}
 #printLayer .optionBox .tit {
   padding-right: 7px;
   background: url(assets/img/contents/ecmMain/bg_2x10_333333.gif) 100% 50%
     no-repeat;
-} /*2013-01-09 수정*/
+}
 #printLayer .optionBox .tit-part {
   padding-left: 6px;
   color: #366cab;
-} /*2013-01-09 수정*/
+}
 
 #printLayer .grey .selectyzeValue {
   display: inline-block;
@@ -5558,7 +5499,7 @@ table.subL td img {
   margin-bottom: 25px;
   border: 1px solid #d6d6d6;
   border-width: 0 0 1px 1px;
-} /*2013-01-23 수정*/
+}
 #printLayer .tbl-type1 thead tr th {
   padding: 10px 0;
   color: #333;
@@ -5589,7 +5530,7 @@ table.subL td img {
 }
 #printLayer .tbl-type1 tbody .break {
   overflow: hidden;
-} /*2013-01-23 수정 : 선택자 수정*/
+}
 #printLayer .tbl-type1 tbody .break .text {
   display: block;
   overflow: hidden;
@@ -5597,11 +5538,11 @@ table.subL td img {
   margin-left: 8px;
   text-overflow: ellipsis;
   white-space: nowrap;
-} /*2013-01-23 수정 : 선택자 수정*/
+}
 #printLayer .tbl-type1 tbody .break span {
   float: left;
   margin: 0;
-} /*2013-01-23 수정 : 선택자 수정*/
+}
 #printLayer .tbl-type1 tbody td.btn-arrow-on {
   background: url(assets/img/contents/ecmInform/btn_arrow_on.gif) 98% 50%
     no-repeat;
@@ -5628,7 +5569,6 @@ table.subL td img {
   color: #4c85c8;
 }
 
-/*2013-01-25*/
 #printLayer .cont-c {
   overflow: hidden;
   margin: 8px 0 8px;
@@ -5671,7 +5611,6 @@ table.subL td img {
   margin-left: 6px;
 }
 
-/*2015-01-21추가*/
 .txtType1 {
   padding: 10px 0;
   font-size: 12px;
@@ -5682,8 +5621,6 @@ table.subL td img {
   overflow-y: auto;
 }
 
-/* 2015-12-29추가 */
-/* table 스타일 */
 .contents_tbl {
   table-layout: fixed;
   width: 100%;
@@ -5725,7 +5662,6 @@ table.subL td img {
   border-top: 1px;
 }
 
-/* 2015-10-07 추가 */
 .sortingBox {
   height: 31px;
   border: 1px solid #e6e6e6;
@@ -5813,9 +5749,6 @@ table.subL td img {
 .sorting_btn a em.movie {
   background: url(assets/img/main/btn/bg_movie.gif) no-repeat 0 50%;
 }
-/* //2015-11-17 추가 */
-
-/* 201610 즐겨찾기 추가 */
 .tree_box li.root a {
   font-weight: bold;
   color: #2768b2;
@@ -5988,7 +5921,6 @@ table.subL td img {
   border-top: 1px solid #ccc;
 }
 
-/* 팝업 셀렉트 스타일 [2017.10.24 추가] */
 .normalTb .DivSelectyze {
   position: relative;
 }
@@ -6038,7 +5970,6 @@ table.subL td img {
   color: #fff;
 }
 
-/* 2017.11.10 공유하기, 권한부여 사용자 선택 */
 .partBox01 .tabUL {
   width: 100%;
   height: 31px;
@@ -6046,8 +5977,8 @@ table.subL td img {
 }
 .partBox01 .tabUL li {
   float: left;
-  width: 108px; /*margin-right:-1px; border:1px solid #d9d9d9; border-width:1px 1px 0 1px;*/
-} /* 3차수정 */
+  width: 108px;
+}
 .partBox01 .tabUL li a {
   display: block;
   width: 100%;
@@ -6058,7 +5989,7 @@ table.subL td img {
   text-align: center;
   background-color: #fff;
   border: 1px solid #d9d9d9;
-} /* 3차수정 */
+}
 .partBox01 .tabUL li a.on {
   position: relative;
   top: 0px;
@@ -6067,7 +5998,7 @@ table.subL td img {
   color: #fff;
   border: 1px solid #4c86c9;
   background-color: #77a9e3;
-} /* 3차수정 */
+}
 .partBox01 .search {
   width: 287px;
   height: 26px;
@@ -6193,7 +6124,6 @@ table.subL td img {
   border-bottom: 1px solid #d6d6d6;
 }
 
-/* 2018.04.23 해시태그 */
 .hashtag_inputer {
   position: relative;
   margin-bottom: 10px;
@@ -6248,7 +6178,7 @@ table.subL td img {
   padding-left: 2px;
   margin-top: 1px;
 }
-.hashtag_inputer .inputer > input[type="text"] {
+.hashtag_inputer input[type="text"] {
   width: 50px;
   min-width: 50px;
   height: 16px;
@@ -6257,8 +6187,9 @@ table.subL td img {
   color: #222;
   border: none;
 }
-.hashtag_inputer .inputer > input[type="text"]::-ms-clear {
-  display: none;
+
+.hashtag_inputer input[type="text"]:focus {
+  outline: none;
 }
 
 .hashtag_inputer .auto_menu {

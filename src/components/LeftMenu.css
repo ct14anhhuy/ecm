@@ -142,7 +142,7 @@ body {
 }
 .ecmAlertTb span.txt_blue:hover {
   text-decoration: underline;
-} /* 2015-09-07추가 */
+}
 
 .btnBox {
   width: 196px;
@@ -189,18 +189,18 @@ body {
 .btnBox li a.btn_04 {
   background: url(../assets/img/main/left/ico_go_cnt04.png) 15px center
     no-repeat;
-} /*[1111_수정]*/
+}
 .btnBox li a.btn_05 {
   background: url(../assets/img/main/left/ico_go_cnt05.png) 15px center
     no-repeat;
-} /*[1118_수정]*/
+}
 .btnBox li a.btn_05 em {
   width: 117px;
   display: inline-block;
   padding-right: 22px;
   letter-spacing: -1px;
   background: url(../assets/img/main/ico/ico_blue_plus.gif) 118px 12px no-repeat;
-} /* [2012.12.04 수정] [2012.12.05 수정] */
+}
 .btnBox li a.btn_15 {
   background: url(../assets/img/main/left/ico_go_cnt15.png) 15px center
     no-repeat;
@@ -208,41 +208,41 @@ body {
 .btnBox li.on a.btn_rcb {
   background: url(../assets/img/main/left/ico_go_rcb_on.png) 15px center
     no-repeat;
-} /* [2015.05.14 추가] */
+}
 
 .btnBox li.on a.btn_01 {
   background: url(../assets/img/main/left/ico_go_cnt01_on.png) 15px center
     no-repeat;
-} /* [2012.12.05 추가] */
+}
 .btnBox li.on a.btn_02 {
   background: url(../assets/img/main/left/ico_go_cnt02_on.png) 15px center
     no-repeat;
-} /* [2012.12.05 추가] */
+}
 .btnBox li.on a.btn_03 {
   background: url(../assets/img/main/left/ico_go_cnt03_on.png) 15px center
     no-repeat;
-} /* [2012.12.05 추가] */
+}
 .btnBox li.noneArwOn a.btn_05 {
   background: url(../assets/img/main/left/ico_go_cnt05_on.png) 15px center
     no-repeat;
-} /* [2012.12.05 추가] */
+}
 .btnBox li.on a.btn_15 {
   background: url(../assets/img/main/left/ico_go_cnt15_on.png) 15px center
     no-repeat;
-} /* [2012.12.05 추가] */
+}
 .btnBox li.noneArwOn a.btn_16 {
   background: url(../assets/img/main/left/ico_go_cnt16_on.png) 15px center
     no-repeat;
-} /* 2015-02-27 수정 */
+}
 
 .innerBtnList {
   display: none;
-  width: 188px; /* max-height:160px; */
+  width: 188px;
   padding: 8px 0;
   border: 1px solid #ccc;
   border-width: 0 1px 1px 1px;
-  background-color: #fafafa; /* overflow:auto; */ /* overflow-x:hidden; overflow-y:auto; */
-} /* 2014-10-24 수정 */
+  background-color: #fafafa;
+}
 .innerBtnList li {
   height: 26px;
   margin: 0;
@@ -258,7 +258,7 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   letter-spacing: -1px;
-} /* 2014-10-24 수정 */
+}
 .innerBtnList li a img {
   margin: 5px 5px 0 0;
   vertical-align: top;
@@ -306,7 +306,6 @@ body {
   position: relative;
   z-index: 20;
 }
-/* 2015-04-06 수정끝 - tab */
 
 .myconList {
   border: 1px solid #ccc;
@@ -317,13 +316,11 @@ body {
   overflow: scroll;
 }
 
-/* 2014-06-13 - 셀렉트 */
 .DivSelectyze {
   display: inline-block;
   position: relative;
 }
 .grey .selectyzeValue {
-  /* background: url(../assets/img/main/bg/bg_selectTypeB_R.png) right 0 no-repeat; */
   border: 1px solid #c8c8c8;
   border-radius: 0.3em 0.3em 0.3em 0.3em;
   color: #111555;
@@ -353,20 +350,17 @@ body {
 }
 .grey li a:hover {
   color: #fff;
-  background-color: #858585; /** gradient bgcolors */
+  background-color: #858585;
   background-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
     from(#7c7c7c),
     to(#858585)
-  ); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(
-    top,
-    #7c7c7c #858585
-  ); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, #7c7c7c, #858585); /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #7c7c7c, #858585); /* IE10 */
+  );
+  background-image: -webkit-linear-gradient(top, #7c7c7c #858585);
+  background-image: -moz-linear-gradient(top, #7c7c7c, #858585);
+  background-image: -ms-linear-gradient(top, #7c7c7c, #858585);
   background-image: -o-linear-gradient(top, #7c7c7c, #858585);
 }
 
@@ -380,7 +374,6 @@ body {
   overflow: auto;
 }
 
-/* 파일트리 - 2014-06-13 추가 */
 .myconList .treeFldConBox {
   height: 450px;
   width: auto;
@@ -439,7 +432,7 @@ body {
   padding: 7px 10px 9px;
   border: 1px solid #ccc;
   margin-top: 5px;
-} /* 2014-10-27 수정 */
+}
 .contents_level span {
   height: 14px;
   display: block;
@@ -467,11 +460,10 @@ body {
   color: #ee3e15;
 }
 
-/* 2014-10-16 추가 ECM 알림 처리건 */
 .bgBoxLayout2 {
   position: relative;
   margin-bottom: 5px;
-} /* 2014-10-27 수정 */
+}
 .bgBoxLayout {
   position: relative;
   margin-bottom: 3px;
@@ -487,7 +479,7 @@ body {
 }
 .ecmAlertTb2 tbody tr td strong:hover {
   text-decoration: underline;
-} /* 2015-09-07 추가 */
+}
 .txt_blue {
   color: #2e83de !important;
 }
@@ -504,7 +496,7 @@ body {
   margin: 15px 0 5px;
   padding: 5px 0 0 46px;
   background: url(../assets/img/contents/ecmMain/bg_admin2.png) 0 0 no-repeat;
-} /* 2014-10-27 수정 */
+}
 .btnAdmin_part {
   display: block;
   position: relative;
@@ -513,7 +505,7 @@ body {
   padding: 6px 0 0 46px;
   background: url(../assets/img/contents/ecmMain/bg_admin_part.png) 0 0
     no-repeat;
-} /* 2014-10-27 수정 */
+}
 .btnAdmin_part em {
   display: inline-block;
   position: absolute;
@@ -523,15 +515,15 @@ body {
   background: url(../assets/img/contents/ecmMain/ico_grey_plus.gif) 0 3px
     no-repeat;
   text-indent: -9999px;
-} /* 2014-10-27 추가 */
+}
 .btnAdmin_part em.close {
   background: url(../assets/img/contents/ecmMain/ico_grey_minus.gif) 0 3px
     no-repeat;
-} /* 2014-10-27 추가 */
+}
 .btnAdmin_part + .innerBtnList li a {
   display: block;
   line-height: 26px;
-} /* 2014-10-27 추가 */
+}
 
 .btnBox li.newWinOn {
   background: url(../assets/img/main/left/bg_go_newwin_cntOn.png) left top
@@ -720,7 +712,6 @@ body {
 .mftab_wrap .set_fix.on {
   background: url(../assets/img/main/left/ico_fix_on.png) no-repeat 50% 50%;
 }
-/* //2015-02-27 추가 */
 .numSize strong {
   font-size: 14px;
 }
@@ -729,6 +720,6 @@ body {
   text-decoration: underline;
 }
 
-.treeFldConBox  {
+.treeFldConBox {
   width: 300px !important;
 }

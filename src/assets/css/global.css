@@ -1,8 +1,6 @@
 @charset "utf-8";
 
-/* Common */
 body {
-  /* min-width:944px; */
   min-width: 1024px;
 }
 html {
@@ -198,7 +196,7 @@ table {
   clear: both;
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0; /*word-break:break-all; word-wrap:break-word; [2012.10.15 삭제] */
+  border-spacing: 0;
 }
 caption {
   visibility: hidden;
@@ -225,10 +223,10 @@ caption {
 }
 * html .clfix {
   height: 1%;
-} /* hides from ie-mac */
+}
 .clfix {
   zoom: 1;
-} /*for ie 5.5-7*/
+}
 
 a {
   text-decoration: none;
@@ -251,7 +249,6 @@ a:hover {
   max-width: 100%;
 }
 
-/* padding */
 .pd0 {
   padding: 0 !important;
 }
@@ -283,7 +280,6 @@ a:hover {
   padding-left: 20px !important;
 }
 
-/* margin */
 .mg0 {
   margin: 0 !important;
 }
@@ -339,16 +335,16 @@ a:hover {
 }
 .mgl15 {
   margin-left: 15px !important;
-} /* 2014-07-17추가 */
+}
 .mgl20 {
   margin-left: 20px !important;
 }
 .mgl30 {
   margin-left: 30px !important;
-} /* 2014-07-17추가 */
+}
 .mgl35 {
   margin-left: 35px !important;
-} /* 2014-08-18 추가 */
+}
 
 .mgr20 {
   margin-right: 20px !important;
@@ -376,7 +372,6 @@ a:hover {
   margin-bottom: 50px !important;
 }
 
-/* tablet_w margin */
 .mgrpw20 {
   margin-right: 0 !important;
 }
@@ -387,12 +382,11 @@ a:hover {
 
 .cutSt {
   white-space: nowrap;
-  text-overflow: ellipsis; /* IE, Safari */
-  -o-text-overflow: ellipsis; /* Opera under 10.7 */
-  overflow: hidden; /* "overflow" value must be different from "visible" */
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-/* float */
 .fnone {
   float: none !important;
 }
@@ -406,7 +400,6 @@ a:hover {
   clear: both;
 }
 
-/* color */
 .txtGyA {
   color: #222;
 }
@@ -414,7 +407,6 @@ a:hover {
   color: #2072b8;
 }
 
-/* font */
 .fdot {
   font-family: Dotum !important;
 }
@@ -430,7 +422,6 @@ a:hover {
   font-family: dotum !important;
 }
 
-/* font size */
 .font0 {
   font: 0/0 arial;
 }
@@ -444,7 +435,6 @@ a:hover {
   font-size: 13px !important;
 }
 
-/* font weight */
 .fwn {
   font-weight: normal !important;
 }
@@ -452,12 +442,10 @@ a:hover {
   font-weight: bold !important;
 }
 
-/* line-height */
 .ln20 {
   line-height: 20px;
 }
 
-/* align */
 .vat {
   vertical-align: top !important;
 }
@@ -483,7 +471,6 @@ a:hover {
   vertical-align: top !important;
 }
 
-/* none */
 .hidden {
   display: none;
 }
@@ -512,8 +499,6 @@ a:hover {
   border-top: 0 !important;
 }
 
-/*2013-01-07 park ji sun*/
-/* basic */
 .hidden-obj {
   position: absolute;
   visibility: hidden;

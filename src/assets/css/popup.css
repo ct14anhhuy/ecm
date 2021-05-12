@@ -77,7 +77,7 @@
   top: 10px;
   right: 10px;
   z-index: 2;
-} /* z-index:2; [2012.06.28 추가. 한성희] 크롬에서 X가 안눌림*/
+}
 .pop_tit {
   width: 100%;
   border-bottom: 6px solid #1559b1;

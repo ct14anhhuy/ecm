@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-/* popup 기본 레이어 */
 .popLayerWrap {
   position: absolute;
   left: 50%;
@@ -114,7 +113,7 @@
 .btnWhite span img {
   vertical-align: middle;
 }
-/* 2013-11-11 add */
+
 .popSubTitle02 {
   margin-bottom: 6px;
 }
@@ -217,18 +216,18 @@
   margin-right: 2px;
   background: url(assets/img/popup/bg/bg_saveSelect.gif) right 1px no-repeat;
   display: block;
-} /*[1111_수정]*/
+}
 .saveBox .DivSelectyze .UlSelectize {
   position: absolute;
   left: 0;
   top: 28px;
   width: 480px;
   max-height: 161px;
-  border: 1px solid #648ec3; /*border-radius:0 0 5px 5px;*/
+  border: 1px solid #648ec3;
   background-color: #fff;
   overflow-y: scroll;
   display: none;
-} /*[1111_border_수정]*/
+}
 .saveBox .DivSelectyze .UlSelectize li {
   height: 23px;
   line-height: 23px;
@@ -244,7 +243,6 @@
   background-color: #e4f0fd;
 }
 
-/* 팝업 트리 */
 .saveBox .treeConBox {
   position: absolute;
   left: 0;
@@ -300,10 +298,9 @@
   display: inline-block;
 }
 
-/* 역할자 선택 */
 .positionBox {
   margin-top: -21px;
-  padding-top: 10px; /*background-color:#f6f6f6;2013-11-11 수정*/
+  padding-top: 10px;
   display: none;
 }
 .positionBox .miniTab {
@@ -343,7 +340,7 @@
 .positionBox .positionSearch .alignR {
   clear: both;
   padding-top: 14px;
-} /* [2012.11.14 추가] */
+}
 
 .positionBox .positionSearch .tabUL {
   width: 100%;
@@ -392,10 +389,12 @@
 
 .positionBox .part_C .btn_move {
   margin-top: 34px;
-} /* [2012.11.14 수정] */
+}
+
 .positionBox .part_C .btn_move:first-child {
   margin-top: 0;
-} /* [2012.11.14 추가] */
+}
+
 .positionBox .part_C .btn_move a {
   width: 31px;
   height: 20px;
@@ -419,7 +418,7 @@
   line-height: 14px;
   font-weight: bold;
   color: #000;
-} /* [2012.11.14 수정] [2012.12.04 수정] */
+}
 .positionBox .part_R .sub:first-child {
   margin-top: 0;
 }
@@ -432,7 +431,6 @@
   background: url(assets/img/popup/bg/bg_btnGray.gif) 0 0 repeat;
 }
 
-/* 조직 찾기 */
 .bdr0 {
   border-right: 0 !important;
 }
@@ -565,12 +563,11 @@
   vertical-align: middle;
 }
 .tblFolder td {
-  height: 33px; /*border-right:1px solid #d6d6d6; border-bottom:1px solid #d6d6d6;*/
+  height: 33px;
   text-align: center;
   font-weight: normal;
 }
 
-/* 사람찾기 */
 .personUL {
   border: 1px solid #d6d6d6;
   border-width: 0 1px;
@@ -636,7 +633,6 @@
   left: 32px;
 }
 
-/* 서식정보 셀렉트 */
 .innerPad .DivSelectyze {
   position: relative;
   float: left;
@@ -666,11 +662,11 @@
   top: 27px;
   width: 454px;
   max-height: 161px;
-  border: 1px solid #648ec3; /*border-radius:0 0 5px 5px;*/
+  border: 1px solid #648ec3;
   background-color: #fff;
   overflow-y: scroll;
   display: none;
-} /*[1111_border_수정]*/
+}
 .innerPad .DivSelectyze .UlSelectize li {
   height: 23px;
   line-height: 23px;
@@ -686,7 +682,6 @@
   background-color: #e4f0fd;
 }
 
-/* RAI */
 .raiBox {
   padding: 5px 13px 15px 13px;
   border: 2px solid #658dc1;
@@ -738,11 +733,11 @@
   top: 27px;
   width: 454px;
   max-height: 161px;
-  border: 1px solid #648ec3; /*border-radius:0 0 5px 5px;*/
+  border: 1px solid #648ec3;
   background-color: #fff;
   overflow-y: scroll;
   display: none;
-} /*[1111_border_수정]*/
+}
 .selectPart .DivSelectyze .UlSelectize li {
   height: 23px;
   line-height: 23px;
@@ -810,14 +805,13 @@
   color: #222;
   text-align: center;
   background-color: #fff;
-} /* [2012.11.14 수정] */
+}
 .raiBox .raiCon .optionCk {
   margin-bottom: 10px;
   padding: 11px 0;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* RAI 최근저장 */
 .latelyBox {
   position: absolute;
   left: 145px;
@@ -828,7 +822,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   display: none;
-} /* [1111_수정] */
+}
 .latelyBox ul {
   width: 100%;
   background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
@@ -848,13 +842,12 @@
 }
 .latelyBox ul li:hover {
   background-color: #e4f0fe;
-} /* [1111_수정] */
+}
 .latelyBox ul li a {
   line-height: 14px;
   font-weight: normal;
 }
 
-/* 테이블 타입1 */
 .popTb {
   margin-bottom: 21px;
   border: 1px solid #ccc;
@@ -890,9 +883,8 @@
 }
 .innerPad2 {
   padding: 6px 5px;
-} /* 2013-11-11 add */
+}
 
-/* 테이블 타입2 */
 .personTb {
   border: 1px solid #ccc;
   color: #222;
@@ -916,12 +908,12 @@
   border-width: 1px 0 0 0;
 }
 .personTb .i_check {
-  width: 89px; /*height:auto;*/ /*height:32px; [삭제]*/
+  width: 89px;
   margin: 0 0 0 15px;
   background-position: 0 40%;
-  line-height: 16px; /*[line-height:16px 수정]*/
-} /* [1111_수정] */
-/*.personTb tr:hover {background-color:#f1f1f1;}*/ /*[1111_삭제]*/
+  line-height: 16px;
+}
+
 .maxH {
   height: 230px;
   margin-top: -1px;
@@ -932,7 +924,6 @@
   margin-right: -17px;
 }
 
-/* 팝업 셀렉트 */
 .tblPerson .selectyzeValue {
   display: inline-block;
   min-width: 268px;
@@ -976,7 +967,6 @@
   width: 100%;
 }
 
-/* color */
 .red {
   color: #ff3c46;
 }
@@ -984,7 +974,6 @@
   color: #678abe;
 }
 
-/* text */
 .search {
   width: 155px;
   height: 26px;
@@ -1010,7 +999,6 @@
   border: 1px solid #ccc;
 }
 
-/* 라디오&체크 */
 label.c_on {
   background: url(assets/img/form/check-on.png) no-repeat;
 }
@@ -1022,7 +1010,7 @@ label {
   padding-bottom: 0;
   font-size: 13px;
   cursor: pointer;
-} /* 20120619수정 */
+}
 
 .i_check input,
 .i_radio input {
@@ -1056,8 +1044,7 @@ label {
   left: -9999px;
   margin-right: 12px;
 }
-/* 속성 */
-/* 1110_pop_property01 */
+
 .layerBg {
   position: fixed;
   top: 0;
@@ -1278,14 +1265,14 @@ label {
   max-height: 104px;
   overflow-y: scroll;
   z-index: 1;
-} /*[1111_수정]*/
+}
 .popProperty01 .biodata .basicM01 .blueSel01 .DivSelectyze .UlSelectize li a {
   display: block;
   padding: 4px;
   color: #222;
   font-weight: normal;
   line-height: 18px;
-} /*[1111_수정]*/
+}
 .popProperty01
   .biodata
   .basicM01
@@ -1296,7 +1283,7 @@ label {
   a:hover {
   color: #222;
   background-color: #e4f0fe;
-} /*[1111_수정]*/
+}
 .popProperty01 .biodata .basicM01 .blueSel01 .btnBlack span {
   min-width: 25px;
 }
@@ -1379,7 +1366,6 @@ label {
   font-weight: bold;
 }
 
-/* 1110_pop_property02 */
 .popProperty01 .biodata .changeM01 {
   clear: both;
   position: relative;
@@ -1430,7 +1416,7 @@ label {
 .popProperty01 .biodata .changeT01 {
   border: 1px solid #ccc;
   text-align: center;
-  word-break: break-all; /*word-wrap: break-word;*/
+  word-break: break-all;
 }
 .popProperty01 .biodata .changeT01 thead th {
   background: #f2f2f2;
@@ -1501,7 +1487,6 @@ label {
   padding-left: 20px;
 }
 
-/* 페이징 */
 .verP {
   position: relative;
   margin-top: 15px;
@@ -1558,7 +1543,6 @@ label {
   background: url(assets/img/popup/bg/paging_end_on.gif) left top no-repeat;
 }
 
-/*1111_역할자 선택_ecm_popup02 */
 .roleT {
   height: 34px;
   margin-top: -1px;
@@ -1594,10 +1578,10 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   top: 28px;
   width: 528px;
   max-height: 93px;
-  border: 1px solid #ccc; /*border-radius:0 0 5px 5px;*/
+  border: 1px solid #ccc;
   background-color: #fff;
   overflow-y: scroll;
-} /*[1111_border_수정]*/ /*[2020-11-30 수정]*/
+}
 .searchResult ul.list li {
   height: 23px;
   line-height: 23px;
@@ -1642,7 +1626,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   max-height: 92px;
 }
 
-/*1111_pop_property01*/
 .pdRB0 .latelyBox {
   left: 149px;
 }
@@ -1657,13 +1640,11 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   background: none;
 }
 
-/*1111_역할자 선택_ecm_popup02 */
 .personTb tr.on {
   background-color: #f1f1f1;
   font-weight: bold;
 }
 
-/* 1112_ecm_popup01_2 */
 .contentList02 {
   height: 93px;
   margin-bottom: 21px;
@@ -1705,7 +1686,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   display: inline-block;
 }
 
-/* 1117_ecm_popup02_1 */
 .viewL {
   width: 100% !important;
   padding-top: 9px !important;
@@ -1727,12 +1707,12 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .saveBox .floatL {
   width: 485px;
   height: 28px;
-} /*[2020-11-30 수정]*/
+}
 .saveBox .floatL .label {
   display: block;
   float: left;
   width: calc(100% - 5px);
-} /*[2020-11-30 수정]*/
+}
 .saveBox .floatL .latelyHistoryBtn > span {
   display: inline-block;
   width: 100%;
@@ -1843,7 +1823,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   background: #afafaf;
 }
 
-/* HISTORY 최근저장 */
 .latelyHistoryBox {
   position: absolute;
   left: 0px;
@@ -1853,7 +1832,8 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   border: 1px solid #ccc;
   overflow: scroll;
   display: none;
-} /*[2020-11-30 수정]*/
+}
+
 .latelyHistoryBox ul {
   width: 100%;
   background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
@@ -1864,7 +1844,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   display: block;
 }
 .latelyHistoryBox ul li {
-  *float: left; /*width:469px;*/
+  float: left;
   padding: 8px 8px 9px 13px;
   white-space: nowrap;
 }
@@ -1876,7 +1856,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   font-weight: normal;
 }
 
-/* HISTORY 최근저장 리스트 하위 css 하위 없을경우 */
 .pdRB0 .latelyHistoryBox {
   left: 149px;
 }
@@ -1890,7 +1869,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .registerData .dataNo:hover {
   background: none;
 }
-/* MyGuard 서식 타입 */
 .latelyFileTypeBox {
   position: absolute;
   left: 38px;
@@ -1927,7 +1905,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   font-weight: normal;
 }
 
-/* MyGuard 최근저장 리스트 하위 css 하위 없을경우 */
 .pdRB0 .latelyFileTypeBox {
   left: 149px;
 }
@@ -1942,7 +1919,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   background: none;
 }
 
-/* 2013-11-11 add */
 .formBox01 {
   border: 1px solid #d6d6d6;
   color: #222;
@@ -1964,7 +1940,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding: 10px 0 10px;
 }
 
-/* 2015-02-13 추가 */
 .popLayerWrap .contents.type_2 {
   min-height: 495px;
   max-height: 495px;
@@ -1995,7 +1970,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .positionBox.type_2 .positionSearch .part_C .btn_move {
   margin-top: 48px;
 }
-/* 2015-02-16 추가 */
+
 .positionBox.type_2 .positionSearch .part_C .btn_move:first-child {
   margin-top: 35px;
 }
@@ -2020,11 +1995,10 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   + .btn_move {
   margin-top: 175px;
 }
-/* //2015-02-16 추가 */
 .positionBox.type_2 .positionSearch .part_R {
   width: 345px;
   padding-top: 4px;
-} /* 2015-02-16 수정 */
+}
 .positionBox.type_2 .positionSearch .part_R .sub {
   position: relative;
   width: auto;
@@ -2051,17 +2025,17 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   overflow: hidden;
   padding: 0;
   height: 341px;
-} /* 2015-03-03 수정 */
+}
 .positionBox.type_2 .positionSearch .tabUL li a.on {
   padding: 8px 0;
 }
 .positionBox.type_2 .roleT {
   height: 93px;
   margin-top: 0;
-} /* 2015-03-03 수정 */
+}
 .positionBox.type_2 .part_R.section_2 .roleT {
   height: 93;
-} /* 2015-03-03 수정 */
+}
 .rai-list {
   width: 100%;
   height: 340px;
@@ -2088,10 +2062,10 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding: 0 10px;
   background: url(assets/img/popup/bg/ico_fix.png) no-repeat 50% 50%;
   cursor: pointer;
-} /* 2015-02-27 수정 */
+}
 .rai-list li .b_mark.on {
   background: url(assets/img/popup/bg/ico_fix_on.png) no-repeat 50% 50%;
-} /* 2015-02-27 수정 */
+}
 .saveBox .selectyze.type_2 .DivSelectyze .selectyzeValue {
   border-radius: 0;
   padding-left: 13px;
@@ -2115,7 +2089,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .saveBox.type_2 .searchResult ul.list {
   left: 326px;
-} /* 2015-03-03 수정 */
+}
 
 .share_set {
   overflow: hidden;
@@ -2140,7 +2114,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   border: 1px solid #6e7278;
   margin-right: 0;
 }
-/*.share_type li.on + li {border-left:0;}*/
+
 .share_type li a {
   display: block;
   letter-spacing: -1px;
@@ -2151,12 +2125,12 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .share_type li.txt_input {
   width: 280px;
-} /* 2015-02-16 수정 */
+}
 .share_type li.txt_input .search {
   float: none;
   width: 240px;
   margin-top: 4px;
-} /* 2015-02-16 수정 */
+}
 .share_type li.set_btn a {
   position: relative;
   padding-left: 9px;
@@ -2210,7 +2184,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .confidence_type li.empty_cell {
   width: 280px;
-} /* 2015-02-16 수정 */
+}
 .help_wrap {
   position: relative;
   float: left;
@@ -2235,7 +2209,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding: 10px 10px 10px 29px;
   border: 1px solid #4c86c9;
   background: url(assets/img/popup/ico/ico_help.png) no-repeat 10px 10px #fff;
-} /* 2015-02-16 수정 */
+}
 .help_txt .bg {
   position: absolute;
   top: -7px;
@@ -2243,7 +2217,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   width: 8px;
   height: 7px;
   background: url(assets/img/popup/bg/bg_layerpop.png) no-repeat;
-} /* 2015-02-16 수정 */
+}
 .account .innerPad {
   padding-left: 10px;
 }
@@ -2336,7 +2310,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding: 9px 0 7px 0;
   background: url(assets/img/popup/bg/bg_redDot.gif) no-repeat 15px 13px #f6f6f6;
   text-indent: 24px;
-} /* 2015-02-16 수정 */
+}
 .contents.type_2 h3.white {
   color: #222;
   font-size: 13px;
@@ -2547,9 +2521,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   border: 0;
   border-bottom: 1px solid #d6d6d6;
 }
-/* //2015-03-02 추가 */
-
-/* 2015-03-03 추가 */
 .btn_delall {
   padding: 5px 6px 2px 5px;
   position: absolute;
@@ -2799,7 +2770,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   position: absolute;
   top: 0;
   right: 0;
-} /*[2020-11-30 수정]*/
+}
 .popSubTitle .btn_whiteS_typeA a {
   min-width: 34px;
   font-size: 12px;
@@ -2809,7 +2780,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding-left: 5px;
 }
 
-/*2015-05-27 추가*/
 .share_set2 {
   position: relative;
   height: 90px;
@@ -2888,7 +2858,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   background: #afafaf;
 }
 
-/* 2015-07-28추가시작 */
 .count_box {
   position: relative;
   overflow: hidden;
@@ -2911,9 +2880,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .count_box .btn_delall {
   top: 4px !important;
 }
-/* 2015-07-28추가끝 */
 
-/* 2016.11.25 phykang 즐겨찾기 추가 */
 .chktype_1 {
   display: inline-block;
   margin-left: 3px;
@@ -3181,7 +3148,6 @@ a.btn_in_td {
   border-radius: 2px;
 }
 
-/* 2018.04.23 해시태그 */
 .hashtag_inputer {
   position: relative;
   margin-bottom: 10px;
@@ -3239,16 +3205,15 @@ a.btn_in_td {
   padding-left: 2px;
   margin-top: 1px;
 }
-.hashtag_inputer .inputer > input[type="text"] {
-  width: 50px;
+.hashtag_inputer > input[type="text"] {
   min-width: 50px;
-  height: 16px;
-  padding: 0 0 0 10px;
+  height: 24px;
   vertical-align: top;
   color: #222;
   border: none;
+  width: 100%;
 }
-.hashtag_inputer .inputer > input[type="text"]::-ms-clear {
+.hashtag_inputer > input[type="text"]::-ms-clear {
   display: none;
 }
 

@@ -75,7 +75,7 @@
 }
 
 .ltArea {
-  float: left; /*display:inline;*/
+  float: left; 
   position: relative;
   left: -162px;
   width: 162px;
@@ -95,7 +95,7 @@
   margin: 0 12px;
 }
 .rtArea {
-  float: right; /*display:inline;*/
+  float: right;
   position: relative;
   left: 230px;
   width: 230px;
@@ -160,7 +160,6 @@
   text-decoration: none;
 }
 
-/* ECM main */
 .ecmWrap {
   position: relative;
   min-width: 1024px;
@@ -168,6 +167,7 @@
   padding-top: 2px;
   background: url("assets/img/layout/bg_ecmWrap.gif") 0 0 repeat-x;
 }
+
 .ecmWrap .ecmContent {
   padding: 0 222px;
   overflow: hidden;
@@ -323,14 +323,13 @@ a:hover {
   padding: 0 0 0 1px;
 }
 
-/*2015-05-13 추가 시작*/
 .logo * {
   display: inline-block;
   vertical-align: top;
 }
 .logo .logo_ci {
   float: left;
-  margin-top: -2px; /*padding:4px 0 0 0;*/
+  margin-top: -2px;
 }
 .logo .logo_sys {
   float: left;
@@ -342,9 +341,6 @@ a:hover {
 .logo .logo_sys > img {
   margin: 0 0 -1px;
 }
-/*2015-05-13 추가 끝*/
-
-/* 2012-10-15 add */
 .alertTxtWrap {
   position: relative;
   float: left;
@@ -390,7 +386,7 @@ a:hover {
 .lpFavKeyword {
   display: none;
   position: absolute;
-  top: 0px; /* right:-18px; width:102px; [2012.10.24 수정] */
+  top: 0px;
   left: 0;
   width: 108px;
   border: 1px solid #3275c0;
@@ -436,7 +432,6 @@ a:hover {
   margin: 6px 18px 0 0;
 }
 
-/* layer popup */
 .lpPsnName {
   display: none;
   position: absolute;
@@ -505,7 +500,6 @@ a:hover {
   top: -4px;
 }
 
-/* language */
 .chgLangWrap {
   float: left;
 }
@@ -555,7 +549,6 @@ body {
   font-size: 12px;
 }
 
-/* loading_confirm */
 .loading_confirm {
   z-index: 9999;
   position: absolute;
