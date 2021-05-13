@@ -1,12 +1,6 @@
 import * as types from "./types";
 import { employeeService } from "services/employeeService";
 
-const initState = () => {
-  return {
-    type: types.INIT_STATE,
-  };
-};
-
 const searchByName = (name) => {
   return async (dispatch) => {
     try {
@@ -23,4 +17,4 @@ const searchByName = (name) => {
   };
 };
 
-export { initState, searchByName };
+export { searchByName };

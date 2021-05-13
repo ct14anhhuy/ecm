@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Frame from "react-frame-component";
 import { connect } from "react-redux";
 import * as act from "store/employee/actions";
@@ -17,11 +17,17 @@ const RoleAssignEdit = (props) => {
   const [selectName, setSelectName] = useState(true);
   const [searchStr, setSearchStr] = useState("");
 
-  useEffect(() => {
-    // props.initState();
-  });
+  const firstUpdate = useRef(true);
+
+  const handleSearch = () => {
+    props.searchByName(searchStr);
+  };
 
   useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
     setEmployees(props.employees);
   }, [props.employees]);
 
@@ -78,7 +84,7 @@ const RoleAssignEdit = (props) => {
                 setSearchStr(e.target.value);
               }}
             />
-            <Link to="/" onClick={() => props.searchByName(searchStr)}>
+            <Link to="/" onClick={handleSearch}>
               <img
                 style={{ marginTop: 6 }}
                 alt=""
@@ -115,6 +121,7 @@ const RoleAssignEdit = (props) => {
                     require("assets/img/popup/bg/bg_btnGray.gif").default
                   }) 0 0 repeat`,
                 }}
+                onClick={() => setEmployees([])}
               >
                 Delete All
               </Link>
@@ -586,7 +593,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    initState: () => dispatch(act.initState()),
     searchByName: (name) => dispatch(act.searchByName(name)),
   };
 };
