@@ -1,20 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import Frame from "react-frame-component";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import RoleAssignEdit from "./RoleAssignEdit";
 import { MainContext } from "context";
 import TreeView from "components/TreeView";
 import { connect } from "react-redux";
 import SelectFile from "./SelectFile";
+import Frame from "react-frame-component";
+import RoleAssignEdit from "./RoleAssignEdit";
+
+import styles from "./AddFileFrame.module.css";
 
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!assets/css/global.css";
-import layoutStyles from "!!raw-loader!assets/css/layout.css";
-import bbsStyles from "!!raw-loader!assets/css/bbs.css";
-import calendaStyles from "!!raw-loader!assets/css/calenda.css";
-import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
-import addFileStyles from "!!raw-loader!./AddFileFrame.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const AddFileFrame = (props) => {
@@ -67,16 +63,16 @@ const AddFileFrame = (props) => {
     setState({ ...state, directoryId: selectedId });
   };
 
-  const bodyFrame = (
-    <div>
+  return (
+    <div className={styles.wrapBody}>
       <div
-        className="popLayerWrap"
-        style={{ margin: "-318px 0px 0px -400px", width: 865, height: 635 }}
+        className={styles.popLayerWrap}
+        style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}
       >
-        <div className="header">
-          <h1 className="tit">Add Content</h1>
+        <div className={styles.header}>
+          <h1 className={styles.tit}>Add Content</h1>
           <Link
-            className="close"
+            className={styles.close}
             to="/"
             onClick={() => contextData.setShowAddFileModal(false)}
           >
@@ -86,30 +82,19 @@ const AddFileFrame = (props) => {
             />
           </Link>
         </div>
-        <div className="contents">
-          <div className="columnBox">
-            <p className="popSubTitle">
-              <span className="subtype_2">Content List</span>
-              <span className="floatR">
+        <div className={styles.contents}>
+          <div className={styles.columnBox}>
+            <p className={styles.popSubTitle}>
+              <span className={styles.subtype_2}>Content List</span>
+              <span className={styles.floatR}>
                 <Link
-                  className="btnBlack"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_blackBtn_L.png").default
-                    }) right 0 no-repeat`,
-                  }}
+                  className={styles.btnBlack}
                   to="/"
                   onClick={() => {
                     fileRef.current.click();
                   }}
                 >
-                  <span
-                    style={{
-                      background: `url(${
-                        require("assets/img/popup/bg/bg_blackBtn_R.png").default
-                      }) right 0 no-repeat`,
-                    }}
-                  >
+                  <span>
                     <b>+</b> Add Content
                   </span>
                 </Link>
@@ -122,32 +107,33 @@ const AddFileFrame = (props) => {
                 onChange={handleSelectFile}
               />
             </p>
-            <div className="contentList">
-              <ul className="list">
+            <div className={styles.contentList}>
+              <ul className={styles.list}>
                 {state.files.map((file) => (
                   <SelectFile
                     key={file.key}
                     file={file}
+                    styles={styles}
                     handleChangeFileName={handleChangeFileName}
                     handleDeleteFile={handleDeleteFile}
                   />
                 ))}
               </ul>
             </div>
-            <p className="popSubTitle">
-              <span className="subtype_2">Location</span>
+            <p className={styles.popSubTitle}>
+              <span className={styles.subtype_2}>Location</span>
             </p>
-            <div className="saveBox" style={{ zIndex: "inherit" }}>
-              <span className="floatL">
-                <table className="popTb">
+            <div className={styles.saveBox} style={{ zIndex: "inherit" }}>
+              <span className={styles.floatL}>
+                <table className={styles.popTb}>
                   <tbody>
                     <tr>
                       <td style={{ paddingLeft: 5 }}>
-                        <label className="label">{selectedPath}</label>
+                        <label className={styles.label}>{selectedPath}</label>
                       </td>
                       <td width={63}>
                         <Link
-                          className="btnBlueLine"
+                          className={styles.btnBlueLine}
                           to="/"
                           onClick={() => {
                             setShowListDirectory(!showListDirectory);
@@ -163,120 +149,133 @@ const AddFileFrame = (props) => {
                 </table>
               </span>
               <div
-                className="treeConBox"
+                className={styles.treeConBox}
                 style={
                   showListDirectory
                     ? { height: 300, display: "block" }
                     : { height: 300, display: "none" }
                 }
               >
-                <div className="contentSelect">
+                <div className={styles.contentSelect}>
                   <div
-                    className="DivSelectyze grey"
+                    className={`${styles.DivSelectyze} ${styles.grey}`}
                     style={{ paddingLeft: 7, zIndex: 9 }}
                   >
-                    <Link className="selectyzeValue" to="/">
+                    <Link className={styles.selectyzeValue} to="/">
                       <span>POSCO ICT</span>
                     </Link>
-                    <ul className="UlSelectize">
+                    <ul className={styles.UlSelectize}>
                       <li>
                         <Link to="/">POSCO ICT</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="treeCon">
-                  <TreeView handleOnDoubleClick={handleOnSelectPath} />
+                <div
+                  className={styles.treeCon}
+                  style={{ width: "100%", height: "100%" }}
+                >
+                  <Frame
+                    width="100%"
+                    height="100%"
+                    frameBorder={0}
+                    head={<style>{antdStyles}</style>}
+                  >
+                    <TreeView handleOnDoubleClick={handleOnSelectPath} />
+                  </Frame>
                 </div>
               </div>
             </div>
-            <p className="popSubTitle" style={{ float: "left" }}>
-              <span className="subtype_2"> Security Grade</span>
+            <p className={styles.popSubTitle} style={{ float: "left" }}>
+              <span className={styles.subtype_2}> Security Grade</span>
             </p>
             <br />
-            <div className="share_set">
-              <ol className="safe_grade">
-                <li className="grade1">Specific Employee Sharing</li>
-                <li className="grade2">Department Employee Sharing</li>
-                <li className="grade3">Specific Employee Sharing</li>
-                <li className="grade4">All Employee Sharing</li>
+            <div className={styles.share_set}>
+              <ol className={styles.safe_grade}>
+                <li className={styles.grade1}>Specific Employee Sharing</li>
+                <li className={styles.grade2}>Department Employee Sharing</li>
+                <li className={styles.grade3}>Specific Employee Sharing</li>
+                <li className={styles.grade4}>All Employee Sharing</li>
               </ol>
-              <div className="safe_btn_box">
+              <div className={styles.safe_btn_box}>
                 <Link
-                  className="btn_safe1"
+                  className={`${styles.btn_safe1} ${
+                    state.securityLevel === "Secret" ? styles.on : ""
+                  }`}
                   to="/"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png").default
-                    }) no-repeat 0 0`,
-                  }}
+                  onClick={(e) =>
+                    setState({ ...state, securityLevel: e.target.text })
+                  }
                 >
                   Secret
                 </Link>
                 <Link
-                  className="btn_safe2"
+                  className={`${styles.btn_safe2} ${
+                    state.securityLevel === "Secret A/Not Open" ? styles.on : ""
+                  }`}
                   to="/"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png").default
-                    }) no-repeat 0 0`,
-                  }}
+                  onClick={(e) =>
+                    setState({ ...state, securityLevel: e.target.text })
+                  }
                 >
                   Secret A/Not Open
                 </Link>
                 <Link
-                  className="btn_safe3"
+                  className={`${styles.btn_safe3} ${
+                    state.securityLevel === "Secret A" ? styles.on : ""
+                  }`}
                   to="/"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png").default
-                    }) no-repeat 0 0`,
-                  }}
+                  onClick={(e) =>
+                    setState({ ...state, securityLevel: e.target.text })
+                  }
                 >
                   Secret A
                 </Link>
                 <Link
-                  className="btn_safe4"
+                  className={`${styles.btn_safe4} ${
+                    state.securityLevel === "Secret B/Not Open" ? styles.on : ""
+                  }`}
                   to="/"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png").default
-                    }) no-repeat 0 0`,
-                  }}
+                  onClick={(e) =>
+                    setState({ ...state, securityLevel: e.target.text })
+                  }
                 >
                   Secret B/Not Open
                 </Link>
                 <Link
-                  className="btn_safe5"
+                  className={`${styles.btn_safe5} ${
+                    state.securityLevel === "Secret B" ? styles.on : ""
+                  }`}
                   to="/"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png").default
-                    }) no-repeat 0 0`,
-                  }}
+                  onClick={(e) =>
+                    setState({ ...state, securityLevel: e.target.text })
+                  }
                 >
                   Secret B
                 </Link>
                 <Link
-                  className="btn_safe6"
+                  className={`${styles.btn_safe6} ${
+                    state.securityLevel === "Public" ? styles.on : ""
+                  }`}
                   to="/"
-                  style={{
-                    background: `url(${
-                      require("assets/img/popup/bg/bg_safe_btn.png").default
-                    }) no-repeat 0 0`,
-                  }}
+                  onClick={(e) =>
+                    setState({ ...state, securityLevel: e.target.text })
+                  }
                 >
                   Public
                 </Link>
               </div>
             </div>
-            <p className="popSubTitle">
-              <span className="subtype_2">Tag</span>
-              <span className="subtype_2" style={{ fontWeight: "normal" }}>
+            <p className={styles.popSubTitle}>
+              <span className={styles.subtype_2}>Tag</span>
+              <span
+                className={styles.subtype_2}
+                style={{ fontWeight: "normal" }}
+              >
                 (up to 20 characters per tag, maximum 10 can be registered)
               </span>
             </p>
-            <div className="hashtag_inputer">
+            <div className={styles.hashtag_inputer}>
               <input
                 type="text"
                 value={state.tag}
@@ -285,52 +284,19 @@ const AddFileFrame = (props) => {
                 }}
               />
             </div>
-            <p className="popSubTitle">
-              <span className="subtype_2">Permission Setting</span>
+            <p className={styles.popSubTitle}>
+              <span className={styles.subtype_2}>Permission Setting</span>
             </p>
             <div>
               <RoleAssignEdit />
             </div>
           </div>
         </div>
-        <p className="modifyBtn">
-          <Link
-            to="/"
-            style={{
-              background: `url(${
-                require("assets/img/popup/bg/bg_modifyBtn.gif").default
-              }) no-repeat left top #2768b2`,
-            }}
-          >
-            Add
-          </Link>
+        <p className={styles.modifyBtn}>
+          <Link to="/">Add</Link>
         </p>
       </div>
     </div>
-  );
-
-  return (
-    <Frame
-      width="865"
-      height="635"
-      align="middle"
-      frameBorder="0"
-      scrolling="no"
-      style={{ border: "0px" }}
-      head={
-        <style>
-          {antdStyles}
-          {globalStyles}
-          {layoutStyles}
-          {bbsStyles}
-          {calendaStyles}
-          {ecmPopupStyles}
-          {addFileStyles}
-        </style>
-      }
-    >
-      {bodyFrame}
-    </Frame>
   );
 };
 

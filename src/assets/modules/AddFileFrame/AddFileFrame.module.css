@@ -1,7 +1,15 @@
-body {
+.wrapBody {
   width: 800px;
   min-width: auto;
+  top: 0px !important;
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  font-size: 13px;
+  color: #000;
+  font-family: dotum;
 }
+
 .contentList {
   max-height: 62px;
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "assets/css/main.css";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
 import Filter from "./Filter";
@@ -17,6 +16,8 @@ import OpenContent from "./OpenContent";
 import { connect } from "react-redux";
 import { getDirectories } from "store/diretory/actions";
 import { getMyContents } from "store/fileInfo/actions";
+
+import "assets/css/main.css";
 
 const App = (props) => {
   const [showAddFileModal, setShowAddFileModal] = useState(false);

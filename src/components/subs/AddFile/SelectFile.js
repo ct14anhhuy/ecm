@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import GetBackgroundIconFromExtension from "components/common/GetBackgroundIconFromExtension";
 
 const SelectFile = (props) => {
+  const styles = props.styles;
   const { key } = props.file;
   const [fileName, setFileName] = useState(props.file.name);
   const [editFileName, setEditFileName] = useState(false);
@@ -19,11 +20,11 @@ const SelectFile = (props) => {
   return (
     <li>
       <span
-        className="contentsNameView"
+        className={styles.contentsNameView}
         style={editFileName ? { display: "none" } : { display: "block" }}
       >
         <Link
-          className="title"
+          className={styles.title}
           style={{
             width: "93%",
             overflow: "hidden",
@@ -33,14 +34,14 @@ const SelectFile = (props) => {
           }}
           to="/"
         >
-          <span className="contentsExtImage">
+          <span className={styles.contentsExtImage}>
             <GetBackgroundIconFromExtension fileName={fileName} />
           </span>
-          <span className="contentsNameViewTitle">{fileName}</span>
+          <span className={styles.contentsNameViewTitle}>{fileName}</span>
         </Link>
-        <span className="floatR">
+        <span className={styles.floatR}>
           <Link
-            className="btnChk"
+            className={styles.btnChk}
             to="/"
             onClick={() => setEditFileName(!editFileName)}
           >
@@ -51,7 +52,7 @@ const SelectFile = (props) => {
               }
             />
           </Link>
-          <Link className="btnDel" to="/" onClick={handleDeleteFile}>
+          <Link className={styles.btnDel} to="/" onClick={handleDeleteFile}>
             <img
               alt=""
               src={
@@ -62,19 +63,15 @@ const SelectFile = (props) => {
         </span>
       </span>
       <span
-        className="contentsNameEdit"
+        className={styles.contentsNameEdit}
         style={editFileName ? { display: "block" } : { display: "none" }}
       >
-        <span className="title floatL">
-          <span className="contentsExtImageEdit">
-            <img
-              alt=""
-              style={{ width: 16, height: 16 }}
-              src={require("assets/img/fileicons/pdf.png").default}
-            />
+        <span className={`${styles.title} ${styles.floatL}`}>
+          <span className={styles.contentsExtImageEdit}>
+            <GetBackgroundIconFromExtension fileName={fileName} />
           </span>
           <input
-            className="contentsNameEditTitle"
+            className={styles.contentsNameEditTitle}
             style={{ msImeMode: "active" }}
             type="text"
             size={100}
@@ -84,14 +81,14 @@ const SelectFile = (props) => {
             }}
           />
         </span>
-        <span className="floatR">
-          <Link className="btnChk" to="/" onClick={handleChangeFileName}>
+        <span className={styles.floatR}>
+          <Link className={styles.btnChk} to="/" onClick={handleChangeFileName}>
             <img
               alt=""
               src={require("assets/img/popup/ico/ico_check.png").default}
             />
           </Link>
-          <Link className="btnDel" to="/" onClick={handleDeleteFile}>
+          <Link className={styles.btnDel} to="/" onClick={handleDeleteFile}>
             <img
               alt=""
               src={

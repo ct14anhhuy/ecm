@@ -12,11 +12,8 @@ import {
 } from "store/fileInfo/actions";
 import { connect } from "react-redux";
 
+import styles from "./LeftMenu.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!assets/css/global.css";
-import layoutStyles from "!!raw-loader!assets/css/layout.css";
-import bbsStyles from "!!raw-loader!assets/css/bbs.css";
-import leftMenuStyles from "!!raw-loader!./LeftMenu.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const LeftMenu = (props) => {
@@ -31,13 +28,13 @@ const LeftMenu = (props) => {
     props.getContentsFromPath(id);
   };
 
-  const bodyFrame = (
+  return (
     <div>
-      <div className="bgBoxLayout">
-        <ul className="tab_more">
+      <div className={styles.bgBoxLayout}>
+        <ul className={styles.tab_more}>
           <li>
             <span
-              className={selectedTab ? "tabon" : ""}
+              className={selectedTab ? styles.tabon : ""}
               onClick={() => {
                 setSelectedTab(true);
               }}
@@ -47,7 +44,7 @@ const LeftMenu = (props) => {
           </li>
           <li>
             <span
-              className={selectedTab ? "" : "tabon"}
+              className={selectedTab ? "" : styles.tabon}
               onClick={() => {
                 setSelectedTab(false);
               }}
@@ -58,24 +55,13 @@ const LeftMenu = (props) => {
         </ul>
       </div>
       <div
-        className="tabCnt"
+        className={styles.tabCnt}
         style={selectedTab ? { display: "block" } : { display: "none" }}
       >
-        <ul className="btnBox">
-          <li
-            style={{
-              background: `url(${
-                require("assets/img/main/left/bg_go_cnt.png").default
-              }) left top no-repeat`,
-            }}
-          >
+        <ul className={styles.btnBox}>
+          <li>
             <span
-              className="btn_01"
-              style={{
-                background: `url(${
-                  require("assets/img/main/left/ico_go_cnt01.png").default
-                }) 15px center no-repeat`,
-              }}
+              className={styles.btn_01}
               onClick={(e) => {
                 handleSelectedRoute(e);
                 props.getMyContents();
@@ -84,21 +70,9 @@ const LeftMenu = (props) => {
               My Contents
             </span>
           </li>
-          <li
-            className="newWin"
-            style={{
-              background: `url(${
-                require("assets/img/main/left/bg_go_newwin_cnt.png").default
-              }) left top no-repeat`,
-            }}
-          >
+          <li className={styles.newWin}>
             <span
-              className="btn_30"
-              style={{
-                background: `url(${
-                  require("assets/img/main/left/ico_go_cnt30.png").default
-                }) 15px center no-repeat`,
-              }}
+              className={styles.btn_30}
               onClick={(e) => {
                 handleSelectedRoute(e);
                 props.getImportantContents();
@@ -107,20 +81,9 @@ const LeftMenu = (props) => {
               Impotant Contents
             </span>
           </li>
-          <li
-            style={{
-              background: `url(${
-                require("assets/img/main/left/bg_go_cnt.png").default
-              }) left top no-repeat`,
-            }}
-          >
+          <li>
             <span
-              className="btn_06"
-              style={{
-                background: `url(${
-                  require("assets/img/main/left/ico_go_cnt26.png").default
-                }) 15px center no-repeat`,
-              }}
+              className={styles.btn_06}
               onClick={(e) => {
                 handleSelectedRoute(e);
                 props.getFavoriteContents();
@@ -129,20 +92,9 @@ const LeftMenu = (props) => {
               Favorite Contents
             </span>
           </li>
-          <li
-            style={{
-              background: `url(${
-                require("assets/img/main/left/bg_go_cnt.png").default
-              }) left top no-repeat`,
-            }}
-          >
+          <li>
             <span
-              className="btn_07"
-              style={{
-                background: `url(${
-                  require("assets/img/main/left/ico_go_cnt27.png").default
-                }) 15px center no-repeat`,
-              }}
+              className={styles.btn_07}
               onClick={(e) => {
                 handleSelectedRoute(e);
                 props.getSharedContents();
@@ -151,20 +103,9 @@ const LeftMenu = (props) => {
               Shared Contents
             </span>
           </li>
-          <li
-            style={{
-              background: `url(${
-                require("assets/img/main/left/bg_go_cnt.png").default
-              }) left top no-repeat`,
-            }}
-          >
+          <li>
             <span
-              className="btn_16"
-              style={{
-                background: `url(${
-                  require("assets/img/main/left/ico_go_cnt16.png").default
-                }) 15px center no-repeat`,
-              }}
+              className={styles.btn_16}
               onClick={(e) => {
                 handleSelectedRoute(e);
                 props.getDepartmentContents();
@@ -173,20 +114,9 @@ const LeftMenu = (props) => {
               Departments Contents
             </span>
           </li>
-          <li
-            style={{
-              background: `url(${
-                require("assets/img/main/left/bg_go_cnt.png").default
-              }) left top no-repeat`,
-            }}
-          >
+          <li>
             <span
-              className="btn_rcb"
-              style={{
-                background: `url(${
-                  require("assets/img/main/left/ico_go_rcb.png").default
-                }) 15px center no-repeat`,
-              }}
+              className={styles.btn_rcb}
               onClick={(e) => {
                 handleSelectedRoute(e);
                 props.getTrashContents();
@@ -198,43 +128,34 @@ const LeftMenu = (props) => {
         </ul>
       </div>
       <div
-        className="tabCnt"
+        className={styles.tabCnt}
         style={selectedTab ? { display: "none" } : { display: "block" }}
       >
-        <div className="bgBoxLayout select02">
-          <div className="DivSelectyze grey" style={{ zIndex: 9999 }}>
-            <span className="selectyzeValue">
+        <div className={`${styles.bgBoxLayout} ${styles.select02}`}>
+          <div
+            className={`${styles.DivSelectyze} ${styles.grey}`}
+            style={{ zIndex: 9999 }}
+          >
+            <span className={styles.selectyzeValue}>
               <span>POSCO ICT</span>
             </span>
           </div>
-          <div className="myconList">
-            <div className="treeFldConBox">
-              <TreeView handleOnSelect={handleOnSelect} />
+          <div className={styles.myconList}>
+            <div className={styles.treeFldConBox}>
+              <Frame
+                width="100%"
+                height="100%"
+                scrolling="no"
+                frameBorder="0"
+                head={<style>{antdStyles}</style>}
+              >
+                <TreeView handleOnSelect={handleOnSelect} />
+              </Frame>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-
-  return (
-    <Frame
-      width="100%"
-      height={988}
-      scrolling="no"
-      frameBorder="0"
-      head={
-        <style>
-          {antdStyles}
-          {globalStyles}
-          {layoutStyles}
-          {bbsStyles}
-          {leftMenuStyles}
-        </style>
-      }
-    >
-      {bodyFrame}
-    </Frame>
   );
 };
 

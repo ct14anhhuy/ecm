@@ -30,11 +30,9 @@ const AddFile = () => {
           top: "50%",
           width: 865,
           height: 635,
-          textAlign: "center",
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,
-          cursor: "wait",
           backgroundColor: "rgb(255, 255, 255)",
         }}
       >
