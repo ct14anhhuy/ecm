@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as act from "store/user/actions";
 
 const Header = (props) => {
-  const user = props.user;
+  const { user } = props;
 
   return (
     <div id="header">

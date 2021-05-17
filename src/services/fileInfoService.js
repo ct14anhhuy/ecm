@@ -52,6 +52,30 @@ const searchContents = async (searchStr) => {
     });
 };
 
+const changeFavorite = async (fileId, employeeId) => {
+  const fileFavorite = {
+    fileId,
+    employeeId,
+  };
+  return await api
+    .post("FileFavorite/AddOrRemoveFavoriteFile", fileFavorite)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+const changeImportant = async (fileId, employeeId) => {
+  const fileImportant = {
+    fileId,
+    employeeId,
+  };
+  return await api
+    .post("FileImportant/AddOrRemoveImportantFile", fileImportant)
+    .then((response) => {
+      return response.data;
+    });
+};
+
 export const fileInfoService = {
   getMyContents,
   getImportantContents,
@@ -61,4 +85,6 @@ export const fileInfoService = {
   getTrashContents,
   getContentsFromPath,
   searchContents,
+  changeFavorite,
+  changeImportant,
 };

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as act from "store/fileUrl/actions";
 
 /* eslint import/no-webpack-loader-syntax: off */
 import globalStyles from "!!raw-loader!assets/css/global.css";
@@ -10,6 +12,13 @@ import contentsStyles from "!!raw-loader!assets/css/contents.css";
 import openContentStyles from "!!raw-loader!./OpenContent.css";
 
 const OpenContent = (props) => {
+  const { editUrl, viewUrl } = props.fileUrl;
+  const { selectedItem, getFileUrl } = props;
+
+  useEffect(() => {
+    getFileUrl(selectedItem.id);
+  }, [getFileUrl, selectedItem.id]);
+
   const bodyFrame = (
     <div className="popLayerWrap">
       <div className="header">
@@ -21,9 +30,7 @@ const OpenContent = (props) => {
         >
           <img
             alt=""
-            src={
-              require("assets/img/contents/ecmMain/img_close.gif").default
-            }
+            src={require("assets/img/contents/ecmMain/img_close.gif").default}
           />
         </Link>
       </div>
@@ -47,8 +54,8 @@ const OpenContent = (props) => {
           </table>
         </div>
         <p className="btnBox">
-          <Link to="/">Edit</Link>
-          <Link to="/">View</Link>
+          <a href={`ECMProtocol: ${editUrl}`}>Edit</a>
+          <a href={`ECMProtocol: ${viewUrl}`}>View</a>
         </p>
       </div>
     </div>
@@ -115,4 +122,16 @@ const OpenContent = (props) => {
   );
 };
 
-export default OpenContent;
+const mapStateToProps = (state) => {
+  return {
+    fileUrl: state.fileUrlReducers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getFileUrl: (id) => dispatch(act.getFileUrl(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(OpenContent);

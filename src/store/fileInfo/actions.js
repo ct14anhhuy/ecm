@@ -130,21 +130,35 @@ const searchContents = (searchStr) => {
   };
 };
 
-const changeFavorite = (id) => {
-  return {
-    type: types.CHANGE_FAVORITE,
-    payload: {
-      id,
-    },
+const changeFavorite = (id, employeeId) => {
+  return async (dispatch) => {
+    try {
+      await fileInfoService.changeFavorite(id, employeeId);
+      dispatch({
+        type: types.CHANGE_FAVORITE,
+        payload: {
+          id,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
-const changeImportant = (id) => {
-  return {
-    type: types.CHANGE_IMPORTANT,
-    payload: {
-      id,
-    },
+const changeImportant = (id, employeeId) => {
+  return async (dispatch) => {
+    try {
+      await fileInfoService.changeImportant(id, employeeId);
+      dispatch({
+        type: types.CHANGE_IMPORTANT,
+        payload: {
+          id,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 

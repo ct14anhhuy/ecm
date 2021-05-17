@@ -8,4 +8,12 @@ const searchByName = async (name) => {
     });
 };
 
-export const employeeService = { searchByName };
+const getByDepartment = async (depId) => {
+  return await api
+    .get("/Employee/GetEmployeesByDeptId?deptId=" + depId)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export const employeeService = { searchByName, getByDepartment };

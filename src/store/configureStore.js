@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 import fileInfoReducers from "./fileInfo/reducers";
 import directoryReducers from "./diretory/reducers";
+import departmentReducers from "./department/reducers";
 import userReducers from "./user/reducers";
 import employeeReducers from "./employee/reducers";
 import paginationReducers from "./pagination/reducers";
+import fileUrlReducers from "./fileUrl/reducers";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import thunkMiddleware from "redux-thunk";
@@ -18,9 +20,11 @@ const persistConfig = {
 const rootReducer = combineReducers({
   fileInfoReducers,
   directoryReducers,
+  departmentReducers,
   userReducers,
   employeeReducers,
   paginationReducers,
+  fileUrlReducers,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

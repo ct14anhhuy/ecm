@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext, useRef } from "react";
 import { connect } from "react-redux";
 import { changeFavorite, changeImportant } from "store/fileInfo/actions";
+import { getFileShareUrl } from "store/fileUrl/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { MainContext } from "context";
@@ -9,7 +10,7 @@ import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtens
 const MainTableItem = (props) => {
   var contextData = useContext(MainContext);
 
-  const fileInfo = props.fileInfo;
+  const { fileUrl, fileInfo, user } = props;
   const [fileChecked, setFileChecked] = useState(false);
 
   const node = useRef();
@@ -17,6 +18,10 @@ const MainTableItem = (props) => {
   useEffect(() => {
     setFileChecked(props.selectAll);
   }, [props.selectAll]);
+
+  useEffect(() => {
+    navigator.clipboard.writeText(`ECMProtocol: ${fileUrl.shareUrl}`);
+  }, [fileUrl.shareUrl]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
@@ -33,7 +38,7 @@ const MainTableItem = (props) => {
   };
 
   const handleOnCopyUrl = () => {
-    navigator.clipboard.writeText(fileInfo.id);
+    props.getFileShareUrl(fileInfo.id);
   };
 
   return (
@@ -53,21 +58,21 @@ const MainTableItem = (props) => {
             <Link
               className="ico_fav_3"
               to="/"
-              onClick={() => props.changeImportant(fileInfo.id)}
+              onClick={() => props.changeImportant(fileInfo.id, user.id)}
             >
               <img
                 alt=""
                 src={
                   fileInfo.isImportant
-                    ? require("assets/img/main/left/ico_fix_on.png").default
-                    : require("assets/img/main/left/ico_fix.png").default
+                    ? require("assets/img/main/left/ico_go_cnt15_on.png").default
+                    : require("assets/img/main/left/ico_go_cnt15.png").default
                 }
               />
             </Link>
             <Link
               className="ico_fav"
               to="/"
-              onClick={() => props.changeFavorite(fileInfo.id)}
+              onClick={() => props.changeFavorite(fileInfo.id, user.id)}
             >
               <img
                 alt=""
@@ -105,7 +110,9 @@ const MainTableItem = (props) => {
             className="infoMenu"
             ref={node}
             style={{ top: 16, display: "none" }}
-            onClick={()=>{node.current.style.display = "none";}}
+            onClick={() => {
+              node.current.style.display = "none";
+            }}
           >
             <li style={{ fontWeight: "bold" }}>
               <Link to="/" onClick={handleOnCopyUrl}>
@@ -125,15 +132,25 @@ const MainTableItem = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.userReducers,
+    fileUrl: state.fileUrlReducers,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeFavorite: (id) => {
-      dispatch(changeFavorite(id));
+    changeFavorite: (id, employeeId) => {
+      dispatch(changeFavorite(id, employeeId));
     },
-    changeImportant: (id) => {
-      dispatch(changeImportant(id));
+    changeImportant: (id, employeeId) => {
+      dispatch(changeImportant(id, employeeId));
+    },
+    getFileShareUrl: (id) => {
+      dispatch(getFileShareUrl(id));
     },
   };
 };
 
-export default connect(null, mapDispatchToProps)(MainTableItem);
+export default connect(mapStateToProps, mapDispatchToProps)(MainTableItem);

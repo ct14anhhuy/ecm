@@ -16,6 +16,7 @@ import OpenContent from "./OpenContent";
 import { connect } from "react-redux";
 import { getDirectories } from "store/diretory/actions";
 import { getMyContents } from "store/fileInfo/actions";
+import { getDepartments } from "store/department/actions";
 
 import "assets/css/main.css";
 
@@ -32,6 +33,7 @@ const App = (props) => {
   useEffect(() => {
     props.getDirectories();
     props.getMyContents();
+    props.getDepartments();
   }, [props]);
 
   return (
@@ -84,7 +86,10 @@ const App = (props) => {
                       setShowCreateDirectoryModal={setShowCreateDirectoryModal}
                     />
                     <div className="normalList">
-                      <Filter setFilterExt={setFilterExt} />
+                      <Filter
+                        filterExt={filterExt}
+                        setFilterExt={setFilterExt}
+                      />
                       <div>
                         <MainContext.Provider
                           value={{ setSelectedItem, setShowOpenContent }}
@@ -135,6 +140,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getDirectories: () => dispatch(getDirectories()),
     getMyContents: () => dispatch(getMyContents()),
+    getDepartments: () => dispatch(getDepartments()),
   };
 };
 

@@ -15,7 +15,11 @@ const OptionBox = (props) => {
               <em className="add">Add File</em>
             </span>
           </Link>
-          <Link to="/" onClick={() => props.setShowCreateDirectoryModal(true)}>
+          <Link
+            to="/"
+            onClick={() => props.setShowCreateDirectoryModal(true)}
+            style={props.user.roleId !== 1 ? { display: "none" } : {}}
+          >
             <span>
               <em className="new">Create Directory</em>
             </span>
@@ -55,10 +59,16 @@ const OptionBox = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.userReducers,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     searchContents: (searchStr) => dispatch(searchContents(searchStr)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(OptionBox);
+export default connect(mapStateToProps, mapDispatchToProps)(OptionBox);

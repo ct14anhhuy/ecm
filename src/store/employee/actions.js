@@ -17,4 +17,20 @@ const searchByName = (name) => {
   };
 };
 
-export { searchByName };
+const getByDepartment = (depId) => {
+  return async (dispatch) => {
+    try {
+      const employees = await employeeService.getByDepartment(depId);
+      dispatch({
+        type: types.GET_BY_DEPARTMENT,
+        payload: {
+          employees,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export { searchByName, getByDepartment };

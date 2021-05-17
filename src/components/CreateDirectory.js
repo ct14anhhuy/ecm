@@ -6,7 +6,6 @@ import TreeView from "./TreeView";
 /* eslint import/no-webpack-loader-syntax: off */
 import globalStyles from "!!raw-loader!assets/css/global.css";
 import layoutStyles from "!!raw-loader!assets/css/layout.css";
-import bbsStyles from "!!raw-loader!assets/css/bbs.css";
 import ecmPopupStyles from "!!raw-loader!assets/css/ecm_popup.css";
 import calendaStyles from "!!raw-loader!assets/css/calenda.css";
 import createDirectoryStyles from "!!raw-loader!./CreateDirectory.css";
@@ -187,7 +186,6 @@ const CreateDirectory = (props) => {
                 {antdStyles}
                 {globalStyles}
                 {layoutStyles}
-                {bbsStyles}
                 {ecmPopupStyles}
                 {calendaStyles}
                 {createDirectoryStyles}

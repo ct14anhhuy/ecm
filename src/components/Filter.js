@@ -6,7 +6,7 @@ import * as act from "store/pagination/actions";
 
 const Filter = (props) => {
   const [showListRow, setShowListRow] = useState(false);
-  const { pageLimit, updatePageLimit, setFilterExt } = props;
+  const { pageLimit, updatePageLimit, setFilterExt, filterExt } = props;
 
   return (
     <div className="sortingBox" style={{ display: "block" }}>
@@ -16,7 +16,11 @@ const Filter = (props) => {
             <img
               alt=""
               title="All"
-              src={require("assets/img/main/ico/ico_all_on.png").default}
+              src={
+                filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_all_on.png").default
+                  : require("assets/img/main/ico/ico_all_off.png").default
+              }
             />
           </Link>
         </li>
@@ -25,7 +29,11 @@ const Filter = (props) => {
             <img
               alt=""
               title="Powerpoint"
-              src={require("assets/img/main/ico/ico_ppt_on.png").default}
+              src={
+                filterExt === exts.POWERPOINT || filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_ppt_on.png").default
+                  : require("assets/img/main/ico/ico_ppt_off.png").default
+              }
             />
           </Link>
         </li>
@@ -34,7 +42,11 @@ const Filter = (props) => {
             <img
               alt=""
               title="Excel"
-              src={require("assets/img/main/ico/ico_xlsx_on.png").default}
+              src={
+                filterExt === exts.EXCEL || filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_xlsx_on.png").default
+                  : require("assets/img/main/ico/ico_xlsx_off.png").default
+              }
             />
           </Link>
         </li>
@@ -43,7 +55,11 @@ const Filter = (props) => {
             <img
               alt=""
               title="Word"
-              src={require("assets/img/main/ico/ico_doc_on.png").default}
+              src={
+                filterExt === exts.WORD || filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_doc_on.png").default
+                  : require("assets/img/main/ico/ico_doc_off.png").default
+              }
             />
           </Link>
         </li>
@@ -52,7 +68,11 @@ const Filter = (props) => {
             <img
               alt=""
               title="PDF"
-              src={require("assets/img/main/ico/ico_pdf_on.png").default}
+              src={
+                filterExt === exts.PDF || filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_pdf_on.png").default
+                  : require("assets/img/main/ico/ico_pdf_off.png").default
+              }
             />
           </Link>
         </li>
@@ -61,7 +81,11 @@ const Filter = (props) => {
             <img
               alt=""
               title="Image"
-              src={require("assets/img/main/ico/ico_img_on.png").default}
+              src={
+                filterExt === exts.IMAGE || filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_img_on.png").default
+                  : require("assets/img/main/ico/ico_img_off.png").default
+              }
             />
           </Link>
         </li>
