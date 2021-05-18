@@ -1,7 +1,7 @@
 import * as types from "./types";
 import { userService } from "services/userService";
 
-const login = () => {
+const loginAction = () => {
   return async (dispatch) => {
     try {
       const user = await userService.login();
@@ -15,10 +15,10 @@ const login = () => {
   };
 };
 
-const logout = () => {
+const logoutAction = () => {
   return {
     type: types.LOGOUT,
   };
 };
 
-export { login, logout };
+export { loginAction, logoutAction };

@@ -1,7 +1,7 @@
 import * as types from "./types";
 import { departmentService } from "services/departmentService";
 
-const getDepartments = () => {
+const getDepartmentsAction = () => {
   return async (dispatch) => {
     try {
       const departments = await departmentService.getDepartments();
@@ -17,4 +17,4 @@ const getDepartments = () => {
   };
 };
 
-export { getDepartments };
+export { getDepartmentsAction };

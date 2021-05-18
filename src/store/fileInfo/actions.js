@@ -1,7 +1,7 @@
 import * as types from "./types";
 import { fileInfoService } from "services/fileInfoService";
 
-const getMyContents = () => {
+const getMyContentsAction = () => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getMyContents();
@@ -17,7 +17,7 @@ const getMyContents = () => {
   };
 };
 
-const getImportantContents = () => {
+const getImportantContentsAction = () => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getImportantContents();
@@ -33,7 +33,7 @@ const getImportantContents = () => {
   };
 };
 
-const getFavoriteContents = () => {
+const getFavoriteContentsAction = () => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getFavoriteContents();
@@ -49,7 +49,7 @@ const getFavoriteContents = () => {
   };
 };
 
-const getSharedContents = () => {
+const getSharedContentsAction = () => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getSharedContents();
@@ -65,7 +65,7 @@ const getSharedContents = () => {
   };
 };
 
-const getDepartmentContents = () => {
+const getDepartmentContentsAction = () => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getDepartmentContents();
@@ -81,7 +81,7 @@ const getDepartmentContents = () => {
   };
 };
 
-const getTrashContents = () => {
+const getTrashContentsAction = () => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getTrashContents();
@@ -97,7 +97,7 @@ const getTrashContents = () => {
   };
 };
 
-const getContentsFromPath = (dirId) => {
+const getContentsFromPathAction = (dirId) => {
   return async (dispatch) => {
     try {
       const obj = await fileInfoService.getContentsFromPath(dirId);
@@ -113,7 +113,7 @@ const getContentsFromPath = (dirId) => {
   };
 };
 
-const searchContents = (searchStr) => {
+const searchContentsAction = (searchStr) => {
   return async (dispatch) => {
     try {
       if (!searchStr || searchStr.trim().length < 1) return;
@@ -130,7 +130,7 @@ const searchContents = (searchStr) => {
   };
 };
 
-const changeFavorite = (id, employeeId) => {
+const changeFavoriteAction = (id, employeeId) => {
   return async (dispatch) => {
     try {
       await fileInfoService.changeFavorite(id, employeeId);
@@ -146,7 +146,7 @@ const changeFavorite = (id, employeeId) => {
   };
 };
 
-const changeImportant = (id, employeeId) => {
+const changeImportantAction = (id, employeeId) => {
   return async (dispatch) => {
     try {
       await fileInfoService.changeImportant(id, employeeId);
@@ -163,14 +163,14 @@ const changeImportant = (id, employeeId) => {
 };
 
 export {
-  getMyContents,
-  getImportantContents,
-  getFavoriteContents,
-  getSharedContents,
-  getDepartmentContents,
-  getTrashContents,
-  getContentsFromPath,
-  searchContents,
-  changeFavorite,
-  changeImportant,
+  getMyContentsAction,
+  getImportantContentsAction,
+  getFavoriteContentsAction,
+  getSharedContentsAction,
+  getDepartmentContentsAction,
+  getTrashContentsAction,
+  getContentsFromPathAction,
+  searchContentsAction,
+  changeFavoriteAction,
+  changeImportantAction,
 };

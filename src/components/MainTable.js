@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
 import * as exts from "utils/extTypes";
-import * as act from "store/pagination/actions";
+import {
+  updatePageNeighboursAction,
+  updateTotalPagesAction,
+  updateTotalRecordsAction,
+} from "store/pagination/actions";
 
 const MainTable = (props) => {
   const [fileInfos, setFileInfos] = useState(props.fileInfos);
@@ -38,7 +42,15 @@ const MainTable = (props) => {
     updateTotalPages(totalPages);
     updatePageNeighbours(Math.max(0, Math.min(pageNeighbours, 2)));
     setCurrentFiles(currentFiles);
-  }, [currentPage, fileInfos, pageLimit, pageNeighbours, updatePageNeighbours, updateTotalPages, updateTotalRecords]);
+  }, [
+    currentPage,
+    fileInfos,
+    pageLimit,
+    pageNeighbours,
+    updatePageNeighbours,
+    updateTotalPages,
+    updateTotalRecords,
+  ]);
 
   return (
     <table className="normalTb" style={{ marginBottom: 15 }}>
@@ -126,11 +138,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateTotalRecords: (totalRecords) =>
-      dispatch(act.updateTotalRecords(totalRecords)),
+      dispatch(updateTotalRecordsAction(totalRecords)),
     updateTotalPages: (totalPages) =>
-      dispatch(act.updateTotalPages(totalPages)),
+      dispatch(updateTotalPagesAction(totalPages)),
     updatePageNeighbours: (pageNeighbours) =>
-      dispatch(act.updatePageNeighbours(pageNeighbours)),
+      dispatch(updatePageNeighboursAction(pageNeighbours)),
   };
 };
 

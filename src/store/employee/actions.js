@@ -1,7 +1,7 @@
 import * as types from "./types";
 import { employeeService } from "services/employeeService";
 
-const searchByName = (name) => {
+const searchByNameAction = (name) => {
   return async (dispatch) => {
     try {
       const employees = await employeeService.searchByName(name);
@@ -17,7 +17,7 @@ const searchByName = (name) => {
   };
 };
 
-const getByDepartment = (depId) => {
+const getByDepartmentAction = (depId) => {
   return async (dispatch) => {
     try {
       const employees = await employeeService.getByDepartment(depId);
@@ -33,4 +33,4 @@ const getByDepartment = (depId) => {
   };
 };
 
-export { searchByName, getByDepartment };
+export { searchByNameAction, getByDepartmentAction };

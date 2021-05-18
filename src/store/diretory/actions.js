@@ -1,7 +1,7 @@
 import { directoryService } from "services/directoryService";
 import * as types from "./types";
 
-const getDirectories = () => {
+const getDirectoriesAction = () => {
   return async (dispatch) => {
     try {
       const directories = await directoryService.getDirectories();
@@ -17,4 +17,4 @@ const getDirectories = () => {
   };
 };
 
-export { getDirectories };
+export { getDirectoriesAction };

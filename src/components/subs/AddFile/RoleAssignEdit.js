@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
-import * as act from "store/employee/actions";
+import {searchByNameAction, getByDepartmentAction} from "store/employee/actions";
 
 import styles from "./RoleAssignEdit.module.css";
 
 const RoleAssignEdit = (props) => {
+  const { owner } = props;
   const [departments, setDepartments] = useState([]);
   const [employees, setEmployees] = useState([]);
   const [editRoles, setEditRoles] = useState([]);
@@ -16,18 +17,14 @@ const RoleAssignEdit = (props) => {
   const [searchStr, setSearchStr] = useState("");
 
   const firstUpdate = useRef(true);
-  const currentEmps = useRef([]);
 
   useEffect(() => {
     if (firstUpdate.current) {
       firstUpdate.current = false;
       return;
     }
-    const result = props.employees.filter(
-      (emp) => !currentEmps.current.some((cur) => emp.id === cur.id)
-    );
     setEmployees(
-      result.map((emp) => Object.assign({}, emp, { selected: false }))
+      props.employees.map((emp) => Object.assign({}, emp, { selected: false }))
     );
   }, [props.employees]);
 
@@ -44,22 +41,56 @@ const RoleAssignEdit = (props) => {
     setDepartments(result);
   }, [props.departments]);
 
-  useEffect(() => {
-    currentEmps.current = [...employees];
-  }, [employees]);
-
   const handleMoveToEdit = () => {
-    const checkedEmps = employees.filter((emp) => emp.selected);
+    let checkedEmps = [];
+    if (selectName) {
+      checkedEmps = employees.filter((emp) => emp.selected);
+    } else {
+      const newArr = [...departments];
+      const checkedDeps = newArr.filter((dep) =>
+        dep.employees.some((emp) => emp.selected)
+      );
+      for (const dep of checkedDeps) {
+        checkedEmps = [
+          ...checkedEmps,
+          ...dep.employees.filter((emp) => emp.selected),
+        ];
+      }
+    }
+    const result = checkedEmps.filter(
+      (emp) =>
+        !editRoles.some((cur) => emp.id === cur.id) &&
+        !viewRoles.some((cur) => emp.id === cur.id)
+    );
     setEditRoles([
-      ...checkedEmps.map((emp) => ({ ...emp, selected: false })),
+      ...result.map((emp) => ({ ...emp, selected: false })),
       ...editRoles,
     ]);
   };
 
   const handleMoveToView = () => {
-    const checkedEmps = employees.filter((emp) => emp.selected);
+    let checkedEmps = [];
+    if (selectName) {
+      checkedEmps = employees.filter((emp) => emp.selected);
+    } else {
+      const newArr = [...departments];
+      const checkedDeps = newArr.filter((dep) =>
+        dep.employees.some((emp) => emp.selected)
+      );
+      for (const dep of checkedDeps) {
+        checkedEmps = [
+          ...checkedEmps,
+          ...dep.employees.filter((emp) => emp.selected),
+        ];
+      }
+    }
+    const result = checkedEmps.filter(
+      (emp) =>
+        !editRoles.some((cur) => emp.id === cur.id) &&
+        !viewRoles.some((cur) => emp.id === cur.id)
+    );
     setViewRoles([
-      ...checkedEmps.map((emp) => ({ ...emp, selected: false })),
+      ...result.map((emp) => ({ ...emp, selected: false })),
       ...viewRoles,
     ]);
   };
@@ -169,7 +200,9 @@ const RoleAssignEdit = (props) => {
                   <tr>
                     <th height={25}>Owner</th>
                     <td className={styles.account0}>
-                      <div className={styles.innerPad0}>POSCO ICT</div>
+                      <div
+                        className={styles.innerPad0}
+                      >{`${owner.lastName} ${owner.firstName} (${owner.epLiteId})`}</div>
                     </td>
                   </tr>
                 </tbody>
@@ -273,7 +306,7 @@ const RoleAssignEdit = (props) => {
                                   />
                                 </label>
                                 <span className={styles.checkTxt}>
-                                  {`${emp.lastName} ${emp.firstName} [${emp.department.name}]`}
+                                  {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}
                                 </span>
                               </div>
                             </td>
@@ -364,7 +397,7 @@ const RoleAssignEdit = (props) => {
                                 </td>
                                 <td className={styles.agl}>
                                   <div className={styles.d_tooltip}>
-                                    {`${emp.lastName} ${emp.firstName}`}
+                                    {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}
                                   </div>
                                 </td>
                               </tr>
@@ -459,7 +492,7 @@ const RoleAssignEdit = (props) => {
                               />
                             </label>
                             <span className={styles.checkTxt}>
-                              {`${emp.lastName} ${emp.firstName} [${emp.department.name}]`}
+                              {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}
                             </span>
                           </div>
                         </td>
@@ -527,7 +560,7 @@ const RoleAssignEdit = (props) => {
                               />
                             </label>
                             <span className={styles.checkTxt}>
-                              {`${emp.lastName} ${emp.firstName} [${emp.department.name}]`}
+                              {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}
                             </span>
                           </div>
                         </td>
@@ -553,8 +586,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchByName: (name) => dispatch(act.searchByName(name)),
-    getByDepartment: (depId) => dispatch(act.getByDepartment(depId)),
+    searchByName: (name) => dispatch(searchByNameAction(name)),
+    getByDepartment: (depId) => dispatch(getByDepartmentAction(depId)),
   };
 };
 

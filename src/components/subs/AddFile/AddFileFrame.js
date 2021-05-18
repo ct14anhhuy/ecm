@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MainContext } from "context";
@@ -18,7 +18,7 @@ const AddFileFrame = (props) => {
   const contextData = useContext(MainContext);
 
   const [state, setState] = useState({
-    owner: null,
+    owner: props.owner,
     tag: "#",
     directoryId: null,
     securityLevel: "Public",
@@ -26,10 +26,6 @@ const AddFileFrame = (props) => {
   });
   const [showListDirectory, setShowListDirectory] = useState(false);
   const [selectedPath, setSelectedPath] = useState("");
-
-  useEffect(() => {
-    setState((state) => ({ ...state, owner: props.owner }));
-  }, [props.owner]);
 
   const handleChangeFileName = (key, fileName) => {
     const arr = [...state.files];
@@ -90,9 +86,7 @@ const AddFileFrame = (props) => {
                 <Link
                   className={styles.btnBlack}
                   to="/"
-                  onClick={() => {
-                    fileRef.current.click();
-                  }}
+                  onClick={() => fileRef.current.click()}
                 >
                   <span>
                     <b>+</b> Add Content
@@ -158,17 +152,12 @@ const AddFileFrame = (props) => {
               >
                 <div className={styles.contentSelect}>
                   <div
-                    className={`${styles.DivSelectyze} ${styles.grey}`}
+                    className={`${styles.DivSelectyze}`}
                     style={{ paddingLeft: 7, zIndex: 9 }}
                   >
                     <Link className={styles.selectyzeValue} to="/">
-                      <span>POSCO ICT</span>
+                      <span>POSCO VST</span>
                     </Link>
-                    <ul className={styles.UlSelectize}>
-                      <li>
-                        <Link to="/">POSCO ICT</Link>
-                      </li>
-                    </ul>
                   </div>
                 </div>
                 <div
@@ -268,12 +257,6 @@ const AddFileFrame = (props) => {
             </div>
             <p className={styles.popSubTitle}>
               <span className={styles.subtype_2}>Tag</span>
-              <span
-                className={styles.subtype_2}
-                style={{ fontWeight: "normal" }}
-              >
-                (up to 20 characters per tag, maximum 10 can be registered)
-              </span>
             </p>
             <div className={styles.hashtag_inputer}>
               <input
@@ -288,7 +271,7 @@ const AddFileFrame = (props) => {
               <span className={styles.subtype_2}>Permission Setting</span>
             </p>
             <div>
-              <RoleAssignEdit />
+              <RoleAssignEdit owner={state.owner} />
             </div>
           </div>
         </div>
@@ -302,7 +285,7 @@ const AddFileFrame = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    owner: state.userReducers.id,
+    owner: state.userReducers,
   };
 };
 

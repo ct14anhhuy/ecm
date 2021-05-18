@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import React from "react";
-import * as act from "store/pagination/actions";
+import { updateCurrentPageAction } from "store/pagination/actions";
 
 const Paging = (props) => {
   const { currentPage, totalPages, pageNeighbours } = props.pagination;
@@ -110,7 +110,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateCurrentPage: (currentPage) =>
-      dispatch(act.updateCurrentPage(currentPage)),
+      dispatch(updateCurrentPageAction(currentPage)),
   };
 };
 

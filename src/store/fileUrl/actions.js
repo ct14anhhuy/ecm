@@ -1,7 +1,7 @@
 import * as types from "./types";
 import { fileUrlService } from "services/fileUrlService";
 
-const getFileUrl = (id) => {
+const getFileUrlAction = (id) => {
   return async (dispatch) => {
     try {
       const fileUrl = await fileUrlService.getFileUrl(id);
@@ -18,7 +18,7 @@ const getFileUrl = (id) => {
   };
 };
 
-const getFileShareUrl = (id) => {
+const getFileShareUrlAction = (id) => {
   return async (dispatch) => {
     try {
       const fileUrl = await fileUrlService.getFileShareUrl(id);
@@ -34,4 +34,4 @@ const getFileShareUrl = (id) => {
   };
 };
 
-export { getFileUrl, getFileShareUrl };
+export { getFileUrlAction, getFileShareUrlAction };

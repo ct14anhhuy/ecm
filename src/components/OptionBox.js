@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { searchContents } from "store/fileInfo/actions";
+import { searchContentsAction } from "store/fileInfo/actions";
 
 const OptionBox = (props) => {
   const [inpSearch, setInpSearch] = useState(null);
@@ -67,7 +67,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    searchContents: (searchStr) => dispatch(searchContents(searchStr)),
+    searchContents: (searchStr) => dispatch(searchContentsAction(searchStr)),
   };
 };
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as act from "store/user/actions";
+import { logoutAction } from "store/user/actions";
 
 const Header = (props) => {
   const { user } = props;
@@ -31,15 +31,10 @@ const Header = (props) => {
           <div className="topRt">
             <div className="psnName showHideTrg">
               <Link className="trg" to="/">
-                <strong>{user.lastName + " " + user.firstName}</strong>
+                <strong>{`${user.lastName} ${user.firstName} (${user.epLiteId})`}</strong>
               </Link>
             </div>
-            <Link
-              to="/"
-              onClick={() => {
-                props.logout();
-              }}
-            >
+            <Link to="/" onClick={props.logout}>
               <img
                 alt=""
                 src={require("assets/img/layout/ico_help02.png").default}
@@ -60,7 +55,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(act.logout()),
+    logout: () => dispatch(logoutAction()),
   };
 };
 

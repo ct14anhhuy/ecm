@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Frame from "react-frame-component";
 import TreeView from "./TreeView";
 import {
-  getMyContents,
-  getImportantContents,
-  getFavoriteContents,
-  getSharedContents,
-  getDepartmentContents,
-  getTrashContents,
-  getContentsFromPath,
+  getMyContentsAction,
+  getImportantContentsAction,
+  getFavoriteContentsAction,
+  getSharedContentsAction,
+  getDepartmentContentsAction,
+  getTrashContentsAction,
+  getContentsFromPathAction,
 } from "store/fileInfo/actions";
 import { connect } from "react-redux";
 
@@ -35,9 +35,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={selectedTab ? styles.tabon : ""}
-              onClick={() => {
-                setSelectedTab(true);
-              }}
+              onClick={() => setSelectedTab(true)}
             >
               Shortcut
             </span>
@@ -45,9 +43,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={selectedTab ? "" : styles.tabon}
-              onClick={() => {
-                setSelectedTab(false);
-              }}
+              onClick={() => setSelectedTab(false)}
             >
               Content Box
             </span>
@@ -137,7 +133,7 @@ const LeftMenu = (props) => {
             style={{ zIndex: 9999 }}
           >
             <span className={styles.selectyzeValue}>
-              <span>POSCO ICT</span>
+              <span>POSCO VST</span>
             </span>
           </div>
           <div className={styles.myconList}>
@@ -161,13 +157,13 @@ const LeftMenu = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMyContents: () => dispatch(getMyContents()),
-    getImportantContents: () => dispatch(getImportantContents()),
-    getFavoriteContents: () => dispatch(getFavoriteContents()),
-    getSharedContents: () => dispatch(getSharedContents()),
-    getDepartmentContents: () => dispatch(getDepartmentContents()),
-    getTrashContents: () => dispatch(getTrashContents()),
-    getContentsFromPath: (dirId) => dispatch(getContentsFromPath(dirId)),
+    getMyContents: () => dispatch(getMyContentsAction()),
+    getImportantContents: () => dispatch(getImportantContentsAction()),
+    getFavoriteContents: () => dispatch(getFavoriteContentsAction()),
+    getSharedContents: () => dispatch(getSharedContentsAction()),
+    getDepartmentContents: () => dispatch(getDepartmentContentsAction()),
+    getTrashContents: () => dispatch(getTrashContentsAction()),
+    getContentsFromPath: (dirId) => dispatch(getContentsFromPathAction(dirId)),
   };
 };
 

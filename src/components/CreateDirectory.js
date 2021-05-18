@@ -104,13 +104,8 @@ const CreateDirectory = (props) => {
                   style={{ paddingLeft: 7, zIndex: 9 }}
                 >
                   <Link className="selectyzeValue" to="/">
-                    <span>POSCO ICT</span>
+                    <span>POSCO VST</span>
                   </Link>
-                  <ul className="UlSelectize">
-                    <li>
-                      <Link to="/">POSCO ICT</Link>
-                    </li>
-                  </ul>
                 </div>
               </div>
               <div className="treeCon">

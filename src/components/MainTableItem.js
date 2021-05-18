@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext, useRef } from "react";
 import { connect } from "react-redux";
-import { changeFavorite, changeImportant } from "store/fileInfo/actions";
-import { getFileShareUrl } from "store/fileUrl/actions";
+import { changeFavoriteAction, changeImportantAction } from "store/fileInfo/actions";
+import { getFileShareUrlAction } from "store/fileUrl/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { MainContext } from "context";
@@ -20,7 +20,9 @@ const MainTableItem = (props) => {
   }, [props.selectAll]);
 
   useEffect(() => {
-    navigator.clipboard.writeText(`ECMProtocol: ${fileUrl.shareUrl}`);
+    if (fileUrl.shareUrl) {
+      navigator.clipboard.writeText(`ECMProtocol: ${fileUrl.shareUrl}`);
+    }
   }, [fileUrl.shareUrl]);
 
   useEffect(() => {
@@ -64,7 +66,8 @@ const MainTableItem = (props) => {
                 alt=""
                 src={
                   fileInfo.isImportant
-                    ? require("assets/img/main/left/ico_go_cnt15_on.png").default
+                    ? require("assets/img/main/left/ico_go_cnt15_on.png")
+                        .default
                     : require("assets/img/main/left/ico_go_cnt15.png").default
                 }
               />
@@ -97,9 +100,7 @@ const MainTableItem = (props) => {
           <Link
             className="listInfo"
             to="/"
-            onClick={() => {
-              node.current.style.display = "block";
-            }}
+            onClick={() => node.current.style.display = "block"}
           >
             <img
               alt=""
@@ -110,9 +111,7 @@ const MainTableItem = (props) => {
             className="infoMenu"
             ref={node}
             style={{ top: 16, display: "none" }}
-            onClick={() => {
-              node.current.style.display = "none";
-            }}
+            onClick={() => node.current.style.display = "none"}
           >
             <li style={{ fontWeight: "bold" }}>
               <Link to="/" onClick={handleOnCopyUrl}>
@@ -142,13 +141,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeFavorite: (id, employeeId) => {
-      dispatch(changeFavorite(id, employeeId));
+      dispatch(changeFavoriteAction(id, employeeId));
     },
     changeImportant: (id, employeeId) => {
-      dispatch(changeImportant(id, employeeId));
+      dispatch(changeImportantAction(id, employeeId));
     },
     getFileShareUrl: (id) => {
-      dispatch(getFileShareUrl(id));
+      dispatch(getFileShareUrlAction(id));
     },
   };
 };

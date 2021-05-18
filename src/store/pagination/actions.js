@@ -1,6 +1,6 @@
 import * as types from "./types";
 
-const updateCurrentPage = (currentPage) => {
+const updateCurrentPageAction = (currentPage) => {
   return {
     type: types.UPDATE_CURRENT_PAGE,
     payload: {
@@ -9,7 +9,7 @@ const updateCurrentPage = (currentPage) => {
   };
 };
 
-const updateTotalPages = (totalPages) => {
+const updateTotalPagesAction = (totalPages) => {
   return {
     type: types.UPDATE_TOTAL_PAGES,
     payload: {
@@ -18,7 +18,7 @@ const updateTotalPages = (totalPages) => {
   };
 };
 
-const updatePageLimit = (pageLimit) => {
+const updatePageLimitAction = (pageLimit) => {
   return {
     type: types.UPDATE_PAGE_LIMIT,
     payload: {
@@ -27,7 +27,7 @@ const updatePageLimit = (pageLimit) => {
   };
 };
 
-const updateTotalRecords = (totalRecords) => {
+const updateTotalRecordsAction = (totalRecords) => {
   return {
     type: types.UPDATE_TOTAL_RECORDS,
     payload: {
@@ -36,7 +36,7 @@ const updateTotalRecords = (totalRecords) => {
   };
 };
 
-const updatePageNeighbours = (pageNeighbours) => {
+const updatePageNeighboursAction = (pageNeighbours) => {
   return {
     type: types.UPDATE_PAGE_NEIGHBOURS,
     payload: {
@@ -46,9 +46,9 @@ const updatePageNeighbours = (pageNeighbours) => {
 };
 
 export {
-  updateCurrentPage,
-  updatePageLimit,
-  updatePageNeighbours,
-  updateTotalPages,
-  updateTotalRecords,
+  updateCurrentPageAction,
+  updatePageLimitAction,
+  updatePageNeighboursAction,
+  updateTotalPagesAction,
+  updateTotalRecordsAction,
 };

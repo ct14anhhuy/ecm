@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import * as act from "store/fileUrl/actions";
+import { getFileUrlAction } from "store/fileUrl/actions";
 
 /* eslint import/no-webpack-loader-syntax: off */
 import globalStyles from "!!raw-loader!assets/css/global.css";
@@ -130,7 +130,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getFileUrl: (id) => dispatch(act.getFileUrl(id)),
+    getFileUrl: (id) => dispatch(getFileUrlAction(id)),
   };
 };
 

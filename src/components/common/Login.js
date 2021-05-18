@@ -1,6 +1,6 @@
 import { useParams, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { login } from "store/user/actions";
+import { loginAction } from "store/user/actions";
 
 const Login = (props) => {
   const { token } = useParams();
@@ -12,7 +12,7 @@ const Login = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: () => dispatch(login()),
+    login: () => dispatch(loginAction()),
   };
 };
 

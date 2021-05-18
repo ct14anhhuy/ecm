@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as exts from "utils/extTypes";
 import { connect } from "react-redux";
-import * as act from "store/pagination/actions";
+import { updatePageLimitAction } from "store/pagination/actions";
 
 const Filter = (props) => {
   const [showListRow, setShowListRow] = useState(false);
@@ -156,7 +156,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updatePageLimit: (pageLimit) => dispatch(act.updatePageLimit(pageLimit)),
+    updatePageLimit: (pageLimit) => dispatch(updatePageLimitAction(pageLimit)),
   };
 };
 

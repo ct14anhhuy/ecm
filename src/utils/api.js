@@ -1,6 +1,6 @@
 import axios from "axios";
 import { store } from "store/configureStore";
-import { logout } from "store/user/actions";
+import { logoutAction } from "store/user/actions";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -26,7 +26,7 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response.status === 401) {
-      store.dispatch(logout());
+      store.dispatch(logoutAction());
     }
     return Promise.reject(error);
   }
