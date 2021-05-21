@@ -8,21 +8,17 @@
 .popup_layer_typeB .grey_shadow td.top_left {
   width: 20px;
   height: 20px;
-  background: url(/posco/images/ep/layer_pop_top_left.png) no-repeat;
 }
 .popup_layer_typeB .grey_shadow td.top_mid {
   display: block;
   height: 20px;
-  background: url(/posco/images/ep/layer_pop_top_mid.png) repeat-x;
 }
 .popup_layer_typeB .grey_shadow td.top_right {
   width: 20px;
   height: 20px;
-  background: url(/posco/images/ep/layer_pop_top_right.png) no-repeat;
 }
 .popup_layer_typeB .grey_shadow td.center_left {
   width: 20px;
-  background: url(/posco/images/ep/layer_pop_center_left.png) repeat-y;
 }
 .popup_layer_typeB .grey_shadow td.center_mid {
   text-align: left;
@@ -30,22 +26,18 @@
 }
 .popup_layer_typeB .grey_shadow td.center_right {
   width: 20px;
-  background: url(/posco/images/ep/layer_pop_center_right.png) repeat-y;
 }
 .popup_layer_typeB .grey_shadow td.bot_left {
   width: 20px;
   height: 20px;
-  background: url(/posco/images/ep/layer_pop_bot_left.png) no-repeat;
 }
 .popup_layer_typeB .grey_shadow td.bot_mid {
   display: block;
   height: 20px;
-  background: url(/posco/images/ep/layer_pop_bot_mid.png) repeat-x;
 }
 .popup_layer_typeB .grey_shadow td.bot_right {
   width: 20px;
   height: 20px;
-  background: url(/posco/images/ep/layer_pop_bot_right.png) no-repeat;
 }
 
 .popup_layer_typeB .grey_shadow .dragger_container {
@@ -57,12 +49,10 @@
   cursor: pointer;
 }
 .popup_layer_typeB .grey_shadow .dragger_wr {
-  background: url(/posco/images/ep/sc_top.gif) left top no-repeat;
   width: 7px;
   padding: 4px 0 0 0;
 }
 .popup_layer_typeB .grey_shadow .dragger {
-  background: url(/posco/images/ep/sc_bot.gif) left bottom no-repeat;
   width: 7px;
   cursor: pointer;
 }
@@ -99,7 +89,6 @@
   border: 1px solid #d5d5d5;
 }
 .pop_sign .name_dot {
-  background: url(/posco/images/ep/ico_dott04.gif) left 4px no-repeat;
   padding: 0 0 0 10px;
   display: inline-block;
 }
@@ -160,7 +149,6 @@
   line-height: 16px;
 }
 .apps_wr_layer03 li dt.bg_power04 {
-  background: url(/posco/images/ep/bg_power04.png) 48px top no-repeat;
   height: 63px;
   padding: 17px 0 0 0;
   color: #fff;
@@ -211,7 +199,6 @@
 }
 
 .locate_apps {
-  background: url(/posco/images/ep/ico_arrow02.gif) right 3px no-repeat;
   padding: 0 10px 10px 0;
   color: #333;
   display: inline-block;
@@ -248,12 +235,10 @@
   cursor: pointer;
 }
 .popup_layer_typeB .grey_shadow .agreement_box .dragger_wr {
-  background: url(/posco/images/ep/sc_top.gif) left top no-repeat;
   width: 7px;
   padding: 4px 0 0 0;
 }
 .popup_layer_typeB .grey_shadow .agreement_box .dragger {
-  background: url(/posco/images/ep/sc_bot.gif) left bottom no-repeat;
   width: 7px;
   cursor: pointer;
 }

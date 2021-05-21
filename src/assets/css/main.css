@@ -1,5 +1,5 @@
-@import url(global.css);
-@import url(layout.css);
+@import url(assets/css/global.css);
+@import url(assets/css/layout.css);
 
 .optionBox .DivSelectyze {
   position: relative;

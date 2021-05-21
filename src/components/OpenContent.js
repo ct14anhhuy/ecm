@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
-import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getFileUrlAction } from "store/fileUrl/actions";
 
-/* eslint import/no-webpack-loader-syntax: off */
-import globalStyles from "!!raw-loader!assets/css/global.css";
-import layoutStyles from "!!raw-loader!assets/css/layout.css";
-import popupStyles from "!!raw-loader!assets/css/popup.css";
-import contentsStyles from "!!raw-loader!assets/css/contents.css";
-import openContentStyles from "!!raw-loader!./OpenContent.css";
+import styles from "assets/css/modules/OpenContent.module.css";
 
 const OpenContent = (props) => {
   const { editUrl, viewUrl } = props.fileUrl;
@@ -18,48 +12,6 @@ const OpenContent = (props) => {
   useEffect(() => {
     getFileUrl(selectedItem.id);
   }, [getFileUrl, selectedItem.id]);
-
-  const bodyFrame = (
-    <div className="popLayerWrap">
-      <div className="header">
-        <h1 className="tit">Open Content</h1>
-        <Link
-          className="close"
-          to="/"
-          onClick={() => props.setShowOpenContent(false)}
-        >
-          <img
-            alt=""
-            src={require("assets/img/contents/ecmMain/img_close.gif").default}
-          />
-        </Link>
-      </div>
-      <div className="contents">
-        <div className="columnBoxs" style={{ marginBottom: 10 }}>
-          <table className="normalPopTb">
-            <colgroup>
-              <col width={150} />
-              <col width="*" />
-            </colgroup>
-            <tbody>
-              <tr>
-                <th style={{ width: 150 }}>File Name</th>
-                <td style={{ msWordBreak: "break-all" }}>
-                  <div className="conText">
-                    <span>{props.selectedItem.name}</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p className="btnBox">
-          <a href={`ECMProtocol: ${editUrl}`}>Edit</a>
-          <a href={`ECMProtocol: ${viewUrl}`}>View</a>
-        </p>
-      </div>
-    </div>
-  );
 
   return (
     <React.Fragment>
@@ -90,7 +42,6 @@ const OpenContent = (props) => {
           top: "394.5px",
           width: 600,
           height: 165,
-          textAlign: "center",
           color: "rgb(0, 0, 0)",
           position: "fixed",
           zIndex: 1012,
@@ -98,24 +49,51 @@ const OpenContent = (props) => {
           backgroundColor: "rgb(255, 255, 255)",
         }}
       >
-        <div className="popup_layer_typeB" style={{ display: "block" }}>
-          <Frame
-            width={600}
-            height={165}
-            scrolling="no"
-            frameBorder="0"
-            head={
-              <style>
-                {globalStyles}
-                {layoutStyles}
-                {popupStyles}
-                {contentsStyles}
-                {openContentStyles}
-              </style>
-            }
-          >
-            {bodyFrame}
-          </Frame>
+        <div
+          className="popup_layer_typeB"
+          style={{ display: "block", cursor: "default" }}
+        >
+          <div className={styles.popLayerWrap}>
+            <div className={styles.header}>
+              <h1 className={styles.tit}>Open Content</h1>
+              <Link
+                className={styles.close}
+                to="/"
+                onClick={() => props.setShowOpenContent(false)}
+              >
+                <img
+                  alt=""
+                  src={
+                    require("assets/img/contents/ecmMain/img_close.gif").default
+                  }
+                />
+              </Link>
+            </div>
+            <div className={styles.contents}>
+              <div className={styles.columnBoxs} style={{ marginBottom: 10 }}>
+                <table className={styles.normalPopTb}>
+                  <colgroup>
+                    <col width={150} />
+                    <col width="*" />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th style={{ width: 150 }}>File Name</th>
+                      <td style={{ msWordBreak: "break-all" }}>
+                        <div className={styles.conText}>
+                          <span>{props.selectedItem.name}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className={styles.btnBox}>
+                {editUrl ? <a href={`ECMProtocol: ${editUrl}`}>Edit</a> : null}
+                <a href={`ECMProtocol: ${viewUrl}`}>View</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
 import Filter from "./Filter";
-import AddFile from "./AddFile";
+import AddFile from "components/AddFile/AddFile";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import OptionBox from "./OptionBox";
@@ -110,26 +110,20 @@ const App = (props) => {
         <MainContext.Provider value={{ setShowAddFileModal }}>
           <AddFile />
         </MainContext.Provider>
-      ) : (
-        ""
-      )}
+      ) : null}
 
       {showCreateDirectoryModal ? (
         <CreateDirectory
           setShowCreateDirectoryModal={setShowCreateDirectoryModal}
         />
-      ) : (
-        ""
-      )}
+      ) : null}
 
       {showOpenContent ? (
         <OpenContent
           selectedItem={selectedItem}
           setShowOpenContent={setShowOpenContent}
         />
-      ) : (
-        ""
-      )}
+      ) : null}
     </React.Fragment>
   );
 };

@@ -1,18 +1,54 @@
+.wrapBody {
+  width: 800px;
+  min-width: auto;
+  top: 0px !important;
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  font-size: 13px;
+  color: #000;
+  font-family: dotum;
+}
+
 .contentList {
-  max-height: 93px;
+  max-height: 62px;
 }
 .search {
   float: left;
   width: 142px;
   margin-left: 5px;
 }
-.innerPad .DivSelectyze .selectyzeValue {
-  width: 650px;
+.contentsNameEdit .floatL {
+  float: left;
+  padding-top: 4px;
+  color: #555;
+  line-height: 29px;
+}
+.contentsNameEdit .floatL input {
+  height: 19px;
+  line-height: 19px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+.contentsNameEdit .floatL img {
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 .popLayerWrap .contents {
   max-height: 490px;
   min-height: 490px;
+}
+
+.contentList .list li .floatR .btnChk {
+  float: left;
+  height: 21px;
+  margin-right: 5px;
+}
+.contentList .list li .floatR .btnDel {
+  float: left;
+  height: 21px;
+  margin-right: 5px;
 }
 
 .safe_btn_box a.btn_safe1.disabled,

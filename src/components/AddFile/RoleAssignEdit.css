@@ -1,0 +1,228 @@
+.roleAssignBody {
+  width: 800px;
+  min-width: auto;
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  font-size: 13px;
+  color: #000;
+  font-family: dotum;
+}
+
+.search {
+  float: left;
+  width: 302px;
+  margin-top: 5px;
+}
+
+#popLayerB .contents .columnR {
+  width: 320px;
+  overflow-y: hidden;
+}
+
+.partBox01 {
+  width: 340px;
+}
+
+#popLayerB .contents,
+#popLayerB .contents .columnR {
+  height: 440px;
+}
+
+#popLayerB .contents .tabBox li a {
+  width: 120px;
+}
+
+.marR16 {
+  margin-right: -17px;
+  padding-right: 10px;
+}
+
+.normalTb historyTB03 {
+  width: 259px;
+}
+
+.partBox02 {
+  width: 340px;
+  padding-top: 5px;
+}
+
+.partBox02 .boxSearch .i_input {
+  width: 270px;
+}
+
+.partBox02 a {
+  width: 29px;
+  height: 16px;
+  padding-left: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+}
+
+.account0 {
+  padding: 5px 10px 5px 10px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.innerPad0 {
+  text-align: left;
+  margin-left: 0px;
+}
+
+.innerPad0 .DivSelectyze {
+  float: left;
+  margin-left: 10px;
+  text-align: left;
+  width: 171px;
+}
+
+.innerPad0 .selectyzeValue {
+  margin-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 135px;
+  min-width: 135px;
+  height: 13px;
+  margin-right: 2px;
+  padding: 5px 30px 5px 7px;
+  color: #3375bf;
+  font-weight: normal;
+  border: 1px solid #c8c8c8;
+  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  background: url("assets/img/popup/bg/select_bg04.gif") no-repeat
+    scroll 100% 50% transparent;
+}
+
+.innerPad0 .DivSelectyze .UlSelectize {
+  display: none;
+  max-height: 300px;
+  position: absolute;
+  width: 171px;
+  left: 128px;
+  margin-top: -1px;
+  border: 1px solid #638ec3;
+  background-color: #fff;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.innerPad0 .DivSelectyze .UlSelectize li a {
+  display: block;
+  padding: 4px;
+  width: 171px;
+  max-width: 500px;
+  color: #222;
+  font-weight: normal;
+  line-height: 18px;
+}
+
+.innerPad0 .DivSelectyze .UlSelectize li a:hover {
+  color: #222;
+  background-color: #e4f0fe;
+}
+
+.innerPad0 .btnBlack span {
+  min-width: 35px;
+  vertical-align: middle;
+}
+
+/* .positionBox {
+  background-color: white;
+} */
+
+#popLayerB .contents .columnR {
+  padding: 5px 0px 0 0;
+}
+
+.a_tooltip {
+  display: block;
+  overflow: hidden;
+  width: 210px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.b_tooltip {
+  display: block;
+  overflow: hidden;
+  width: 98%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c_tooltip {
+  display: block;
+  overflow: hidden;
+  width: 210px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.d_tooltip {
+  display: block;
+  overflow: hidden;
+  width: 248px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tblFolder tbody tr.groupOne td {
+  height: 34px;
+  width: 120px;
+  background: #f2f2f2;
+}
+
+.roleT .contentTitle .i_check {
+  display: none;
+}
+
+.contentTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+.positionBox .positionSearch .part_L,
+#popLayerB .contents,
+#popLayerB .contents .columnR {
+  height: auto;
+}
+
+.positionBox .positionSearch .part_L {
+  height: auto;
+  width: 341px;
+}
+
+.positionBox.type_2 .positionSearch .part_R .btn_move {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.positionBox.type_2 .positionSearch .part_R .btn_move > a > img {
+  vertical-align: top;
+}
+
+.maxH.type_2 {
+  height: 324px;
+  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+}
+
+.maxH.type_3 {
+  margin-top: 0;
+  height: 382px;
+  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+}
+
+.maxH.type_4 {
+  height: 341px;
+  clear: both;
+  margin-top: 13px;
+  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+}

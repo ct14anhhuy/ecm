@@ -12,7 +12,7 @@ import {
 } from "store/fileInfo/actions";
 import { connect } from "react-redux";
 
-import styles from "./LeftMenu.module.css";
+import styles from "assets/css/modules/LeftMenu.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 

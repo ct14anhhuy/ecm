@@ -1,0 +1,748 @@
+.alimBox {
+  width: 190px;
+  margin-bottom: 15px;
+  padding-top: 5px;
+}
+
+.subTitle {
+  position: relative;
+  margin-bottom: 11px;
+  padding-left: 0;
+  font-weight: bold;
+  color: #222;
+}
+
+.subTitle .btnRefresh {
+  display: block;
+  position: absolute;
+  right: 2px;
+  top: -5px;
+  width: 25px;
+  height: 19px;
+  text-indent: -5000px;
+  background: url(assets/img/main/btn/btn_refresh.png) 0 0 no-repeat;
+  overflow: hidden;
+}
+
+.subTitle .btnRefresh:hover {
+  background-position: 0 100%;
+}
+
+.subTitle .btnRefresh em {
+  display: none;
+}
+
+.bgBoxLayout {
+  position: relative;
+  width: 190px;
+}
+
+.rdTbLt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+}
+.rdTbRt {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+}
+.rdTbLb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  height: 3px;
+  background: url(assets/img/main/left/rd_tip_lb.gif) left top no-repeat;
+}
+.rdTbRb {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  height: 3px;
+  background: url(assets/img/main/left/rd_tip_rb.gif) left top no-repeat;
+}
+
+.ecmAlertTb {
+  width: 100%;
+  table-layout: fixed;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.ecmAlertTb:first-child {
+  margin-top: 5px;
+}
+.ecmAlertTb thead th {
+  height: 25px;
+  background: #efeff0;
+  color: #222;
+  font-weight: normal;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  border-left: 1px solid #f5f5f5;
+}
+.ecmAlertTb thead th:first-child {
+  border-left: 0;
+}
+.ecmAlertTb thead th.last {
+  border-right: 0;
+}
+.ecmAlertTb thead th.none {
+  background: url(assets/img/main/left/bg_tb_none.gif) left top no-repeat;
+}
+.ecmAlertTb tbody th {
+  height: 24px;
+  font-weight: normal;
+  color: #222;
+  border-top: 1px solid #f5f5f5;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background: #efeff0;
+}
+.ecmAlertTb tbody td {
+  height: 24px;
+  text-align: center;
+  font-family: verdana;
+  border-top: 1px solid #f5f5f5;
+  border-right: 1px solid #e6e6e6;
+  border-left: 1px solid #f5f5f5;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+}
+.ecmAlertTb tbody td.last {
+  border-right: 0;
+}
+.ecmAlertTb tbody .lastTr th,
+.ecmAlertTb tbody .lastTr td {
+  border-bottom: 0;
+}
+.ecmAlertTb .fcBlue {
+  color: #2e83de;
+}
+.ecmAlertTb .fcGreen {
+  color: #32a526;
+}
+.ecmAlertTb .fcGray {
+  color: #222;
+}
+.ecmAlertTb .ssGray {
+  font-size: 12px;
+  color: #222;
+}
+.ecmAlertTb span.txt_blue:hover {
+  text-decoration: underline;
+}
+
+.btnBox {
+  width: 196px;
+  margin-bottom: 18px;
+}
+
+.btnBox li {
+  margin-top: 3px;
+  background: url(assets/img/main/left/bg_go_cnt.png) left top no-repeat;
+}
+.btnBox li.noneArw {
+  position: relative;
+  background: url(assets/img/main/left/bg_go_none_cnt.png) left top no-repeat;
+}
+.btnBox li.noneArwOn {
+  position: relative;
+  background: url(assets/img/main/left/bg_go_none_cntOn.png) left top
+    no-repeat;
+}
+.btnBox li:first-child {
+  margin-top: 0;
+}
+.btnBox li.on {
+  background: url(assets/img/main/left/bg_go_cntOn.png) left top no-repeat;
+}
+.btnBox > li > span {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding-left: 50px;
+  line-height: 34px;
+  color: #222;
+  cursor: pointer;
+}
+.btnBox > li > span:hover {
+  color: #5088c8;
+}
+.btnBox li span.btn_02 {
+  background: url(assets/img/main/left/ico_go_cnt02.png) 15px center
+    no-repeat;
+}
+.btnBox li span.btn_03 {
+  background: url(assets/img/main/left/ico_go_cnt03.png) 15px center
+    no-repeat;
+}
+.btnBox li span.btn_04 {
+  background: url(assets/img/main/left/ico_go_cnt04.png) 15px center
+    no-repeat;
+}
+.btnBox li span.btn_05 {
+  background: url(assets/img/main/left/ico_go_cnt05.png) 15px center
+    no-repeat;
+}
+.btnBox li span.btn_05 em {
+  width: 117px;
+  display: inline-block;
+  padding-right: 22px;
+  letter-spacing: -1px;
+  background: url(assets/img/main/ico/ico_blue_plus.gif) 118px 12px no-repeat;
+}
+.btnBox li span.btn_15 {
+  background: url(assets/img/main/left/ico_go_cnt15.png) 15px center
+    no-repeat;
+}
+.btnBox li.on span.btn_rcb {
+  background: url(assets/img/main/left/ico_go_rcb_on.png) 15px center
+    no-repeat;
+}
+
+.btnBox li span.btn_01 {
+  background: url(assets/img/main/left/ico_go_cnt01.png) 15px center
+    no-repeat;
+}
+
+.btnBox li span.btn_30 {
+  background: url(assets/img/main/left/ico_go_cnt30.png) 15px center
+    no-repeat;
+}
+
+.btnBox li span.btn_06 {
+  background: url(assets/img/main/left/ico_go_cnt26.png) 15px center
+    no-repeat;
+}
+
+.btnBox li span.btn_07 {
+  background: url(assets/img/main/left/ico_go_cnt27.png) 15px center
+    no-repeat;
+}
+
+.btnBox li span.btn_16 {
+  background: url(assets/img/main/left/ico_go_cnt16.png) 15px center
+    no-repeat;
+}
+
+.btnBox li span.btn_rcb {
+  background: url(assets/img/main/left/ico_go_rcb.png) 15px center
+    no-repeat;
+}
+
+.btnBox li.on span.btn_02 {
+  background: url(assets/img/main/left/ico_go_cnt02_on.png) 15px center
+    no-repeat;
+}
+.btnBox li.on span.btn_03 {
+  background: url(assets/img/main/left/ico_go_cnt03_on.png) 15px center
+    no-repeat;
+}
+.btnBox li.noneArwOn a.btn_05 {
+  background: url(assets/img/main/left/ico_go_cnt05_on.png) 15px center
+    no-repeat;
+}
+.btnBox li.on span.btn_15 {
+  background: url(assets/img/main/left/ico_go_cnt15_on.png) 15px center
+    no-repeat;
+}
+.btnBox li.noneArwOn a.btn_16 {
+  background: url(assets/img/main/left/ico_go_cnt16_on.png) 15px center
+    no-repeat;
+}
+
+.innerBtnList {
+  display: none;
+  width: 188px;
+  padding: 8px 0;
+  border: 1px solid #ccc;
+  border-width: 0 1px 1px 1px;
+  background-color: #fafafa;
+}
+.innerBtnList li {
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+.innerBtnList li a {
+  width: auto;
+  height: auto;
+  padding: 0 0 0 15px;
+  color: #222;
+  line-height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: -1px;
+}
+.innerBtnList li a img {
+  margin: 5px 5px 0 0;
+  vertical-align: top;
+}
+.tab_more {
+  overflow: hidden;
+  width: 190px;
+  position: relative;
+  margin-bottom: 3px;
+  padding-left: 1px;
+}
+.tab_more li {
+  float: left;
+  text-align: center;
+  background: #f6f6f6;
+  margin-left: -1px;
+}
+.tab_more li span {
+  display: inline-block;
+  width: 93px;
+  height: 23px;
+  line-height: 24px;
+  background: #efeff0;
+  letter-spacing: -1px;
+  color: #222;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #3375bf;
+  border-radius: 0 3.5px 0 0;
+  position: relative;
+  z-index: 10;
+  outline: none;
+  cursor: pointer;
+}
+.tab_more li:first-child a {
+  border-radius: 3.5px 0 0 0;
+  width: 94px;
+}
+.tab_more li span.tabon {
+  background: #f6f6f6;
+  font-weight: bold;
+  color: #3375bf;
+  letter-spacing: -1px;
+  border: 1px solid #3375bf;
+  border-bottom: none;
+  position: relative;
+  z-index: 20;
+}
+
+.myconList {
+  border: 1px solid #ccc;
+  border-width: 0 1px 1px 1px;
+  background: #fff;
+  height: 450px;
+  margin-bottom: 18px;
+  overflow: scroll;
+}
+
+.DivSelectyze {
+  display: inline-block;
+  position: relative;
+}
+.grey .selectyzeValue {
+  border: 1px solid #c8c8c8;
+  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  color: #111555;
+  display: inline-block;
+  padding: 4px 30px 4px 7px;
+  position: relative;
+  text-decoration: none;
+  z-index: 10;
+}
+.grey .UlSelectize {
+  background-color: #ffffff;
+  border: 1px solid #d2d2d2;
+  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  color: #c8c8c8;
+  left: 0;
+  top: 26px;
+  display: none;
+  position: absolute;
+  z-index: 9999;
+}
+.grey li a {
+  border: 1px solid #ffffff;
+  color: #111555;
+  padding: 4px;
+  display: block;
+  text-decoration: none;
+}
+.grey li a:hover {
+  color: #fff;
+  background-color: #858585;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#7c7c7c),
+    to(#858585)
+  );
+  background-image: -webkit-linear-gradient(top, #7c7c7c #858585);
+  background-image: -moz-linear-gradient(top, #7c7c7c, #858585);
+  background-image: -ms-linear-gradient(top, #7c7c7c, #858585);
+  background-image: -o-linear-gradient(top, #7c7c7c, #858585);
+}
+
+.select02 .grey .selectyzeValue {
+  width: 152px;
+}
+.select02 .grey .UlSelectize {
+  width: 188px;
+  top: 24px;
+  height: 150px;
+  overflow: auto;
+}
+
+.myconList .treeFldConBox {
+  height: 450px;
+  width: auto;
+}
+.myconList .treeFldConBox .treeCon {
+  color: #000;
+  background: url(assets/img/main/bg/bg_treeCon.gif) 0 0 repeat;
+}
+.myconList .treeFldConBox .treeCon img {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.myconList .treeFldConBox .treeCon li {
+  line-height: 26px;
+  white-space: nowrap;
+}
+.myconList .treeFldConBox .treeCon > li {
+  padding-left: 5px;
+}
+.myconList .treeFldConBox .treeCon > li ol li {
+  padding-left: 8px;
+}
+.myconList .treeFldConBox .treeCon > li ol {
+  display: none;
+}
+.myconList .treeFldConBox .treeCon li a.on {
+  color: #2e83de;
+}
+.myconList .treeFldConBox .treeConNom {
+  color: #000;
+  background: url(assets/img/main/bg/bg_treeCon.gif) 0 0 repeat;
+}
+.myconList .treeFldConBox .treeConNom img {
+  vertical-align: middle;
+  cursor: pointer;
+}
+.myconList .treeFldConBox .treeConNom li {
+  line-height: 26px;
+  white-space: nowrap;
+}
+.myconList .treeFldConBox .treeConNom > li {
+  padding-left: 5px;
+}
+.myconList .treeFldConBox .treeConNom > li ol li {
+  padding-left: 8px;
+}
+.myconList .treeFldConBox .treeConNom > li ol {
+  display: none;
+}
+.myconList .treeFldConBox .treeConNom li a.on {
+  color: #2e83de;
+}
+
+.contents_level {
+  background: #fff;
+  padding: 7px 10px 9px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+.contents_level span {
+  height: 14px;
+  display: block;
+  padding-left: 18px;
+  letter-spacing: -0.04em;
+}
+.contents_level .levelA {
+  background: url(assets/img/main/left/ico_levelA.gif) 0 0 no-repeat;
+}
+.contents_level .levelB {
+  background: url(assets/img/main/left/ico_levelB.gif) 0 0 no-repeat;
+  background-position-x: -18px;
+}
+.contents_level .levelC {
+  background: url(assets/img/main/left/ico_levelC.gif) 0 0 no-repeat;
+  background-position-x: -36px;
+}
+.obesityCntColorG {
+  color: #53b30c;
+}
+.obesityCntColorN {
+  color: #f2c233;
+}
+.obesityCntColorB {
+  color: #ee3e15;
+}
+
+.bgBoxLayout2 {
+  position: relative;
+  margin-bottom: 5px;
+}
+.bgBoxLayout {
+  position: relative;
+  margin-bottom: 3px;
+}
+.ecmAlertTb2 tbody tr td {
+  position: relative;
+  padding: 5px 8px 4px;
+  border: 1px solid #ccc;
+}
+.ecmAlertTb2 tbody tr td strong {
+  position: absolute;
+  right: 8px;
+}
+.ecmAlertTb2 tbody tr td strong:hover {
+  text-decoration: underline;
+}
+.txt_blue {
+  color: #2e83de !important;
+}
+.txt_green {
+  color: #32a526 !important;
+}
+.txt_red {
+  color: #ee3e15 !important;
+}
+.btnAdmin {
+  display: block;
+  width: 144px;
+  height: 20px;
+  margin: 15px 0 5px;
+  padding: 5px 0 0 46px;
+  background: url(assets/img/contents/ecmMain/bg_admin2.png) 0 0 no-repeat;
+}
+.btnAdmin_part {
+  display: block;
+  position: relative;
+  width: 144px;
+  height: 20px;
+  padding: 6px 0 0 46px;
+  background: url(assets/img/contents/ecmMain/bg_admin_part.png) 0 0
+    no-repeat;
+}
+.btnAdmin_part em {
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  width: 8px;
+  height: 14px;
+  background: url(assets/img/contents/ecmMain/ico_grey_plus.gif) 0 3px
+    no-repeat;
+  text-indent: -9999px;
+}
+.btnAdmin_part em.close {
+  background: url(assets/img/contents/ecmMain/ico_grey_minus.gif) 0 3px
+    no-repeat;
+}
+.btnAdmin_part + .innerBtnList li a {
+  display: block;
+  line-height: 26px;
+}
+
+.btnBox li.newWinOn {
+  background: url(assets/img/main/left/bg_go_newwin_cntOn.png) left top
+    no-repeat;
+}
+
+.btnBox li.newWinOn span.btn_30 {
+  background: url(assets/img/main/left/ico_go_cnt30_on.png) 15px center
+    no-repeat;
+}
+
+.btnBox li.on span.btn_06 {
+  background: url(assets/img/main/left/ico_go_cnt26_on.png) 15px 8px
+    no-repeat;
+}
+
+.btnBox li.on span.btn_07 {
+  background: url(assets/img/main/left/ico_go_cnt27_on.png) 15px 9px
+    no-repeat;
+}
+.btnBox li span.btn_08 {
+  background: url(assets/img/main/left/ico_go_cnt28.png) 15px 7px no-repeat;
+}
+.btnBox li.noneArwOn a.btn_08 {
+  background: url(assets/img/main/left/ico_go_cnt28_on.png) 15px 7px
+    no-repeat;
+}
+.btnBox li span.btn_08 em {
+  width: 117px;
+  display: inline-block;
+  padding-right: 22px;
+  letter-spacing: -1px;
+  background: url(assets/img/main/ico/ico_blue_plus.gif) 118px 12px no-repeat;
+}
+.btnBox li span.btn_08.crt em {
+  width: 117px;
+  display: inline-block;
+  padding-right: 22px;
+  letter-spacing: -1px;
+  background: url(assets/img/main/ico/ico_blue_minus.gif) 118px 12px
+    no-repeat;
+}
+.btnBox li span.btn_16 em {
+  width: 117px;
+  display: inline-block;
+  padding-right: 22px;
+  letter-spacing: -1px;
+  background: url(assets/img/main/ico/ico_blue_plus.gif) 118px 12px no-repeat;
+}
+.btnBox li span.btn_16.crt em {
+  width: 117px;
+  display: inline-block;
+  padding-right: 22px;
+  letter-spacing: -1px;
+  background: url(assets/img/main/ico/ico_blue_minus.gif) 118px 12px
+    no-repeat;
+}
+.mydiv_cont {
+  position: relative;
+  width: 190px;
+}
+.mydiv_cont ul {
+  padding: 6px 0;
+  height: 120px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+.mydiv_cont ul li {
+  margin-top: 3px;
+  position: relative;
+  padding: 0 0 0 15px;
+  line-height: 24px;
+  letter-spacing: -1px;
+  background: none;
+}
+.mydiv_cont ul li:hover {
+  background: #e2e2e2;
+}
+.mydiv_cont ul li a {
+  height: 24px;
+  line-height: 24px;
+}
+.mydiv_cont ul li .go_div {
+  display: inline-block;
+  padding: 0 26px 0 0;
+  max-width: 130px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+}
+.mydiv_cont ul li .set_fix {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 26px;
+  height: 24px;
+  padding: 0;
+  background: url(assets/img/main/left/ico_fix.png) no-repeat 50% 50%;
+}
+.mydiv_cont ul li .set_fix.on {
+  background: url(assets/img/main/left/ico_fix_on.png) no-repeat 50% 50%;
+}
+.manage_fav {
+  position: relative;
+  width: 190px;
+}
+.manage_fav .inner {
+  height: 120px;
+  padding: 0 5px 5px 5px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fafafa;
+}
+.mf_tab {
+  overflow: hidden;
+  padding-left: 10px;
+}
+.mf_tab li {
+  float: left;
+}
+.mf_tab li:first-child {
+  padding-right: 8px;
+  margin-right: 10px;
+  background: url(assets/img/main/left/bg_fav_ul.png) no-repeat 100% 50%;
+}
+.mf_tab li a {
+  display: inline-block;
+  line-height: 30px;
+  color: #777;
+  font-weight: bold;
+}
+.mf_tab li a.on {
+  color: #333;
+}
+.btn_mfset {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  background: url(assets/img/main/left/btn_favset.png) no-repeat;
+}
+.mftab_wrap {
+  height: 88px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #dedede;
+}
+.mftab_wrap div ul {
+  padding-top: 5px;
+}
+.mftab_wrap div ul li {
+  position: relative;
+  padding: 0 0 0 10px;
+}
+.fav_name {
+  display: block;
+  max-width: 120px;
+  padding: 3px 27px 4px 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: url(assets/img/main/left/ico_fav_person.gif) no-repeat 0 50%;
+}
+.fav_folder {
+  display: block;
+  max-width: 120px;
+  padding: 3px 27px 4px 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: url(assets/img/main/left/ico_fav_folder.gif) no-repeat 0 50%;
+}
+.mftab_wrap .set_fix {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 27px;
+  height: 22px;
+  padding: 0;
+  background: url(assets/img/main/left/ico_fix.png) no-repeat 50% 50%;
+}
+.mftab_wrap .set_fix.on {
+  background: url(assets/img/main/left/ico_fix_on.png) no-repeat 50% 50%;
+}
+.numSize strong {
+  font-size: 14px;
+}
+
+#cObesityCnt:hover {
+  text-decoration: underline;
+}
+
+.treeFldConBox {
+  width: 300px !important;
+}
