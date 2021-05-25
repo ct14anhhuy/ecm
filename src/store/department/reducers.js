@@ -1,9 +1,11 @@
 import * as types from "./types";
 
-const departmentReducers = (state = [], action) => {
+const initState = { data: [] };
+
+const departmentReducers = (state = initState, action) => {
   switch (action.type) {
     case types.GET_DEPARTMENTS:
-      return [...action.payload.departments];
+      return { ...state, data: [...action.payload.departments] };
     default:
       return state;
   }

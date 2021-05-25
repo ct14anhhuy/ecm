@@ -1,6 +1,12 @@
 import * as types from "./types";
 
-const fileInfoReducers = (state = [], action) => {
+const initState = {
+  data: [],
+  done: false,
+  error: false,
+};
+
+const fileInfoReducers = (state = initState, action) => {
   switch (action.type) {
     case types.GET_MY_CONTENTS:
     case types.GET_IMPORTANT_CONTENTS:
@@ -10,23 +16,29 @@ const fileInfoReducers = (state = [], action) => {
     case types.GET_TRASH_CONTENTS:
     case types.GET_CONTENTS_FROM_PATH:
     case types.SEARCH_CONTENTS:
-      return [...action.payload.fileInfos];
+      return { ...state, data: [...action.payload.fileInfos] };
     case types.CHANGE_FAVORITE:
-      const stateFav = [...state];
+      const stateFav = [...state.data];
       const idEditFav = stateFav.findIndex((f) => f.id === action.payload.id);
       stateFav[idEditFav] = {
-        ...state[idEditFav],
+        ...state.data[idEditFav],
         isFavorite: !stateFav[idEditFav].isFavorite,
       };
-      return stateFav;
+      return { ...state, data: stateFav };
     case types.CHANGE_IMPORTANT:
-      const stateImp = [...state];
+      const stateImp = [...state.data];
       const idEditImp = stateImp.findIndex((f) => f.id === action.payload.id);
       stateImp[idEditImp] = {
         ...stateImp[idEditImp],
         isImportant: !stateImp[idEditImp].isImportant,
       };
-      return stateImp;
+      return { ...state, data: stateImp };
+    case types.BEGIN_UPDATE:
+      return { ...state, done: false, error: false };
+    case types.UPDATE_SUCCESS:
+      return { ...state, done: true, error: false };
+    case types.UPDATE_FAILURE:
+      return { ...state, done: true, error: true };
     default:
       return state;
   }

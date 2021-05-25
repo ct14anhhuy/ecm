@@ -1,9 +1,13 @@
 import * as types from "./types";
 
-const directoryReducers = (state = [], action) => {
+const initState = {
+  data: [],
+};
+
+const directoryReducers = (state = initState, action) => {
   switch (action.type) {
     case types.GET_DIRECTORIES:
-      return [...action.payload.directories];
+      return { ...state, data: [...action.payload.directories] };
     default:
       return state;
   }

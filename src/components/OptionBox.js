@@ -15,15 +15,16 @@ const OptionBox = (props) => {
               <em className="add">Add File</em>
             </span>
           </Link>
-          <Link
-            to="/"
-            onClick={() => props.setShowCreateDirectoryModal(true)}
-            style={props.user.roleId !== 1 ? { display: "none" } : {}}
-          >
-            <span>
-              <em className="new">Create Directory</em>
-            </span>
-          </Link>
+          {props.user.roleId === 1 ? (
+            <Link
+              to="/"
+              onClick={() => props.setShowCreateDirectoryModal(true)}
+            >
+              <span>
+                <em className="new">Create Directory</em>
+              </span>
+            </Link>
+          ) : null}
         </div>
       </div>
       <div className="right">

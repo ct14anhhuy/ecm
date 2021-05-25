@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { MainContext } from "context";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import Frame from "react-frame-component";
 import SelectFile from "./SelectFile";
 import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
+import { fileToByteArray } from "utils/fileHelper";
+import { addFilesAction } from "store/fileInfo/actions";
+import swal from "sweetalert";
 
 import styles from "assets/css/modules/AddFile.module.css";
 
@@ -23,8 +26,13 @@ const AddFile = (props) => {
     securityLevel: "Public",
     files: [],
   });
+
   const [showListDirectory, setShowListDirectory] = useState(false);
   const [selectedPath, setSelectedPath] = useState("");
+  const [editRoles, setEditRoles] = useState([]);
+  const [viewRoles, setViewRoles] = useState([]);
+
+  const firstUpdate = useRef(true);
 
   const handleChangeFileName = (key, fileName) => {
     const arr = [...state.files];
@@ -57,6 +65,50 @@ const AddFile = (props) => {
     setSelectedPath(path);
     setState({ ...state, directoryId: selectedId });
   };
+
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    if (props.fileInfos.done) {
+      if (!props.fileInfos.error) {
+        swal("Success!", "Add file success!", "success").then(() => {
+          contextData.setShowAddFileModal(false)
+        });
+      } else {
+        swal("Failure!", "Add file failure!", "error");
+      }
+    }
+  }, [contextData, props.fileInfos.done, props.fileInfos.error]);
+
+  const handleAddFiles = async () => {
+    let fileInfos = [];
+    let viewEmps = viewRoles.map((e) => ({
+      employeeId: e.id,
+      permission: 1,
+    }));
+    let editEmps = editRoles.map((e) => ({
+      employeeId: e.id,
+      permission: 2,
+    }));
+    const fileShares = [...viewEmps, ...editEmps];
+    if (state.files) {
+      const { owner, tag, directoryId, securityLevel } = state;
+      fileInfos = await Promise.all(
+        state.files.map(async (file) => ({
+          name: file.name,
+          owner: owner.id,
+          tag,
+          directoryId,
+          securityLevel,
+          fileData: await fileToByteArray(file),
+        }))
+      );
+    }
+    props.addFiles(fileInfos, fileShares);
+  };
+
   return (
     <React.Fragment>
       <div
@@ -318,12 +370,24 @@ const AddFile = (props) => {
                     <span className={styles.subtype_2}>Permission Setting</span>
                   </p>
                   <div>
-                    <RoleAssignEdit owner={state.owner} />
+                    <RoleAssignEdit
+                      owner={state.owner}
+                      editRoles={editRoles}
+                      setEditRoles={setEditRoles}
+                      viewRoles={viewRoles}
+                      setViewRoles={setViewRoles}
+                    />
                   </div>
                 </div>
               </div>
               <p className={styles.modifyBtn}>
-                <Link to="/">Add</Link>
+                <Link
+                  to="/"
+                  onClick={handleAddFiles}
+                  style={props.fileInfos.done ? { cursor: "default" } : {}}
+                >
+                  Add
+                </Link>
               </p>
             </div>
           </div>
@@ -335,8 +399,16 @@ const AddFile = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
   };
 };
 
-export default connect(mapStateToProps, null)(AddFile);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addFiles: (fileInfos, fileShares) =>
+      dispatch(addFilesAction(fileInfos, fileShares)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddFile);

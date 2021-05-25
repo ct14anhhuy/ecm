@@ -112,7 +112,7 @@ const TreeView = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    directories: state.directoryReducers,
+    directories: state.directoryReducers.data,
   };
 };
 

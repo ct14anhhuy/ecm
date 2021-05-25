@@ -162,6 +162,30 @@ const changeImportantAction = (id, employeeId) => {
   };
 };
 
+const addFilesAction = (fileInfos, fileShares) => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: types.BEGIN_UPDATE,
+      });
+
+      const files = await fileInfoService.addFiles(fileInfos);
+      for (const file of files) {
+        await fileInfoService.addFileShares(
+          fileShares.map((s) => ({ ...s, fileId: file.id }))
+        );
+      }
+      dispatch({
+        type: types.UPDATE_SUCCESS,
+      });
+    } catch (error) {
+      dispatch({
+        type: types.UPDATE_FAILURE,
+      });
+    }
+  };
+};
+
 export {
   getMyContentsAction,
   getImportantContentsAction,
@@ -173,4 +197,5 @@ export {
   searchContentsAction,
   changeFavoriteAction,
   changeImportantAction,
+  addFilesAction,
 };

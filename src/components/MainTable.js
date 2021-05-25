@@ -130,7 +130,7 @@ const MainTable = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    fileInfos: state.fileInfoReducers,
+    fileInfos: state.fileInfoReducers.data,
     pagination: state.paginationReducers,
   };
 };

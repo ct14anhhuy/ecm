@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
-import {searchByNameAction, getByDepartmentAction} from "store/employee/actions";
+import {
+  searchByNameAction,
+  getByDepartmentAction,
+} from "store/employee/actions";
 
 import styles from "assets/css/modules/RoleAssignEdit.module.css";
 
 const RoleAssignEdit = (props) => {
-  const { owner } = props;
+  const { owner, editRoles, setEditRoles, viewRoles, setViewRoles } = props;
+
   const [departments, setDepartments] = useState([]);
   const [employees, setEmployees] = useState([]);
-  const [editRoles, setEditRoles] = useState([]);
-  const [viewRoles, setViewRoles] = useState([]);
 
   const [selectName, setSelectName] = useState(true);
   const [selectAll, setSelectAll] = useState(false);
@@ -579,8 +581,8 @@ const RoleAssignEdit = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    departments: state.departmentReducers,
-    employees: state.employeeReducers,
+    departments: state.departmentReducers.data,
+    employees: state.employeeReducers.data,
   };
 };
 

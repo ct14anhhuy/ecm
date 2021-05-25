@@ -58,7 +58,7 @@ const changeFavorite = async (fileId, employeeId) => {
     employeeId,
   };
   return await api
-    .post("FileFavorite/AddOrRemoveFavoriteFile", fileFavorite)
+    .post("/FileFavorite/AddOrRemoveFavoriteFile", fileFavorite)
     .then((response) => {
       return response.data;
     });
@@ -70,7 +70,21 @@ const changeImportant = async (fileId, employeeId) => {
     employeeId,
   };
   return await api
-    .post("FileImportant/AddOrRemoveImportantFile", fileImportant)
+    .post("/FileImportant/AddOrRemoveImportantFile", fileImportant)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+const addFiles = async (fileInfos) => {
+  return await api.post("/FileInfo/AddFiles", fileInfos).then((response) => {
+    return response.data;
+  });
+};
+
+const addFileShares = async (fileShares) => {
+  return await api
+    .post("/FileShare/AddFileShares", fileShares)
     .then((response) => {
       return response.data;
     });
@@ -87,4 +101,6 @@ export const fileInfoService = {
   searchContents,
   changeFavorite,
   changeImportant,
+  addFiles,
+  addFileShares,
 };
