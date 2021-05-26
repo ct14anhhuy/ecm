@@ -1,3 +1,5 @@
+import { connect } from "react-redux";
+
 const Navbar = (props) => {
   return (
     <div className="treeBox">
@@ -10,4 +12,10 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  return {
+    headerPath: state.systemParamsReducers.headerPath,
+  };
+};
+
+export default connect(mapStateToProps, null)(Navbar);

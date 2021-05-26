@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Frame from "react-frame-component";
 import TreeView from "./TreeView";
 import {
@@ -10,6 +10,7 @@ import {
   getTrashContentsAction,
   getContentsFromPathAction,
 } from "store/fileInfo/actions";
+import { changeHeaderPathAction } from "store/systemParams/actions";
 import { connect } from "react-redux";
 
 import styles from "assets/css/modules/LeftMenu.module.css";
@@ -17,14 +18,14 @@ import styles from "assets/css/modules/LeftMenu.module.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const LeftMenu = (props) => {
-  const [selectedTab, setSelectedTab] = useState(true);
+  const { shortcutBox, setshortcutBox } = props;
 
   const handleSelectedRoute = (e) => {
-    props.setHeaderPath(e.target.innerText);
+    props.changeHeaderPath(e.target.innerText);
   };
 
   const handleOnSelect = (id, path) => {
-    props.setHeaderPath(path);
+    props.changeHeaderPath(path);
     props.getContentsFromPath(id);
   };
 
@@ -34,16 +35,16 @@ const LeftMenu = (props) => {
         <ul className={styles.tab_more}>
           <li>
             <span
-              className={selectedTab ? styles.tabon : ""}
-              onClick={() => setSelectedTab(true)}
+              className={shortcutBox ? styles.tabon : ""}
+              onClick={() => setshortcutBox(true)}
             >
               Shortcut
             </span>
           </li>
           <li>
             <span
-              className={selectedTab ? "" : styles.tabon}
-              onClick={() => setSelectedTab(false)}
+              className={shortcutBox ? "" : styles.tabon}
+              onClick={() => setshortcutBox(false)}
             >
               Content Box
             </span>
@@ -52,7 +53,7 @@ const LeftMenu = (props) => {
       </div>
       <div
         className={styles.tabCnt}
-        style={selectedTab ? { display: "block" } : { display: "none" }}
+        style={shortcutBox ? { display: "block" } : { display: "none" }}
       >
         <ul className={styles.btnBox}>
           <li>
@@ -125,7 +126,7 @@ const LeftMenu = (props) => {
       </div>
       <div
         className={styles.tabCnt}
-        style={selectedTab ? { display: "none" } : { display: "block" }}
+        style={shortcutBox ? { display: "none" } : { display: "block" }}
       >
         <div className={`${styles.bgBoxLayout} ${styles.select02}`}>
           <div
@@ -164,6 +165,7 @@ const mapDispatchToProps = (dispatch) => {
     getDepartmentContents: () => dispatch(getDepartmentContentsAction()),
     getTrashContents: () => dispatch(getTrashContentsAction()),
     getContentsFromPath: (dirId) => dispatch(getContentsFromPathAction(dirId)),
+    changeHeaderPath: (path) => dispatch(changeHeaderPathAction(path)),
   };
 };
 

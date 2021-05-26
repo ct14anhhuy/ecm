@@ -6,6 +6,7 @@ import userReducers from "./user/reducers";
 import employeeReducers from "./employee/reducers";
 import paginationReducers from "./pagination/reducers";
 import fileUrlReducers from "./fileUrl/reducers";
+import systemParamsReducers from "./systemParams/reducers";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import thunkMiddleware from "redux-thunk";
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   employeeReducers,
   paginationReducers,
   fileUrlReducers,
+  systemParamsReducers,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

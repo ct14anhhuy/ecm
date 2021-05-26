@@ -6,4 +6,12 @@ const getDirectories = async () => {
   });
 };
 
-export const directoryService = { getDirectories };
+const createDirectory = async (directory) => {
+  return await api
+    .post("/Directory/CreateDirectory", directory)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export const directoryService = { getDirectories, createDirectory };

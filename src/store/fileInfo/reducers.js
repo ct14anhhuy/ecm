@@ -17,22 +17,57 @@ const fileInfoReducers = (state = initState, action) => {
     case types.GET_CONTENTS_FROM_PATH:
     case types.SEARCH_CONTENTS:
       return { ...state, data: [...action.payload.fileInfos] };
-    case types.CHANGE_FAVORITE:
-      const stateFav = [...state.data];
-      const idEditFav = stateFav.findIndex((f) => f.id === action.payload.id);
-      stateFav[idEditFav] = {
-        ...state.data[idEditFav],
-        isFavorite: !stateFav[idEditFav].isFavorite,
+    case types.CHANGE_FAVORITE: {
+      const prevState = [...state.data];
+      const editId = prevState.findIndex((f) => f.id === action.payload.id);
+      prevState[editId] = {
+        ...state.data[editId],
+        isFavorite: !prevState[editId].isFavorite,
       };
-      return { ...state, data: stateFav };
-    case types.CHANGE_IMPORTANT:
-      const stateImp = [...state.data];
-      const idEditImp = stateImp.findIndex((f) => f.id === action.payload.id);
-      stateImp[idEditImp] = {
-        ...stateImp[idEditImp],
-        isImportant: !stateImp[idEditImp].isImportant,
+      return { ...state, data: prevState };
+    }
+    case types.CHANGE_IMPORTANT: {
+      const prevState = [...state.data];
+      const editId = prevState.findIndex((f) => f.id === action.payload.id);
+      prevState[editId] = {
+        ...prevState[editId],
+        isImportant: !prevState[editId].isImportant,
       };
-      return { ...state, data: stateImp };
+      return { ...state, data: prevState };
+    }
+    case types.CHANGE_CHECKED: {
+      const prevState = [...state.data];
+      const editId = prevState.findIndex((f) => f.id === action.payload.id);
+      prevState[editId] = {
+        ...prevState[editId],
+        checked: action.payload.checked,
+      };
+      return { ...state, data: prevState };
+    }
+    case types.SELECT_MULTI: {
+      const editIds = action.payload.fileIds;
+      const newState = state.data.map((f) =>
+        editIds.includes(f.id)
+          ? { ...f, checked: action.payload.checked }
+          : { ...f, checked: false }
+      );
+      return { ...state, data: newState };
+    }
+    case types.MOVE_TO_TRASH: {
+      const removeIds = action.payload.fileIds;
+      const newState = state.data.filter((f) => !removeIds.includes(f.id));
+      return { ...state, data: newState };
+    }
+    case types.RECOVER_FILE: {
+      const recoverIds = action.payload.fileIds;
+      const newState = state.data.filter((f) => !recoverIds.includes(f.id));
+      return { ...state, data: newState };
+    }
+    case types.DELETE_FILE: {
+      const deleteIds = action.payload.fileIds;
+      const newState = state.data.filter((f) => !deleteIds.includes(f.id));
+      return { ...state, data: newState };
+    }
     case types.BEGIN_UPDATE:
       return { ...state, done: false, error: false };
     case types.UPDATE_SUCCESS:

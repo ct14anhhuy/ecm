@@ -651,7 +651,8 @@ label {
   height: 122px;
   margin: 0 12px 12px 0;
   padding-top: 31px;
-  background: url(assets/img/contents/ecmMain/bg_list_thumnBox.png) 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_list_thumnBox.png) 0 0
+    no-repeat;
 }
 .listContent .thumnList .thumn > li .i_check {
   position: absolute;
@@ -691,7 +692,8 @@ label {
   margin-right: -1px;
   padding-top: 10px;
   text-align: center;
-  background: url(assets/img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_text_line.gif) right 3px
+    no-repeat;
 }
 .listContent .thumnList .thumn > li .text > a:hover {
   color: #018dee;
@@ -710,7 +712,8 @@ label {
   color: #018dee;
   border: 1px solid #648ec3;
   border-width: 1px 1px 0 1px;
-  background: #fff url(assets/img/contents/ecmMain/bg_info.png) 40px 15px no-repeat;
+  background: #fff url(assets/img/contents/ecmMain/bg_info.png) 40px 15px
+    no-repeat;
   z-index: 20;
 }
 
@@ -805,7 +808,8 @@ label {
   text-align: center;
   border: 1px solid #648ec3;
   border-width: 1px 1px 0 1px;
-  background: #fff url(assets/img/contents/ecmMain/bg_info.png) 97px 15px no-repeat;
+  background: #fff url(assets/img/contents/ecmMain/bg_info.png) 97px 15px
+    no-repeat;
   z-index: 20;
 }
 
@@ -822,7 +826,8 @@ label {
   margin-right: -1px;
   padding-top: 10px;
   text-align: center;
-  background: url(assets/img/contents/ecmMain/bg_text_line.gif) right 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_text_line.gif) right 3px
+    no-repeat;
 }
 .listContent .thumnList .thumn > li .wasteText > a:hover {
   color: #018dee;
@@ -1495,7 +1500,8 @@ a.btn_content:hover {
   background: url(assets/img/contents/ecmMain/ico_pop_lock.png) 0 3px no-repeat;
 }
 .choiceBox .iconAdd ul li span.iconUnlock {
-  background: url(assets/img/contents/ecmMain/ico_pop_unlock.png) 0 3px no-repeat;
+  background: url(assets/img/contents/ecmMain/ico_pop_unlock.png) 0 3px
+    no-repeat;
 }
 
 .ecmWrap .choiceBox {
@@ -1731,6 +1737,15 @@ a.btn_content:hover {
 .sorting_btn a em {
   padding-left: 15px;
 }
+
+.optionBox__remove_a {
+  color: red !important;
+}
+
+.optionBox__remove_em {
+  padding-left: unset !important;
+}
+
 .sorting_btn a em.add {
   background: url(assets/img/main/btn/bg_add.gif) no-repeat 0 50%;
 }
@@ -1821,7 +1836,7 @@ a.btn_content:hover {
 }
 .am_grey li a:hover {
   color: #fff;
-  background-color: #858585; 
+  background-color: #858585;
   background-image: -webkit-gradient(
     linear,
     left top,

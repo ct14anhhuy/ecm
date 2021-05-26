@@ -90,6 +90,24 @@ const addFileShares = async (fileShares) => {
     });
 };
 
+const moveToTrash = async (fileIds) => {
+  return await api.post("/Trash/AddFilesToTrash", fileIds).then((response) => {
+    return response.data;
+  });
+};
+
+const recoverFile = async (fileIds) => {
+  return await api.post("/Trash/RecoverFile", fileIds).then((response) => {
+    return response.data;
+  });
+};
+
+const deleteFile = async (fileIds) => {
+  return await api.post("/Trash/CleanTrash", fileIds).then((response) => {
+    return response.data;
+  });
+};
+
 export const fileInfoService = {
   getMyContents,
   getImportantContents,
@@ -103,4 +121,7 @@ export const fileInfoService = {
   changeImportant,
   addFiles,
   addFileShares,
+  moveToTrash,
+  recoverFile,
+  deleteFile,
 };

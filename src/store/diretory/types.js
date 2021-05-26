@@ -1,1 +1,5 @@
 export const GET_DIRECTORIES = "GET_DIRECTORIES";
+
+export const BEGIN_UPDATE = "BEGIN_UPDATE";
+export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
+export const UPDATE_FAILURE = "UPDATE_FAILURE";

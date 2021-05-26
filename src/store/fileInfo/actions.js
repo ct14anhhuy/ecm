@@ -8,7 +8,7 @@ const getMyContentsAction = () => {
       dispatch({
         type: types.GET_MY_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -24,7 +24,7 @@ const getImportantContentsAction = () => {
       dispatch({
         type: types.GET_IMPORTANT_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -40,7 +40,7 @@ const getFavoriteContentsAction = () => {
       dispatch({
         type: types.GET_FAVORITE_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -56,7 +56,7 @@ const getSharedContentsAction = () => {
       dispatch({
         type: types.GET_SHARED_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -72,7 +72,7 @@ const getDepartmentContentsAction = () => {
       dispatch({
         type: types.GET_DEPARTMENT_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -88,7 +88,7 @@ const getTrashContentsAction = () => {
       dispatch({
         type: types.GET_TRASH_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -104,7 +104,7 @@ const getContentsFromPathAction = (dirId) => {
       dispatch({
         type: types.GET_CONTENTS_FROM_PATH,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -121,7 +121,7 @@ const searchContentsAction = (searchStr) => {
       dispatch({
         type: types.SEARCH_CONTENTS,
         payload: {
-          fileInfos: obj.fileInfos,
+          fileInfos: injectSelected(obj.fileInfos),
         },
       });
     } catch (error) {
@@ -162,13 +162,32 @@ const changeImportantAction = (id, employeeId) => {
   };
 };
 
+const changeCheckedAction = (id, checked) => {
+  return {
+    type: types.CHANGE_CHECKED,
+    payload: {
+      id,
+      checked,
+    },
+  };
+};
+
+const selectMultiAction = (fileIds, checked) => {
+  return {
+    type: types.SELECT_MULTI,
+    payload: {
+      fileIds,
+      checked,
+    },
+  };
+};
+
 const addFilesAction = (fileInfos, fileShares) => {
   return async (dispatch) => {
     try {
       dispatch({
         type: types.BEGIN_UPDATE,
       });
-
       const files = await fileInfoService.addFiles(fileInfos);
       for (const file of files) {
         await fileInfoService.addFileShares(
@@ -186,6 +205,58 @@ const addFilesAction = (fileInfos, fileShares) => {
   };
 };
 
+const moveToTrashAction = (fileIds) => {
+  return async (dispatch) => {
+    try {
+      await fileInfoService.moveToTrash(fileIds);
+      dispatch({
+        type: types.MOVE_TO_TRASH,
+        payload: {
+          fileIds,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+const recoverFileAction = (fileIds) => {
+  return async (dispatch) => {
+    try {
+      await fileInfoService.recoverFile(fileIds);
+      dispatch({
+        type: types.RECOVER_FILE,
+        payload: {
+          fileIds,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+const deleteFileAction = (fileIds) => {
+  return async (dispatch) => {
+    try {
+      await fileInfoService.deleteFile(fileIds);
+      dispatch({
+        type: types.DELETE_FILE,
+        payload: {
+          fileIds,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+const injectSelected = (fileInfos) => {
+  return fileInfos.map((fi) => Object.assign({}, fi, { checked: false }));
+};
+
 export {
   getMyContentsAction,
   getImportantContentsAction,
@@ -197,5 +268,10 @@ export {
   searchContentsAction,
   changeFavoriteAction,
   changeImportantAction,
+  changeCheckedAction,
+  selectMultiAction,
   addFilesAction,
+  moveToTrashAction,
+  recoverFileAction,
+  deleteFileAction,
 };

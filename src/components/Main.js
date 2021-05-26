@@ -26,9 +26,9 @@ const App = (props) => {
     useState(false);
   const [showOpenContent, setShowOpenContent] = useState(false);
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
-  const [headerPath, setHeaderPath] = useState("My Contents");
   const [filterExt, setFilterExt] = useState(exts.ALL);
   const [selectedItem, setSelectedItem] = useState({});
+  const [shortcutBox, setshortcutBox] = useState(true);
 
   useEffect(() => {
     props.getDirectories();
@@ -51,7 +51,10 @@ const App = (props) => {
               }
             >
               <div className="areaL">
-                <LeftMenu setHeaderPath={setHeaderPath} />
+                <LeftMenu
+                  shortcutBox={shortcutBox}
+                  setshortcutBox={setshortcutBox}
+                />
               </div>
               <div
                 className="areaC"
@@ -77,11 +80,12 @@ const App = (props) => {
                   />
                 </Link>
                 <div className="areaCBox">
-                  <Navbar headerPath={headerPath} />
+                  <Navbar />
                   <div className="listContent">
                     <OptionBox
                       setShowAddModal={setShowAddFileModal}
                       setShowCreateDirectoryModal={setShowCreateDirectoryModal}
+                      shortcutBox={shortcutBox}
                     />
                     <div className="normalList">
                       <Filter

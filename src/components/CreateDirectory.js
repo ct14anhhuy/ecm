@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
 import TreeView from "./TreeView";
+import { connect } from "react-redux";
+import { createDirectoryAction } from "store/diretory/actions";
+import swal from "sweetalert";
 
 import styles from "assets/css/modules/CreateDirectory.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
@@ -13,11 +16,39 @@ const CreateDirectory = (props) => {
     id: null,
     path: "",
   });
+  const [path, setPath] = useState("");
+
+  const firstUpdate = useRef(true);
 
   const handleOnSelectPath = (selectedId, path) => {
     setShowListDirectory(false);
     setSelectedPath({ id: selectedId, path: path });
   };
+
+  const handleCreateDirectory = () => {
+    if (!selectedPath.id || !path) {
+      swal("Error!", "Check your input!", "error");
+      return;
+    }
+    const directory = { parentId: selectedPath.id, name: path };
+    props.createDirectory(directory);
+  };
+
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    if (props.directories.done) {
+      if (!props.directories.error) {
+        swal("Success!", "Create directory success!", "success").then(() => {
+          props.setShowCreateDirectoryModal(false);
+        });
+      } else {
+        swal("Failure!", "Create directory failure!", "error");
+      }
+    }
+  }, [props]);
 
   return (
     <React.Fragment>
@@ -94,6 +125,8 @@ const CreateDirectory = (props) => {
                             className={styles.baseInput}
                             style={{ width: "100%", height: 25 }}
                             type="text"
+                            value={path}
+                            onChange={(e) => setPath(e.target.value)}
                           />
                         </div>
                       </td>
@@ -146,7 +179,7 @@ const CreateDirectory = (props) => {
                         </Link>
                       </div>
                     </div>
-                    <div className={styles.treeCon} style={{height: "100%"}}>
+                    <div className={styles.treeCon} style={{ height: "100%" }}>
                       <Frame
                         width="100%"
                         height="100%"
@@ -168,6 +201,7 @@ const CreateDirectory = (props) => {
                     require("assets/img/popup/bg/bg_modifyBtn.gif").default
                   }) no-repeat left top #2768b2`,
                 }}
+                onClick={handleCreateDirectory}
               >
                 Create
               </Link>
@@ -179,4 +213,16 @@ const CreateDirectory = (props) => {
   );
 };
 
-export default CreateDirectory;
+const mapStateToProps = (state) => {
+  return {
+    directories: state.directoryReducers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createDirectory: (directory) => dispatch(createDirectoryAction(directory)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateDirectory);

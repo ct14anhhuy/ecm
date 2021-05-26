@@ -17,4 +17,25 @@ const getDirectoriesAction = () => {
   };
 };
 
-export { getDirectoriesAction };
+const createDirectoryAction = (directory) => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: types.BEGIN_UPDATE,
+      });
+      const result = await directoryService.createDirectory(directory);
+      dispatch({
+        type: types.UPDATE_SUCCESS,
+        payload: {
+          directory: result,
+        },
+      });
+    } catch (error) {
+      dispatch({
+        type: types.UPDATE_FAILURE,
+      });
+    }
+  };
+};
+
+export { getDirectoriesAction, createDirectoryAction };

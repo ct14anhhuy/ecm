@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
 import * as exts from "utils/extTypes";
+import { selectMultiAction } from "store/fileInfo/actions";
 import {
   updatePageNeighboursAction,
   updateTotalPagesAction,
@@ -52,6 +53,12 @@ const MainTable = (props) => {
     updateTotalRecords,
   ]);
 
+  const handleSelectAll = (checked) => {
+    const fileIds = currentFiles.map((f) => f.id);
+    setSelectAll(checked);
+    props.selectMulti(fileIds, checked);
+  };
+
   return (
     <table className="normalTb" style={{ marginBottom: 15 }}>
       <colgroup>
@@ -73,7 +80,7 @@ const MainTable = (props) => {
                     type="checkbox"
                     defaultChecked={selectAll}
                     onChange={() => {
-                      setSelectAll(!selectAll);
+                      handleSelectAll(!selectAll);
                     }}
                   />
                 </label>
@@ -117,11 +124,7 @@ const MainTable = (props) => {
       </thead>
       <tbody>
         {currentFiles.map((fileInfo) => (
-          <MainTableItem
-            key={fileInfo.id}
-            selectAll={selectAll}
-            fileInfo={fileInfo}
-          />
+          <MainTableItem key={fileInfo.id} fileInfo={fileInfo} />
         ))}
       </tbody>
     </table>
@@ -143,6 +146,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(updateTotalPagesAction(totalPages)),
     updatePageNeighbours: (pageNeighbours) =>
       dispatch(updatePageNeighboursAction(pageNeighbours)),
+    selectMulti: (fileIds, checked) => dispatch(selectMultiAction(fileIds, checked)),
   };
 };
 

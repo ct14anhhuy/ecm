@@ -1,10 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { searchContentsAction } from "store/fileInfo/actions";
+import {
+  searchContentsAction,
+  moveToTrashAction,
+  recoverFileAction,
+  deleteFileAction,
+} from "store/fileInfo/actions";
+import swal from "sweetalert";
+import React from "react";
 
 const OptionBox = (props) => {
+  const { shortcutBox, headerPath } = props;
   const [inpSearch, setInpSearch] = useState(null);
+  const [isTrash, setIsTrash] = useState(false);
+
+  useEffect(() => {
+    if (headerPath === "Trash" && shortcutBox) {
+      setIsTrash(true);
+    } else {
+      setIsTrash(false);
+    }
+  }, [headerPath, shortcutBox]);
+
+  const handleMoveToTrash = () => {
+    const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
+    if (fileIds.length > 0) {
+      swal({
+        title: "Warning!",
+        text: `Move ${fileIds.length} file(s) to trash!`,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          props.moveToTrash(fileIds);
+        }
+      });
+    }
+  };
+
+  const handleDelete = () => {
+    const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
+    if (fileIds.length > 0) {
+      props.deleteFile(fileIds);
+    }
+  };
+
+  const handleRecover = () => {
+    const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
+    if (fileIds.length > 0) {
+      props.recoverFile(fileIds);
+    }
+  };
 
   return (
     <div className="optionBox" style={{ display: "block" }}>
@@ -15,6 +63,38 @@ const OptionBox = (props) => {
               <em className="add">Add File</em>
             </span>
           </Link>
+
+          {!isTrash ? (
+            <Link
+              to="/"
+              className="optionBox__remove_a"
+              onClick={handleMoveToTrash}
+            >
+              <span>
+                <em className="optionBox__remove_em">Move To Trash</em>
+              </span>
+            </Link>
+          ) : null}
+
+          {isTrash ? (
+            <React.Fragment>
+              <Link to="/" onClick={handleRecover}>
+                <span>
+                  <em className="add">Recover</em>
+                </span>
+              </Link>
+              <Link
+                to="/"
+                className="optionBox__remove_a"
+                onClick={handleDelete}
+              >
+                <span>
+                  <em className="optionBox__remove_em">Delete</em>
+                </span>
+              </Link>
+            </React.Fragment>
+          ) : null}
+
           {props.user.roleId === 1 ? (
             <Link
               to="/"
@@ -22,6 +102,14 @@ const OptionBox = (props) => {
             >
               <span>
                 <em className="new">Create Directory</em>
+              </span>
+            </Link>
+          ) : null}
+
+          {props.user.roleId === 1 && !shortcutBox ? (
+            <Link to="/" className="optionBox__remove_a">
+              <span>
+                <em className="optionBox__remove_em">Delete Directory</em>
               </span>
             </Link>
           ) : null}
@@ -63,12 +151,17 @@ const OptionBox = (props) => {
 const mapStateToProps = (state) => {
   return {
     user: state.userReducers,
+    fileInfos: state.fileInfoReducers.data,
+    headerPath: state.systemParamsReducers.headerPath,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     searchContents: (searchStr) => dispatch(searchContentsAction(searchStr)),
+    moveToTrash: (fileIds) => dispatch(moveToTrashAction(fileIds)),
+    recoverFile: (fileIds) => dispatch(recoverFileAction(fileIds)),
+    deleteFile: (fileIds) => dispatch(deleteFileAction(fileIds)),
   };
 };
 

@@ -1,6 +1,10 @@
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { connect } from "react-redux";
-import { changeFavoriteAction, changeImportantAction } from "store/fileInfo/actions";
+import {
+  changeFavoriteAction,
+  changeImportantAction,
+  changeCheckedAction,
+} from "store/fileInfo/actions";
 import { getFileShareUrlAction } from "store/fileUrl/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -11,13 +15,8 @@ const MainTableItem = (props) => {
   var contextData = useContext(MainContext);
 
   const { fileUrl, fileInfo, user } = props;
-  const [fileChecked, setFileChecked] = useState(false);
 
   const node = useRef();
-
-  useEffect(() => {
-    setFileChecked(props.selectAll);
-  }, [props.selectAll]);
 
   useEffect(() => {
     if (fileUrl.shareUrl) {
@@ -48,12 +47,12 @@ const MainTableItem = (props) => {
       <td>
         <div className="contentsBox">
           <div className="contentTitle">
-            <label className={fileChecked ? "i_check c_on" : "i_check"}>
+            <label className={fileInfo.checked ? "i_check c_on" : "i_check"}>
               <input
                 type="checkbox"
-                defaultChecked={fileChecked}
+                defaultChecked={fileInfo.checked}
                 onChange={() => {
-                  setFileChecked(!fileChecked);
+                  props.changeChecked(fileInfo.id, !fileInfo.checked);
                 }}
               />
             </label>
@@ -100,7 +99,7 @@ const MainTableItem = (props) => {
           <Link
             className="listInfo"
             to="/"
-            onClick={() => node.current.style.display = "block"}
+            onClick={() => (node.current.style.display = "block")}
           >
             <img
               alt=""
@@ -111,7 +110,7 @@ const MainTableItem = (props) => {
             className="infoMenu"
             ref={node}
             style={{ top: 16, display: "none" }}
-            onClick={() => node.current.style.display = "none"}
+            onClick={() => (node.current.style.display = "none")}
           >
             <li style={{ fontWeight: "bold" }}>
               <Link to="/" onClick={handleOnCopyUrl}>
@@ -135,6 +134,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.userReducers,
     fileUrl: state.fileUrlReducers,
+    headerPath: state.systemParamsReducers.headerPath,
   };
 };
 
@@ -145,6 +145,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     changeImportant: (id, employeeId) => {
       dispatch(changeImportantAction(id, employeeId));
+    },
+    changeChecked: (id, checked) => {
+      dispatch(changeCheckedAction(id, checked));
     },
     getFileShareUrl: (id) => {
       dispatch(getFileShareUrlAction(id));
