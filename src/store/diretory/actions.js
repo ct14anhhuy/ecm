@@ -21,21 +21,37 @@ const createDirectoryAction = (directory) => {
   return async (dispatch) => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE,
+        type: types.BEGIN_UPDATE_DIRECTORY,
       });
       const result = await directoryService.createDirectory(directory);
       dispatch({
-        type: types.UPDATE_SUCCESS,
+        type: types.UPDATE_DIRECTORY_SUCCESS,
         payload: {
           directory: result,
         },
       });
     } catch (error) {
       dispatch({
-        type: types.UPDATE_FAILURE,
+        type: types.UPDATE_DIRECTORY_FAILURE,
       });
     }
   };
 };
 
-export { getDirectoriesAction, createDirectoryAction };
+const deleteDirectoryAction = (id) => {
+  return async (dispatch) => {
+    try {
+      await directoryService.deleteDirectory(id);
+      dispatch({
+        type: types.DELETE_DIRECTORY,
+        payload: {
+          id,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export { getDirectoriesAction, createDirectoryAction, deleteDirectoryAction };

@@ -14,4 +14,16 @@ const createDirectory = async (directory) => {
     });
 };
 
-export const directoryService = { getDirectories, createDirectory };
+const deleteDirectory = async (id) => {
+  return await api
+    .post("/Directory/DeleteDirectory?id=" + id)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export const directoryService = {
+  getDirectories,
+  createDirectory,
+  deleteDirectory,
+};

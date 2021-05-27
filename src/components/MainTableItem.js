@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from "react";
+import { useEffect, useContext, useRef, useState } from "react";
 import { connect } from "react-redux";
 import {
   changeFavoriteAction,
@@ -10,11 +10,12 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { MainContext } from "context";
 import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
+import React from "react";
 
 const MainTableItem = (props) => {
+  const { fileUrl, fileInfo, user, headerPath, menuActive } = props;
   var contextData = useContext(MainContext);
-
-  const { fileUrl, fileInfo, user } = props;
+  const [isTrash, setIsTrash] = useState(false);
 
   const node = useRef();
 
@@ -23,6 +24,14 @@ const MainTableItem = (props) => {
       navigator.clipboard.writeText(`ECMProtocol: ${fileUrl.shareUrl}`);
     }
   }, [fileUrl.shareUrl]);
+
+  useEffect(() => {
+    if (headerPath === "Trash" && menuActive) {
+      setIsTrash(true);
+    } else {
+      setIsTrash(false);
+    }
+  }, [headerPath, menuActive]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
@@ -42,7 +51,75 @@ const MainTableItem = (props) => {
     props.getFileShareUrl(fileInfo.id);
   };
 
-  return (
+  const renderInTrash = (
+    <tr>
+      <td>
+        <div className="contentsBox">
+          <div className="contentTitle">
+            <label className={fileInfo.checked ? "i_check c_on" : "i_check"}>
+              <input
+                type="checkbox"
+                defaultChecked={fileInfo.checked}
+                onChange={() => {
+                  props.changeChecked(fileInfo.id, !fileInfo.checked);
+                }}
+              />
+            </label>
+            <Link className="ico_fav_3" to="/">
+              <img
+                alt=""
+                src={
+                  fileInfo.isImportant
+                    ? require("assets/img/main/left/ico_go_cnt15_on.png")
+                        .default
+                    : require("assets/img/main/left/ico_go_cnt15.png").default
+                }
+              />
+            </Link>
+            <Link className="ico_fav" to="/">
+              <img
+                alt=""
+                src={
+                  fileInfo.isFavorite
+                    ? require("assets/img/main/ico/ico_fav_blue_on.png").default
+                    : require("assets/img/main/ico/ico_fav.png").default
+                }
+              />
+            </Link>
+            <Link to="/">
+              <GetBackgroundIconFromExtension fileName={fileInfo.name} />
+              {fileInfo.name}
+            </Link>
+          </div>
+          <Link className="listInfo" to="/">
+            <img
+              alt=""
+              src={require("assets/img/contents/ecmMain/bg_info.png").default}
+            />
+          </Link>
+          <ul
+            className="infoMenu"
+            ref={node}
+            style={{ top: 16, display: "none" }}
+          >
+            <li style={{ fontWeight: "bold" }}>
+              <Link to="/" onClick={handleOnCopyUrl}>
+                Copy URL
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </td>
+      <td>{fileInfo.owner}</td>
+      <td>{fileInfo.modifier}</td>
+      <td>{fileInfo.size}KB</td>
+      <td>{fileInfo.securityLevel}</td>
+      <td>{fileInfo.version}</td>
+      <td>{moment(fileInfo.modifiedDate).format("DD/MM/YYYY")}</td>
+    </tr>
+  );
+
+  const render = (
     <tr>
       <td>
         <div className="contentsBox">
@@ -113,9 +190,13 @@ const MainTableItem = (props) => {
             onClick={() => (node.current.style.display = "none")}
           >
             <li style={{ fontWeight: "bold" }}>
-              <Link to="/" onClick={handleOnCopyUrl}>
-                Copy URL
-              </Link>
+              {fileInfo.owner === user.epLiteId ? (
+                <Link to="/" onClick={handleOnCopyUrl}>
+                  Copy URL
+                </Link>
+              ) : (
+                <span>Copy URL</span>
+              )}
             </li>
           </ul>
         </div>
@@ -128,6 +209,8 @@ const MainTableItem = (props) => {
       <td>{moment(fileInfo.modifiedDate).format("DD/MM/YYYY")}</td>
     </tr>
   );
+
+  return <React.Fragment>{!isTrash ? render : renderInTrash}</React.Fragment>;
 };
 
 const mapStateToProps = (state) => {
@@ -135,6 +218,7 @@ const mapStateToProps = (state) => {
     user: state.userReducers,
     fileUrl: state.fileUrlReducers,
     headerPath: state.systemParamsReducers.headerPath,
+    menuActive: state.systemParamsReducers.menuActive,
   };
 };
 

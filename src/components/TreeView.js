@@ -10,6 +10,8 @@ const TreeView = (props) => {
     selectedId: 0,
   });
 
+  const [isRootNode, setIsRootNode] = useState(false);
+
   useEffect(() => {
     const res = props.directories.map((node) => ({
       id: node.id,
@@ -79,11 +81,13 @@ const TreeView = (props) => {
   };
 
   const handleOnSelect = (selectedKey, e) => {
+    const isRoot = !e.node.parentId;
     const selectedId = e.node.id;
     setState({ ...state, selectedId });
+    setIsRootNode(isRoot);
     const path = getPath(state.hirarchicalTree, "children", "id", e.node.id);
     if (props.handleOnSelect) {
-      props.handleOnSelect(selectedId, path);
+      props.handleOnSelect(selectedId, path, isRoot);
     }
   };
 
@@ -91,7 +95,7 @@ const TreeView = (props) => {
     const selectedId = state.selectedId;
     const path = getPath(state.hirarchicalTree, "children", "id", selectedId);
     if (props.handleOnDoubleClick && selectedId !== 0) {
-      props.handleOnDoubleClick(selectedId, path);
+      props.handleOnDoubleClick(selectedId, path, isRootNode);
     }
   };
 

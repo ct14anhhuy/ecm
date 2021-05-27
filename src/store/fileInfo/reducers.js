@@ -68,11 +68,11 @@ const fileInfoReducers = (state = initState, action) => {
       const newState = state.data.filter((f) => !deleteIds.includes(f.id));
       return { ...state, data: newState };
     }
-    case types.BEGIN_UPDATE:
+    case types.BEGIN_UPDATE_FILE:
       return { ...state, done: false, error: false };
-    case types.UPDATE_SUCCESS:
+    case types.UPDATE_FILE_SUCCESS:
       return { ...state, done: true, error: false };
-    case types.UPDATE_FAILURE:
+    case types.UPDATE_FILE_FAILURE:
       return { ...state, done: true, error: true };
     default:
       return state;

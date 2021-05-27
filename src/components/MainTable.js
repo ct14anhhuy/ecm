@@ -146,7 +146,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(updateTotalPagesAction(totalPages)),
     updatePageNeighbours: (pageNeighbours) =>
       dispatch(updatePageNeighboursAction(pageNeighbours)),
-    selectMulti: (fileIds, checked) => dispatch(selectMultiAction(fileIds, checked)),
+    selectMulti: (fileIds, checked) =>
+      dispatch(selectMultiAction(fileIds, checked)),
   };
 };
 

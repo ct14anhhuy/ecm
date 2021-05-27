@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Frame from "react-frame-component";
 import TreeView from "./TreeView";
 import {
@@ -10,7 +10,12 @@ import {
   getTrashContentsAction,
   getContentsFromPathAction,
 } from "store/fileInfo/actions";
-import { changeHeaderPathAction } from "store/systemParams/actions";
+import {
+  changeHeaderPathAction,
+  changeMenuActiveAction,
+  changeCurrentDirectoryAction,
+} from "store/systemParams/actions";
+import { updateCurrentPageAction } from "store/pagination/actions";
 import { connect } from "react-redux";
 
 import styles from "assets/css/modules/LeftMenu.module.css";
@@ -18,16 +23,35 @@ import styles from "assets/css/modules/LeftMenu.module.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const LeftMenu = (props) => {
-  const { shortcutBox, setshortcutBox } = props;
+  const FIRST_PAGE = 1;
+  const { menuActive, changeMenuActive } = props;
+  const [selectedDirectory, setSelectedDirectory] = useState({
+    id: 0,
+    isRoot: true,
+  });
 
   const handleSelectedRoute = (e) => {
     props.changeHeaderPath(e.target.innerText);
+    props.updateCurrentPage(FIRST_PAGE);
   };
 
-  const handleOnSelect = (id, path) => {
+  const handleOnSelect = (id, path, isRoot) => {
     props.changeHeaderPath(path);
+    setSelectedDirectory({ id, isRoot });
     props.getContentsFromPath(id);
+    props.updateCurrentPage(FIRST_PAGE);
   };
+
+  useEffect(() => {
+    if (menuActive) {
+      props.changeCurrentDirectory(0, true);
+    } else {
+      props.changeCurrentDirectory(
+        selectedDirectory.id,
+        selectedDirectory.isRoot
+      );
+    }
+  }, [menuActive, props, selectedDirectory.id, selectedDirectory.isRoot]);
 
   return (
     <div>
@@ -35,16 +59,16 @@ const LeftMenu = (props) => {
         <ul className={styles.tab_more}>
           <li>
             <span
-              className={shortcutBox ? styles.tabon : ""}
-              onClick={() => setshortcutBox(true)}
+              className={menuActive ? styles.tabon : ""}
+              onClick={() => changeMenuActive(true)}
             >
               Shortcut
             </span>
           </li>
           <li>
             <span
-              className={shortcutBox ? "" : styles.tabon}
-              onClick={() => setshortcutBox(false)}
+              className={menuActive ? "" : styles.tabon}
+              onClick={() => changeMenuActive(false)}
             >
               Content Box
             </span>
@@ -53,7 +77,7 @@ const LeftMenu = (props) => {
       </div>
       <div
         className={styles.tabCnt}
-        style={shortcutBox ? { display: "block" } : { display: "none" }}
+        style={menuActive ? { display: "block" } : { display: "none" }}
       >
         <ul className={styles.btnBox}>
           <li>
@@ -126,7 +150,7 @@ const LeftMenu = (props) => {
       </div>
       <div
         className={styles.tabCnt}
-        style={shortcutBox ? { display: "none" } : { display: "block" }}
+        style={menuActive ? { display: "none" } : { display: "block" }}
       >
         <div className={`${styles.bgBoxLayout} ${styles.select02}`}>
           <div
@@ -156,6 +180,12 @@ const LeftMenu = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    menuActive: state.systemParamsReducers.menuActive,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     getMyContents: () => dispatch(getMyContentsAction()),
@@ -166,7 +196,13 @@ const mapDispatchToProps = (dispatch) => {
     getTrashContents: () => dispatch(getTrashContentsAction()),
     getContentsFromPath: (dirId) => dispatch(getContentsFromPathAction(dirId)),
     changeHeaderPath: (path) => dispatch(changeHeaderPathAction(path)),
+    changeMenuActive: (shortcutActive) =>
+      dispatch(changeMenuActiveAction(shortcutActive)),
+    updateCurrentPage: (currentPage) =>
+      dispatch(updateCurrentPageAction(currentPage)),
+    changeCurrentDirectory: (id, isRoot) =>
+      dispatch(changeCurrentDirectoryAction(id, isRoot)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(LeftMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(LeftMenu);

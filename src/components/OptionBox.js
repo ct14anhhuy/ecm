@@ -7,21 +7,22 @@ import {
   recoverFileAction,
   deleteFileAction,
 } from "store/fileInfo/actions";
+import { deleteDirectoryAction } from "store/diretory/actions";
 import swal from "sweetalert";
 import React from "react";
 
 const OptionBox = (props) => {
-  const { shortcutBox, headerPath } = props;
+  const { headerPath, menuActive, currentDirectory } = props.systemParams;
   const [inpSearch, setInpSearch] = useState(null);
   const [isTrash, setIsTrash] = useState(false);
 
   useEffect(() => {
-    if (headerPath === "Trash" && shortcutBox) {
+    if (headerPath === "Trash" && menuActive) {
       setIsTrash(true);
     } else {
       setIsTrash(false);
     }
-  }, [headerPath, shortcutBox]);
+  }, [headerPath, menuActive]);
 
   const handleMoveToTrash = () => {
     const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
@@ -40,11 +41,38 @@ const OptionBox = (props) => {
     }
   };
 
-  const handleDelete = () => {
+  const handleDeleteFile = () => {
     const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
     if (fileIds.length > 0) {
-      props.deleteFile(fileIds);
+      if (fileIds.length > 0) {
+        swal({
+          title: "Warning!",
+          text: `Remove ${fileIds.length} file(s)!`,
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            props.deleteFile(fileIds);
+          }
+        });
+      }
     }
+  };
+
+  const handleDeleteDirectory = () => {
+    if (currentDirectory.isRoot) return;
+    swal({
+      title: "Warning!",
+      text: "Delete this folder will delete all files inside it and cannot be recovered!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        props.deleteDirectory(currentDirectory.id);
+      }
+    });
   };
 
   const handleRecover = () => {
@@ -86,7 +114,7 @@ const OptionBox = (props) => {
               <Link
                 to="/"
                 className="optionBox__remove_a"
-                onClick={handleDelete}
+                onClick={handleDeleteFile}
               >
                 <span>
                   <em className="optionBox__remove_em">Delete</em>
@@ -106,8 +134,12 @@ const OptionBox = (props) => {
             </Link>
           ) : null}
 
-          {props.user.roleId === 1 && !shortcutBox ? (
-            <Link to="/" className="optionBox__remove_a">
+          {props.user.roleId === 1 && !menuActive ? (
+            <Link
+              to="/"
+              className="optionBox__remove_a"
+              onClick={handleDeleteDirectory}
+            >
               <span>
                 <em className="optionBox__remove_em">Delete Directory</em>
               </span>
@@ -152,7 +184,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.userReducers,
     fileInfos: state.fileInfoReducers.data,
-    headerPath: state.systemParamsReducers.headerPath,
+    systemParams: state.systemParamsReducers,
   };
 };
 
@@ -162,6 +194,7 @@ const mapDispatchToProps = (dispatch) => {
     moveToTrash: (fileIds) => dispatch(moveToTrashAction(fileIds)),
     recoverFile: (fileIds) => dispatch(recoverFileAction(fileIds)),
     deleteFile: (fileIds) => dispatch(deleteFileAction(fileIds)),
+    deleteDirectory: (id) => dispatch(deleteDirectoryAction(id)),
   };
 };
 

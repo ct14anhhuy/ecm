@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import GetBackgroundIconFromExtension from "components/common/GetBackgroundIconFromExtension";
 
 const SelectFile = (props) => {
+  
   const styles = props.styles;
-  const { key } = props.file;
-  const [fileName, setFileName] = useState(props.file.name);
+  const key = props.file.key;
+  
+  const [fileName, setFileName] = useState(props.file.fileName);
   const [editFileName, setEditFileName] = useState(false);
 
   const handleChangeFileName = () => {

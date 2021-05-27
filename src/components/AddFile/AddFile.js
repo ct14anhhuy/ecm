@@ -37,8 +37,8 @@ const AddFile = (props) => {
   const handleChangeFileName = (key, fileName) => {
     const arr = [...state.files];
     const idEdit = arr.findIndex((f) => f.key === key);
-    arr[idEdit] = { ...state.files[idEdit], name: fileName };
-    setState({ ...state, files: arr });
+    arr[idEdit] = { ...arr[idEdit], fileName };
+    setState({ ...state, files: [...arr] });
   };
 
   const handleDeleteFile = (key) => {
@@ -55,12 +55,17 @@ const AddFile = (props) => {
       ...state,
       files: [
         ...state.files,
-        Object.assign(e.target.files[0], { key: new Date().getTime() }),
+        {
+          data: e.target.files[0],
+          key: new Date().getTime(),
+          fileName: e.target.files[0].name,
+        },
       ],
     });
   };
 
-  const handleOnSelectPath = (selectedId, path) => {
+  const handleOnSelectPath = (selectedId, path, isRoot) => {
+    if (isRoot) return;
     setShowListDirectory(false);
     setSelectedPath(path);
     setState({ ...state, directoryId: selectedId });
@@ -74,7 +79,7 @@ const AddFile = (props) => {
     if (props.fileInfos.done) {
       if (!props.fileInfos.error) {
         swal("Success!", "Add file success!", "success").then(() => {
-          contextData.setShowAddFileModal(false)
+          contextData.setShowAddFileModal(false);
         });
       } else {
         swal("Failure!", "Add file failure!", "error");
@@ -83,26 +88,28 @@ const AddFile = (props) => {
   }, [contextData, props.fileInfos.done, props.fileInfos.error]);
 
   const handleAddFiles = async () => {
+    const READ_PERMISSION = 1;
+    const EDIT_PERMISSION = 2;
     let fileInfos = [];
     let viewEmps = viewRoles.map((e) => ({
       employeeId: e.id,
-      permission: 1,
+      permission: READ_PERMISSION,
     }));
     let editEmps = editRoles.map((e) => ({
       employeeId: e.id,
-      permission: 2,
+      permission: EDIT_PERMISSION,
     }));
     const fileShares = [...viewEmps, ...editEmps];
     if (state.files) {
       const { owner, tag, directoryId, securityLevel } = state;
       fileInfos = await Promise.all(
         state.files.map(async (file) => ({
-          name: file.name,
+          name: file.fileName,
           owner: owner.id,
           tag,
           directoryId,
           securityLevel,
-          fileData: await fileToByteArray(file),
+          fileData: await fileToByteArray(file.data),
         }))
       );
     }
@@ -381,11 +388,7 @@ const AddFile = (props) => {
                 </div>
               </div>
               <p className={styles.modifyBtn}>
-                <Link
-                  to="/"
-                  onClick={handleAddFiles}
-                  style={props.fileInfos.done ? { cursor: "default" } : {}}
-                >
+                <Link to="/" onClick={handleAddFiles}>
                   Add
                 </Link>
               </p>

@@ -1,5 +1,5 @@
 const GetBackgroundIconFromExtension = ({ fileName }) => {
-  let extension = fileName.split(".").pop();
+  let extension = fileName.split(".").pop().toLowerCase();
   let img = (
     <img
       alt=""

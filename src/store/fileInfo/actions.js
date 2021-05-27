@@ -186,7 +186,7 @@ const addFilesAction = (fileInfos, fileShares) => {
   return async (dispatch) => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE,
+        type: types.BEGIN_UPDATE_FILE,
       });
       const files = await fileInfoService.addFiles(fileInfos);
       for (const file of files) {
@@ -195,11 +195,12 @@ const addFilesAction = (fileInfos, fileShares) => {
         );
       }
       dispatch({
-        type: types.UPDATE_SUCCESS,
+        type: types.UPDATE_FILE_SUCCESS,
       });
     } catch (error) {
+      console.log(error);
       dispatch({
-        type: types.UPDATE_FAILURE,
+        type: types.UPDATE_FILE_FAILURE,
       });
     }
   };
