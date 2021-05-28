@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
 import Filter from "./Filter";
-import AddFile from "components/AddFile/AddFile";
+import AddFile from "components/register/AddFile";
+import EditFile from "components/register/EditFile";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import OptionBox from "./OptionBox";
 import MainTable from "./MainTable";
-import { MainContext } from "context";
 import CreateDirectory from "./CreateDirectory";
 import Paging from "./Paging";
 import * as exts from "utils/extTypes";
@@ -21,19 +21,23 @@ import { getDepartmentsAction } from "store/department/actions";
 import "assets/css/main.css";
 
 const App = (props) => {
-  const [showAddFileModal, setShowAddFileModal] = useState(false);
-  const [showCreateDirectoryModal, setShowCreateDirectoryModal] =
-    useState(false);
-  const [showOpenContent, setShowOpenContent] = useState(false);
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
-  const [selectedItem, setSelectedItem] = useState({});
+
+  const {
+    showAddFile,
+    showEditFile,
+    showCreateDirectory,
+    showOpenContent,
+  } = props.systemParams;
+
+  const { getDirectories, getMyContents, getDepartments } = props;
 
   useEffect(() => {
-    props.getDirectories();
-    props.getMyContents();
-    props.getDepartments();
-  }, [props]);
+    getDirectories();
+    getMyContents();
+    getDepartments();
+  }, [getDepartments, getDirectories, getMyContents]);
 
   return (
     <React.Fragment>
@@ -78,21 +82,14 @@ const App = (props) => {
                 <div className="areaCBox">
                   <Navbar />
                   <div className="listContent">
-                    <OptionBox
-                      setShowAddModal={setShowAddFileModal}
-                      setShowCreateDirectoryModal={setShowCreateDirectoryModal}
-                    />
+                    <OptionBox />
                     <div className="normalList">
                       <Filter
                         filterExt={filterExt}
                         setFilterExt={setFilterExt}
                       />
                       <div>
-                        <MainContext.Provider
-                          value={{ setSelectedItem, setShowOpenContent }}
-                        >
-                          <MainTable filterExt={filterExt} />
-                        </MainContext.Provider>
+                        <MainTable filterExt={filterExt} />
                       </div>
                       <Paging />
                     </div>
@@ -105,26 +102,18 @@ const App = (props) => {
         <Footer />
       </div>
 
-      {showAddFileModal ? (
-        <MainContext.Provider value={{ setShowAddFileModal }}>
-          <AddFile />
-        </MainContext.Provider>
-      ) : null}
-
-      {showCreateDirectoryModal ? (
-        <CreateDirectory
-          setShowCreateDirectoryModal={setShowCreateDirectoryModal}
-        />
-      ) : null}
-
-      {showOpenContent ? (
-        <OpenContent
-          selectedItem={selectedItem}
-          setShowOpenContent={setShowOpenContent}
-        />
-      ) : null}
+      {showAddFile ? <AddFile /> : null}
+      {showEditFile ? <EditFile /> : null}
+      {showCreateDirectory ? <CreateDirectory /> : null}
+      {showOpenContent ? <OpenContent /> : null}
     </React.Fragment>
   );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    systemParams: state.systemParamsReducers,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -135,4 +124,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

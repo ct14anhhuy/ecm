@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getFileUrlAction } from "store/fileUrl/actions";
+import { changeShowOpenContentAction } from "store/systemParams/actions";
 
 import styles from "assets/css/modules/OpenContent.module.css";
 
 const OpenContent = (props) => {
   const { editUrl, viewUrl } = props.fileUrl;
-  const { selectedItem, getFileUrl } = props;
+  const { getFileUrl } = props;
+  const { selectedItem } = props.systemParams;
 
   useEffect(() => {
     getFileUrl(selectedItem.id);
@@ -59,7 +61,7 @@ const OpenContent = (props) => {
               <Link
                 className={styles.close}
                 to="/"
-                onClick={() => props.setShowOpenContent(false)}
+                onClick={() => props.changeShowOpenContent()}
               >
                 <img
                   alt=""
@@ -81,7 +83,7 @@ const OpenContent = (props) => {
                       <th style={{ width: 150 }}>File Name</th>
                       <td style={{ msWordBreak: "break-all" }}>
                         <div className={styles.conText}>
-                          <span>{props.selectedItem.name}</span>
+                          <span>{selectedItem.name}</span>
                         </div>
                       </td>
                     </tr>
@@ -103,12 +105,14 @@ const OpenContent = (props) => {
 const mapStateToProps = (state) => {
   return {
     fileUrl: state.fileUrlReducers,
+    systemParams: state.systemParamsReducers,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getFileUrl: (id) => dispatch(getFileUrlAction(id)),
+    changeShowOpenContent: () => dispatch(changeShowOpenContentAction()),
   };
 };
 

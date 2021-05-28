@@ -7,6 +7,12 @@ const initState = {
     isRoot: true,
   },
   menuActive: true,
+  showAddFile: false,
+  showEditFile: false,
+  showCreateDirectory: false,
+  showOpenContent: false,
+  selectedItem: {},
+  editItem: {},
 };
 
 const systemParamsReducers = (state = initState, action) => {
@@ -24,6 +30,18 @@ const systemParamsReducers = (state = initState, action) => {
           isRoot: action.payload.isRoot,
         },
       };
+    case types.CHANGE_SHOW_ADD_FILE:
+      return { ...state, showAddFile: !state.showAddFile };
+    case types.CHANGE_SHOW_EDIT_FILE:
+      return { ...state, showEditFile: !state.showEditFile };
+    case types.CHANGE_SHOW_CREATE_DIRECTORY:
+      return { ...state, showCreateDirectory: !state.showCreateDirectory };
+    case types.CHANGE_SHOW_OPEN_CONTENT:
+      return { ...state, showOpenContent: !state.showOpenContent };
+    case types.CHANGE_SELECTED_ITEM:
+      return { ...state, selectedItem: action.payload.selectedItem };
+    case types.CHANGE_EDIT_ITEM:
+      return { ...state, editItem: action.payload.editItem };
     default:
       return state;
   }

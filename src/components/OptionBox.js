@@ -8,6 +8,10 @@ import {
   deleteFileAction,
 } from "store/fileInfo/actions";
 import { deleteDirectoryAction } from "store/diretory/actions";
+import {
+  changeShowAddFileAction,
+  changeShowCreateDirectoryAction,
+} from "store/systemParams/actions";
 import swal from "sweetalert";
 import React from "react";
 
@@ -86,7 +90,7 @@ const OptionBox = (props) => {
     <div className="optionBox" style={{ display: "block" }}>
       <div className="left" style={{ display: "block", zIndex: 4 }}>
         <div className="sorting_btn">
-          <Link to="/" onClick={() => props.setShowAddModal(true)}>
+          <Link to="/" onClick={() => props.changeShowAddFile()}>
             <span>
               <em className="add">Add File</em>
             </span>
@@ -126,7 +130,7 @@ const OptionBox = (props) => {
           {props.user.roleId === 1 ? (
             <Link
               to="/"
-              onClick={() => props.setShowCreateDirectoryModal(true)}
+              onClick={() => props.changeShowCreateDirectory()}
             >
               <span>
                 <em className="new">Create Directory</em>
@@ -195,6 +199,9 @@ const mapDispatchToProps = (dispatch) => {
     recoverFile: (fileIds) => dispatch(recoverFileAction(fileIds)),
     deleteFile: (fileIds) => dispatch(deleteFileAction(fileIds)),
     deleteDirectory: (id) => dispatch(deleteDirectoryAction(id)),
+    changeShowAddFile: () => dispatch(changeShowAddFileAction()),
+    changeShowCreateDirectory: () =>
+      dispatch(changeShowCreateDirectoryAction()),
   };
 };
 

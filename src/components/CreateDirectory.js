@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import TreeView from "./TreeView";
 import { connect } from "react-redux";
 import { createDirectoryAction } from "store/diretory/actions";
+import { changeShowCreateDirectoryAction } from "store/systemParams/actions";
 import swal from "sweetalert";
 
 import styles from "assets/css/modules/CreateDirectory.module.css";
@@ -42,7 +43,7 @@ const CreateDirectory = (props) => {
     if (props.directories.done) {
       if (!props.directories.error) {
         swal("Success!", "Create directory success!", "success").then(() => {
-          props.setShowCreateDirectoryModal(false);
+          props.changeShowCreateDirectory();
         });
       } else {
         swal("Failure!", "Create directory failure!", "error");
@@ -98,7 +99,7 @@ const CreateDirectory = (props) => {
               <Link
                 className={styles.close}
                 to="/"
-                onClick={() => props.setShowCreateDirectoryModal(false)}
+                onClick={() => props.changeShowCreateDirectory()}
               >
                 <img
                   alt=""
@@ -222,6 +223,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createDirectory: (directory) => dispatch(createDirectoryAction(directory)),
+    changeShowCreateDirectory: () =>
+      dispatch(changeShowCreateDirectoryAction()),
   };
 };
 

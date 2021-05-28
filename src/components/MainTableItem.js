@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import {
   changeFavoriteAction,
@@ -6,15 +6,19 @@ import {
   changeCheckedAction,
 } from "store/fileInfo/actions";
 import { getFileShareUrlAction } from "store/fileUrl/actions";
+import {
+  changeShowEditFileAction,
+  changeShowOpenContentAction,
+  changeSelectedItemAction,
+  changeEditItemAction,
+} from "store/systemParams/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { MainContext } from "context";
 import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
 import React from "react";
 
 const MainTableItem = (props) => {
   const { fileUrl, fileInfo, user, headerPath, menuActive } = props;
-  var contextData = useContext(MainContext);
   const [isTrash, setIsTrash] = useState(false);
 
   const node = useRef();
@@ -49,6 +53,11 @@ const MainTableItem = (props) => {
 
   const handleOnCopyUrl = () => {
     props.getFileShareUrl(fileInfo.id);
+  };
+
+  const handleEditFile = (editItem) => {
+    props.changeEditItem(editItem);
+    props.changeShowEditFile();
   };
 
   const renderInTrash = (
@@ -165,8 +174,8 @@ const MainTableItem = (props) => {
             <Link
               to="/"
               onDoubleClick={() => {
-                contextData.setSelectedItem(fileInfo);
-                contextData.setShowOpenContent(true);
+                props.changeSelectedItem(fileInfo);
+                props.changeShowOpenContent();
               }}
             >
               <GetBackgroundIconFromExtension fileName={fileInfo.name} />
@@ -189,15 +198,21 @@ const MainTableItem = (props) => {
             style={{ top: 16, display: "none" }}
             onClick={() => (node.current.style.display = "none")}
           >
-            <li style={{ fontWeight: "bold" }}>
-              {fileInfo.owner === user.epLiteId ? (
+            {fileInfo.owner === user.epLiteId ? (
+              <li style={{ fontWeight: "bold" }}>
                 <Link to="/" onClick={handleOnCopyUrl}>
                   Copy URL
                 </Link>
-              ) : (
+                <Link to="/" onClick={() => handleEditFile(fileInfo)}>
+                  Edit
+                </Link>
+              </li>
+            ) : (
+              <li style={{ fontWeight: "bold" }}>
                 <span>Copy URL</span>
-              )}
-            </li>
+                <span>Edit</span>
+              </li>
+            )}
           </ul>
         </div>
       </td>
@@ -224,18 +239,17 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeFavorite: (id, employeeId) => {
-      dispatch(changeFavoriteAction(id, employeeId));
-    },
-    changeImportant: (id, employeeId) => {
-      dispatch(changeImportantAction(id, employeeId));
-    },
-    changeChecked: (id, checked) => {
-      dispatch(changeCheckedAction(id, checked));
-    },
-    getFileShareUrl: (id) => {
-      dispatch(getFileShareUrlAction(id));
-    },
+    changeFavorite: (id, employeeId) =>
+      dispatch(changeFavoriteAction(id, employeeId)),
+    changeImportant: (id, employeeId) =>
+      dispatch(changeImportantAction(id, employeeId)),
+    changeChecked: (id, checked) => dispatch(changeCheckedAction(id, checked)),
+    getFileShareUrl: (id) => dispatch(getFileShareUrlAction(id)),
+    changeShowEditFile: () => dispatch(changeShowEditFileAction()),
+    changeShowOpenContent: () => dispatch(changeShowOpenContentAction()),
+    changeSelectedItem: (selectedItem) =>
+      dispatch(changeSelectedItemAction(selectedItem)),
+    changeEditItem: (editItem) => dispatch(changeEditItemAction(editItem)),
   };
 };
 

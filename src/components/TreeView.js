@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { Tree, Row, Col } from "antd";
 import { connect } from "react-redux";
 
-const TreeView = (props) => {
+const TreeView = forwardRef((props, ref) => {
+  const { nodeId } = props;
   const [state, setState] = useState({
     flatTree: [],
     hirarchicalTree: [],
@@ -99,6 +105,15 @@ const TreeView = (props) => {
     }
   };
 
+  useImperativeHandle(ref, () => ({
+    handleGetPath,
+  }));
+
+  const handleGetPath = () => {
+    const path = getPath(state.hirarchicalTree, "children", "id", nodeId);
+    return path;
+  };
+
   return (
     <React.Fragment>
       <Row style={{ width: "100%" }}>
@@ -112,7 +127,7 @@ const TreeView = (props) => {
       </Row>
     </React.Fragment>
   );
-};
+});
 
 const mapStateToProps = (state) => {
   return {
@@ -120,4 +135,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(TreeView);
+export default connect(mapStateToProps, null, null, { forwardRef: true })(
+  TreeView
+);
