@@ -16,4 +16,12 @@ const getByDepartment = async (depId) => {
     });
 };
 
-export const employeeService = { searchByName, getByDepartment };
+const getFileShared = async (fileId) => {
+  return await api
+    .get("/FileShare/GetFileShared?fileId=" + fileId)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export const employeeService = { searchByName, getByDepartment, getFileShared };

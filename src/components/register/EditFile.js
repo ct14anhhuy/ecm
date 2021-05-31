@@ -6,20 +6,23 @@ import SelectFile from "./SelectFile";
 import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
 import { changeShowEditFileAction } from "store/systemParams/actions";
+import { getFileSharedAction } from "store/employee/actions";
+import { VIEW_PERMISSION, EDIT_PERMISSION } from "utils/commonConstants";
 
 import styles from "assets/css/modules/AddEdit.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const EditFile = (props) => {
-  const fileRef = useRef();
   const tvRef = useRef();
 
   const { editItem } = props.systemParams;
-  const { owner } = props;
+  const { owner, sharedEmps, getFileShared } = props;
 
   const [state, setState] = useState({
     directoryId: editItem.directoryId,
+    tag: editItem.tag,
+    securityLevel: editItem.securityLevel,
     file: { fileName: editItem.name },
   });
 
@@ -30,35 +33,36 @@ const EditFile = (props) => {
 
   // const firstUpdate = useRef(true);
 
-  // const handleChangeFileName = (key, fileName) => {
-  //   const arr = [...state.files];
-  //   const idEdit = arr.findIndex((f) => f.key === key);
-  //   arr[idEdit] = { ...arr[idEdit], fileName };
-  //   setState({ ...state, files: [...arr] });
-  // };
+  const handleChangeFileName = (key, fileName) => {
+    setState({ ...state, file: fileName });
+  };
 
-  // const handleDeleteFile = (key) => {
-  //   const arr = state.files.filter((f) => f.key !== key);
-  //   setState({
-  //     ...state,
-  //     files: arr,
-  //   });
-  // };
+  useEffect(() => {
+    setEditRoles(
+      sharedEmps.filter((e) => e.roleId === EDIT_PERMISSION)
+    );
+    setViewRoles(
+      sharedEmps.filter((e) => e.roleId === VIEW_PERMISSION)
+    );
+  }, [sharedEmps]);
 
-  // const handleSelectFile = (e) => {
-  //   if (!e.target.files[0]) return;
-  //   setState({
-  //     ...state,
-  //     files: [
-  //       ...state.files,
-  //       {
-  //         data: e.target.files[0],
-  //         key: new Date().getTime(),
-  //         fileName: e.target.files[0].name,
-  //       },
-  //     ],
-  //   });
-  // };
+  useEffect(() => {
+    setTimeout(() => {
+      const path = tvRef.current.handleGetPath();
+      setSelectedPath(path);
+    }, 100);
+  }, []);
+
+  useEffect(() => {
+    getFileShared(editItem.id);
+  }, [editItem.id, getFileShared]);
+
+  const handleOnSelectPath = (selectedId, path, isRoot) => {
+    if (isRoot) return;
+    setShowListDirectory(false);
+    setSelectedPath(path);
+    setState({ ...state, directoryId: selectedId });
+  };
 
   // useEffect(() => {
   //   if (firstUpdate.current) {
@@ -77,12 +81,10 @@ const EditFile = (props) => {
   // }, [props]);
 
   // const handleAddFiles = async () => {
-  //   const READ_PERMISSION = 1;
-  //   const EDIT_PERMISSION = 2;
   //   let fileInfos = [];
   //   let viewEmps = viewRoles.map((e) => ({
   //     employeeId: e.id,
-  //     permission: READ_PERMISSION,
+  //     permission: VIEW_PERMISSION,
   //   }));
   //   let editEmps = editRoles.map((e) => ({
   //     employeeId: e.id,
@@ -104,18 +106,6 @@ const EditFile = (props) => {
   //   }
   //   props.addFiles(fileInfos, fileShares);
   // };
-
-
-  useEffect(() => {
-    tvRef.current.handleGetPath(editItem.selectedId);
-  }, [editItem.selectedId]);
-
-  const handleOnSelectPath = (selectedId, path, isRoot) => {
-    if (isRoot) return;
-    setShowListDirectory(false);
-    setSelectedPath(path);
-    setState({ ...state, directoryId: selectedId });
-  };
 
   return (
     <React.Fragment>
@@ -177,21 +167,14 @@ const EditFile = (props) => {
                 <div className={styles.columnBox}>
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Content List</span>
-                    <input
-                      type="file"
-                      id="file"
-                      ref={fileRef}
-                      style={{ display: "none" }}
-                      // onChange={handleSelectFile}
-                    />
                   </p>
                   <div className={styles.contentList}>
                     <ul className={styles.list}>
                       <SelectFile
                         file={state.file}
                         styles={styles}
-                        // handleChangeFileName={handleChangeFileName}
-                        // handleDeleteFile={handleDeleteFile}
+                        showDeleteButton={false}
+                        handleChangeFileName={handleChangeFileName}
                       />
                     </ul>
                   </div>
@@ -282,7 +265,7 @@ const EditFile = (props) => {
                     <div className={styles.safe_btn_box}>
                       <Link
                         className={`${styles.btn_safe1} ${
-                          editItem.securityLevel === "Secret" ? styles.on : ""
+                          state.securityLevel === "Secret" ? styles.on : ""
                         }`}
                         to="/"
                         onClick={(e) =>
@@ -293,7 +276,7 @@ const EditFile = (props) => {
                       </Link>
                       <Link
                         className={`${styles.btn_safe2} ${
-                          editItem.securityLevel === "Secret A/Not Open"
+                          state.securityLevel === "Secret A/Not Open"
                             ? styles.on
                             : ""
                         }`}
@@ -306,7 +289,7 @@ const EditFile = (props) => {
                       </Link>
                       <Link
                         className={`${styles.btn_safe3} ${
-                          editItem.securityLevel === "Secret A" ? styles.on : ""
+                          state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
                         to="/"
                         onClick={(e) =>
@@ -317,7 +300,7 @@ const EditFile = (props) => {
                       </Link>
                       <Link
                         className={`${styles.btn_safe4} ${
-                          editItem.securityLevel === "Secret B/Not Open"
+                          state.securityLevel === "Secret B/Not Open"
                             ? styles.on
                             : ""
                         }`}
@@ -330,7 +313,7 @@ const EditFile = (props) => {
                       </Link>
                       <Link
                         className={`${styles.btn_safe5} ${
-                          editItem.securityLevel === "Secret B" ? styles.on : ""
+                          state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
                         to="/"
                         onClick={(e) =>
@@ -341,7 +324,7 @@ const EditFile = (props) => {
                       </Link>
                       <Link
                         className={`${styles.btn_safe6} ${
-                          editItem.securityLevel === "Public" ? styles.on : ""
+                          state.securityLevel === "Public" ? styles.on : ""
                         }`}
                         to="/"
                         onClick={(e) =>
@@ -359,9 +342,9 @@ const EditFile = (props) => {
                     <input
                       type="text"
                       value={state.tag}
-                      onChange={(e) => {
-                        setState({ ...state, tag: e.target.value });
-                      }}
+                      onChange={(e) =>
+                        setState({ ...state, tag: e.target.value })
+                      }
                     />
                   </div>
                   <p className={styles.popSubTitle}>
@@ -379,17 +362,7 @@ const EditFile = (props) => {
                 </div>
               </div>
               <p className={styles.modifyBtn}>
-                <Link
-                  to="/"
-                  // onClick={handleAddFiles}
-                  onClick={() =>
-                    console.log(
-                      tvRef.current.handleGetPath(editItem.selectedId)
-                    )
-                  }
-                >
-                  Add
-                </Link>
+                <Link to="/">Confirm</Link>
               </p>
             </div>
           </div>
@@ -404,12 +377,14 @@ const mapStateToProps = (state) => {
     fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
     systemParams: state.systemParamsReducers,
+    sharedEmps: state.employeeReducers.sharedEmps,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     changeShowEditFile: () => dispatch(changeShowEditFileAction()),
+    getFileShared: (fileId) => dispatch(getFileSharedAction(fileId)),
   };
 };
 

@@ -688,7 +688,7 @@ a:hover {
 .innFooter {
   position: relative;
   min-width: 944px;
-  margin: 0 40px;
+  height: 100%;
 }
 .btnPrivate {
   position: absolute;
@@ -742,7 +742,6 @@ a:hover {
   min-height: 740px;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
-  *z-index: 10;
 }
 .ecmContent .areaC:before {
   position: absolute;
@@ -1451,7 +1450,6 @@ body {
   background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
 }
 .contentList .list li {
-  *float: left;
   overflow: hidden;
   height: 31px;
   padding: 0 20px 0 12px;
@@ -1617,7 +1615,6 @@ body {
 .positionBox .positionSearch {
   padding: 5px 13px 15px 13px;
   border: 2px solid #658dc1;
-  *zoom: 1;
 }
 .positionBox .positionSearch:after {
   clear: both;
@@ -1987,7 +1984,6 @@ body {
 .raiBox {
   padding: 5px 13px 15px 13px;
   border: 2px solid #658dc1;
-  *zoom: 1;
 }
 .raiBox .raiTxt {
   margin-bottom: 15px;
@@ -2135,7 +2131,6 @@ body {
   display: block;
 }
 .latelyBox ul li {
-  *float: left;
   width: 469px;
   padding: 8px 8px 9px 13px;
   white-space: nowrap;
@@ -2432,7 +2427,6 @@ label {
 
 .popProperty01 .contents .subTab02 {
   padding: 10px 0 18px 20px;
-  *zoom: 1;
 }
 .popProperty01 .contents .subTab02:after {
   clear: both;
@@ -2461,7 +2455,6 @@ label {
 
 .popProperty01 .contents .subTab03 {
   padding: 10px 0 18px 20px;
-  *zoom: 1;
 }
 .popProperty01 .contents .subTab03:after {
   clear: both;
@@ -3199,7 +3192,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   display: block;
 }
 .latelyFileTypeBox ul li {
-  *float: left;
   width: 469px;
   padding: 8px 8px 9px 13px;
   white-space: nowrap;
@@ -3571,7 +3563,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .contents.type_2 .subTab02 {
   padding: 10px 0 18px 80px;
-  *zoom: 1;
 }
 .contents.type_2 .subTab02:after {
   clear: both;

@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import GetBackgroundIconFromExtension from "components/common/GetBackgroundIconFromExtension";
 
 const SelectFile = (props) => {
-  
   const styles = props.styles;
   const key = props.file.key;
-  
+
   const [fileName, setFileName] = useState(props.file.fileName);
   const [editFileName, setEditFileName] = useState(false);
 
@@ -54,14 +53,17 @@ const SelectFile = (props) => {
               }
             />
           </Link>
-          <Link className={styles.btnDel} to="/" onClick={handleDeleteFile}>
-            <img
-              alt=""
-              src={
-                require("assets/img/popup/ico/ico_contentList_del.png").default
-              }
-            />
-          </Link>
+          {props.showDeleteButton ? (
+            <Link className={styles.btnDel} to="/" onClick={handleDeleteFile}>
+              <img
+                alt=""
+                src={
+                  require("assets/img/popup/ico/ico_contentList_del.png")
+                    .default
+                }
+              />
+            </Link>
+          ) : null}
         </span>
       </span>
       <span
@@ -90,14 +92,17 @@ const SelectFile = (props) => {
               src={require("assets/img/popup/ico/ico_check.png").default}
             />
           </Link>
-          <Link className={styles.btnDel} to="/" onClick={handleDeleteFile}>
-            <img
-              alt=""
-              src={
-                require("assets/img/popup/ico/ico_contentList_del.png").default
-              }
-            />
-          </Link>
+          {props.showDeleteButton ? (
+            <Link className={styles.btnDel} to="/" onClick={handleDeleteFile}>
+              <img
+                alt=""
+                src={
+                  require("assets/img/popup/ico/ico_contentList_del.png")
+                    .default
+                }
+              />
+            </Link>
+          ) : null}
         </span>
       </span>
     </li>

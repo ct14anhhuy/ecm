@@ -688,7 +688,7 @@ a:hover {
 .innFooter {
   position: relative;
   min-width: 944px;
-  margin: 0 40px;
+  height: 100%;
 }
 .btnPrivate {
   position: absolute;
@@ -742,7 +742,6 @@ a:hover {
   min-height: 740px;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
-  *z-index: 10;
 }
 .ecmContent .areaC:before {
   position: absolute;
@@ -2645,11 +2644,9 @@ label {
 .bgBoxLayout .bgBoxContent {
   background: url("assets/img/contents/ecmMain/bg_boxBot.png") 0 bottom
     no-repeat;
-  *zoom: 1;
 }
 .bgBoxLayout .bgBoxContent .alim {
   background: url("assets/img/contents/ecmMain/bg_alim02.gif") 2px 0 no-repeat;
-  *zoom: 1;
 }
 .bgBoxLayout .bgBoxContent .alim:after {
   clear: both;
@@ -2775,7 +2772,6 @@ label {
 .bgBoxLayout .recom li {
   padding: 8px 5px 6px 10px;
   border-bottom: 1px solid #e3e3e3;
-  *zoom: 1;
 }
 .bgBoxLayout .recom li:first-child {
   padding-top: 4px;
@@ -3247,7 +3243,6 @@ label {
 .listContent .thumnList .thumn {
   margin-right: -12px;
   padding-bottom: 18px;
-  *zoom: 1;
 }
 .listContent .thumnList .thumn:after {
   clear: both;
@@ -3397,11 +3392,9 @@ label {
   display: block;
   position: relative;
   width: 160px;
-  *width: 158px;
   height: 23px;
   margin-top: -1px;
   padding: 10px 9px 0 0;
-  *padding: 10px 11px 0 0;
   color: #018dee;
   text-align: center;
   border: 1px solid #648ec3;
@@ -3494,8 +3487,6 @@ label {
   width: 16px;
   height: 16px;
   padding: 0;
-  *float: none;
-  *display: inline-block;
 }
 .normalTb tbody td .contentTitle a {
   color: #000;
@@ -3535,8 +3526,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   width: 16px;
   height: 16px;
   padding: 0;
-  *float: none;
-  *display: inline-block;
 }
 .normalTb tbody td .contentTitle2 a {
   color: #000;
@@ -3579,7 +3568,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .normalTb tbody tr.btnAdd td .addBox {
   position: relative;
   display: inline-block;
-  *display: inline;
   vertical-align: top;
 }
 .normalTb tbody tr.btnAddOn td .addBox .btn_sel,
@@ -3615,8 +3603,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   position: relative;
   margin-bottom: 25px;
   border-right: 1px solid #d6d6d6;
-  *z-index: 5;
-  *zoom: 1;
 }
 .normalUL:after {
   clear: both;
@@ -3638,7 +3624,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   line-height: 17px;
   text-align: center;
   border-bottom: 1px solid #d6d6d6;
-  *vertical-align: top;
 }
 .listColumn > li:after {
   clear: both;
@@ -3673,7 +3658,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   float: right;
   margin-left: -10px;
   padding: 6px 10px;
-  *padding: 0 10px 6px 10px;
 }
 .listColumn li .i_check {
   display: inline-block;
@@ -3769,7 +3753,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 
 .best {
-  *position: relative;
   width: 195px;
   margin-left: 1px;
   padding-bottom: 5px;
@@ -4093,7 +4076,6 @@ a.btn_content:hover {
 }
 
 #popLayerB .contents .columnR {
-  *position: relative;
   float: left;
   width: 676px;
   height: 535px;
@@ -4170,7 +4152,6 @@ a.btn_content:hover {
   padding: 6px 10px 0 10px;
   background-color: #f2f2f2;
   overflow: hidden;
-  *zoom: 1;
 }
 #popLayerB .contents .securityBox:after {
   clear: both;
@@ -4402,7 +4383,6 @@ a.btn_content:hover {
   color: #222;
   background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 bottom
     repeat-x;
-  *zoom: 1;
 }
 .columnBox:after,
 .columnBoxs:after {
@@ -4465,7 +4445,6 @@ a.btn_content:hover {
 
 .columnBoxs {
   margin-bottom: 18px;
-  *zoom: 1;
 }
 .columnBox .maxH,
 .columnBoxs .maxH {
@@ -4477,12 +4456,10 @@ a.btn_content:hover {
 .columnBox .maxH .marR17,
 .columnBoxs .maxH .marR17 {
   margin-right: -17px;
-  *margin-right: 0;
 }
 .columnBox .maxH .marR1,
 .columnBoxs .maxH .marR1 {
   margin-right: -1px;
-  *margin-right: 0;
 }
 .columnBox .solo,
 .columnBoxs .solo {
@@ -4503,7 +4480,6 @@ a.btn_content:hover {
 
 .popSearchBox {
   margin-bottom: 17px;
-  *zoom: 1;
 }
 .popSearchBox:after {
   clear: both;
@@ -4610,7 +4586,6 @@ a.btn_content:hover {
 #popLayerA .contents .tabBox {
   margin-bottom: 20px;
   border-bottom: 1px solid #d9d9d9;
-  *zoom: 1;
 }
 #popLayerA .contents .tabBox:after {
   clear: both;
@@ -5069,9 +5044,6 @@ normalPopTb .UlSelectize .optgroupTitle {
   border-bottom: 1px solid #518ef1;
   background-color: #fff;
 }
-.ecmWrap .choiceBox .choice ul {
-  *padding-bottom: 4px;
-}
 .ecmWrap .choiceBox .choice .btnSpe,
 .ecmWrap .choiceBox .choice .btnEtc {
   margin: 6px -20px 0 -24px;
@@ -5405,7 +5377,6 @@ normalPopTb .UlSelectize .optgroupTitle {
 
 #popLayerB .contents .tabBox {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 #popLayerB .contents .tabBox:after {
   clear: both;
@@ -5515,8 +5486,6 @@ table.historyTB03 .contentTitle {
   padding-left: 20px;
   line-height: 16px;
   display: block;
-  *display: inline-block;
-  *width: 80%;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -5744,7 +5713,6 @@ table.raiT3 tbody td .i_check em {
 
 .tabDiv .columnBoxs {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 .hei176 {
   max-height: 176px;
@@ -5981,7 +5949,6 @@ table.raiT3 tbody td .i_check em {
 }
 .scrolArea .maxH .marR17 {
   margin-right: -17px;
-  *margin-right: 0;
 }
 .normalTb {
   margin-bottom: -1px;
@@ -6114,9 +6081,6 @@ table.conDel01 .maxH {
   max-height: 70px;
 }
 
-#popLayerB .contents .popCon {
-  *zoom: 1;
-}
 #popLayerB .contents .popCon:after {
   clear: both;
   content: "";
@@ -6196,7 +6160,6 @@ table.conDel01 .maxH {
   overflow: hidden;
   height: 24px;
   padding: 10px 0 7px 0;
-  *zoom: 1;
 }
 .textRSearch:after {
   clear: both;
@@ -6411,7 +6374,6 @@ table.subL td img {
 
 #ecm_popup_attr05 .partBox01 .tabBox {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 #ecm_popup_attr05 .partBox01 .tabBox:after {
   clear: both;
@@ -6655,7 +6617,6 @@ table.subL td img {
 .printingContent .searchBox .btn_whiteS_typeA,
 .printingContent .searchBox .btn_whiteS_typeB {
   vertical-align: middle;
-  *vertical-align: top;
 }
 .printingContent .searchBox .DivSelectyze {
   position: relative;

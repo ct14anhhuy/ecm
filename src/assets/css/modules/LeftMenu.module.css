@@ -688,7 +688,7 @@ a:hover {
 .innFooter {
   position: relative;
   min-width: 944px;
-  margin: 0 40px;
+  height: 100%;
 }
 .btnPrivate {
   position: absolute;
@@ -742,7 +742,6 @@ a:hover {
   min-height: 740px;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
-  *z-index: 10;
 }
 .ecmContent .areaC:before {
   position: absolute;

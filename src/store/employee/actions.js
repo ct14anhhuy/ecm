@@ -33,4 +33,20 @@ const getByDepartmentAction = (depId) => {
   };
 };
 
-export { searchByNameAction, getByDepartmentAction };
+const getFileSharedAction = (fileId) => {
+  return async (dispatch) => {
+    try {
+      const fileShared = await employeeService.getFileShared(fileId);
+      dispatch({
+        type: types.GET_FILE_SHARED,
+        payload: {
+          employees: fileShared.map((f) => f.employee),
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export { searchByNameAction, getByDepartmentAction, getFileSharedAction };

@@ -688,7 +688,7 @@ a:hover {
 .innFooter {
   position: relative;
   min-width: 944px;
-  margin: 0 40px;
+  height: 100%;
 }
 .btnPrivate {
   position: absolute;
@@ -742,7 +742,6 @@ a:hover {
   min-height: 740px;
   border-left: 1px solid #f3f3f3;
   border-right: 1px solid #f3f3f3;
-  *z-index: 10;
 }
 .ecmContent .areaC:before {
   position: absolute;
@@ -1276,7 +1275,6 @@ body {
   background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
 }
 .contentList .list li {
-  *float: left;
   overflow: hidden;
   height: 31px;
   padding: 0 20px 0 12px;
@@ -1442,7 +1440,6 @@ body {
 .positionBox .positionSearch {
   padding: 5px 13px 15px 13px;
   border: 2px solid #658dc1;
-  *zoom: 1;
 }
 .positionBox .positionSearch:after {
   clear: both;
@@ -1812,7 +1809,6 @@ body {
 .raiBox {
   padding: 5px 13px 15px 13px;
   border: 2px solid #658dc1;
-  *zoom: 1;
 }
 .raiBox .raiTxt {
   margin-bottom: 15px;
@@ -1960,7 +1956,6 @@ body {
   display: block;
 }
 .latelyBox ul li {
-  *float: left;
   width: 469px;
   padding: 8px 8px 9px 13px;
   white-space: nowrap;
@@ -2257,7 +2252,6 @@ label {
 
 .popProperty01 .contents .subTab02 {
   padding: 10px 0 18px 20px;
-  *zoom: 1;
 }
 .popProperty01 .contents .subTab02:after {
   clear: both;
@@ -2286,7 +2280,6 @@ label {
 
 .popProperty01 .contents .subTab03 {
   padding: 10px 0 18px 20px;
-  *zoom: 1;
 }
 .popProperty01 .contents .subTab03:after {
   clear: both;
@@ -3024,7 +3017,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   display: block;
 }
 .latelyFileTypeBox ul li {
-  *float: left;
   width: 469px;
   padding: 8px 8px 9px 13px;
   white-space: nowrap;
@@ -3396,7 +3388,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .contents.type_2 .subTab02 {
   padding: 10px 0 18px 80px;
-  *zoom: 1;
 }
 .contents.type_2 .subTab02:after {
   clear: both;
@@ -4400,7 +4391,7 @@ label {
   padding-bottom: 0;
   font-size: 13px;
   cursor: pointer;
-} /* 20120619수정 */
+}
 
 .i_check input,
 .i_radio input {
@@ -4423,7 +4414,6 @@ label {
   left: -9999px;
 }
 
-/* 블루1 버튼 S */
 .btn_blueS_typeA {
   position: relative;
   height: 25px;
@@ -4460,7 +4450,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 블루1 버튼 M */
 .btn_blueM_typeA {
   position: relative;
   height: 25px;
@@ -4497,7 +4486,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 블루1 버튼 L */
 .btn_blueL_typeA {
   position: relative;
   height: 25px;
@@ -4534,7 +4522,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 블루2 버튼 S */
 .btn_blueS_typeB {
   position: relative;
   height: 25px;
@@ -4571,7 +4558,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 블루2 버튼 M */
 .btn_blueM_typeB {
   position: relative;
   height: 25px;
@@ -4608,7 +4594,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 블루2 버튼 L */
 .btn_blueL_typeC {
   position: relative;
   height: 25px;
@@ -4645,7 +4630,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 블루2 버튼 M_작은패딩 */
 .btn_blueM_typeB_ps {
   position: relative;
   height: 25px;
@@ -4682,7 +4666,6 @@ label {
   padding: 10px 12px 11px 10px;
 }
 
-/* 화이트1 버튼 S */
 .btn_whiteS_typeA {
   position: relative;
   height: 25px;
@@ -4753,7 +4736,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 화이트1 버튼 M */
 .btn_whiteM_typeA {
   position: relative;
   height: 25px;
@@ -4790,7 +4772,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 화이트1 버튼 L */
 .btn_whiteL_typeA {
   position: relative;
   height: 25px;
@@ -4827,7 +4808,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 화이트2 버튼 S */
 .btn_whiteS_typeB {
   position: relative;
   height: 25px;
@@ -4864,7 +4844,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 화이트2 버튼 M */
 .btn_whiteM_typeB {
   position: relative;
   height: 25px;
@@ -4901,7 +4880,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 화이트2 버튼 M_작은패딩 */
 .btn_whiteM_typeB_ps {
   position: relative;
   height: 25px;
@@ -4938,7 +4916,6 @@ label {
   padding: 10px 12px 11px 10px;
 }
 
-/* 화이트2 버튼 L */
 .btn_whiteL_typeB {
   position: relative;
   height: 25px;
@@ -4975,7 +4952,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 화이트3 버튼 S */
 .btn_whiteS_typeC {
   position: relative;
   height: 25px;
@@ -5012,7 +4988,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 화이트3 버튼 M */
 .btn_whiteM_typeC {
   position: relative;
   height: 25px;
@@ -5049,7 +5024,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 화이트3 버튼 L */
 .btn_whiteL_typeC {
   position: relative;
   height: 25px;
@@ -5086,7 +5060,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 블랙1 버튼 S */
 .btn_blackS_typeA {
   position: relative;
   height: 25px;
@@ -5159,7 +5132,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 블랙1 버튼 M */
 .btn_blackM_typeA {
   position: relative;
   height: 25px;
@@ -5196,7 +5168,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 블랙1 버튼 L */
 .btn_blackL_typeA {
   position: relative;
   height: 25px;
@@ -5233,7 +5204,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 레드1 버튼 S */
 .btn_redS_typeA {
   position: relative;
   height: 25px;
@@ -5270,7 +5240,6 @@ label {
   padding: 6px 10px 7px 8px;
 }
 
-/* 레드1 버튼 M */
 .btn_redM_typeA {
   position: relative;
   height: 25px;
@@ -5307,7 +5276,6 @@ label {
   padding: 10px 32px 11px 30px;
 }
 
-/* 레드1 버튼 L */
 .btn_redL_typeA {
   position: relative;
   height: 25px;
@@ -5344,7 +5312,6 @@ label {
   padding: 21px 20px 22px 18px;
 }
 
-/* 셀렉트 스타일 */
 .ecmWrap .DivSelectyze {
   position: relative;
 }
@@ -5392,7 +5359,6 @@ label {
   color: #fff;
 }
 
-/* 계단형 셀렉트박스 */
 .selectBoxC {
   position: relative;
   width: 100%;
@@ -5403,7 +5369,6 @@ label {
     right 3px;
   z-index: 11;
 }
-/* 계단형 셀렉트박스 에서 한페이지당 중복 SELECT 가 있을경우 _01 로 추가함*/
 .selectBoxC_01 {
   position: relative;
   width: 100%;
@@ -5414,7 +5379,6 @@ label {
     right 3px;
   z-index: 11;
 }
-/* .selectBoxC .baseLink {display:block; padding-left:10px;} */
 .selectBoxC .stepBox > li {
   position: relative;
   float: left;
@@ -5472,7 +5436,7 @@ label {
   border: 1px solid #648ec3;
   background-color: #fff;
   z-index: 10;
-} /* [2012.10.04 수정] */
+}
 .selectBoxC .stepBox > li .subStep li a {
   display: block;
   padding: 0 10px;
@@ -5561,8 +5525,6 @@ label {
   color: #1169c2;
   background-color: #dfe6f1;
 }
-
-/* 일반 형 (테이블) */
 .listContent .normalList {
   padding-top: 1px;
 }
@@ -5618,8 +5580,6 @@ label {
   width: 16px;
   height: 16px;
   padding: 0;
-  *float: none;
-  *display: inline-block;
 }
 .normalTb tbody td .contentTitle a {
   color: #222;
@@ -5630,7 +5590,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-} /* 2012.10.03 추가 */
+}
 .normalTb tbody td .contentTitle a.red {
   color: #e93c3c;
 }
@@ -5651,14 +5611,12 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   right: 0;
   top: 16px;
 }
-/* 체크박스 있으면서 텍스트 중앙일 경우 */
 .wAuto {
   float: none !important;
   width: auto !important;
   padding: 0 20px 0 10px !important;
 }
 
-/* 테이블 추가 버튼 */
 .normalTb tbody tr.btnAdd {
   display: none;
 }
@@ -5682,7 +5640,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .normalTb tbody tr.btnAdd td .addBox {
   position: relative;
   display: inline-block;
-  *display: inline;
   vertical-align: top;
 }
 .normalTb tbody tr.btnAddOn td .addBox .btn_sel,
@@ -5707,13 +5664,11 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #222;
   line-height: 24px;
   background: url("assets/img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
-} /* [2012.10.09 추가] */
+}
 .normalTb tbody .btnAsk {
   display: inline-block;
   margin: -10px 0 -10px -10px;
 }
-
-/* 레이어 팝업 */
 .popLayerWrap {
   width: 100%;
   line-height: 16px;
@@ -5780,7 +5735,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   line-height: 20px;
   color: #fff;
   background-color: #0976b2;
-} /* [2012.10.10 수정] */
+}
 .popLayerWrap .btnBox a.grayB {
   background-color: #afafaf;
 }
@@ -5798,17 +5753,16 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   line-height: 20px;
   color: #fff;
   background-color: #0976b2;
-} /* [2012.10.19 수정] */
+}
 .popSearchWrap .btnBox a.grayB {
   background-color: #afafaf;
 }
 
 #popLayerA {
-  /*position:absolute; left:50%; top:0;*/
   width: 610px;
   margin-left: -305px;
   z-index: 10005;
-} /* [2012.10.10 수정] */
+}
 #popLayerA .contents {
   padding: 25px;
 }
@@ -5820,7 +5774,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 
 #popLayerB {
   width: 970px;
-} /* [2012.10.04 수정] [2012.10.10 수정] */
+}
 #popLayerB .contents {
   height: 559px;
   padding: 0;
@@ -5858,13 +5812,12 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 
 #popLayerB .contents .columnR {
-  *position: relative;
   float: left;
   width: 676px;
   height: 535px;
   padding: 24px 24px 0 0;
   overflow-y: scroll;
-} /* [2012.10.04 수정] */
+}
 #popLayerB .contents .columnR .title {
   padding-bottom: 12px;
   font-weight: bold;
@@ -5908,8 +5861,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #222;
   font-weight: bold;
 }
-/*20121107 메인 CSS 와 맞춤 (.selectBoxC .baseLink 로 트리메뉴 css가 되어야함 ) */
-/* #popLayerB .contents .selectBoxC_Edit .boxChild .selectBoxC a.baseLink {display:block; padding-left:10px; background:none;} */
 #popLayerB .contents .boxChildSearch {
   height: 26px;
   margin-bottom: 5px;
@@ -5934,7 +5885,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   padding: 6px 10px 0 10px;
   background-color: #f2f2f2;
   overflow: hidden;
-  *zoom: 1;
 }
 #popLayerB .contents .securityBox:after {
   clear: both;
@@ -5971,7 +5921,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: center;
 }
 
-/* 팝업 셀렉트 - 컨텐츠 등록 */
 #popLayerB .grey .selectyzeValue {
   display: inline-block;
   min-width: 140px;
@@ -6001,8 +5950,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #fff;
   background-color: #858585;
 }
-
-/* [2012.10.12 추가] */
 #popLayerB .selectWidth290 {
   position: relative;
 }
@@ -6012,8 +5959,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 #popLayerB .selectWidth290 .DivSelectyze .UlSelectize {
   width: 327px;
 }
-
-/* [2012.10.15 추가] */
 #popLayerB .selectWidth530 {
   position: relative;
 }
@@ -6054,8 +5999,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #222;
   background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 bottom
     repeat-x;
-  *zoom: 1;
-} /* [2012.10.09 수정] */
+}
 .columnBox:after,
 .columnBoxs:after {
   clear: both;
@@ -6103,8 +6047,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   float: left;
   width: 271px;
 }
-
-/* [2012.10.09 추가] */
 .columnBox .columnTxtCenter {
   text-align: center;
   line-height: 18px;
@@ -6118,7 +6060,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 
 .columnBoxs {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 .columnBoxs .maxH {
   max-height: 185px;
@@ -6129,7 +6070,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 .columnBoxs .maxH .marR17 {
   margin-right: -17px;
-  *margin-right: 0;
 }
 .columnBoxs .solo {
   overflow: hidden;
@@ -6143,7 +6083,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 
 .popSearchBox {
   margin-bottom: 17px;
-  *zoom: 1;
 }
 .popSearchBox:after {
   clear: both;
@@ -6157,7 +6096,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   border-width: 0 1px 1px 1px;
 }
 
-/* 팝업창 선택한 컨텐츠 리스트 */
 .choiceBox {
   padding-top: 20px;
 }
@@ -6210,13 +6148,9 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   top: 10px;
 }
 .choiceBox .choice .choOutline {
-  *position: relative;
   width: 663px;
   height: 87px;
   overflow: hidden;
-} /* 2012.10.03 수정 */
-.choiceBox .choice ul {
-  *zoom: 1;
 }
 .choiceBox .choice ul:after {
   clear: both;
@@ -6248,7 +6182,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 #popLayerA .contents .tabBox {
   margin-bottom: 20px;
   border-bottom: 1px solid #d9d9d9;
-  *zoom: 1;
 }
 #popLayerA .contents .tabBox:after {
   clear: both;
@@ -6278,7 +6211,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   background-color: #77a9e3;
 }
 
-/* 팝업창 테이블 - 기본형 [2012.10.10 수정] */
 .normalPopTb {
   color: #222;
   border: 1px solid #d6d6d6;
@@ -6354,7 +6286,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
     right -1px;
 }
 
-/* 팝업 셀렉트 스타일 [2012.10.10 추가] */
 .normalPopTb .DivSelectyze {
   position: relative;
   float: left;
@@ -6401,8 +6332,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   background-color: #858585;
   color: #fff;
 }
-
-/* 팝업 검색 셀렉트 스타일 */
 .popSearchBox .DivSelectyze {
   position: relative;
   float: left;
@@ -6475,7 +6404,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   border-top: 1px solid #648ec3;
 }
 
-/* 팝업 텍스트 입력창 */
 .textareaTypeA {
   width: 708px;
   height: 100px;
@@ -6483,7 +6411,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   line-height: 18px;
 }
 
-/* input Text */
 .i_input {
   height: 23px;
   padding: 0 10px;
@@ -6497,7 +6424,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   margin-right: 8px;
 }
 
-/* 검색 */
 .listSearch {
   position: absolute;
   left: 50%;
@@ -6514,7 +6440,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #94949c;
 }
 
-/* 페이징 */
 .paging {
   overflow: hidden;
   text-align: center;
@@ -6566,13 +6491,10 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .paging a:hover.end {
   background: url(assets/img/common/paging_end_on.gif) left top no-repeat;
 }
-
-/* main_문서함_팝업_ecm_popup_document02 */
 .lineH18 {
   line-height: 18px;
 }
 
-/* 컨텐츠등록_02컨텐츠부가정보입력_01역할자 */
 .columnR h2 {
   color: #000;
   font-size: 14px;
@@ -6586,7 +6508,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   clear: both;
   content: "";
   display: block;
-} /* [2012.10.15 추가] */
+}
 .partTitle h3 {
   color: #222;
   font-size: 13px;
@@ -6610,7 +6532,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 .floatL {
   float: left !important;
-} /* [2012.10.15 추가] */
+}
 .raiDesc {
   display: block;
   float: left;
@@ -6626,7 +6548,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 
 .partBox01 {
-  width: 276px; /* width:259px;[수정_1006]*/
+  width: 276px;
   float: left;
 }
 .partBox02 {
@@ -6641,7 +6563,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 .partBox01 .boxSearch .i_input {
   float: left;
-  width: 206px; /* width:189px;[수정_1006] */
+  width: 206px;
   height: 23px;
   margin-right: 5px;
   padding: 0 10px;
@@ -6716,7 +6638,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 
 #popLayerB .contents .tabBox {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 #popLayerB .contents .tabBox:after {
   clear: both;
@@ -6729,7 +6650,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 }
 #popLayerB .contents .tabBox li a {
   display: block;
-  width: 90px; /* width:85px;[수정_1006] */
+  width: 90px;
   margin-right: -1px;
   font-weight: bold;
   font-size: 13px;
@@ -6772,7 +6693,6 @@ p.completion a {
   display: block;
 }
 
-/* 컨텐츠속성_03컨텐츠활용이력_01복사이력_1003_ecm_popup_content09 */
 table.historyTB thead th {
   padding: 10px 0;
   vertical-align: top;
@@ -6842,11 +6762,6 @@ table.historyTB03 .contentTitle {
   text-align: left !important;
   padding: 10px !important;
 }
-
-/*table.historyTB02 label.i_check{position:absolute; }
-table.historyTB03 label.i_check{position:absolute; left:10px;}*/ /*1005금_수정*/
-
-/* 컨텐츠속성_02컨텐츠변경이력_01버전정보_1003_ecm_popup_content08 */
 .historyTB04 td {
   padding: 4px 0 1px !important;
 }
@@ -6880,7 +6795,6 @@ table.historyTB03 label.i_check{position:absolute; left:10px;}*/ /*1005금_수�
   color: #227cdb !important;
 }
 
-/* 컨텐츠등록_01Local파일등록_02컨텐츠부가정보입력_02RAI_01개인_1004_ecm_popup_content05 */
 .wid357 {
   width: 657px;
 }
@@ -6937,7 +6851,6 @@ table.raiT3 tbody td .i_check em {
   position: relative;
 }
 
-/* 2012-10-03 김영훈 추가 */
 .mgb10 {
   margin-bottom: 10px !important;
 }
@@ -7008,8 +6921,6 @@ table.raiT3 tbody td .i_check em {
   color: #222;
   letter-spacing: -1px;
 }
-
-/* 컨텐츠등록_01Local파일등록_01컨텐츠정보입력_01컨텐츠정보_1004_ecm_popup_content01 */
 .wid96 {
   width: 96px !important;
 }
@@ -7019,8 +6930,6 @@ table.raiT3 tbody td .i_check em {
 .entryList .extension {
   padding-left: 6px;
 }
-
-/* 컨텐츠등록_01Local파일등록_01컨텐츠정보입력_03보안등급펼침_1004_ecm_popup_content02 */
 .gradeBox {
   overflow: hidden;
   margin-top: 15px;
@@ -7055,11 +6964,8 @@ table.raiT3 tbody td .i_check em {
   text-align: center;
   width: 41px;
 }
-
-/* 컨텐츠등록_1004_ecm_popup_content02 */
 .tabDiv .columnBoxs {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 .hei176 {
   max-height: 176px;
@@ -7067,16 +6973,12 @@ table.raiT3 tbody td .i_check em {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
-/* 컨텐츠등록_1004_ecm_popup_content03 */
 .hei165 {
   max-height: 165px;
   padding-bottom: 1px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
-/* 컨텐츠등록_01Local파일등록_02컨텐츠부가정보입력_02역할자_01이름_1004_ecm_popup_content04 */
 .rolePors01 {
   color: #222;
   font-weight: bold;
@@ -7173,7 +7075,6 @@ table.raiT3 tbody td .i_check em {
   margin-right: 0;
 }
 
-/* 트리구조_ecm_popup_content04 */
 .bdr0 {
   border-right: 0 !important;
 }
@@ -7207,23 +7108,6 @@ table.raiT3 tbody td .i_check em {
   text-align: center;
   font-weight: normal;
 }
-
-/* [2012.10.10 추가]
-.tblFolder {width:100%;table-layout:fixed; border:1px solid #d6d6d6; border-width:1px 0 1px 1px;}
-.tblFolder a{font-weight:bold;}
-.tblFolder a:hover{text-decoration:underline;}
-.tblFolder tbody tr.depth1 {border:1px solid #4c86c9 !important;}
-.tblFolder tbody tr.depth1 td {background:#77a9e3; border-top:#4c86c9 !important;}
-.tblFolder tbody tr.depth1 td a{color:#fff;}
-.tblFolder tbody tr.depth2 td {background:#acc9ea; border-bottom:#87afdd !important;}
-.tblFolder tbody tr.depth2 td a,.tblFolder tbody tr.depth3 td a,.tblFolder tbody tr.depth4 td a,.tblFolder tbody tr.depth5 td a{color:#3160af;}
-.tblFolder tbody tr.depth3 td {background:#c9d8ec; border-bottom:#abc4e1 !important;}
-.tblFolder tbody tr.depth4 td {background:#e0e8f2; border-bottom:#cad6e6 !important;}
-.tblFolder tbody tr.depth5 {background:#f2f2f2;}
-.tblFolder tbody tr.groupOne td {height:34px; background:#f2f2f2;}
-.tblFolder tbody tr.groupOne td a {font-weight:normal !important;}
-.tblFolder tbody tr td {padding:0; vertical-align:middle;}
-*/
 .tblFolder {
   width: 100%;
   table-layout: fixed;
@@ -7358,7 +7242,6 @@ table.raiT3 tbody td .i_check em {
 }
 .scrolArea .maxH .marR17 {
   margin-right: -17px;
-  *margin-right: 0;
 }
 .normalTb {
   margin-bottom: -1px;
@@ -7366,8 +7249,6 @@ table.raiT3 tbody td .i_check em {
 .fc_ff3c46 {
   color: #ff3c46 !important;
 }
-
-/* 컨텐츠등록_02개인서식등록_01서식기본정보_1004_ecm_popup_content05 */
 .normalPopTb tbody td .conText_typeA {
   position: relative;
   height: 24px;
@@ -7379,8 +7260,6 @@ table.raiT3 tbody td .i_check em {
   top: 24px;
   z-index: 15;
 }
-
-/* 컨텐츠속성_02컨텐츠변경이력_01버전정보_1004_ecm_popup_content08 */
 .verP {
   position: relative;
   margin-top: 15px;
@@ -7389,8 +7268,6 @@ table.raiT3 tbody td .i_check em {
   position: absolute;
   right: 0;
 }
-
-/* ECM_main_문서함_04컨텐츠삭제팝업_1005_ecm_popup_attr02 */
 table.conDel01 {
   margin-bottom: 25px;
 }
@@ -7403,8 +7280,6 @@ table.conDel01 .columnBoxs {
 table.conDel01 .maxH {
   max-height: 170px;
 }
-
-/* ECM_main_임원보고등록팝업(복수개)_1005_ecm_popup_attr03 */
 #popLayerA .contents .popSubTitle .etc {
   display: inline-block;
   padding-left: 8px;
@@ -7457,8 +7332,6 @@ table.conDel01 .maxH {
   padding-top: 25px;
   margin-top: 20px;
 }
-
-/* [수정_1006] */
 #popLayerB .contents .columnR .title {
   position: relative;
 }
@@ -7564,12 +7437,9 @@ table.conDel01 .maxH {
     top;
   display: inline-block;
 }
-
-/* ecm_popup09.html */
 .textRSearch {
   height: 24px;
   padding: 10px 0 7px 0;
-  *zoom: 1;
 }
 .textRSearch:after {
   clear: both;
@@ -7592,8 +7462,6 @@ table.conDel01 .maxH {
   margin: 5px 15px 0 0;
   line-height: 16px;
 }
-
-/* ecm_main04.html */
 .areaCTop .result {
   padding: 10px 0 13px 0;
   line-height: 25px;
@@ -7605,8 +7473,6 @@ table.conDel01 .maxH {
 .areaCTop .result .btn_whiteS_typeA {
   vertical-align: middle;
 }
-
-/* ecm_main05.html */
 .resultNo {
   padding-top: 274px;
   text-align: center;
@@ -7615,8 +7481,6 @@ table.conDel01 .maxH {
 .resultNo p {
   margin-bottom: 10px;
 }
-
-/* 1006_ecm_popup13 */
 div.grayBox01 {
   color: #222;
   padding: 10px 7px 9px;
@@ -7626,8 +7490,6 @@ table.grayT01 td {
   padding: 7px 15px 4px 15px;
   line-height: 20px;
 }
-
-/* 1006_ecm_popup12 */
 table.apprT td .DivSelectyze {
   position: relative;
   float: left;
@@ -7679,8 +7541,6 @@ table.apprT td .flTxt {
   display: inline-block;
   padding-top: 7px;
 }
-
-/* 1006_ecm_popup11 */
 #popLayerA .contents .converg01 {
   position: relative;
 }
@@ -7726,27 +7586,20 @@ table.apprT td .flTxt {
   background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
   font-weight: normal;
 }
-
-/* 1006_ecm_popup_content10 */
 table.subL td {
   padding: 10px 0 8px;
 }
 table.subL td img {
   vertical-align: middle;
 }
-
-/* ecm_popup_countent06 */
 #popLayerB .selectW .grey .selectyzeValue {
   min-width: 263px;
 }
 #popLayerB .selectW .DivSelectyze .UlSelectize {
   width: 300px;
 }
-
-/* ecm_popup_attr05.html [2012.10.18] */
 #ecm_popup_attr05 .partBox01 .tabBox {
   margin-bottom: 20px;
-  *zoom: 1;
 }
 #ecm_popup_attr05 .partBox01 .tabBox:after {
   clear: both;
@@ -7759,7 +7612,7 @@ table.subL td img {
 }
 #ecm_popup_attr05 .partBox01 .tabBox li a {
   display: block;
-  width: 98px; /* width:85px;[수정_1006] */
+  width: 98px;
   margin-right: -1px;
   font-weight: bold;
   font-size: 13px;
@@ -7775,8 +7628,6 @@ table.subL td img {
   border: 1px solid #4c86c9;
   background-color: #77a9e3;
 }
-
-/* 팝업 - 부서관리자 검색 [2012.10.31 추가] */
 .partAdminBox {
   border: 1px solid #d5d5d5;
 }

@@ -8,6 +8,7 @@ import RoleAssignEdit from "./RoleAssignEdit";
 import { fileToByteArray } from "utils/fileHelper";
 import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
+import { EDIT_PERMISSION, VIEW_PERMISSION } from "utils/commonConstants";
 import swal from "sweetalert";
 
 import styles from "assets/css/modules/AddEdit.module.css";
@@ -85,12 +86,10 @@ const AddFile = (props) => {
   }, [props]);
 
   const handleAddFiles = async () => {
-    const READ_PERMISSION = 1;
-    const EDIT_PERMISSION = 2;
     let fileInfos = [];
     let viewEmps = viewRoles.map((e) => ({
       employeeId: e.id,
-      permission: READ_PERMISSION,
+      permission: VIEW_PERMISSION,
     }));
     let editEmps = editRoles.map((e) => ({
       employeeId: e.id,
@@ -199,6 +198,7 @@ const AddFile = (props) => {
                           key={file.key}
                           file={file}
                           styles={styles}
+                          showDeleteButton={true}
                           handleChangeFileName={handleChangeFileName}
                           handleDeleteFile={handleDeleteFile}
                         />
@@ -386,7 +386,7 @@ const AddFile = (props) => {
               </div>
               <p className={styles.modifyBtn}>
                 <Link to="/" onClick={handleAddFiles}>
-                  Add
+                  Confirm
                 </Link>
               </p>
             </div>

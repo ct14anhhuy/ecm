@@ -571,7 +571,6 @@ label {
 .listContent .searchBox .btn_whiteS_typeA,
 .listContent .searchBox .btn_whiteS_typeB {
   vertical-align: middle;
-  *vertical-align: top;
 }
 
 .listContent .normalList .scrollBox {
@@ -637,7 +636,6 @@ label {
 .listContent .thumnList .thumn {
   margin-right: -12px;
   padding-bottom: 18px;
-  *zoom: 1;
 }
 .listContent .thumnList .thumn:after {
   clear: both;
@@ -799,11 +797,9 @@ label {
   display: block;
   position: relative;
   width: 160px;
-  *width: 158px;
   height: 23px;
   margin-top: -1px;
   padding: 10px 9px 0 0;
-  *padding: 10px 11px 0 0;
   color: #018dee;
   text-align: center;
   border: 1px solid #648ec3;
@@ -968,8 +964,6 @@ label {
   height: 16px;
   margin: 0 5px 0 0px;
   padding: 0;
-  *float: none;
-  *display: inline-block;
 }
 .normalTb tbody td .contentTitle a {
   color: #000;
@@ -1099,7 +1093,6 @@ label {
 .normalTb tbody tr.btnAdd td .addBox {
   position: relative;
   display: inline-block;
-  *display: inline;
   vertical-align: top;
 }
 .normalTb tbody tr.btnAddOn td .addBox .btn_sel,
@@ -1134,8 +1127,6 @@ label {
   position: relative;
   margin-bottom: 25px;
   border-right: 1px solid #d6d6d6;
-  *z-index: 5;
-  *zoom: 1;
 }
 .normalUL:after {
   clear: both;
@@ -1157,7 +1148,6 @@ label {
   line-height: 17px;
   text-align: center;
   border-bottom: 1px solid #d6d6d6;
-  *vertical-align: top;
 }
 .listColumn > li:after {
   clear: both;
@@ -1192,7 +1182,6 @@ label {
   float: right;
   margin-left: -10px;
   padding: 6px 10px;
-  *padding: 0 10px 6px 10px;
 }
 .listColumn li .i_check {
   display: inline-block;
@@ -1286,7 +1275,6 @@ label {
 }
 
 .best {
-  *position: relative;
   width: 195px;
   margin-left: 1px;
   padding-bottom: 5px;
@@ -1451,13 +1439,9 @@ a.btn_content:hover {
   top: 10px;
 }
 .choiceBox .choice .choOutline {
-  *position: relative;
   width: 663px;
   height: 87px;
   overflow: hidden;
-}
-.choiceBox .choice ul {
-  *zoom: 1;
 }
 .choiceBox .choice ul:after {
   clear: both;
@@ -1520,9 +1504,6 @@ a.btn_content:hover {
   padding-bottom: 20px;
   border-bottom: 1px solid #518ef1;
   background-color: #fff;
-}
-.ecmWrap .choiceBox .choice ul {
-  *padding-bottom: 4px;
 }
 .ecmWrap .choiceBox .choice .btnSpe,
 .ecmWrap .choiceBox .choice .btnEtc {
