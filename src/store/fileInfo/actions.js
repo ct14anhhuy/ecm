@@ -254,6 +254,31 @@ const deleteFileAction = (fileIds) => {
   };
 };
 
+const editFileAction = (fileInfo) => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: types.BEGIN_UPDATE_FILE,
+      });
+      await fileInfoService.editFile(fileInfo);
+      dispatch({
+        type: types.EDIT_FILE,
+        payload: {
+          fileInfo,
+        },
+      });
+      dispatch({
+        type: types.UPDATE_FILE_SUCCESS,
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: types.UPDATE_FILE_FAILURE,
+      });
+    }
+  };
+};
+
 const injectSelected = (fileInfos) => {
   return fileInfos.map((fi) => Object.assign({}, fi, { checked: false }));
 };
@@ -275,4 +300,5 @@ export {
   moveToTrashAction,
   recoverFileAction,
   deleteFileAction,
+  editFileAction,
 };

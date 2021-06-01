@@ -5,8 +5,10 @@ import Frame from "react-frame-component";
 import SelectFile from "./SelectFile";
 import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
+import swal from "sweetalert";
 import { changeShowEditFileAction } from "store/systemParams/actions";
 import { getFileSharedAction } from "store/employee/actions";
+import { editFileAction } from "store/fileInfo/actions";
 import { VIEW_PERMISSION, EDIT_PERMISSION } from "utils/commonConstants";
 
 import styles from "assets/css/modules/AddEdit.module.css";
@@ -17,7 +19,14 @@ const EditFile = (props) => {
   const tvRef = useRef();
 
   const { editItem } = props.systemParams;
-  const { owner, sharedEmps, getFileShared } = props;
+  const {
+    owner,
+    sharedEmps,
+    getFileShared,
+    editFile,
+    fileInfos,
+    changeShowEditFile,
+  } = props;
 
   const [state, setState] = useState({
     directoryId: editItem.directoryId,
@@ -31,19 +40,15 @@ const EditFile = (props) => {
   const [editRoles, setEditRoles] = useState([]);
   const [viewRoles, setViewRoles] = useState([]);
 
-  // const firstUpdate = useRef(true);
+  const firstUpdate = useRef(true);
 
   const handleChangeFileName = (key, fileName) => {
-    setState({ ...state, file: fileName });
+    setState({ ...state, file: { ...state.file, fileName } });
   };
 
   useEffect(() => {
-    setEditRoles(
-      sharedEmps.filter((e) => e.roleId === EDIT_PERMISSION)
-    );
-    setViewRoles(
-      sharedEmps.filter((e) => e.roleId === VIEW_PERMISSION)
-    );
+    setEditRoles(sharedEmps.filter((e) => e.roleId === EDIT_PERMISSION));
+    setViewRoles(sharedEmps.filter((e) => e.roleId === VIEW_PERMISSION));
   }, [sharedEmps]);
 
   useEffect(() => {
@@ -64,48 +69,44 @@ const EditFile = (props) => {
     setState({ ...state, directoryId: selectedId });
   };
 
-  // useEffect(() => {
-  //   if (firstUpdate.current) {
-  //     firstUpdate.current = false;
-  //     return;
-  //   }
-  //   if (props.fileInfos.done) {
-  //     if (!props.fileInfos.error) {
-  //       swal("Success!", "Add file success!", "success").then(() => {
-  //         props.changeShowEditFile();
-  //       });
-  //     } else {
-  //       swal("Failure!", "Add file failure!", "error");
-  //     }
-  //   }
-  // }, [props]);
+  useEffect(() => {
+    console.log(firstUpdate.current);
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    if (fileInfos.done) {
+      if (!fileInfos.error) {
+        swal("Success!", "Edit file success!", "success").then(() => {
+          changeShowEditFile();
+        });
+      } else {
+        swal("Failure!", "Edit file failure!", "error");
+      }
+    }
+  }, [changeShowEditFile, fileInfos.done, fileInfos.error]);
 
-  // const handleAddFiles = async () => {
-  //   let fileInfos = [];
-  //   let viewEmps = viewRoles.map((e) => ({
-  //     employeeId: e.id,
-  //     permission: VIEW_PERMISSION,
-  //   }));
-  //   let editEmps = editRoles.map((e) => ({
-  //     employeeId: e.id,
-  //     permission: EDIT_PERMISSION,
-  //   }));
-  //   const fileShares = [...viewEmps, ...editEmps];
-  //   if (state.files) {
-  //     const { owner, tag, directoryId, securityLevel } = state;
-  //     fileInfos = await Promise.all(
-  //       state.files.map(async (file) => ({
-  //         name: file.fileName,
-  //         owner: owner.id,
-  //         tag,
-  //         directoryId,
-  //         securityLevel,
-  //         fileData: await fileToByteArray(file.data),
-  //       }))
-  //     );
-  //   }
-  //   props.addFiles(fileInfos, fileShares);
-  // };
+  const handleEditFile = () => {
+    const viewEmps = viewRoles.map((e) => ({
+      employeeId: e.id,
+      permission: VIEW_PERMISSION,
+      fileId: editItem.id,
+    }));
+    const editEmps = editRoles.map((e) => ({
+      employeeId: e.id,
+      permission: EDIT_PERMISSION,
+      fileId: editItem.id,
+    }));
+    const fileInfo = {
+      id: editItem.id,
+      name: state.file.fileName,
+      directoryId: state.directoryId,
+      securityLevel: state.securityLevel,
+      tag: state.tag,
+      fileShares: [...viewEmps, ...editEmps],
+    };
+    editFile(fileInfo);
+  };
 
   return (
     <React.Fragment>
@@ -362,7 +363,9 @@ const EditFile = (props) => {
                 </div>
               </div>
               <p className={styles.modifyBtn}>
-                <Link to="/">Confirm</Link>
+                <Link to="/" onClick={handleEditFile}>
+                  Confirm
+                </Link>
               </p>
             </div>
           </div>
@@ -385,6 +388,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     changeShowEditFile: () => dispatch(changeShowEditFileAction()),
     getFileShared: (fileId) => dispatch(getFileSharedAction(fileId)),
+    editFile: (fileInfo) => dispatch(editFileAction(fileInfo)),
   };
 };
 

@@ -24,12 +24,8 @@ const App = (props) => {
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
 
-  const {
-    showAddFile,
-    showEditFile,
-    showCreateDirectory,
-    showOpenContent,
-  } = props.systemParams;
+  const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } =
+    props.systemParams;
 
   const { getDirectories, getMyContents, getDepartments } = props;
 

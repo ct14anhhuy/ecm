@@ -6,7 +6,7 @@ const Login = (props) => {
   const { token } = useParams();
   localStorage.setItem("accessToken", token);
   props.login();
-  
+
   return <Redirect to="/"></Redirect>;
 };
 

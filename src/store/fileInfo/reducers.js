@@ -68,6 +68,19 @@ const fileInfoReducers = (state = initState, action) => {
       const newState = state.data.filter((f) => !deleteIds.includes(f.id));
       return { ...state, data: newState };
     }
+    case types.EDIT_FILE: {
+      const prevState = [...state.data];
+      const fileInfo = action.payload.fileInfo;
+      const editId = prevState.findIndex((f) => f.id === fileInfo.id);
+      prevState[editId] = {
+        ...prevState[editId],
+        name: fileInfo.name,
+        directoryId: fileInfo.directoryId,
+        securityLevel: fileInfo.securityLevel,
+        tag: fileInfo.tag,
+      };
+      return { ...state, data: prevState };
+    }
     case types.BEGIN_UPDATE_FILE:
       return { ...state, done: false, error: false };
     case types.UPDATE_FILE_SUCCESS:

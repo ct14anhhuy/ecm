@@ -1272,7 +1272,8 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: left;
   line-height: 19px;
   border: 1px solid #c7cacd;
-  background: url("assets/img/contents/ecmMain/bg_btn_sel.gif") right 0 no-repeat;
+  background: url("assets/img/contents/ecmMain/bg_btn_sel.gif") right 0
+    no-repeat;
 }
 .normalTb tbody tr.btnAddOn td .addBox .infoMenu {
   top: 23px;
@@ -2253,7 +2254,8 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: left;
   padding: 6px 0 0 12px;
   margin-bottom: 5px;
-  background: url("assets/img/contents/ecmMain/btn_partBg.gif") repeat-x left top;
+  background: url("assets/img/contents/ecmMain/btn_partBg.gif") repeat-x left
+    top;
   display: inline-block;
 }
 

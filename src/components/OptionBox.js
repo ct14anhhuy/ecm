@@ -128,10 +128,7 @@ const OptionBox = (props) => {
           ) : null}
 
           {props.user.roleId === 1 ? (
-            <Link
-              to="/"
-              onClick={() => props.changeShowCreateDirectory()}
-            >
+            <Link to="/" onClick={() => props.changeShowCreateDirectory()}>
               <span>
                 <em className="new">Create Directory</em>
               </span>

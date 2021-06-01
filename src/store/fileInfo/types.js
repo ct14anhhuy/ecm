@@ -13,6 +13,7 @@ export const SELECT_MULTI = "SELECT_MULTI";
 export const MOVE_TO_TRASH = "MOVE_TO_TRASH";
 export const RECOVER_FILE = "RECOVER_FILE";
 export const DELETE_FILE = "DELETE_FILE";
+export const EDIT_FILE = "EDIT_FILE";
 
 export const BEGIN_UPDATE_FILE = "BEGIN_UPDATE_FILE";
 export const UPDATE_FILE_SUCCESS = "UPDATE_FILE_SUCCESS";

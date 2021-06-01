@@ -17,6 +17,8 @@ import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const AddFile = (props) => {
   const fileRef = useRef();
+  const { changeShowAddFile, addFiles, fileInfos } = props;
+
   const [state, setState] = useState({
     owner: props.owner,
     tag: "#",
@@ -74,16 +76,16 @@ const AddFile = (props) => {
       firstUpdate.current = false;
       return;
     }
-    if (props.fileInfos.done) {
-      if (!props.fileInfos.error) {
+    if (fileInfos.done) {
+      if (!fileInfos.error) {
         swal("Success!", "Add file success!", "success").then(() => {
-          props.changeShowAddFile();
+          changeShowAddFile();
         });
       } else {
         swal("Failure!", "Add file failure!", "error");
       }
     }
-  }, [props]);
+  }, [changeShowAddFile, fileInfos.done, fileInfos.error]);
 
   const handleAddFiles = async () => {
     let fileInfos = [];
@@ -109,7 +111,7 @@ const AddFile = (props) => {
         }))
       );
     }
-    props.addFiles(fileInfos, fileShares);
+    addFiles(fileInfos, fileShares);
   };
 
   return (
@@ -157,7 +159,7 @@ const AddFile = (props) => {
                 <Link
                   className={styles.close}
                   to="/"
-                  onClick={() => props.changeShowAddFile()}
+                  onClick={() => changeShowAddFile()}
                 >
                   <img
                     alt=""

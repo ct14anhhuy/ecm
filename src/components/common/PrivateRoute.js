@@ -6,7 +6,15 @@ const PrivateRoute = (props) => {
   const { user, children } = props;
 
   return (
-    <Route render={() => (user.id > 0 ? children : <Error />)}></Route>
+    <Route
+      render={() =>
+        user.id > 0 ? (
+          children
+        ) : (
+          <Error message="Token expires, please login via EP" />
+        )
+      }
+    ></Route>
   );
 };
 

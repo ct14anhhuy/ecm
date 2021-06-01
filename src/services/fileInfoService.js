@@ -108,6 +108,12 @@ const deleteFile = async (fileIds) => {
   });
 };
 
+const editFile = async (fileInfo) => {
+  return await api.post("/FileInfo/EditFileInfo", fileInfo).then((response) => {
+    return response.data;
+  });
+};
+
 export const fileInfoService = {
   getMyContents,
   getImportantContents,
@@ -124,4 +130,5 @@ export const fileInfoService = {
   moveToTrash,
   recoverFile,
   deleteFile,
+  editFile,
 };
