@@ -13,7 +13,6 @@ const RoleAssignEdit = (props) => {
 
   const [departments, setDepartments] = useState([]);
   const [employees, setEmployees] = useState([]);
-
   const [selectName, setSelectName] = useState(true);
   const [selectAll, setSelectAll] = useState(false);
   const [searchStr, setSearchStr] = useState("");

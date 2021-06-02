@@ -25,7 +25,7 @@ const MainTableItem = (props) => {
 
   useEffect(() => {
     if (fileUrl.shareUrl) {
-      navigator.clipboard.writeText(`ECMProtocol: ${fileUrl.shareUrl}`);
+      copyToClipboard(`ECMProtocol: ${fileUrl.shareUrl}`);
     }
   }, [fileUrl.shareUrl]);
 
@@ -43,6 +43,15 @@ const MainTableItem = (props) => {
       document.removeEventListener("mousedown", handleClick);
     };
   }, []);
+
+  const copyToClipboard = (text) => {
+    var textField = document.createElement("textarea");
+    textField.innerText = text;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand("copy");
+    textField.remove();
+  };
 
   const handleClick = (e) => {
     if (node.current.contains(e.target)) {
