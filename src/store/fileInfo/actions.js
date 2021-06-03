@@ -182,18 +182,13 @@ const selectMultiAction = (fileIds, checked) => {
   };
 };
 
-const addFilesAction = (fileInfos, fileShares) => {
+const addFilesAction = (fileInfos) => {
   return async (dispatch) => {
     try {
       dispatch({
         type: types.BEGIN_UPDATE_FILE,
       });
-      const files = await fileInfoService.addFiles(fileInfos);
-      for (const file of files) {
-        await fileInfoService.addFileShares(
-          fileShares.map((s) => ({ ...s, fileId: file.id }))
-        );
-      }
+      await fileInfoService.addFiles(fileInfos);
       dispatch({
         type: types.UPDATE_FILE_SUCCESS,
       });

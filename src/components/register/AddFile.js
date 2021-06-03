@@ -107,11 +107,12 @@ const AddFile = (props) => {
           tag,
           directoryId,
           securityLevel,
+          fileShares,
           fileData: await fileToByteArray(file.data),
         }))
       );
     }
-    addFiles(fileInfos, fileShares);
+    addFiles(fileInfos);
   };
 
   return (
@@ -190,6 +191,7 @@ const AddFile = (props) => {
                       id="file"
                       ref={fileRef}
                       style={{ display: "none" }}
+                      accept=".doc,.docx,.xls,.xlsx,.xlsm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg"
                       onChange={handleSelectFile}
                     />
                   </p>
@@ -408,8 +410,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addFiles: (fileInfos, fileShares) =>
-      dispatch(addFilesAction(fileInfos, fileShares)),
+    addFiles: (fileInfos) => dispatch(addFilesAction(fileInfos)),
     changeShowAddFile: () => dispatch(changeShowAddFileAction()),
   };
 };

@@ -82,14 +82,6 @@ const addFiles = async (fileInfos) => {
   });
 };
 
-const addFileShares = async (fileShares) => {
-  return await api
-    .post("/FileShare/AddFileShares", fileShares)
-    .then((response) => {
-      return response.data;
-    });
-};
-
 const moveToTrash = async (fileIds) => {
   return await api.post("/Trash/AddFilesToTrash", fileIds).then((response) => {
     return response.data;
@@ -126,7 +118,6 @@ export const fileInfoService = {
   changeFavorite,
   changeImportant,
   addFiles,
-  addFileShares,
   moveToTrash,
   recoverFile,
   deleteFile,

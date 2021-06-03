@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -13,7 +13,6 @@ import {
   changeShowCreateDirectoryAction,
 } from "store/systemParams/actions";
 import swal from "sweetalert";
-import React from "react";
 
 const OptionBox = (props) => {
   const { headerPath, menuActive, currentDirectory } = props.systemParams;
