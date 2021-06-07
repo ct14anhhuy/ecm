@@ -77,9 +77,9 @@ const MainTableItem = (props) => {
               <input
                 type="checkbox"
                 defaultChecked={fileInfo.checked}
-                onChange={() => {
-                  props.changeChecked(fileInfo.id, !fileInfo.checked);
-                }}
+                onChange={() =>
+                  props.changeChecked(fileInfo.id, !fileInfo.checked)
+                }
               />
             </label>
             <Link className="ico_fav_3" to="/">
@@ -145,9 +145,9 @@ const MainTableItem = (props) => {
               <input
                 type="checkbox"
                 defaultChecked={fileInfo.checked}
-                onChange={() => {
-                  props.changeChecked(fileInfo.id, !fileInfo.checked);
-                }}
+                onChange={() =>
+                  props.changeChecked(fileInfo.id, !fileInfo.checked)
+                }
               />
             </label>
             <Link

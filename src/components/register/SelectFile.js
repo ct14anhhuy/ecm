@@ -80,9 +80,9 @@ const SelectFile = (props) => {
             type="text"
             size={100}
             defaultValue={fileName.substring(0, fileName.lastIndexOf("."))}
-            onChange={(e) => {
-              setFileName(`${e.target.value}.${fileName.split(".").pop()}`);
-            }}
+            onChange={(e) =>
+              setFileName(`${e.target.value}.${fileName.split(".").pop()}`)
+            }
           />
         </span>
         <span className={styles.floatR}>

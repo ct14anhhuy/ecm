@@ -11,7 +11,7 @@ const PrivateRoute = (props) => {
         user.id > 0 ? (
           children
         ) : (
-          <Error message="Token expires, please login via EP" />
+          <Error message="Token expires, please login via EP Lite" />
         )
       }
     ></Route>

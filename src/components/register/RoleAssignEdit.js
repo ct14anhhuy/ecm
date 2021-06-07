@@ -239,9 +239,7 @@ const RoleAssignEdit = (props) => {
                   style={{ msImeMode: "active" }}
                   type="text"
                   defaultValue={searchStr}
-                  onChange={(e) => {
-                    setSearchStr(e.target.value);
-                  }}
+                  onChange={(e) => setSearchStr(e.target.value)}
                 />
                 <Link to="/" onClick={handleSearch}>
                   <img

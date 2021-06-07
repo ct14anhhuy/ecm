@@ -108,6 +108,10 @@ const EditFile = (props) => {
     editFile(fileInfo);
   };
 
+  const handleChangeSecurityLevel = (e) => {
+    setState({ ...state, securityLevel: e.target.text });
+  };
+
   return (
     <React.Fragment>
       <div
@@ -196,9 +200,9 @@ const EditFile = (props) => {
                               <Link
                                 className={styles.btnBlueLine}
                                 to="/"
-                                onClick={() => {
-                                  setShowListDirectory(!showListDirectory);
-                                }}
+                                onClick={() =>
+                                  setShowListDirectory(!showListDirectory)
+                                }
                               >
                                 <span>
                                   <em>Show All</em>
@@ -269,9 +273,7 @@ const EditFile = (props) => {
                           state.securityLevel === "Secret" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret
                       </Link>
@@ -282,9 +284,7 @@ const EditFile = (props) => {
                             : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret A/Not Open
                       </Link>
@@ -293,9 +293,7 @@ const EditFile = (props) => {
                           state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret A
                       </Link>
@@ -306,9 +304,7 @@ const EditFile = (props) => {
                             : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret B/Not Open
                       </Link>
@@ -317,9 +313,7 @@ const EditFile = (props) => {
                           state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret B
                       </Link>
@@ -328,9 +322,7 @@ const EditFile = (props) => {
                           state.securityLevel === "Public" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Public
                       </Link>

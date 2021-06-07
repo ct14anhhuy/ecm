@@ -8,6 +8,12 @@ const Filter = (props) => {
   const [showListRow, setShowListRow] = useState(false);
   const { pageLimit, updatePageLimit, setFilterExt, filterExt } = props;
 
+  const handleChangePageLimit = (e) => {
+    const pgLimit = parseInt(e.target.innerText);
+    setShowListRow(false);
+    updatePageLimit(pgLimit);
+  };
+
   return (
     <div className="sortingBox" style={{ display: "block" }}>
       <ul className="icoBtn" style={{ display: "block" }}>
@@ -107,37 +113,25 @@ const Filter = (props) => {
               className="am_UlSelectize"
               style={showListRow ? { display: "block" } : { display: "none" }}
             >
-              <li
-                onClick={() => {
-                  setShowListRow(false);
-                  updatePageLimit(15);
-                }}
-              >
-                <Link to="/">15</Link>
+              <li>
+                <Link to="/" onClick={handleChangePageLimit}>
+                  15
+                </Link>
               </li>
-              <li
-                onClick={() => {
-                  setShowListRow(false);
-                  updatePageLimit(30);
-                }}
-              >
-                <Link to="/">30</Link>
+              <li>
+                <Link to="/" onClick={handleChangePageLimit}>
+                  30
+                </Link>
               </li>
-              <li
-                onClick={() => {
-                  setShowListRow(false);
-                  updatePageLimit(50);
-                }}
-              >
-                <Link to="/">50</Link>
+              <li>
+                <Link to="/" onClick={handleChangePageLimit}>
+                  50
+                </Link>
               </li>
-              <li
-                onClick={() => {
-                  setShowListRow(false);
-                  updatePageLimit(100);
-                }}
-              >
-                <Link to="/">100</Link>
+              <li>
+                <Link to="/" onClick={handleChangePageLimit}>
+                  100
+                </Link>
               </li>
             </ul>
             <span> Rows</span>

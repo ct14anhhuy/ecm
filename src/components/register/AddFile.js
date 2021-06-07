@@ -115,6 +115,10 @@ const AddFile = (props) => {
     addFiles(fileInfos);
   };
 
+  const handleChangeSecurityLevel = (e) => {
+    setState({ ...state, securityLevel: e.target.text });
+  };
+
   return (
     <React.Fragment>
       <div
@@ -226,9 +230,9 @@ const AddFile = (props) => {
                               <Link
                                 className={styles.btnBlueLine}
                                 to="/"
-                                onClick={() => {
-                                  setShowListDirectory(!showListDirectory);
-                                }}
+                                onClick={() =>
+                                  setShowListDirectory(!showListDirectory)
+                                }
                               >
                                 <span>
                                   <em>Show All</em>
@@ -295,9 +299,7 @@ const AddFile = (props) => {
                           state.securityLevel === "Secret" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret
                       </Link>
@@ -308,9 +310,7 @@ const AddFile = (props) => {
                             : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret A/Not Open
                       </Link>
@@ -319,9 +319,7 @@ const AddFile = (props) => {
                           state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret A
                       </Link>
@@ -332,9 +330,7 @@ const AddFile = (props) => {
                             : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret B/Not Open
                       </Link>
@@ -343,9 +339,7 @@ const AddFile = (props) => {
                           state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Secret B
                       </Link>
@@ -354,9 +348,7 @@ const AddFile = (props) => {
                           state.securityLevel === "Public" ? styles.on : ""
                         }`}
                         to="/"
-                        onClick={(e) =>
-                          setState({ ...state, securityLevel: e.target.text })
-                        }
+                        onClick={handleChangeSecurityLevel}
                       >
                         Public
                       </Link>
@@ -369,9 +361,9 @@ const AddFile = (props) => {
                     <input
                       type="text"
                       value={state.tag}
-                      onChange={(e) => {
-                        setState({ ...state, tag: e.target.value });
-                      }}
+                      onChange={(e) =>
+                        setState({ ...state, tag: e.target.value })
+                      }
                     />
                   </div>
                   <p className={styles.popSubTitle}>

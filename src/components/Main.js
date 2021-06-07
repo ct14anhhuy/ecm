@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
 import Filter from "./Filter";
-import AddFile from "components/register/AddFile";
-import EditFile from "components/register/EditFile";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import OptionBox from "./OptionBox";
 import MainTable from "./MainTable";
-import CreateDirectory from "./CreateDirectory";
 import Paging from "./Paging";
 import * as exts from "utils/extTypes";
-import OpenContent from "./OpenContent";
 import { connect } from "react-redux";
 import { getDirectoriesAction } from "store/diretory/actions";
 import { getMyContentsAction } from "store/fileInfo/actions";
 import { getDepartmentsAction } from "store/department/actions";
+import Loading from "./common/Loading";
 
 import "assets/css/main.css";
+
+const AddFile = lazy(() => import("components/register/AddFile"));
+const EditFile = lazy(() => import("components/register/EditFile"));
+const CreateDirectory = lazy(() => import("./CreateDirectory"));
+const OpenContent = lazy(() => import("./OpenContent"));
 
 const App = (props) => {
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
@@ -97,11 +99,12 @@ const App = (props) => {
         </div>
         <Footer />
       </div>
-
-      {showAddFile ? <AddFile /> : null}
-      {showEditFile ? <EditFile /> : null}
-      {showCreateDirectory ? <CreateDirectory /> : null}
-      {showOpenContent ? <OpenContent /> : null}
+      <Suspense fallback={<Loading />}>
+        {showAddFile ? <AddFile /> : null}
+        {showEditFile ? <EditFile /> : null}
+        {showCreateDirectory ? <CreateDirectory /> : null}
+        {showOpenContent ? <OpenContent /> : null}
+      </Suspense>
     </React.Fragment>
   );
 };

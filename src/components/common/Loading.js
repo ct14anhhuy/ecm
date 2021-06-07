@@ -24,7 +24,7 @@ const Loading = () => {
           margin: 0,
           padding: 0,
           left: "848.5px",
-          top: "243.5px",
+          top: "45%",
           width: "30%",
           textAlign: "center",
           color: "rgb(0, 0, 0)",

@@ -79,9 +79,7 @@ const MainTable = (props) => {
                   <input
                     type="checkbox"
                     defaultChecked={selectAll}
-                    onChange={() => {
-                      handleSelectAll(!selectAll);
-                    }}
+                    onChange={() => handleSelectAll(!selectAll)}
                   />
                 </label>
               </span>

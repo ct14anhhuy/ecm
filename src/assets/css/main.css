@@ -1705,7 +1705,6 @@ a.btn_content:hover {
   line-height: 25px;
   padding-left: 10px;
   background: url(assets/img/main/btn/btn_bluebd.gif) no-repeat 0 0;
-  color: #3375bf;
   margin: 5px;
 }
 .sorting_btn a span {
@@ -1713,13 +1712,14 @@ a.btn_content:hover {
   height: 25px;
   padding-right: 10px;
   line-height: 25px;
+  color: #3375bf;
   background: url(assets/img/main/btn/btn_bluebd.gif) no-repeat 100% 0;
 }
 .sorting_btn a em {
   padding-left: 15px;
 }
 
-.optionBox__remove_a {
+.optionBox__remove_a span {
   color: red !important;
 }
 
