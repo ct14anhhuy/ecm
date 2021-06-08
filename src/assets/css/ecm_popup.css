@@ -4,6 +4,7 @@
   top: 50%;
   background: #fff;
   z-index: 100;
+  width: 100%;
 }
 .popLayerWrap .header {
   position: relative;
@@ -27,9 +28,10 @@
 }
 .popLayerWrap .contents {
   max-height: 620px;
-  padding: 0 20px;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding: 5px 25px 30px;
+  background: #fff;
 }
 .popLayerWrap .modifyBtn {
   text-align: center;
@@ -38,10 +40,9 @@
   background: #f1f1f1;
   border-top: 1px solid #babcbf;
 }
-
 .popLayerWrap .modifyBtn a {
   font-size: 14px;
-  background: url("assets/img/popup/bg/bg_modifyBtn.gif") no-repeat left top
+  background: url(assets/img/popup/bg/bg_modifyBtn.gif) no-repeat left top
     #2768b2;
   display: inline-block;
   color: #fff;
@@ -49,7 +50,6 @@
   margin-top: 15px;
   font-weight: bold;
 }
-
 .floatL {
   float: left;
 }
@@ -59,7 +59,6 @@
 .alignR {
   text-align: right;
 }
-
 .columnBox {
   width: 100%;
   padding-top: 5px;
@@ -69,7 +68,6 @@
   content: "";
   display: block;
 }
-
 .popSubTitle {
   position: relative;
   width: 100%;
@@ -81,7 +79,6 @@
 .popSubTitle .floatL {
   padding: 8px 0 0 15px;
 }
-
 .btnBlack {
   height: 25px;
   padding-left: 3px;
@@ -90,16 +87,14 @@
   background: url(assets/img/popup/bg/bg_blackBtn_L.png) 0 0 no-repeat;
   display: inline-block;
 }
-
 .btnBlack span {
   min-width: 104px;
   padding: 6px 3px 5px 0;
   line-height: 14px;
   text-align: center;
-  background: url("assets/img/popup/bg/bg_blackBtn_R.png") right 0 no-repeat;
+  background: url(assets/img/popup/bg/bg_blackBtn_R.png) right 0 no-repeat;
   display: inline-block;
 }
-
 .btnWhite {
   height: 25px;
   padding-left: 3px;
@@ -119,7 +114,6 @@
 .btnWhite span img {
   vertical-align: middle;
 }
-
 .popSubTitle02 {
   margin-bottom: 6px;
 }
@@ -143,7 +137,6 @@
   background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
   font-weight: normal;
 }
-
 .contentList {
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -192,7 +185,6 @@
   margin-right: 6px;
   vertical-align: middle;
 }
-
 .saveBox {
   position: relative;
   height: 28px;
@@ -247,7 +239,6 @@
 .saveBox .DivSelectyze .UlSelectize li a:hover {
   background-color: #e4f0fd;
 }
-
 .saveBox .treeConBox {
   position: absolute;
   left: 0;
@@ -302,7 +293,6 @@
   overflow: hidden;
   display: inline-block;
 }
-
 .positionBox {
   margin-top: -21px;
   padding-top: 10px;
@@ -310,7 +300,7 @@
 }
 .positionBox .miniTab {
   width: 75px;
-  padding: 8px 15px 4px 15px;
+  padding: 8px 15px 4px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -318,7 +308,7 @@
   border-radius: 3px 3px 0 0;
 }
 .positionBox .positionSearch {
-  padding: 5px 13px 15px 13px;
+  padding: 5px 13px 15px;
   border: 2px solid #658dc1;
 }
 .positionBox .positionSearch:after {
@@ -345,7 +335,6 @@
   clear: both;
   padding-top: 14px;
 }
-
 .positionBox .positionSearch .tabUL {
   width: 100%;
   height: 31px;
@@ -378,7 +367,7 @@
   background-color: #77a9e3;
 }
 .positionBox .positionSearch .personBox {
-  padding: 10px 9px 9px 9px;
+  padding: 10px 9px 9px;
   border: 1px solid #e6e6e6;
   border-width: 0 1px 1px 1px;
   background-color: #fff;
@@ -390,15 +379,12 @@
   font-weight: bold;
   color: #222;
 }
-
 .positionBox .part_C .btn_move {
   margin-top: 34px;
 }
-
 .positionBox .part_C .btn_move:first-child {
   margin-top: 0;
 }
-
 .positionBox .part_C .btn_move a {
   width: 31px;
   height: 20px;
@@ -408,7 +394,6 @@
 .positionBox .part_C .btn_move a:first-child {
   margin-bottom: 4px;
 }
-
 .positionBox .part_R .txtArea {
   width: 290px;
   height: 46px;
@@ -418,7 +403,7 @@
 .positionBox .part_R .sub {
   width: 100%;
   height: 14px;
-  margin: 17px 0 4px 0;
+  margin: 17px 0 4px;
   line-height: 14px;
   font-weight: bold;
   color: #000;
@@ -427,16 +412,15 @@
   margin-top: 0;
 }
 .positionBox .part_R .sub .btn {
-  padding: 3px 7px 2px 7px;
+  padding: 3px 7px 2px;
   font-size: 13px;
   font-weight: normal;
   color: #222;
   border: 1px solid #c8c8c8;
   background: url(assets/img/popup/bg/bg_btnGray.gif) 0 0 repeat;
 }
-
 .bdr0 {
-  border-right: 0 !important;
+  border-right: 0;
 }
 .scrolArea {
   margin-top: 10px;
@@ -468,7 +452,6 @@
   text-align: center;
   font-weight: normal;
 }
-
 .tblFolder {
   width: 100%;
   table-layout: fixed;
@@ -488,17 +471,17 @@
   vertical-align: middle;
 }
 .tblFolder tbody tr td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth1 td {
   background: #77a9e3;
   border: 1px solid #4c86c9;
 }
 .tblFolder tbody tr.depth1 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth1 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth1 td a {
   color: #fff;
@@ -509,10 +492,10 @@
   border-width: 0 1px 1px 1px;
 }
 .tblFolder tbody tr.depth2 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth2 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth2 td a,
 .tblFolder tbody tr.depth3 td a,
@@ -526,10 +509,10 @@
   border-width: 0 1px 1px 1px;
 }
 .tblFolder tbody tr.depth3 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth3 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth4 td {
   background: #e0e8f2;
@@ -537,10 +520,10 @@
   border-width: 0 1px 1px 1px;
 }
 .tblFolder tbody tr.depth4 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth4 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth5 {
   background: #f2f2f2;
@@ -552,7 +535,6 @@
 .tblFolder tbody tr.groupOne td a {
   font-weight: normal !important;
 }
-
 .tblFolder th {
   background: #f2f2f2;
   height: 33px;
@@ -571,7 +553,6 @@
   text-align: center;
   font-weight: normal;
 }
-
 .personUL {
   border: 1px solid #d6d6d6;
   border-width: 0 1px;
@@ -636,7 +617,6 @@
 .personUL li .depth4 label {
   left: 32px;
 }
-
 .innerPad .DivSelectyze {
   position: relative;
   float: left;
@@ -685,9 +665,8 @@
 .innerPad .DivSelectyze .UlSelectize li a:hover {
   background-color: #e4f0fd;
 }
-
 .raiBox {
-  padding: 5px 13px 15px 13px;
+  padding: 5px 13px 15px;
   border: 2px solid #658dc1;
 }
 .raiBox .raiTxt {
@@ -706,7 +685,6 @@
   font-weight: bold;
   line-height: 28px;
 }
-
 .selectPart .DivSelectyze {
   position: relative;
   float: left;
@@ -755,7 +733,6 @@
 .selectPart .DivSelectyze .UlSelectize li a:hover {
   background-color: #e4f0fd;
 }
-
 .raiBox .tabUL {
   width: 100%;
   height: 27px;
@@ -788,7 +765,6 @@
   border: 1px solid #4c86c9;
   background-color: #77a9e3;
 }
-
 .raiBox .raiCon .raiTb tr {
   background-color: #fff;
   cursor: pointer;
@@ -803,7 +779,7 @@
 }
 .raiBox .raiCon .notCon {
   height: 90px;
-  margin: 34px 0 29px 0;
+  margin: 34px 0 29px;
   padding-top: 70px;
   color: #222;
   text-align: center;
@@ -814,7 +790,6 @@
   padding: 11px 0;
   border-bottom: 1px solid #e6e6e6;
 }
-
 .latelyBox {
   position: absolute;
   left: 145px;
@@ -849,14 +824,13 @@
   line-height: 14px;
   font-weight: normal;
 }
-
 .popTb {
   margin-bottom: 21px;
   border: 1px solid #ccc;
   color: #222;
 }
 .popTb th {
-  padding: 6px 0 5px 0;
+  padding: 6px 0 5px;
   border: 1px solid #ccc;
   border-width: 1px 0 0 1px;
   background-color: #f2f2f2;
@@ -873,7 +847,7 @@
   background-color: #fff;
 }
 .popTb td.account {
-  padding: 12px 10px 11px 10px;
+  padding: 12px 10px 11px;
   text-align: left;
   word-break: break-all;
 }
@@ -886,13 +860,12 @@
 .innerPad2 {
   padding: 6px 5px;
 }
-
 .personTb {
   border: 1px solid #ccc;
   color: #222;
 }
 .personTb th {
-  padding: 9px 0 8px 0;
+  padding: 9px 0 8px;
   border: solid #ccc;
   border-width: 1px 0 1px 1px;
   background-color: #f2f2f2;
@@ -901,7 +874,7 @@
   border-width: 0;
 }
 .personTb td {
-  padding: 4px 0 3px 0;
+  padding: 4px 0 3px;
   text-align: center;
   border: solid #ccc;
   border-width: 1px 0 1px 1px;
@@ -909,19 +882,16 @@
 .personTb td:first-child {
   border-width: 1px 0 0 0;
 }
-
 .i_check {
-  background: url("assets/img/form/check-off.png") no-repeat;
+  background: url(assets/img/form/check-off.png) no-repeat;
   margin-left: 2px;
 }
-
 .personTb .i_check {
   width: 89px;
   margin: 0 0 0 15px;
   background-position: 0 40%;
   line-height: 16px;
 }
-
 .maxH {
   height: 230px;
   margin-top: -1px;
@@ -931,15 +901,14 @@
 .marR17 {
   margin-right: -17px;
 }
-
 .tblPerson .selectyzeValue {
   display: inline-block;
   min-width: 268px;
   height: 13px;
   padding: 5px 30px 5px 7px;
-  color: #555555;
+  color: #555;
   border: 1px solid #c8c8c8;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  border-radius: 0.3em;
   background: url(assets/img/common/select_bg.gif) no-repeat scroll 100% 50%
     transparent;
 }
@@ -961,7 +930,6 @@
   color: #fff;
   background-color: #858585;
 }
-
 .btnBlueLine {
   display: inline-block;
   box-sizing: border-box;
@@ -974,14 +942,12 @@
   box-shadow: inset -1px -1px #fff;
   width: 100%;
 }
-
 .red {
   color: #ff3c46;
 }
 .blue {
   color: #678abe;
 }
-
 .search {
   width: 155px;
   height: 26px;
@@ -990,7 +956,6 @@
   color: #222;
   border: 1px solid #ccc;
 }
-
 .baseInput {
   width: 120px;
   height: 20px;
@@ -1007,7 +972,6 @@
   color: #222;
   border: 1px solid #ccc;
 }
-
 label.c_on {
   background: url(assets/img/form/check-on.png) no-repeat;
 }
@@ -1020,10 +984,11 @@ label {
   font-size: 13px;
   cursor: pointer;
 }
-
 .i_check input,
 .i_radio input {
   margin-right: 12px;
+  position: absolute;
+  left: -9999px;
 }
 .i_check,
 .i_radio {
@@ -1035,12 +1000,6 @@ label {
 .i_radio {
   background: url(assets/img/form/radio-off.png) no-repeat;
 }
-.i_check input,
-.i_radio input {
-  position: absolute;
-  left: -9999px;
-}
-
 .radio-type1 {
   min-height: 16px;
   padding-left: 20px;
@@ -1053,7 +1012,6 @@ label {
   left: -9999px;
   margin-right: 12px;
 }
-
 .layerBg {
   position: fixed;
   top: 0;
@@ -1065,7 +1023,6 @@ label {
   filter: alpha(opacity=20);
   z-index: 99;
 }
-
 .popProperty01 {
   width: 865px;
   height: 650px;
@@ -1094,7 +1051,6 @@ label {
   top: 15px;
   right: 25px;
 }
-
 .popProperty01 .contents {
   padding: 30px 40px;
 }
@@ -1129,7 +1085,6 @@ label {
   border: 1px solid #4c86c9;
   background: #77a9e3;
 }
-
 .popProperty01 .contents .subTab02 {
   padding: 10px 0 18px 20px;
 }
@@ -1157,7 +1112,6 @@ label {
   font-weight: bold;
   color: #4c86c9;
 }
-
 .popProperty01 .contents .subTab03 {
   padding: 10px 0 18px 20px;
 }
@@ -1185,7 +1139,6 @@ label {
   font-weight: bold;
   color: #4c86c9;
 }
-
 .popProperty01 .pdRB0 {
   padding: 30px 0 0;
 }
@@ -1201,7 +1154,7 @@ label {
   max-height: 500px;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 0 20px 0px 20px;
+  padding: 0 20px 0px;
   position: relative;
 }
 .popProperty01 .biodata .basicM01 .grayL {
@@ -1239,7 +1192,6 @@ label {
 .popProperty01 .biodata .basicM01 .btnBlack span {
   font-weight: normal;
 }
-
 .popProperty01 .biodata .basicM01 .blueSel01 {
   text-align: center;
 }
@@ -1257,7 +1209,7 @@ label {
   color: #3375bf;
   font-weight: normal;
   border: 1px solid #c8c8c8;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  border-radius: 0.3em;
   background: url(assets/img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
     transparent;
 }
@@ -1294,7 +1246,6 @@ label {
 .popProperty01 .biodata .basicM01 .blueSel01 .btnBlack span {
   min-width: 25px;
 }
-
 .popProperty01 .biodata .basicM01 .popSubTitle .floatR .DivSelectyze {
   float: left;
 }
@@ -1307,7 +1258,7 @@ label {
   color: #3375bf;
   font-weight: normal;
   border: 1px solid #c8c8c8;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  border-radius: 0.3em;
   background: url(assets/img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
     transparent;
 }
@@ -1352,11 +1303,9 @@ label {
   color: #fff;
   background-color: #858585;
 }
-
 .popProperty01 .biodata .basicM01 .changeT01 th {
   border-bottom: 1px solid #ccc;
 }
-
 .popProperty01 .biodata .modifyBtn {
   text-align: center;
   width: 100%;
@@ -1372,7 +1321,6 @@ label {
   margin-top: 15px;
   font-weight: bold;
 }
-
 .popProperty01 .biodata .changeM01 {
   clear: both;
   position: relative;
@@ -1385,11 +1333,10 @@ label {
   clear: both;
   position: relative;
 }
-
 .popProperty01 .biodata h3.gray {
   width: 694px;
   border: 1px solid #e6e6e6;
-  border-bottom: none;
+  border-bottom: 0;
   color: #222;
   font-size: 13px;
   font-weight: bold;
@@ -1414,12 +1361,11 @@ label {
   line-height: 18px;
   border: 1px solid #c8c8c8;
   background: url(assets/img/popup/bg/bg_btnGray.gif) repeat-x left top;
-  padding: 0 7px 0;
+  padding: 0 7px;
   margin-left: 5px;
   color: #222;
   font-size: 13px;
 }
-
 .popProperty01 .biodata .changeT01 {
   border: 1px solid #ccc;
   text-align: center;
@@ -1455,13 +1401,12 @@ label {
   margin-left: 15px;
   color: #222;
   font-size: 13px;
-  outline-style: none;
+  outline: none;
   overflow: hidden;
 }
 .popProperty01 .biodata .changeT01 .bgG td {
   background: #fafafa;
 }
-
 .popProperty01 .biodata .changeT02 {
   border: 1px solid #ccc;
   text-align: center;
@@ -1488,17 +1433,14 @@ label {
   padding: 6px 0 5px;
   line-height: 16px;
 }
-
 .popProperty01 .biodata table tbody td.leftT {
   text-align: left;
   padding-left: 20px;
 }
-
 .verP {
   position: relative;
   margin-top: 15px;
 }
-
 .paging {
   overflow: hidden;
   text-align: center;
@@ -1508,7 +1450,7 @@ label {
   height: 14px;
   display: inline-block;
   border: 1px solid #cbcbcb;
-  padding: 6px 0 4px 0;
+  padding: 6px 0 4px;
   text-align: center;
   color: #222;
   font-weight: bold;
@@ -1549,7 +1491,6 @@ label {
 .paging a:hover.end {
   background: url(assets/img/popup/bg/paging_end_on.gif) left top no-repeat;
 }
-
 .roleT {
   height: 34px;
   margin-top: -1px;
@@ -1570,7 +1511,6 @@ label {
   text-align: left;
   cursor: pointer;
 }
-
 div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   width: 349px;
   max-height: 92px;
@@ -1603,7 +1543,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .searchResult ul.list li a:hover {
   background-color: #e4f0fd;
 }
-
 .treeConBox .contentSelect {
   position: relative;
   height: 25px;
@@ -1632,7 +1571,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   width: 349px;
   max-height: 92px;
 }
-
 .pdRB0 .latelyBox {
   left: 149px;
 }
@@ -1646,12 +1584,10 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .registerData .dataNo:hover {
   background: none;
 }
-
 .personTb tr.on {
   background-color: #f1f1f1;
   font-weight: bold;
 }
-
 .contentList02 {
   height: 93px;
   margin-bottom: 21px;
@@ -1692,7 +1628,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   margin-top: 7px;
   display: inline-block;
 }
-
 .viewL {
   width: 100% !important;
   padding-top: 9px !important;
@@ -1710,7 +1645,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .viewL .maxH .marR17 table td {
   padding: 0;
 }
-
 .saveBox .floatL {
   width: 485px;
   height: 28px;
@@ -1829,10 +1763,9 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .selectFavoritesFolder .folderTree .confirm > a.b2 {
   background: #afafaf;
 }
-
 .latelyHistoryBox {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 28px;
   width: 528px;
   max-height: 186px;
@@ -1840,7 +1773,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   overflow: scroll;
   display: none;
 }
-
 .latelyHistoryBox ul {
   width: 100%;
   background: url(assets/img/popup/bg/bg_contentList.gif) 0 0 repeat;
@@ -1862,19 +1794,8 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   line-height: 14px;
   font-weight: normal;
 }
-
 .pdRB0 .latelyHistoryBox {
   left: 149px;
-}
-.registerData {
-  background: #fff;
-}
-.registerData .dataNo {
-  padding-top: 11px;
-  text-align: center;
-}
-.registerData .dataNo:hover {
-  background: none;
 }
 .latelyFileTypeBox {
   position: absolute;
@@ -1910,21 +1831,9 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   line-height: 14px;
   font-weight: normal;
 }
-
 .pdRB0 .latelyFileTypeBox {
   left: 149px;
 }
-.registerData {
-  background: #fff;
-}
-.registerData .dataNo {
-  padding-top: 11px;
-  text-align: center;
-}
-.registerData .dataNo:hover {
-  background: none;
-}
-
 .formBox01 {
   border: 1px solid #d6d6d6;
   color: #222;
@@ -1943,9 +1852,8 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   margin-bottom: 20px;
 }
 .columnTxt01 {
-  padding: 10px 0 10px;
+  padding: 10px 0;
 }
-
 .popLayerWrap .contents.type_2 {
   min-height: 495px;
   max-height: 495px;
@@ -1976,7 +1884,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .positionBox.type_2 .positionSearch .part_C .btn_move {
   margin-top: 48px;
 }
-
 .positionBox.type_2 .positionSearch .part_C .btn_move:first-child {
   margin-top: 35px;
 }
@@ -2017,7 +1924,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   background: #e6e9eb;
   color: #555;
 }
-
 .positionBox.type_2 .positionSearch .tabUL li {
   width: 169px;
 }
@@ -2096,10 +2002,10 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .saveBox.type_2 .searchResult ul.list {
   left: 326px;
 }
-
 .share_set {
   overflow: hidden;
   margin-bottom: 10px;
+  width: 800px;
 }
 .share_type {
   overflow: hidden;
@@ -2120,7 +2026,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   border: 1px solid #6e7278;
   margin-right: 0;
 }
-
 .share_type li a {
   display: block;
   letter-spacing: -1px;
@@ -2150,14 +2055,14 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   height: 0;
   border-style: solid;
   border-width: 0 3px 3px 3px;
-  border-color: transparent transparent #222222 transparent;
+  border-color: transparent transparent #222 transparent;
 }
 .share_type li.set_btn.on a .triangle {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 3px 3px 0 3px;
-  border-color: #ffffff transparent transparent transparent;
+  border-color: #fff transparent transparent transparent;
 }
 .confidence_type {
   overflow: hidden;
@@ -2226,13 +2131,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .account .innerPad {
   padding-left: 10px;
-}
-.popLayerWrap {
-  width: 100%;
-}
-.popLayerWrap .contents {
-  padding: 5px 25px 30px;
-  background: #fff;
 }
 .contents.type_2 .topTab {
   width: 100%;
@@ -2308,11 +2206,11 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .contents.type_2 h3.gray {
   width: 823px;
   border: 1px solid #e6e6e6;
-  border-bottom: none;
+  border-bottom: 0;
   color: #222;
   font-size: 13px;
   font-weight: bold;
-  padding: 9px 0 7px 0;
+  padding: 9px 0 7px;
   background: url(assets/img/popup/bg/bg_redDot.gif) no-repeat 15px 13px #f6f6f6;
   text-indent: 24px;
 }
@@ -2334,7 +2232,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   line-height: 18px;
   border: 1px solid #c8c8c8;
   background: url(assets/img/popup/bg/bg_btnGray.gif) repeat-x left top;
-  padding: 0 7px 0;
+  padding: 0 7px;
   margin-left: 5px;
   color: #222;
   font-size: 13px;
@@ -2375,7 +2273,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   margin-left: 15px;
   color: #222;
   font-size: 13px;
-  outline-style: none;
+  outline: none;
   overflow: hidden;
 }
 .contents.type_2 .changeT01 .bgG td {
@@ -2431,7 +2329,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   color: #3375bf;
   font-weight: normal;
   border: 1px solid #c8c8c8;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  border-radius: 0.3em;
   background: url(assets/img/popup/bg/select_bg04.gif) no-repeat scroll 100% 50%
     transparent;
 }
@@ -2465,10 +2363,9 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .select_owner .btnBlack span {
   min-width: 50px;
 }
-
 .subtype_2 {
   display: inline-block;
-  padding: 8px 0 0 0;
+  padding: 8px 0 0;
   color: #2768b2;
 }
 .contents.type_2 .innerPad .DivSelectyze .selectyzeValue {
@@ -2480,7 +2377,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .maxH.type_2 {
   height: 269px;
   border: 1px solid #ccc;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 .maxH.type_2 .personTb {
   border: 0;
@@ -2491,7 +2388,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   white-space: nowrap;
 }
 .maxH.type_2 .personTb .i_check {
-  width: 0px;
+  width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2500,7 +2397,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   margin-top: 0;
   height: 336px;
   border: 1px solid #ccc;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 .maxH.type_3 .tblFolder {
   border: 0;
@@ -2514,7 +2411,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   clear: both;
   margin-top: 13px;
   border: 1px solid #ccc;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 .maxH.type_4 .personUL {
   border: 0;
@@ -2526,7 +2423,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   border: 0;
   border-bottom: 1px solid #d6d6d6;
 }
-
 .btn_delall {
   padding: 5px 6px 2px 5px;
   position: absolute;
@@ -2537,7 +2433,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   line-height: 1;
   font-size: 11px;
 }
-
 .btn_delall span {
   padding-right: 12px;
   background: url(assets/img/popup/bg/bg_delall.png) no-repeat 100% 2px;
@@ -2548,9 +2443,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 }
 .positionBox.type_2 .part_R.section_2 .sub + .roleT + .sub + .roleT {
   height: 93px;
-}
-.share_set {
-  width: 800px;
 }
 .safe_grade {
   overflow: hidden;
@@ -2588,7 +2480,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding: 10px;
   background: #e6e9eb;
 }
-
 .safe_btn_box a {
   display: block;
   float: left;
@@ -2599,7 +2490,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   text-align: center;
   font-weight: bold;
   color: #222;
-  outline: none;
+  outline: 0;
   letter-spacing: -1px;
   text-indent: 4px;
 }
@@ -2660,7 +2551,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .safe_btn_box a.btn_safe6.on {
   background-position: -589px 100%;
 }
-
 .safe_btn_box1 {
   overflow: hidden;
   width: 800px;
@@ -2678,14 +2568,13 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   text-align: center;
   font-weight: bold;
   color: #222;
-  outline: none;
+  outline: 0;
   letter-spacing: -1px;
   text-indent: 4px;
 }
 .safe_btn_box1 a.on {
   color: #fff;
 }
-
 .safe_btn_box1 a.btn_safe11,
 .safe_btn_box1 a.btn_safe22 {
   width: 121px;
@@ -2716,7 +2605,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .safe_btn_box1 a:last-child {
   margin-right: 0;
 }
-
 .safe_btn_box1 a.btn_safe11.on,
 .safe_btn_box1 a.btn_safe22.on {
   background-position: 0 100%;
@@ -2734,7 +2622,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .safe_btn_box1 a.btn_safe66.on {
   background-position: -589px 100%;
 }
-
 .safe_btn_box1 .btn_safe11.disabled,
 .safe_btn_box1 .btn_safe22.disabled {
   cursor: default;
@@ -2761,7 +2648,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   color: #9a9a9a;
   background-position: -589px -40px;
 }
-
 .btn_whiteS_typeA {
   display: inline-block;
   height: 24px;
@@ -2772,7 +2658,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .btn_whiteS_typeA a {
   display: inline-block;
   padding-right: 2px;
-  color: #222222 !important;
+  color: #222 !important;
   font-weight: normal;
 }
 .popSubTitle .btn_whiteS_typeA {
@@ -2789,7 +2675,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding-right: 5px;
   padding-left: 5px;
 }
-
 .share_set2 {
   position: relative;
   height: 90px;
@@ -2809,9 +2694,8 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   width: 220px;
   border: 1px solid #ccd0d3;
 }
-
 .tbl_safe th {
-  padding: 8px 0 7px 0;
+  padding: 8px 0 7px;
   background: #2868b2;
   color: #95c8ff;
 }
@@ -2838,9 +2722,8 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   text-align: center;
   line-height: 20px;
 }
-
 .tbl_safe2 th {
-  padding: 7px 0 7px 0;
+  padding: 7px 0;
   background: #e5e9ec;
   border-bottom: 1px solid #cbd0d4;
 }
@@ -2850,7 +2733,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   text-align: center;
   font-weight: bold;
 }
-
 .btn_center {
   margin-top: 15px;
   text-align: center;
@@ -2867,7 +2749,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .btn_popup2 {
   background: #afafaf;
 }
-
 .count_box {
   position: relative;
   overflow: hidden;
@@ -2882,7 +2763,7 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .count_box .count {
   float: left;
   font-size: 12px;
-  padding: 0 !important;
+  padding: 0 0 !important;
   margin-top: 2px;
   line-height: 14px !important;
   height: 14px !important;
@@ -2890,7 +2771,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
 .count_box .btn_delall {
   top: 4px !important;
 }
-
 .chktype_1 {
   display: inline-block;
   margin-left: 3px;
@@ -2903,7 +2783,6 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   vertical-align: top;
   margin-top: -1px;
 }
-
 .ptfav_top {
   margin: 5px 0;
 }
@@ -2917,9 +2796,8 @@ div.treeConBox .contentSelect .DivSelectyze .UlSelectize {
   padding-left: 5px;
   padding-right: 5px;
 }
-
 td.fav_loca {
-  padding: 6px 15px !important;
+  padding: 6px 15px 15px !important;
 }
 a.btn_in_td {
   display: inline-block;
@@ -2928,7 +2806,6 @@ a.btn_in_td {
   background: url(assets/img/favorites/btn_fav_loca_go.png) repeat-x 0 100%;
   border: 1px solid #c8c8c8;
 }
-
 .popLayerWrap .bottomBtns {
   height: 43px;
   padding-top: 15px;
@@ -2948,7 +2825,6 @@ a.btn_in_td {
 .popLayerWrap .bottomBtns a.btn1 {
   background: #0976b2;
 }
-
 .tree_box li.root a {
   font-weight: bold;
   color: #2768b2;
@@ -2958,7 +2834,6 @@ a.btn_in_td {
   height: 27px;
   background: url(assets/img/favorites/ic_ftree_tit.png) no-repeat 0 4px;
 }
-
 .tree_box ul {
   display: table;
   width: 100%;
@@ -2988,7 +2863,6 @@ a.btn_in_td {
   vertical-align: middle;
   cursor: pointer;
 }
-
 .tree_box ul li span.folder_a {
   background: url(assets/img/am_common/ico_folder.png) no-repeat 0 0;
 }
@@ -3028,7 +2902,6 @@ a.btn_in_td {
 .tree_box ul li a span.folder_f.last_f {
   background: url(assets/img/am_common/ico_folder.png) no-repeat 0 -318px;
 }
-
 .tree_box ul.depth_1 li ul.depth_2 li a {
   margin-top: -1px;
   padding: 0 6px 0 16px;
@@ -3120,7 +2993,6 @@ a.btn_in_td {
   padding: 0 6px 0 76px;
   border-top: 1px solid #ccc;
 }
-
 .tree_box .mody_name {
   display: block;
   padding: 0 6px;
@@ -3157,7 +3029,6 @@ a.btn_in_td {
   border: 1px solid #afb9c4;
   border-radius: 2px;
 }
-
 .hashtag_inputer {
   position: relative;
   margin-bottom: 10px;
@@ -3199,7 +3070,6 @@ a.btn_in_td {
 .hashtag_inputer .inputed.target .del {
   background-position: 50% -15px;
 }
-
 .hashtag_inputer .inputer .clone {
   display: inline-block;
   position: absolute;
@@ -3226,7 +3096,6 @@ a.btn_in_td {
 .hashtag_inputer > input[type="text"]::-ms-clear {
   display: none;
 }
-
 .hashtag_inputer .auto_menu {
   z-index: 1000;
   display: none;

@@ -10,10 +10,11 @@ label {
   font-size: 13px;
   cursor: pointer;
 }
-
 .i_check input,
 .i_radio input {
   margin-right: 5px;
+  position: absolute;
+  left: -9999px;
 }
 .i_check,
 .i_radio {
@@ -26,15 +27,8 @@ label {
 .i_check {
   background: url(assets/img/form/check-off.png) no-repeat;
 }
-.i_check input,
-.i_radio input {
-  position: absolute;
-  left: -9999px;
-}
-
 .btn_blueS_typeA {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -67,7 +61,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_blueM_typeA {
   position: relative;
   height: 25px;
@@ -103,7 +96,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_blueL_typeA {
   position: relative;
   height: 25px;
@@ -139,10 +131,8 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .btn_blueS_typeB {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -175,7 +165,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_blueM_typeB {
   position: relative;
   height: 25px;
@@ -211,7 +200,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_blueL_typeC {
   position: relative;
   height: 25px;
@@ -247,7 +235,6 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .btn_blueM_typeB_ps {
   position: relative;
   height: 25px;
@@ -283,7 +270,6 @@ label {
   height: 12px;
   padding: 10px 12px 11px 10px;
 }
-
 .btn_whiteS_typeA {
   position: relative;
   height: 25px;
@@ -318,7 +304,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteS_typeA02 {
   position: relative;
   height: 25px;
@@ -353,7 +338,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteM_typeA {
   position: relative;
   height: 25px;
@@ -389,7 +373,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_whiteL_typeA {
   position: relative;
   height: 25px;
@@ -425,10 +408,8 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .btn_whiteS_typeB {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -461,7 +442,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteM_typeB {
   position: relative;
   height: 25px;
@@ -497,7 +477,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_whiteM_typeB_ps {
   position: relative;
   height: 25px;
@@ -533,7 +512,6 @@ label {
   height: 12px;
   padding: 10px 12px 11px 10px;
 }
-
 .btn_whiteL_typeB {
   position: relative;
   height: 25px;
@@ -569,10 +547,8 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .btn_whiteS_typeC {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -605,7 +581,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteM_typeC {
   position: relative;
   height: 25px;
@@ -641,7 +616,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_whiteL_typeC {
   position: relative;
   height: 25px;
@@ -677,10 +651,8 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .btn_blackS_typeA {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -713,10 +685,8 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_blackS_typeA_1 {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -749,7 +719,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_blackM_typeA {
   position: relative;
   height: 25px;
@@ -785,7 +754,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_blackL_typeA {
   position: relative;
   height: 25px;
@@ -821,10 +789,8 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .btn_redS_typeA {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -857,7 +823,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_redM_typeA {
   position: relative;
   height: 25px;
@@ -893,7 +858,6 @@ label {
   height: 12px;
   padding: 10px 32px 11px 30px;
 }
-
 .btn_redL_typeA {
   position: relative;
   height: 25px;
@@ -929,7 +893,6 @@ label {
   height: 12px;
   padding: 21px 20px 22px 18px;
 }
-
 .ecmWrap .DivSelectyze {
   position: relative;
 }
@@ -940,7 +903,7 @@ label {
   width: 157px;
   padding: 4px 30px 6px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("assets/img/contents/ecmMain/bg_select.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/bg_select.gif) no-repeat
     right 3px;
 }
 .ecmWrap .selectyzeValue span {
@@ -976,14 +939,13 @@ label {
   background-color: #858585;
   color: #fff;
 }
-
 .selectBoxC {
   position: relative;
   width: 100%;
   height: 26px;
   line-height: 26px;
   border: 1px solid #c7cacd;
-  background: #fff url("assets/img/contents/ecmMain/bg_select.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/bg_select.gif) no-repeat
     right 3px;
   z-index: 11;
 }
@@ -993,7 +955,7 @@ label {
   height: 26px;
   line-height: 26px;
   border: 1px solid #c7cacd;
-  background: #fff url("assets/img/contents/ecmMain/bg_select.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/bg_select.gif) no-repeat
     right 3px;
   z-index: 11;
 }
@@ -1015,11 +977,11 @@ label {
 .selectBoxC .stepBox > li.select_folder a.btnSub {
   width: 24px;
   text-indent: -999px;
-  background: url("assets/img/contents/ecmMain/bg_depth_off.png") 6px 9px
+  background: url(assets/img/contents/ecmMain/bg_depth_off.png) 6px 9px
     no-repeat;
 }
 .selectBoxC .stepBox > li.select_folder a.on {
-  background: url("assets/img/contents/ecmMain/bg_depth_on.png") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_depth_on.png) 0 0 no-repeat;
 }
 .selectBoxC .stepBox > li.select_folder .subStep {
   right: -140px;
@@ -1037,10 +999,10 @@ label {
 .selectBoxC .stepBox > li > a.btnSub {
   width: 20px;
   text-indent: -999px;
-  background: url("assets/img/contents/ecmMain/bg_arrowR.png") 6px 8px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_arrowR.png) 6px 8px no-repeat;
 }
 .selectBoxC .stepBox > li > a.on {
-  background: url("assets/img/contents/ecmMain/bg_select.gif") -5px 4px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_select.gif) -5px 4px no-repeat;
 }
 .selectBoxC .stepBox > li .subStep {
   display: none;
@@ -1069,11 +1031,10 @@ label {
   color: #1169c2;
   background-color: #dfe6f1;
 }
-
 .selectBoxC .baseLink {
   display: block;
   padding-left: 34px;
-  background: url("assets/img/contents/ecmMain/ico_folder01.png") 12px 5px
+  background: url(assets/img/contents/ecmMain/ico_folder01.png) 12px 5px
     no-repeat;
 }
 .selectBoxC .baseBox {
@@ -1086,7 +1047,7 @@ label {
   border: 1px solid #077aba;
 }
 .selectBoxC .baseBox ul {
-  padding: 6px 2px 4px 2px;
+  padding: 6px 2px 4px;
   border-bottom: 1px solid #e7e7e7;
   background-color: #fff;
 }
@@ -1100,43 +1061,43 @@ label {
   color: #222;
 }
 .selectBoxC .baseBox ul li a.icoFolder01 {
-  background: url("assets/img/contents/ecmMain/ico_folder02.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder02.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder02 {
-  background: url("assets/img/contents/ecmMain/ico_folder03.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder03.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder03 {
-  background: url("assets/img/contents/ecmMain/ico_folder04.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder04.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder04 {
-  background: url("assets/img/contents/ecmMain/ico_folder05.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder05.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder05 {
-  background: url("assets/img/contents/ecmMain/ico_folder06.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder06.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder06 {
-  background: url("assets/img/contents/ecmMain/ico_folder07.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder07.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder07 {
-  background: url("assets/img/contents/ecmMain/ico_folder08.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder08.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder08 {
-  background: url("assets/img/contents/ecmMain/ico_folder09.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder09.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder09 {
-  background: url("assets/img/contents/ecmMain/ico_folder10.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder10.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a.icoFolder10 {
-  background: url("assets/img/contents/ecmMain/ico_folder11.png") 10px 4px
+  background: url(assets/img/contents/ecmMain/ico_folder11.png) 10px 4px
     no-repeat;
 }
 .selectBoxC .baseBox ul li a:hover {
@@ -1151,6 +1112,7 @@ label {
   table-layout: fixed;
   border: 1px solid #d6d6d6;
   border-width: 0 0 1px 1px;
+  margin-bottom: -1px;
 }
 .normalTb thead th {
   padding: 10px 0;
@@ -1234,7 +1196,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   width: auto !important;
   padding: 0 20px 0 10px !important;
 }
-
 .normalTb tbody tr.btnAdd {
   display: none;
 }
@@ -1269,8 +1230,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: left;
   line-height: 19px;
   border: 1px solid #c7cacd;
-  background: url("assets/img/contents/ecmMain/bg_btn_sel.gif") right 0
-    no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btn_sel.gif) right 0 no-repeat;
 }
 .normalTb tbody tr.btnAddOn td .addBox .infoMenu {
   top: 23px;
@@ -1282,7 +1242,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   margin: -3px 0;
   color: #222;
   line-height: 24px;
-  background: url("assets/img/contents/ecmInform/bg_btnView.png") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
 }
 .normalTb tbody .btnAsk {
   display: inline-block;
@@ -1321,7 +1281,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   padding-left: 10px;
   font-weight: bold;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_redDot.gif") 0 5px no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_redDot.gif) 0 5px no-repeat;
 }
 .popLayerWrap .contents .popSubTitle .etc {
   position: absolute;
@@ -1329,7 +1289,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   top: -2px;
   font-weight: normal;
 }
-
 .layerBg {
   position: absolute;
   top: 0;
@@ -1349,7 +1308,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   min-width: 58px;
   height: 23px;
   margin-right: 8px;
-  padding: 5px 10px 0 10px;
+  padding: 5px 10px 0;
   font-weight: bold;
   line-height: 20px;
   color: #fff;
@@ -1358,7 +1317,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .popLayerWrap .btnBox a.grayB {
   background-color: #afafaf;
 }
-
 .popSearchWrap .btnBox {
   text-align: center;
 }
@@ -1367,7 +1325,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   min-width: 58px;
   height: 23px;
   margin-right: 8px;
-  padding: 5px 10px 0 10px;
+  padding: 5px 10px 0;
   font-weight: bold;
   line-height: 20px;
   color: #fff;
@@ -1376,7 +1334,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .popSearchWrap .btnBox a.grayB {
   background-color: #afafaf;
 }
-
 #popLayerA {
   width: 610px;
   margin-left: -305px;
@@ -1390,7 +1347,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   content: "";
   display: block;
 }
-
 #popLayerB {
   width: 970px;
 }
@@ -1427,9 +1383,8 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   margin-right: -14px;
   font-weight: bold;
   color: #fff;
-  background: url("assets/img/contents/ecmMain/bg_popMenuOn.gif") 0 0 repeat-y;
+  background: url(assets/img/contents/ecmMain/bg_popMenuOn.gif) 0 0 repeat-y;
 }
-
 #popLayerB .contents .columnR {
   float: left;
   width: 676px;
@@ -1443,6 +1398,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   font-size: 14px;
   color: #000;
   border-bottom: 1px solid #d6d6d6;
+  position: relative;
 }
 #popLayerB .contents .popSubTitle {
   margin-top: 20px;
@@ -1452,7 +1408,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   height: 20px;
   padding-left: 8px;
   font-size: 13px;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
 }
 #popLayerB .contents .popSubTitle .etc span {
   display: inline-block;
@@ -1460,11 +1416,14 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   padding: 0px 8px 0 0;
   line-height: 20px;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
 }
 #popLayerB .contents .contentName {
   padding: 10px;
   border: 1px solid #d6d6d6;
+  overflow-y: auto;
+  min-height: 20px;
+  max-height: 70px;
 }
 #popLayerB .contents .selectBoxC_Edit {
   display: none;
@@ -1498,10 +1457,9 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 #popLayerB .contents .boxChildResult li a:hover {
   background-color: #f7f7f7;
 }
-
 #popLayerB .contents .securityBox {
   height: 40px;
-  padding: 6px 10px 0 10px;
+  padding: 6px 10px 0;
   background-color: #f2f2f2;
   overflow: hidden;
 }
@@ -1539,16 +1497,15 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 #popLayerB .contents .columnR .btnBox a {
   text-align: center;
 }
-
 #popLayerB .grey .selectyzeValue {
   display: inline-block;
   min-width: 140px;
   height: 13px;
   padding: 5px 30px 5px 7px;
-  color: #555555;
+  color: #555;
   border: 1px solid #c8c8c8;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
-  background: url("assets/img/common/select_bg.gif") no-repeat scroll 100% 50%
+  border-radius: 0.3em;
+  background: url(assets/img/common/select_bg.gif) no-repeat scroll 100% 50%
     transparent;
 }
 #popLayerB .DivSelectyze .UlSelectize {
@@ -1589,7 +1546,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   left: 0;
   top: 24px;
 }
-
 #popLayerB .selectWidth578 {
   position: relative;
 }
@@ -1601,7 +1557,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   left: 0;
   top: 24px;
 }
-
 #popLayerB .selectWidth620 {
   position: relative;
 }
@@ -1611,12 +1566,11 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 #popLayerB .selectWidth620 .DivSelectyze .UlSelectize {
   width: 657px;
 }
-
 .columnBox {
   margin-bottom: 25px;
   padding-bottom: 22px;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 bottom
+  background: url(assets/img/contents/ecmMain/bg_columnBox.gif) 0 bottom
     repeat-x;
 }
 .columnBox:after,
@@ -1646,7 +1600,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .columnBox .listBox ul li a:hover {
   background-color: #f7f7f7;
 }
-
 .columnBox .columnC {
   float: left;
   width: 176px;
@@ -1661,7 +1614,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   font-weight: bold;
   padding: 10px 28px 11px 26px;
 }
-
 .columnBox .columnR {
   float: left;
   width: 271px;
@@ -1676,7 +1628,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   margin-top: 10px;
   line-height: 16px;
 }
-
 .columnBoxs {
   margin-bottom: 20px;
 }
@@ -1699,7 +1650,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .columnBoxs .normalTb {
   margin-bottom: -1px;
 }
-
 .popSearchBox {
   margin-bottom: 17px;
 }
@@ -1708,21 +1658,18 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   content: "";
   display: block;
 }
-
 #popLayerA .paging {
   padding: 20px 0;
   border: 1px solid #d6d6d6;
   border-width: 0 1px 1px 1px;
 }
-
 .choiceBox {
   padding-top: 20px;
 }
 .choiceBox .choiceTitle {
   position: relative;
   height: 31px;
-  background: url("assets/img/contents/ecmMain/bg_choiceTitleC.png") 0 0
-    no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_choiceTitleC.png) 0 0 no-repeat;
 }
 .choiceBox .choiceTitle a.btnTitle {
   display: block;
@@ -1731,7 +1678,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   font-weight: bold;
   line-height: 27px;
   color: #fff;
-  background: url("assets/img/contents/ecmMain/bg_choiceArrow.gif") 190px 15px
+  background: url(assets/img/contents/ecmMain/bg_choiceArrow.gif) 190px 15px
     no-repeat;
 }
 .popLayerWrap .choiceBox .choiceTitle a.btnTitle {
@@ -1797,7 +1744,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   right: 5px;
   top: 5px;
 }
-
 #popLayerA .contents .tabBox {
   margin-bottom: 20px;
   border-bottom: 1px solid #d9d9d9;
@@ -1829,7 +1775,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   border: 1px solid #4c86c9;
   background-color: #77a9e3;
 }
-
 .normalPopTb {
   color: #222;
   border: 1px solid #d6d6d6;
@@ -1892,7 +1837,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   height: 16px;
 }
 .inputM {
-  margin: -5px 0 !important;
+  margin: -5px 0 0 !important;
 }
 .normalPopTb tbody td .conText .selectLink {
   display: inline-block;
@@ -1901,10 +1846,9 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #222;
   border: 1px solid #c7cacd;
   vertical-align: top;
-  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/select_bg.gif) no-repeat
     right -1px;
 }
-
 .normalPopTb .DivSelectyze {
   position: relative;
   float: left;
@@ -1916,7 +1860,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   width: 290px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/select_bg.gif) no-repeat
     right -1px;
 }
 .normalPopTb .selectyzeValue span {
@@ -1962,7 +1906,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   width: 60px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/select_bg.gif) no-repeat
     right -1px;
 }
 .popSearchBox .selectyzeValue span {
@@ -1997,7 +1941,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   background-color: #858585;
   color: #fff;
 }
-
 .areaCBox .selectyzeValue {
   width: 100%;
   padding: 0;
@@ -2016,25 +1959,23 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   width: 100%;
   margin-top: -1px;
   border: 1px solid #648ec3;
-  border-top: none;
+  border-top: 0;
   background-color: #fff;
 }
 .areaCBox .UlSelectize li:first-child {
   border-top: 1px solid #648ec3;
 }
-
 .textareaTypeA {
   width: 708px;
   height: 100px;
   padding: 10px 0 10px 10px;
   line-height: 18px;
 }
-
 .i_input {
   height: 23px;
   padding: 0 10px;
   line-height: 23px;
-  color: #555555;
+  color: #555;
   border: 1px solid #c8c8c8;
 }
 .popSearchBox .i_input {
@@ -2042,7 +1983,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   width: 250px;
   margin-right: 8px;
 }
-
 .listSearch {
   position: absolute;
   left: 50%;
@@ -2058,7 +1998,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   border: 1px solid #c8c8c8;
   color: #94949c;
 }
-
 .paging {
   overflow: hidden;
   text-align: center;
@@ -2069,7 +2008,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   height: 14px;
   display: inline-block;
   border: 1px solid #cbcbcb;
-  padding: 6px 0 4px 0;
+  padding: 6px 0 4px;
   text-align: center;
   color: #222;
   font-weight: bold;
@@ -2113,7 +2052,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .lineH18 {
   line-height: 18px;
 }
-
 .columnR h2 {
   color: #000;
   font-size: 14px;
@@ -2165,7 +2103,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   overflow: hidden;
   border: 1px solid #c8c8c8;
 }
-
 .partBox01 {
   width: 276px;
   float: left;
@@ -2243,7 +2180,6 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .partBox03 .listBox ul li a img {
   vertical-align: middle;
 }
-
 .partBox02 a {
   width: 93px;
   height: 18px;
@@ -2251,11 +2187,9 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   text-align: left;
   padding: 6px 0 0 12px;
   margin-bottom: 5px;
-  background: url("assets/img/contents/ecmMain/btn_partBg.gif") repeat-x left
-    top;
+  background: url(assets/img/contents/ecmMain/btn_partBg.gif) repeat-x left top;
   display: inline-block;
 }
-
 #popLayerB .contents .tabBox {
   margin-bottom: 20px;
 }
@@ -2286,13 +2220,12 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   border: 1px solid #4c86c9;
   background-color: #77a9e3;
 }
-
 p.completion {
   clear: both;
   position: relative;
   margin-top: 20px;
   padding-top: 10px;
-  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") repeat-x left
+  background: url(assets/img/contents/ecmMain/bg_columnBox.gif) repeat-x left
     top;
   height: 28px;
 }
@@ -2301,7 +2234,6 @@ p.completion a {
   right: 0;
   margin-right: 0;
 }
-
 .clfix:after {
   clear: both;
   content: ".";
@@ -2312,7 +2244,6 @@ p.completion a {
 .clfix {
   display: block;
 }
-
 table.historyTB thead th {
   padding: 10px 0;
   vertical-align: top;
@@ -2324,14 +2255,12 @@ table.historyTB tbody td {
   text-align: center;
   background: #fff;
 }
-
 ul.historyTab {
   border-bottom: 1px solid #d9d9d9;
 }
 ul.historyTab li a {
   width: 126px !important;
 }
-
 table.historyTB02 {
   margin-bottom: -1px;
 }
@@ -2346,14 +2275,12 @@ table.historyTB05 .contentTitle .checkTxt {
 table.historyTB05 tr:hover {
   background: #e4f0fd;
 }
-
 table.historyTB02 .allCheck {
   position: relative;
 }
 table.historyTB03 .contentTitle {
   position: relative;
 }
-
 #history01 .checkTxt {
   padding-left: 20px;
 }
@@ -2380,7 +2307,7 @@ table.historyTB03 .contentTitle {
 }
 .txtAL {
   text-align: left !important;
-  padding: 10px !important;
+  padding: 10px 10px !important;
 }
 .historyTB04 td {
   padding: 4px 0 1px !important;
@@ -2403,7 +2330,6 @@ table.historyTB03 .contentTitle {
   text-align: center;
   width: 91px;
 }
-
 .wid64 {
   float: right;
   overflow: hidden;
@@ -2414,7 +2340,6 @@ table.historyTB03 .contentTitle {
   width: 64px;
   color: #227cdb !important;
 }
-
 .wid357 {
   width: 657px;
 }
@@ -2442,11 +2367,11 @@ table.historyTB03 .contentTitle {
 }
 .tabDiv .columnBox {
   min-height: 220px !important;
+  position: relative;
 }
 .scrollBox01 .historyTB03 {
   margin-bottom: 0;
 }
-
 table.raiT3 thead th {
   padding: 10px 0;
   vertical-align: top;
@@ -2467,10 +2392,6 @@ table.raiT3 tbody td .i_check em {
   padding-top: 2px;
   display: inline-block;
 }
-.tabDiv .columnBox {
-  position: relative;
-}
-
 .mgb10 {
   margin-bottom: 10px !important;
 }
@@ -2484,11 +2405,10 @@ table.raiT3 tbody td .i_check em {
   display: block;
   height: 35px;
   padding-left: 20px !important;
-  margin: 0 !important;
+  margin: 0 0 !important;
   line-height: 35px;
-  background-color: #d9e3f0 !important;
+  background: #d9e3f0 none !important;
   color: #3160af !important;
-  background-image: none !important;
   font-weight: normal !important;
 }
 .securityDoc .popSubTitle a {
@@ -2496,7 +2416,7 @@ table.raiT3 tbody td .i_check em {
   line-height: 15px;
 }
 .tbList li {
-  padding: 15px 20px 5px 20px;
+  padding: 15px 20px 5px;
   border-bottom: 1px solid #e2e2e2;
 }
 .tbList li dt {
@@ -2565,9 +2485,8 @@ table.raiT3 tbody td .i_check em {
   width: 78px;
 }
 .lastLno {
-  border-bottom: none !important;
+  border-bottom: none;
 }
-
 .gradeBox .fr .btn_whiteS_typeA {
   vertical-align: middle;
 }
@@ -2612,7 +2531,6 @@ table.raiT3 tbody td .i_check em {
 .rolePors01 em.blueT {
   color: #678abe;
 }
-
 .roleBox01 .historyTB03 {
   color: #222;
 }
@@ -2632,7 +2550,6 @@ table.raiT3 tbody td .i_check em {
 .partBox01 .roleBox01 .maxH {
   max-height: 160px !important;
 }
-
 .partBox03 .partTitle h3 {
   padding-bottom: 6px;
 }
@@ -2668,14 +2585,12 @@ table.raiT3 tbody td .i_check em {
 .partBox03 .roleBox01 .maxH {
   max-height: 224px !important;
 }
-
 #content04 table.historyTB03 .contentTitle .checkTxt {
   margin-left: -16px !important;
 }
 *:first-child + html #content04 table.historyTB03 .contentTitle .checkTxt {
   margin-left: 0 !important;
 }
-
 #content04 {
   padding-bottom: 0;
 }
@@ -2685,7 +2600,7 @@ table.raiT3 tbody td .i_check em {
   margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 24px;
-  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") repeat-x left
+  background: url(assets/img/contents/ecmMain/bg_columnBox.gif) repeat-x left
     top;
   height: 28px;
 }
@@ -2694,9 +2609,8 @@ table.raiT3 tbody td .i_check em {
   right: 0;
   margin-right: 0;
 }
-
 .bdr0 {
-  border-right: 0 !important;
+  border-right: 0;
 }
 .scrolArea {
   margin-top: 10px;
@@ -2747,25 +2661,25 @@ table.raiT3 tbody td .i_check em {
   vertical-align: middle;
 }
 .tblFolder tbody tr td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr td.bdr1 {
-  border-right: none;
-  border-left: none;
+  border-right: 0;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth1 td {
   background: #77a9e3;
   border: 1px solid #4c86c9;
 }
 .tblFolder tbody tr.depth1 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth1 td.bdr1 {
-  border-right: none;
-  border-left: none;
+  border-right: 0;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth1 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth1 td a {
   color: #fff;
@@ -2776,14 +2690,14 @@ table.raiT3 tbody td .i_check em {
   border-width: 0 1px 1px 1px;
 }
 .tblFolder tbody tr.depth2 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth2 td.bdr1 {
-  border-right: none;
-  border-left: none;
+  border-right: 0;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth2 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth2 td a,
 .tblFolder tbody tr.depth3 td a,
@@ -2797,14 +2711,14 @@ table.raiT3 tbody td .i_check em {
   border-width: 0 1px 1px 1px;
 }
 .tblFolder tbody tr.depth3 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth3 td.bdr1 {
-  border-right: none;
-  border-left: none;
+  border-right: 0;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth3 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth4 td {
   background: #e0e8f2;
@@ -2812,14 +2726,14 @@ table.raiT3 tbody td .i_check em {
   border-width: 0 1px 1px 1px;
 }
 .tblFolder tbody tr.depth4 td.bdr0 {
-  border-right: none;
+  border-right: 0;
 }
 .tblFolder tbody tr.depth4 td.bdr1 {
-  border-right: none;
-  border-left: none;
+  border-right: 0;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth4 td.agl {
-  border-left: none;
+  border-left: 0;
 }
 .tblFolder tbody tr.depth5 {
   background: #f2f2f2;
@@ -2831,7 +2745,6 @@ table.raiT3 tbody td .i_check em {
 .tblFolder tbody tr.groupOne td a {
   font-weight: normal !important;
 }
-
 .tblFolder th {
   background: #f2f2f2;
   height: 33px;
@@ -2852,7 +2765,6 @@ table.raiT3 tbody td .i_check em {
   text-align: center;
   font-weight: normal;
 }
-
 .scrolArea .maxH {
   max-height: 183px;
   margin-top: -1px;
@@ -2862,9 +2774,6 @@ table.raiT3 tbody td .i_check em {
 }
 .scrolArea .maxH .marR17 {
   margin-right: -17px;
-}
-.normalTb {
-  margin-bottom: -1px;
 }
 .fc_ff3c46 {
   color: #ff3c46 !important;
@@ -2904,16 +2813,15 @@ table.conDel01 .maxH {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
 }
 #popLayerA .contents .popSubTitle .etc span {
   display: inline-block;
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
 }
-
 .executive .partBox01 {
   width: 318px;
 }
@@ -2931,7 +2839,7 @@ table.conDel01 .maxH {
 }
 .executive .partBox02 a,
 .columnBox .partBox02 a {
-  background: url("assets/img/contents/ecmMain/btn_partBg02.gif") no-repeat left
+  background: url(assets/img/contents/ecmMain/btn_partBg02.gif) no-repeat left
     top;
   padding-left: 11px;
   width: 51px;
@@ -2948,12 +2856,9 @@ table.conDel01 .maxH {
 }
 .centerBtn {
   text-align: center;
-  background: url("assets/img/contents/ecmMain/bg_columnBox.gif") 0 top repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_columnBox.gif) 0 top repeat-x;
   padding-top: 25px;
   margin-top: 20px;
-}
-#popLayerB .contents .columnR .title {
-  position: relative;
 }
 #popLayerB .columnR .columnBox .title .pRight {
   position: absolute;
@@ -2966,12 +2871,11 @@ table.conDel01 .maxH {
   margin: 3px 10px 0 0;
   padding-left: 20px;
 }
-
 #popLayerB .columnR .columnBox .title a.addBtn {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
   font-weight: normal;
 }
 #popLayerB .columnR .columnBox .title a.addBtn span {
@@ -2979,17 +2883,10 @@ table.conDel01 .maxH {
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
 }
-
-#popLayerB .contents .contentName {
-  overflow-y: auto;
-  min-height: 20px;
-  max-height: 70px;
-}
-
 #popLayerB .contents .popCon ul.contentList {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 #popLayerB .contents .popCon ul.contentList li {
   line-height: 20px;
@@ -3000,7 +2897,7 @@ table.conDel01 .maxH {
 }
 #popLayerB .contents .popCon ul.contentList li .extensionTit {
   border: 1px solid #c8c8c8;
-  padding: 2px 10px 1px 10px;
+  padding: 2px 10px 1px;
   width: 542px;
   display: inline-block;
   color: #222;
@@ -3011,19 +2908,18 @@ table.conDel01 .maxH {
   padding-top: 1px;
   display: inline-block;
 }
-
 #popLayerB .contents .popCon ul.entryList {
   padding-bottom: 10px;
 }
 *:first-child + html #popLayerB .contents .popCon ul.entryList {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 #popLayerB .contents .popCon ul.entryList li {
   margin-top: 5px;
   line-height: 20px;
 }
 #popLayerB .contents .popCon ul.entryList li:first-child {
-  margin-top: 0px;
+  margin-top: 0;
 }
 #popLayerB .contents .popCon ul.entryList li a {
   margin-left: 10px;
@@ -3035,7 +2931,6 @@ table.conDel01 .maxH {
   vertical-align: top;
   padding-top: 6px;
 }
-
 .coach01 .partBox02,
 .coach02 .partBox02,
 .coach03 .partBox02 {
@@ -3053,13 +2948,12 @@ table.conDel01 .maxH {
   text-align: left;
   padding: 6px 0 0 5px;
   margin-bottom: 5px;
-  background: url("assets/img/contents/ecmMain/btn_partBg.gif") no-repeat left
-    top;
+  background: url(assets/img/contents/ecmMain/btn_partBg.gif) no-repeat left top;
   display: inline-block;
 }
 .textRSearch {
   height: 24px;
-  padding: 10px 0 7px 0;
+  padding: 10px 0 7px;
 }
 .textRSearch:after {
   clear: both;
@@ -3083,7 +2977,7 @@ table.conDel01 .maxH {
   line-height: 16px;
 }
 .areaCTop .result {
-  padding: 10px 0 13px 0;
+  padding: 10px 0 13px;
   line-height: 25px;
 }
 .areaCTop .result .red {
@@ -3107,7 +3001,7 @@ div.grayBox01 {
   border: 1px solid #d6d6d6;
 }
 table.grayT01 td {
-  padding: 7px 15px 4px 15px;
+  padding: 7px 15px 4px;
   line-height: 20px;
 }
 table.apprT td .DivSelectyze {
@@ -3122,7 +3016,7 @@ table.apprT td .selectyzeValue {
   width: 60px;
   padding: 4px 30px 5px 7px;
   border: 1px solid #c7cacd;
-  background: #fff url("assets/img/contents/ecmMain/select_bg.gif") no-repeat
+  background: #fff url(assets/img/contents/ecmMain/select_bg.gif) no-repeat
     right -1px;
 }
 table.apprT td .selectyzeValue span {
@@ -3173,17 +3067,16 @@ table.apprT td .flTxt {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
 }
 #popLayerA .contents .converg01 a span {
   display: inline-block;
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
   font-weight: normal;
 }
-
 #popLayerB .contents .converg01 {
   position: relative;
 }
@@ -3196,14 +3089,14 @@ table.apprT td .flTxt {
   display: inline-block;
   padding-left: 8px;
   font-size: 13px;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtL.gif") 0 0 no-repeat;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtL.gif) 0 0 no-repeat;
 }
 #popLayerB .contents .converg01 a span {
   display: inline-block;
   height: 16px;
   padding: 4px 8px 0 0;
   color: #222;
-  background: url("assets/img/contents/ecmMain/bg_btnTxtR.gif") right 0 repeat-x;
+  background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
   font-weight: normal;
 }
 table.subL td {
@@ -3252,7 +3145,7 @@ table.subL td img {
   border: 1px solid #d5d5d5;
 }
 .partAdminBox .partAdminTxt {
-  padding: 7px 14px 6px 14px;
+  padding: 7px 14px 6px;
   line-height: 16px;
   color: #222;
   border-bottom: 1px solid #d5d5d5;
@@ -3299,7 +3192,7 @@ table.subL td img {
   background-color: #e4f0fd;
 }
 .partAdminBox .partAdminSearch .manBox .tblFolder tbody td {
-  padding: 8px 15px 9px 15px;
+  padding: 8px 15px 9px;
   color: #222;
   text-align: left;
   line-height: 18px;
@@ -3320,7 +3213,6 @@ table.subL td img {
 #popLayerA .partAdminBox .partAdminSearch .manBox .UlSelectize {
   width: 87px;
 }
-
 .partBox02Etc {
   float: left;
   width: 107px;
@@ -3334,8 +3226,7 @@ table.subL td img {
   text-align: left;
   padding: 6px 0 0 5px;
   margin-bottom: 5px;
-  background: url("assets/img/contents/ecmMain/btn_partBg.gif") no-repeat left
-    top;
+  background: url(assets/img/contents/ecmMain/btn_partBg.gif) no-repeat left top;
   display: inline-block;
 }
 .mgt10 {

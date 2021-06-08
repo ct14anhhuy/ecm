@@ -22,7 +22,7 @@ const Header = (props) => {
               </Link>
               <Link className="logo_sys" to="/">
                 <img
-                  alt="ECM"
+                  alt="logo ecm"
                   src={require("assets/img/layout/logo_ecm.png").default}
                 />
               </Link>

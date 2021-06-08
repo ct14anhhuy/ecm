@@ -1,6 +1,7 @@
 #wrap {
-  width: 100%;
   height: 100%;
+  min-width: 1290px;
+  width: 100%;
   background: #fff;
 }
 .minWidth {
@@ -19,16 +20,16 @@
 }
 .logo {
   float: left;
-  margin: 2px 20px 0 0;
+  margin: 0 30px 0 0 !important;
 }
 .topSrcArea {
-  position: relative;
+  background: url(assets/img/gnbBar/bg_top_blue_src.png) no-repeat left;
   float: left;
   width: 249px;
   height: 23px;
   padding: 1px 0 0 1px;
   margin-right: 10px;
-  background: url(assets/img/layout/bg_top_blue_src.png) left top no-repeat;
+  background: url(assets/img/gnbBar/bg_top_blue_src.png) left top no-repeat;
 }
 .topSrcArea .srcIpt {
   width: 210px;
@@ -44,34 +45,32 @@
   height: 24px;
   padding: 0 0 0 1px;
 }
-
 .btnSrc {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   width: 31px;
   height: 24px;
   border: 0;
   cursor: pointer;
   background: url(assets/img/layout/bg_top_blue_src.png) left top no-repeat;
 }
-
 .alertTxt {
-  overflow: hidden;
-  float: left;
   height: 12px;
   height: 11px\9;
+  overflow: hidden;
+  float: left;
+  height: 13px;
+  height: 12px\9;
   margin-top: 6px;
 }
 .alertTxt a {
   font-size: 13px;
 }
-
 .columnWrap {
   margin-top: 20px;
   padding: 0 230px 0 162px;
 }
-
 .ltArea {
   float: left;
   position: relative;
@@ -100,7 +99,6 @@
   height: 100%;
   min-height: 100%;
 }
-
 .lnbList {
   margin-bottom: 5px;
   border: 1px solid #d5d5d5;
@@ -124,26 +122,23 @@
   font-weight: bold;
   color: #fff;
 }
-
 .lnbBanArea li {
   margin-bottom: 5px;
 }
 .lnbBanArea li * {
   vertical-align: top;
 }
-
 #footer {
   height: 36px;
   margin-top: 40px;
   text-align: center;
   background: #aeaeae;
   width: 100%;
-  bottom: 0px;
+  bottom: 0;
 }
 #footer img {
   padding-top: 14px;
 }
-
 .innFooter {
   position: relative;
   min-width: 944px;
@@ -162,31 +157,24 @@
   color: #fff !important;
   text-decoration: none;
 }
-
 .ecmWrap {
   position: relative;
   min-width: 1024px;
   margin-bottom: -40px;
   padding-top: 2px;
-  background: url("assets/img/layout/bg_ecmWrap.gif") 0 0 repeat-x;
+  background: url(assets/img/layout/bg_ecmWrap.gif) 0 0 repeat-x;
 }
-
 .ecmWrap .ecmContent {
   padding: 0 222px;
   overflow: hidden;
 }
 .ecmWrap .ecmContent:after {
+  display: block;
   clear: both;
   content: "";
-  display: block;
 }
 .ecmWrap .informContent {
   padding: 0 0 0 222px;
-}
-.ecmWrap .ecmContent:after {
-  display: block;
-  clear: both;
-  content: "";
 }
 .ecmContent .areaL {
   z-index: 10;
@@ -195,7 +183,7 @@
   left: -222px;
   width: 196px;
   min-height: 910px;
-  padding: 10px 12px 0 12px;
+  padding: 10px 12px 0;
   border-right: 1px solid #ddd;
 }
 .ecmContent .areaC {
@@ -217,7 +205,7 @@
   border-right: 1px solid #ddd;
 }
 .informContent .areaC {
-  border-right: none;
+  border-right: 0;
 }
 .ecmContent .areaR {
   float: right;
@@ -226,27 +214,21 @@
   width: 213px;
   min-height: 1020px;
 }
-
 .clfix:after {
   content: ".";
   display: block;
-  height: 0px;
+  height: 0;
   clear: both;
   visibility: hidden;
 }
 .clfix {
   display: inline-block;
-}
-.clfix {
   display: block;
+  zoom: 1;
 }
 * html .clfix {
   height: 1%;
 }
-.clfix {
-  zoom: 1;
-}
-
 a {
   text-decoration: none;
   color: #333;
@@ -263,7 +245,6 @@ a:hover {
   text-decoration: none;
   color: #333;
 }
-
 .fnone {
   float: none !important;
 }
@@ -276,54 +257,9 @@ a:hover {
 .cboth {
   clear: both;
 }
-
 .mx100 {
   max-width: 100%;
 }
-
-#wrap {
-  height: 100%;
-  min-width: 1290px;
-  width: 100%;
-  background: #fff;
-}
-.minWidth {
-  min-width: 944px;
-  margin: 0 40px;
-}
-.topLt {
-  float: left;
-  min-width: 700px;
-  margin-top: 12px;
-}
-.logo {
-  float: left;
-  margin: 0 30px 0 0 !important;
-}
-.topSrcArea {
-  position: relative;
-  float: left;
-  width: 249px;
-  height: 23px;
-  padding: 1px 0 0 1px;
-  margin-right: 10px;
-  background: url(assets/img/gnbBar/bg_top_blue_src.png) left top no-repeat;
-}
-.topSrcArea .srcIpt {
-  width: 210px;
-  height: 22px;
-  line-height: 22px;
-  text-indent: 5px;
-  border: 0;
-  -webkit-appearance: none;
-  border-radius: 0;
-  background: transparent;
-}
-*:first-child + html .topSrcArea {
-  height: 24px;
-  padding: 0 0 0 1px;
-}
-
 .logo * {
   display: inline-block;
   vertical-align: top;
@@ -347,17 +283,9 @@ a:hover {
   float: left;
   z-index: 100;
 }
-.alertTxt {
-  overflow: hidden;
-  float: left;
-  height: 13px;
-  height: 12px\9;
-  margin-top: 6px;
-}
 *:first-child + html .alertTxt {
   padding-left: 4px;
 }
-
 .ticker a {
   font-size: 11px;
 }
@@ -366,10 +294,8 @@ a:hover {
   width: 12px;
   height: 11px;
   text-indent: -2px;
-  line-height: 11px;
+  font: 9px/11px verdana;
   text-align: center;
-  font-family: verdana;
-  font-size: 9px;
   color: #fff;
   letter-spacing: -2px;
   background: url(assets/img/gnbBar/bg_fav_count.gif) left top no-repeat;
@@ -387,7 +313,7 @@ a:hover {
 .lpFavKeyword {
   display: none;
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 0;
   width: 108px;
   border: 1px solid #3275c0;
@@ -408,21 +334,20 @@ a:hover {
   margin-top: 10px;
 }
 .lpFavKeyword dd .ticker li:first-child {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .btnClose {
   position: absolute;
   right: 6px;
   top: 10px;
-  padding: 3px !important;
+  padding: 3px 3px !important;
 }
 *:first-child + html .btnClose {
   position: absolute;
   right: 6px;
   top: 7px;
-  padding: 3px !important;
+  padding: 3px 3px !important;
 }
-
 .topRt {
   float: right;
   margin-top: 13px;
@@ -432,7 +357,6 @@ a:hover {
   float: left;
   margin: 6px 18px 0 0;
 }
-
 .lpPsnName {
   display: none;
   position: absolute;
@@ -454,7 +378,6 @@ a:hover {
 .lpPsnName li a:hover {
   background: #eee;
 }
-
 .totalBg {
   display: none;
   position: fixed;
@@ -469,7 +392,6 @@ a:hover {
 .totalBg.bgOpen {
   display: block;
 }
-
 .alertMsg {
   float: left;
   position: relative;
@@ -494,13 +416,11 @@ a:hover {
 .alertMsg .msgArea.on strong {
   background-position: 100% 0;
 }
-
 .alertMsg .msgNew {
   position: absolute;
   left: -7px;
   top: -4px;
 }
-
 .chgLangWrap {
   float: left;
 }
@@ -511,7 +431,6 @@ a:hover {
   font-size: 0;
   line-height: 0;
 }
-
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
@@ -549,7 +468,6 @@ body {
 .goog-te-menu-frame a {
   font-size: 12px;
 }
-
 .loading_confirm {
   z-index: 9999;
   position: absolute;

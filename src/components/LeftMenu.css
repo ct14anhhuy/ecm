@@ -3,7 +3,6 @@
   margin-bottom: 15px;
   padding-top: 5px;
 }
-
 .subTitle {
   position: relative;
   margin-bottom: 11px;
@@ -11,7 +10,6 @@
   font-weight: bold;
   color: #222;
 }
-
 .subTitle .btnRefresh {
   display: block;
   position: absolute;
@@ -23,20 +21,17 @@
   background: url(assets/img/main/btn/btn_refresh.png) 0 0 no-repeat;
   overflow: hidden;
 }
-
 .subTitle .btnRefresh:hover {
   background-position: 0 100%;
 }
-
 .subTitle .btnRefresh em {
   display: none;
 }
-
 .bgBoxLayout {
-  position: relative;
   width: 190px;
+  position: relative;
+  margin-bottom: 3px;
 }
-
 .rdTbLt {
   position: absolute;
   left: 0;
@@ -67,7 +62,6 @@
   height: 3px;
   background: url(assets/img/main/left/rd_tip_rb.gif) left top no-repeat;
 }
-
 .ecmAlertTb {
   width: 100%;
   table-layout: fixed;
@@ -138,12 +132,10 @@
 .ecmAlertTb span.txt_blue:hover {
   text-decoration: underline;
 }
-
 .btnBox {
   width: 196px;
   margin-bottom: 18px;
 }
-
 .btnBox li {
   margin-top: 3px;
   background: url(assets/img/main/left/bg_go_cnt.png) left top no-repeat;
@@ -199,31 +191,24 @@
 .btnBox li.on span.btn_rcb {
   background: url(assets/img/main/left/ico_go_rcb_on.png) 15px center no-repeat;
 }
-
 .btnBox li span.btn_01 {
   background: url(assets/img/main/left/ico_go_cnt01.png) 15px center no-repeat;
 }
-
 .btnBox li span.btn_30 {
   background: url(assets/img/main/left/ico_go_cnt30.png) 15px center no-repeat;
 }
-
 .btnBox li span.btn_06 {
   background: url(assets/img/main/left/ico_go_cnt26.png) 15px center no-repeat;
 }
-
 .btnBox li span.btn_07 {
   background: url(assets/img/main/left/ico_go_cnt27.png) 15px center no-repeat;
 }
-
 .btnBox li span.btn_16 {
   background: url(assets/img/main/left/ico_go_cnt16.png) 15px center no-repeat;
 }
-
 .btnBox li span.btn_rcb {
   background: url(assets/img/main/left/ico_go_rcb.png) 15px center no-repeat;
 }
-
 .btnBox li.on span.btn_02 {
   background: url(assets/img/main/left/ico_go_cnt02_on.png) 15px center
     no-repeat;
@@ -244,7 +229,6 @@
   background: url(assets/img/main/left/ico_go_cnt16_on.png) 15px center
     no-repeat;
 }
-
 .innerBtnList {
   display: none;
   width: 188px;
@@ -299,11 +283,11 @@
   border-radius: 0 3.5px 0 0;
   position: relative;
   z-index: 10;
-  outline: none;
+  outline: 0;
   cursor: pointer;
 }
 .tab_more li:first-child a {
-  border-radius: 3.5px 0 0 0;
+  border-radius: 3.5px 0 0;
   width: 94px;
 }
 .tab_more li span.tabon {
@@ -312,11 +296,10 @@
   color: #3375bf;
   letter-spacing: -1px;
   border: 1px solid #3375bf;
-  border-bottom: none;
+  border-bottom: 0;
   position: relative;
   z-index: 20;
 }
-
 .myconList {
   border: 1px solid #ccc;
   border-width: 0 1px 1px 1px;
@@ -325,14 +308,13 @@
   margin-bottom: 18px;
   overflow: scroll;
 }
-
 .DivSelectyze {
   display: inline-block;
   position: relative;
 }
 .grey .selectyzeValue {
   border: 1px solid #c8c8c8;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  border-radius: 0.3em;
   color: #111555;
   display: inline-block;
   padding: 4px 30px 4px 7px;
@@ -341,9 +323,9 @@
   z-index: 10;
 }
 .grey .UlSelectize {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #d2d2d2;
-  border-radius: 0.3em 0.3em 0.3em 0.3em;
+  border-radius: 0.3em;
   color: #c8c8c8;
   left: 0;
   top: 26px;
@@ -352,7 +334,7 @@
   z-index: 9999;
 }
 .grey li a {
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   color: #111555;
   padding: 4px;
   display: block;
@@ -373,7 +355,6 @@
   background-image: -ms-linear-gradient(top, #7c7c7c, #858585);
   background-image: -o-linear-gradient(top, #7c7c7c, #858585);
 }
-
 .select02 .grey .selectyzeValue {
   width: 152px;
 }
@@ -383,7 +364,6 @@
   height: 150px;
   overflow: auto;
 }
-
 .myconList .treeFldConBox {
   height: 450px;
   width: auto;
@@ -436,7 +416,6 @@
 .myconList .treeFldConBox .treeConNom li a.on {
   color: #2e83de;
 }
-
 .contents_level {
   background: #fff;
   padding: 7px 10px 9px;
@@ -469,14 +448,9 @@
 .obesityCntColorB {
   color: #ee3e15;
 }
-
 .bgBoxLayout2 {
   position: relative;
   margin-bottom: 5px;
-}
-.bgBoxLayout {
-  position: relative;
-  margin-bottom: 3px;
 }
 .ecmAlertTb2 tbody tr td {
   position: relative;
@@ -532,21 +506,17 @@
   display: block;
   line-height: 26px;
 }
-
 .btnBox li.newWinOn {
   background: url(assets/img/main/left/bg_go_newwin_cntOn.png) left top
     no-repeat;
 }
-
 .btnBox li.newWinOn span.btn_30 {
   background: url(assets/img/main/left/ico_go_cnt30_on.png) 15px center
     no-repeat;
 }
-
 .btnBox li.on span.btn_06 {
   background: url(assets/img/main/left/ico_go_cnt26_on.png) 15px 8px no-repeat;
 }
-
 .btnBox li.on span.btn_07 {
   background: url(assets/img/main/left/ico_go_cnt27_on.png) 15px 9px no-repeat;
 }
@@ -637,7 +607,7 @@
 }
 .manage_fav .inner {
   height: 120px;
-  padding: 0 5px 5px 5px;
+  padding: 0 5px 5px;
   overflow-y: auto;
   border: 1px solid #ccc;
   background: #fafafa;
@@ -718,11 +688,9 @@
 .numSize strong {
   font-size: 14px;
 }
-
 #cObesityCnt:hover {
   text-decoration: underline;
 }
-
 .treeFldConBox {
   width: 300px !important;
 }

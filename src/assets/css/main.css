@@ -1,6 +1,5 @@
 @import url(assets/css/global.css);
 @import url(assets/css/layout.css);
-
 .optionBox .DivSelectyze {
   position: relative;
   z-index: 5;
@@ -50,7 +49,6 @@
 .optionBox .DivSelectyze .UlSelectize li a:hover {
   background-color: #8d949d;
 }
-
 .treeView .DivSelectyze {
   position: relative;
   z-index: 5;
@@ -96,7 +94,6 @@
 .treeView .DivSelectyze .UlSelectize li a:hover {
   background-color: #e4f0fd;
 }
-
 .optionBox .right a {
   height: 13px;
   margin: 6px 0 0 13px;
@@ -124,7 +121,6 @@
 .optionBox .tAttr {
   background: url(assets/img/main/bg/bg_folder_prop.gif) 0 0 no-repeat;
 }
-
 .treeCon a.fPlus {
   padding: 5px 0 0 18px;
   color: #555;
@@ -133,7 +129,6 @@
 .treeCon .fPlus {
   background: url(assets/img/main/bg/bg_fPlus.png) 0 10px no-repeat;
 }
-
 label.c_on {
   background: url(assets/img/form/check-on.png) no-repeat;
 }
@@ -149,6 +144,8 @@ label {
 .i_check input,
 .i_radio input {
   margin-right: 5px;
+  position: absolute;
+  left: -9999px;
 }
 .i_check,
 .i_radio {
@@ -161,12 +158,6 @@ label {
 .i_check {
   background: url(assets/img/form/check-off.png) no-repeat;
 }
-.i_check input,
-.i_radio input {
-  position: absolute;
-  left: -9999px;
-}
-
 .btn_whiteS_typeA {
   position: relative;
   height: 25px;
@@ -201,7 +192,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteS_typeA02 {
   position: relative;
   height: 25px;
@@ -236,7 +226,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteS_typeA.ic_chatbot > button {
   position: relative;
   padding-left: 32px;
@@ -249,10 +238,8 @@ label {
   width: 18px;
   height: 18px;
 }
-
 .btn_whiteS_typeB {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -285,10 +272,8 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .btn_whiteS_typeC {
   position: relative;
-  height: 25px;
   display: inline-block;
   height: 25px;
   overflow: hidden;
@@ -321,7 +306,6 @@ label {
   height: 12px;
   padding: 6px 10px 7px 8px;
 }
-
 .left {
   float: left;
 }
@@ -346,7 +330,6 @@ label {
   margin-top: -25px;
   display: inline-block;
 }
-
 .areaCBox .treeBox {
   width: 100%;
   padding: 0 1px;
@@ -466,9 +449,8 @@ label {
   overflow: hidden;
   display: inline-block;
 }
-
 .listContent {
-  padding: 0 20px;
+  padding: 0 20px 10px;
 }
 .listContent .optionBox {
   width: 100%;
@@ -503,13 +485,11 @@ label {
   color: #222;
   background: url(assets/img/contents/ecmMain/bg_btnTxtR.gif) right 0 repeat-x;
 }
-
 .listContent .optionBox .right .listSearchT {
   position: static;
   left: auto;
   margin-left: 0;
 }
-
 .listContent .optionBox .left .ecmTab {
   margin: -1px;
   height: 35px;
@@ -552,7 +532,6 @@ label {
   overflow: hidden;
   vertical-align: top;
 }
-
 .listContent .searchBox {
   height: 25px;
   margin-bottom: 7px;
@@ -572,26 +551,10 @@ label {
 .listContent .searchBox .btn_whiteS_typeB {
   vertical-align: middle;
 }
-
 .listContent .normalList .scrollBox {
   margin-bottom: 15px;
   overflow-x: scroll;
 }
-
-.listContent {
-  padding: 0 20px;
-  padding-bottom: 10px;
-}
-.listContent .optionBox {
-  width: 100%;
-  margin-bottom: 10px;
-}
-.listContent .optionBox:after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
 .sortingBox {
   height: 31px;
   border: 1px solid #e6e6e6;
@@ -607,7 +570,7 @@ label {
   background: url(assets/img/main/bg/bg_sorting.gif) 0 8px no-repeat;
 }
 .sortingBox .icoBtn li a {
-  padding: 7px 12px 8px 12px;
+  padding: 7px 12px 8px;
   display: inline-block;
 }
 .sortingBox .dayBtn {
@@ -621,7 +584,7 @@ label {
 }
 .sortingBox .dayBtn li a {
   min-width: 33px;
-  padding: 10px 5px 8px 5px;
+  padding: 10px 5px 8px;
   text-align: center;
   color: #999;
   display: inline-block;
@@ -629,7 +592,6 @@ label {
 .sortingBox .dayBtn li a.on {
   color: #3275c0;
 }
-
 .listContent .thumnList {
   position: relative;
 }
@@ -714,7 +676,6 @@ label {
     no-repeat;
   z-index: 20;
 }
-
 .infoMenu {
   display: none;
   position: absolute;
@@ -754,7 +715,6 @@ label {
   height: 25px;
   padding: 0 7px;
   line-height: 25px;
-  color: #222;
   color: gray;
   size: 12px;
 }
@@ -777,7 +737,6 @@ label {
 .btnAdd .infoMenu {
   top: 23px;
 }
-
 .listContent .thumnList .thumn li .folderText {
   position: relative;
   height: 33px;
@@ -808,7 +767,6 @@ label {
     no-repeat;
   z-index: 20;
 }
-
 .listContent .thumnList .thumn > li .wasteText {
   height: 33px;
   margin: 0 1px;
@@ -832,7 +790,6 @@ label {
   display: inline-block;
   margin: 4px 3px 0 0;
 }
-
 .normalTb {
   margin-bottom: 25px;
   table-layout: fixed;
@@ -846,7 +803,7 @@ label {
   background-color: #dfe1e4;
 }
 .normalTb thead tr th:first-child {
-  border-left: none;
+  border-left: 0;
 }
 .normalTb thead tr th .allCheck {
   position: relative;
@@ -858,15 +815,15 @@ label {
 }
 .normalTb thead tr th .icoSort {
   padding-right: 13px;
-  background: url("assets/img/main/ico/sort-down.png") right 0 no-repeat;
+  background: url(assets/img/main/ico/sort-down.png) right 0 no-repeat;
 }
 .normalTb thead tr th .icoSortOnUp {
   color: #3375bf;
-  background: url("assets/img/main/ico/sort-up.png") right 0 no-repeat;
+  background: url(assets/img/main/ico/sort-up.png) right 0 no-repeat;
 }
 .normalTb thead tr th .icoSortOnDw {
   color: #3375bf;
-  background: url("assets/img/main/ico/sort-down.png") right 0 no-repeat;
+  background: url(assets/img/main/ico/sort-down.png) right 0 no-repeat;
 }
 .normalTb tr th .columnHL,
 .normalTb tr td .columnHL,
@@ -897,7 +854,6 @@ label {
   border-left: 1px solid #e6e6e6;
   display: none;
 }
-
 .normalTb tr th .columnHL2,
 .normalTb tr td .columnHL2 {
   width: 100%;
@@ -913,7 +869,6 @@ label {
   border-left: 1px solid #e6e6e6;
   display: none;
 }
-
 .normalTb tbody tr.old {
   background-color: #fafafa;
 }
@@ -936,13 +891,12 @@ label {
   color: #222;
 }
 .normalTb tbody tr td:first-child {
-  border-left: none;
+  border-left: 0;
 }
 .normalTb tbody td .contentsBox {
   position: relative;
   width: 100%;
 }
-
 .normalTb tbody td .contentTitle {
   float: left;
   width: 88%;
@@ -968,8 +922,6 @@ label {
 .normalTb tbody td .contentTitle a {
   color: #000;
   line-height: 16px;
-}
-.normalTb tbody td .contentTitle a {
   display: inline-block;
   max-width: 88%;
   overflow-x: hidden;
@@ -997,13 +949,11 @@ label {
   right: 0;
   top: 16px;
 }
-
 .wAuto {
   float: none !important;
   width: auto !important;
   padding: 0 20px 0 10px !important;
 }
-
 .normalTb tbody td .contentTitle .ico_fav {
   display: inline;
   width: 16px;
@@ -1029,7 +979,6 @@ label {
   height: 20px;
   background: url(assets/img/main/ico/ico_fav_2_on.png) no-repeat 0 0;
 }
-
 .normalTb tbody td .contentTitle .ic_favorites {
   display: inline-block;
   margin-right: 8px;
@@ -1049,7 +998,6 @@ label {
   background: url(assets/img/favorites/ic_favorites.png) no-repeat 0 0;
   cursor: default;
 }
-
 .printTb thead tr th {
   border-left: 1px solid #cdcdce;
   border-bottom: 1px solid #cdcdce;
@@ -1069,7 +1017,6 @@ label {
   font-weight: bold;
   background-color: #e9eaec;
 }
-
 .normalTb tbody tr.btnAdd {
   display: none;
 }
@@ -1122,7 +1069,6 @@ label {
   display: inline-block;
   margin: -10px 0 -10px -10px;
 }
-
 .normalUL {
   position: relative;
   margin-bottom: 25px;
@@ -1227,13 +1173,12 @@ label {
   display: inline-block;
   width: 40px;
   height: 17px;
-  margin: -2px 0 -1px 0;
+  margin: -2px 0 -1px;
   padding-top: 3px;
   color: #fff;
   vertical-align: top;
   background: url(assets/img/contents/ecmInform/bg_btnView.png) 0 0 no-repeat;
 }
-
 .areaR .btnAdmin {
   display: block;
   width: 113px;
@@ -1250,7 +1195,6 @@ label {
   padding: 6px 0 0 83px;
   background: url(assets/img/contents/ecmMain/bg_setupB.png) 0 0 no-repeat;
 }
-
 .bestBox {
   margin-bottom: 10px;
 }
@@ -1273,7 +1217,6 @@ label {
   font-weight: bold;
   color: #018dee;
 }
-
 .best {
   width: 195px;
   margin-left: 1px;
@@ -1302,7 +1245,7 @@ label {
   width: 19px;
   height: 17px;
   color: #222;
-  font: bold 9px/17px "Verdana";
+  font: bold 9px/17px Verdana;
   text-align: center;
   background: url(assets/img/contents/ecmMain/bg_num.gif) 0 0 no-repeat;
 }
@@ -1354,7 +1297,6 @@ label {
   width: 116px;
   font-weight: bold;
 }
-
 a.btn_content {
   display: block;
   width: 182px;
@@ -1370,7 +1312,6 @@ a.btn_content {
 a.btn_content:hover {
   color: #fff;
 }
-
 .myContentBox .bgBoxContent {
   padding-bottom: 5px;
 }
@@ -1387,7 +1328,6 @@ a.btn_content:hover {
 .myContentTb td .inPad {
   padding-right: 10px;
 }
-
 .choiceBox {
   padding-top: 20px;
 }
@@ -1487,7 +1427,6 @@ a.btn_content:hover {
   background: url(assets/img/contents/ecmMain/ico_pop_unlock.png) 0 3px
     no-repeat;
 }
-
 .ecmWrap .choiceBox {
   position: fixed;
   bottom: 0;
@@ -1535,7 +1474,6 @@ a.btn_content:hover {
 .ecmWrap .choiceBox .choice .btnEtc a:hover {
   background-color: #3672d3;
 }
-
 .areaCBox .headTitle {
   margin-bottom: 14px;
   border-bottom: 1px solid #d5d5d5;
@@ -1545,7 +1483,6 @@ a.btn_content:hover {
   font-size: 14px;
   border-bottom: 1px solid #4c86c9;
 }
-
 .listSearch {
   position: absolute;
   left: 50%;
@@ -1560,7 +1497,6 @@ a.btn_content:hover {
   line-height: 23px;
   border: 1px solid #c8c8c8;
 }
-
 .paging {
   overflow: hidden;
   text-align: center;
@@ -1571,7 +1507,7 @@ a.btn_content:hover {
   height: 14px;
   display: inline-block;
   border: 1px solid #cbcbcb;
-  padding: 6px 0 4px 0;
+  padding: 6px 0 4px;
   text-align: center;
   color: #222;
   font-weight: bold;
@@ -1612,7 +1548,6 @@ a.btn_content:hover {
 .paging a:hover.end {
   background: url(assets/img/common/paging_end_on.gif) left top no-repeat;
 }
-
 .layerBg {
   position: fixed;
   top: 0;
@@ -1624,7 +1559,6 @@ a.btn_content:hover {
   filter: alpha(opacity=20);
   z-index: 10000;
 }
-
 .popLayerWrap {
   position: absolute;
   left: 50%;
@@ -1651,10 +1585,9 @@ a.btn_content:hover {
   right: 25px;
 }
 .popLayerWrap .contents {
-  padding: 25px 40px 25px 40px;
+  padding: 25px 40px;
   background: #fff;
 }
-
 .stateBtnWrap {
   float: right;
   margin: 0 6px 0 10px;
@@ -1695,7 +1628,6 @@ a.btn_content:hover {
 .stateBtnWrap .viewMode.table:hover {
   background-position: -88px 0;
 }
-
 .sorting_btn {
   float: left;
 }
@@ -1718,15 +1650,12 @@ a.btn_content:hover {
 .sorting_btn a em {
   padding-left: 15px;
 }
-
 .optionBox__remove_a span {
   color: red !important;
 }
-
 .optionBox__remove_em {
   padding-left: unset !important;
 }
-
 .sorting_btn a em.add {
   background: url(assets/img/main/btn/bg_add.gif) no-repeat 0 50%;
 }
@@ -1736,24 +1665,20 @@ a.btn_content:hover {
 .sorting_btn a em.movie {
   background: url(assets/img/main/btn/bg_movie.gif) no-repeat 0 50%;
 }
-
 .placeholder {
   color: #aaa !important;
 }
 .placeholderFocus {
   color: #555 !important;
 }
-
 .viewCountBtnWrap {
   float: right;
   margin: 3px 6px 0 0;
   width: 135px;
 }
-
 .mainViewCount {
   position: absolute;
 }
-
 .am_DivSelectyze {
   position: relative;
   display: inline-block;
@@ -1780,7 +1705,6 @@ a.btn_content:hover {
 .am_optgroupTitle {
   display: block;
 }
-
 .am_grey .am_selectyzeValue {
   color: #555;
   display: inline-block;
@@ -1836,7 +1760,6 @@ a.btn_content:hover {
   background-color: #858585;
   color: #fff;
 }
-
 .favoritesWrap .header {
   position: relative;
   width: 100%;
@@ -1861,7 +1784,6 @@ a.btn_content:hover {
   top: 8px;
   right: 25px;
 }
-
 .sorting_btn a em.fav_del {
   background: url(assets/img/favorites/ic_fav_del.png) no-repeat 0 50%;
 }
@@ -1869,7 +1791,6 @@ a.btn_content:hover {
   margin-right: 7px;
   vertical-align: top;
 }
-
 .resize-bar {
   z-index: 10;
   position: absolute;
@@ -1893,13 +1814,11 @@ a.btn_content:hover {
 .btn_areaL_favorites.hided {
   background: url(assets/img/main/btn/btn_areaL_on.png) no-repeat;
 }
-
 .btn_areaR_preview {
   position: absolute;
   right: 0;
   top: 240px;
 }
-
 #viewer_preview {
   position: relative;
   box-sizing: border-box;
@@ -1977,7 +1896,6 @@ a.btn_content:hover {
 .preview_scroll > a.scroll_down {
   background-position: -35px 0;
 }
-
 .thumbList_checkAll {
   padding: 10px 20px 0;
   border: 1px solid #e6e6e6;
@@ -2113,7 +2031,6 @@ a.btn_content:hover {
 .thumbList .head .util.active {
   background-position: -140px 5px;
 }
-
 .thumbList .head .infoMenu {
   left: auto;
   right: -1px;
@@ -2137,7 +2054,6 @@ a.btn_content:hover {
   bottom: -8px;
   width: 165px;
 }
-
 .thumbList > li > a {
   display: block;
 }

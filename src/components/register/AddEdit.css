@@ -5,11 +5,9 @@
   position: relative;
   height: 100%;
   background-color: #fff;
-  font-size: 13px;
+  font: 13px dotum;
   color: #000;
-  font-family: dotum;
 }
-
 .contentList {
   max-height: 62px;
 }
@@ -34,12 +32,10 @@
   margin-right: 6px;
   vertical-align: middle;
 }
-
 .popLayerWrap .contents {
   max-height: 490px;
   min-height: 490px;
 }
-
 .contentList .list li .floatR .btnChk {
   float: left;
   height: 21px;
@@ -50,7 +46,6 @@
   height: 21px;
   margin-right: 5px;
 }
-
 .safe_btn_box a.btn_safe1.disabled,
 .safe_btn_box .btn_safe2.disabled {
   cursor: default;

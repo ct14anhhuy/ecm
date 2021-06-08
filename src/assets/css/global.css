@@ -1,5 +1,10 @@
 body {
   min-width: 1024px;
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  font: 13px dotum;
+  color: #000;
 }
 html {
   width: 100%;
@@ -33,14 +38,6 @@ select {
   padding: 0;
   -webkit-text-size-adjust: none;
 }
-body {
-  position: relative;
-  height: 100%;
-  background-color: #fff;
-  font-size: 13px;
-  color: #000;
-  font-family: dotum;
-}
 section,
 nav,
 article,
@@ -73,8 +70,8 @@ address {
   font-style: normal;
 }
 a {
-  color: inherit;
   text-decoration: none;
+  color: #000;
 }
 section,
 article,
@@ -91,7 +88,6 @@ button {
 .areaHidden {
   overflow: hidden;
 }
-
 ul,
 dl,
 ol,
@@ -105,15 +101,14 @@ h5,
 p,
 th,
 td {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 ul,
 ol,
 li {
-  list-style-type: none;
+  list-style: none;
 }
-
 fieldset {
   display: block;
   margin: 0;
@@ -130,8 +125,8 @@ legend {
   font: 0/0 arial;
 }
 form {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 textarea {
   padding: 5px;
@@ -184,12 +179,10 @@ input.inputTxtB {
   padding: 0;
   background: transparent;
 }
-
 label {
   margin-right: 5px;
   vertical-align: middle;
 }
-
 table {
   clear: both;
   width: 100%;
@@ -205,30 +198,20 @@ caption {
   overflow: hidden;
   font: 0/0 arial;
 }
-
 .clfix:after {
   content: ".";
   display: block;
-  height: 0px;
+  height: 0;
   clear: both;
   visibility: hidden;
 }
 .clfix {
   display: inline-block;
-}
-.clfix {
   display: block;
+  zoom: 1;
 }
 * html .clfix {
   height: 1%;
-}
-.clfix {
-  zoom: 1;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
 }
 a:visited {
   text-decoration: none;
@@ -242,13 +225,11 @@ a:hover {
   text-decoration: none;
   color: #000;
 }
-
 .mx100 {
   max-width: 100%;
 }
-
 .pd0 {
-  padding: 0 !important;
+  padding: 0 0 !important;
 }
 .pdt0 {
   padding-top: 0 !important;
@@ -262,24 +243,20 @@ a:hover {
 .pdr0 {
   padding-right: 0 !important;
 }
-
 .pdt25 {
   padding-top: 25px !important;
 }
 .pdt40 {
   padding-top: 40px !important;
 }
-
 .pdb5 {
   padding-bottom: 5px !important;
 }
-
 .pdl20 {
   padding-left: 20px !important;
 }
-
 .mg0 {
-  margin: 0 !important;
+  margin: 0 0 !important;
 }
 .mgt0 {
   margin-top: 0 !important;
@@ -293,7 +270,6 @@ a:hover {
 .mgr0 {
   margin-right: 0 !important;
 }
-
 .mgt5 {
   margin-top: 5px !important;
 }
@@ -324,7 +300,6 @@ a:hover {
 .mgt60 {
   margin-top: 60px;
 }
-
 .mgl5 {
   margin-left: 5px !important;
 }
@@ -343,11 +318,9 @@ a:hover {
 .mgl35 {
   margin-left: 35px !important;
 }
-
 .mgr20 {
   margin-right: 20px !important;
 }
-
 .mgb5 {
   margin-bottom: 5px !important;
 }
@@ -369,22 +342,18 @@ a:hover {
 .mgb50 {
   margin-bottom: 50px !important;
 }
-
 .mgrpw20 {
   margin-right: 0 !important;
 }
-
 .bd0 {
   border: 0 !important;
 }
-
 .cutSt {
   white-space: nowrap;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   overflow: hidden;
 }
-
 .fnone {
   float: none !important;
 }
@@ -397,16 +366,14 @@ a:hover {
 .cboth {
   clear: both;
 }
-
 .txtGyA {
   color: #222;
 }
 .txtblA {
   color: #2072b8;
 }
-
 .fdot {
-  font-family: Dotum !important;
+  font-family: "Dotum!important";
 }
 .fmlg {
   font-family: "NanumGothicWeb";
@@ -414,12 +381,10 @@ a:hover {
 .fvdn {
   font-family: Verdana;
 }
-
 .dotB19a1c {
   color: #b19a1c !important;
-  font-family: dotum !important;
+  font-family: "dotum!important";
 }
-
 .font0 {
   font: 0/0 arial;
 }
@@ -432,18 +397,15 @@ a:hover {
 .fss {
   font-size: 13px !important;
 }
-
 .fwn {
   font-weight: normal !important;
 }
 .fwb {
   font-weight: bold !important;
 }
-
 .ln20 {
   line-height: 20px;
 }
-
 .vat {
   vertical-align: top !important;
 }
@@ -468,7 +430,6 @@ a:hover {
 .vatAll * {
   vertical-align: top !important;
 }
-
 .hidden {
   display: none;
 }
@@ -482,7 +443,7 @@ a:hover {
   visibility: hidden;
 }
 .bobn {
-  border-bottom: 0 !important;
+  border-bottom: 0;
 }
 .bgnone {
   background: none !important;
@@ -494,9 +455,8 @@ a:hover {
   display: none;
 }
 .bot0 {
-  border-top: 0 !important;
+  border-top: 0;
 }
-
 .hidden-obj {
   position: absolute;
   visibility: hidden;
