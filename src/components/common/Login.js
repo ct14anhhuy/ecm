@@ -1,11 +1,16 @@
 import { useParams, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginAction } from "store/user/actions";
+import { useEffect } from "react";
 
 const Login = (props) => {
+  const { login } = props;
   const { token } = useParams();
-  localStorage.setItem("accessToken", token);
-  props.login();
+
+  useEffect(() => {
+    login();
+    sessionStorage.setItem("accessToken", token);
+  }, [login, token]);
 
   return <Redirect to="/"></Redirect>;
 };

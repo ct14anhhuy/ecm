@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import React from "react";
 import { updateCurrentPageAction } from "store/pagination/actions";
 
 const Paging = (props) => {

@@ -102,9 +102,7 @@ const Filter = (props) => {
             <span>Show </span>
             <Link
               className="am_selectyzeValue"
-              onClick={() => {
-                setShowListRow(!showListRow);
-              }}
+              onClick={() => setShowListRow(!showListRow)}
               to="/"
             >
               {pageLimit}

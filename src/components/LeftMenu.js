@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Frame from "react-frame-component";
 import TreeView from "./TreeView";
 import {
@@ -24,34 +24,39 @@ import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const LeftMenu = (props) => {
   const FIRST_PAGE = 1;
-  const { menuActive, changeMenuActive } = props;
+  const {
+    menuActive,
+    changeMenuActive,
+    changeCurrentDirectory,
+    changeHeaderPath,
+    updateCurrentPage,
+    getContentsFromPath,
+  } = props;
   const [selectedDirectory, setSelectedDirectory] = useState({
     id: 0,
     isRoot: true,
   });
 
   const handleSelectedRoute = (e) => {
-    props.changeHeaderPath(e.target.innerText);
-    props.updateCurrentPage(FIRST_PAGE);
+    changeHeaderPath(e.target.innerText);
+    updateCurrentPage(FIRST_PAGE);
   };
 
   const handleOnSelect = (id, path, isRoot) => {
-    props.changeHeaderPath(path);
+    changeHeaderPath(path);
     setSelectedDirectory({ id, isRoot });
-    props.getContentsFromPath(id);
-    props.updateCurrentPage(FIRST_PAGE);
+    getContentsFromPath(id);
+    updateCurrentPage(FIRST_PAGE);
   };
 
   useEffect(() => {
     if (menuActive) {
-      props.changeCurrentDirectory(0, true);
+      changeCurrentDirectory(0, true);
     } else {
-      props.changeCurrentDirectory(
-        selectedDirectory.id,
-        selectedDirectory.isRoot
-      );
+      const { id, isRoot } = selectedDirectory;
+      changeCurrentDirectory(id, isRoot);
     }
-  }, [menuActive, props, selectedDirectory.id, selectedDirectory.isRoot]);
+  }, [changeCurrentDirectory, menuActive, selectedDirectory]);
 
   return (
     <div>

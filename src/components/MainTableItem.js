@@ -120,9 +120,8 @@ const MainTableItem = (props) => {
             style={{ top: 16, display: "none" }}
           >
             <li style={{ fontWeight: "bold" }}>
-              <Link to="/" onClick={handleOnCopyUrl}>
-                Copy URL
-              </Link>
+              <span>Copy URL</span>
+              <span>Edit</span>
             </li>
           </ul>
         </div>

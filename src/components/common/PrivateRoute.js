@@ -1,20 +1,12 @@
 import { connect } from "react-redux";
-import { Route } from "react-router-dom";
+import Main from "components/Main";
 import Error from "./Error";
 
 const PrivateRoute = (props) => {
-  const { user, children } = props;
-
-  return (
-    <Route
-      render={() =>
-        user.id > 0 ? (
-          children
-        ) : (
-          <Error message="Token expires, please login via EP Lite" />
-        )
-      }
-    ></Route>
+  return props.user.id ? (
+    <Main />
+  ) : (
+    <Error message="Token expires, please login via EP Lite" />
   );
 };
 
