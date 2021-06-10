@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import GetBackgroundIconFromExtension from "components/common/GetBackgroundIconFromExtension";
 
-const SelectFile = (props) => {
+const SelectFile = props => {
   const styles = props.styles;
   const key = props.file.key;
 
@@ -31,7 +31,7 @@ const SelectFile = (props) => {
             overflow: "hidden",
             display: "block",
             whiteSpace: "nowrap",
-            msTextOverflow: "ellipsis",
+            msTextOverflow: "ellipsis"
           }}
           to="/"
         >
@@ -80,7 +80,7 @@ const SelectFile = (props) => {
             type="text"
             size={100}
             defaultValue={fileName.substring(0, fileName.lastIndexOf("."))}
-            onChange={(e) =>
+            onChange={e =>
               setFileName(`${e.target.value}.${fileName.split(".").pop()}`)
             }
           />

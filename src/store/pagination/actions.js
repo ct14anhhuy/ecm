@@ -1,47 +1,47 @@
 import * as types from "./types";
 
-const updateCurrentPageAction = (currentPage) => {
+const updateCurrentPageAction = currentPage => {
   return {
     type: types.UPDATE_CURRENT_PAGE,
     payload: {
-      currentPage,
-    },
+      currentPage
+    }
   };
 };
 
-const updateTotalPagesAction = (totalPages) => {
+const updateTotalPagesAction = totalPages => {
   return {
     type: types.UPDATE_TOTAL_PAGES,
     payload: {
-      totalPages,
-    },
+      totalPages
+    }
   };
 };
 
-const updatePageLimitAction = (pageLimit) => {
+const updatePageLimitAction = pageLimit => {
   return {
     type: types.UPDATE_PAGE_LIMIT,
     payload: {
-      pageLimit,
-    },
+      pageLimit
+    }
   };
 };
 
-const updateTotalRecordsAction = (totalRecords) => {
+const updateTotalRecordsAction = totalRecords => {
   return {
     type: types.UPDATE_TOTAL_RECORDS,
     payload: {
-      totalRecords,
-    },
+      totalRecords
+    }
   };
 };
 
-const updatePageNeighboursAction = (pageNeighbours) => {
+const updatePageNeighboursAction = pageNeighbours => {
   return {
     type: types.UPDATE_PAGE_NEIGHBOURS,
     payload: {
-      pageNeighbours,
-    },
+      pageNeighbours
+    }
   };
 };
 
@@ -50,5 +50,5 @@ export {
   updatePageLimitAction,
   updatePageNeighboursAction,
   updateTotalPagesAction,
-  updateTotalRecordsAction,
+  updateTotalRecordsAction
 };

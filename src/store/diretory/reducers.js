@@ -3,7 +3,7 @@ import * as types from "./types";
 const initState = {
   data: [],
   done: false,
-  error: false,
+  error: false
 };
 
 const directoryReducers = (state = initState, action) => {
@@ -12,7 +12,7 @@ const directoryReducers = (state = initState, action) => {
       return { ...state, data: action.payload.directories };
     case types.DELETE_DIRECTORY: {
       const deleteIds = action.payload.id;
-      const newState = state.data.filter((f) => f.id !== deleteIds);
+      const newState = state.data.filter(f => f.id !== deleteIds);
       return { ...state, data: newState };
     }
     case types.BEGIN_UPDATE_DIRECTORY:
@@ -22,7 +22,7 @@ const directoryReducers = (state = initState, action) => {
         ...state,
         done: true,
         error: false,
-        data: [...state.data, action.payload.directory],
+        data: [...state.data, action.payload.directory]
       };
     case types.UPDATE_DIRECTORY_FAILURE:
       return { ...state, done: true, error: true };

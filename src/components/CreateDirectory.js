@@ -11,11 +11,11 @@ import styles from "assets/css/modules/CreateDirectory.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
-const CreateDirectory = (props) => {
+const CreateDirectory = props => {
   const [showListDirectory, setShowListDirectory] = useState(false);
   const [selectedPath, setSelectedPath] = useState({
     id: null,
-    path: "",
+    path: ""
   });
   const [path, setPath] = useState("");
 
@@ -67,7 +67,7 @@ const CreateDirectory = (props) => {
           zIndex: 1001,
           cursor: "default",
           opacity: "0.6",
-          backgroundColor: "rgb(85, 85, 85)",
+          backgroundColor: "rgb(85, 85, 85)"
         }}
       ></div>
       <div
@@ -83,7 +83,7 @@ const CreateDirectory = (props) => {
           position: "absolute",
           zIndex: 1012,
           cursor: "wait",
-          backgroundColor: "rgb(255, 255, 255)",
+          backgroundColor: "rgb(255, 255, 255)"
         }}
       >
         <div
@@ -127,7 +127,7 @@ const CreateDirectory = (props) => {
                             style={{ width: "100%", height: 25 }}
                             type="text"
                             value={path}
-                            onChange={(e) => setPath(e.target.value)}
+                            onChange={e => setPath(e.target.value)}
                           />
                         </div>
                       </td>
@@ -200,7 +200,7 @@ const CreateDirectory = (props) => {
                 style={{
                   background: `url(${
                     require("assets/img/popup/bg/bg_modifyBtn.gif").default
-                  }) no-repeat left top #2768b2`,
+                  }) no-repeat left top #2768b2`
                 }}
                 onClick={handleCreateDirectory}
               >
@@ -214,17 +214,16 @@ const CreateDirectory = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    directories: state.directoryReducers,
+    directories: state.directoryReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    createDirectory: (directory) => dispatch(createDirectoryAction(directory)),
-    changeShowCreateDirectory: () =>
-      dispatch(changeShowCreateDirectoryAction()),
+    createDirectory: directory => dispatch(createDirectoryAction(directory)),
+    changeShowCreateDirectory: () => dispatch(changeShowCreateDirectoryAction())
   };
 };
 

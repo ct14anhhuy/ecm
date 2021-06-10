@@ -1,0 +1,7 @@
+.cache
+/node_modules
+/src/assets/css/modules
+
+package-lock.json
+purgecss.js
+purgecss.config.js

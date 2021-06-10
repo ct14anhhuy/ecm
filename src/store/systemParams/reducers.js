@@ -4,7 +4,7 @@ const initState = {
   headerPath: "My Contents",
   currentDirectory: {
     id: 0,
-    isRoot: true,
+    isRoot: true
   },
   menuActive: true,
   showAddFile: false,
@@ -12,7 +12,7 @@ const initState = {
   showCreateDirectory: false,
   showOpenContent: false,
   selectedItem: {},
-  editItem: {},
+  editItem: {}
 };
 
 const systemParamsReducers = (state = initState, action) => {
@@ -27,8 +27,8 @@ const systemParamsReducers = (state = initState, action) => {
         currentDirectory: {
           ...state.currentDirectory,
           id: action.payload.id,
-          isRoot: action.payload.isRoot,
-        },
+          isRoot: action.payload.isRoot
+        }
       };
     case types.CHANGE_SHOW_ADD_FILE:
       return { ...state, showAddFile: !state.showAddFile };

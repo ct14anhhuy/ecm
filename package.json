@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/dotenv": "^8.2.0",
     "antd": "^4.15.2",
     "axios": "^0.21.1",
     "moment": "^2.29.1",
@@ -18,15 +19,18 @@
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "sweetalert": "^2.1.2",
-    "web-vitals": "^1.0.1"
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && npm run purge-css",
     "eject": "react-scripts eject",
     "concat-css": "cd scripts/ && concat-css.sh",
-    "purge-css": "node ./purgecss"
+    "purge-css": "node ./purgecss",
+    "lint": "eslint --ext js,jsx src/",
+    "lint:fix": "eslint --fix --ext js,jsx src/",
+    "prettier": "prettier --check \"src/**/(*.jsx|*.js|*.scss|*.css)\"",
+    "prettier:fix": "prettier --write \"src/**/(*.jsx|*.js|*.scss|*.css)\""
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +51,9 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1",
     "purgecss": "^4.0.3",
     "raw-loader": "^4.0.2"
   }

@@ -2,14 +2,14 @@ import * as types from "./types";
 import { fileInfoService } from "services/fileInfoService";
 
 const getMyContentsAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getMyContents();
       dispatch({
         type: types.GET_MY_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -18,14 +18,14 @@ const getMyContentsAction = () => {
 };
 
 const getImportantContentsAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getImportantContents();
       dispatch({
         type: types.GET_IMPORTANT_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -34,14 +34,14 @@ const getImportantContentsAction = () => {
 };
 
 const getFavoriteContentsAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getFavoriteContents();
       dispatch({
         type: types.GET_FAVORITE_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -50,14 +50,14 @@ const getFavoriteContentsAction = () => {
 };
 
 const getSharedContentsAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getSharedContents();
       dispatch({
         type: types.GET_SHARED_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -66,14 +66,14 @@ const getSharedContentsAction = () => {
 };
 
 const getDepartmentContentsAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getDepartmentContents();
       dispatch({
         type: types.GET_DEPARTMENT_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -82,14 +82,14 @@ const getDepartmentContentsAction = () => {
 };
 
 const getTrashContentsAction = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getTrashContents();
       dispatch({
         type: types.GET_TRASH_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -97,15 +97,15 @@ const getTrashContentsAction = () => {
   };
 };
 
-const getContentsFromPathAction = (dirId) => {
-  return async (dispatch) => {
+const getContentsFromPathAction = dirId => {
+  return async dispatch => {
     try {
       const obj = await fileInfoService.getContentsFromPath(dirId);
       dispatch({
         type: types.GET_CONTENTS_FROM_PATH,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -113,16 +113,16 @@ const getContentsFromPathAction = (dirId) => {
   };
 };
 
-const searchContentsAction = (searchStr) => {
-  return async (dispatch) => {
+const searchContentsAction = searchStr => {
+  return async dispatch => {
     try {
       if (!searchStr || searchStr.trim().length < 1) return;
       const obj = await fileInfoService.searchContents(searchStr);
       dispatch({
         type: types.SEARCH_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos),
-        },
+          fileInfos: injectSelected(obj.fileInfos)
+        }
       });
     } catch (error) {
       console.log(error);
@@ -131,14 +131,14 @@ const searchContentsAction = (searchStr) => {
 };
 
 const changeFavoriteAction = (id, employeeId) => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       await fileInfoService.changeFavorite(id, employeeId);
       dispatch({
         type: types.CHANGE_FAVORITE,
         payload: {
-          id,
-        },
+          id
+        }
       });
     } catch (error) {
       console.log(error);
@@ -147,14 +147,14 @@ const changeFavoriteAction = (id, employeeId) => {
 };
 
 const changeImportantAction = (id, employeeId) => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       await fileInfoService.changeImportant(id, employeeId);
       dispatch({
         type: types.CHANGE_IMPORTANT,
         payload: {
-          id,
-        },
+          id
+        }
       });
     } catch (error) {
       console.log(error);
@@ -167,8 +167,8 @@ const changeCheckedAction = (id, checked) => {
     type: types.CHANGE_CHECKED,
     payload: {
       id,
-      checked,
-    },
+      checked
+    }
   };
 };
 
@@ -177,39 +177,39 @@ const selectMultiAction = (fileIds, checked) => {
     type: types.SELECT_MULTI,
     payload: {
       fileIds,
-      checked,
-    },
+      checked
+    }
   };
 };
 
-const addFilesAction = (fileInfos) => {
-  return async (dispatch) => {
+const addFilesAction = fileInfos => {
+  return async dispatch => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE_FILE,
+        type: types.BEGIN_UPDATE_FILE
       });
       await fileInfoService.addFiles(fileInfos);
       dispatch({
-        type: types.UPDATE_FILE_SUCCESS,
+        type: types.UPDATE_FILE_SUCCESS
       });
     } catch (error) {
       console.log(error);
       dispatch({
-        type: types.UPDATE_FILE_FAILURE,
+        type: types.UPDATE_FILE_FAILURE
       });
     }
   };
 };
 
-const moveToTrashAction = (fileIds) => {
-  return async (dispatch) => {
+const moveToTrashAction = fileIds => {
+  return async dispatch => {
     try {
       await fileInfoService.moveToTrash(fileIds);
       dispatch({
         type: types.MOVE_TO_TRASH,
         payload: {
-          fileIds,
-        },
+          fileIds
+        }
       });
     } catch (error) {
       console.log(error);
@@ -217,15 +217,15 @@ const moveToTrashAction = (fileIds) => {
   };
 };
 
-const recoverFileAction = (fileIds) => {
-  return async (dispatch) => {
+const recoverFileAction = fileIds => {
+  return async dispatch => {
     try {
       await fileInfoService.recoverFile(fileIds);
       dispatch({
         type: types.RECOVER_FILE,
         payload: {
-          fileIds,
-        },
+          fileIds
+        }
       });
     } catch (error) {
       console.log(error);
@@ -233,15 +233,15 @@ const recoverFileAction = (fileIds) => {
   };
 };
 
-const deleteFileAction = (fileIds) => {
-  return async (dispatch) => {
+const deleteFileAction = fileIds => {
+  return async dispatch => {
     try {
       await fileInfoService.deleteFile(fileIds);
       dispatch({
         type: types.DELETE_FILE,
         payload: {
-          fileIds,
-        },
+          fileIds
+        }
       });
     } catch (error) {
       console.log(error);
@@ -249,33 +249,33 @@ const deleteFileAction = (fileIds) => {
   };
 };
 
-const editFileAction = (fileInfo) => {
-  return async (dispatch) => {
+const editFileAction = fileInfo => {
+  return async dispatch => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE_FILE,
+        type: types.BEGIN_UPDATE_FILE
       });
       await fileInfoService.editFile(fileInfo);
       dispatch({
         type: types.EDIT_FILE,
         payload: {
-          fileInfo,
-        },
+          fileInfo
+        }
       });
       dispatch({
-        type: types.UPDATE_FILE_SUCCESS,
+        type: types.UPDATE_FILE_SUCCESS
       });
     } catch (error) {
       console.log(error);
       dispatch({
-        type: types.UPDATE_FILE_FAILURE,
+        type: types.UPDATE_FILE_FAILURE
       });
     }
   };
 };
 
-const injectSelected = (fileInfos) => {
-  return fileInfos.map((fi) => Object.assign({}, fi, { checked: false }));
+const injectSelected = fileInfos => {
+  return fileInfos.map(fi => Object.assign({}, fi, { checked: false }));
 };
 
 export {
@@ -295,5 +295,5 @@ export {
   moveToTrashAction,
   recoverFileAction,
   deleteFileAction,
-  editFileAction,
+  editFileAction
 };

@@ -1,10 +1,10 @@
-const fileToByteArray = (file) => {
+const fileToByteArray = file => {
   return new Promise((resolve, reject) => {
     try {
       let reader = new FileReader();
       let fileByteArray = [];
       reader.readAsArrayBuffer(file);
-      reader.onloadend = (evt) => {
+      reader.onloadend = evt => {
         if (evt.target.readyState === FileReader.DONE) {
           let arrayBuffer = evt.target.result;
           let array = new Uint8Array(arrayBuffer);

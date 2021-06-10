@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { loginAction } from "store/user/actions";
 import { useEffect } from "react";
 
-const Login = (props) => {
+const Login = props => {
   const { login } = props;
   const { token } = useParams();
 
@@ -15,9 +15,9 @@ const Login = (props) => {
   return <Redirect to="/"></Redirect>;
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    login: () => dispatch(loginAction()),
+    login: () => dispatch(loginAction())
   };
 };
 

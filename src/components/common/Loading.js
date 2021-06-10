@@ -15,7 +15,7 @@ const Loading = () => {
           zIndex: 1001,
           cursor: "pointer",
           opacity: "0.6",
-          backgroundColor: "rgb(207, 207, 207)",
+          backgroundColor: "rgb(207, 207, 207)"
         }}
       />
       <div
@@ -31,7 +31,7 @@ const Loading = () => {
           position: "absolute",
           zIndex: 1012,
           cursor: "wait",
-          backgroundColor: "rgb(255, 255, 255)",
+          backgroundColor: "rgb(255, 255, 255)"
         }}
       >
         <div
@@ -40,7 +40,7 @@ const Loading = () => {
             border: "0px currentColor",
             visibility: "visible",
             position: "absolute",
-            cursor: "default",
+            cursor: "default"
           }}
         >
           <p>

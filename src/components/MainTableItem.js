@@ -3,20 +3,20 @@ import { connect } from "react-redux";
 import {
   changeFavoriteAction,
   changeImportantAction,
-  changeCheckedAction,
+  changeCheckedAction
 } from "store/fileInfo/actions";
 import { getFileShareUrlAction } from "store/fileUrl/actions";
 import {
   changeShowEditFileAction,
   changeShowOpenContentAction,
   changeSelectedItemAction,
-  changeEditItemAction,
+  changeEditItemAction
 } from "store/systemParams/actions";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
 
-const MainTableItem = (props) => {
+const MainTableItem = props => {
   const { fileUrl, fileInfo, user, headerPath, menuActive } = props;
   const [isTrash, setIsTrash] = useState(false);
 
@@ -43,7 +43,7 @@ const MainTableItem = (props) => {
     };
   }, []);
 
-  const copyToClipboard = (text) => {
+  const copyToClipboard = text => {
     var textField = document.createElement("textarea");
     textField.innerText = text;
     document.body.appendChild(textField);
@@ -52,7 +52,7 @@ const MainTableItem = (props) => {
     textField.remove();
   };
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     if (node.current.contains(e.target)) {
       return;
     }
@@ -63,7 +63,7 @@ const MainTableItem = (props) => {
     props.getFileShareUrl(fileInfo.id);
   };
 
-  const handleEditFile = (editItem) => {
+  const handleEditFile = editItem => {
     props.changeEditItem(editItem);
     props.changeShowEditFile();
   };
@@ -235,28 +235,28 @@ const MainTableItem = (props) => {
   return <React.Fragment>{!isTrash ? render : renderInTrash}</React.Fragment>;
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     user: state.userReducers,
     fileUrl: state.fileUrlReducers,
     headerPath: state.systemParamsReducers.headerPath,
-    menuActive: state.systemParamsReducers.menuActive,
+    menuActive: state.systemParamsReducers.menuActive
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     changeFavorite: (id, employeeId) =>
       dispatch(changeFavoriteAction(id, employeeId)),
     changeImportant: (id, employeeId) =>
       dispatch(changeImportantAction(id, employeeId)),
     changeChecked: (id, checked) => dispatch(changeCheckedAction(id, checked)),
-    getFileShareUrl: (id) => dispatch(getFileShareUrlAction(id)),
+    getFileShareUrl: id => dispatch(getFileShareUrlAction(id)),
     changeShowEditFile: () => dispatch(changeShowEditFileAction()),
     changeShowOpenContent: () => dispatch(changeShowOpenContentAction()),
-    changeSelectedItem: (selectedItem) =>
+    changeSelectedItem: selectedItem =>
       dispatch(changeSelectedItemAction(selectedItem)),
-    changeEditItem: (editItem) => dispatch(changeEditItemAction(editItem)),
+    changeEditItem: editItem => dispatch(changeEditItemAction(editItem))
   };
 };
 

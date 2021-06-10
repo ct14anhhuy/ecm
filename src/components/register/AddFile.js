@@ -15,7 +15,7 @@ import styles from "assets/css/modules/AddEdit.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
-const AddFile = (props) => {
+const AddFile = props => {
   const fileRef = useRef();
   const { changeShowAddFile, addFiles, fileInfos } = props;
 
@@ -24,7 +24,7 @@ const AddFile = (props) => {
     tag: "#",
     directoryId: null,
     securityLevel: "Public",
-    files: [],
+    files: []
   });
 
   const [showListDirectory, setShowListDirectory] = useState(false);
@@ -36,20 +36,20 @@ const AddFile = (props) => {
 
   const handleChangeFileName = (key, fileName) => {
     const arr = [...state.files];
-    const idEdit = arr.findIndex((f) => f.key === key);
+    const idEdit = arr.findIndex(f => f.key === key);
     arr[idEdit] = { ...arr[idEdit], fileName };
     setState({ ...state, files: [...arr] });
   };
 
-  const handleDeleteFile = (key) => {
-    const arr = state.files.filter((f) => f.key !== key);
+  const handleDeleteFile = key => {
+    const arr = state.files.filter(f => f.key !== key);
     setState({
       ...state,
-      files: arr,
+      files: arr
     });
   };
 
-  const handleSelectFile = (e) => {
+  const handleSelectFile = e => {
     if (!e.target.files[0]) return;
     setState({
       ...state,
@@ -58,9 +58,9 @@ const AddFile = (props) => {
         {
           data: e.target.files[0],
           key: new Date().getTime(),
-          fileName: e.target.files[0].name,
-        },
-      ],
+          fileName: e.target.files[0].name
+        }
+      ]
     });
   };
 
@@ -89,33 +89,33 @@ const AddFile = (props) => {
 
   const handleAddFiles = async () => {
     let fileInfos = [];
-    let viewEmps = viewRoles.map((e) => ({
+    let viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
-      permission: VIEW_PERMISSION,
+      permission: VIEW_PERMISSION
     }));
-    let editEmps = editRoles.map((e) => ({
+    let editEmps = editRoles.map(e => ({
       employeeId: e.id,
-      permission: EDIT_PERMISSION,
+      permission: EDIT_PERMISSION
     }));
     const fileShares = [...viewEmps, ...editEmps];
     if (state.files) {
       const { owner, tag, directoryId, securityLevel } = state;
       fileInfos = await Promise.all(
-        state.files.map(async (file) => ({
+        state.files.map(async file => ({
           name: file.fileName,
           owner: owner.id,
           tag,
           directoryId,
           securityLevel,
           fileShares,
-          fileData: await fileToByteArray(file.data),
+          fileData: await fileToByteArray(file.data)
         }))
       );
     }
     addFiles(fileInfos);
   };
 
-  const handleChangeSecurityLevel = (e) => {
+  const handleChangeSecurityLevel = e => {
     setState({ ...state, securityLevel: e.target.text });
   };
 
@@ -135,7 +135,7 @@ const AddFile = (props) => {
           zIndex: 1001,
           cursor: "default",
           opacity: "0.6",
-          backgroundColor: "rgb(85, 85, 85)",
+          backgroundColor: "rgb(85, 85, 85)"
         }}
       />
       <div
@@ -150,7 +150,7 @@ const AddFile = (props) => {
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,
-          backgroundColor: "rgb(255, 255, 255)",
+          backgroundColor: "rgb(255, 255, 255)"
         }}
       >
         <div className="popup_layer_typeB" style={{ display: "block" }}>
@@ -201,7 +201,7 @@ const AddFile = (props) => {
                   </p>
                   <div className={styles.contentList}>
                     <ul className={styles.list}>
-                      {state.files.map((file) => (
+                      {state.files.map(file => (
                         <SelectFile
                           key={file.key}
                           file={file}
@@ -361,7 +361,7 @@ const AddFile = (props) => {
                     <input
                       type="text"
                       value={state.tag}
-                      onChange={(e) =>
+                      onChange={e =>
                         setState({ ...state, tag: e.target.value })
                       }
                     />
@@ -393,17 +393,17 @@ const AddFile = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     fileInfos: state.fileInfoReducers,
-    owner: state.userReducers,
+    owner: state.userReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addFiles: (fileInfos) => dispatch(addFilesAction(fileInfos)),
-    changeShowAddFile: () => dispatch(changeShowAddFileAction()),
+    addFiles: fileInfos => dispatch(addFilesAction(fileInfos)),
+    changeShowAddFile: () => dispatch(changeShowAddFileAction())
   };
 };
 

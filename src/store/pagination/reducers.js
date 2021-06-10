@@ -5,7 +5,7 @@ const initState = {
   totalPages: null,
   pageLimit: 15,
   totalRecords: null,
-  pageNeighbours: 0,
+  pageNeighbours: 0
 };
 
 const paginationReducers = (state = initState, action) => {

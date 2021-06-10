@@ -5,16 +5,16 @@ import {
   searchContentsAction,
   moveToTrashAction,
   recoverFileAction,
-  deleteFileAction,
+  deleteFileAction
 } from "store/fileInfo/actions";
 import { deleteDirectoryAction } from "store/diretory/actions";
 import {
   changeShowAddFileAction,
-  changeShowCreateDirectoryAction,
+  changeShowCreateDirectoryAction
 } from "store/systemParams/actions";
 import swal from "sweetalert";
 
-const OptionBox = (props) => {
+const OptionBox = props => {
   const { headerPath, menuActive, currentDirectory } = props.systemParams;
   const [inpSearch, setInpSearch] = useState(null);
   const [isTrash, setIsTrash] = useState(false);
@@ -28,15 +28,15 @@ const OptionBox = (props) => {
   }, [headerPath, menuActive]);
 
   const handleMoveToTrash = () => {
-    const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
+    const fileIds = props.fileInfos.filter(f => f.checked).map(f => f.id);
     if (fileIds.length > 0) {
       swal({
         title: "Warning!",
         text: `Move ${fileIds.length} file(s) to trash!`,
         icon: "warning",
         buttons: true,
-        dangerMode: true,
-      }).then((willDelete) => {
+        dangerMode: true
+      }).then(willDelete => {
         if (willDelete) {
           props.moveToTrash(fileIds);
         }
@@ -45,7 +45,7 @@ const OptionBox = (props) => {
   };
 
   const handleDeleteFile = () => {
-    const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
+    const fileIds = props.fileInfos.filter(f => f.checked).map(f => f.id);
     if (fileIds.length > 0) {
       if (fileIds.length > 0) {
         swal({
@@ -53,8 +53,8 @@ const OptionBox = (props) => {
           text: `Remove ${fileIds.length} file(s)!`,
           icon: "warning",
           buttons: true,
-          dangerMode: true,
-        }).then((willDelete) => {
+          dangerMode: true
+        }).then(willDelete => {
           if (willDelete) {
             props.deleteFile(fileIds);
           }
@@ -70,8 +70,8 @@ const OptionBox = (props) => {
       text: "Delete this folder will delete all files inside it and cannot be recovered!",
       icon: "warning",
       buttons: true,
-      dangerMode: true,
-    }).then((willDelete) => {
+      dangerMode: true
+    }).then(willDelete => {
       if (willDelete) {
         props.deleteDirectory(currentDirectory.id);
       }
@@ -79,7 +79,7 @@ const OptionBox = (props) => {
   };
 
   const handleRecover = () => {
-    const fileIds = props.fileInfos.filter((f) => f.checked).map((f) => f.id);
+    const fileIds = props.fileInfos.filter(f => f.checked).map(f => f.id);
     if (fileIds.length > 0) {
       props.recoverFile(fileIds);
     }
@@ -159,12 +159,12 @@ const OptionBox = (props) => {
               lineHeight: 23,
               marginRight: 0,
               float: "left",
-              msImeMode: "active",
+              msImeMode: "active"
             }}
             type="text"
             defaultValue={inpSearch}
             placeholder="File Name/Owner"
-            onChange={(e) => setInpSearch(e.target.value)}
+            onChange={e => setInpSearch(e.target.value)}
           />
           <input
             className="btn_whiteS_typeA mr_r5"
@@ -180,24 +180,23 @@ const OptionBox = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     user: state.userReducers,
     fileInfos: state.fileInfoReducers.data,
-    systemParams: state.systemParamsReducers,
+    systemParams: state.systemParamsReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    searchContents: (searchStr) => dispatch(searchContentsAction(searchStr)),
-    moveToTrash: (fileIds) => dispatch(moveToTrashAction(fileIds)),
-    recoverFile: (fileIds) => dispatch(recoverFileAction(fileIds)),
-    deleteFile: (fileIds) => dispatch(deleteFileAction(fileIds)),
-    deleteDirectory: (id) => dispatch(deleteDirectoryAction(id)),
+    searchContents: searchStr => dispatch(searchContentsAction(searchStr)),
+    moveToTrash: fileIds => dispatch(moveToTrashAction(fileIds)),
+    recoverFile: fileIds => dispatch(recoverFileAction(fileIds)),
+    deleteFile: fileIds => dispatch(deleteFileAction(fileIds)),
+    deleteDirectory: id => dispatch(deleteDirectoryAction(id)),
     changeShowAddFile: () => dispatch(changeShowAddFileAction()),
-    changeShowCreateDirectory: () =>
-      dispatch(changeShowCreateDirectoryAction()),
+    changeShowCreateDirectory: () => dispatch(changeShowCreateDirectoryAction())
   };
 };
 

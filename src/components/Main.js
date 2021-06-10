@@ -22,7 +22,7 @@ const EditFile = lazy(() => import("components/register/EditFile"));
 const CreateDirectory = lazy(() => import("./CreateDirectory"));
 const OpenContent = lazy(() => import("./OpenContent"));
 
-const App = (props) => {
+const App = props => {
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
 
@@ -59,7 +59,7 @@ const App = (props) => {
                 style={{
                   borderRightColor: "currentColor",
                   borderRightWidth: "medium",
-                  borderRightStyle: "none",
+                  borderRightStyle: "none"
                 }}
               >
                 <Link
@@ -109,17 +109,17 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    systemParams: state.systemParamsReducers,
+    systemParams: state.systemParamsReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     getDirectories: () => dispatch(getDirectoriesAction()),
     getMyContents: () => dispatch(getMyContentsAction()),
-    getDepartments: () => dispatch(getDepartmentsAction()),
+    getDepartments: () => dispatch(getDepartmentsAction())
   };
 };
 

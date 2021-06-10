@@ -10,27 +10,28 @@ const apiUrl =
 const api = axios.create({
   baseURL: apiUrl,
   headers: {
-    "Content-Type": "application/json",
-  },
+    "Content-Type": "application/json"
+  }
 });
 
 api.interceptors.request.use(
-  (config) => {
+  config => {
     const token = sessionStorage.getItem("accessToken");
     if (token) {
       config.headers["Authorization"] = "Bearer " + token;
     }
     return config;
   },
-  (error) => {
+  error => {
     Promise.reject(error);
   }
 );
 
 api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response.status === 401) {
+  response => response,
+  error => {
+    const UNAUTHORIZED_STATUS = 401;
+    if (error.response.status === UNAUTHORIZED_STATUS) {
       store.dispatch(logoutAction());
     }
     return Promise.reject(error);

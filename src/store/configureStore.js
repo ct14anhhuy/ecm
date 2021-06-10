@@ -15,7 +15,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["userReducers"],
+  whitelist: ["userReducers"]
 };
 
 const rootReducer = combineReducers({
@@ -26,7 +26,7 @@ const rootReducer = combineReducers({
   employeeReducers,
   paginationReducers,
   fileUrlReducers,
-  systemParamsReducers,
+  systemParamsReducers
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

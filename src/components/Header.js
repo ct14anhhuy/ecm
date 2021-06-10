@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutAction } from "store/user/actions";
 
-const Header = (props) => {
+const Header = props => {
   const { user } = props;
 
   return (
@@ -47,15 +47,15 @@ const Header = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    user: state.userReducers,
+    user: state.userReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logoutAction()),
+    logout: () => dispatch(logoutAction())
   };
 };
 

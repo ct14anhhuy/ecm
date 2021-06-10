@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateCurrentPageAction } from "store/pagination/actions";
 
-const Paging = (props) => {
+const Paging = props => {
   const { currentPage, totalPages, pageNeighbours } = props.pagination;
 
   const { updateCurrentPage } = props;
@@ -99,17 +99,17 @@ const Paging = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     fileInfos: state.fileInfoReducers,
-    pagination: state.paginationReducers,
+    pagination: state.paginationReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    updateCurrentPage: (currentPage) =>
-      dispatch(updateCurrentPageAction(currentPage)),
+    updateCurrentPage: currentPage =>
+      dispatch(updateCurrentPageAction(currentPage))
   };
 };
 

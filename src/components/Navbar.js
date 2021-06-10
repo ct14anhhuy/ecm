@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-const Navbar = (props) => {
+const Navbar = props => {
   return (
     <div className="treeBox">
       <div className="baseFolder">
@@ -12,9 +12,9 @@ const Navbar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    headerPath: state.systemParamsReducers.headerPath,
+    headerPath: state.systemParamsReducers.headerPath
   };
 };
 

@@ -15,7 +15,7 @@ import styles from "assets/css/modules/AddEdit.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
-const EditFile = (props) => {
+const EditFile = props => {
   const tvRef = useRef();
 
   const { editItem } = props.systemParams;
@@ -25,14 +25,14 @@ const EditFile = (props) => {
     getFileShared,
     editFile,
     fileInfos,
-    changeShowEditFile,
+    changeShowEditFile
   } = props;
 
   const [state, setState] = useState({
     directoryId: editItem.directoryId,
     tag: editItem.tag,
     securityLevel: editItem.securityLevel,
-    file: { fileName: editItem.name },
+    file: { fileName: editItem.name }
   });
 
   const [showListDirectory, setShowListDirectory] = useState(false);
@@ -47,8 +47,8 @@ const EditFile = (props) => {
   };
 
   useEffect(() => {
-    setEditRoles(sharedEmps.filter((e) => e.roleId === EDIT_PERMISSION));
-    setViewRoles(sharedEmps.filter((e) => e.roleId === VIEW_PERMISSION));
+    setEditRoles(sharedEmps.filter(e => e.roleId === EDIT_PERMISSION));
+    setViewRoles(sharedEmps.filter(e => e.roleId === VIEW_PERMISSION));
   }, [sharedEmps]);
 
   useEffect(() => {
@@ -87,15 +87,15 @@ const EditFile = (props) => {
   }, [changeShowEditFile, fileInfos.done, fileInfos.error]);
 
   const handleEditFile = () => {
-    const viewEmps = viewRoles.map((e) => ({
+    const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION,
-      fileId: editItem.id,
+      fileId: editItem.id
     }));
-    const editEmps = editRoles.map((e) => ({
+    const editEmps = editRoles.map(e => ({
       employeeId: e.id,
       permission: EDIT_PERMISSION,
-      fileId: editItem.id,
+      fileId: editItem.id
     }));
     const fileInfo = {
       id: editItem.id,
@@ -103,12 +103,12 @@ const EditFile = (props) => {
       directoryId: state.directoryId,
       securityLevel: state.securityLevel,
       tag: state.tag,
-      fileShares: [...viewEmps, ...editEmps],
+      fileShares: [...viewEmps, ...editEmps]
     };
     editFile(fileInfo);
   };
 
-  const handleChangeSecurityLevel = (e) => {
+  const handleChangeSecurityLevel = e => {
     setState({ ...state, securityLevel: e.target.text });
   };
 
@@ -128,7 +128,7 @@ const EditFile = (props) => {
           zIndex: 1001,
           cursor: "default",
           opacity: "0.6",
-          backgroundColor: "rgb(85, 85, 85)",
+          backgroundColor: "rgb(85, 85, 85)"
         }}
       />
       <div
@@ -143,7 +143,7 @@ const EditFile = (props) => {
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,
-          backgroundColor: "rgb(255, 255, 255)",
+          backgroundColor: "rgb(255, 255, 255)"
         }}
       >
         <div className="popup_layer_typeB" style={{ display: "block" }}>
@@ -335,7 +335,7 @@ const EditFile = (props) => {
                     <input
                       type="text"
                       value={state.tag}
-                      onChange={(e) =>
+                      onChange={e =>
                         setState({ ...state, tag: e.target.value })
                       }
                     />
@@ -367,20 +367,20 @@ const EditFile = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
     systemParams: state.systemParamsReducers,
-    sharedEmps: state.employeeReducers.sharedEmps,
+    sharedEmps: state.employeeReducers.sharedEmps
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     changeShowEditFile: () => dispatch(changeShowEditFileAction()),
-    getFileShared: (fileId) => dispatch(getFileSharedAction(fileId)),
-    editFile: (fileInfo) => dispatch(editFileAction(fileInfo)),
+    getFileShared: fileId => dispatch(getFileSharedAction(fileId)),
+    editFile: fileInfo => dispatch(editFileAction(fileInfo))
   };
 };
 

@@ -4,11 +4,11 @@ import * as exts from "utils/extTypes";
 import { connect } from "react-redux";
 import { updatePageLimitAction } from "store/pagination/actions";
 
-const Filter = (props) => {
+const Filter = props => {
   const [showListRow, setShowListRow] = useState(false);
   const { pageLimit, updatePageLimit, setFilterExt, filterExt } = props;
 
-  const handleChangePageLimit = (e) => {
+  const handleChangePageLimit = e => {
     const pgLimit = parseInt(e.target.innerText);
     setShowListRow(false);
     updatePageLimit(pgLimit);
@@ -140,15 +140,15 @@ const Filter = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    pageLimit: state.paginationReducers.pageLimit,
+    pageLimit: state.paginationReducers.pageLimit
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    updatePageLimit: (pageLimit) => dispatch(updatePageLimitAction(pageLimit)),
+    updatePageLimit: pageLimit => dispatch(updatePageLimitAction(pageLimit))
   };
 };
 

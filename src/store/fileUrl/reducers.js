@@ -3,7 +3,7 @@ import * as types from "./types";
 const initState = {
   editUrl: "",
   viewUrl: "",
-  shareUrl: "",
+  shareUrl: ""
 };
 
 const fileUrlReducers = (state = initState, action) => {
@@ -12,12 +12,12 @@ const fileUrlReducers = (state = initState, action) => {
       return {
         ...state,
         editUrl: action.payload.editUrl,
-        viewUrl: action.payload.viewUrl,
+        viewUrl: action.payload.viewUrl
       };
     case types.GET_FILE_SHARE_URL:
       return {
         ...state,
-        shareUrl: action.payload.shareUrl,
+        shareUrl: action.payload.shareUrl
       };
     default:
       return state;

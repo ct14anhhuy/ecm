@@ -8,12 +8,12 @@ import {
   getSharedContentsAction,
   getDepartmentContentsAction,
   getTrashContentsAction,
-  getContentsFromPathAction,
+  getContentsFromPathAction
 } from "store/fileInfo/actions";
 import {
   changeHeaderPathAction,
   changeMenuActiveAction,
-  changeCurrentDirectoryAction,
+  changeCurrentDirectoryAction
 } from "store/systemParams/actions";
 import { updateCurrentPageAction } from "store/pagination/actions";
 import { connect } from "react-redux";
@@ -22,7 +22,7 @@ import styles from "assets/css/modules/LeftMenu.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
-const LeftMenu = (props) => {
+const LeftMenu = props => {
   const FIRST_PAGE = 1;
   const {
     menuActive,
@@ -30,14 +30,14 @@ const LeftMenu = (props) => {
     changeCurrentDirectory,
     changeHeaderPath,
     updateCurrentPage,
-    getContentsFromPath,
+    getContentsFromPath
   } = props;
   const [selectedDirectory, setSelectedDirectory] = useState({
     id: 0,
-    isRoot: true,
+    isRoot: true
   });
 
-  const handleSelectedRoute = (e) => {
+  const handleSelectedRoute = e => {
     changeHeaderPath(e.target.innerText);
     updateCurrentPage(FIRST_PAGE);
   };
@@ -88,7 +88,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={styles.btn_01}
-              onClick={(e) => {
+              onClick={e => {
                 handleSelectedRoute(e);
                 props.getMyContents();
               }}
@@ -99,7 +99,7 @@ const LeftMenu = (props) => {
           <li className={styles.newWin}>
             <span
               className={styles.btn_30}
-              onClick={(e) => {
+              onClick={e => {
                 handleSelectedRoute(e);
                 props.getImportantContents();
               }}
@@ -110,7 +110,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={styles.btn_06}
-              onClick={(e) => {
+              onClick={e => {
                 handleSelectedRoute(e);
                 props.getFavoriteContents();
               }}
@@ -121,7 +121,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={styles.btn_07}
-              onClick={(e) => {
+              onClick={e => {
                 handleSelectedRoute(e);
                 props.getSharedContents();
               }}
@@ -132,7 +132,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={styles.btn_16}
-              onClick={(e) => {
+              onClick={e => {
                 handleSelectedRoute(e);
                 props.getDepartmentContents();
               }}
@@ -143,7 +143,7 @@ const LeftMenu = (props) => {
           <li>
             <span
               className={styles.btn_rcb}
-              onClick={(e) => {
+              onClick={e => {
                 handleSelectedRoute(e);
                 props.getTrashContents();
               }}
@@ -185,13 +185,13 @@ const LeftMenu = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    menuActive: state.systemParamsReducers.menuActive,
+    menuActive: state.systemParamsReducers.menuActive
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     getMyContents: () => dispatch(getMyContentsAction()),
     getImportantContents: () => dispatch(getImportantContentsAction()),
@@ -199,14 +199,14 @@ const mapDispatchToProps = (dispatch) => {
     getSharedContents: () => dispatch(getSharedContentsAction()),
     getDepartmentContents: () => dispatch(getDepartmentContentsAction()),
     getTrashContents: () => dispatch(getTrashContentsAction()),
-    getContentsFromPath: (dirId) => dispatch(getContentsFromPathAction(dirId)),
-    changeHeaderPath: (path) => dispatch(changeHeaderPathAction(path)),
-    changeMenuActive: (shortcutActive) =>
+    getContentsFromPath: dirId => dispatch(getContentsFromPathAction(dirId)),
+    changeHeaderPath: path => dispatch(changeHeaderPathAction(path)),
+    changeMenuActive: shortcutActive =>
       dispatch(changeMenuActiveAction(shortcutActive)),
-    updateCurrentPage: (currentPage) =>
+    updateCurrentPage: currentPage =>
       dispatch(updateCurrentPageAction(currentPage)),
     changeCurrentDirectory: (id, isRoot) =>
-      dispatch(changeCurrentDirectoryAction(id, isRoot)),
+      dispatch(changeCurrentDirectoryAction(id, isRoot))
   };
 };
 

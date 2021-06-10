@@ -3,12 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import {
   searchByNameAction,
-  getByDepartmentAction,
+  getByDepartmentAction
 } from "store/employee/actions";
 
 import styles from "assets/css/modules/RoleAssignEdit.module.css";
 
-const RoleAssignEdit = (props) => {
+const RoleAssignEdit = props => {
   const { owner, editRoles, setEditRoles, viewRoles, setViewRoles } = props;
 
   const [departments, setDepartments] = useState([]);
@@ -25,19 +25,19 @@ const RoleAssignEdit = (props) => {
       return;
     }
     setEmployees(
-      props.employees.map((emp) => Object.assign({}, emp, { selected: false }))
+      props.employees.map(emp => Object.assign({}, emp, { selected: false }))
     );
   }, [props.employees]);
 
   useEffect(() => {
-    const deps = props.departments.map((dep) =>
+    const deps = props.departments.map(dep =>
       Object.assign({}, dep, { selected: false, expanded: false })
     );
-    const result = deps.map((dep) => ({
+    const result = deps.map(dep => ({
       ...dep,
-      employees: dep.employees.map((emp) =>
+      employees: dep.employees.map(emp =>
         Object.assign({}, emp, { selected: false })
-      ),
+      )
     }));
     setDepartments(result);
   }, [props.departments]);
@@ -45,80 +45,80 @@ const RoleAssignEdit = (props) => {
   const handleMoveToEdit = () => {
     let checkedEmps = [];
     if (selectName) {
-      checkedEmps = employees.filter((emp) => emp.selected);
+      checkedEmps = employees.filter(emp => emp.selected);
     } else {
       const newArr = [...departments];
-      const checkedDeps = newArr.filter((dep) =>
-        dep.employees.some((emp) => emp.selected)
+      const checkedDeps = newArr.filter(dep =>
+        dep.employees.some(emp => emp.selected)
       );
       for (const dep of checkedDeps) {
         checkedEmps = [
           ...checkedEmps,
-          ...dep.employees.filter((emp) => emp.selected),
+          ...dep.employees.filter(emp => emp.selected)
         ];
       }
     }
     const result = checkedEmps.filter(
-      (emp) =>
-        !editRoles.some((cur) => emp.id === cur.id) &&
-        !viewRoles.some((cur) => emp.id === cur.id)
+      emp =>
+        !editRoles.some(cur => emp.id === cur.id) &&
+        !viewRoles.some(cur => emp.id === cur.id)
     );
     setEditRoles([
-      ...result.map((emp) => ({ ...emp, selected: false })),
-      ...editRoles,
+      ...result.map(emp => ({ ...emp, selected: false })),
+      ...editRoles
     ]);
   };
 
   const handleMoveToView = () => {
     let checkedEmps = [];
     if (selectName) {
-      checkedEmps = employees.filter((emp) => emp.selected);
+      checkedEmps = employees.filter(emp => emp.selected);
     } else {
       const newArr = [...departments];
-      const checkedDeps = newArr.filter((dep) =>
-        dep.employees.some((emp) => emp.selected)
+      const checkedDeps = newArr.filter(dep =>
+        dep.employees.some(emp => emp.selected)
       );
       for (const dep of checkedDeps) {
         checkedEmps = [
           ...checkedEmps,
-          ...dep.employees.filter((emp) => emp.selected),
+          ...dep.employees.filter(emp => emp.selected)
         ];
       }
     }
     const result = checkedEmps.filter(
-      (emp) =>
-        !editRoles.some((cur) => emp.id === cur.id) &&
-        !viewRoles.some((cur) => emp.id === cur.id)
+      emp =>
+        !editRoles.some(cur => emp.id === cur.id) &&
+        !viewRoles.some(cur => emp.id === cur.id)
     );
     setViewRoles([
-      ...result.map((emp) => ({ ...emp, selected: false })),
-      ...viewRoles,
+      ...result.map(emp => ({ ...emp, selected: false })),
+      ...viewRoles
     ]);
   };
 
   const handleEditToLeft = () => {
-    setEditRoles(editRoles.filter((emp) => !emp.selected));
+    setEditRoles(editRoles.filter(emp => !emp.selected));
   };
 
   const handleViewToLeft = () => {
-    setViewRoles(viewRoles.filter((emp) => !emp.selected));
+    setViewRoles(viewRoles.filter(emp => !emp.selected));
   };
 
   const handleEditToView = () => {
-    const checkedEmps = editRoles.filter((emp) => emp.selected);
-    setEditRoles(editRoles.filter((emp) => !emp.selected));
+    const checkedEmps = editRoles.filter(emp => emp.selected);
+    setEditRoles(editRoles.filter(emp => !emp.selected));
     setViewRoles([
-      ...checkedEmps.map((emp) => ({ ...emp, selected: false })),
-      ...viewRoles,
+      ...checkedEmps.map(emp => ({ ...emp, selected: false })),
+      ...viewRoles
     ]);
   };
 
   const handleViewToEdit = () => {
-    const checkedEmps = viewRoles.filter((emp) => emp.selected);
-    setViewRoles(viewRoles.filter((emp) => !emp.selected));
+    const checkedEmps = viewRoles.filter(emp => emp.selected);
+    setViewRoles(viewRoles.filter(emp => !emp.selected));
     setEditRoles([
-      ...checkedEmps.map((emp) => ({ ...emp, selected: false })),
-      ...editRoles,
+      ...checkedEmps.map(emp => ({ ...emp, selected: false })),
+      ...editRoles
     ]);
   };
 
@@ -128,55 +128,55 @@ const RoleAssignEdit = (props) => {
 
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
-    setEmployees(employees.map((emp) => ({ ...emp, selected: !selectAll })));
+    setEmployees(employees.map(emp => ({ ...emp, selected: !selectAll })));
   };
 
-  const handleSelect = (empId) => {
+  const handleSelect = empId => {
     const newArr = [...employees];
-    const arrId = newArr.findIndex((emp) => emp.id === empId);
+    const arrId = newArr.findIndex(emp => emp.id === empId);
     newArr[arrId].selected = !newArr[arrId].selected;
     setEmployees(newArr);
   };
 
-  const handleDepartmentSelect = (depId) => {
+  const handleDepartmentSelect = depId => {
     const newArr = [...departments];
-    const arrId = newArr.findIndex((dep) => dep.id === depId);
+    const arrId = newArr.findIndex(dep => dep.id === depId);
     newArr[arrId].selected = !newArr[arrId].selected;
-    newArr[arrId].employees = newArr[arrId].employees.map((emp) => ({
+    newArr[arrId].employees = newArr[arrId].employees.map(emp => ({
       ...emp,
-      selected: newArr[arrId].selected,
+      selected: newArr[arrId].selected
     }));
     setDepartments(newArr);
   };
 
-  const handleDepartmentExpanded = (depId) => {
+  const handleDepartmentExpanded = depId => {
     const newArr = [...departments];
-    const arrId = newArr.findIndex((dep) => dep.id === depId);
+    const arrId = newArr.findIndex(dep => dep.id === depId);
     newArr[arrId].expanded = !newArr[arrId].expanded;
     setDepartments(newArr);
   };
 
-  const handleSelectEdit = (empId) => {
+  const handleSelectEdit = empId => {
     const newArr = [...editRoles];
-    const arrId = newArr.findIndex((emp) => emp.id === empId);
+    const arrId = newArr.findIndex(emp => emp.id === empId);
     newArr[arrId].selected = !newArr[arrId].selected;
     setEditRoles(newArr);
   };
 
-  const handleSelectView = (empId) => {
+  const handleSelectView = empId => {
     const newArr = [...viewRoles];
-    const arrId = newArr.findIndex((emp) => emp.id === empId);
+    const arrId = newArr.findIndex(emp => emp.id === empId);
     newArr[arrId].selected = !newArr[arrId].selected;
     setViewRoles(newArr);
   };
 
-  const handleSelectStaff = (empId) => {
+  const handleSelectStaff = empId => {
     const newArr = [...departments];
-    const arrId = newArr.findIndex((dep) =>
-      dep.employees.some((emp) => emp.id === empId)
+    const arrId = newArr.findIndex(dep =>
+      dep.employees.some(emp => emp.id === empId)
     );
     const childrenId = newArr[arrId].employees.findIndex(
-      (emp) => emp.id === empId
+      emp => emp.id === empId
     );
     newArr[arrId].employees[childrenId].selected =
       !newArr[arrId].employees[childrenId].selected;
@@ -239,7 +239,7 @@ const RoleAssignEdit = (props) => {
                   style={{ msImeMode: "active" }}
                   type="text"
                   defaultValue={searchStr}
-                  onChange={(e) => setSearchStr(e.target.value)}
+                  onChange={e => setSearchStr(e.target.value)}
                 />
                 <Link to="/" onClick={handleSearch}>
                   <img
@@ -269,7 +269,7 @@ const RoleAssignEdit = (props) => {
                     Select
                     <span className={styles.red}>
                       {" "}
-                      {employees.filter((emp) => emp.selected).length}
+                      {employees.filter(emp => emp.selected).length}
                     </span>
                     /Total
                     <span className={styles.blue}> {employees.length}</span>
@@ -289,7 +289,7 @@ const RoleAssignEdit = (props) => {
                       style={{ width: "100%" }}
                     >
                       <tbody>
-                        {employees.map((emp) => (
+                        {employees.map(emp => (
                           <tr key={emp.id}>
                             <td>
                               <div className={styles.contentTitle}>
@@ -329,7 +329,7 @@ const RoleAssignEdit = (props) => {
                         <col width="*" />
                       </colgroup>
                       <tbody>
-                        {departments.map((dep) => (
+                        {departments.map(dep => (
                           <React.Fragment key={dep.id}>
                             <tr className={styles.tr_10873}>
                               <td className={styles.bdr0}>
@@ -339,7 +339,7 @@ const RoleAssignEdit = (props) => {
                                       dep.selected ? styles.c_on : ""
                                     }`}
                                     style={{
-                                      marginLeft: 2,
+                                      marginLeft: 2
                                     }}
                                   >
                                     <input
@@ -371,7 +371,7 @@ const RoleAssignEdit = (props) => {
                                 <strong>{dep.name}</strong>
                               </td>
                             </tr>
-                            {dep.employees.map((emp) => (
+                            {dep.employees.map(emp => (
                               <tr
                                 key={emp.id}
                                 className={styles.groupOne}
@@ -471,7 +471,7 @@ const RoleAssignEdit = (props) => {
                     <col width="*" />
                   </colgroup>
                   <tbody>
-                    {editRoles.map((emp) => (
+                    {editRoles.map(emp => (
                       <tr
                         key={emp.id}
                         className={emp.selected ? styles.on : ""}
@@ -539,7 +539,7 @@ const RoleAssignEdit = (props) => {
                     <col width="*" />
                   </colgroup>
                   <tbody>
-                    {viewRoles.map((emp) => (
+                    {viewRoles.map(emp => (
                       <tr
                         key={emp.id}
                         className={emp.selected ? styles.on : ""}
@@ -576,17 +576,17 @@ const RoleAssignEdit = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     departments: state.departmentReducers.data,
-    employees: state.employeeReducers.data,
+    employees: state.employeeReducers.data
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    searchByName: (name) => dispatch(searchByNameAction(name)),
-    getByDepartment: (depId) => dispatch(getByDepartmentAction(depId)),
+    searchByName: name => dispatch(searchByNameAction(name)),
+    getByDepartment: depId => dispatch(getByDepartmentAction(depId))
   };
 };
 

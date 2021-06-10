@@ -1,7 +1,7 @@
 import styles from "./Error.module.css";
 import { connect } from "react-redux";
 
-const Error = (props) => {
+const Error = props => {
   return (
     <div className={styles.error__main}>
       <div className={styles.error__fof}>
@@ -11,9 +11,9 @@ const Error = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    systemError: state.systemParamsReducers.systemError,
+    systemError: state.systemParamsReducers.systemError
   };
 };
 

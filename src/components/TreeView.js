@@ -2,7 +2,7 @@ import React, {
   useState,
   useEffect,
   forwardRef,
-  useImperativeHandle,
+  useImperativeHandle
 } from "react";
 import { Tree, Row, Col } from "antd";
 import { connect } from "react-redux";
@@ -13,37 +13,37 @@ const TreeView = forwardRef((props, ref) => {
     flatTree: [],
     hirarchicalTree: [],
     newNodeName: "",
-    selectedId: 0,
+    selectedId: 0
   });
 
   const [isRootNode, setIsRootNode] = useState(false);
 
   useEffect(() => {
-    const res = props.directories.map((node) => ({
+    const res = props.directories.map(node => ({
       id: node.id,
       key: node.id,
       name: node.name,
       title: node.name,
       parentId: node.parentId,
-      children: [],
+      children: []
     }));
 
-    setState((state) => ({
+    setState(state => ({
       ...state,
-      flatTree: res,
+      flatTree: res
     }));
 
     const hirarchicalTree = flatToHierarchy(res);
-    setState((state) => ({ ...state, hirarchicalTree: hirarchicalTree }));
+    setState(state => ({ ...state, hirarchicalTree: hirarchicalTree }));
   }, [props.directories]);
 
-  const flatToHierarchy = (flat) => {
+  const flatToHierarchy = flat => {
     var roots = [];
     var all = {};
-    [...flat].forEach((item) => {
+    [...flat].forEach(item => {
       all[item.id] = { ...item };
     });
-    Object.keys(all).forEach((id) => {
+    Object.keys(all).forEach(id => {
       var item = all[id];
       if (item.parentId === null) {
         roots.push(item);
@@ -106,7 +106,7 @@ const TreeView = forwardRef((props, ref) => {
   };
 
   useImperativeHandle(ref, () => ({
-    handleGetPath,
+    handleGetPath
   }));
 
   const handleGetPath = () => {
@@ -129,9 +129,9 @@ const TreeView = forwardRef((props, ref) => {
   );
 });
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    directories: state.directoryReducers.data,
+    directories: state.directoryReducers.data
   };
 };
 

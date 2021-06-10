@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Main from "components/Main";
 import Error from "./Error";
 
-const PrivateRoute = (props) => {
+const PrivateRoute = props => {
   return props.user.id ? (
     <Main />
   ) : (
@@ -10,9 +10,9 @@ const PrivateRoute = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    user: state.userReducers,
+    user: state.userReducers
   };
 };
 

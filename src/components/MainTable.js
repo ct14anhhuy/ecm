@@ -7,10 +7,10 @@ import { selectMultiAction } from "store/fileInfo/actions";
 import {
   updatePageNeighboursAction,
   updateTotalPagesAction,
-  updateTotalRecordsAction,
+  updateTotalRecordsAction
 } from "store/pagination/actions";
 
-const MainTable = (props) => {
+const MainTable = props => {
   const [fileInfos, setFileInfos] = useState(props.fileInfos);
   const [selectAll, setSelectAll] = useState(false);
   const [currentFiles, setCurrentFiles] = useState([]);
@@ -26,7 +26,7 @@ const MainTable = (props) => {
         break;
       default:
         setFileInfos(
-          fi.filter((fileInfo) => {
+          fi.filter(fileInfo => {
             return fe.includes(fileInfo.name.split(".").pop());
           })
         );
@@ -50,11 +50,11 @@ const MainTable = (props) => {
     pageNeighbours,
     updatePageNeighbours,
     updateTotalPages,
-    updateTotalRecords,
+    updateTotalRecords
   ]);
 
-  const handleSelectAll = (checked) => {
-    const fileIds = currentFiles.map((f) => f.id);
+  const handleSelectAll = checked => {
+    const fileIds = currentFiles.map(f => f.id);
     setSelectAll(checked);
     props.selectMulti(fileIds, checked);
   };
@@ -121,7 +121,7 @@ const MainTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {currentFiles.map((fileInfo) => (
+        {currentFiles.map(fileInfo => (
           <MainTableItem key={fileInfo.id} fileInfo={fileInfo} />
         ))}
       </tbody>
@@ -129,23 +129,23 @@ const MainTable = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     fileInfos: state.fileInfoReducers.data,
-    pagination: state.paginationReducers,
+    pagination: state.paginationReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    updateTotalRecords: (totalRecords) =>
+    updateTotalRecords: totalRecords =>
       dispatch(updateTotalRecordsAction(totalRecords)),
-    updateTotalPages: (totalPages) =>
+    updateTotalPages: totalPages =>
       dispatch(updateTotalPagesAction(totalPages)),
-    updatePageNeighbours: (pageNeighbours) =>
+    updatePageNeighbours: pageNeighbours =>
       dispatch(updatePageNeighboursAction(pageNeighbours)),
     selectMulti: (fileIds, checked) =>
-      dispatch(selectMultiAction(fileIds, checked)),
+      dispatch(selectMultiAction(fileIds, checked))
   };
 };
 

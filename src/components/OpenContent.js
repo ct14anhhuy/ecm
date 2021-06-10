@@ -6,7 +6,7 @@ import { changeShowOpenContentAction } from "store/systemParams/actions";
 
 import styles from "assets/css/modules/OpenContent.module.css";
 
-const OpenContent = (props) => {
+const OpenContent = props => {
   const { editUrl, viewUrl } = props.fileUrl;
   const { getFileUrl } = props;
   const { selectedItem } = props.systemParams;
@@ -31,7 +31,7 @@ const OpenContent = (props) => {
           zIndex: 1001,
           cursor: "default",
           opacity: "0.6",
-          backgroundColor: "rgb(85, 85, 85)",
+          backgroundColor: "rgb(85, 85, 85)"
         }}
       ></div>
 
@@ -48,7 +48,7 @@ const OpenContent = (props) => {
           position: "fixed",
           zIndex: 1012,
           cursor: "wait",
-          backgroundColor: "rgb(255, 255, 255)",
+          backgroundColor: "rgb(255, 255, 255)"
         }}
       >
         <div
@@ -102,17 +102,17 @@ const OpenContent = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     fileUrl: state.fileUrlReducers,
-    systemParams: state.systemParamsReducers,
+    systemParams: state.systemParamsReducers
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getFileUrl: (id) => dispatch(getFileUrlAction(id)),
-    changeShowOpenContent: () => dispatch(changeShowOpenContentAction()),
+    getFileUrl: id => dispatch(getFileUrlAction(id)),
+    changeShowOpenContent: () => dispatch(changeShowOpenContentAction())
   };
 };
 
