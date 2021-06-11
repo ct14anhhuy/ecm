@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build && npm run purge-css",
     "eject": "react-scripts eject",
-    "concat-css": "cd scripts/ && concat-css.sh",
+    "concat-css": "node scripts/concat-css.js",
     "purge-css": "node ./purgecss",
     "lint": "eslint --ext js,jsx src/",
     "lint:fix": "eslint --fix --ext js,jsx src/",
@@ -52,6 +52,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.1",
     "purgecss": "^4.0.3",
-    "raw-loader": "^4.0.2"
+    "raw-loader": "^4.0.2",
+    "shelljs": "^0.8.4"
   }
 }
