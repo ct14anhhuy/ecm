@@ -147,7 +147,7 @@
 .innFooter p {
   color: #fafafa;
   font-size: 15px;
-  padding-top: 10px;
+  line-height: 36px;
 }
 .btnPrivate {
   position: absolute;
