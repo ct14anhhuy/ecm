@@ -24,7 +24,6 @@
 }
 .topSrcArea {
   background: url(assets/img/gnbBar/bg_top_blue_src.png) no-repeat left;
-  float: left;
   width: 249px;
   height: 23px;
   padding: 1px 0 0 1px;
@@ -229,22 +228,6 @@
 * html .clfix {
   height: 1%;
 }
-a {
-  text-decoration: none;
-  color: #333;
-}
-a:visited {
-  text-decoration: none;
-  color: #333;
-}
-a:active {
-  text-decoration: none;
-  color: #333;
-}
-a:hover {
-  text-decoration: none;
-  color: #333;
-}
 .fnone {
   float: none !important;
 }
@@ -340,13 +323,13 @@ a:hover {
   position: absolute;
   right: 6px;
   top: 10px;
-  padding: 3px 3px !important;
+  padding: 3px 3px 3px !important;
 }
 *:first-child + html .btnClose {
   position: absolute;
   right: 6px;
   top: 7px;
-  padding: 3px 3px !important;
+  padding: 3px 3px 3px !important;
 }
 .topRt {
   float: right;
@@ -433,9 +416,6 @@ a:hover {
 }
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
-}
-body {
-  top: 0px !important;
 }
 .goog-tooltip {
   display: none !important;

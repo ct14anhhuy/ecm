@@ -1,8 +1,10 @@
-.cache
-/node_modules
-/src/assets/css/modules
-
+build/
+node_modules/
 package-lock.json
+yarn.lock
+package.json
+
 purgecss.js
 purgecss.config.js
-/scripts/concat-css.js
+Gruntfile.js
+/src/assets/css/modules

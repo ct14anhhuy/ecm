@@ -76,8 +76,3 @@
   color: #9a9a9a;
   background-position: -589px -40px;
 }
-*,
-*::before,
-*::after {
-  box-sizing: revert;
-}

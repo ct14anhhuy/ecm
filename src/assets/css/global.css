@@ -5,6 +5,8 @@ body {
   background-color: #fff;
   font: 13px dotum;
   color: #000;
+  top: 0px !important;
+  min-width: 100%;
 }
 html {
   width: 100%;
@@ -71,7 +73,7 @@ address {
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: #333;
 }
 section,
 article,
@@ -198,6 +200,18 @@ caption {
   overflow: hidden;
   font: 0/0 arial;
 }
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
 .clfix:after {
   content: ".";
   display: block;
@@ -213,23 +227,11 @@ caption {
 * html .clfix {
   height: 1%;
 }
-a:visited {
-  text-decoration: none;
-  color: #000;
-}
-a:active {
-  text-decoration: none;
-  color: #000;
-}
-a:hover {
-  text-decoration: none;
-  color: #000;
-}
 .mx100 {
   max-width: 100%;
 }
 .pd0 {
-  padding: 0 0 !important;
+  padding: 0 0 0 !important;
 }
 .pdt0 {
   padding-top: 0 !important;
@@ -256,7 +258,7 @@ a:hover {
   padding-left: 20px !important;
 }
 .mg0 {
-  margin: 0 0 !important;
+  margin: 0 0 0 !important;
 }
 .mgt0 {
   margin-top: 0 !important;
@@ -498,4 +500,9 @@ a:hover {
 }
 .border-none {
   border: none !important;
+}
+*,
+*::before,
+*::after {
+  box-sizing: revert;
 }

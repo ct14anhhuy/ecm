@@ -22,7 +22,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build && npm run purge-css",
     "eject": "react-scripts eject",
-    "concat-css": "node scripts/concat-css.js",
     "purge-css": "node ./purgecss",
     "lint": "eslint --ext js,jsx src/",
     "lint:fix": "eslint --fix --ext js,jsx src/",
@@ -50,6 +49,9 @@
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "grunt": "^1.4.1",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "prettier": "^2.3.1",
     "purgecss": "^4.0.3",
     "raw-loader": "^4.0.2",
