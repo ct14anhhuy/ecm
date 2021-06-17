@@ -63,12 +63,13 @@ const MainTable = props => {
     <table className="normalTb" style={{ marginBottom: 15 }}>
       <colgroup>
         <col width="*" />
-        <col width={100} />
-        <col width={100} />
-        <col width={60} />
-        <col width={150} />
+        <col width={110} />
+        <col width={130} />
         <col width={70} />
-        <col width={150} />
+        <col width={130} />
+        <col width={60} />
+        <col width={110} />
+        <col width={130} />
       </colgroup>
       <thead>
         <tr>
@@ -95,7 +96,7 @@ const MainTable = props => {
           </th>
           <th>
             <Link className="icoSort" to="/">
-              Modifier
+              Created Date
             </Link>
           </th>
           <th>
@@ -115,7 +116,12 @@ const MainTable = props => {
           </th>
           <th>
             <Link className="icoSort" to="/">
-              Date Modified
+              Modifier
+            </Link>
+          </th>
+          <th>
+            <Link className="icoSort" to="/">
+              Modified Date
             </Link>
           </th>
         </tr>

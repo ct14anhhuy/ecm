@@ -13,7 +13,13 @@ module.exports = function (grunt) {
     cssmin: {
       options: {
         mergeIntoShorthands: false,
-        roundingPrecision: -1
+        roundingPrecision: -1,
+        level: {
+          2: {
+            removeDuplicateRules: true,
+            removeUnusedAtRules: true
+          }
+        }
       },
       AddEditModule: {
         files: {
@@ -68,12 +74,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-cssmin");
 
   grunt.registerTask("runwatch", ["watch"]);
-  grunt.registerTask("default", ["cssminTask"]);
-  grunt.registerTask("cssminTask", [
-    "cssmin:AddEditModule",
-    "cssmin:RoleAssignEditModule",
-    "cssmin:LeftMenuModule",
-    "cssmin:CreateDirectoryModule",
-    "cssmin:OpenContentModule"
-  ]);
+  grunt.registerTask("default", ["cssmin"]);
 };

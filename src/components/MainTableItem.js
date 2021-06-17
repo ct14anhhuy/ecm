@@ -13,7 +13,7 @@ import {
   changeEditItemAction
 } from "store/systemParams/actions";
 import { Link } from "react-router-dom";
-import moment from "moment";
+import { format } from "date-fns";
 import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
 
 const MainTableItem = props => {
@@ -127,11 +127,11 @@ const MainTableItem = props => {
         </div>
       </td>
       <td>{fileInfo.owner}</td>
-      <td>{fileInfo.modifier}</td>
       <td>{fileInfo.size}KB</td>
       <td>{fileInfo.securityLevel}</td>
+      <td>{fileInfo.modifier}</td>
       <td>{fileInfo.version}</td>
-      <td>{moment(fileInfo.modifiedDate).format("DD/MM/YYYY")}</td>
+      <td>{format(new Date(fileInfo.modifiedDate), "dd/MM/yyyy HH:mm")}</td>
     </tr>
   );
 
@@ -224,11 +224,12 @@ const MainTableItem = props => {
         </div>
       </td>
       <td>{fileInfo.owner}</td>
-      <td>{fileInfo.modifier}</td>
+      <td>{format(new Date(fileInfo.createdDate), "dd/MM/yyyy HH:mm")}</td>
       <td>{fileInfo.size}KB</td>
       <td>{fileInfo.securityLevel}</td>
       <td>{fileInfo.version}</td>
-      <td>{moment(fileInfo.modifiedDate).format("DD/MM/YYYY")}</td>
+      <td>{fileInfo.modifier}</td>
+      <td>{format(new Date(fileInfo.modifiedDate), "dd/MM/yyyy HH:mm")}</td>
     </tr>
   );
 

@@ -814,7 +814,6 @@ label {
   top: 0;
 }
 .normalTb thead tr th .icoSort {
-  padding-right: 13px;
   background: url(assets/img/main/ico/sort-down.png) right 0 no-repeat;
 }
 .normalTb thead tr th .icoSortOnUp {
