@@ -52,7 +52,7 @@ const OpenContent = props => {
           position: "fixed",
           zIndex: 1001,
           cursor: "default",
-          opacity: "0.6",
+          opacity: 0.6,
           backgroundColor: "rgb(85, 85, 85)"
         }}
       ></div>

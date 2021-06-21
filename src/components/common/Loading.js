@@ -14,7 +14,7 @@ const Loading = () => {
           position: "fixed",
           zIndex: 1001,
           cursor: "pointer",
-          opacity: "0.6",
+          opacity: 0.6,
           backgroundColor: "rgb(207, 207, 207)"
         }}
       />
