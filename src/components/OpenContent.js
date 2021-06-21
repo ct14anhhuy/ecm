@@ -11,6 +11,11 @@ const OpenContent = props => {
   const { getFileUrl } = props;
   const { selectedItem } = props.systemParams;
 
+  const actions = {
+    Edit: "Edit",
+    View: "View"
+  };
+
   useEffect(() => {
     getFileUrl(selectedItem.id);
   }, [getFileUrl, selectedItem.id]);
@@ -19,10 +24,10 @@ const OpenContent = props => {
     const action = e.target.innerText;
     var link = document.createElement("a");
     switch (action) {
-      case "Edit":
+      case actions.Edit:
         link.href = `ECMProtocol: ${editUrl}`;
         break;
-      case "View":
+      case actions.View:
         link.href = `ECMProtocol: ${viewUrl}`;
         break;
       default:
@@ -105,8 +110,10 @@ const OpenContent = props => {
                 </table>
               </div>
               <p className={styles.btnBox}>
-                {editUrl ? <span onClick={handleLinkClick}>Edit</span> : null}
-                <span onClick={handleLinkClick}>View</span>
+                {editUrl ? (
+                  <span onClick={handleLinkClick}>{actions.Edit}</span>
+                ) : null}
+                <span onClick={handleLinkClick}>{actions.View}</span>
               </p>
             </div>
           </div>
