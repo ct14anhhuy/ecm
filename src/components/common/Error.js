@@ -1,5 +1,4 @@
 import styles from "./Error.module.css";
-import { connect } from "react-redux";
 
 const Error = props => {
   return (
@@ -11,10 +10,4 @@ const Error = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    systemError: state.systemParamsReducers.systemError
-  };
-};
-
-export default connect(mapStateToProps, null)(Error);
+export default Error;

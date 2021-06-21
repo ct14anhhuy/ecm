@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "antd": "^4.15.2",
     "axios": "^0.21.1",
     "date-fns": "^2.22.1",

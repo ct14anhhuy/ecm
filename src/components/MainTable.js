@@ -64,11 +64,9 @@ const MainTable = props => {
       <colgroup>
         <col width="*" />
         <col width={110} />
-        <col width={130} />
         <col width={70} />
         <col width={130} />
         <col width={60} />
-        <col width={110} />
         <col width={130} />
       </colgroup>
       <thead>
@@ -96,11 +94,6 @@ const MainTable = props => {
           </th>
           <th>
             <Link className="icoSort" to="/">
-              Created Date
-            </Link>
-          </th>
-          <th>
-            <Link className="icoSort" to="/">
               Size
             </Link>
           </th>
@@ -112,11 +105,6 @@ const MainTable = props => {
           <th>
             <Link className="icoSort" to="/">
               Version
-            </Link>
-          </th>
-          <th>
-            <Link className="icoSort" to="/">
-              Modifier
             </Link>
           </th>
           <th>

@@ -141,10 +141,7 @@ const AddFile = props => {
       <div
         className="blockUI blockMsg blockPage"
         style={{
-          margin: "-317px 0px 0px -432.5px",
           padding: 0,
-          left: "50%",
-          top: "50%",
           width: 865,
           height: 635,
           color: "rgb(0, 0, 0)",

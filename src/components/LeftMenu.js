@@ -170,8 +170,8 @@ const LeftMenu = props => {
             <div className={styles.treeFldConBox}>
               <Frame
                 width="100%"
-                height="100%"
-                scrolling="no"
+                height="97%"
+                scrolling="auto"
                 frameBorder="0"
                 head={<style>{antdStyles}</style>}
               >

@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         files: [
           "src/assets/css/*.css",
           "src/components/*.css",
-          "src/components/*/*.css"
+          "src/components/**/*.css"
         ],
         tasks: ["default"]
       }

@@ -34,14 +34,11 @@ const OpenContent = props => {
           backgroundColor: "rgb(85, 85, 85)"
         }}
       ></div>
-
       <div
         className="blockUI blockMsg blockPage"
         style={{
           margin: 0,
           padding: 0,
-          left: "643.5px",
-          top: "394.5px",
           width: 600,
           height: 165,
           color: "rgb(0, 0, 0)",

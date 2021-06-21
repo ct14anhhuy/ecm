@@ -23,10 +23,9 @@ const Loading = () => {
         style={{
           margin: 0,
           padding: 0,
-          left: "848.5px",
-          top: "45%",
           width: "30%",
           textAlign: "center",
+          transform: "translate(calc(50vw - 30%), calc(50vh - 30%))",
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,

@@ -73,10 +73,7 @@ const CreateDirectory = props => {
       <div
         className="blockUI blockMsg blockPage"
         style={{
-          margin: "-317px 0px 0px -432.5px",
           padding: 0,
-          left: "50%",
-          top: "50%",
           width: 865,
           height: 635,
           color: "rgb(0, 0, 0)",
@@ -92,7 +89,7 @@ const CreateDirectory = props => {
         >
           <div
             className={styles.popLayerWrap}
-            style={{ margin: "-317px 0px 0px -432.5px", width: 865 }}
+            style={{ margin: "-317.5px 0px 0px -432.5px", width: 865 }}
           >
             <div className={styles.header}>
               <h1 className={styles.tit}>Create Directory</h1>

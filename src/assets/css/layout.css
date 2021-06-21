@@ -480,3 +480,9 @@
   border: 1px solid #4396f4;
   border-radius: 5px;
 }
+
+.blockUI.blockMsg.blockPage {
+  top: 0;
+  left: 0;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+}
