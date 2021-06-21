@@ -96,7 +96,7 @@ const CreateDirectory = props => {
               <Link
                 className={styles.close}
                 to="/"
-                onClick={() => props.changeShowCreateDirectory()}
+                onClick={props.changeShowCreateDirectory}
               >
                 <img
                   alt=""

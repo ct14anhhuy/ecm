@@ -89,7 +89,7 @@ const OptionBox = props => {
     <div className="optionBox" style={{ display: "block" }}>
       <div className="left" style={{ display: "block", zIndex: 4 }}>
         <div className="sorting_btn">
-          <Link to="/" onClick={() => props.changeShowAddFile()}>
+          <Link to="/" onClick={props.changeShowAddFile}>
             <span>
               <em className="add">Add File</em>
             </span>
@@ -127,7 +127,7 @@ const OptionBox = props => {
           ) : null}
 
           {props.user.roleId === 1 ? (
-            <Link to="/" onClick={() => props.changeShowCreateDirectory()}>
+            <Link to="/" onClick={props.changeShowCreateDirectory}>
               <span>
                 <em className="new">Create Directory</em>
               </span>

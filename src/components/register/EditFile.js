@@ -154,7 +154,7 @@ const EditFile = props => {
                 <Link
                   className={styles.close}
                   to="/"
-                  onClick={() => props.changeShowEditFile()}
+                  onClick={props.changeShowEditFile}
                 >
                   <img
                     alt=""

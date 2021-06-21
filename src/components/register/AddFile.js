@@ -161,7 +161,7 @@ const AddFile = props => {
                 <Link
                   className={styles.close}
                   to="/"
-                  onClick={() => changeShowAddFile()}
+                  onClick={changeShowAddFile}
                 >
                   <img
                     alt=""

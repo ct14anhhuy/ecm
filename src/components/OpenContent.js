@@ -80,7 +80,7 @@ const OpenContent = props => {
               <Link
                 className={styles.close}
                 to="/"
-                onClick={() => props.changeShowOpenContent()}
+                onClick={props.changeShowOpenContent}
               >
                 <img
                   alt=""
