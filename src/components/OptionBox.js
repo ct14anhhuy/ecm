@@ -168,7 +168,7 @@ const OptionBox = props => {
           />
           <input
             className="btn_whiteS_typeA mr_r5"
-            style={{ background: "none", marginLeft: "-2px" }}
+            style={{ background: "none", marginLeft: -2 }}
             type="image"
             alt=""
             src={require("assets/img/main/btn/btn_search.gif").default}

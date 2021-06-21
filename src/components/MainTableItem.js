@@ -127,9 +127,8 @@ const MainTableItem = props => {
         </div>
       </td>
       <td>{fileInfo.owner}</td>
-      <td>{fileInfo.size}KB</td>
+      <td>{fileInfo.size.toLocaleString(undefined, 0)}KB</td>
       <td>{fileInfo.securityLevel}</td>
-      <td>{fileInfo.modifier}</td>
       <td>{fileInfo.version}</td>
       <td>{format(new Date(fileInfo.modifiedDate), "dd/MM/yyyy HH:mm")}</td>
     </tr>

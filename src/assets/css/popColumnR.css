@@ -1303,7 +1303,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
 .popLayerWrap .btnBox {
   text-align: center;
 }
-.popLayerWrap .btnBox a {
+.popLayerWrap .btnBox span {
   display: inline-block;
   min-width: 58px;
   height: 23px;
@@ -1314,7 +1314,7 @@ body:first-of-type .normalTb tbody td .contentTitle a {
   color: #fff;
   background-color: #0976b2;
 }
-.popLayerWrap .btnBox a.grayB {
+.popLayerWrap .btnBox span.grayB {
   background-color: #afafaf;
 }
 .popSearchWrap .btnBox {

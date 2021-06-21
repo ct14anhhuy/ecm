@@ -24,7 +24,6 @@
 }
 .topSrcArea {
   background: url(assets/img/gnbBar/bg_top_blue_src.png) no-repeat left;
-  width: 249px;
   height: 23px;
   padding: 1px 0 0 1px;
   margin-right: 10px;
@@ -480,7 +479,6 @@
   border: 1px solid #4396f4;
   border-radius: 5px;
 }
-
 .blockUI.blockMsg.blockPage {
   top: 0;
   left: 0;

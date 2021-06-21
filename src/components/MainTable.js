@@ -65,9 +65,9 @@ const MainTable = props => {
         <col width="*" />
         <col width={110} />
         <col width={70} />
-        <col width={130} />
+        <col width={120} />
         <col width={60} />
-        <col width={130} />
+        <col width={120} />
       </colgroup>
       <thead>
         <tr>

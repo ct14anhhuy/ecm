@@ -2408,7 +2408,7 @@ a.btn_content:hover {
   position: relative;
   text-align: center;
 }
-.popLayerWrap .btnBox a {
+.popLayerWrap .btnBox span {
   display: inline-block;
   min-width: 58px;
   height: 23px;
@@ -2418,11 +2418,12 @@ a.btn_content:hover {
   line-height: 20px;
   color: #fff;
   background-color: #0976b2;
+  cursor: pointer;
 }
-.popLayerWrap .btnBox a.grayB {
+.popLayerWrap .btnBox span.grayB {
   background-color: #afafaf;
 }
-.popLayerWrap .btnBox a.btn_reset {
+.popLayerWrap .btnBox span.btn_reset {
   display: block;
   position: absolute;
   right: 0;

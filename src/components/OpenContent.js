@@ -15,6 +15,23 @@ const OpenContent = props => {
     getFileUrl(selectedItem.id);
   }, [getFileUrl, selectedItem.id]);
 
+  const handleLinkClick = e => {
+    const action = e.target.innerText;
+    var link = document.createElement("a");
+    switch (action) {
+      case "Edit":
+        link.href = `ECMProtocol: ${editUrl}`;
+        break;
+      case "View":
+        link.href = `ECMProtocol: ${viewUrl}`;
+        break;
+      default:
+        return;
+    }
+    link.click();
+    link.remove();
+  };
+
   return (
     <React.Fragment>
       <div
@@ -88,8 +105,8 @@ const OpenContent = props => {
                 </table>
               </div>
               <p className={styles.btnBox}>
-                {editUrl ? <a href={`ECMProtocol: ${editUrl}`}>Edit</a> : null}
-                <a href={`ECMProtocol: ${viewUrl}`}>View</a>
+                {editUrl ? <span onClick={handleLinkClick}>Edit</span> : null}
+                <span onClick={handleLinkClick}>View</span>
               </p>
             </div>
           </div>
