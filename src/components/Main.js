@@ -43,14 +43,7 @@ const App = props => {
         <Header />
         <div id="container">
           <div className="ecmWrap">
-            <div
-              className="ecmContent"
-              style={
-                visibleLeftMenu
-                  ? { padding: "0px 0px 0px 222px" }
-                  : { padding: "0px 0px 0px 0px" }
-              }
-            >
+            <div className={`ecmContent ${!visibleLeftMenu ? "hide" : null}`}>
               <div className="areaL">
                 <LeftMenu />
               </div>

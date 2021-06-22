@@ -17,12 +17,13 @@ import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const AddFile = props => {
   const fileRef = useRef();
+  const tvRef = useRef();
   const { changeShowAddFile, addFiles, fileInfos } = props;
 
   const [state, setState] = useState({
     owner: props.owner,
     tag: "#",
-    directoryId: null,
+    directoryId: props.currentDirectory.id,
     securityLevel: "Public",
     files: []
   });
@@ -70,6 +71,13 @@ const AddFile = props => {
     setSelectedPath(path);
     setState({ ...state, directoryId: selectedId });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      const path = tvRef.current.handleGetPath();
+      setSelectedPath(path);
+    }, 100);
+  }, []);
 
   useEffect(() => {
     if (firstUpdate.current) {
@@ -268,7 +276,11 @@ const AddFile = props => {
                           frameBorder={0}
                           head={<style>{antdStyles}</style>}
                         >
-                          <TreeView handleOnDoubleClick={handleOnSelectPath} />
+                          <TreeView
+                            nodeId={state.directoryId}
+                            ref={tvRef}
+                            handleOnDoubleClick={handleOnSelectPath}
+                          />
                         </Frame>
                       </div>
                     </div>
@@ -393,7 +405,8 @@ const AddFile = props => {
 const mapStateToProps = state => {
   return {
     fileInfos: state.fileInfoReducers,
-    owner: state.userReducers
+    owner: state.userReducers,
+    currentDirectory: state.systemParamsReducers.currentDirectory
   };
 };
 

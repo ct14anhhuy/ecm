@@ -12,9 +12,10 @@ import styles from "assets/css/modules/CreateDirectory.module.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const CreateDirectory = props => {
+  const tvRef = useRef();
   const [showListDirectory, setShowListDirectory] = useState(false);
   const [selectedPath, setSelectedPath] = useState({
-    id: null,
+    id: props.currentDirectory.id,
     path: ""
   });
   const [path, setPath] = useState("");
@@ -34,6 +35,13 @@ const CreateDirectory = props => {
     const directory = { parentId: selectedPath.id, name: path };
     props.createDirectory(directory);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      const path = tvRef.current.handleGetPath();
+      setSelectedPath(p => ({ ...p, path }));
+    }, 100);
+  }, []);
 
   useEffect(() => {
     if (firstUpdate.current) {
@@ -184,7 +192,11 @@ const CreateDirectory = props => {
                         frameBorder={0}
                         head={<style>{antdStyles}</style>}
                       >
-                        <TreeView handleOnDoubleClick={handleOnSelectPath} />
+                        <TreeView
+                          nodeId={selectedPath.id}
+                          ref={tvRef}
+                          handleOnDoubleClick={handleOnSelectPath}
+                        />
                       </Frame>
                     </div>
                   </div>
@@ -213,7 +225,8 @@ const CreateDirectory = props => {
 
 const mapStateToProps = state => {
   return {
-    directories: state.directoryReducers
+    directories: state.directoryReducers,
+    currentDirectory: state.systemParamsReducers.currentDirectory
   };
 };
 

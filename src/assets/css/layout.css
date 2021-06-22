@@ -24,7 +24,6 @@
 }
 .topSrcArea {
   background: url(assets/img/gnbBar/bg_top_blue_src.png) no-repeat left;
-  height: 23px;
   padding: 1px 0 0 1px;
   margin-right: 10px;
   background: url(assets/img/gnbBar/bg_top_blue_src.png) left top no-repeat;
@@ -163,8 +162,12 @@
   background: url(assets/img/layout/bg_ecmWrap.gif) 0 0 repeat-x;
 }
 .ecmWrap .ecmContent {
-  padding: 0 222px;
+  padding: 0 0 0 222px;
   overflow: hidden;
+  transition: padding 700ms;
+}
+.ecmWrap .ecmContent.hide {
+  padding: 0;
 }
 .ecmWrap .ecmContent:after {
   display: block;
