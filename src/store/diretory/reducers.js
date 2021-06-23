@@ -2,6 +2,7 @@ import * as types from "./types";
 
 const initState = {
   data: [],
+  loading: false,
   done: false,
   error: false
 };
@@ -16,16 +17,17 @@ const directoryReducers = (state = initState, action) => {
       return { ...state, data: newState };
     }
     case types.BEGIN_UPDATE_DIRECTORY:
-      return { ...state, done: false, error: false };
+      return { ...state, loading: true, done: false, error: false };
     case types.UPDATE_DIRECTORY_SUCCESS:
       return {
         ...state,
+        loading: false,
         done: true,
         error: false,
         data: [...state.data, action.payload.directory]
       };
     case types.UPDATE_DIRECTORY_FAILURE:
-      return { ...state, done: true, error: true };
+      return { ...state, loading: false, done: true, error: true };
     default:
       return state;
   }

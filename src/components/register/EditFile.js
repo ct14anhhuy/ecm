@@ -352,9 +352,11 @@ const EditFile = props => {
                 </div>
               </div>
               <p className={styles.modifyBtn}>
-                <Link to="/" onClick={handleEditFile}>
-                  Confirm
-                </Link>
+                {!fileInfos.loading ? (
+                  <span onClick={handleEditFile}>Confirm</span>
+                ) : (
+                  <span className={styles.loading}>Loading...</span>
+                )}
               </p>
             </div>
           </div>

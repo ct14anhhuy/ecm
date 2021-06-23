@@ -204,17 +204,11 @@ const CreateDirectory = props => {
               </div>
             </div>
             <p className={styles.modifyBtn}>
-              <Link
-                to="/"
-                style={{
-                  background: `url(${
-                    require("assets/img/popup/bg/bg_modifyBtn.gif").default
-                  }) no-repeat left top #2768b2`
-                }}
-                onClick={handleCreateDirectory}
-              >
-                Create
-              </Link>
+              {!props.directories.loading ? (
+                <span onClick={handleCreateDirectory}>Confirm</span>
+              ) : (
+                <span className={styles.loading}>Loading...</span>
+              )}
             </p>
           </div>
         </div>

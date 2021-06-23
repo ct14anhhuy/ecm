@@ -2,6 +2,7 @@ import * as types from "./types";
 
 const initState = {
   data: [],
+  loading: false,
   done: false,
   error: false
 };
@@ -82,11 +83,11 @@ const fileInfoReducers = (state = initState, action) => {
       return { ...state, data: editState };
     }
     case types.BEGIN_UPDATE_FILE:
-      return { ...state, done: false, error: false };
+      return { ...state, loading: true, done: false, error: false };
     case types.UPDATE_FILE_SUCCESS:
-      return { ...state, done: true, error: false };
+      return { ...state, loading: false, done: true, error: false };
     case types.UPDATE_FILE_FAILURE:
-      return { ...state, done: true, error: true };
+      return { ...state, loading: false, done: true, error: true };
     default:
       return state;
   }

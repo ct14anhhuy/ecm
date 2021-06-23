@@ -112,7 +112,9 @@ const OpenContent = props => {
               <p className={styles.btnBox}>
                 {editUrl ? (
                   <span onClick={handleLinkClick}>{actions.Edit}</span>
-                ) : null}
+                ) : (
+                  <span className={styles.grayB}>{actions.Edit}</span>
+                )}
                 <span onClick={handleLinkClick}>{actions.View}</span>
               </p>
             </div>

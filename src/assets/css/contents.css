@@ -2420,10 +2420,11 @@ a.btn_content:hover {
   background-color: #0976b2;
   cursor: pointer;
 }
-.popLayerWrap .btnBox span.grayB {
+.popLayerWrap .btnBox .grayB {
+  cursor: unset;
   background-color: #afafaf;
 }
-.popLayerWrap .btnBox span.btn_reset {
+.popLayerWrap .btnBox .btn_reset {
   display: block;
   position: absolute;
   right: 0;

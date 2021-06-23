@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Frame from "react-frame-component";
+import { v4 as uuid } from "uuid";
 import SelectFile from "./SelectFile";
 import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
@@ -50,18 +51,24 @@ const AddFile = props => {
     });
   };
 
-  const handleSelectFile = e => {
+  const handleSelectFiles = e => {
     if (!e.target.files[0]) return;
+    const impFiles = [];
+    for (const key in e.target.files) {
+      if (
+        e.target.files[key].size &&
+        !state.files.some(f => f.fileName.includes(e.target.files[key].name))
+      ) {
+        impFiles.push({
+          data: e.target.files[key],
+          key: uuid(),
+          fileName: e.target.files[key].name
+        });
+      }
+    }
     setState({
       ...state,
-      files: [
-        ...state.files,
-        {
-          data: e.target.files[0],
-          key: new Date().getTime(),
-          fileName: e.target.files[0].name
-        }
-      ]
+      files: [...state.files, ...impFiles]
     });
   };
 
@@ -201,7 +208,8 @@ const AddFile = props => {
                       ref={fileRef}
                       style={{ display: "none" }}
                       accept=".doc,.docx,.xls,.xlsx,.xlsm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg"
-                      onChange={handleSelectFile}
+                      onChange={handleSelectFiles}
+                      multiple
                     />
                   </p>
                   <div className={styles.contentList}>
@@ -390,9 +398,11 @@ const AddFile = props => {
                 </div>
               </div>
               <p className={styles.modifyBtn}>
-                <Link to="/" onClick={handleAddFiles}>
-                  Confirm
-                </Link>
+                {!fileInfos.loading ? (
+                  <span onClick={handleAddFiles}>Confirm</span>
+                ) : (
+                  <span className={styles.loading}>Loading...</span>
+                )}
               </p>
             </div>
           </div>

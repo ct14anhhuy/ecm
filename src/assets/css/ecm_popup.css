@@ -40,7 +40,7 @@
   background: #f1f1f1;
   border-top: 1px solid #babcbf;
 }
-.popLayerWrap .modifyBtn a {
+.popLayerWrap .modifyBtn span {
   font-size: 14px;
   background: url(assets/img/popup/bg/bg_modifyBtn.gif) no-repeat left top
     #2768b2;
@@ -49,6 +49,13 @@
   padding: 7px 15px 7px 44px;
   margin-top: 15px;
   font-weight: bold;
+  cursor: pointer;
+}
+.popLayerWrap .modifyBtn span.loading {
+  background: url(assets/img/common/custom_progress.gif) no-repeat left top;
+  background-size: contain;
+  background-color: #afafaf;
+  cursor: default;
 }
 .floatL {
   float: left;
