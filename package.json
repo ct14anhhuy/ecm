@@ -1,5 +1,5 @@
 {
-  "name": "ecm-front-end",
+  "name": "ecm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,9 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && yarn purge-css",
+    "build": "react-scripts build && node ./purgecss",
     "eject": "react-scripts eject",
-    "purge-css": "node ./purgecss",
     "lint": "eslint --ext js,jsx src/",
     "lint:fix": "eslint --fix --ext js,jsx src/",
     "prettier": "prettier --check \"src/**/(*.jsx|*.js|*.scss|*.css)\"",

@@ -97,7 +97,7 @@ const AddFile = props => {
           changeShowAddFile();
         });
       } else {
-        swal("Failure!", "Add file failure!", "error");
+        swal("Failure!", fileInfos.error, "error");
       }
     }
   }, [changeShowAddFile, fileInfos.done, fileInfos.error]);

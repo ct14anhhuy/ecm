@@ -81,7 +81,7 @@ const EditFile = props => {
           changeShowEditFile();
         });
       } else {
-        swal("Failure!", "Edit file failure!", "error");
+        swal("Failure!", fileInfos.error, "error");
       }
     }
   }, [changeShowEditFile, fileInfos.done, fileInfos.error]);

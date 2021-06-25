@@ -4,7 +4,7 @@ const initState = {
   data: [],
   loading: false,
   done: false,
-  error: false
+  error: ""
 };
 
 const fileInfoReducers = (state = initState, action) => {
@@ -83,11 +83,16 @@ const fileInfoReducers = (state = initState, action) => {
       return { ...state, data: editState };
     }
     case types.BEGIN_UPDATE_FILE:
-      return { ...state, loading: true, done: false, error: false };
+      return { ...state, loading: true, done: false, error: "" };
     case types.UPDATE_FILE_SUCCESS:
-      return { ...state, loading: false, done: true, error: false };
+      return { ...state, loading: false, done: true, error: "" };
     case types.UPDATE_FILE_FAILURE:
-      return { ...state, loading: false, done: true, error: true };
+      return {
+        ...state,
+        loading: false,
+        done: true,
+        error: action.payload.error
+      };
     default:
       return state;
   }

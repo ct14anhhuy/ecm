@@ -54,7 +54,7 @@ const CreateDirectory = props => {
           props.changeShowCreateDirectory();
         });
       } else {
-        swal("Failure!", "Create directory failure!", "error");
+        swal("Failure!", props.directories.error, "error");
       }
     }
   }, [props]);

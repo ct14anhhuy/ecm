@@ -35,6 +35,7 @@ const OpenContent = props => {
     }
     link.click();
     link.remove();
+    props.changeShowOpenContent();
   };
 
   return (

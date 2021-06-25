@@ -32,7 +32,10 @@ const createDirectoryAction = directory => {
       });
     } catch (error) {
       dispatch({
-        type: types.UPDATE_DIRECTORY_FAILURE
+        type: types.UPDATE_DIRECTORY_FAILURE,
+        payload: {
+          error: error.data.message
+        }
       });
     }
   };

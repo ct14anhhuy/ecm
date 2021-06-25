@@ -4,7 +4,7 @@ const initState = {
   data: [],
   loading: false,
   done: false,
-  error: false
+  error: ""
 };
 
 const directoryReducers = (state = initState, action) => {
@@ -17,17 +17,22 @@ const directoryReducers = (state = initState, action) => {
       return { ...state, data: newState };
     }
     case types.BEGIN_UPDATE_DIRECTORY:
-      return { ...state, loading: true, done: false, error: false };
+      return { ...state, loading: true, done: false, error: "" };
     case types.UPDATE_DIRECTORY_SUCCESS:
       return {
         ...state,
         loading: false,
         done: true,
-        error: false,
+        error: "",
         data: [...state.data, action.payload.directory]
       };
     case types.UPDATE_DIRECTORY_FAILURE:
-      return { ...state, loading: false, done: true, error: true };
+      return {
+        ...state,
+        loading: false,
+        done: true,
+        error: action.payload.error
+      };
     default:
       return state;
   }

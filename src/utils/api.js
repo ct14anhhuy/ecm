@@ -23,7 +23,7 @@ api.interceptors.request.use(
     return config;
   },
   error => {
-    Promise.reject(error);
+    Promise.reject(error.response);
   }
 );
 
@@ -34,7 +34,7 @@ api.interceptors.response.use(
     if (error.response.status === UNAUTHORIZED_STATUS) {
       store.dispatch(logoutAction());
     }
-    return Promise.reject(error);
+    return Promise.reject(error.response);
   }
 );
 

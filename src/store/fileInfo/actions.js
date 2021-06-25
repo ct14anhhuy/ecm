@@ -193,9 +193,11 @@ const addFilesAction = fileInfos => {
         type: types.UPDATE_FILE_SUCCESS
       });
     } catch (error) {
-      console.log(error);
       dispatch({
-        type: types.UPDATE_FILE_FAILURE
+        type: types.UPDATE_FILE_FAILURE,
+        payload: {
+          error: error.data.message
+        }
       });
     }
   };
@@ -266,9 +268,11 @@ const editFileAction = fileInfo => {
         type: types.UPDATE_FILE_SUCCESS
       });
     } catch (error) {
-      console.log(error);
       dispatch({
-        type: types.UPDATE_FILE_FAILURE
+        type: types.UPDATE_FILE_FAILURE,
+        payload: {
+          error: error.data.message
+        }
       });
     }
   };
