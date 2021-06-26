@@ -82,33 +82,33 @@ const MainTable = props => {
                   />
                 </label>
               </span>
-              <Link className="icoSort" to="/">
+              <Link className="icoSort" to="#">
                 File Name
               </Link>
             </div>
           </th>
           <th>
-            <Link className="icoSort" to="/">
+            <Link className="icoSort" to="#">
               Owner
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="/">
+            <Link className="icoSort" to="#">
               Size
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="/">
+            <Link className="icoSort" to="#">
               Security Level
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="/">
+            <Link className="icoSort" to="#">
               Version
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="/">
+            <Link className="icoSort" to="#">
               Modified Date
             </Link>
           </th>

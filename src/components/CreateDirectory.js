@@ -103,7 +103,7 @@ const CreateDirectory = props => {
               <h1 className={styles.tit}>Create Directory</h1>
               <Link
                 className={styles.close}
-                to="/"
+                to="#"
                 onClick={props.changeShowCreateDirectory}
               >
                 <img
@@ -155,7 +155,7 @@ const CreateDirectory = props => {
                           <td width={63}>
                             <Link
                               className={styles.latelyHistoryBtn}
-                              to="/"
+                              to="#"
                               onClick={() =>
                                 setShowListDirectory(!showListDirectory)
                               }
@@ -180,7 +180,7 @@ const CreateDirectory = props => {
                         className={`${styles.DivSelectyze} ${styles.grey}`}
                         style={{ paddingLeft: 7, zIndex: 9 }}
                       >
-                        <Link className={styles.selectyzeValue} to="/">
+                        <Link className={styles.selectyzeValue} to="#">
                           <span>POSCO VST</span>
                         </Link>
                       </div>

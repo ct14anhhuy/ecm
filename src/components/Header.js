@@ -11,7 +11,7 @@ const Header = props => {
         <div className="minWidth">
           <div className="topLt">
             <h1 className="logo">
-              <Link className="logo_ci" to="/">
+              <Link className="logo_ci" to="/ecm/my-contents">
                 <img
                   alt="With POSCO"
                   src={
@@ -20,7 +20,7 @@ const Header = props => {
                   }
                 />
               </Link>
-              <Link className="logo_sys" to="/">
+              <Link className="logo_sys" to="/ecm/my-contents">
                 <img
                   alt="logo ecm"
                   src={require("assets/img/layout/logo_ecm.png").default}
@@ -30,11 +30,11 @@ const Header = props => {
           </div>
           <div className="topRt">
             <div className="psnName showHideTrg">
-              <Link className="trg" to="/">
+              <Link className="trg" to="#">
                 <strong>{`${user.lastName} ${user.firstName} (${user.epLiteId})`}</strong>
               </Link>
             </div>
-            <Link to="/" onClick={props.logout}>
+            <Link to="#" onClick={props.logout}>
               <img
                 alt=""
                 src={require("assets/img/layout/ico_help02.png").default}

@@ -82,7 +82,7 @@ const MainTableItem = props => {
                 }
               />
             </label>
-            <Link className="ico_fav_3" to="/">
+            <Link className="ico_fav_3" to="#">
               <img
                 alt=""
                 src={
@@ -93,7 +93,7 @@ const MainTableItem = props => {
                 }
               />
             </Link>
-            <Link className="ico_fav" to="/">
+            <Link className="ico_fav" to="#">
               <img
                 alt=""
                 src={
@@ -103,12 +103,12 @@ const MainTableItem = props => {
                 }
               />
             </Link>
-            <Link to="/">
+            <Link to="#">
               <GetBackgroundIconFromExtension fileName={fileInfo.name} />
               {fileInfo.name}
             </Link>
           </div>
-          <Link className="listInfo" to="/">
+          <Link className="listInfo" to="#">
             <img
               alt=""
               src={require("assets/img/contents/ecmMain/bg_info.png").default}
@@ -150,7 +150,7 @@ const MainTableItem = props => {
             </label>
             <Link
               className="ico_fav_3"
-              to="/"
+              to="#"
               onClick={() => props.changeImportant(fileInfo.id, user.id)}
             >
               <img
@@ -165,7 +165,7 @@ const MainTableItem = props => {
             </Link>
             <Link
               className="ico_fav"
-              to="/"
+              to="#"
               onClick={() => props.changeFavorite(fileInfo.id, user.id)}
             >
               <img
@@ -178,7 +178,7 @@ const MainTableItem = props => {
               />
             </Link>
             <Link
-              to="/"
+              to="#"
               onDoubleClick={() => {
                 props.changeSelectedItem(fileInfo);
                 props.changeShowOpenContent();
@@ -190,7 +190,7 @@ const MainTableItem = props => {
           </div>
           <Link
             className="listInfo"
-            to="/"
+            to="#"
             onClick={() => (node.current.style.display = "block")}
           >
             <img
@@ -206,10 +206,10 @@ const MainTableItem = props => {
           >
             {fileInfo.owner === user.epLiteId ? (
               <li style={{ fontWeight: "bold" }}>
-                <Link to="/" onClick={handleOnCopyUrl}>
+                <Link to="#" onClick={handleOnCopyUrl}>
                   Copy URL
                 </Link>
-                <Link to="/" onClick={() => handleEditFile(fileInfo)}>
+                <Link to="#" onClick={() => handleEditFile(fileInfo)}>
                   Edit
                 </Link>
               </li>

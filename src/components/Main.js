@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
 import Filter from "./Filter";
@@ -11,7 +11,16 @@ import Paging from "./Paging";
 import * as exts from "utils/extTypes";
 import { connect } from "react-redux";
 import { getDirectoriesAction } from "store/diretory/actions";
-import { getMyContentsAction } from "store/fileInfo/actions";
+import {
+  getMyContentsAction,
+  getImportantContentsAction,
+  getFavoriteContentsAction,
+  getSharedContentsAction,
+  getDepartmentContentsAction,
+  getTrashContentsAction,
+  getContentsFromPathAction
+} from "store/fileInfo/actions";
+import { updateCurrentPageAction } from "store/pagination/actions";
 import { getDepartmentsAction } from "store/department/actions";
 import Loading from "./common/Loading";
 
@@ -23,19 +32,53 @@ const CreateDirectory = lazy(() => import("./CreateDirectory"));
 const OpenContent = lazy(() => import("./OpenContent"));
 
 const App = props => {
+  const FIRST_PAGE = 1;
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
 
   const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } =
     props.systemParams;
 
-  const { getDirectories, getMyContents, getDepartments } = props;
+  const { getDirectories, getDepartments } = props;
+
+  const { path, id } = useParams();
+  useEffect(() => {
+    switch (path) {
+      case "my-contents":
+        props.getMyContents();
+        break;
+      case "impotant-contents":
+        props.getImportantContents();
+        break;
+      case "favorite-contents":
+        props.getFavoriteContents();
+        break;
+      case "shared-contents":
+        props.getSharedContents();
+        break;
+      case "departments-contents":
+        props.getDepartmentContents();
+        break;
+      case "trash":
+        props.getTrashContents();
+        break;
+      case "p": {
+        const validId = props.directories.filter(x => id.includes(x.id));
+        if (validId.length > 0) {
+          props.getContentsFromPath(id);
+        }
+        break;
+      }
+      default:
+        break;
+    }
+    props.updateCurrentPage(FIRST_PAGE);
+  }, [id, path, props]);
 
   useEffect(() => {
     getDirectories();
-    getMyContents();
     getDepartments();
-  }, [getDepartments, getDirectories, getMyContents]);
+  }, [getDepartments, getDirectories]);
 
   return (
     <React.Fragment>
@@ -57,7 +100,7 @@ const App = props => {
               >
                 <Link
                   className="btn_areaL"
-                  to="/"
+                  to="#"
                   onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}
                 >
                   <img
@@ -104,6 +147,7 @@ const App = props => {
 
 const mapStateToProps = state => {
   return {
+    directories: state.directoryReducers.data,
     systemParams: state.systemParamsReducers
   };
 };
@@ -111,8 +155,16 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getDirectories: () => dispatch(getDirectoriesAction()),
+    getDepartments: () => dispatch(getDepartmentsAction()),
     getMyContents: () => dispatch(getMyContentsAction()),
-    getDepartments: () => dispatch(getDepartmentsAction())
+    getImportantContents: () => dispatch(getImportantContentsAction()),
+    getFavoriteContents: () => dispatch(getFavoriteContentsAction()),
+    getSharedContents: () => dispatch(getSharedContentsAction()),
+    getDepartmentContents: () => dispatch(getDepartmentContentsAction()),
+    getTrashContents: () => dispatch(getTrashContentsAction()),
+    getContentsFromPath: dirId => dispatch(getContentsFromPathAction(dirId)),
+    updateCurrentPage: currentPage =>
+      dispatch(updateCurrentPageAction(currentPage))
   };
 };
 

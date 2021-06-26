@@ -70,7 +70,7 @@ const Paging = props => {
         {pages.map((page, index) => {
           if (page === LEFT_PAGE) {
             return (
-              <Link to="/" onClick={handleMoveLeft} key={index}>
+              <Link to="#" onClick={handleMoveLeft} key={index}>
                 {"<"}
               </Link>
             );
@@ -78,7 +78,7 @@ const Paging = props => {
 
           if (page === RIGHT_PAGE) {
             return (
-              <Link to="/" onClick={handleMoveRight} key={index}>
+              <Link to="#" onClick={handleMoveRight} key={index}>
                 {">"}
               </Link>
             );
@@ -86,7 +86,7 @@ const Paging = props => {
           return (
             <Link
               className={currentPage === page ? "act" : ""}
-              to="/"
+              to="#"
               onClick={() => updateCurrentPage(page)}
               key={index}
             >

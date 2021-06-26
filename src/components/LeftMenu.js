@@ -1,21 +1,12 @@
 import { useEffect, useState } from "react";
 import Frame from "react-frame-component";
 import TreeView from "./TreeView";
-import {
-  getMyContentsAction,
-  getImportantContentsAction,
-  getFavoriteContentsAction,
-  getSharedContentsAction,
-  getDepartmentContentsAction,
-  getTrashContentsAction,
-  getContentsFromPathAction
-} from "store/fileInfo/actions";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import {
   changeHeaderPathAction,
   changeMenuActiveAction,
   changeCurrentDirectoryAction
 } from "store/systemParams/actions";
-import { updateCurrentPageAction } from "store/pagination/actions";
 import { connect } from "react-redux";
 
 import styles from "assets/css/modules/LeftMenu.module.css";
@@ -23,14 +14,13 @@ import styles from "assets/css/modules/LeftMenu.module.css";
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const LeftMenu = props => {
-  const FIRST_PAGE = 1;
+  const history = useHistory();
+
   const {
     menuActive,
     changeMenuActive,
     changeCurrentDirectory,
-    changeHeaderPath,
-    updateCurrentPage,
-    getContentsFromPath
+    changeHeaderPath
   } = props;
   const [selectedDirectory, setSelectedDirectory] = useState({
     id: 0,
@@ -39,14 +29,12 @@ const LeftMenu = props => {
 
   const handleSelectedRoute = e => {
     changeHeaderPath(e.target.innerText);
-    updateCurrentPage(FIRST_PAGE);
   };
 
   const handleOnSelect = (id, path, isRoot) => {
     changeHeaderPath(path);
     setSelectedDirectory({ id, isRoot });
-    getContentsFromPath(id);
-    updateCurrentPage(FIRST_PAGE);
+    history.push(`/ecm/p/${id}`);
   };
 
   useEffect(() => {
@@ -63,20 +51,22 @@ const LeftMenu = props => {
       <div className={styles.bgBoxLayout}>
         <ul className={styles.tab_more}>
           <li>
-            <span
+            <Link
+              to="#"
               className={menuActive ? styles.tabon : ""}
               onClick={() => changeMenuActive(true)}
             >
               Shortcut
-            </span>
+            </Link>
           </li>
           <li>
-            <span
+            <Link
+              to="#"
               className={menuActive ? "" : styles.tabon}
               onClick={() => changeMenuActive(false)}
             >
               Content Box
-            </span>
+            </Link>
           </li>
         </ul>
       </div>
@@ -86,70 +76,76 @@ const LeftMenu = props => {
       >
         <ul className={styles.btnBox}>
           <li>
-            <span
+            <NavLink
+              activeClassName={styles.active}
+              to="/ecm/my-contents"
               className={styles.btn_01}
               onClick={e => {
                 handleSelectedRoute(e);
-                props.getMyContents();
               }}
             >
               My Contents
-            </span>
+            </NavLink>
           </li>
           <li className={styles.newWin}>
-            <span
+            <NavLink
+              activeClassName={styles.active}
+              to="/ecm/impotant-contents"
               className={styles.btn_30}
               onClick={e => {
                 handleSelectedRoute(e);
-                props.getImportantContents();
               }}
             >
               Impotant Contents
-            </span>
+            </NavLink>
           </li>
           <li>
-            <span
+            <NavLink
+              activeClassName={styles.active}
+              to="/ecm/favorite-contents"
               className={styles.btn_06}
               onClick={e => {
                 handleSelectedRoute(e);
-                props.getFavoriteContents();
               }}
             >
               Favorite Contents
-            </span>
+            </NavLink>
           </li>
           <li>
-            <span
+            <NavLink
+              activeClassName={styles.active}
+              to="/ecm/shared-contents"
               className={styles.btn_07}
               onClick={e => {
                 handleSelectedRoute(e);
-                props.getSharedContents();
               }}
             >
               Shared Contents
-            </span>
+            </NavLink>
           </li>
           <li>
-            <span
+            <NavLink
+              activeClassName={styles.active}
+              to="/ecm/departments-contents"
               className={styles.btn_16}
               onClick={e => {
                 handleSelectedRoute(e);
-                props.getDepartmentContents();
               }}
             >
               Departments Contents
-            </span>
+            </NavLink>
           </li>
           <li>
-            <span
+            <NavLink
+              activeClassName={styles.active}
+              to="/ecm/trash"
               className={styles.btn_rcb}
               onClick={e => {
                 handleSelectedRoute(e);
-                props.getTrashContents();
               }}
             >
               Trash
-            </span>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -193,18 +189,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getMyContents: () => dispatch(getMyContentsAction()),
-    getImportantContents: () => dispatch(getImportantContentsAction()),
-    getFavoriteContents: () => dispatch(getFavoriteContentsAction()),
-    getSharedContents: () => dispatch(getSharedContentsAction()),
-    getDepartmentContents: () => dispatch(getDepartmentContentsAction()),
-    getTrashContents: () => dispatch(getTrashContentsAction()),
-    getContentsFromPath: dirId => dispatch(getContentsFromPathAction(dirId)),
     changeHeaderPath: path => dispatch(changeHeaderPathAction(path)),
     changeMenuActive: shortcutActive =>
       dispatch(changeMenuActiveAction(shortcutActive)),
-    updateCurrentPage: currentPage =>
-      dispatch(updateCurrentPageAction(currentPage)),
     changeCurrentDirectory: (id, isRoot) =>
       dispatch(changeCurrentDirectoryAction(id, isRoot))
   };

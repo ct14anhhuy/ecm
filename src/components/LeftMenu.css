@@ -154,7 +154,7 @@
 .btnBox li.on {
   background: url(assets/img/main/left/bg_go_cntOn.png) left top no-repeat;
 }
-.btnBox > li > span {
+.btnBox > li > a {
   display: block;
   width: 140px;
   height: 34px;
@@ -163,57 +163,58 @@
   color: #222;
   cursor: pointer;
 }
-.btnBox > li > span:hover {
+.btnBox > li > a:hover,
+.btnBox > li > a.active {
   color: #5088c8;
 }
-.btnBox li span.btn_02 {
+.btnBox li a.btn_02 {
   background: url(assets/img/main/left/ico_go_cnt02.png) 15px center no-repeat;
 }
-.btnBox li span.btn_03 {
+.btnBox li a.btn_03 {
   background: url(assets/img/main/left/ico_go_cnt03.png) 15px center no-repeat;
 }
-.btnBox li span.btn_04 {
+.btnBox li a.btn_04 {
   background: url(assets/img/main/left/ico_go_cnt04.png) 15px center no-repeat;
 }
-.btnBox li span.btn_05 {
+.btnBox li a.btn_05 {
   background: url(assets/img/main/left/ico_go_cnt05.png) 15px center no-repeat;
 }
-.btnBox li span.btn_05 em {
+.btnBox li a.btn_05 em {
   width: 117px;
   display: inline-block;
   padding-right: 22px;
   letter-spacing: -1px;
   background: url(assets/img/main/ico/ico_blue_plus.gif) 118px 12px no-repeat;
 }
-.btnBox li span.btn_15 {
+.btnBox li a.btn_15 {
   background: url(assets/img/main/left/ico_go_cnt15.png) 15px center no-repeat;
 }
-.btnBox li.on span.btn_rcb {
+.btnBox li.on a.btn_rcb {
   background: url(assets/img/main/left/ico_go_rcb_on.png) 15px center no-repeat;
 }
-.btnBox li span.btn_01 {
+.btnBox li a.btn_01 {
   background: url(assets/img/main/left/ico_go_cnt01.png) 15px center no-repeat;
 }
-.btnBox li span.btn_30 {
+.btnBox li a.btn_30 {
   background: url(assets/img/main/left/ico_go_cnt30.png) 15px center no-repeat;
 }
-.btnBox li span.btn_06 {
+.btnBox li a.btn_06 {
   background: url(assets/img/main/left/ico_go_cnt26.png) 15px center no-repeat;
 }
-.btnBox li span.btn_07 {
+.btnBox li a.btn_07 {
   background: url(assets/img/main/left/ico_go_cnt27.png) 15px center no-repeat;
 }
-.btnBox li span.btn_16 {
+.btnBox li a.btn_16 {
   background: url(assets/img/main/left/ico_go_cnt16.png) 15px center no-repeat;
 }
-.btnBox li span.btn_rcb {
+.btnBox li a.btn_rcb {
   background: url(assets/img/main/left/ico_go_rcb.png) 15px center no-repeat;
 }
-.btnBox li.on span.btn_02 {
+.btnBox li.on a.btn_02 {
   background: url(assets/img/main/left/ico_go_cnt02_on.png) 15px center
     no-repeat;
 }
-.btnBox li.on span.btn_03 {
+.btnBox li.on a.btn_03 {
   background: url(assets/img/main/left/ico_go_cnt03_on.png) 15px center
     no-repeat;
 }
@@ -221,7 +222,7 @@
   background: url(assets/img/main/left/ico_go_cnt05_on.png) 15px center
     no-repeat;
 }
-.btnBox li.on span.btn_15 {
+.btnBox li.on a.btn_15 {
   background: url(assets/img/main/left/ico_go_cnt15_on.png) 15px center
     no-repeat;
 }
@@ -270,7 +271,7 @@
   background: #f6f6f6;
   margin-left: -1px;
 }
-.tab_more li span {
+.tab_more li a {
   display: inline-block;
   width: 93px;
   height: 23px;
@@ -290,7 +291,7 @@
   border-radius: 3.5px 0 0;
   width: 94px;
 }
-.tab_more li span.tabon {
+.tab_more li a.tabon {
   background: #f6f6f6;
   font-weight: bold;
   color: #3375bf;

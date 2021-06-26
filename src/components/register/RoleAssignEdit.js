@@ -213,7 +213,7 @@ const RoleAssignEdit = props => {
                   <li>
                     <Link
                       className={selectName ? styles.on : ""}
-                      to="/"
+                      to="#"
                       onClick={() => setSelectName(true)}
                     >
                       Name
@@ -221,7 +221,7 @@ const RoleAssignEdit = props => {
                   </li>
                   <li>
                     <Link
-                      to="/"
+                      to="#"
                       className={selectName ? "" : styles.on}
                       onClick={() => setSelectName(false)}
                     >
@@ -241,7 +241,7 @@ const RoleAssignEdit = props => {
                   defaultValue={searchStr}
                   onChange={e => setSearchStr(e.target.value)}
                 />
-                <Link to="/" onClick={handleSearch}>
+                <Link to="#" onClick={handleSearch}>
                   <img
                     style={{ marginTop: 6 }}
                     alt=""
@@ -276,7 +276,7 @@ const RoleAssignEdit = props => {
                   </p>
                   <Link
                     className={styles.btn_delall}
-                    to="/"
+                    to="#"
                     onClick={() => setEmployees([])}
                   >
                     Delete All
@@ -412,7 +412,7 @@ const RoleAssignEdit = props => {
             <div className={styles.part_C}>
               <div>
                 <p className={styles.btn_move} style={{ marginTop: 30 }}>
-                  <Link to="/" onClick={handleMoveToEdit}>
+                  <Link to="#" onClick={handleMoveToEdit}>
                     <img
                       alt=""
                       src={
@@ -420,7 +420,7 @@ const RoleAssignEdit = props => {
                       }
                     />
                   </Link>
-                  <Link to="/" onClick={handleEditToLeft}>
+                  <Link to="#" onClick={handleEditToLeft}>
                     <img
                       alt=""
                       src={
@@ -430,7 +430,7 @@ const RoleAssignEdit = props => {
                   </Link>
                 </p>
                 <p className={styles.btn_move} style={{ marginTop: 130 }}>
-                  <Link to="/" onClick={handleMoveToView}>
+                  <Link to="#" onClick={handleMoveToView}>
                     <img
                       alt=""
                       src={
@@ -438,7 +438,7 @@ const RoleAssignEdit = props => {
                       }
                     />
                   </Link>
-                  <Link to="/" onClick={handleViewToLeft}>
+                  <Link to="#" onClick={handleViewToLeft}>
                     <img
                       alt=""
                       src={
@@ -457,7 +457,7 @@ const RoleAssignEdit = props => {
                 <span className={styles.floatR}>
                   <Link
                     className={styles.btn_delall}
-                    to="/"
+                    to="#"
                     onClick={() => setEditRoles([])}
                   >
                     Delete All
@@ -501,7 +501,7 @@ const RoleAssignEdit = props => {
                 </table>
               </div>
               <p className={styles.btn_move}>
-                <Link to="/" onClick={handleEditToView}>
+                <Link to="#" onClick={handleEditToView}>
                   <img
                     alt=""
                     src={
@@ -509,7 +509,7 @@ const RoleAssignEdit = props => {
                     }
                   />
                 </Link>
-                <Link to="/" onClick={handleViewToEdit}>
+                <Link to="#" onClick={handleViewToEdit}>
                   <img
                     alt=""
                     src={
@@ -525,7 +525,7 @@ const RoleAssignEdit = props => {
                 <span className={styles.floatR}>
                   <Link
                     className={styles.btn_delall}
-                    to="/"
+                    to="#"
                     onClick={() => setViewRoles([])}
                   >
                     Delete All

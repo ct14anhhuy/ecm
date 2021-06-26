@@ -80,7 +80,7 @@ const OpenContent = props => {
               <h1 className={styles.tit}>Open Content</h1>
               <Link
                 className={styles.close}
-                to="/"
+                to="#"
                 onClick={props.changeShowOpenContent}
               >
                 <img

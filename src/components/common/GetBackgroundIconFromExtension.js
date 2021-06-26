@@ -17,8 +17,12 @@ const GetBackgroundIconFromExtension = ({ fileName }) => {
     );
   } else if (
     extension === "xls" ||
+    extension === "xlt" ||
     extension === "xlsx" ||
     extension === "xlsm" ||
+    extension === "xlsb" ||
+    extension === "xltx" ||
+    extension === "xltm" ||
     extension === "csv"
   ) {
     img = (

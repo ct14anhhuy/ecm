@@ -18,7 +18,7 @@ const Filter = props => {
     <div className="sortingBox" style={{ display: "block" }}>
       <ul className="icoBtn" style={{ display: "block" }}>
         <li>
-          <Link to="/" onClick={() => setFilterExt(exts.ALL)}>
+          <Link to="#" onClick={() => setFilterExt(exts.ALL)}>
             <img
               alt=""
               title="All"
@@ -31,7 +31,7 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => setFilterExt(exts.POWERPOINT)}>
+          <Link to="#" onClick={() => setFilterExt(exts.POWERPOINT)}>
             <img
               alt=""
               title="Powerpoint"
@@ -44,7 +44,7 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => setFilterExt(exts.EXCEL)}>
+          <Link to="#" onClick={() => setFilterExt(exts.EXCEL)}>
             <img
               alt=""
               title="Excel"
@@ -57,7 +57,7 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => setFilterExt(exts.WORD)}>
+          <Link to="#" onClick={() => setFilterExt(exts.WORD)}>
             <img
               alt=""
               title="Word"
@@ -70,7 +70,7 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => setFilterExt(exts.PDF)}>
+          <Link to="#" onClick={() => setFilterExt(exts.PDF)}>
             <img
               alt=""
               title="PDF"
@@ -83,7 +83,7 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="/" onClick={() => setFilterExt(exts.IMAGE)}>
+          <Link to="#" onClick={() => setFilterExt(exts.IMAGE)}>
             <img
               alt=""
               title="Image"
@@ -103,7 +103,7 @@ const Filter = props => {
             <Link
               className="am_selectyzeValue"
               onClick={() => setShowListRow(!showListRow)}
-              to="/"
+              to="#"
             >
               {pageLimit}
             </Link>
@@ -112,22 +112,22 @@ const Filter = props => {
               style={showListRow ? { display: "block" } : { display: "none" }}
             >
               <li>
-                <Link to="/" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageLimit}>
                   15
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageLimit}>
                   30
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageLimit}>
                   50
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageLimit}>
                   100
                 </Link>
               </li>

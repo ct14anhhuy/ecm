@@ -153,7 +153,7 @@ const EditFile = props => {
                 <h1 className={styles.tit}>Edit Content</h1>
                 <Link
                   className={styles.close}
-                  to="/"
+                  to="#"
                   onClick={props.changeShowEditFile}
                 >
                   <img
@@ -196,7 +196,7 @@ const EditFile = props => {
                             <td width={63}>
                               <Link
                                 className={styles.btnBlueLine}
-                                to="/"
+                                to="#"
                                 onClick={() =>
                                   setShowListDirectory(!showListDirectory)
                                 }
@@ -223,7 +223,7 @@ const EditFile = props => {
                           className={`${styles.DivSelectyze}`}
                           style={{ paddingLeft: 7, zIndex: 9 }}
                         >
-                          <Link className={styles.selectyzeValue} to="/">
+                          <Link className={styles.selectyzeValue} to="#">
                             <span>POSCO VST</span>
                           </Link>
                         </div>
@@ -269,7 +269,7 @@ const EditFile = props => {
                         className={`${styles.btn_safe1} ${
                           state.securityLevel === "Secret" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret
@@ -280,7 +280,7 @@ const EditFile = props => {
                             ? styles.on
                             : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret A/Not Open
@@ -289,7 +289,7 @@ const EditFile = props => {
                         className={`${styles.btn_safe3} ${
                           state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret A
@@ -300,7 +300,7 @@ const EditFile = props => {
                             ? styles.on
                             : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret B/Not Open
@@ -309,7 +309,7 @@ const EditFile = props => {
                         className={`${styles.btn_safe5} ${
                           state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret B
@@ -318,7 +318,7 @@ const EditFile = props => {
                         className={`${styles.btn_safe6} ${
                           state.securityLevel === "Public" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Public

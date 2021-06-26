@@ -175,7 +175,7 @@ const AddFile = props => {
                 <h1 className={styles.tit}>Add Content</h1>
                 <Link
                   className={styles.close}
-                  to="/"
+                  to="#"
                   onClick={changeShowAddFile}
                 >
                   <img
@@ -194,7 +194,7 @@ const AddFile = props => {
                     <span className={styles.floatR}>
                       <Link
                         className={styles.btnBlack}
-                        to="/"
+                        to="#"
                         onClick={() => fileRef.current.click()}
                       >
                         <span>
@@ -242,7 +242,7 @@ const AddFile = props => {
                             <td width={63}>
                               <Link
                                 className={styles.btnBlueLine}
-                                to="/"
+                                to="#"
                                 onClick={() =>
                                   setShowListDirectory(!showListDirectory)
                                 }
@@ -269,7 +269,7 @@ const AddFile = props => {
                           className={`${styles.DivSelectyze}`}
                           style={{ paddingLeft: 7, zIndex: 9 }}
                         >
-                          <Link className={styles.selectyzeValue} to="/">
+                          <Link className={styles.selectyzeValue} to="#">
                             <span>POSCO VST</span>
                           </Link>
                         </div>
@@ -315,7 +315,7 @@ const AddFile = props => {
                         className={`${styles.btn_safe1} ${
                           state.securityLevel === "Secret" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret
@@ -326,7 +326,7 @@ const AddFile = props => {
                             ? styles.on
                             : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret A/Not Open
@@ -335,7 +335,7 @@ const AddFile = props => {
                         className={`${styles.btn_safe3} ${
                           state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret A
@@ -346,7 +346,7 @@ const AddFile = props => {
                             ? styles.on
                             : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret B/Not Open
@@ -355,7 +355,7 @@ const AddFile = props => {
                         className={`${styles.btn_safe5} ${
                           state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Secret B
@@ -364,7 +364,7 @@ const AddFile = props => {
                         className={`${styles.btn_safe6} ${
                           state.securityLevel === "Public" ? styles.on : ""
                         }`}
-                        to="/"
+                        to="#"
                         onClick={handleChangeSecurityLevel}
                       >
                         Public
