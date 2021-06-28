@@ -195,8 +195,16 @@
 .btnBox li a.btn_01 {
   background: url(assets/img/main/left/ico_go_cnt01.png) 15px center no-repeat;
 }
+.btnBox li a.btn_01.active {
+  background: url(assets/img/main/left/ico_go_cnt01_on.png) 15px center
+    no-repeat;
+}
 .btnBox li a.btn_30 {
   background: url(assets/img/main/left/ico_go_cnt30.png) 15px center no-repeat;
+}
+.btnBox li a.btn_30.active {
+  background: url(assets/img/main/left/ico_go_cnt30_on.png) 15px center
+    no-repeat;
 }
 .btnBox li a.btn_06 {
   background: url(assets/img/main/left/ico_go_cnt26.png) 15px center no-repeat;
@@ -692,7 +700,4 @@
 }
 #cObesityCnt:hover {
   text-decoration: underline;
-}
-.treeFldConBox {
-  width: 300px !important;
 }

@@ -12,12 +12,14 @@ import {
   changeSelectedItemAction,
   changeEditItemAction
 } from "store/systemParams/actions";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
 import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
+import { ROUTE_TRASH_CONTENTS } from "utils/commonConstants";
 
 const MainTableItem = props => {
-  const { fileUrl, fileInfo, user, headerPath, menuActive } = props;
+  const { path } = useParams();
+  const { fileUrl, fileInfo, user } = props;
   const [isTrash, setIsTrash] = useState(false);
 
   const node = useRef();
@@ -29,12 +31,12 @@ const MainTableItem = props => {
   }, [fileUrl.shareUrl]);
 
   useEffect(() => {
-    if (headerPath === "Trash" && menuActive) {
+    if (path === ROUTE_TRASH_CONTENTS) {
       setIsTrash(true);
     } else {
       setIsTrash(false);
     }
-  }, [headerPath, menuActive]);
+  }, [path]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
@@ -236,9 +238,7 @@ const MainTableItem = props => {
 const mapStateToProps = state => {
   return {
     user: state.userReducers,
-    fileUrl: state.fileUrlReducers,
-    headerPath: state.systemParamsReducers.headerPath,
-    menuActive: state.systemParamsReducers.menuActive
+    fileUrl: state.fileUrlReducers
   };
 };
 

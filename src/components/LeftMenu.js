@@ -12,6 +12,15 @@ import { connect } from "react-redux";
 import styles from "assets/css/modules/LeftMenu.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
+import {
+  ROUTE_DEPARTMENT_CONTENTS,
+  ROUTE_DIRECTORY_PATH,
+  ROUTE_FAVORITE_CONTENTS,
+  ROUTE_IMPORTANT_CONTENTS,
+  ROUTE_MY_CONTENTS,
+  ROUTE_SHARED_CONTENTS,
+  ROUTE_TRASH_CONTENTS
+} from "utils/commonConstants";
 
 const LeftMenu = props => {
   const history = useHistory();
@@ -27,14 +36,10 @@ const LeftMenu = props => {
     isRoot: true
   });
 
-  const handleSelectedRoute = e => {
-    changeHeaderPath(e.target.innerText);
-  };
-
   const handleOnSelect = (id, path, isRoot) => {
     changeHeaderPath(path);
     setSelectedDirectory({ id, isRoot });
-    history.push(`/ecm/p/${id}`);
+    history.push(`/ecm/${ROUTE_DIRECTORY_PATH}/${id}`);
   };
 
   useEffect(() => {
@@ -78,11 +83,9 @@ const LeftMenu = props => {
           <li>
             <NavLink
               activeClassName={styles.active}
-              to="/ecm/my-contents"
+              to={`/ecm/${ROUTE_MY_CONTENTS}`}
               className={styles.btn_01}
-              onClick={e => {
-                handleSelectedRoute(e);
-              }}
+              onClick={e => changeHeaderPath(e.target.innerText)}
             >
               My Contents
             </NavLink>
@@ -90,11 +93,9 @@ const LeftMenu = props => {
           <li className={styles.newWin}>
             <NavLink
               activeClassName={styles.active}
-              to="/ecm/impotant-contents"
+              to={`/ecm/${ROUTE_IMPORTANT_CONTENTS}`}
               className={styles.btn_30}
-              onClick={e => {
-                handleSelectedRoute(e);
-              }}
+              onClick={e => changeHeaderPath(e.target.innerText)}
             >
               Impotant Contents
             </NavLink>
@@ -102,11 +103,9 @@ const LeftMenu = props => {
           <li>
             <NavLink
               activeClassName={styles.active}
-              to="/ecm/favorite-contents"
+              to={`/ecm/${ROUTE_FAVORITE_CONTENTS}`}
               className={styles.btn_06}
-              onClick={e => {
-                handleSelectedRoute(e);
-              }}
+              onClick={e => changeHeaderPath(e.target.innerText)}
             >
               Favorite Contents
             </NavLink>
@@ -114,11 +113,9 @@ const LeftMenu = props => {
           <li>
             <NavLink
               activeClassName={styles.active}
-              to="/ecm/shared-contents"
+              to={`/ecm/${ROUTE_SHARED_CONTENTS}`}
               className={styles.btn_07}
-              onClick={e => {
-                handleSelectedRoute(e);
-              }}
+              onClick={e => changeHeaderPath(e.target.innerText)}
             >
               Shared Contents
             </NavLink>
@@ -126,11 +123,9 @@ const LeftMenu = props => {
           <li>
             <NavLink
               activeClassName={styles.active}
-              to="/ecm/departments-contents"
+              to={`/ecm/${ROUTE_DEPARTMENT_CONTENTS}`}
               className={styles.btn_16}
-              onClick={e => {
-                handleSelectedRoute(e);
-              }}
+              onClick={e => changeHeaderPath(e.target.innerText)}
             >
               Departments Contents
             </NavLink>
@@ -138,11 +133,9 @@ const LeftMenu = props => {
           <li>
             <NavLink
               activeClassName={styles.active}
-              to="/ecm/trash"
+              to={`/ecm/${ROUTE_TRASH_CONTENTS}`}
               className={styles.btn_rcb}
-              onClick={e => {
-                handleSelectedRoute(e);
-              }}
+              onClick={e => changeHeaderPath(e.target.innerText)}
             >
               Trash
             </NavLink>
@@ -165,7 +158,6 @@ const LeftMenu = props => {
           <div className={styles.myconList}>
             <div className={styles.treeFldConBox}>
               <Frame
-                width="100%"
                 height="97%"
                 scrolling="auto"
                 frameBorder="0"

@@ -38,7 +38,13 @@ const SelectFile = props => {
           <span className={styles.contentsExtImage}>
             <GetBackgroundIconFromExtension fileName={fileName} />
           </span>
-          <span className={styles.contentsNameViewTitle}>{fileName}</span>
+          <span
+            className={`${styles.contentsNameViewTitle} ${
+              props.file.isValid ? null : styles.file_invalid
+            }`}
+          >
+            {fileName}
+          </span>
         </Link>
         <span className={styles.floatR}>
           <Link

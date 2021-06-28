@@ -40,7 +40,7 @@ const CreateDirectory = props => {
     setTimeout(() => {
       const path = tvRef.current.handleGetPath();
       setSelectedPath(p => ({ ...p, path }));
-    }, 100);
+    }, 500);
   }, []);
 
   useEffect(() => {

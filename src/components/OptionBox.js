@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   searchContentsAction,
@@ -13,19 +13,21 @@ import {
   changeShowCreateDirectoryAction
 } from "store/systemParams/actions";
 import swal from "sweetalert";
+import { ROUTE_TRASH_CONTENTS } from "utils/commonConstants";
 
 const OptionBox = props => {
-  const { headerPath, menuActive, currentDirectory } = props.systemParams;
+  const { path } = useParams();
+  const { menuActive, currentDirectory } = props.systemParams;
   const [inpSearch, setInpSearch] = useState(null);
   const [isTrash, setIsTrash] = useState(false);
 
   useEffect(() => {
-    if (headerPath === "Trash" && menuActive) {
+    if (path === ROUTE_TRASH_CONTENTS) {
       setIsTrash(true);
     } else {
       setIsTrash(false);
     }
-  }, [headerPath, menuActive]);
+  }, [path]);
 
   const handleMoveToTrash = () => {
     const fileIds = props.fileInfos.filter(f => f.checked).map(f => f.id);

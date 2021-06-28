@@ -23,6 +23,15 @@ import {
 import { updateCurrentPageAction } from "store/pagination/actions";
 import { getDepartmentsAction } from "store/department/actions";
 import Loading from "./common/Loading";
+import {
+  ROUTE_DEPARTMENT_CONTENTS,
+  ROUTE_DIRECTORY_PATH,
+  ROUTE_FAVORITE_CONTENTS,
+  ROUTE_IMPORTANT_CONTENTS,
+  ROUTE_MY_CONTENTS,
+  ROUTE_SHARED_CONTENTS,
+  ROUTE_TRASH_CONTENTS
+} from "utils/commonConstants";
 
 import "assets/css/main.css";
 
@@ -33,6 +42,7 @@ const OpenContent = lazy(() => import("./OpenContent"));
 
 const App = props => {
   const FIRST_PAGE = 1;
+  const { path, id } = useParams();
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
 
@@ -41,28 +51,27 @@ const App = props => {
 
   const { getDirectories, getDepartments } = props;
 
-  const { path, id } = useParams();
   useEffect(() => {
     switch (path) {
-      case "my-contents":
+      case ROUTE_MY_CONTENTS:
         props.getMyContents();
         break;
-      case "impotant-contents":
+      case ROUTE_IMPORTANT_CONTENTS:
         props.getImportantContents();
         break;
-      case "favorite-contents":
+      case ROUTE_FAVORITE_CONTENTS:
         props.getFavoriteContents();
         break;
-      case "shared-contents":
+      case ROUTE_SHARED_CONTENTS:
         props.getSharedContents();
         break;
-      case "departments-contents":
+      case ROUTE_DEPARTMENT_CONTENTS:
         props.getDepartmentContents();
         break;
-      case "trash":
+      case ROUTE_TRASH_CONTENTS:
         props.getTrashContents();
         break;
-      case "p": {
+      case ROUTE_DIRECTORY_PATH: {
         const validId = props.directories.filter(x => id.includes(x.id));
         if (validId.length > 0) {
           props.getContentsFromPath(id);

@@ -10,6 +10,7 @@ import { changeShowEditFileAction } from "store/systemParams/actions";
 import { getFileSharedAction } from "store/employee/actions";
 import { editFileAction } from "store/fileInfo/actions";
 import { VIEW_PERMISSION, EDIT_PERMISSION } from "utils/commonConstants";
+import { checkContainSpecialCharacters } from "utils/stringHelper";
 
 import styles from "assets/css/modules/AddEdit.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
@@ -32,7 +33,10 @@ const EditFile = props => {
     directoryId: editItem.directoryId,
     tag: editItem.tag,
     securityLevel: editItem.securityLevel,
-    file: { fileName: editItem.name }
+    file: {
+      fileName: editItem.name,
+      isValid: true
+    }
   });
 
   const [showListDirectory, setShowListDirectory] = useState(false);
@@ -43,7 +47,14 @@ const EditFile = props => {
   const firstUpdate = useRef(true);
 
   const handleChangeFileName = (key, fileName) => {
-    setState({ ...state, file: { ...state.file, fileName } });
+    setState({
+      ...state,
+      file: {
+        ...state.file,
+        fileName,
+        isValid: !checkContainSpecialCharacters(fileName)
+      }
+    });
   };
 
   useEffect(() => {
@@ -55,7 +66,7 @@ const EditFile = props => {
     setTimeout(() => {
       const path = tvRef.current.handleGetPath();
       setSelectedPath(path);
-    }, 100);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -87,6 +98,15 @@ const EditFile = props => {
   }, [changeShowEditFile, fileInfos.done, fileInfos.error]);
 
   const handleEditFile = () => {
+    if (!state.file.isValid) {
+      swal(
+        "Invalid!",
+        `Remove all special characters "\\|!#$%&/=?»«@£§€{};'<>," in file name before confirm`,
+        "error"
+      );
+      return;
+    }
+
     const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION,
@@ -340,15 +360,13 @@ const EditFile = props => {
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Permission Setting</span>
                   </p>
-                  <div>
-                    <RoleAssignEdit
-                      owner={owner}
-                      editRoles={editRoles}
-                      setEditRoles={setEditRoles}
-                      viewRoles={viewRoles}
-                      setViewRoles={setViewRoles}
-                    />
-                  </div>
+                  <RoleAssignEdit
+                    owner={owner}
+                    editRoles={editRoles}
+                    setEditRoles={setEditRoles}
+                    viewRoles={viewRoles}
+                    setViewRoles={setViewRoles}
+                  />
                 </div>
               </div>
               <p className={styles.modifyBtn}>

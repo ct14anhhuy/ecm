@@ -76,3 +76,7 @@
   color: #9a9a9a;
   background-position: -589px -40px;
 }
+.file_invalid {
+  color: red;
+  font-weight: bold;
+}

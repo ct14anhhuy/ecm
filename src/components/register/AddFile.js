@@ -11,6 +11,7 @@ import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
 import { EDIT_PERMISSION, VIEW_PERMISSION } from "utils/commonConstants";
 import swal from "sweetalert";
+import { checkContainSpecialCharacters } from "utils/stringHelper";
 
 import styles from "assets/css/modules/AddEdit.module.css";
 /* eslint import/no-webpack-loader-syntax: off */
@@ -39,7 +40,11 @@ const AddFile = props => {
   const handleChangeFileName = (key, fileName) => {
     const arr = [...state.files];
     const idEdit = arr.findIndex(f => f.key === key);
-    arr[idEdit] = { ...arr[idEdit], fileName };
+    arr[idEdit] = {
+      ...arr[idEdit],
+      fileName,
+      isValid: !checkContainSpecialCharacters(fileName)
+    };
     setState({ ...state, files: [...arr] });
   };
 
@@ -62,7 +67,8 @@ const AddFile = props => {
         impFiles.push({
           data: e.target.files[key],
           key: uuid(),
-          fileName: e.target.files[key].name
+          fileName: e.target.files[key].name,
+          isValid: !checkContainSpecialCharacters(e.target.files[key].name)
         });
       }
     }
@@ -83,7 +89,7 @@ const AddFile = props => {
     setTimeout(() => {
       const path = tvRef.current.handleGetPath();
       setSelectedPath(path);
-    }, 100);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -103,6 +109,14 @@ const AddFile = props => {
   }, [changeShowAddFile, fileInfos.done, fileInfos.error]);
 
   const handleAddFiles = async () => {
+    if (state.files.filter(f => !f.isValid).length > 0) {
+      swal(
+        "Invalid!",
+        `Remove all special characters "\\|!#$%&/=?»«@£§€{};'<>," in file name before confirm`,
+        "error"
+      );
+      return;
+    }
     let fileInfos = [];
     let viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
@@ -191,6 +205,13 @@ const AddFile = props => {
                 <div className={styles.columnBox}>
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Content List</span>
+                    <span style={{ marginLeft: 2, color: "#8a929b" }}>
+                      (Total: {state.files.length}/Invalid:{" "}
+                      <span style={{ color: "#ff3c46" }}>
+                        {state.files.filter(f => !f.isValid).length}
+                      </span>
+                      )
+                    </span>
                     <span className={styles.floatR}>
                       <Link
                         className={styles.btnBlack}
@@ -207,7 +228,7 @@ const AddFile = props => {
                       id="file"
                       ref={fileRef}
                       style={{ display: "none" }}
-                      accept=".doc,.docx,.xls,.xlsx,.xlsm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg"
+                      accept=".doc,.docx,.xls,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg"
                       onChange={handleSelectFiles}
                       multiple
                     />
@@ -386,15 +407,13 @@ const AddFile = props => {
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Permission Setting</span>
                   </p>
-                  <div>
-                    <RoleAssignEdit
-                      owner={state.owner}
-                      editRoles={editRoles}
-                      setEditRoles={setEditRoles}
-                      viewRoles={viewRoles}
-                      setViewRoles={setViewRoles}
-                    />
-                  </div>
+                  <RoleAssignEdit
+                    owner={state.owner}
+                    editRoles={editRoles}
+                    setEditRoles={setEditRoles}
+                    viewRoles={viewRoles}
+                    setViewRoles={setViewRoles}
+                  />
                 </div>
               </div>
               <p className={styles.modifyBtn}>
