@@ -209,14 +209,29 @@
 .btnBox li a.btn_06 {
   background: url(assets/img/main/left/ico_go_cnt26.png) 15px center no-repeat;
 }
+.btnBox li a.btn_06.active {
+  background: url(assets/img/main/left/ico_go_cnt26_on.png) 15px center
+    no-repeat;
+}
 .btnBox li a.btn_07 {
   background: url(assets/img/main/left/ico_go_cnt27.png) 15px center no-repeat;
+}
+.btnBox li a.btn_07.active {
+  background: url(assets/img/main/left/ico_go_cnt27_on.png) 15px center
+    no-repeat;
 }
 .btnBox li a.btn_16 {
   background: url(assets/img/main/left/ico_go_cnt16.png) 15px center no-repeat;
 }
+.btnBox li a.btn_16.active {
+  background: url(assets/img/main/left/ico_go_cnt16_on.png) 15px center
+    no-repeat;
+}
 .btnBox li a.btn_rcb {
   background: url(assets/img/main/left/ico_go_rcb.png) 15px center no-repeat;
+}
+.btnBox li a.btn_rcb.active {
+  background: url(assets/img/main/left/ico_go_rcb_on.png) 15px center no-repeat;
 }
 .btnBox li.on a.btn_02 {
   background: url(assets/img/main/left/ico_go_cnt02_on.png) 15px center
