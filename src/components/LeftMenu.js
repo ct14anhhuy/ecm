@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Frame from "react-frame-component";
 import TreeView from "./TreeView";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory, useParams } from "react-router-dom";
 import {
   changeHeaderPathAction,
   changeMenuActiveAction,
@@ -24,6 +24,7 @@ import {
 
 const LeftMenu = props => {
   const history = useHistory();
+  const { path } = useParams();
 
   const {
     menuActive,
@@ -40,6 +41,10 @@ const LeftMenu = props => {
     changeHeaderPath(path);
     setSelectedDirectory({ id, isRoot });
     history.push(`/ecm/${ROUTE_DIRECTORY_PATH}/${id}`);
+  };
+
+  const getNavLinkClass = urlPath => {
+    return path === urlPath ? styles.on : null;
   };
 
   useEffect(() => {
@@ -80,7 +85,7 @@ const LeftMenu = props => {
         style={menuActive ? { display: "block" } : { display: "none" }}
       >
         <ul className={styles.btnBox}>
-          <li>
+          <li className={getNavLinkClass(ROUTE_MY_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_MY_CONTENTS}`}
@@ -90,7 +95,7 @@ const LeftMenu = props => {
               My Contents
             </NavLink>
           </li>
-          <li className={styles.newWin}>
+          <li className={getNavLinkClass(ROUTE_IMPORTANT_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_IMPORTANT_CONTENTS}`}
@@ -100,7 +105,7 @@ const LeftMenu = props => {
               Impotant Contents
             </NavLink>
           </li>
-          <li>
+          <li className={getNavLinkClass(ROUTE_FAVORITE_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_FAVORITE_CONTENTS}`}
@@ -110,7 +115,7 @@ const LeftMenu = props => {
               Favorite Contents
             </NavLink>
           </li>
-          <li>
+          <li className={getNavLinkClass(ROUTE_SHARED_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_SHARED_CONTENTS}`}
@@ -120,7 +125,7 @@ const LeftMenu = props => {
               Shared Contents
             </NavLink>
           </li>
-          <li>
+          <li className={getNavLinkClass(ROUTE_DEPARTMENT_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_DEPARTMENT_CONTENTS}`}
@@ -130,7 +135,7 @@ const LeftMenu = props => {
               Departments Contents
             </NavLink>
           </li>
-          <li>
+          <li className={getNavLinkClass(ROUTE_TRASH_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_TRASH_CONTENTS}`}

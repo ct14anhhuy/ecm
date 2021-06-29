@@ -151,7 +151,8 @@
 .btnBox li:first-child {
   margin-top: 0;
 }
-.btnBox li.on {
+.btnBox li.on,
+.btnBox li:hover {
   background: url(assets/img/main/left/bg_go_cntOn.png) left top no-repeat;
 }
 .btnBox > li > a {

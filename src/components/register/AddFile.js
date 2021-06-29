@@ -86,11 +86,12 @@ const AddFile = props => {
   };
 
   useEffect(() => {
+    if (props.currentDirectory.isRoot) return;
     setTimeout(() => {
       const path = tvRef.current.handleGetPath();
       setSelectedPath(path);
     }, 500);
-  }, []);
+  }, [props.currentDirectory.isRoot]);
 
   useEffect(() => {
     if (firstUpdate.current) {
