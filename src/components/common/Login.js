@@ -9,7 +9,7 @@ const Login = props => {
 
   useEffect(() => {
     login();
-    sessionStorage.setItem("accessToken", token);
+    localStorage.setItem("accessToken", token);
   }, [login, token]);
 
   return <Redirect to="/ecm/my-contents"></Redirect>;
