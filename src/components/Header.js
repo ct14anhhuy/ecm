@@ -13,7 +13,7 @@ const Header = props => {
             <h1 className="logo">
               <Link className="logo_ci" to="/ecm/my-contents">
                 <img
-                  alt="With POSCO"
+                  alt=""
                   src={
                     require("assets/img/layout/posco-the-great-logo.png")
                       .default
@@ -22,7 +22,7 @@ const Header = props => {
               </Link>
               <Link className="logo_sys" to="/ecm/my-contents">
                 <img
-                  alt="logo ecm"
+                  alt=""
                   src={require("assets/img/layout/logo_ecm.png").default}
                 />
               </Link>

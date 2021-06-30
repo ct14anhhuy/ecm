@@ -21,7 +21,6 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.ALL)}>
             <img
               alt=""
-              title="All"
               src={
                 filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_all_on.png").default
@@ -34,7 +33,6 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.POWERPOINT)}>
             <img
               alt=""
-              title="Powerpoint"
               src={
                 filterExt === exts.POWERPOINT || filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_ppt_on.png").default
@@ -47,7 +45,6 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.EXCEL)}>
             <img
               alt=""
-              title="Excel"
               src={
                 filterExt === exts.EXCEL || filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_xlsx_on.png").default
@@ -60,7 +57,6 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.WORD)}>
             <img
               alt=""
-              title="Word"
               src={
                 filterExt === exts.WORD || filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_doc_on.png").default
@@ -73,7 +69,6 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.PDF)}>
             <img
               alt=""
-              title="PDF"
               src={
                 filterExt === exts.PDF || filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_pdf_on.png").default
@@ -86,7 +81,6 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.IMAGE)}>
             <img
               alt=""
-              title="Image"
               src={
                 filterExt === exts.IMAGE || filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_img_on.png").default
