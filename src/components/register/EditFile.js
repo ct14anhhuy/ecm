@@ -9,7 +9,11 @@ import swal from "sweetalert";
 import { changeShowEditFileAction } from "store/systemParams/actions";
 import { getFileSharedAction } from "store/employee/actions";
 import { editFileAction } from "store/fileInfo/actions";
-import { VIEW_PERMISSION, EDIT_PERMISSION } from "utils/commonConstants";
+import {
+  VIEW_PERMISSION,
+  EDIT_PERMISSION,
+  SPECIAL_CHARACTER
+} from "utils/commonConstants";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
 import styles from "assets/css/modules/AddEdit.module.css";
@@ -101,12 +105,11 @@ const EditFile = props => {
     if (!state.file.isValid) {
       swal(
         "Invalid!",
-        `Remove all special characters "\\|!#$%&/=?»«@£§€{};'<>," in file name before confirm`,
+        `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`,
         "error"
       );
       return;
     }
-
     const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION,

@@ -1,13 +1,13 @@
 const fileToByteArray = file => {
   return new Promise((resolve, reject) => {
     try {
-      let reader = new FileReader();
-      let fileByteArray = [];
+      const reader = new FileReader();
+      const fileByteArray = [];
       reader.readAsArrayBuffer(file);
       reader.onloadend = evt => {
         if (evt.target.readyState === FileReader.DONE) {
-          let arrayBuffer = evt.target.result;
-          let array = new Uint8Array(arrayBuffer);
+          const arrayBuffer = evt.target.result;
+          const array = new Uint8Array(arrayBuffer);
           for (let byte of array) {
             fileByteArray.push(byte);
           }

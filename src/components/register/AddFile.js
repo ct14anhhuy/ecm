@@ -9,7 +9,11 @@ import RoleAssignEdit from "./RoleAssignEdit";
 import { fileToByteArray } from "utils/fileHelper";
 import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
-import { EDIT_PERMISSION, VIEW_PERMISSION } from "utils/commonConstants";
+import {
+  EDIT_PERMISSION,
+  SPECIAL_CHARACTER,
+  VIEW_PERMISSION
+} from "utils/commonConstants";
 import swal from "sweetalert";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
@@ -113,17 +117,17 @@ const AddFile = props => {
     if (state.files.filter(f => !f.isValid).length > 0) {
       swal(
         "Invalid!",
-        `Remove all special characters "\\|!#$%&/=?»«@£§€{};'<>," in file name before confirm`,
+        `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`,
         "error"
       );
       return;
     }
     let fileInfos = [];
-    let viewEmps = viewRoles.map(e => ({
+    const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION
     }));
-    let editEmps = editRoles.map(e => ({
+    const editEmps = editRoles.map(e => ({
       employeeId: e.id,
       permission: EDIT_PERMISSION
     }));

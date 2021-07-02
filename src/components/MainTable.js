@@ -35,8 +35,8 @@ const MainTable = props => {
   }, [props.fileInfos, props.filterExt]);
 
   useEffect(() => {
-    let totalRecords = fileInfos.length;
-    let totalPages = Math.ceil(totalRecords / pageLimit);
+    const totalRecords = fileInfos.length;
+    const totalPages = Math.ceil(totalRecords / pageLimit);
     const offset = (currentPage - 1) * pageLimit;
     const currentFiles = fileInfos.slice(offset, offset + pageLimit);
     updateTotalRecords(totalRecords);

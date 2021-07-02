@@ -1,7 +1,8 @@
+import { SPECIAL_CHARACTER } from "./commonConstants";
+
 export const checkContainSpecialCharacters = inp => {
-  const specialChars = `\\|!#$%&/=?»«@£§€{};'<>,`;
-  for (let i = 0; i < specialChars.length; i++) {
-    if (inp.indexOf(specialChars[i]) > -1) {
+  for (let i = 0; i < SPECIAL_CHARACTER.length; i++) {
+    if (inp.indexOf(SPECIAL_CHARACTER[i]) > -1) {
       return true;
     }
   }
