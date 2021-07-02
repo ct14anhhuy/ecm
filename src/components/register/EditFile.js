@@ -26,7 +26,7 @@ const EditFile = props => {
   const { editItem } = props.systemParams;
   const {
     owner,
-    sharedEmps,
+    fileShared,
     getFileShared,
     editFile,
     fileInfos,
@@ -62,9 +62,17 @@ const EditFile = props => {
   };
 
   useEffect(() => {
-    setEditRoles(sharedEmps.filter(e => e.roleId === EDIT_PERMISSION));
-    setViewRoles(sharedEmps.filter(e => e.roleId === VIEW_PERMISSION));
-  }, [sharedEmps]);
+    setEditRoles(
+      fileShared
+        .filter(e => e.permission === EDIT_PERMISSION)
+        .map(f => f.employee)
+    );
+    setViewRoles(
+      fileShared
+        .filter(e => e.permission === VIEW_PERMISSION)
+        .map(f => f.employee)
+    );
+  }, [fileShared]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -392,7 +400,7 @@ const mapStateToProps = state => {
     fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
     systemParams: state.systemParamsReducers,
-    sharedEmps: state.employeeReducers.sharedEmps
+    fileShared: state.employeeReducers.fileShared
   };
 };
 

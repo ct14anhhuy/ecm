@@ -183,7 +183,7 @@
   position: relative;
   left: -222px;
   width: 196px;
-  min-height: 910px;
+  min-height: calc(100vh - 98.5px);
   padding: 10px 12px 0;
   border-right: 1px solid #ddd;
 }
@@ -336,6 +336,9 @@
 .topRt {
   float: right;
   margin-top: 13px;
+}
+.topRt span {
+  cursor: pointer;
 }
 .psnName {
   position: relative;

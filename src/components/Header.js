@@ -5,6 +5,14 @@ import { logoutAction } from "store/user/actions";
 const Header = props => {
   const { user } = props;
 
+  const handleLogout = () => {
+    const link = document.createElement("a");
+    link.href = "ECMProtocol: <Logout>";
+    link.click();
+    link.remove();
+    props.logout();
+  };
+
   return (
     <div id="header">
       <div className="infoArea clfix">
@@ -30,16 +38,16 @@ const Header = props => {
           </div>
           <div className="topRt">
             <div className="psnName showHideTrg">
-              <Link className="trg" to="#">
+              <span className="trg" to="#">
                 <strong>{`${user.lastName} ${user.firstName} (${user.epLiteId})`}</strong>
-              </Link>
+              </span>
             </div>
-            <Link to="#" onClick={props.logout}>
+            <span onClick={handleLogout}>
               <img
                 alt=""
                 src={require("assets/img/layout/ico_help02.png").default}
               />
-            </Link>
+            </span>
           </div>
         </div>
       </div>

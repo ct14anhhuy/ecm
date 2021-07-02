@@ -20,6 +20,7 @@ const getFileShared = async fileId => {
   return await api
     .get("/FileShare/GetFileShared?fileId=" + fileId)
     .then(response => {
+      console.log(response.data);
       return response.data;
     });
 };

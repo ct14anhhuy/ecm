@@ -40,7 +40,7 @@ const getFileSharedAction = fileId => {
       dispatch({
         type: types.GET_FILE_SHARED,
         payload: {
-          employees: fileShared.map(f => f.employee)
+          fileShared
         }
       });
     } catch (error) {

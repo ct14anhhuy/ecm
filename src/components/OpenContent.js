@@ -22,7 +22,7 @@ const OpenContent = props => {
 
   const handleLinkClick = e => {
     const action = e.target.innerText;
-    var link = document.createElement("a");
+    const link = document.createElement("a");
     switch (action) {
       case actions.Edit:
         link.href = `ECMProtocol: ${editUrl}`;
