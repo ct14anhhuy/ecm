@@ -9,4 +9,4 @@ export const ROUTE_DEPARTMENT_CONTENTS = "departments-contents";
 export const ROUTE_TRASH_CONTENTS = "trash";
 export const ROUTE_DIRECTORY_PATH = "p";
 
-export const SPECIAL_CHARACTER = `\\|!#$%&/=?»«@£§€{};'<>,`;
+export const SPECIAL_CHARACTER = `\\|!#$%&/=?»«@£§€{}'<>`;

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Frame from "react-frame-component";
-import { v4 as uuid } from "uuid";
+import shortid from "shortid";
 import SelectFile from "./SelectFile";
 import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
@@ -43,6 +43,10 @@ const AddFile = props => {
 
   const handleChangeFileName = (key, fileName) => {
     const arr = [...state.files];
+    if (arr.filter(x => x.fileName === fileName).length > 0) {
+      swal("Invalid!", "There is a file with the same name", "error");
+      return false;
+    }
     const idEdit = arr.findIndex(f => f.key === key);
     arr[idEdit] = {
       ...arr[idEdit],
@@ -50,6 +54,7 @@ const AddFile = props => {
       isValid: !checkContainSpecialCharacters(fileName)
     };
     setState({ ...state, files: [...arr] });
+    return true;
   };
 
   const handleDeleteFile = key => {
@@ -70,7 +75,7 @@ const AddFile = props => {
       ) {
         impFiles.push({
           data: e.target.files[key],
-          key: uuid(),
+          key: shortid.generate(),
           fileName: e.target.files[key].name,
           isValid: !checkContainSpecialCharacters(e.target.files[key].name)
         });

@@ -95,7 +95,7 @@ const App = props => {
         <Header />
         <div id="container">
           <div className="ecmWrap">
-            <div className={`ecmContent ${!visibleLeftMenu ? "hide" : null}`}>
+            <div className={`ecmContent ${!visibleLeftMenu ? "hide" : ""}`}>
               <div className="areaL">
                 <LeftMenu />
               </div>

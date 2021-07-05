@@ -10,8 +10,8 @@ const SelectFile = props => {
   const [editFileName, setEditFileName] = useState(false);
 
   const handleChangeFileName = () => {
-    setEditFileName(!editFileName);
-    props.handleChangeFileName(key, fileName);
+    const result = props.handleChangeFileName(key, fileName);
+    if (result) setEditFileName(!editFileName);
   };
 
   const handleDeleteFile = () => {

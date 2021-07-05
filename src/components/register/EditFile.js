@@ -59,6 +59,7 @@ const EditFile = props => {
         isValid: !checkContainSpecialCharacters(fileName)
       }
     });
+    return true;
   };
 
   useEffect(() => {
@@ -93,7 +94,6 @@ const EditFile = props => {
   };
 
   useEffect(() => {
-    console.log(firstUpdate.current);
     if (firstUpdate.current) {
       firstUpdate.current = false;
       return;

@@ -17,8 +17,8 @@
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "sweetalert": "^2.1.2",
-    "uuid": "^8.3.2"
+    "shortid": "^2.2.16",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
