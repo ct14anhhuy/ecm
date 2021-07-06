@@ -13,3 +13,4 @@ export const EXCEL = [
 export const WORD = ["doc", "docx"];
 export const PDF = ["pdf"];
 export const IMAGE = ["jpg", "gif", "png", "jpeg"];
+export const CAD = ["dwg", "dwt", "dxf"];

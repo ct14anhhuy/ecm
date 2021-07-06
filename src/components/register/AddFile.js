@@ -238,7 +238,7 @@ const AddFile = props => {
                       id="file"
                       ref={fileRef}
                       style={{ display: "none" }}
-                      accept=".doc,.docx,.xls,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg"
+                      accept=".doc,.docx,.xls,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg,.dwg,.dwt,.dxf"
                       onChange={handleSelectFiles}
                       multiple
                     />

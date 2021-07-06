@@ -61,6 +61,18 @@ const GetBackgroundIconFromExtension = ({ fileName }) => {
         src={require("assets/img/main/ico/ico_pdf_on.png").default}
       />
     );
+  } else if (
+    extension === "dwg" ||
+    extension === "dwt" ||
+    extension === "dxf"
+  ) {
+    img = (
+      <img
+        alt=""
+        style={{ width: 16, height: 16 }}
+        src={require("assets/img/main/ico/ico_cad_on.png").default}
+      />
+    );
   }
   return img;
 };
