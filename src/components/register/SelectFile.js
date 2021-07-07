@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import GetBackgroundIconFromExtension from "components/common/GetBackgroundIconFromExtension";
+import { GetBackgroundIconFromExtension } from "components/common/GetBackgroundIconFromExtension";
 
 const SelectFile = props => {
   const styles = props.styles;
@@ -36,7 +36,11 @@ const SelectFile = props => {
           to="#"
         >
           <span className={styles.contentsExtImage}>
-            <GetBackgroundIconFromExtension fileName={fileName} />
+            <img
+              alt=""
+              style={{ width: 16, height: 16 }}
+              src={GetBackgroundIconFromExtension(fileName)}
+            />
           </span>
           <span
             className={`${styles.contentsNameViewTitle} ${
@@ -78,7 +82,11 @@ const SelectFile = props => {
       >
         <span className={`${styles.title} ${styles.floatL}`}>
           <span className={styles.contentsExtImageEdit}>
-            <GetBackgroundIconFromExtension fileName={fileName} />
+            <img
+              alt=""
+              style={{ width: 16, height: 16 }}
+              src={GetBackgroundIconFromExtension(fileName)}
+            />
           </span>
           <input
             className={styles.contentsNameEditTitle}

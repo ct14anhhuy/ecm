@@ -99,7 +99,7 @@ const Filter = props => {
           <Link to="#" onClick={() => setFilterExt(exts.CAD)}>
             <img
               alt=""
-              title="Cad"
+              title="CAD"
               src={
                 filterExt === exts.CAD || filterExt === exts.ALL
                   ? require("assets/img/main/ico/ico_cad_on.png").default

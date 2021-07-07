@@ -14,7 +14,7 @@ import {
 } from "store/systemParams/actions";
 import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
-import GetBackgroundIconFromExtension from "./common/GetBackgroundIconFromExtension";
+import { GetBackgroundIconFromExtension } from "./common/GetBackgroundIconFromExtension";
 import { ROUTE_TRASH_CONTENTS } from "utils/commonConstants";
 
 const MainTableItem = props => {
@@ -106,7 +106,11 @@ const MainTableItem = props => {
               />
             </Link>
             <Link to="#">
-              <GetBackgroundIconFromExtension fileName={fileInfo.name} />
+              <img
+                alt=""
+                style={{ width: 16, height: 16 }}
+                src={GetBackgroundIconFromExtension(fileInfo.name)}
+              />
               {fileInfo.name}
             </Link>
           </div>
@@ -186,7 +190,11 @@ const MainTableItem = props => {
                 props.changeShowOpenContent();
               }}
             >
-              <GetBackgroundIconFromExtension fileName={fileInfo.name} />
+              <img
+                alt=""
+                style={{ width: 16, height: 16 }}
+                src={GetBackgroundIconFromExtension(fileInfo.name)}
+              />
               {fileInfo.name}
             </Link>
           </div>
