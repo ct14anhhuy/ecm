@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Login from "components/common/Login";
 import PrivateRoute from "components/common/PrivateRoute";
 import Error from "components/common/Error";
+import Refresh from "components/common/Refresh";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <PrivateRoute path="/ecm/:path/:id?">
         <Main />
       </PrivateRoute>
+      <Route path="/refresh" exact component={Refresh} />
       <Route path="*">
         <Error message="Invalid url" />
       </Route>

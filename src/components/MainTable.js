@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as exts from "utils/extTypes";
 import { selectMultiAction } from "store/fileInfo/actions";
 import {
+  updateCurrentPageAction,
   updatePageNeighboursAction,
   updateTotalPagesAction,
   updateTotalRecordsAction
@@ -14,7 +15,12 @@ const MainTable = props => {
   const [fileInfos, setFileInfos] = useState(props.fileInfos);
   const [selectAll, setSelectAll] = useState(false);
   const [currentFiles, setCurrentFiles] = useState([]);
-  const { updateTotalRecords, updateTotalPages, updatePageNeighbours } = props;
+  const {
+    updateCurrentPage,
+    updateTotalRecords,
+    updateTotalPages,
+    updatePageNeighbours
+  } = props;
   const { pageLimit, currentPage, pageNeighbours } = props.pagination;
 
   useEffect(() => {
@@ -35,6 +41,7 @@ const MainTable = props => {
   }, [props.fileInfos, props.filterExt]);
 
   useEffect(() => {
+    const FIRST_PAGE = 1;
     const totalRecords = fileInfos.length;
     const totalPages = Math.ceil(totalRecords / pageLimit);
     const offset = (currentPage - 1) * pageLimit;
@@ -42,12 +49,14 @@ const MainTable = props => {
     updateTotalRecords(totalRecords);
     updateTotalPages(totalPages);
     updatePageNeighbours(Math.max(0, Math.min(pageNeighbours, 2)));
+    updateCurrentPage(totalRecords < pageLimit ? FIRST_PAGE : currentPage);
     setCurrentFiles(currentFiles);
   }, [
     currentPage,
     fileInfos,
     pageLimit,
     pageNeighbours,
+    updateCurrentPage,
     updatePageNeighbours,
     updateTotalPages,
     updateTotalRecords
@@ -132,6 +141,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    updateCurrentPage: page => dispatch(updateCurrentPageAction(page)),
     updateTotalRecords: totalRecords =>
       dispatch(updateTotalRecordsAction(totalRecords)),
     updateTotalPages: totalPages =>

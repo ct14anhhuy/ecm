@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Frame from "react-frame-component";
 import shortid from "shortid";
 import SelectFile from "./SelectFile";
@@ -24,6 +24,8 @@ import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 const AddFile = props => {
   const fileRef = useRef();
   const tvRef = useRef();
+  const history = useHistory();
+
   const { changeShowAddFile, addFiles, fileInfos } = props;
 
   const [state, setState] = useState({
@@ -110,13 +112,14 @@ const AddFile = props => {
     if (fileInfos.done) {
       if (!fileInfos.error) {
         swal("Success!", "Add file success!", "success").then(() => {
+          history.push("/refresh");
           changeShowAddFile();
         });
       } else {
         swal("Failure!", fileInfos.error, "error");
       }
     }
-  }, [changeShowAddFile, fileInfos.done, fileInfos.error]);
+  }, [changeShowAddFile, fileInfos.done, fileInfos.error, history]);
 
   const handleAddFiles = async () => {
     if (state.files.filter(f => !f.isValid).length > 0) {

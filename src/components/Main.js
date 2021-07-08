@@ -11,27 +11,9 @@ import Paging from "./Paging";
 import * as exts from "utils/extTypes";
 import { connect } from "react-redux";
 import { getDirectoriesAction } from "store/diretory/actions";
-import {
-  getMyContentsAction,
-  getImportantContentsAction,
-  getFavoriteContentsAction,
-  getSharedContentsAction,
-  getDepartmentContentsAction,
-  getTrashContentsAction,
-  getContentsFromPathAction
-} from "store/fileInfo/actions";
-import { updateCurrentPageAction } from "store/pagination/actions";
 import { getDepartmentsAction } from "store/department/actions";
 import Loading from "./common/Loading";
-import {
-  ROUTE_DEPARTMENT_CONTENTS,
-  ROUTE_DIRECTORY_PATH,
-  ROUTE_FAVORITE_CONTENTS,
-  ROUTE_IMPORTANT_CONTENTS,
-  ROUTE_MY_CONTENTS,
-  ROUTE_SHARED_CONTENTS,
-  ROUTE_TRASH_CONTENTS
-} from "utils/commonConstants";
+import { route } from "routes";
 
 import "assets/css/main.css";
 
@@ -41,7 +23,6 @@ const CreateDirectory = lazy(() => import("./CreateDirectory"));
 const OpenContent = lazy(() => import("./OpenContent"));
 
 const App = props => {
-  const FIRST_PAGE = 1;
   const { path, id } = useParams();
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
@@ -52,37 +33,8 @@ const App = props => {
   const { getDirectories, getDepartments } = props;
 
   useEffect(() => {
-    switch (path) {
-      case ROUTE_MY_CONTENTS:
-        props.getMyContents();
-        break;
-      case ROUTE_IMPORTANT_CONTENTS:
-        props.getImportantContents();
-        break;
-      case ROUTE_FAVORITE_CONTENTS:
-        props.getFavoriteContents();
-        break;
-      case ROUTE_SHARED_CONTENTS:
-        props.getSharedContents();
-        break;
-      case ROUTE_DEPARTMENT_CONTENTS:
-        props.getDepartmentContents();
-        break;
-      case ROUTE_TRASH_CONTENTS:
-        props.getTrashContents();
-        break;
-      case ROUTE_DIRECTORY_PATH: {
-        const validId = props.directories.filter(x => id.includes(x.id));
-        if (validId.length > 0) {
-          props.getContentsFromPath(id);
-        }
-        break;
-      }
-      default:
-        break;
-    }
-    props.updateCurrentPage(FIRST_PAGE);
-  }, [id, path, props]);
+    route(path, id, props.directories);
+  }, [id, path, props.directories]);
 
   useEffect(() => {
     getDirectories();
@@ -164,16 +116,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getDirectories: () => dispatch(getDirectoriesAction()),
-    getDepartments: () => dispatch(getDepartmentsAction()),
-    getMyContents: () => dispatch(getMyContentsAction()),
-    getImportantContents: () => dispatch(getImportantContentsAction()),
-    getFavoriteContents: () => dispatch(getFavoriteContentsAction()),
-    getSharedContents: () => dispatch(getSharedContentsAction()),
-    getDepartmentContents: () => dispatch(getDepartmentContentsAction()),
-    getTrashContents: () => dispatch(getTrashContentsAction()),
-    getContentsFromPath: dirId => dispatch(getContentsFromPathAction(dirId)),
-    updateCurrentPage: currentPage =>
-      dispatch(updateCurrentPageAction(currentPage))
+    getDepartments: () => dispatch(getDepartmentsAction())
   };
 };
 
