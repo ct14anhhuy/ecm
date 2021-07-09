@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
 import TreeView from "./TreeView";
@@ -60,7 +60,7 @@ const CreateDirectory = props => {
   }, [props]);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div
         className="blockUI blockOverlay"
         style={{
@@ -213,7 +213,7 @@ const CreateDirectory = props => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

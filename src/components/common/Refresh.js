@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, Fragment } from "react";
 import { useHistory } from "react-router-dom";
 
 const Refresh = () => {
@@ -6,7 +6,7 @@ const Refresh = () => {
   useEffect(() => {
     history.goBack();
   });
-  return <React.Fragment></React.Fragment>;
+  return <Fragment></Fragment>;
 };
 
 export default Refresh;

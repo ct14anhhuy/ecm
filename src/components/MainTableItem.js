@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import {
   changeFavoriteAction,
@@ -240,7 +240,7 @@ const MainTableItem = props => {
     </tr>
   );
 
-  return <React.Fragment>{!isTrash ? render : renderInTrash}</React.Fragment>;
+  return <Fragment>{!isTrash ? render : renderInTrash}</Fragment>;
 };
 
 const mapStateToProps = state => {

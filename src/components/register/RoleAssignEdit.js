@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import {
   searchByNameAction,
@@ -330,7 +330,7 @@ const RoleAssignEdit = props => {
                       </colgroup>
                       <tbody>
                         {departments.map(dep => (
-                          <React.Fragment key={dep.id}>
+                          <Fragment key={dep.id}>
                             <tr className={styles.tr_10873}>
                               <td className={styles.bdr0}>
                                 <div className={styles.treeTitle}>
@@ -401,7 +401,7 @@ const RoleAssignEdit = props => {
                                 </td>
                               </tr>
                             ))}
-                          </React.Fragment>
+                          </Fragment>
                         ))}
                       </tbody>
                     </table>

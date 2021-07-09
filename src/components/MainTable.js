@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
@@ -12,6 +12,7 @@ import {
 } from "store/pagination/actions";
 
 const MainTable = props => {
+  const firstUpdate = useRef(true);
   const [fileInfos, setFileInfos] = useState(props.fileInfos);
   const [selectAll, setSelectAll] = useState(false);
   const [currentFiles, setCurrentFiles] = useState([]);
@@ -41,6 +42,10 @@ const MainTable = props => {
   }, [props.fileInfos, props.filterExt]);
 
   useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
     const FIRST_PAGE = 1;
     const totalRecords = fileInfos.length;
     const totalPages = Math.ceil(totalRecords / pageLimit);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getFileUrlAction } from "store/fileUrl/actions";
@@ -39,7 +39,7 @@ const OpenContent = props => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div
         className="blockUI blockOverlay"
         style={{
@@ -122,7 +122,7 @@ const OpenContent = props => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

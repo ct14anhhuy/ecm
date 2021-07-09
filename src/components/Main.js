@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState, Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import LeftMenu from "./LeftMenu";
@@ -33,6 +33,7 @@ const App = props => {
   const { getDirectories, getDepartments } = props;
 
   useEffect(() => {
+    if (props.directories.length === 0) return;
     route(path, id, props.directories);
   }, [id, path, props.directories]);
 
@@ -42,7 +43,7 @@ const App = props => {
   }, [getDepartments, getDirectories]);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div id="wrap">
         <Header />
         <div id="container">
@@ -102,7 +103,7 @@ const App = props => {
         {showCreateDirectory ? <CreateDirectory /> : null}
         {showOpenContent ? <OpenContent /> : null}
       </Suspense>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

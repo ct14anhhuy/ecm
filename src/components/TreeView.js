@@ -1,7 +1,8 @@
-import React, {
+import {
   useState,
   useEffect,
   forwardRef,
+  Fragment,
   useImperativeHandle
 } from "react";
 import { Tree, Row, Col } from "antd";
@@ -115,7 +116,7 @@ const TreeView = forwardRef((props, ref) => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Row style={{ width: "100%" }}>
         <Col style={{ width: "100%" }}>
           <Tree.DirectoryTree
@@ -125,7 +126,7 @@ const TreeView = forwardRef((props, ref) => {
           />
         </Col>
       </Row>
-    </React.Fragment>
+    </Fragment>
   );
 });
 

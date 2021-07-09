@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -110,7 +110,7 @@ const OptionBox = props => {
           ) : null}
 
           {isTrash ? (
-            <React.Fragment>
+            <Fragment>
               <Link to="#" onClick={handleRecover}>
                 <span>
                   <em className="add">Recover</em>
@@ -125,7 +125,7 @@ const OptionBox = props => {
                   <em className="optionBox__remove_em">Delete</em>
                 </span>
               </Link>
-            </React.Fragment>
+            </Fragment>
           ) : null}
 
           {props.user.roleId === 1 ? (

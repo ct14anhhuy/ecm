@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import Frame from "react-frame-component";
@@ -162,7 +162,7 @@ const AddFile = props => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div
         className="blockUI blockOverlay"
         style={{
@@ -440,7 +440,7 @@ const AddFile = props => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
