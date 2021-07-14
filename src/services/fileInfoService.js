@@ -77,9 +77,13 @@ const changeImportant = async (fileId, employeeId) => {
 };
 
 const addFiles = async fileInfos => {
-  return await api.post("/FileInfo/AddFiles", fileInfos).then(response => {
-    return response.data;
-  });
+  return await api
+    .post("/FileInfo/AddFiles", fileInfos, {
+      headers: { "Content-type": "multipart/form-data" }
+    })
+    .then(response => {
+      return response.data;
+    });
 };
 
 const moveToTrash = async fileIds => {

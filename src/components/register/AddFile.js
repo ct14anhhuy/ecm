@@ -6,7 +6,6 @@ import shortid from "shortid";
 import SelectFile from "./SelectFile";
 import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
-import { fileToByteArray } from "utils/fileHelper";
 import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
 import {
@@ -130,7 +129,7 @@ const AddFile = props => {
       );
       return;
     }
-    let fileInfos = [];
+    const fileInfos = new FormData();
     const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION
@@ -142,17 +141,27 @@ const AddFile = props => {
     const fileShares = [...viewEmps, ...editEmps];
     if (state.files) {
       const { owner, tag, directoryId, securityLevel } = state;
-      fileInfos = await Promise.all(
-        state.files.map(async file => ({
-          name: file.fileName,
-          owner: owner.id,
-          tag,
-          directoryId,
-          securityLevel,
-          fileShares,
-          fileData: await fileToByteArray(file.data)
-        }))
-      );
+
+      fileInfos.append("ownerId", owner.id);
+      fileInfos.append("tag", tag);
+      fileInfos.append("directoryId", directoryId);
+      fileInfos.append("securityLevel", securityLevel);
+
+      for (let idx = 0; idx < fileShares.length; idx++) {
+        fileInfos.append(
+          `fileShares[${idx}].EmployeeId`,
+          fileShares[idx].employeeId
+        );
+        fileInfos.append(
+          `fileShares[${idx}].Permission`,
+          fileShares[idx].permission
+        );
+      }
+
+      for (let idx = 0; idx < state.files.length; idx++) {
+        fileInfos.append(`files[${idx}]`, state.files[idx].data);
+        fileInfos.append(`fileNames[${idx}]`, state.files[idx].fileName);
+      }
     }
     addFiles(fileInfos);
   };
