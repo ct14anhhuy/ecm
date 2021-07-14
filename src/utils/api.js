@@ -28,7 +28,7 @@ api.interceptors.request.use(
 );
 
 api.interceptors.response.use(
-  response => response,
+  response => response.data,
   error => {
     const UNAUTHORIZED_STATUS = 401;
     if (error.response.status === UNAUTHORIZED_STATUS) {
