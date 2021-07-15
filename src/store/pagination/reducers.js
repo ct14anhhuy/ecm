@@ -1,4 +1,5 @@
 import * as types from "./types";
+import produce from "immer";
 
 const initState = {
   currentPage: 1,
@@ -8,21 +9,27 @@ const initState = {
   pageNeighbours: 0
 };
 
-const paginationReducers = (state = initState, action) => {
-  switch (action.type) {
-    case types.UPDATE_CURRENT_PAGE:
-      return { ...state, currentPage: action.payload.currentPage };
-    case types.UPDATE_PAGE_LIMIT:
-      return { ...state, pageLimit: action.payload.pageLimit };
-    case types.UPDATE_PAGE_NEIGHBOURS:
-      return { ...state, pageNeighbours: action.payload.pageNeighbours };
-    case types.UPDATE_TOTAL_PAGES:
-      return { ...state, totalPages: action.payload.totalPages };
-    case types.UPDATE_TOTAL_RECORDS:
-      return { ...state, totalRecords: action.payload.totalRecords };
-    default:
-      return state;
-  }
-};
+const paginationReducers = (state = initState, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case types.UPDATE_CURRENT_PAGE:
+        draft.currentPage = action.payload.currentPage;
+        break;
+      case types.UPDATE_PAGE_LIMIT:
+        draft.pageLimit = action.payload.pageLimit;
+        break;
+      case types.UPDATE_PAGE_NEIGHBOURS:
+        draft.pageNeighbours = action.payload.pageNeighbours;
+        break;
+      case types.UPDATE_TOTAL_PAGES:
+        draft.totalPages = action.payload.totalPages;
+        break;
+      case types.UPDATE_TOTAL_RECORDS:
+        draft.totalRecords = action.payload.totalRecords;
+        break;
+      default:
+        return state;
+    }
+  });
 
 export default paginationReducers;

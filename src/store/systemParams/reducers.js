@@ -1,4 +1,5 @@
 import * as types from "./types";
+import produce from "immer";
 
 const initState = {
   headerPath: "My Contents",
@@ -15,36 +16,40 @@ const initState = {
   editItem: {}
 };
 
-const systemParamsReducers = (state = initState, action) => {
-  switch (action.type) {
-    case types.CHANGE_HEADER_PATH:
-      return { ...state, headerPath: action.payload.path };
-    case types.CHANGE_MENU_ACTIVE:
-      return { ...state, menuActive: action.payload.shortcutActive };
-    case types.CHANGE_CURRENT_DIRECTORY:
-      return {
-        ...state,
-        currentDirectory: {
-          ...state.currentDirectory,
-          id: action.payload.id,
-          isRoot: action.payload.isRoot
-        }
-      };
-    case types.CHANGE_SHOW_ADD_FILE:
-      return { ...state, showAddFile: !state.showAddFile };
-    case types.CHANGE_SHOW_EDIT_FILE:
-      return { ...state, showEditFile: !state.showEditFile };
-    case types.CHANGE_SHOW_CREATE_DIRECTORY:
-      return { ...state, showCreateDirectory: !state.showCreateDirectory };
-    case types.CHANGE_SHOW_OPEN_CONTENT:
-      return { ...state, showOpenContent: !state.showOpenContent };
-    case types.CHANGE_SELECTED_ITEM:
-      return { ...state, selectedItem: action.payload.selectedItem };
-    case types.CHANGE_EDIT_ITEM:
-      return { ...state, editItem: action.payload.editItem };
-    default:
-      return state;
-  }
-};
+const systemParamsReducers = (state = initState, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case types.CHANGE_HEADER_PATH:
+        draft.headerPath = action.payload.path;
+        break;
+      case types.CHANGE_MENU_ACTIVE:
+        draft.menuActive = action.payload.shortcutActive;
+        break;
+      case types.CHANGE_CURRENT_DIRECTORY:
+        draft.currentDirectory.id = action.payload.id;
+        draft.currentDirectory.isRoot = action.payload.isRoot;
+        break;
+      case types.CHANGE_SHOW_ADD_FILE:
+        draft.showAddFile = !draft.showAddFile;
+        break;
+      case types.CHANGE_SHOW_EDIT_FILE:
+        draft.showEditFile = !draft.showEditFile;
+        break;
+      case types.CHANGE_SHOW_CREATE_DIRECTORY:
+        draft.showCreateDirectory = !draft.showCreateDirectory;
+        break;
+      case types.CHANGE_SHOW_OPEN_CONTENT:
+        draft.showOpenContent = !draft.showOpenContent;
+        break;
+      case types.CHANGE_SELECTED_ITEM:
+        draft.selectedItem = action.payload.selectedItem;
+        break;
+      case types.CHANGE_EDIT_ITEM:
+        draft.editItem = action.payload.editItem;
+        break;
+      default:
+        return state;
+    }
+  });
 
 export default systemParamsReducers;

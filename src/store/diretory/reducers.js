@@ -1,4 +1,5 @@
 import * as types from "./types";
+import produce from "immer";
 
 const initState = {
   data: [],
@@ -7,35 +8,35 @@ const initState = {
   error: ""
 };
 
-const directoryReducers = (state = initState, action) => {
-  switch (action.type) {
-    case types.GET_DIRECTORIES:
-      return { ...state, data: action.payload.directories };
-    case types.DELETE_DIRECTORY: {
-      const deleteIds = action.payload.id;
-      const newState = state.data.filter(f => f.id !== deleteIds);
-      return { ...state, data: newState };
+const directoryReducers = (state = initState, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case types.GET_DIRECTORIES:
+        draft.data = action.payload.directories;
+        break;
+      case types.DELETE_DIRECTORY: {
+        draft.data = draft.data.filter(f => f.id !== action.payload.id);
+        break;
+      }
+      case types.BEGIN_UPDATE_DIRECTORY:
+        draft.loading = true;
+        draft.done = false;
+        draft.error = "";
+        break;
+      case types.UPDATE_DIRECTORY_SUCCESS:
+        draft.loading = false;
+        draft.done = true;
+        draft.error = "";
+        draft.data.push(action.payload.directory);
+        break;
+      case types.UPDATE_DIRECTORY_FAILURE:
+        draft.loading = false;
+        draft.done = true;
+        draft.error = action.payload.error;
+        break;
+      default:
+        return state;
     }
-    case types.BEGIN_UPDATE_DIRECTORY:
-      return { ...state, loading: true, done: false, error: "" };
-    case types.UPDATE_DIRECTORY_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        done: true,
-        error: "",
-        data: [...state.data, action.payload.directory]
-      };
-    case types.UPDATE_DIRECTORY_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        done: true,
-        error: action.payload.error
-      };
-    default:
-      return state;
-  }
-};
+  });
 
 export default directoryReducers;

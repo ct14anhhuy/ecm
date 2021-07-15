@@ -1,4 +1,5 @@
 import * as types from "./types";
+import produce from "immer";
 
 const initState = {
   data: [],
@@ -7,95 +8,85 @@ const initState = {
   error: ""
 };
 
-const fileInfoReducers = (state = initState, action) => {
-  switch (action.type) {
-    case types.GET_MY_CONTENTS:
-    case types.GET_IMPORTANT_CONTENTS:
-    case types.GET_FAVORITE_CONTENTS:
-    case types.GET_SHARED_CONTENTS:
-    case types.GET_DEPARTMENT_CONTENTS:
-    case types.GET_TRASH_CONTENTS:
-    case types.GET_CONTENTS_FROM_PATH:
-    case types.SEARCH_CONTENTS:
-      return { ...state, data: [...action.payload.fileInfos] };
-    case types.CHANGE_FAVORITE: {
-      const prevState = [...state.data];
-      const editId = prevState.findIndex(f => f.id === action.payload.id);
-      prevState[editId] = {
-        ...state.data[editId],
-        isFavorite: !prevState[editId].isFavorite
-      };
-      return { ...state, data: prevState };
+const fileInfoReducers = (state = initState, action) =>
+  produce(state, draft => {
+    switch (action.type) {
+      case types.GET_MY_CONTENTS:
+      case types.GET_IMPORTANT_CONTENTS:
+      case types.GET_FAVORITE_CONTENTS:
+      case types.GET_SHARED_CONTENTS:
+      case types.GET_DEPARTMENT_CONTENTS:
+      case types.GET_TRASH_CONTENTS:
+      case types.GET_CONTENTS_FROM_PATH:
+      case types.SEARCH_CONTENTS:
+        draft.data = action.payload.fileInfos;
+        break;
+      case types.CHANGE_FAVORITE: {
+        const editId = draft.data.findIndex(f => f.id === action.payload.id);
+        draft.data[editId].isFavorite = !draft.data[editId].isFavorite;
+        break;
+      }
+      case types.CHANGE_IMPORTANT: {
+        const editId = draft.data.findIndex(f => f.id === action.payload.id);
+        draft.data[editId].isImportant = !draft.data[editId].isImportant;
+        break;
+      }
+      case types.CHANGE_CHECKED: {
+        const editId = draft.data.findIndex(f => f.id === action.payload.id);
+        draft.data[editId].checked = action.payload.checked;
+        break;
+      }
+      case types.SELECT_MULTI: {
+        const editIds = action.payload.fileIds;
+        draft.data = draft.data.map(f =>
+          editIds.includes(f.id)
+            ? { ...f, checked: action.payload.checked }
+            : { ...f, checked: false }
+        );
+        break;
+      }
+      case types.MOVE_TO_TRASH: {
+        const removeIds = action.payload.fileIds;
+        draft.data = draft.data.filter(f => !removeIds.includes(f.id));
+        break;
+      }
+      case types.RECOVER_FILE: {
+        const recoverIds = action.payload.fileIds;
+        draft.data = draft.data.filter(f => !recoverIds.includes(f.id));
+        break;
+      }
+      case types.DELETE_FILE: {
+        const deleteIds = action.payload.fileIds;
+        draft.data = draft.data.filter(f => !deleteIds.includes(f.id));
+        break;
+      }
+      case types.EDIT_FILE: {
+        const fileInfo = action.payload.fileInfo;
+        const editId = draft.data.findIndex(f => f.id === fileInfo.id);
+        draft.data[editId].name = fileInfo.name;
+        draft.data[editId].directoryId = fileInfo.directoryId;
+        draft.data[editId].securityLevel = fileInfo.securityLevel;
+        draft.data[editId].tag = fileInfo.tag;
+        break;
+      }
+      case types.BEGIN_UPDATE_FILE:
+        draft.loading = true;
+        draft.done = false;
+        draft.error = "";
+        break;
+      case types.UPDATE_FILE_SUCCESS:
+        draft.loading = false;
+        draft.done = true;
+        draft.error = "";
+        break;
+      case types.UPDATE_FILE_FAILURE:
+        draft.loading = false;
+        draft.done = true;
+        draft.error = action.payload.error;
+        break;
+      default:
+        return state;
     }
-    case types.CHANGE_IMPORTANT: {
-      const prevState = [...state.data];
-      const editId = prevState.findIndex(f => f.id === action.payload.id);
-      prevState[editId] = {
-        ...prevState[editId],
-        isImportant: !prevState[editId].isImportant
-      };
-      return { ...state, data: prevState };
-    }
-    case types.CHANGE_CHECKED: {
-      const prevState = [...state.data];
-      const editId = prevState.findIndex(f => f.id === action.payload.id);
-      prevState[editId] = {
-        ...prevState[editId],
-        checked: action.payload.checked
-      };
-      return { ...state, data: prevState };
-    }
-    case types.SELECT_MULTI: {
-      const editIds = action.payload.fileIds;
-      const newState = state.data.map(f =>
-        editIds.includes(f.id)
-          ? { ...f, checked: action.payload.checked }
-          : { ...f, checked: false }
-      );
-      return { ...state, data: newState };
-    }
-    case types.MOVE_TO_TRASH: {
-      const removeIds = action.payload.fileIds;
-      const newState = state.data.filter(f => !removeIds.includes(f.id));
-      return { ...state, data: newState };
-    }
-    case types.RECOVER_FILE: {
-      const recoverIds = action.payload.fileIds;
-      const newState = state.data.filter(f => !recoverIds.includes(f.id));
-      return { ...state, data: newState };
-    }
-    case types.DELETE_FILE: {
-      const deleteIds = action.payload.fileIds;
-      const newState = state.data.filter(f => !deleteIds.includes(f.id));
-      return { ...state, data: newState };
-    }
-    case types.EDIT_FILE: {
-      const editState = [...state.data];
-      const fileInfo = action.payload.fileInfo;
-      const editId = editState.findIndex(f => f.id === fileInfo.id);
-      editState[editId] = {
-        ...editState[editId],
-        name: fileInfo.name,
-        directoryId: fileInfo.directoryId,
-        securityLevel: fileInfo.securityLevel,
-        tag: fileInfo.tag
-      };
-      return { ...state, data: editState };
-    }
-    case types.BEGIN_UPDATE_FILE:
-      return { ...state, loading: true, done: false, error: "" };
-    case types.UPDATE_FILE_SUCCESS:
-      return { ...state, loading: false, done: true, error: "" };
-    case types.UPDATE_FILE_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        done: true,
-        error: action.payload.error
-      };
-    default:
-      return state;
-  }
-};
+  });
 
 export default fileInfoReducers;
