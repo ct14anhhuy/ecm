@@ -15,7 +15,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { GetBackgroundIconFromExtension } from "./common/GetBackgroundIconFromExtension";
-import { ROUTE_TRASH_CONTENTS } from "utils/commonConstants";
+import { ROUTE_TRASH_CONTENTS } from "constants/routePaths";
 
 const MainTableItem = props => {
   const { path } = useParams();

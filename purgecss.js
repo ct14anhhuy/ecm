@@ -4,7 +4,7 @@ const fs = require("fs");
 (async () => {
   const results = await new PurgeCSS().purge("./purgecss.config.js");
 
-  results.forEach((result) => {
+  results.forEach(result => {
     const { css, file } = result;
 
     fs.stat(file, (error, originalFileStats) => {

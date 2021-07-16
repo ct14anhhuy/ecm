@@ -12,7 +12,7 @@ import {
   EDIT_PERMISSION,
   SPECIAL_CHARACTER,
   VIEW_PERMISSION
-} from "utils/commonConstants";
+} from "constants/commonConstants";
 import swal from "sweetalert";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 

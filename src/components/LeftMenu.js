@@ -20,7 +20,7 @@ import {
   ROUTE_MY_CONTENTS,
   ROUTE_SHARED_CONTENTS,
   ROUTE_TRASH_CONTENTS
-} from "utils/commonConstants";
+} from "constants/routePaths";
 
 const LeftMenu = props => {
   const history = useHistory();

@@ -13,7 +13,7 @@ import {
   VIEW_PERMISSION,
   EDIT_PERMISSION,
   SPECIAL_CHARACTER
-} from "utils/commonConstants";
+} from "constants/commonConstants";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
 import styles from "assets/css/modules/AddEdit.module.css";

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
-import * as exts from "utils/extTypes";
+import * as exts from "constants/extTypes";
 import { selectMultiAction } from "store/fileInfo/actions";
 import {
   updateCurrentPageAction,

@@ -1,4 +1,4 @@
-import { SPECIAL_CHARACTER } from "./commonConstants";
+import { SPECIAL_CHARACTER } from "constants/commonConstants";
 
 export const checkContainSpecialCharacters = inp => {
   for (let i = 0; i < SPECIAL_CHARACTER.length; i++) {

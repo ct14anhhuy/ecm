@@ -1,4 +1,4 @@
-import * as exts from "utils/extTypes";
+import * as exts from "constants/extTypes";
 
 export const GetBackgroundIconFromExtension = fileName => {
   const extension = fileName.split(".").pop().toLowerCase();

@@ -7,13 +7,13 @@ import {
   recoverFileAction,
   deleteFileAction
 } from "store/fileInfo/actions";
-import { deleteDirectoryAction } from "store/diretory/actions";
+import { deleteDirectoryAction } from "store/directory/actions";
 import {
   changeShowAddFileAction,
   changeShowCreateDirectoryAction
 } from "store/systemParams/actions";
 import swal from "sweetalert";
-import { ROUTE_TRASH_CONTENTS } from "utils/commonConstants";
+import { ROUTE_TRASH_CONTENTS } from "constants/routePaths";
 
 const OptionBox = props => {
   const { path } = useParams();

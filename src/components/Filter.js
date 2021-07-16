@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import * as exts from "utils/extTypes";
+import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
 import { updatePageLimitAction } from "store/pagination/actions";
 

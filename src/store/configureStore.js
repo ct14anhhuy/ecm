@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import fileInfoReducers from "./fileInfo/reducers";
-import directoryReducers from "./diretory/reducers";
+import directoryReducers from "./directory/reducers";
 import departmentReducers from "./department/reducers";
 import userReducers from "./user/reducers";
 import employeeReducers from "./employee/reducers";

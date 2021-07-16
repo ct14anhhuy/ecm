@@ -3,7 +3,7 @@ import Frame from "react-frame-component";
 import { Link } from "react-router-dom";
 import TreeView from "./TreeView";
 import { connect } from "react-redux";
-import { createDirectoryAction } from "store/diretory/actions";
+import { createDirectoryAction } from "store/directory/actions";
 import { changeShowCreateDirectoryAction } from "store/systemParams/actions";
 import swal from "sweetalert";
 

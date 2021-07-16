@@ -5,10 +5,10 @@ module.exports = function (grunt) {
         files: [
           "src/assets/css/*.css",
           "src/components/*.css",
-          "src/components/**/*.css"
+          "src/components/**/*.css",
         ],
-        tasks: ["default"]
-      }
+        tasks: ["default"],
+      },
     },
     cssmin: {
       options: {
@@ -17,9 +17,9 @@ module.exports = function (grunt) {
         level: {
           2: {
             removeDuplicateRules: true,
-            removeUnusedAtRules: true
-          }
-        }
+            removeUnusedAtRules: true,
+          },
+        },
       },
       AddEditModule: {
         files: {
@@ -27,9 +27,9 @@ module.exports = function (grunt) {
             "src/assets/css/layout.css",
             "src/assets/css/calenda.css",
             "src/assets/css/ecm_popup.css",
-            "src/components/register/AddEdit.css"
-          ]
-        }
+            "src/components/register/AddEdit.css",
+          ],
+        },
       },
       RoleAssignEditModule: {
         files: {
@@ -37,17 +37,17 @@ module.exports = function (grunt) {
             "src/assets/css/layout.css",
             "src/assets/css/ecm_popup.css",
             "src/assets/css/popColumnR.css",
-            "src/components/register/RoleAssignEdit.css"
-          ]
-        }
+            "src/components/register/RoleAssignEdit.css",
+          ],
+        },
       },
       LeftMenuModule: {
         files: {
           "src/assets/css/modules/LeftMenu.module.css": [
             "src/assets/css/layout.css",
-            "src/components/LeftMenu.css"
-          ]
-        }
+            "src/components/LeftMenu.css",
+          ],
+        },
       },
       CreateDirectoryModule: {
         files: {
@@ -55,20 +55,20 @@ module.exports = function (grunt) {
             "src/assets/css/layout.css",
             "src/assets/css/ecm_popup.css",
             "src/assets/css/calenda.css",
-            "src/components/CreateDirectory.css"
-          ]
-        }
+            "src/components/CreateDirectory.css",
+          ],
+        },
       },
       OpenContentModule: {
         files: {
           "src/assets/css/modules/OpenContent.module.css": [
             "src/assets/css/layout.css",
             "src/assets/css/popup.css",
-            "src/assets/css/contents.css"
-          ]
-        }
-      }
-    }
+            "src/assets/css/contents.css",
+          ],
+        },
+      },
+    },
   });
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
