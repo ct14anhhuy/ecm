@@ -121,6 +121,7 @@ const AddFile = props => {
   }, [changeShowAddFile, fileInfos.done, fileInfos.error, history]);
 
   const handleAddFiles = async () => {
+    if (state.files.length === 0) return;
     if (state.files.filter(f => !f.isValid).length > 0) {
       swal(
         "Invalid!",
