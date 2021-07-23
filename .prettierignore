@@ -4,7 +4,4 @@ package-lock.json
 yarn.lock
 package.json
 
-purgecss.js
-purgecss.config.js
-Gruntfile.js
 /src/assets/css/modules

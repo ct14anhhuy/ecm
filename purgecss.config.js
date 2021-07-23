@@ -3,5 +3,5 @@ module.exports = {
   css: ["./build/**/*.css"],
   fontFace: true,
   keyframes: true,
-  variables: true,
+  variables: true
 };

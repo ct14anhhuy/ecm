@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js && node ./purgecss",
-    "lint": "eslint --ext js,jsx src/",
-    "lint:fix": "eslint --fix --ext js,jsx src/",
+    "lint": "eslint --ext js,jsx ./",
+    "lint:fix": "eslint --fix --ext js,jsx ./",
     "prettier": "prettier --check \"src/**/(*.jsx|*.js|*.scss|*.css)\"",
     "prettier:fix": "prettier --write \"src/**/(*.jsx|*.js|*.scss|*.css)\""
   },
