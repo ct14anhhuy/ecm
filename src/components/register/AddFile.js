@@ -8,6 +8,8 @@ import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
 import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
+import * as exts from "constants/extTypes";
+import { extractFileExts } from "utils/stringHelper";
 import {
   EDIT_PERMISSION,
   SPECIAL_CHARACTER,
@@ -251,7 +253,7 @@ const AddFile = props => {
                       id="file"
                       ref={fileRef}
                       style={{ display: "none" }}
-                      accept=".doc,.docx,.xls,.xlsx,.xlsm,.xlsb,.xltx,.xltm,.csv,.ppt,.pptx,.pdf,.jpg,.gif,.png,.jpeg,.dwg,.dwt,.dxf"
+                      accept={extractFileExts(exts)}
                       onChange={handleSelectFiles}
                       multiple
                     />

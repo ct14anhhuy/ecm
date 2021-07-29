@@ -108,6 +108,19 @@ const Filter = props => {
             />
           </Link>
         </li>
+        <li>
+          <Link to="#" onClick={() => setFilterExt(exts.VIDEO)}>
+            <img
+              alt=""
+              title="Video"
+              src={
+                filterExt === exts.VIDEO || filterExt === exts.ALL
+                  ? require("assets/img/main/ico/ico_tv_on.png").default
+                  : require("assets/img/main/ico/ico_tv_off.png").default
+              }
+            />
+          </Link>
+        </li>
       </ul>
       <div className="viewCountBtnWrap">
         <div className="mainViewCount">

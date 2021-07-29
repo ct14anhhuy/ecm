@@ -8,3 +8,11 @@ export const checkContainSpecialCharacters = inp => {
   }
   return false;
 };
+
+export const extractFileExts = obj => {
+  let types = [];
+  for (const val of Object.values(obj)) {
+    types = [...types, ...val];
+  }
+  return types.map(t => "." + t).join(",");
+};

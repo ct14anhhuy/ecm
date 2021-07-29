@@ -14,6 +14,8 @@ export const GetBackgroundIconFromExtension = fileName => {
     return require("assets/img/main/ico/ico_pdf_on.png").default;
   } else if (exts.CAD.includes(extension)) {
     return require("assets/img/main/ico/ico_cad_on.png").default;
+  } else if (exts.VIDEO.includes(extension)) {
+    return require("assets/img/main/ico/ico_tv_on.png").default;
   } else {
     return require("assets/img/main/ico/ico_all_on.png").default;
   }
