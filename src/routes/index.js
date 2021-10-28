@@ -38,13 +38,12 @@ export const route = (path, id, directories) => {
     case ROUTE_TRASH_CONTENTS:
       store.dispatch(getTrashContentsAction());
       break;
-    case ROUTE_DIRECTORY_PATH: {
+    case ROUTE_DIRECTORY_PATH:
       const validId = directories.filter(x => id.includes(x.id));
       if (validId.length > 0) {
         store.dispatch(getContentsFromPathAction(id));
       }
       break;
-    }
     default:
       break;
   }

@@ -12,8 +12,8 @@ const OpenContent = props => {
   const { selectedItem } = props.systemParams;
 
   const actions = {
-    Edit: "Edit",
-    View: "View"
+    EDIT: "EDIT",
+    VIEW: "VIEW"
   };
 
   useEffect(() => {
@@ -24,10 +24,11 @@ const OpenContent = props => {
     const action = e.target.innerText;
     const link = document.createElement("a");
     switch (action) {
-      case actions.Edit:
+      case actions.EDIT:
         link.href = `ECMProtocol: ${editUrl}`;
         break;
-      case actions.View:
+      case actions.VIEW:
+        link.href = `ECMProtocol: ${viewUrl}`;
         link.href = `ECMProtocol: ${viewUrl}`;
         break;
       default:
@@ -112,11 +113,11 @@ const OpenContent = props => {
               </div>
               <p className={styles.btnBox}>
                 {editUrl ? (
-                  <span onClick={handleLinkClick}>{actions.Edit}</span>
+                  <span onClick={handleLinkClick}>{actions.EDIT}</span>
                 ) : (
-                  <span className={styles.grayB}>{actions.Edit}</span>
+                  <span className={styles.grayB}>{actions.EDIT}</span>
                 )}
-                <span onClick={handleLinkClick}>{actions.View}</span>
+                <span onClick={handleLinkClick}>{actions.VIEW}</span>
               </p>
             </div>
           </div>
