@@ -29,7 +29,6 @@ const OpenContent = props => {
         break;
       case actions.VIEW:
         link.href = `ECMProtocol: ${viewUrl}`;
-        link.href = `ECMProtocol: ${viewUrl}`;
         break;
       default:
         return;
