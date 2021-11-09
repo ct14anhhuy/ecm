@@ -12,8 +12,8 @@ const OpenContent = props => {
   const { selectedItem } = props.systemParams;
 
   const actions = {
-    EDIT: "EDIT",
-    VIEW: "VIEW"
+    EDIT: "Edit",
+    VIEW: "View"
   };
 
   useEffect(() => {
