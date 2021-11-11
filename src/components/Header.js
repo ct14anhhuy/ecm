@@ -19,7 +19,7 @@ const Header = props => {
         <div className="minWidth">
           <div className="topLt">
             <h1 className="logo">
-              <Link className="logo_ci" to="/ecm/my-contents">
+              <Link className="logo_ci" to="/ecm/my-contents/1">
                 <img
                   alt=""
                   src={
@@ -28,7 +28,7 @@ const Header = props => {
                   }
                 />
               </Link>
-              <Link className="logo_sys" to="/ecm/my-contents">
+              <Link className="logo_sys" to="/ecm/my-contents/1">
                 <img
                   alt=""
                   src={require("assets/img/layout/logo_ecm.png").default}
