@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Switch>
       <Route path="/redirect/:token" component={Login} />
-      <PrivateRoute path="/ecm/:path/:id?">
+      <PrivateRoute path={["/ecm/:path/:dirId/:page", "/ecm/:path/:page"]}>
         <Main />
       </PrivateRoute>
       <Route path="/refresh" exact component={Refresh} />

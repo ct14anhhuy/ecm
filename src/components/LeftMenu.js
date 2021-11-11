@@ -40,7 +40,7 @@ const LeftMenu = props => {
   const handleOnSelect = (id, path, isRoot) => {
     changeHeaderPath(path);
     setSelectedDirectory({ id, isRoot });
-    history.push(`/ecm/${ROUTE_DIRECTORY_PATH}/${id}`);
+    history.push(`/ecm/${ROUTE_DIRECTORY_PATH}/${id}/1`);
   };
 
   const getNavLinkClass = urlPath => {
@@ -88,7 +88,7 @@ const LeftMenu = props => {
           <li className={getNavLinkClass(ROUTE_MY_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
-              to={`/ecm/${ROUTE_MY_CONTENTS}`}
+              to={`/ecm/${ROUTE_MY_CONTENTS}/1`}
               className={styles.btn_01}
               onClick={e => changeHeaderPath(e.target.innerText)}
             >
@@ -98,7 +98,7 @@ const LeftMenu = props => {
           <li className={getNavLinkClass(ROUTE_IMPORTANT_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
-              to={`/ecm/${ROUTE_IMPORTANT_CONTENTS}`}
+              to={`/ecm/${ROUTE_IMPORTANT_CONTENTS}/1`}
               className={styles.btn_30}
               onClick={e => changeHeaderPath(e.target.innerText)}
             >
@@ -108,7 +108,7 @@ const LeftMenu = props => {
           <li className={getNavLinkClass(ROUTE_FAVORITE_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
-              to={`/ecm/${ROUTE_FAVORITE_CONTENTS}`}
+              to={`/ecm/${ROUTE_FAVORITE_CONTENTS}/1`}
               className={styles.btn_06}
               onClick={e => changeHeaderPath(e.target.innerText)}
             >
@@ -118,7 +118,7 @@ const LeftMenu = props => {
           <li className={getNavLinkClass(ROUTE_SHARED_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
-              to={`/ecm/${ROUTE_SHARED_CONTENTS}`}
+              to={`/ecm/${ROUTE_SHARED_CONTENTS}/1`}
               className={styles.btn_07}
               onClick={e => changeHeaderPath(e.target.innerText)}
             >
@@ -128,7 +128,7 @@ const LeftMenu = props => {
           <li className={getNavLinkClass(ROUTE_DEPARTMENT_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
-              to={`/ecm/${ROUTE_DEPARTMENT_CONTENTS}`}
+              to={`/ecm/${ROUTE_DEPARTMENT_CONTENTS}/1`}
               className={styles.btn_16}
               onClick={e => changeHeaderPath(e.target.innerText)}
             >
@@ -138,7 +138,7 @@ const LeftMenu = props => {
           <li className={getNavLinkClass(ROUTE_TRASH_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
-              to={`/ecm/${ROUTE_TRASH_CONTENTS}`}
+              to={`/ecm/${ROUTE_TRASH_CONTENTS}/1`}
               className={styles.btn_rcb}
               onClick={e => changeHeaderPath(e.target.innerText)}
             >

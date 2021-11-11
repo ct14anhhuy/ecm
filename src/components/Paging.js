@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateCurrentPageAction } from "store/pagination/actions";
+import { useParams } from "react-router-dom";
 
 const Paging = props => {
-  const { currentPage, totalPages, pageNeighbours } = props.pagination;
-
-  const { updateCurrentPage } = props;
-
   const LEFT_PAGE = "LEFT";
   const RIGHT_PAGE = "RIGHT";
+  const { path, dirId } = useParams();
+  const { pageIndex, pageSize, totalRows } = props.paginationSet;
 
   const range = (from, to, step = 1) => {
     let i = from;
@@ -20,21 +18,14 @@ const Paging = props => {
     return range;
   };
 
-  const handleMoveLeft = () => {
-    updateCurrentPage(currentPage - pageNeighbours * 2 - 1);
-  };
-
-  const handleMoveRight = () => {
-    updateCurrentPage(currentPage + pageNeighbours * 2 + 1);
-  };
-
   const fetchPageNumbers = () => {
+    const pageNeighbours = 0;
     const totalNumbers = pageNeighbours * 2 + 3;
     const totalBlocks = totalNumbers + 2;
-
+    const totalPages = Math.ceil(totalRows / pageSize);
     if (totalPages > totalBlocks) {
-      const startPage = Math.max(2, currentPage - pageNeighbours);
-      const endPage = Math.min(totalPages - 1, currentPage + pageNeighbours);
+      const startPage = Math.max(2, pageIndex - pageNeighbours);
+      const endPage = Math.min(totalPages - 1, pageIndex + pageNeighbours);
       let pages = range(startPage, endPage);
       const hasLeftSpill = startPage > 2;
       const hasRightSpill = totalPages - endPage > 1;
@@ -70,7 +61,14 @@ const Paging = props => {
         {pages.map((page, index) => {
           if (page === LEFT_PAGE) {
             return (
-              <Link to="#" onClick={handleMoveLeft} key={index}>
+              <Link
+                to={{
+                  pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${
+                    pageIndex - 1
+                  }`
+                }}
+                key={index}
+              >
                 {"<"}
               </Link>
             );
@@ -78,16 +76,24 @@ const Paging = props => {
 
           if (page === RIGHT_PAGE) {
             return (
-              <Link to="#" onClick={handleMoveRight} key={index}>
+              <Link
+                to={{
+                  pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${
+                    pageIndex + 1
+                  }`
+                }}
+                key={index}
+              >
                 {">"}
               </Link>
             );
           }
           return (
             <Link
-              className={currentPage === page ? "act" : ""}
-              to="#"
-              onClick={() => updateCurrentPage(page)}
+              className={page === pageIndex ? "act" : ""}
+              to={{
+                pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${page}`
+              }}
               key={index}
             >
               {page}
@@ -101,16 +107,8 @@ const Paging = props => {
 
 const mapStateToProps = state => {
   return {
-    fileInfos: state.fileInfoReducers,
-    pagination: state.paginationReducers
+    paginationSet: state.fileInfoReducers.paginationSet
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateCurrentPage: currentPage =>
-      dispatch(updateCurrentPageAction(currentPage))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Paging);
+export default connect(mapStateToProps, null)(Paging);

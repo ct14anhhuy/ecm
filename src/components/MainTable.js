@@ -1,28 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
 import * as exts from "constants/extTypes";
 import { selectMultiAction } from "store/fileInfo/actions";
-import {
-  updateCurrentPageAction,
-  updatePageNeighboursAction,
-  updateTotalPagesAction,
-  updateTotalRecordsAction
-} from "store/pagination/actions";
 
 const MainTable = props => {
-  const firstUpdate = useRef(true);
   const [fileInfos, setFileInfos] = useState(props.fileInfos);
   const [selectAll, setSelectAll] = useState(false);
-  const [currentFiles, setCurrentFiles] = useState([]);
-  const {
-    updateCurrentPage,
-    updateTotalRecords,
-    updateTotalPages,
-    updatePageNeighbours
-  } = props;
-  const { pageLimit, currentPage, pageNeighbours } = props.pagination;
 
   useEffect(() => {
     const fe = props.filterExt;
@@ -41,34 +26,8 @@ const MainTable = props => {
     }
   }, [props.fileInfos, props.filterExt]);
 
-  useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
-      return;
-    }
-    const FIRST_PAGE = 1;
-    const totalRecords = fileInfos.length;
-    const totalPages = Math.ceil(totalRecords / pageLimit);
-    const offset = (currentPage - 1) * pageLimit;
-    const currentFiles = fileInfos.slice(offset, offset + pageLimit);
-    updateTotalRecords(totalRecords);
-    updateTotalPages(totalPages);
-    updatePageNeighbours(Math.max(0, Math.min(pageNeighbours, 2)));
-    updateCurrentPage(totalRecords < pageLimit ? FIRST_PAGE : currentPage);
-    setCurrentFiles(currentFiles);
-  }, [
-    currentPage,
-    fileInfos,
-    pageLimit,
-    pageNeighbours,
-    updateCurrentPage,
-    updatePageNeighbours,
-    updateTotalPages,
-    updateTotalRecords
-  ]);
-
   const handleSelectAll = checked => {
-    const fileIds = currentFiles.map(f => f.id);
+    const fileIds = fileInfos.map(f => f.id);
     setSelectAll(checked);
     props.selectMulti(fileIds, checked);
   };
@@ -129,7 +88,7 @@ const MainTable = props => {
         </tr>
       </thead>
       <tbody>
-        {currentFiles.map(fileInfo => (
+        {fileInfos.map(fileInfo => (
           <MainTableItem key={fileInfo.id} fileInfo={fileInfo} />
         ))}
       </tbody>
@@ -139,20 +98,12 @@ const MainTable = props => {
 
 const mapStateToProps = state => {
   return {
-    fileInfos: state.fileInfoReducers.data,
-    pagination: state.paginationReducers
+    fileInfos: state.fileInfoReducers.data
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateCurrentPage: page => dispatch(updateCurrentPageAction(page)),
-    updateTotalRecords: totalRecords =>
-      dispatch(updateTotalRecordsAction(totalRecords)),
-    updateTotalPages: totalPages =>
-      dispatch(updateTotalPagesAction(totalPages)),
-    updatePageNeighbours: pageNeighbours =>
-      dispatch(updatePageNeighboursAction(pageNeighbours)),
     selectMulti: (fileIds, checked) =>
       dispatch(selectMultiAction(fileIds, checked))
   };

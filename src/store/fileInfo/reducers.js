@@ -2,6 +2,11 @@ import * as types from "./types";
 import produce from "immer";
 
 const initState = {
+  paginationSet: {
+    pageIndex: 1,
+    pageSize: 15,
+    totalRows: 100
+  },
   data: [],
   loading: false,
   done: false,
@@ -20,6 +25,9 @@ const fileInfoReducers = (state = initState, action) =>
       case types.GET_CONTENTS_FROM_PATH:
       case types.SEARCH_CONTENTS:
         draft.data = action.payload.fileInfos;
+        draft.paginationSet.pageIndex = action.payload.pagedSet.pageIndex;
+        draft.paginationSet.pageSize = action.payload.pagedSet.pageSize;
+        draft.paginationSet.totalRows = action.payload.pagedSet.totalRows;
         break;
       case types.CHANGE_FAVORITE: {
         const editId = draft.data.findIndex(f => f.id === action.payload.id);
@@ -69,6 +77,9 @@ const fileInfoReducers = (state = initState, action) =>
         draft.data[editId].tag = fileInfo.tag;
         break;
       }
+      case types.UPDATE_PAGE_SIZE:
+        draft.paginationSet.pageSize = action.payload.pageSize;
+        break;
       case types.BEGIN_UPDATE_FILE:
         draft.loading = true;
         draft.done = false;

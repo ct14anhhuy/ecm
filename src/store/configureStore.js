@@ -4,7 +4,6 @@ import directoryReducers from "./directory/reducers";
 import departmentReducers from "./department/reducers";
 import userReducers from "./user/reducers";
 import employeeReducers from "./employee/reducers";
-import paginationReducers from "./pagination/reducers";
 import fileUrlReducers from "./fileUrl/reducers";
 import systemParamsReducers from "./systemParams/reducers";
 import { persistStore, persistReducer } from "redux-persist";
@@ -24,7 +23,6 @@ const rootReducer = combineReducers({
   departmentReducers,
   userReducers,
   employeeReducers,
-  paginationReducers,
   fileUrlReducers,
   systemParamsReducers
 });

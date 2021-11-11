@@ -1,17 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
-import { updatePageLimitAction } from "store/pagination/actions";
+import { updatePageSizeAction } from "store/fileInfo/actions";
 
 const Filter = props => {
-  const [showListRow, setShowListRow] = useState(false);
-  const { pageLimit, updatePageLimit, setFilterExt, filterExt } = props;
+  const history = useHistory();
 
-  const handleChangePageLimit = e => {
-    const pgLimit = parseInt(e.target.innerText);
+  const [showListRow, setShowListRow] = useState(false);
+  const { pageSize, setFilterExt, filterExt } = props;
+
+  const handleChangePageSize = e => {
+    const pageSize = parseInt(e.target.innerText);
+    props.updatePageSize(pageSize);
     setShowListRow(false);
-    updatePageLimit(pgLimit);
+    history.push("/refresh");
   };
 
   return (
@@ -131,29 +134,29 @@ const Filter = props => {
               onClick={() => setShowListRow(!showListRow)}
               to="#"
             >
-              {pageLimit}
+              {pageSize}
             </Link>
             <ul
               className="am_UlSelectize"
               style={showListRow ? { display: "block" } : { display: "none" }}
             >
               <li>
-                <Link to="#" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageSize}>
                   15
                 </Link>
               </li>
               <li>
-                <Link to="#" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageSize}>
                   30
                 </Link>
               </li>
               <li>
-                <Link to="#" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageSize}>
                   50
                 </Link>
               </li>
               <li>
-                <Link to="#" onClick={handleChangePageLimit}>
+                <Link to="#" onClick={handleChangePageSize}>
                   100
                 </Link>
               </li>
@@ -168,13 +171,13 @@ const Filter = props => {
 
 const mapStateToProps = state => {
   return {
-    pageLimit: state.paginationReducers.pageLimit
+    pageSize: state.fileInfoReducers.paginationSet.pageSize
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePageLimit: pageLimit => dispatch(updatePageLimitAction(pageLimit))
+    updatePageSize: pageSize => dispatch(updatePageSizeAction(pageSize))
   };
 };
 

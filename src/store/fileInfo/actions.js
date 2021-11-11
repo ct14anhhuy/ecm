@@ -1,14 +1,15 @@
 import * as types from "./types";
 import { fileInfoService } from "services/fileInfoService";
 
-const getMyContentsAction = () => {
+const getMyContentsAction = page => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getMyContents();
+      const obj = await fileInfoService.getMyContents(page);
       dispatch({
         type: types.GET_MY_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -17,14 +18,15 @@ const getMyContentsAction = () => {
   };
 };
 
-const getImportantContentsAction = () => {
+const getImportantContentsAction = page => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getImportantContents();
+      const obj = await fileInfoService.getImportantContents(page);
       dispatch({
         type: types.GET_IMPORTANT_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -33,14 +35,15 @@ const getImportantContentsAction = () => {
   };
 };
 
-const getFavoriteContentsAction = () => {
+const getFavoriteContentsAction = page => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getFavoriteContents();
+      const obj = await fileInfoService.getFavoriteContents(page);
       dispatch({
         type: types.GET_FAVORITE_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -49,14 +52,15 @@ const getFavoriteContentsAction = () => {
   };
 };
 
-const getSharedContentsAction = () => {
+const getSharedContentsAction = page => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getSharedContents();
+      const obj = await fileInfoService.getSharedContents(page);
       dispatch({
         type: types.GET_SHARED_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -65,14 +69,15 @@ const getSharedContentsAction = () => {
   };
 };
 
-const getDepartmentContentsAction = () => {
+const getDepartmentContentsAction = page => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getDepartmentContents();
+      const obj = await fileInfoService.getDepartmentContents(page);
       dispatch({
         type: types.GET_DEPARTMENT_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -81,14 +86,15 @@ const getDepartmentContentsAction = () => {
   };
 };
 
-const getTrashContentsAction = () => {
+const getTrashContentsAction = page => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getTrashContents();
+      const obj = await fileInfoService.getTrashContents(page);
       dispatch({
         type: types.GET_TRASH_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -97,14 +103,15 @@ const getTrashContentsAction = () => {
   };
 };
 
-const getContentsFromPathAction = dirId => {
+const getContentsFromPathAction = (dirId, page) => {
   return async dispatch => {
     try {
-      const obj = await fileInfoService.getContentsFromPath(dirId);
+      const obj = await fileInfoService.getContentsFromPath(dirId, page);
       dispatch({
         type: types.GET_CONTENTS_FROM_PATH,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -113,15 +120,16 @@ const getContentsFromPathAction = dirId => {
   };
 };
 
-const searchContentsAction = searchStr => {
+const searchContentsAction = (searchStr, page) => {
   return async dispatch => {
     try {
       if (!searchStr || searchStr.trim().length < 1) return;
-      const obj = await fileInfoService.searchContents(searchStr);
+      const obj = await fileInfoService.searchContents(searchStr, page);
       dispatch({
         type: types.SEARCH_CONTENTS,
         payload: {
-          fileInfos: injectSelected(obj.fileInfos)
+          pagedSet: obj.pagedSet,
+          fileInfos: injectSelected(obj.pagedSet.items)
         }
       });
     } catch (error) {
@@ -278,6 +286,15 @@ const editFileAction = fileInfo => {
   };
 };
 
+const updatePageSizeAction = pageSize => {
+  return {
+    type: types.UPDATE_PAGE_SIZE,
+    payload: {
+      pageSize
+    }
+  };
+};
+
 const injectSelected = fileInfos => {
   return fileInfos.map(fi => Object.assign({}, fi, { checked: false }));
 };
@@ -299,5 +316,6 @@ export {
   moveToTrashAction,
   recoverFileAction,
   deleteFileAction,
-  editFileAction
+  editFileAction,
+  updatePageSizeAction
 };

@@ -1,52 +1,77 @@
 import { api } from "utils/api";
+import { store } from "store/configureStore";
 
-const getMyContents = async () => {
-  return await api.get("/FileInfo/GetFileInfos").then(response => {
-    return response;
-  });
-};
-
-const getImportantContents = async () => {
-  return await api.get("/FileInfo/GetImportantFiles").then(response => {
-    return response;
-  });
-};
-
-const getFavoriteContents = async () => {
-  return await api.get("/FileInfo/GetFavoriteFiles").then(response => {
-    return response;
-  });
-};
-
-const getSharedContents = async () => {
-  return await api.get("/FileInfo/GetSharedFiles").then(response => {
-    return response;
-  });
-};
-
-const getDepartmentContents = async () => {
-  return await api.get("/FileInfo/GetDepartmentFiles").then(response => {
-    return response;
-  });
-};
-
-const getTrashContents = async () => {
-  return await api.get("/FileInfo/GetTrashContents").then(response => {
-    return response;
-  });
-};
-
-const getContentsFromPath = async dirId => {
+const getMyContents = async page => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get("/FileInfo/GetFileInfosByDirId?dirId=" + dirId)
+    .get(`/FileInfo/GetFileInfos?page=${page}&pageSize=${pageSize}`)
     .then(response => {
       return response;
     });
 };
 
-const searchContents = async searchStr => {
+const getImportantContents = async page => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get("/FileInfo/Search?searchContent=" + searchStr)
+    .get(`/FileInfo/GetImportantFiles?page=${page}&pageSize=${pageSize}`)
+    .then(response => {
+      return response;
+    });
+};
+
+const getFavoriteContents = async page => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  return await api
+    .get(`/FileInfo/GetFavoriteFiles?page=${page}&pageSize=${pageSize}`)
+    .then(response => {
+      return response;
+    });
+};
+
+const getSharedContents = async page => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  return await api
+    .get(`/FileInfo/GetSharedFiles?page=${page}&pageSize=${pageSize}`)
+    .then(response => {
+      return response;
+    });
+};
+
+const getDepartmentContents = async page => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  return await api
+    .get(`/FileInfo/GetDepartmentFiles?page=${page}&pageSize=${pageSize}`)
+    .then(response => {
+      return response;
+    });
+};
+
+const getTrashContents = async page => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  return await api
+    .get(`/FileInfo/GetTrashContents?page=${page}&pageSize=${pageSize}`)
+    .then(response => {
+      return response;
+    });
+};
+
+const getContentsFromPath = async (dirId, page) => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  return await api
+    .get(
+      `/FileInfo/GetFileInfosByDirId?dirId=${dirId}&page=${page}&pageSize=${pageSize}`
+    )
+    .then(response => {
+      return response;
+    });
+};
+
+const searchContents = async (searchStr, page) => {
+  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  return await api
+    .get(
+      `/FileInfo/Search?searchContent=${searchStr}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });

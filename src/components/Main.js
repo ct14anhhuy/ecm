@@ -23,7 +23,7 @@ const CreateDirectory = lazy(() => import("./CreateDirectory"));
 const OpenContent = lazy(() => import("./OpenContent"));
 
 const App = props => {
-  const { path, id } = useParams();
+  const { path, dirId, page } = useParams();
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
   const [filterExt, setFilterExt] = useState(exts.ALL);
 
@@ -34,8 +34,8 @@ const App = props => {
 
   useEffect(() => {
     if (props.directories.length === 0) return;
-    route(path, id, props.directories);
-  }, [id, path, props.directories]);
+    route(path, dirId, page, props.directories);
+  }, [dirId, page, path, props.directories]);
 
   useEffect(() => {
     getDirectories();
