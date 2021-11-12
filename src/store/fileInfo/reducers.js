@@ -5,7 +5,7 @@ const initState = {
   paginationSet: {
     pageIndex: 1,
     pageSize: 15,
-    totalRows: 100
+    totalRows: 0
   },
   data: [],
   loading: false,
