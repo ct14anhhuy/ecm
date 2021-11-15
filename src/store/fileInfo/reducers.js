@@ -53,21 +53,18 @@ const fileInfoReducers = (state = initState, action) =>
         );
         break;
       }
-      case types.MOVE_TO_TRASH: {
+      case types.MOVE_TO_TRASH:
         const removeIds = action.payload.fileIds;
         draft.data = draft.data.filter(f => !removeIds.includes(f.id));
         break;
-      }
-      case types.RECOVER_FILE: {
+      case types.RECOVER_FILE:
         const recoverIds = action.payload.fileIds;
         draft.data = draft.data.filter(f => !recoverIds.includes(f.id));
         break;
-      }
-      case types.DELETE_FILE: {
+      case types.DELETE_FILE:
         const deleteIds = action.payload.fileIds;
         draft.data = draft.data.filter(f => !deleteIds.includes(f.id));
         break;
-      }
       case types.EDIT_FILE: {
         const fileInfo = action.payload.fileInfo;
         const editId = draft.data.findIndex(f => f.id === fileInfo.id);

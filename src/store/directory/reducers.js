@@ -14,10 +14,9 @@ const directoryReducers = (state = initState, action) =>
       case types.GET_DIRECTORIES:
         draft.data = action.payload.directories;
         break;
-      case types.DELETE_DIRECTORY: {
+      case types.DELETE_DIRECTORY:
         draft.data = draft.data.filter(f => f.id !== action.payload.id);
         break;
-      }
       case types.BEGIN_UPDATE_DIRECTORY:
         draft.loading = true;
         draft.done = false;
