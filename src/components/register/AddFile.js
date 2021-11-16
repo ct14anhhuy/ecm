@@ -8,7 +8,7 @@ import TreeView from "components/TreeView";
 import RoleAssignEdit from "./RoleAssignEdit";
 import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
-import * as exts from "constants/extTypes";
+import { Extensions } from "constants/extTypes";
 import { extractFileExts } from "utils/stringHelper";
 import {
   EDIT_PERMISSION,
@@ -248,7 +248,7 @@ const AddFile = props => {
                       id="file"
                       ref={fileRef}
                       style={{ display: "none" }}
-                      accept={extractFileExts(exts)}
+                      accept={extractFileExts(Extensions)}
                       onChange={handleSelectFiles}
                       multiple
                     />
