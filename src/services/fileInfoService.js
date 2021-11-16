@@ -2,64 +2,83 @@ import { api } from "utils/api";
 import { store } from "store/configureStore";
 
 const getMyContents = async page => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetFileInfos?page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetFileInfos?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });
 };
 
 const getImportantContents = async page => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetImportantFiles?page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetImportantFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });
 };
 
 const getFavoriteContents = async page => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetFavoriteFiles?page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetFavoriteFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });
 };
 
 const getSharedContents = async page => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetSharedFiles?page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetSharedFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });
 };
 
 const getDepartmentContents = async page => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetDepartmentFiles?page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetDepartmentFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });
 };
 
 const getTrashContents = async page => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetTrashContents?page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetTrashContents?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
+    )
     .then(response => {
       return response;
     });
 };
 
 const getContentsFromPath = async (dirId, page) => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetFileInfosByDirId?dirId=${dirId}&page=${page}&pageSize=${pageSize}`
+      `/FileInfo/GetFileInfosByDirId?dirId=${dirId}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => {
       return response;
@@ -67,10 +86,11 @@ const getContentsFromPath = async (dirId, page) => {
 };
 
 const searchContents = async (searchStr, page) => {
-  const { pageSize } = store.getState().fileInfoReducers.paginationSet;
+  const { pageSize, filterExtension } =
+    store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/Search?searchContent=${searchStr}&page=${page}&pageSize=${pageSize}`
+      `/FileInfo/Search?searchContent=${searchStr}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => {
       return response;

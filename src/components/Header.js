@@ -19,7 +19,7 @@ const Header = props => {
         <div className="minWidth">
           <div className="topLt">
             <h1 className="logo">
-              <Link className="logo_ci">
+              <Link to="#" className="logo_ci">
                 <img
                   alt=""
                   src={
@@ -28,7 +28,7 @@ const Header = props => {
                   }
                 />
               </Link>
-              <Link className="logo_sys">
+              <Link to="#" className="logo_sys">
                 <img
                   alt=""
                   src={require("assets/img/layout/logo_ecm.png").default}
@@ -38,7 +38,7 @@ const Header = props => {
           </div>
           <div className="topRt">
             <div className="psnName showHideTrg">
-              <span className="trg" to="#">
+              <span className="trg">
                 <strong>{`${user.lastName} ${user.firstName} (${user.epLiteId})`}</strong>
               </span>
             </div>

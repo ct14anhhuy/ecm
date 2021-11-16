@@ -79,8 +79,8 @@ const OpenContent = props => {
             <div className={styles.header}>
               <h1 className={styles.tit}>Open Content</h1>
               <Link
-                className={styles.close}
                 to="#"
+                className={styles.close}
                 onClick={props.changeShowOpenContent}
               >
                 <img

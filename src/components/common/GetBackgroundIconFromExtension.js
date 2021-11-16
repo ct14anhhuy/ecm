@@ -1,20 +1,20 @@
-import * as exts from "constants/extTypes";
+import { Extensions } from "constants/extTypes";
 
 export const GetBackgroundIconFromExtension = fileName => {
   const extension = fileName.split(".").pop().toLowerCase();
-  if (exts.WORD.includes(extension)) {
+  if (Extensions.WORD_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_doc_on.png").default;
-  } else if (exts.EXCEL.includes(extension)) {
+  } else if (Extensions.EXCEL_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_xlsx_on.png").default;
-  } else if (exts.POWERPOINT.includes(extension)) {
+  } else if (Extensions.POWERPOINT_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_ppt_on.png").default;
-  } else if (exts.IMAGE.includes(extension)) {
+  } else if (Extensions.IMAGE_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_img_on.png").default;
-  } else if (exts.PDF.includes(extension)) {
+  } else if (Extensions.PDF_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_pdf_on.png").default;
-  } else if (exts.CAD.includes(extension)) {
+  } else if (Extensions.CAD_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_cad_on.png").default;
-  } else if (exts.VIDEO.includes(extension)) {
+  } else if (Extensions.VIDEO_EXTS.includes(extension)) {
     return require("assets/img/main/ico/ico_tv_on.png").default;
   } else {
     return require("assets/img/main/ico/ico_all_on.png").default;

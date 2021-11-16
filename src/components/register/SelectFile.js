@@ -33,7 +33,6 @@ const SelectFile = props => {
             whiteSpace: "nowrap",
             msTextOverflow: "ellipsis"
           }}
-          to="#"
         >
           <span className={styles.contentsExtImage}>
             <img
@@ -53,7 +52,6 @@ const SelectFile = props => {
         <span className={styles.floatR}>
           <Link
             className={styles.btnChk}
-            to="#"
             onClick={() => setEditFileName(!editFileName)}
           >
             <img
@@ -64,7 +62,7 @@ const SelectFile = props => {
             />
           </Link>
           {props.showDeleteButton ? (
-            <Link className={styles.btnDel} to="#" onClick={handleDeleteFile}>
+            <Link className={styles.btnDel} onClick={handleDeleteFile}>
               <img
                 alt=""
                 src={
@@ -100,14 +98,14 @@ const SelectFile = props => {
           />
         </span>
         <span className={styles.floatR}>
-          <Link className={styles.btnChk} to="#" onClick={handleChangeFileName}>
+          <Link className={styles.btnChk} onClick={handleChangeFileName}>
             <img
               alt=""
               src={require("assets/img/popup/ico/ico_check.png").default}
             />
           </Link>
           {props.showDeleteButton ? (
-            <Link className={styles.btnDel} to="#" onClick={handleDeleteFile}>
+            <Link className={styles.btnDel} onClick={handleDeleteFile}>
               <img
                 alt=""
                 src={

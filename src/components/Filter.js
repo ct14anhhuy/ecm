@@ -1,32 +1,42 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
-import { updatePageSizeAction } from "store/fileInfo/actions";
+import {
+  updatePageSizeAction,
+  updateFilterExtensionAction
+} from "store/fileInfo/actions";
 
 const Filter = props => {
   const history = useHistory();
+  const { path, dirId } = useParams();
 
   const [showListRow, setShowListRow] = useState(false);
-  const { pageSize, setFilterExt, filterExt } = props;
+  const { pageSize, filterExtension } = props.paginationSet;
+  const { updateFilterExtension } = props;
 
   const handleChangePageSize = e => {
     const pageSize = parseInt(e.target.innerText);
     props.updatePageSize(pageSize);
     setShowListRow(false);
-    history.push("/refresh");
+    history.push(`/ecm-redirect/${path}/${dirId ? `${dirId}/` : ""}1`);
+  };
+
+  const handleUpdateFilterExtension = filterExtention => {
+    updateFilterExtension(filterExtention);
+    history.push(`/ecm-redirect/${path}/${dirId ? `${dirId}/` : ""}1`);
   };
 
   return (
     <div className="sortingBox" style={{ display: "block" }}>
       <ul className="icoBtn" style={{ display: "block" }}>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.ALL)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.ALL)}>
             <img
               alt=""
               title="All type"
               src={
-                filterExt === exts.ALL
+                filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_all_on.png").default
                   : require("assets/img/main/ico/ico_all_off.png").default
               }
@@ -34,12 +44,16 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.POWERPOINT)}>
+          <Link
+            to="#"
+            onClick={() => handleUpdateFilterExtension(exts.POWERPOINT)}
+          >
             <img
               alt=""
               title="Powerpoint"
               src={
-                filterExt === exts.POWERPOINT || filterExt === exts.ALL
+                filterExtension === exts.POWERPOINT ||
+                filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_ppt_on.png").default
                   : require("assets/img/main/ico/ico_ppt_off.png").default
               }
@@ -47,12 +61,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.EXCEL)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.EXCEL)}>
             <img
               alt=""
               title="Excel"
               src={
-                filterExt === exts.EXCEL || filterExt === exts.ALL
+                filterExtension === exts.EXCEL || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_xlsx_on.png").default
                   : require("assets/img/main/ico/ico_xlsx_off.png").default
               }
@@ -60,12 +74,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.WORD)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.WORD)}>
             <img
               alt=""
               title="Word"
               src={
-                filterExt === exts.WORD || filterExt === exts.ALL
+                filterExtension === exts.WORD || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_doc_on.png").default
                   : require("assets/img/main/ico/ico_doc_off.png").default
               }
@@ -73,12 +87,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.PDF)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.PDF)}>
             <img
               alt=""
               title="Pdf"
               src={
-                filterExt === exts.PDF || filterExt === exts.ALL
+                filterExtension === exts.PDF || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_pdf_on.png").default
                   : require("assets/img/main/ico/ico_pdf_off.png").default
               }
@@ -86,12 +100,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.IMAGE)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.IMAGE)}>
             <img
               alt=""
               title="Image"
               src={
-                filterExt === exts.IMAGE || filterExt === exts.ALL
+                filterExtension === exts.IMAGE || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_img_on.png").default
                   : require("assets/img/main/ico/ico_img_off.png").default
               }
@@ -99,12 +113,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.CAD)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.CAD)}>
             <img
               alt=""
               title="CAD"
               src={
-                filterExt === exts.CAD || filterExt === exts.ALL
+                filterExtension === exts.CAD || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_cad_on.png").default
                   : require("assets/img/main/ico/ico_cad_off.png").default
               }
@@ -112,12 +126,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={() => setFilterExt(exts.VIDEO)}>
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.VIDEO)}>
             <img
               alt=""
               title="Video"
               src={
-                filterExt === exts.VIDEO || filterExt === exts.ALL
+                filterExtension === exts.VIDEO || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_tv_on.png").default
                   : require("assets/img/main/ico/ico_tv_off.png").default
               }
@@ -130,9 +144,9 @@ const Filter = props => {
           <div className="am_DivSelectyze am_grey" style={{ zIndex: 10 }}>
             <span>Show </span>
             <Link
+              to="#"
               className="am_selectyzeValue"
               onClick={() => setShowListRow(!showListRow)}
-              to="#"
             >
               {pageSize}
             </Link>
@@ -171,13 +185,15 @@ const Filter = props => {
 
 const mapStateToProps = state => {
   return {
-    pageSize: state.fileInfoReducers.paginationSet.pageSize
+    paginationSet: state.fileInfoReducers.paginationSet
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePageSize: pageSize => dispatch(updatePageSizeAction(pageSize))
+    updatePageSize: pageSize => dispatch(updatePageSizeAction(pageSize)),
+    updateFilterExtension: filterExtension =>
+      dispatch(updateFilterExtensionAction(filterExtension))
   };
 };
 

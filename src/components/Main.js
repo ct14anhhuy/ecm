@@ -8,7 +8,6 @@ import Navbar from "./Navbar";
 import OptionBox from "./OptionBox";
 import MainTable from "./MainTable";
 import Paging from "./Paging";
-import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
 import { getDirectoriesAction } from "store/directory/actions";
 import { getDepartmentsAction } from "store/department/actions";
@@ -25,7 +24,6 @@ const OpenContent = lazy(() => import("./OpenContent"));
 const App = props => {
   const { path, dirId, page } = useParams();
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
-  const [filterExt, setFilterExt] = useState(exts.ALL);
 
   const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } =
     props.systemParams;
@@ -61,8 +59,8 @@ const App = props => {
                 }}
               >
                 <Link
-                  className="btn_areaL"
                   to="#"
+                  className="btn_areaL"
                   onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}
                 >
                   <img
@@ -80,12 +78,9 @@ const App = props => {
                   <div className="listContent">
                     <OptionBox />
                     <div className="normalList">
-                      <Filter
-                        filterExt={filterExt}
-                        setFilterExt={setFilterExt}
-                      />
+                      <Filter />
                       <div>
-                        <MainTable filterExt={filterExt} />
+                        <MainTable />
                       </div>
                       <Paging />
                     </div>

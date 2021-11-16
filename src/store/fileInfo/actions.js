@@ -295,6 +295,15 @@ const updatePageSizeAction = pageSize => {
   };
 };
 
+const updateFilterExtensionAction = filterExtension => {
+  return {
+    type: types.UPDATE_FILTER_EXTENSION,
+    payload: {
+      filterExtension
+    }
+  };
+};
+
 const injectSelected = fileInfos => {
   return fileInfos.map(fi => Object.assign({}, fi, { checked: false }));
 };
@@ -317,5 +326,6 @@ export {
   recoverFileAction,
   deleteFileAction,
   editFileAction,
-  updatePageSizeAction
+  updatePageSizeAction,
+  updateFilterExtensionAction
 };

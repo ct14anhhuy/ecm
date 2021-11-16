@@ -84,7 +84,7 @@ const MainTableItem = props => {
                 }
               />
             </label>
-            <Link className="ico_fav_3" to="#">
+            <Link to="#" className="ico_fav_3">
               <img
                 alt=""
                 src={
@@ -95,7 +95,7 @@ const MainTableItem = props => {
                 }
               />
             </Link>
-            <Link className="ico_fav" to="#">
+            <Link to="#" className="ico_fav">
               <img
                 alt=""
                 src={
@@ -114,7 +114,7 @@ const MainTableItem = props => {
               {fileInfo.name}
             </Link>
           </div>
-          <Link className="listInfo" to="#">
+          <Link to="#" className="listInfo">
             <img
               alt=""
               src={require("assets/img/contents/ecmMain/bg_info.png").default}
@@ -155,8 +155,8 @@ const MainTableItem = props => {
               />
             </label>
             <Link
-              className="ico_fav_3"
               to="#"
+              className="ico_fav_3"
               onClick={() => props.changeImportant(fileInfo.id, user.id)}
             >
               <img
@@ -170,8 +170,8 @@ const MainTableItem = props => {
               />
             </Link>
             <Link
-              className="ico_fav"
               to="#"
+              className="ico_fav"
               onClick={() => props.changeFavorite(fileInfo.id, user.id)}
             >
               <img
@@ -199,8 +199,8 @@ const MainTableItem = props => {
             </Link>
           </div>
           <Link
-            className="listInfo"
             to="#"
+            className="listInfo"
             onClick={() => (node.current.style.display = "block")}
           >
             <img

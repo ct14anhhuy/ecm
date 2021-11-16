@@ -8,5 +8,4 @@ const Refresh = () => {
   });
   return <Fragment></Fragment>;
 };
-
 export default Refresh;

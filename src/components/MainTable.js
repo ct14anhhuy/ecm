@@ -1,30 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import MainTableItem from "./MainTableItem";
 import { connect } from "react-redux";
-import * as exts from "constants/extTypes";
 import { selectMultiAction } from "store/fileInfo/actions";
 
 const MainTable = props => {
-  const [fileInfos, setFileInfos] = useState(props.fileInfos);
+  const fileInfos = props.fileInfos;
   const [selectAll, setSelectAll] = useState(false);
-
-  useEffect(() => {
-    const fe = props.filterExt;
-    const fi = props.fileInfos;
-    switch (fe) {
-      case exts.ALL:
-        setFileInfos(fi);
-        break;
-      default:
-        setFileInfos(
-          fi.filter(fileInfo => {
-            return fe.includes(fileInfo.name.split(".").pop());
-          })
-        );
-        break;
-    }
-  }, [props.fileInfos, props.filterExt]);
 
   const handleSelectAll = checked => {
     const fileIds = fileInfos.map(f => f.id);
@@ -55,33 +37,33 @@ const MainTable = props => {
                   />
                 </label>
               </span>
-              <Link className="icoSort" to="#">
+              <Link to="#" className="icoSort">
                 File Name
               </Link>
             </div>
           </th>
           <th>
-            <Link className="icoSort" to="#">
+            <Link to="#" className="icoSort">
               Owner
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="#">
+            <Link to="#" className="icoSort">
               Size
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="#">
+            <Link to="#" className="icoSort">
               Security Level
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="#">
+            <Link to="#" className="icoSort">
               Version
             </Link>
           </th>
           <th>
-            <Link className="icoSort" to="#">
+            <Link to="#" className="icoSort">
               Modified Date
             </Link>
           </th>

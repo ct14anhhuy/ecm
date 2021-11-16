@@ -5,7 +5,8 @@ const initState = {
   paginationSet: {
     pageIndex: 1,
     pageSize: 15,
-    totalRows: 0
+    totalRows: 0,
+    filterExtension: "ALL"
   },
   data: [],
   loading: false,
@@ -76,6 +77,9 @@ const fileInfoReducers = (state = initState, action) =>
       }
       case types.UPDATE_PAGE_SIZE:
         draft.paginationSet.pageSize = action.payload.pageSize;
+        break;
+      case types.UPDATE_FILTER_EXTENSION:
+        draft.paginationSet.filterExtension = action.payload.filterExtension;
         break;
       case types.BEGIN_UPDATE_FILE:
         draft.loading = true;
