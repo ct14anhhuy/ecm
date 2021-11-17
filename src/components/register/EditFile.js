@@ -183,6 +183,7 @@ const EditFile = props => {
               <div className={styles.header}>
                 <h1 className={styles.tit}>Edit Content</h1>
                 <Link
+                  to="#"
                   className={styles.close}
                   onClick={props.changeShowEditFile}
                 >
@@ -225,6 +226,7 @@ const EditFile = props => {
                             </td>
                             <td width={63}>
                               <Link
+                                to="#"
                                 className={styles.btnBlueLine}
                                 onClick={() =>
                                   setShowListDirectory(!showListDirectory)
@@ -252,7 +254,7 @@ const EditFile = props => {
                           className={`${styles.DivSelectyze}`}
                           style={{ paddingLeft: 7, zIndex: 9 }}
                         >
-                          <Link className={styles.selectyzeValue}>
+                          <Link to="#" className={styles.selectyzeValue}>
                             <span>POSCO VST</span>
                           </Link>
                         </div>
@@ -295,6 +297,7 @@ const EditFile = props => {
                     </ol>
                     <div className={styles.safe_btn_box}>
                       <Link
+                        to="#"
                         className={`${styles.btn_safe1} ${
                           state.securityLevel === "Secret" ? styles.on : ""
                         }`}
@@ -303,6 +306,7 @@ const EditFile = props => {
                         Secret
                       </Link>
                       <Link
+                        to="#"
                         className={`${styles.btn_safe2} ${
                           state.securityLevel === "Secret A/Not Open"
                             ? styles.on
@@ -313,6 +317,7 @@ const EditFile = props => {
                         Secret A/Not Open
                       </Link>
                       <Link
+                        to="#"
                         className={`${styles.btn_safe3} ${
                           state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
@@ -321,6 +326,7 @@ const EditFile = props => {
                         Secret A
                       </Link>
                       <Link
+                        to="#"
                         className={`${styles.btn_safe4} ${
                           state.securityLevel === "Secret B/Not Open"
                             ? styles.on
@@ -331,6 +337,7 @@ const EditFile = props => {
                         Secret B/Not Open
                       </Link>
                       <Link
+                        to="#"
                         className={`${styles.btn_safe5} ${
                           state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
@@ -339,6 +346,7 @@ const EditFile = props => {
                         Secret B
                       </Link>
                       <Link
+                        to="#"
                         className={`${styles.btn_safe6} ${
                           state.securityLevel === "Public" ? styles.on : ""
                         }`}

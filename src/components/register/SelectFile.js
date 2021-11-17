@@ -25,6 +25,7 @@ const SelectFile = props => {
         style={editFileName ? { display: "none" } : { display: "block" }}
       >
         <Link
+          to="#"
           className={styles.title}
           style={{
             width: "93%",
@@ -51,6 +52,7 @@ const SelectFile = props => {
         </Link>
         <span className={styles.floatR}>
           <Link
+            to="#"
             className={styles.btnChk}
             onClick={() => setEditFileName(!editFileName)}
           >
@@ -62,7 +64,7 @@ const SelectFile = props => {
             />
           </Link>
           {props.showDeleteButton ? (
-            <Link className={styles.btnDel} onClick={handleDeleteFile}>
+            <Link to="#" className={styles.btnDel} onClick={handleDeleteFile}>
               <img
                 alt=""
                 src={
@@ -98,14 +100,14 @@ const SelectFile = props => {
           />
         </span>
         <span className={styles.floatR}>
-          <Link className={styles.btnChk} onClick={handleChangeFileName}>
+          <Link to="#" className={styles.btnChk} onClick={handleChangeFileName}>
             <img
               alt=""
               src={require("assets/img/popup/ico/ico_check.png").default}
             />
           </Link>
           {props.showDeleteButton ? (
-            <Link className={styles.btnDel} onClick={handleDeleteFile}>
+            <Link to="#" className={styles.btnDel} onClick={handleDeleteFile}>
               <img
                 alt=""
                 src={

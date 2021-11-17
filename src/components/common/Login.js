@@ -12,7 +12,7 @@ const Login = props => {
     localStorage.setItem("accessToken", token);
   }, [login, token]);
 
-  return <Redirect to="/ecm/my-contents/1"></Redirect>;
+  return <Redirect to="/ecm/my-contents/1" />;
 };
 
 const mapDispatchToProps = dispatch => {
