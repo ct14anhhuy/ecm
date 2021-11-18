@@ -32,6 +32,7 @@ const LeftMenu = props => {
     changeCurrentDirectory,
     changeHeaderPath
   } = props;
+
   const [selectedDirectory, setSelectedDirectory] = useState({
     id: 0,
     isRoot: true

@@ -8,8 +8,8 @@ const getMyContentsAction = page => {
       dispatch({
         type: types.GET_MY_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -25,8 +25,8 @@ const getImportantContentsAction = page => {
       dispatch({
         type: types.GET_IMPORTANT_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -42,8 +42,8 @@ const getFavoriteContentsAction = page => {
       dispatch({
         type: types.GET_FAVORITE_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -59,8 +59,8 @@ const getSharedContentsAction = page => {
       dispatch({
         type: types.GET_SHARED_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -76,8 +76,8 @@ const getDepartmentContentsAction = page => {
       dispatch({
         type: types.GET_DEPARTMENT_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -93,8 +93,8 @@ const getTrashContentsAction = page => {
       dispatch({
         type: types.GET_TRASH_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -110,8 +110,8 @@ const getContentsFromPathAction = (dirId, page) => {
       dispatch({
         type: types.GET_CONTENTS_FROM_PATH,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
@@ -128,8 +128,8 @@ const searchContentsAction = (searchStr, page) => {
       dispatch({
         type: types.SEARCH_CONTENTS,
         payload: {
-          pagedSet: obj.pagedSet,
-          fileInfos: injectSelected(obj.pagedSet.items)
+          pagedSet: obj,
+          fileInfos: injectSelected(obj.items)
         }
       });
     } catch (error) {
