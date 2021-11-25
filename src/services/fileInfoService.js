@@ -8,9 +8,7 @@ const getMyContents = async page => {
     .get(
       `/FileInfo/GetFileInfos?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const getImportantContents = async page => {
@@ -20,9 +18,7 @@ const getImportantContents = async page => {
     .get(
       `/FileInfo/GetImportantFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const getFavoriteContents = async page => {
@@ -32,9 +28,7 @@ const getFavoriteContents = async page => {
     .get(
       `/FileInfo/GetFavoriteFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const getSharedContents = async page => {
@@ -44,9 +38,7 @@ const getSharedContents = async page => {
     .get(
       `/FileInfo/GetSharedFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const getDepartmentContents = async page => {
@@ -56,9 +48,7 @@ const getDepartmentContents = async page => {
     .get(
       `/FileInfo/GetDepartmentFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const getTrashContents = async page => {
@@ -68,9 +58,7 @@ const getTrashContents = async page => {
     .get(
       `/FileInfo/GetTrashContents?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const getContentsFromPath = async (dirId, page) => {
@@ -80,9 +68,7 @@ const getContentsFromPath = async (dirId, page) => {
     .get(
       `/FileInfo/GetFileInfosByDirId?dirId=${dirId}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const searchContents = async (searchStr, page) => {
@@ -92,9 +78,7 @@ const searchContents = async (searchStr, page) => {
     .get(
       `/FileInfo/Search?searchContent=${searchStr}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const changeFavorite = async (fileId, employeeId) => {
@@ -104,9 +88,7 @@ const changeFavorite = async (fileId, employeeId) => {
   };
   return await api
     .post("/FileFavorite/AddOrRemoveFavoriteFile", fileFavorite)
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const changeImportant = async (fileId, employeeId) => {
@@ -116,9 +98,7 @@ const changeImportant = async (fileId, employeeId) => {
   };
   return await api
     .post("/FileImportant/AddOrRemoveImportantFile", fileImportant)
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const addFiles = async fileInfos => {
@@ -126,33 +106,31 @@ const addFiles = async fileInfos => {
     .post("/FileInfo/AddFiles", fileInfos, {
       headers: { "Content-type": "multipart/form-data" }
     })
-    .then(response => {
-      return response;
-    });
+    .then(response => response);
 };
 
 const moveToTrash = async fileIds => {
-  return await api.post("/Trash/AddFilesToTrash", fileIds).then(response => {
-    return response;
-  });
+  return await api
+    .post("/Trash/AddFilesToTrash", fileIds)
+    .then(response => response);
 };
 
 const recoverFile = async fileIds => {
-  return await api.post("/Trash/RecoverFile", fileIds).then(response => {
-    return response;
-  });
+  return await api
+    .post("/Trash/RecoverFile", fileIds)
+    .then(response => response);
 };
 
 const deleteFile = async fileIds => {
-  return await api.post("/Trash/CleanTrash", fileIds).then(response => {
-    return response;
-  });
+  return await api
+    .post("/Trash/CleanTrash", fileIds)
+    .then(response => response);
 };
 
 const editFile = async fileInfo => {
-  return await api.post("/FileInfo/EditFileInfo", fileInfo).then(response => {
-    return response;
-  });
+  return await api
+    .post("/FileInfo/EditFileInfo", fileInfo)
+    .then(response => response);
 };
 
 export const fileInfoService = {
