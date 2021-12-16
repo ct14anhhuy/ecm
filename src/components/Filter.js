@@ -19,12 +19,12 @@ const Filter = props => {
     const pageSize = parseInt(e.target.innerText);
     props.updatePageSize(pageSize);
     setShowListRow(false);
-    history.push(`/ecm-redirect/${path}/${dirId ? `${dirId}/` : ""}1`);
+    history.push(`/ecm-redirect/${path}/${dirId ? dirId + "/" : ""}1`);
   };
 
   const handleUpdateFilterExtension = filterExtention => {
     updateFilterExtension(filterExtention);
-    history.push(`/ecm-redirect/${path}/${dirId ? `${dirId}/` : ""}1`);
+    history.push(`/ecm-redirect/${path}/${dirId ? dirId + "/" : ""}1`);
   };
 
   return (

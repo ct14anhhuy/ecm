@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
 
 const Paging = props => {
   const LEFT_PAGE = "LEFT";
