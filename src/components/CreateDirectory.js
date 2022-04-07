@@ -28,7 +28,6 @@ const CreateDirectory = props => {
   };
 
   const handleCreateDirectory = () => {
-    // Fake Commit
     if (!selectedPath.id || !path) {
       swal("Error!", "Check your input!", "error");
       return;
