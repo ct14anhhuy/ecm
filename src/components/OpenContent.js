@@ -69,12 +69,17 @@ const OpenContent = props => {
           cursor: "wait",
           backgroundColor: "rgb(255, 255, 255)",
         }}>
-        <div className="popup_layer_typeB" style={{ display: "block", cursor: "default" }}>
+        <div
+          className="popup_layer_typeB"
+          style={{ display: "block", cursor: "default" }}>
           <div className={styles.popLayerWrap}>
             <div className={styles.header}>
               <h1 className={styles.tit}>Open Content</h1>
               <Link to="#" className={styles.close} onClick={props.changeShowOpenContent}>
-                <img alt="" src={require("assets/img/contents/ecmMain/img_close.gif").default} />
+                <img
+                  alt=""
+                  src={require("assets/img/contents/ecmMain/img_close.gif").default}
+                />
               </Link>
             </div>
             <div className={styles.contents}>

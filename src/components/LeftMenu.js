@@ -25,7 +25,8 @@ const LeftMenu = props => {
   const history = useHistory();
   const { path } = useParams();
 
-  const { menuActive, changeMenuActive, changeCurrentDirectory, changeHeaderPath } = props;
+  const { menuActive, changeMenuActive, changeCurrentDirectory, changeHeaderPath } =
+    props;
 
   const [selectedDirectory, setSelectedDirectory] = useState({
     id: 0,
@@ -56,18 +57,26 @@ const LeftMenu = props => {
       <div className={styles.bgBoxLayout}>
         <ul className={styles.tab_more}>
           <li>
-            <Link to="#" className={menuActive ? styles.tabon : ""} onClick={() => changeMenuActive(true)}>
+            <Link
+              to="#"
+              className={menuActive ? styles.tabon : ""}
+              onClick={() => changeMenuActive(true)}>
               Shortcut
             </Link>
           </li>
           <li>
-            <Link to="#" className={menuActive ? "" : styles.tabon} onClick={() => changeMenuActive(false)}>
+            <Link
+              to="#"
+              className={menuActive ? "" : styles.tabon}
+              onClick={() => changeMenuActive(false)}>
               Content Box
             </Link>
           </li>
         </ul>
       </div>
-      <div className={styles.tabCnt} style={menuActive ? { display: "block" } : { display: "none" }}>
+      <div
+        className={styles.tabCnt}
+        style={menuActive ? { display: "block" } : { display: "none" }}>
         <ul className={styles.btnBox}>
           <li className={getNavLinkClass(ROUTE_MY_CONTENTS)}>
             <NavLink
@@ -125,16 +134,24 @@ const LeftMenu = props => {
           </li>
         </ul>
       </div>
-      <div className={styles.tabCnt} style={menuActive ? { display: "none" } : { display: "block" }}>
+      <div
+        className={styles.tabCnt}
+        style={menuActive ? { display: "none" } : { display: "block" }}>
         <div className={`${styles.bgBoxLayout} ${styles.select02}`}>
-          <div className={`${styles.DivSelectyze} ${styles.grey}`} style={{ zIndex: 9999 }}>
+          <div
+            className={`${styles.DivSelectyze} ${styles.grey}`}
+            style={{ zIndex: 9999 }}>
             <span className={styles.selectyzeValue}>
               <span>POSCO VST</span>
             </span>
           </div>
           <div className={styles.myconList}>
             <div className={styles.treeFldConBox}>
-              <Frame height="97%" scrolling="auto" frameBorder="0" head={<style>{antdStyles}</style>}>
+              <Frame
+                height="97%"
+                scrolling="auto"
+                frameBorder="0"
+                head={<style>{antdStyles}</style>}>
                 <TreeView handleOnSelect={handleOnSelect} />
               </Frame>
             </div>
@@ -155,7 +172,8 @@ const mapDispatchToProps = dispatch => {
   return {
     changeHeaderPath: path => dispatch(changeHeaderPathAction(path)),
     changeMenuActive: shortcutActive => dispatch(changeMenuActiveAction(shortcutActive)),
-    changeCurrentDirectory: (id, isRoot) => dispatch(changeCurrentDirectoryAction(id, isRoot)),
+    changeCurrentDirectory: (id, isRoot) =>
+      dispatch(changeCurrentDirectoryAction(id, isRoot)),
   };
 };
 

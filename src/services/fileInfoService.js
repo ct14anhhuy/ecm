@@ -4,42 +4,54 @@ import { store } from "store/configureStore";
 const getMyContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetFileInfos?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetFileInfos?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+    )
     .then(response => response);
 };
 
 const getImportantContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetImportantFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetImportantFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+    )
     .then(response => response);
 };
 
 const getFavoriteContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetFavoriteFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetFavoriteFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+    )
     .then(response => response);
 };
 
 const getSharedContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetSharedFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetSharedFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+    )
     .then(response => response);
 };
 
 const getDepartmentContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetDepartmentFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetDepartmentFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+    )
     .then(response => response);
 };
 
 const getTrashContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
-    .get(`/FileInfo/GetTrashContents?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`)
+    .get(
+      `/FileInfo/GetTrashContents?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+    )
     .then(response => response);
 };
 
@@ -66,7 +78,9 @@ const changeFavorite = async (fileId, employeeId) => {
     fileId,
     employeeId,
   };
-  return await api.post("/FileFavorite/AddOrRemoveFavoriteFile", fileFavorite).then(response => response);
+  return await api
+    .post("/FileFavorite/AddOrRemoveFavoriteFile", fileFavorite)
+    .then(response => response);
 };
 
 const changeImportant = async (fileId, employeeId) => {
@@ -74,7 +88,9 @@ const changeImportant = async (fileId, employeeId) => {
     fileId,
     employeeId,
   };
-  return await api.post("/FileImportant/AddOrRemoveImportantFile", fileImportant).then(response => response);
+  return await api
+    .post("/FileImportant/AddOrRemoveImportantFile", fileImportant)
+    .then(response => response);
 };
 
 const addFiles = async fileInfos => {

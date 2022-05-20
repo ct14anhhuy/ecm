@@ -41,7 +41,12 @@ const Loading = () => {
             cursor: "default",
           }}>
           <p>
-            <img width={32} height={32} alt="waiting" src={require("assets/img/common/custom_progress.gif").default} />
+            <img
+              width={32}
+              height={32}
+              alt="waiting"
+              src={require("assets/img/common/custom_progress.gif").default}
+            />
             Loading...
           </p>
         </div>

@@ -88,12 +88,22 @@ const CreateDirectory = props => {
           cursor: "wait",
           backgroundColor: "rgb(255, 255, 255)",
         }}>
-        <div className={styles.popup_layer_typeB} style={{ display: "block", cursor: "default" }}>
-          <div className={styles.popLayerWrap} style={{ margin: "-317.5px 0px 0px -432.5px", width: 865 }}>
+        <div
+          className={styles.popup_layer_typeB}
+          style={{ display: "block", cursor: "default" }}>
+          <div
+            className={styles.popLayerWrap}
+            style={{ margin: "-317.5px 0px 0px -432.5px", width: 865 }}>
             <div className={styles.header}>
               <h1 className={styles.tit}>Create Directory</h1>
-              <Link to="#" className={styles.close} onClick={props.changeShowCreateDirectory}>
-                <img alt="" src={require("assets/img/contents/ecmMain/img_close.gif").default} />
+              <Link
+                to="#"
+                className={styles.close}
+                onClick={props.changeShowCreateDirectory}>
+                <img
+                  alt=""
+                  src={require("assets/img/contents/ecmMain/img_close.gif").default}
+                />
               </Link>
             </div>
             <div className={styles.contents}>
@@ -146,17 +156,31 @@ const CreateDirectory = props => {
                   </span>
                   <div
                     className={styles.treeConBox}
-                    style={showListDirectory ? { height: 300, display: "block" } : { height: 300, display: "none" }}>
+                    style={
+                      showListDirectory
+                        ? { height: 300, display: "block" }
+                        : { height: 300, display: "none" }
+                    }>
                     <div className={styles.contentSelect}>
-                      <div className={`${styles.DivSelectyze} ${styles.grey}`} style={{ paddingLeft: 7, zIndex: 9 }}>
+                      <div
+                        className={`${styles.DivSelectyze} ${styles.grey}`}
+                        style={{ paddingLeft: 7, zIndex: 9 }}>
                         <Link to="#" className={styles.selectyzeValue}>
                           <span>POSCO VST</span>
                         </Link>
                       </div>
                     </div>
                     <div className={styles.treeCon} style={{ height: "100%" }}>
-                      <Frame width="100%" height="100%" frameBorder={0} head={<style>{antdStyles}</style>}>
-                        <TreeView nodeId={selectedPath.id} ref={tvRef} handleOnDoubleClick={handleOnSelectPath} />
+                      <Frame
+                        width="100%"
+                        height="100%"
+                        frameBorder={0}
+                        head={<style>{antdStyles}</style>}>
+                        <TreeView
+                          nodeId={selectedPath.id}
+                          ref={tvRef}
+                          handleOnDoubleClick={handleOnSelectPath}
+                        />
                       </Frame>
                     </div>
                   </div>

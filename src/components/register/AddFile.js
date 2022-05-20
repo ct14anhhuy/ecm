@@ -10,7 +10,11 @@ import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
 import { Extensions } from "constants/extTypes";
 import { extractFileExts } from "utils/stringHelper";
-import { EDIT_PERMISSION, SPECIAL_CHARACTER, VIEW_PERMISSION } from "constants/commonConstants";
+import {
+  EDIT_PERMISSION,
+  SPECIAL_CHARACTER,
+  VIEW_PERMISSION,
+} from "constants/commonConstants";
 import swal from "sweetalert";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
@@ -67,7 +71,10 @@ const AddFile = props => {
     if (!e.target.files[0]) return;
     const impFiles = [];
     for (const key in e.target.files) {
-      if (e.target.files[key].size && !state.files.some(f => f.fileName.includes(e.target.files[key].name))) {
+      if (
+        e.target.files[key].size &&
+        !state.files.some(f => f.fileName.includes(e.target.files[key].name))
+      ) {
         impFiles.push({
           data: e.target.files[key],
           key: shortid.generate(),
@@ -117,7 +124,11 @@ const AddFile = props => {
   const handleAddFiles = async () => {
     if (state.files.length === 0) return;
     if (state.files.filter(f => !f.isValid).length > 0) {
-      swal("Invalid!", `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`, "error");
+      swal(
+        "Invalid!",
+        `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`,
+        "error",
+      );
       return;
     }
     const fileInfos = new FormData();
@@ -187,11 +198,16 @@ const AddFile = props => {
         }}>
         <div className="popup_layer_typeB" style={{ display: "block" }}>
           <div className={styles.wrapBody}>
-            <div className={styles.popLayerWrap} style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}>
+            <div
+              className={styles.popLayerWrap}
+              style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}>
               <div className={styles.header}>
                 <h1 className={styles.tit}>Add Content</h1>
                 <Link to="#" className={styles.close} onClick={changeShowAddFile}>
-                  <img alt="" src={require("assets/img/contents/ecmMain/img_close.gif").default} />
+                  <img
+                    alt=""
+                    src={require("assets/img/contents/ecmMain/img_close.gif").default}
+                  />
                 </Link>
               </div>
               <div className={styles.contents}>
@@ -200,10 +216,16 @@ const AddFile = props => {
                     <span className={styles.subtype_2}>Content List</span>
                     <span style={{ marginLeft: 2, color: "#8a929b" }}>
                       (Total: {state.files.length}/Invalid:{" "}
-                      <span style={{ color: "#ff3c46" }}>{state.files.filter(f => !f.isValid).length}</span>)
+                      <span style={{ color: "#ff3c46" }}>
+                        {state.files.filter(f => !f.isValid).length}
+                      </span>
+                      )
                     </span>
                     <span className={styles.floatR}>
-                      <Link to="#" className={styles.btnBlack} onClick={() => fileRef.current.click()}>
+                      <Link
+                        to="#"
+                        className={styles.btnBlack}
+                        onClick={() => fileRef.current.click()}>
                         <span>
                           <b>+</b> Add Content
                         </span>
@@ -260,17 +282,33 @@ const AddFile = props => {
                     </span>
                     <div
                       className={styles.treeConBox}
-                      style={showListDirectory ? { height: 300, display: "block" } : { height: 300, display: "none" }}>
+                      style={
+                        showListDirectory
+                          ? { height: 300, display: "block" }
+                          : { height: 300, display: "none" }
+                      }>
                       <div className={styles.contentSelect}>
-                        <div className={`${styles.DivSelectyze}`} style={{ paddingLeft: 7, zIndex: 9 }}>
+                        <div
+                          className={`${styles.DivSelectyze}`}
+                          style={{ paddingLeft: 7, zIndex: 9 }}>
                           <Link to="#" className={styles.selectyzeValue}>
                             <span>POSCO VST</span>
                           </Link>
                         </div>
                       </div>
-                      <div className={styles.treeCon} style={{ width: "100%", height: "100%" }}>
-                        <Frame width="100%" height="100%" frameBorder={0} head={<style>{antdStyles}</style>}>
-                          <TreeView nodeId={state.directoryId} ref={tvRef} handleOnDoubleClick={handleOnSelectPath} />
+                      <div
+                        className={styles.treeCon}
+                        style={{ width: "100%", height: "100%" }}>
+                        <Frame
+                          width="100%"
+                          height="100%"
+                          frameBorder={0}
+                          head={<style>{antdStyles}</style>}>
+                          <TreeView
+                            nodeId={state.directoryId}
+                            ref={tvRef}
+                            handleOnDoubleClick={handleOnSelectPath}
+                          />
                         </Frame>
                       </div>
                     </div>
@@ -289,7 +327,9 @@ const AddFile = props => {
                     <div className={styles.safe_btn_box}>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe1} ${state.securityLevel === "Secret" ? styles.on : ""}`}
+                        className={`${styles.btn_safe1} ${
+                          state.securityLevel === "Secret" ? styles.on : ""
+                        }`}
                         onClick={handleChangeSecurityLevel}>
                         Secret
                       </Link>
@@ -303,7 +343,9 @@ const AddFile = props => {
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe3} ${state.securityLevel === "Secret A" ? styles.on : ""}`}
+                        className={`${styles.btn_safe3} ${
+                          state.securityLevel === "Secret A" ? styles.on : ""
+                        }`}
                         onClick={handleChangeSecurityLevel}>
                         Secret A
                       </Link>
@@ -317,13 +359,17 @@ const AddFile = props => {
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe5} ${state.securityLevel === "Secret B" ? styles.on : ""}`}
+                        className={`${styles.btn_safe5} ${
+                          state.securityLevel === "Secret B" ? styles.on : ""
+                        }`}
                         onClick={handleChangeSecurityLevel}>
                         Secret B
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe6} ${state.securityLevel === "Public" ? styles.on : ""}`}
+                        className={`${styles.btn_safe6} ${
+                          state.securityLevel === "Public" ? styles.on : ""
+                        }`}
                         onClick={handleChangeSecurityLevel}>
                         Public
                       </Link>
@@ -333,7 +379,11 @@ const AddFile = props => {
                     <span className={styles.subtype_2}>Tag</span>
                   </p>
                   <div className={styles.hashtag_inputer}>
-                    <input type="text" value={state.tag} onChange={e => setState({ ...state, tag: e.target.value })} />
+                    <input
+                      type="text"
+                      value={state.tag}
+                      onChange={e => setState({ ...state, tag: e.target.value })}
+                    />
                   </div>
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Permission Setting</span>

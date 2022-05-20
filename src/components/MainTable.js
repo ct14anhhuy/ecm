@@ -30,7 +30,11 @@ const MainTable = props => {
             <div className="allCheck">
               <span>
                 <label className={selectAll ? "i_check c_on" : "i_check"}>
-                  <input type="checkbox" defaultChecked={selectAll} onChange={() => handleSelectAll(!selectAll)} />
+                  <input
+                    type="checkbox"
+                    defaultChecked={selectAll}
+                    onChange={() => handleSelectAll(!selectAll)}
+                  />
                 </label>
               </span>
               <Link to="#" className="icoSort">

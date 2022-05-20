@@ -25,7 +25,9 @@ const RoleAssignEdit = props => {
   }, [props.employees]);
 
   useEffect(() => {
-    const deps = props.departments.map(dep => Object.assign({}, dep, { selected: false, expanded: false }));
+    const deps = props.departments.map(dep =>
+      Object.assign({}, dep, { selected: false, expanded: false }),
+    );
     const result = deps.map(dep => ({
       ...dep,
       employees: dep.employees.map(emp => Object.assign({}, emp, { selected: false })),
@@ -45,7 +47,9 @@ const RoleAssignEdit = props => {
       }
     }
     const result = checkedEmps.filter(
-      emp => !editRoles.some(cur => emp.id === cur.id) && !viewRoles.some(cur => emp.id === cur.id),
+      emp =>
+        !editRoles.some(cur => emp.id === cur.id) &&
+        !viewRoles.some(cur => emp.id === cur.id),
     );
     setEditRoles([...result.map(emp => ({ ...emp, selected: false })), ...editRoles]);
   };
@@ -62,7 +66,9 @@ const RoleAssignEdit = props => {
       }
     }
     const result = checkedEmps.filter(
-      emp => !editRoles.some(cur => emp.id === cur.id) && !viewRoles.some(cur => emp.id === cur.id),
+      emp =>
+        !editRoles.some(cur => emp.id === cur.id) &&
+        !viewRoles.some(cur => emp.id === cur.id),
     );
     setViewRoles([...result.map(emp => ({ ...emp, selected: false })), ...viewRoles]);
   };
@@ -78,13 +84,19 @@ const RoleAssignEdit = props => {
   const handleEditToView = () => {
     const checkedEmps = editRoles.filter(emp => emp.selected);
     setEditRoles(editRoles.filter(emp => !emp.selected));
-    setViewRoles([...checkedEmps.map(emp => ({ ...emp, selected: false })), ...viewRoles]);
+    setViewRoles([
+      ...checkedEmps.map(emp => ({ ...emp, selected: false })),
+      ...viewRoles,
+    ]);
   };
 
   const handleViewToEdit = () => {
     const checkedEmps = viewRoles.filter(emp => emp.selected);
     setViewRoles(viewRoles.filter(emp => !emp.selected));
-    setEditRoles([...checkedEmps.map(emp => ({ ...emp, selected: false })), ...editRoles]);
+    setEditRoles([
+      ...checkedEmps.map(emp => ({ ...emp, selected: false })),
+      ...editRoles,
+    ]);
   };
 
   const handleSearch = () => {
@@ -139,7 +151,8 @@ const RoleAssignEdit = props => {
     const newArr = [...departments];
     const arrId = newArr.findIndex(dep => dep.employees.some(emp => emp.id === empId));
     const childrenId = newArr[arrId].employees.findIndex(emp => emp.id === empId);
-    newArr[arrId].employees[childrenId].selected = !newArr[arrId].employees[childrenId].selected;
+    newArr[arrId].employees[childrenId].selected =
+      !newArr[arrId].employees[childrenId].selected;
     setDepartments(newArr);
   };
 
@@ -159,7 +172,9 @@ const RoleAssignEdit = props => {
                     <th height={25}>Owner</th>
                     <td className={styles.account0}>
                       <div
-                        className={styles.innerPad0}>{`${owner.lastName} ${owner.firstName} (${owner.epLiteId})`}</div>
+                        className={
+                          styles.innerPad0
+                        }>{`${owner.lastName} ${owner.firstName} (${owner.epLiteId})`}</div>
                     </td>
                   </tr>
                 </tbody>
@@ -167,18 +182,26 @@ const RoleAssignEdit = props => {
               <div className={styles.contents}>
                 <ul className={styles.tabUL}>
                   <li>
-                    <Link to="#" className={selectName ? styles.on : ""} onClick={() => setSelectName(true)}>
+                    <Link
+                      to="#"
+                      className={selectName ? styles.on : ""}
+                      onClick={() => setSelectName(true)}>
                       Name
                     </Link>
                   </li>
                   <li>
-                    <Link to="#" className={selectName ? "" : styles.on} onClick={() => setSelectName(false)}>
+                    <Link
+                      to="#"
+                      className={selectName ? "" : styles.on}
+                      onClick={() => setSelectName(false)}>
                       Department
                     </Link>
                   </li>
                 </ul>
               </div>
-              <div className={styles.roleBox01} style={selectName ? { display: "block" } : { display: "none" }}>
+              <div
+                className={styles.roleBox01}
+                style={selectName ? { display: "block" } : { display: "none" }}>
                 <input
                   className={styles.search}
                   style={{ msImeMode: "active" }}
@@ -187,23 +210,39 @@ const RoleAssignEdit = props => {
                   onChange={e => setSearchStr(e.target.value)}
                 />
                 <Link to="#" onClick={handleSearch}>
-                  <img style={{ marginTop: 6 }} alt="" src={require("assets/img/popup/bg/bg_search.gif").default} />
+                  <img
+                    style={{ marginTop: 6 }}
+                    alt=""
+                    src={require("assets/img/popup/bg/bg_search.gif").default}
+                  />
                 </Link>
                 <div className={styles.count_box}>
                   <div className={styles.allCheck}>
                     <span>
-                      <label className={`${styles.i_check} ${selectAll ? styles.c_on : ""}`}>
-                        <input name="checkbox" type="checkbox" defaultValue={selectAll} onChange={handleSelectAll} />
+                      <label
+                        className={`${styles.i_check} ${selectAll ? styles.c_on : ""}`}>
+                        <input
+                          name="checkbox"
+                          type="checkbox"
+                          defaultValue={selectAll}
+                          onChange={handleSelectAll}
+                        />
                       </label>
                     </span>
                   </div>
                   <p className={styles.count}>
                     Select
-                    <span className={styles.red}> {employees.filter(emp => emp.selected).length}</span>
+                    <span className={styles.red}>
+                      {" "}
+                      {employees.filter(emp => emp.selected).length}
+                    </span>
                     /Total
                     <span className={styles.blue}> {employees.length}</span>
                   </p>
-                  <Link to="#" className={styles.btn_delall} onClick={() => setEmployees([])}>
+                  <Link
+                    to="#"
+                    className={styles.btn_delall}
+                    onClick={() => setEmployees([])}>
                     Delete All
                   </Link>
                 </div>
@@ -215,8 +254,15 @@ const RoleAssignEdit = props => {
                           <tr key={emp.id}>
                             <td>
                               <div className={styles.contentTitle}>
-                                <label className={`${styles.i_check} ${emp.selected ? styles.c_on : ""}`}>
-                                  <input name="checkbox" type="checkbox" onChange={() => handleSelect(emp.id)} />
+                                <label
+                                  className={`${styles.i_check} ${
+                                    emp.selected ? styles.c_on : ""
+                                  }`}>
+                                  <input
+                                    name="checkbox"
+                                    type="checkbox"
+                                    onChange={() => handleSelect(emp.id)}
+                                  />
                                 </label>
                                 <span className={styles.checkTxt}>
                                   {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}
@@ -230,7 +276,9 @@ const RoleAssignEdit = props => {
                   </div>
                 </div>
               </div>
-              <div className={styles.partBox01} style={selectName ? { display: "none" } : { display: "block" }}>
+              <div
+                className={styles.partBox01}
+                style={selectName ? { display: "none" } : { display: "block" }}>
                 <div className={`${styles.maxH} ${styles.type_4}`}>
                   <div className={styles.marR17} style={{ background: "none" }}>
                     <table className={styles.tblFolder}>
@@ -246,11 +294,16 @@ const RoleAssignEdit = props => {
                               <td className={styles.bdr0}>
                                 <div className={styles.treeTitle}>
                                   <label
-                                    className={`${styles.i_check} ${dep.selected ? styles.c_on : ""}`}
+                                    className={`${styles.i_check} ${
+                                      dep.selected ? styles.c_on : ""
+                                    }`}
                                     style={{
                                       marginLeft: 2,
                                     }}>
-                                    <input type="checkbox" onChange={() => handleDepartmentSelect(dep.id)} />
+                                    <input
+                                      type="checkbox"
+                                      onChange={() => handleDepartmentSelect(dep.id)}
+                                    />
                                   </label>
                                 </div>
                               </td>
@@ -261,7 +314,8 @@ const RoleAssignEdit = props => {
                                   src={
                                     dep.expanded
                                       ? require("assets/img/form/ico_tree_on.gif").default
-                                      : require("assets/img/form/ico_tree_off.gif").default
+                                      : require("assets/img/form/ico_tree_off.gif")
+                                          .default
                                   }
                                   onClick={() => handleDepartmentExpanded(dep.id)}
                                 />
@@ -278,8 +332,14 @@ const RoleAssignEdit = props => {
                                 <td className={styles.bdr0}> </td>
                                 <td className={styles.bdr1}>
                                   <div className={styles.treeTitle}>
-                                    <label className={`${styles.i_check} ${emp.selected ? styles.c_on : ""}`}>
-                                      <input type="checkbox" onChange={() => handleSelectStaff(emp.id)} />
+                                    <label
+                                      className={`${styles.i_check} ${
+                                        emp.selected ? styles.c_on : ""
+                                      }`}>
+                                      <input
+                                        type="checkbox"
+                                        onChange={() => handleSelectStaff(emp.id)}
+                                      />
                                     </label>
                                   </div>
                                 </td>
@@ -302,18 +362,30 @@ const RoleAssignEdit = props => {
               <div>
                 <p className={styles.btn_move} style={{ marginTop: 30 }}>
                   <Link to="#" onClick={handleMoveToEdit}>
-                    <img alt="" src={require("assets/img/popup/btn/btn_personR.png").default} />
+                    <img
+                      alt=""
+                      src={require("assets/img/popup/btn/btn_personR.png").default}
+                    />
                   </Link>
                   <Link to="#" onClick={handleEditToLeft}>
-                    <img alt="" src={require("assets/img/popup/btn/btn_personL.png").default} />
+                    <img
+                      alt=""
+                      src={require("assets/img/popup/btn/btn_personL.png").default}
+                    />
                   </Link>
                 </p>
                 <p className={styles.btn_move} style={{ marginTop: 130 }}>
                   <Link to="#" onClick={handleMoveToView}>
-                    <img alt="" src={require("assets/img/popup/btn/btn_personR.png").default} />
+                    <img
+                      alt=""
+                      src={require("assets/img/popup/btn/btn_personR.png").default}
+                    />
                   </Link>
                   <Link to="#" onClick={handleViewToLeft}>
-                    <img alt="" src={require("assets/img/popup/btn/btn_personL.png").default} />
+                    <img
+                      alt=""
+                      src={require("assets/img/popup/btn/btn_personL.png").default}
+                    />
                   </Link>
                 </p>
               </div>
@@ -324,7 +396,10 @@ const RoleAssignEdit = props => {
                   <strong>Edit</strong>
                 </span>
                 <span className={styles.floatR}>
-                  <Link to="#" className={styles.btn_delall} onClick={() => setEditRoles([])}>
+                  <Link
+                    to="#"
+                    className={styles.btn_delall}
+                    onClick={() => setEditRoles([])}>
                     Delete All
                   </Link>
                 </span>
@@ -343,8 +418,15 @@ const RoleAssignEdit = props => {
                         onClick={() => handleSelectEdit(emp.id)}>
                         <td>
                           <div className={styles.contentTitle}>
-                            <label className={`${styles.i_check} ${emp.selected ? styles.c_on : ""}`}>
-                              <input name="checkbox" type="checkbox" onChange={() => handleSelectEdit(emp.id)} />
+                            <label
+                              className={`${styles.i_check} ${
+                                emp.selected ? styles.c_on : ""
+                              }`}>
+                              <input
+                                name="checkbox"
+                                type="checkbox"
+                                onChange={() => handleSelectEdit(emp.id)}
+                              />
                             </label>
                             <span className={styles.checkTxt}>
                               {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}
@@ -358,10 +440,16 @@ const RoleAssignEdit = props => {
               </div>
               <p className={styles.btn_move}>
                 <Link to="#" onClick={handleEditToView}>
-                  <img alt="" src={require("assets/img/popup/btn/btn_personD.png").default} />
+                  <img
+                    alt=""
+                    src={require("assets/img/popup/btn/btn_personD.png").default}
+                  />
                 </Link>
                 <Link to="#" onClick={handleViewToEdit}>
-                  <img alt="" src={require("assets/img/popup/btn/btn_personU.png").default} />
+                  <img
+                    alt=""
+                    src={require("assets/img/popup/btn/btn_personU.png").default}
+                  />
                 </Link>
               </p>
               <div className={styles.sub} style={{ marginTop: 17 }}>
@@ -369,7 +457,10 @@ const RoleAssignEdit = props => {
                   <strong>View</strong>
                 </span>
                 <span className={styles.floatR}>
-                  <Link to="#" className={styles.btn_delall} onClick={() => setViewRoles([])}>
+                  <Link
+                    to="#"
+                    className={styles.btn_delall}
+                    onClick={() => setViewRoles([])}>
                     Delete All
                   </Link>
                 </span>
@@ -388,8 +479,15 @@ const RoleAssignEdit = props => {
                         onClick={() => handleSelectView(emp.id)}>
                         <td>
                           <div className={styles.contentTitle}>
-                            <label className={`${styles.i_check} ${emp.selected ? styles.c_on : ""}`}>
-                              <input name="checkbox" type="checkbox" onChange={() => handleSelectView(emp.id)} />
+                            <label
+                              className={`${styles.i_check} ${
+                                emp.selected ? styles.c_on : ""
+                              }`}>
+                              <input
+                                name="checkbox"
+                                type="checkbox"
+                                onChange={() => handleSelectView(emp.id)}
+                              />
                             </label>
                             <span className={styles.checkTxt}>
                               {`${emp.lastName} ${emp.firstName} (${emp.epLiteId})`}

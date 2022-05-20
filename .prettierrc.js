@@ -5,6 +5,6 @@ module.exports = {
   trailingComma: "all",
   tabWidth: 2,
   semi: true,
-  printWidth: 120,
-  arrowParens: "avoid"
-}
+  printWidth: 90,
+  arrowParens: "avoid",
+};

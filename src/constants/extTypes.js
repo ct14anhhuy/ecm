@@ -4,7 +4,20 @@ const WORD_EXTS = ["doc", "docx"];
 const PDF_EXTS = ["pdf"];
 const IMAGE_EXTS = ["jpg", "gif", "png", "jpeg"];
 const CAD_EXTS = ["dwg", "dwt", "dxf"];
-const VIDEO_EXTS = ["webm", "mpeg", "ogg", "mp4", "mpg", "mpv", "m4p", "m4v", "avi", "wmv", "flv", "swf"];
+const VIDEO_EXTS = [
+  "webm",
+  "mpeg",
+  "ogg",
+  "mp4",
+  "mpg",
+  "mpv",
+  "m4p",
+  "m4v",
+  "avi",
+  "wmv",
+  "flv",
+  "swf",
+];
 
 export const ALL = "ALL";
 export const POWERPOINT = "POWERPOINT";

@@ -48,7 +48,9 @@ const fileInfoReducers = (state = initState, action) =>
       case types.SELECT_MULTI: {
         const editIds = action.payload.fileIds;
         draft.data = draft.data.map(f =>
-          editIds.includes(f.id) ? { ...f, checked: action.payload.checked } : { ...f, checked: false },
+          editIds.includes(f.id)
+            ? { ...f, checked: action.payload.checked }
+            : { ...f, checked: false },
         );
         break;
       }

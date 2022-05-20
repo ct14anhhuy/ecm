@@ -25,7 +25,8 @@ const App = props => {
   const { path, dirId, page } = useParams();
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
 
-  const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } = props.systemParams;
+  const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } =
+    props.systemParams;
 
   const { getDirectories, getDepartments } = props;
 
@@ -56,7 +57,10 @@ const App = props => {
                   borderRightWidth: "medium",
                   borderRightStyle: "none",
                 }}>
-                <Link to="#" className="btn_areaL" onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}>
+                <Link
+                  to="#"
+                  className="btn_areaL"
+                  onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}>
                   <img
                     alt=""
                     src={

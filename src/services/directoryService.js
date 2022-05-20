@@ -5,7 +5,9 @@ const getDirectories = async () => {
 };
 
 const createDirectory = async directory => {
-  return await api.post("/Directory/CreateDirectory", directory).then(response => response);
+  return await api
+    .post("/Directory/CreateDirectory", directory)
+    .then(response => response);
 };
 
 const deleteDirectory = async id => {

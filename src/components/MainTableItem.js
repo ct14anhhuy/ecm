@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState, Fragment } from "react";
 import { connect } from "react-redux";
-import { changeFavoriteAction, changeImportantAction, changeCheckedAction } from "store/fileInfo/actions";
+import {
+  changeFavoriteAction,
+  changeImportantAction,
+  changeCheckedAction,
+} from "store/fileInfo/actions";
 import { getFileShareUrlAction } from "store/fileUrl/actions";
 import {
   changeShowEditFileAction,
@@ -99,12 +103,19 @@ const MainTableItem = props => {
               />
             </Link>
             <Link to="#">
-              <img alt="" style={{ width: 16, height: 16 }} src={GetBackgroundIconFromExtension(fileInfo.name)} />
+              <img
+                alt=""
+                style={{ width: 16, height: 16 }}
+                src={GetBackgroundIconFromExtension(fileInfo.name)}
+              />
               {fileInfo.name}
             </Link>
           </div>
           <Link to="#" className="listInfo">
-            <img alt="" src={require("assets/img/contents/ecmMain/bg_info.png").default} />
+            <img
+              alt=""
+              src={require("assets/img/contents/ecmMain/bg_info.png").default}
+            />
           </Link>
           <ul className="infoMenu" ref={node} style={{ top: 16, display: "none" }}>
             <li style={{ fontWeight: "bold" }}>
@@ -134,7 +145,10 @@ const MainTableItem = props => {
                 onChange={() => props.changeChecked(fileInfo.id, !fileInfo.checked)}
               />
             </label>
-            <Link to="#" className="ico_fav_3" onClick={() => props.changeImportant(fileInfo.id, user.id)}>
+            <Link
+              to="#"
+              className="ico_fav_3"
+              onClick={() => props.changeImportant(fileInfo.id, user.id)}>
               <img
                 alt=""
                 src={
@@ -144,7 +158,10 @@ const MainTableItem = props => {
                 }
               />
             </Link>
-            <Link to="#" className="ico_fav" onClick={() => props.changeFavorite(fileInfo.id, user.id)}>
+            <Link
+              to="#"
+              className="ico_fav"
+              onClick={() => props.changeFavorite(fileInfo.id, user.id)}>
               <img
                 alt=""
                 src={
@@ -160,12 +177,22 @@ const MainTableItem = props => {
                 props.changeSelectedItem(fileInfo);
                 props.changeShowOpenContent();
               }}>
-              <img alt="" style={{ width: 16, height: 16 }} src={GetBackgroundIconFromExtension(fileInfo.name)} />
+              <img
+                alt=""
+                style={{ width: 16, height: 16 }}
+                src={GetBackgroundIconFromExtension(fileInfo.name)}
+              />
               {fileInfo.name}
             </Link>
           </div>
-          <Link to="#" className="listInfo" onClick={() => (node.current.style.display = "block")}>
-            <img alt="" src={require("assets/img/contents/ecmMain/bg_info.png").default} />
+          <Link
+            to="#"
+            className="listInfo"
+            onClick={() => (node.current.style.display = "block")}>
+            <img
+              alt=""
+              src={require("assets/img/contents/ecmMain/bg_info.png").default}
+            />
           </Link>
           <ul
             className="infoMenu"

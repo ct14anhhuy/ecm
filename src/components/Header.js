@@ -20,7 +20,10 @@ const Header = props => {
           <div className="topLt">
             <h1 className="logo">
               <Link to="#" className="logo_ci">
-                <img alt="" src={require("assets/img/layout/posco-the-great-logo.png").default} />
+                <img
+                  alt=""
+                  src={require("assets/img/layout/posco-the-great-logo.png").default}
+                />
               </Link>
               <Link to="#" className="logo_sys">
                 <img alt="" src={require("assets/img/layout/logo_ecm.png").default} />

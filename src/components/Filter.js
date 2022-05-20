@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
-import { updatePageSizeAction, updateFilterExtensionAction } from "store/fileInfo/actions";
+import {
+  updatePageSizeAction,
+  updateFilterExtensionAction,
+} from "store/fileInfo/actions";
 
 const Filter = props => {
   const history = useHistory();
@@ -136,10 +139,15 @@ const Filter = props => {
         <div className="mainViewCount">
           <div className="am_DivSelectyze am_grey" style={{ zIndex: 10 }}>
             <span>Show </span>
-            <Link to="#" className="am_selectyzeValue" onClick={() => setShowListRow(!showListRow)}>
+            <Link
+              to="#"
+              className="am_selectyzeValue"
+              onClick={() => setShowListRow(!showListRow)}>
               {pageSize}
             </Link>
-            <ul className="am_UlSelectize" style={showListRow ? { display: "block" } : { display: "none" }}>
+            <ul
+              className="am_UlSelectize"
+              style={showListRow ? { display: "block" } : { display: "none" }}>
               <li>
                 <Link to="#" onClick={handleChangePageSize}>
                   15
@@ -178,7 +186,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     updatePageSize: pageSize => dispatch(updatePageSizeAction(pageSize)),
-    updateFilterExtension: filterExtension => dispatch(updateFilterExtensionAction(filterExtension)),
+    updateFilterExtension: filterExtension =>
+      dispatch(updateFilterExtensionAction(filterExtension)),
   };
 };
 

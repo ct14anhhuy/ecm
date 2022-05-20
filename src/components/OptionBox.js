@@ -1,9 +1,17 @@
 import { useEffect, useState, Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import { searchContentsAction, moveToTrashAction, recoverFileAction, deleteFileAction } from "store/fileInfo/actions";
+import {
+  searchContentsAction,
+  moveToTrashAction,
+  recoverFileAction,
+  deleteFileAction,
+} from "store/fileInfo/actions";
 import { deleteDirectoryAction } from "store/directory/actions";
-import { changeShowAddFileAction, changeShowCreateDirectoryAction } from "store/systemParams/actions";
+import {
+  changeShowAddFileAction,
+  changeShowCreateDirectoryAction,
+} from "store/systemParams/actions";
 import swal from "sweetalert";
 import { ROUTE_TRASH_CONTENTS } from "constants/routePaths";
 
