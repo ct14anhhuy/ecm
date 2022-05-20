@@ -8,8 +8,8 @@ const getDepartmentsAction = () => {
       dispatch({
         type: types.GET_DEPARTMENTS,
         payload: {
-          departments
-        }
+          departments,
+        },
       });
     } catch (error) {
       console.log(error);

@@ -8,8 +8,8 @@ const getDirectoriesAction = () => {
       dispatch({
         type: types.GET_DIRECTORIES,
         payload: {
-          directories
-        }
+          directories,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -21,21 +21,21 @@ const createDirectoryAction = directory => {
   return async dispatch => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE_DIRECTORY
+        type: types.BEGIN_UPDATE_DIRECTORY,
       });
       const result = await directoryService.createDirectory(directory);
       dispatch({
         type: types.UPDATE_DIRECTORY_SUCCESS,
         payload: {
-          directory: result
-        }
+          directory: result,
+        },
       });
     } catch (error) {
       dispatch({
         type: types.UPDATE_DIRECTORY_FAILURE,
         payload: {
-          error: error.data.message
-        }
+          error: error.data.message,
+        },
       });
     }
   };
@@ -48,8 +48,8 @@ const deleteDirectoryAction = id => {
       dispatch({
         type: types.DELETE_DIRECTORY,
         payload: {
-          id
-        }
+          id,
+        },
       });
     } catch (error) {
       console.log(error);

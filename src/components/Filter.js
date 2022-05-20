@@ -2,10 +2,7 @@ import { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
-import {
-  updatePageSizeAction,
-  updateFilterExtensionAction
-} from "store/fileInfo/actions";
+import { updatePageSizeAction, updateFilterExtensionAction } from "store/fileInfo/actions";
 
 const Filter = props => {
   const history = useHistory();
@@ -44,16 +41,12 @@ const Filter = props => {
           </Link>
         </li>
         <li>
-          <Link
-            to="#"
-            onClick={() => handleUpdateFilterExtension(exts.POWERPOINT)}
-          >
+          <Link to="#" onClick={() => handleUpdateFilterExtension(exts.POWERPOINT)}>
             <img
               alt=""
               title="Powerpoint"
               src={
-                filterExtension === exts.POWERPOINT ||
-                filterExtension === exts.ALL
+                filterExtension === exts.POWERPOINT || filterExtension === exts.ALL
                   ? require("assets/img/main/ico/ico_ppt_on.png").default
                   : require("assets/img/main/ico/ico_ppt_off.png").default
               }
@@ -143,17 +136,10 @@ const Filter = props => {
         <div className="mainViewCount">
           <div className="am_DivSelectyze am_grey" style={{ zIndex: 10 }}>
             <span>Show </span>
-            <Link
-              to="#"
-              className="am_selectyzeValue"
-              onClick={() => setShowListRow(!showListRow)}
-            >
+            <Link to="#" className="am_selectyzeValue" onClick={() => setShowListRow(!showListRow)}>
               {pageSize}
             </Link>
-            <ul
-              className="am_UlSelectize"
-              style={showListRow ? { display: "block" } : { display: "none" }}
-            >
+            <ul className="am_UlSelectize" style={showListRow ? { display: "block" } : { display: "none" }}>
               <li>
                 <Link to="#" onClick={handleChangePageSize}>
                   15
@@ -185,15 +171,14 @@ const Filter = props => {
 
 const mapStateToProps = state => {
   return {
-    paginationSet: state.fileInfoReducers.paginationSet
+    paginationSet: state.fileInfoReducers.paginationSet,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     updatePageSize: pageSize => dispatch(updatePageSizeAction(pageSize)),
-    updateFilterExtension: filterExtension =>
-      dispatch(updateFilterExtensionAction(filterExtension))
+    updateFilterExtension: filterExtension => dispatch(updateFilterExtensionAction(filterExtension)),
   };
 };
 

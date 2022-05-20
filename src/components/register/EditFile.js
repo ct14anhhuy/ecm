@@ -9,29 +9,17 @@ import swal from "sweetalert";
 import { changeShowEditFileAction } from "store/systemParams/actions";
 import { getFileSharedAction } from "store/employee/actions";
 import { editFileAction } from "store/fileInfo/actions";
-import {
-  VIEW_PERMISSION,
-  EDIT_PERMISSION,
-  SPECIAL_CHARACTER
-} from "constants/commonConstants";
+import { VIEW_PERMISSION, EDIT_PERMISSION, SPECIAL_CHARACTER } from "constants/commonConstants";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
 import styles from "assets/css/modules/AddEdit.module.css";
-/* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const EditFile = props => {
   const tvRef = useRef();
 
   const { editItem } = props.systemParams;
-  const {
-    owner,
-    fileShared,
-    getFileShared,
-    editFile,
-    fileInfos,
-    changeShowEditFile
-  } = props;
+  const { owner, fileShared, getFileShared, editFile, fileInfos, changeShowEditFile } = props;
 
   const [state, setState] = useState({
     directoryId: editItem.directoryId,
@@ -39,8 +27,8 @@ const EditFile = props => {
     securityLevel: editItem.securityLevel,
     file: {
       fileName: editItem.name,
-      isValid: true
-    }
+      isValid: true,
+    },
   });
 
   const [showListDirectory, setShowListDirectory] = useState(false);
@@ -56,23 +44,15 @@ const EditFile = props => {
       file: {
         ...state.file,
         fileName,
-        isValid: !checkContainSpecialCharacters(fileName)
-      }
+        isValid: !checkContainSpecialCharacters(fileName),
+      },
     });
     return true;
   };
 
   useEffect(() => {
-    setEditRoles(
-      fileShared
-        .filter(e => e.permission === EDIT_PERMISSION)
-        .map(f => f.employee)
-    );
-    setViewRoles(
-      fileShared
-        .filter(e => e.permission === VIEW_PERMISSION)
-        .map(f => f.employee)
-    );
+    setEditRoles(fileShared.filter(e => e.permission === EDIT_PERMISSION).map(f => f.employee));
+    setViewRoles(fileShared.filter(e => e.permission === VIEW_PERMISSION).map(f => f.employee));
   }, [fileShared]);
 
   useEffect(() => {
@@ -111,22 +91,18 @@ const EditFile = props => {
 
   const handleEditFile = () => {
     if (!state.file.isValid) {
-      swal(
-        "Invalid!",
-        `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`,
-        "error"
-      );
+      swal("Invalid!", `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`, "error");
       return;
     }
     const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION,
-      fileId: editItem.id
+      fileId: editItem.id,
     }));
     const editEmps = editRoles.map(e => ({
       employeeId: e.id,
       permission: EDIT_PERMISSION,
-      fileId: editItem.id
+      fileId: editItem.id,
     }));
     const fileInfo = {
       id: editItem.id,
@@ -134,7 +110,7 @@ const EditFile = props => {
       directoryId: state.directoryId,
       securityLevel: state.securityLevel,
       tag: state.tag,
-      fileShares: [...viewEmps, ...editEmps]
+      fileShares: [...viewEmps, ...editEmps],
     };
     editFile(fileInfo);
   };
@@ -159,7 +135,7 @@ const EditFile = props => {
           zIndex: 1001,
           cursor: "default",
           opacity: 0.6,
-          backgroundColor: "rgb(85, 85, 85)"
+          backgroundColor: "rgb(85, 85, 85)",
         }}
       />
       <div
@@ -171,29 +147,15 @@ const EditFile = props => {
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,
-          backgroundColor: "rgb(255, 255, 255)"
-        }}
-      >
+          backgroundColor: "rgb(255, 255, 255)",
+        }}>
         <div className="popup_layer_typeB" style={{ display: "block" }}>
           <div className={styles.wrapBody}>
-            <div
-              className={styles.popLayerWrap}
-              style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}
-            >
+            <div className={styles.popLayerWrap} style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}>
               <div className={styles.header}>
                 <h1 className={styles.tit}>Edit Content</h1>
-                <Link
-                  to="#"
-                  className={styles.close}
-                  onClick={props.changeShowEditFile}
-                >
-                  <img
-                    alt=""
-                    src={
-                      require("assets/img/contents/ecmMain/img_close.gif")
-                        .default
-                    }
-                  />
+                <Link to="#" className={styles.close} onClick={props.changeShowEditFile}>
+                  <img alt="" src={require("assets/img/contents/ecmMain/img_close.gif").default} />
                 </Link>
               </div>
               <div className={styles.contents}>
@@ -220,18 +182,13 @@ const EditFile = props => {
                         <tbody>
                           <tr>
                             <td style={{ paddingLeft: 5 }}>
-                              <label className={styles.label}>
-                                {selectedPath}
-                              </label>
+                              <label className={styles.label}>{selectedPath}</label>
                             </td>
                             <td width={63}>
                               <Link
                                 to="#"
                                 className={styles.btnBlueLine}
-                                onClick={() =>
-                                  setShowListDirectory(!showListDirectory)
-                                }
-                              >
+                                onClick={() => setShowListDirectory(!showListDirectory)}>
                                 <span>
                                   <em>Show All</em>
                                 </span>
@@ -243,32 +200,16 @@ const EditFile = props => {
                     </span>
                     <div
                       className={styles.treeConBox}
-                      style={
-                        showListDirectory
-                          ? { height: 300, display: "block" }
-                          : { height: 300, display: "none" }
-                      }
-                    >
+                      style={showListDirectory ? { height: 300, display: "block" } : { height: 300, display: "none" }}>
                       <div className={styles.contentSelect}>
-                        <div
-                          className={`${styles.DivSelectyze}`}
-                          style={{ paddingLeft: 7, zIndex: 9 }}
-                        >
+                        <div className={`${styles.DivSelectyze}`} style={{ paddingLeft: 7, zIndex: 9 }}>
                           <Link to="#" className={styles.selectyzeValue}>
                             <span>POSCO VST</span>
                           </Link>
                         </div>
                       </div>
-                      <div
-                        className={styles.treeCon}
-                        style={{ width: "100%", height: "100%" }}
-                      >
-                        <Frame
-                          width="100%"
-                          height="100%"
-                          frameBorder={0}
-                          head={<style>{antdStyles}</style>}
-                        >
+                      <div className={styles.treeCon} style={{ width: "100%", height: "100%" }}>
+                        <Frame width="100%" height="100%" frameBorder={0} head={<style>{antdStyles}</style>}>
                           <TreeView
                             nodeId={editItem.directoryId}
                             ref={tvRef}
@@ -284,74 +225,50 @@ const EditFile = props => {
                   <br />
                   <div className={styles.share_set}>
                     <ol className={styles.safe_grade}>
-                      <li className={styles.grade1}>
-                        Specific Employee Sharing
-                      </li>
-                      <li className={styles.grade2}>
-                        Department Employee Sharing
-                      </li>
-                      <li className={styles.grade3}>
-                        Specific Employee Sharing
-                      </li>
+                      <li className={styles.grade1}>Specific Employee Sharing</li>
+                      <li className={styles.grade2}>Department Employee Sharing</li>
+                      <li className={styles.grade3}>Specific Employee Sharing</li>
                       <li className={styles.grade4}>All Employee Sharing</li>
                     </ol>
                     <div className={styles.safe_btn_box}>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe1} ${
-                          state.securityLevel === "Secret" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe1} ${state.securityLevel === "Secret" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Secret
                       </Link>
                       <Link
                         to="#"
                         className={`${styles.btn_safe2} ${
-                          state.securityLevel === "Secret A/Not Open"
-                            ? styles.on
-                            : ""
+                          state.securityLevel === "Secret A/Not Open" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        onClick={handleChangeSecurityLevel}>
                         Secret A/Not Open
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe3} ${
-                          state.securityLevel === "Secret A" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe3} ${state.securityLevel === "Secret A" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Secret A
                       </Link>
                       <Link
                         to="#"
                         className={`${styles.btn_safe4} ${
-                          state.securityLevel === "Secret B/Not Open"
-                            ? styles.on
-                            : ""
+                          state.securityLevel === "Secret B/Not Open" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        onClick={handleChangeSecurityLevel}>
                         Secret B/Not Open
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe5} ${
-                          state.securityLevel === "Secret B" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe5} ${state.securityLevel === "Secret B" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Secret B
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe6} ${
-                          state.securityLevel === "Public" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe6} ${state.securityLevel === "Public" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Public
                       </Link>
                     </div>
@@ -360,13 +277,7 @@ const EditFile = props => {
                     <span className={styles.subtype_2}>Tag</span>
                   </p>
                   <div className={styles.hashtag_inputer}>
-                    <input
-                      type="text"
-                      value={state.tag}
-                      onChange={e =>
-                        setState({ ...state, tag: e.target.value })
-                      }
-                    />
+                    <input type="text" value={state.tag} onChange={e => setState({ ...state, tag: e.target.value })} />
                   </div>
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Permission Setting</span>
@@ -400,7 +311,7 @@ const mapStateToProps = state => {
     fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
     systemParams: state.systemParamsReducers,
-    fileShared: state.employeeReducers.fileShared
+    fileShared: state.employeeReducers.fileShared,
   };
 };
 
@@ -408,7 +319,7 @@ const mapDispatchToProps = dispatch => {
   return {
     changeShowEditFile: () => dispatch(changeShowEditFileAction()),
     getFileShared: fileId => dispatch(getFileSharedAction(fileId)),
-    editFile: fileInfo => dispatch(editFileAction(fileInfo))
+    editFile: fileInfo => dispatch(editFileAction(fileInfo)),
   };
 };
 

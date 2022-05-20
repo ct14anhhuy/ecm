@@ -4,8 +4,8 @@ const changeHeaderPathAction = path => {
   return {
     type: types.CHANGE_HEADER_PATH,
     payload: {
-      path
-    }
+      path,
+    },
   };
 };
 
@@ -13,8 +13,8 @@ const changeMenuActiveAction = shortcutActive => {
   return {
     type: types.CHANGE_MENU_ACTIVE,
     payload: {
-      shortcutActive
-    }
+      shortcutActive,
+    },
   };
 };
 
@@ -23,32 +23,32 @@ const changeCurrentDirectoryAction = (id, isRoot) => {
     type: types.CHANGE_CURRENT_DIRECTORY,
     payload: {
       id,
-      isRoot
-    }
+      isRoot,
+    },
   };
 };
 
 const changeShowAddFileAction = () => {
   return {
-    type: types.CHANGE_SHOW_ADD_FILE
+    type: types.CHANGE_SHOW_ADD_FILE,
   };
 };
 
 const changeShowEditFileAction = () => {
   return {
-    type: types.CHANGE_SHOW_EDIT_FILE
+    type: types.CHANGE_SHOW_EDIT_FILE,
   };
 };
 
 const changeShowCreateDirectoryAction = () => {
   return {
-    type: types.CHANGE_SHOW_CREATE_DIRECTORY
+    type: types.CHANGE_SHOW_CREATE_DIRECTORY,
   };
 };
 
 const changeShowOpenContentAction = () => {
   return {
-    type: types.CHANGE_SHOW_OPEN_CONTENT
+    type: types.CHANGE_SHOW_OPEN_CONTENT,
   };
 };
 
@@ -56,8 +56,8 @@ const changeSelectedItemAction = selectedItem => {
   return {
     type: types.CHANGE_SELECTED_ITEM,
     payload: {
-      selectedItem
-    }
+      selectedItem,
+    },
   };
 };
 
@@ -65,8 +65,8 @@ const changeEditItemAction = editItem => {
   return {
     type: types.CHANGE_EDIT_ITEM,
     payload: {
-      editItem
-    }
+      editItem,
+    },
   };
 };
 
@@ -79,5 +79,5 @@ export {
   changeShowCreateDirectoryAction,
   changeShowOpenContentAction,
   changeSelectedItemAction,
-  changeEditItemAction
+  changeEditItemAction,
 };

@@ -1,19 +1,20 @@
 {
-  "extends": ["react-app", "prettier"],
-  "ignorePatterns": ["node_modules/", "build/"],
-  "plugins": ["react", "prettier"],
+  "parser": "babel-eslint",
+  "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
-    "prettier/prettier": [
-      "warn",
-      {
-        "arrowParens": "avoid",
-        "semi": true,
-        "trailingComma": "none",
-        "endOfLine": "lf",
-        "tabWidth": 2,
-        "printWidth": 80,
-        "useTabs": false
-      }
-    ]
-  }
+    "no-case-declarations": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

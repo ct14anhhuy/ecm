@@ -10,16 +10,11 @@ import { addFilesAction } from "store/fileInfo/actions";
 import { changeShowAddFileAction } from "store/systemParams/actions";
 import { Extensions } from "constants/extTypes";
 import { extractFileExts } from "utils/stringHelper";
-import {
-  EDIT_PERMISSION,
-  SPECIAL_CHARACTER,
-  VIEW_PERMISSION
-} from "constants/commonConstants";
+import { EDIT_PERMISSION, SPECIAL_CHARACTER, VIEW_PERMISSION } from "constants/commonConstants";
 import swal from "sweetalert";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
 import styles from "assets/css/modules/AddEdit.module.css";
-/* eslint import/no-webpack-loader-syntax: off */
 import antdStyles from "!!raw-loader!antd/dist/antd.min.css";
 
 const AddFile = props => {
@@ -34,7 +29,7 @@ const AddFile = props => {
     tag: "#",
     directoryId: props.currentDirectory.id,
     securityLevel: "Public",
-    files: []
+    files: [],
   });
 
   const [showListDirectory, setShowListDirectory] = useState(false);
@@ -54,7 +49,7 @@ const AddFile = props => {
     arr[idEdit] = {
       ...arr[idEdit],
       fileName,
-      isValid: !checkContainSpecialCharacters(fileName)
+      isValid: !checkContainSpecialCharacters(fileName),
     };
     setState({ ...state, files: [...arr] });
     return true;
@@ -64,7 +59,7 @@ const AddFile = props => {
     const arr = state.files.filter(f => f.key !== key);
     setState({
       ...state,
-      files: arr
+      files: arr,
     });
   };
 
@@ -72,21 +67,18 @@ const AddFile = props => {
     if (!e.target.files[0]) return;
     const impFiles = [];
     for (const key in e.target.files) {
-      if (
-        e.target.files[key].size &&
-        !state.files.some(f => f.fileName.includes(e.target.files[key].name))
-      ) {
+      if (e.target.files[key].size && !state.files.some(f => f.fileName.includes(e.target.files[key].name))) {
         impFiles.push({
           data: e.target.files[key],
           key: shortid.generate(),
           fileName: e.target.files[key].name,
-          isValid: !checkContainSpecialCharacters(e.target.files[key].name)
+          isValid: !checkContainSpecialCharacters(e.target.files[key].name),
         });
       }
     }
     setState({
       ...state,
-      files: [...state.files, ...impFiles]
+      files: [...state.files, ...impFiles],
     });
   };
 
@@ -125,21 +117,17 @@ const AddFile = props => {
   const handleAddFiles = async () => {
     if (state.files.length === 0) return;
     if (state.files.filter(f => !f.isValid).length > 0) {
-      swal(
-        "Invalid!",
-        `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`,
-        "error"
-      );
+      swal("Invalid!", `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`, "error");
       return;
     }
     const fileInfos = new FormData();
     const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
-      permission: VIEW_PERMISSION
+      permission: VIEW_PERMISSION,
     }));
     const editEmps = editRoles.map(e => ({
       employeeId: e.id,
-      permission: EDIT_PERMISSION
+      permission: EDIT_PERMISSION,
     }));
     const fileShares = [...viewEmps, ...editEmps];
     if (state.files) {
@@ -151,14 +139,8 @@ const AddFile = props => {
       fileInfos.append("securityLevel", securityLevel);
 
       for (let idx = 0; idx < fileShares.length; idx++) {
-        fileInfos.append(
-          `fileShares[${idx}].EmployeeId`,
-          fileShares[idx].employeeId
-        );
-        fileInfos.append(
-          `fileShares[${idx}].Permission`,
-          fileShares[idx].permission
-        );
+        fileInfos.append(`fileShares[${idx}].EmployeeId`, fileShares[idx].employeeId);
+        fileInfos.append(`fileShares[${idx}].Permission`, fileShares[idx].permission);
       }
 
       for (let idx = 0; idx < state.files.length; idx++) {
@@ -189,7 +171,7 @@ const AddFile = props => {
           zIndex: 1001,
           cursor: "default",
           opacity: 0.6,
-          backgroundColor: "rgb(85, 85, 85)"
+          backgroundColor: "rgb(85, 85, 85)",
         }}
       />
       <div
@@ -201,29 +183,15 @@ const AddFile = props => {
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,
-          backgroundColor: "rgb(255, 255, 255)"
-        }}
-      >
+          backgroundColor: "rgb(255, 255, 255)",
+        }}>
         <div className="popup_layer_typeB" style={{ display: "block" }}>
           <div className={styles.wrapBody}>
-            <div
-              className={styles.popLayerWrap}
-              style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}
-            >
+            <div className={styles.popLayerWrap} style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}>
               <div className={styles.header}>
                 <h1 className={styles.tit}>Add Content</h1>
-                <Link
-                  to="#"
-                  className={styles.close}
-                  onClick={changeShowAddFile}
-                >
-                  <img
-                    alt=""
-                    src={
-                      require("assets/img/contents/ecmMain/img_close.gif")
-                        .default
-                    }
-                  />
+                <Link to="#" className={styles.close} onClick={changeShowAddFile}>
+                  <img alt="" src={require("assets/img/contents/ecmMain/img_close.gif").default} />
                 </Link>
               </div>
               <div className={styles.contents}>
@@ -232,17 +200,10 @@ const AddFile = props => {
                     <span className={styles.subtype_2}>Content List</span>
                     <span style={{ marginLeft: 2, color: "#8a929b" }}>
                       (Total: {state.files.length}/Invalid:{" "}
-                      <span style={{ color: "#ff3c46" }}>
-                        {state.files.filter(f => !f.isValid).length}
-                      </span>
-                      )
+                      <span style={{ color: "#ff3c46" }}>{state.files.filter(f => !f.isValid).length}</span>)
                     </span>
                     <span className={styles.floatR}>
-                      <Link
-                        to="#"
-                        className={styles.btnBlack}
-                        onClick={() => fileRef.current.click()}
-                      >
+                      <Link to="#" className={styles.btnBlack} onClick={() => fileRef.current.click()}>
                         <span>
                           <b>+</b> Add Content
                         </span>
@@ -281,18 +242,13 @@ const AddFile = props => {
                         <tbody>
                           <tr>
                             <td style={{ paddingLeft: 5 }}>
-                              <label className={styles.label}>
-                                {selectedPath}
-                              </label>
+                              <label className={styles.label}>{selectedPath}</label>
                             </td>
                             <td width={63}>
                               <Link
                                 to="#"
                                 className={styles.btnBlueLine}
-                                onClick={() =>
-                                  setShowListDirectory(!showListDirectory)
-                                }
-                              >
+                                onClick={() => setShowListDirectory(!showListDirectory)}>
                                 <span>
                                   <em>Show All</em>
                                 </span>
@@ -304,37 +260,17 @@ const AddFile = props => {
                     </span>
                     <div
                       className={styles.treeConBox}
-                      style={
-                        showListDirectory
-                          ? { height: 300, display: "block" }
-                          : { height: 300, display: "none" }
-                      }
-                    >
+                      style={showListDirectory ? { height: 300, display: "block" } : { height: 300, display: "none" }}>
                       <div className={styles.contentSelect}>
-                        <div
-                          className={`${styles.DivSelectyze}`}
-                          style={{ paddingLeft: 7, zIndex: 9 }}
-                        >
+                        <div className={`${styles.DivSelectyze}`} style={{ paddingLeft: 7, zIndex: 9 }}>
                           <Link to="#" className={styles.selectyzeValue}>
                             <span>POSCO VST</span>
                           </Link>
                         </div>
                       </div>
-                      <div
-                        className={styles.treeCon}
-                        style={{ width: "100%", height: "100%" }}
-                      >
-                        <Frame
-                          width="100%"
-                          height="100%"
-                          frameBorder={0}
-                          head={<style>{antdStyles}</style>}
-                        >
-                          <TreeView
-                            nodeId={state.directoryId}
-                            ref={tvRef}
-                            handleOnDoubleClick={handleOnSelectPath}
-                          />
+                      <div className={styles.treeCon} style={{ width: "100%", height: "100%" }}>
+                        <Frame width="100%" height="100%" frameBorder={0} head={<style>{antdStyles}</style>}>
+                          <TreeView nodeId={state.directoryId} ref={tvRef} handleOnDoubleClick={handleOnSelectPath} />
                         </Frame>
                       </div>
                     </div>
@@ -345,74 +281,50 @@ const AddFile = props => {
                   <br />
                   <div className={styles.share_set}>
                     <ol className={styles.safe_grade}>
-                      <li className={styles.grade1}>
-                        Specific Employee Sharing
-                      </li>
-                      <li className={styles.grade2}>
-                        Department Employee Sharing
-                      </li>
-                      <li className={styles.grade3}>
-                        Specific Employee Sharing
-                      </li>
+                      <li className={styles.grade1}>Specific Employee Sharing</li>
+                      <li className={styles.grade2}>Department Employee Sharing</li>
+                      <li className={styles.grade3}>Specific Employee Sharing</li>
                       <li className={styles.grade4}>All Employee Sharing</li>
                     </ol>
                     <div className={styles.safe_btn_box}>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe1} ${
-                          state.securityLevel === "Secret" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe1} ${state.securityLevel === "Secret" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Secret
                       </Link>
                       <Link
                         to="#"
                         className={`${styles.btn_safe2} ${
-                          state.securityLevel === "Secret A/Not Open"
-                            ? styles.on
-                            : ""
+                          state.securityLevel === "Secret A/Not Open" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        onClick={handleChangeSecurityLevel}>
                         Secret A/Not Open
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe3} ${
-                          state.securityLevel === "Secret A" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe3} ${state.securityLevel === "Secret A" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Secret A
                       </Link>
                       <Link
                         to="#"
                         className={`${styles.btn_safe4} ${
-                          state.securityLevel === "Secret B/Not Open"
-                            ? styles.on
-                            : ""
+                          state.securityLevel === "Secret B/Not Open" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        onClick={handleChangeSecurityLevel}>
                         Secret B/Not Open
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe5} ${
-                          state.securityLevel === "Secret B" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe5} ${state.securityLevel === "Secret B" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Secret B
                       </Link>
                       <Link
                         to="#"
-                        className={`${styles.btn_safe6} ${
-                          state.securityLevel === "Public" ? styles.on : ""
-                        }`}
-                        onClick={handleChangeSecurityLevel}
-                      >
+                        className={`${styles.btn_safe6} ${state.securityLevel === "Public" ? styles.on : ""}`}
+                        onClick={handleChangeSecurityLevel}>
                         Public
                       </Link>
                     </div>
@@ -421,13 +333,7 @@ const AddFile = props => {
                     <span className={styles.subtype_2}>Tag</span>
                   </p>
                   <div className={styles.hashtag_inputer}>
-                    <input
-                      type="text"
-                      value={state.tag}
-                      onChange={e =>
-                        setState({ ...state, tag: e.target.value })
-                      }
-                    />
+                    <input type="text" value={state.tag} onChange={e => setState({ ...state, tag: e.target.value })} />
                   </div>
                   <p className={styles.popSubTitle}>
                     <span className={styles.subtype_2}>Permission Setting</span>
@@ -460,14 +366,14 @@ const mapStateToProps = state => {
   return {
     fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
-    currentDirectory: state.systemParamsReducers.currentDirectory
+    currentDirectory: state.systemParamsReducers.currentDirectory,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     addFiles: fileInfos => dispatch(addFilesAction(fileInfos)),
-    changeShowAddFile: () => dispatch(changeShowAddFileAction())
+    changeShowAddFile: () => dispatch(changeShowAddFileAction()),
   };
 };
 

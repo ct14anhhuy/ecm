@@ -8,8 +8,8 @@ const searchByNameAction = name => {
       dispatch({
         type: types.SEARCH_BY_NAME,
         payload: {
-          employees
-        }
+          employees,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -24,8 +24,8 @@ const getByDepartmentAction = depId => {
       dispatch({
         type: types.GET_BY_DEPARTMENT,
         payload: {
-          employees
-        }
+          employees,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -40,8 +40,8 @@ const getFileSharedAction = fileId => {
       dispatch({
         type: types.GET_FILE_SHARED,
         payload: {
-          fileShared
-        }
+          fileShared,
+        },
       });
     } catch (error) {
       console.log(error);

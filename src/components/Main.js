@@ -25,8 +25,7 @@ const App = props => {
   const { path, dirId, page } = useParams();
   const [visibleLeftMenu, setVisibleLeftMenu] = useState(true);
 
-  const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } =
-    props.systemParams;
+  const { showAddFile, showEditFile, showCreateDirectory, showOpenContent } = props.systemParams;
 
   const { getDirectories, getDepartments } = props;
 
@@ -55,21 +54,15 @@ const App = props => {
                 style={{
                   borderRightColor: "currentColor",
                   borderRightWidth: "medium",
-                  borderRightStyle: "none"
-                }}
-              >
-                <Link
-                  to="#"
-                  className="btn_areaL"
-                  onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}
-                >
+                  borderRightStyle: "none",
+                }}>
+                <Link to="#" className="btn_areaL" onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}>
                   <img
                     alt=""
                     src={
                       visibleLeftMenu
                         ? require("assets/img/main/btn/btn_areaL.png").default
-                        : require("assets/img/main/btn/btn_areaL_on.png")
-                            .default
+                        : require("assets/img/main/btn/btn_areaL_on.png").default
                     }
                   />
                 </Link>
@@ -105,14 +98,14 @@ const App = props => {
 const mapStateToProps = state => {
   return {
     directories: state.directoryReducers.data,
-    systemParams: state.systemParamsReducers
+    systemParams: state.systemParamsReducers,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getDirectories: () => dispatch(getDirectoriesAction()),
-    getDepartments: () => dispatch(getDepartmentsAction())
+    getDepartments: () => dispatch(getDepartmentsAction()),
   };
 };
 

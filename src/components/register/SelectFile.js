@@ -20,10 +20,7 @@ const SelectFile = props => {
 
   return (
     <li>
-      <span
-        className={styles.contentsNameView}
-        style={editFileName ? { display: "none" } : { display: "block" }}
-      >
+      <span className={styles.contentsNameView} style={editFileName ? { display: "none" } : { display: "block" }}>
         <Link
           to="#"
           className={styles.title}
@@ -32,61 +29,30 @@ const SelectFile = props => {
             overflow: "hidden",
             display: "block",
             whiteSpace: "nowrap",
-            msTextOverflow: "ellipsis"
-          }}
-        >
+            msTextOverflow: "ellipsis",
+          }}>
           <span className={styles.contentsExtImage}>
-            <img
-              alt=""
-              style={{ width: 16, height: 16 }}
-              src={GetBackgroundIconFromExtension(fileName)}
-            />
+            <img alt="" style={{ width: 16, height: 16 }} src={GetBackgroundIconFromExtension(fileName)} />
           </span>
-          <span
-            className={`${styles.contentsNameViewTitle} ${
-              props.file.isValid ? null : styles.file_invalid
-            }`}
-          >
+          <span className={`${styles.contentsNameViewTitle} ${props.file.isValid ? null : styles.file_invalid}`}>
             {fileName}
           </span>
         </Link>
         <span className={styles.floatR}>
-          <Link
-            to="#"
-            className={styles.btnChk}
-            onClick={() => setEditFileName(!editFileName)}
-          >
-            <img
-              alt=""
-              src={
-                require("assets/img/popup/ico/ico_contentList_edit.png").default
-              }
-            />
+          <Link to="#" className={styles.btnChk} onClick={() => setEditFileName(!editFileName)}>
+            <img alt="" src={require("assets/img/popup/ico/ico_contentList_edit.png").default} />
           </Link>
           {props.showDeleteButton ? (
             <Link to="#" className={styles.btnDel} onClick={handleDeleteFile}>
-              <img
-                alt=""
-                src={
-                  require("assets/img/popup/ico/ico_contentList_del.png")
-                    .default
-                }
-              />
+              <img alt="" src={require("assets/img/popup/ico/ico_contentList_del.png").default} />
             </Link>
           ) : null}
         </span>
       </span>
-      <span
-        className={styles.contentsNameEdit}
-        style={editFileName ? { display: "block" } : { display: "none" }}
-      >
+      <span className={styles.contentsNameEdit} style={editFileName ? { display: "block" } : { display: "none" }}>
         <span className={`${styles.title} ${styles.floatL}`}>
           <span className={styles.contentsExtImageEdit}>
-            <img
-              alt=""
-              style={{ width: 16, height: 16 }}
-              src={GetBackgroundIconFromExtension(fileName)}
-            />
+            <img alt="" style={{ width: 16, height: 16 }} src={GetBackgroundIconFromExtension(fileName)} />
           </span>
           <input
             className={styles.contentsNameEditTitle}
@@ -94,27 +60,16 @@ const SelectFile = props => {
             type="text"
             size={100}
             defaultValue={fileName.substring(0, fileName.lastIndexOf("."))}
-            onChange={e =>
-              setFileName(`${e.target.value}.${fileName.split(".").pop()}`)
-            }
+            onChange={e => setFileName(`${e.target.value}.${fileName.split(".").pop()}`)}
           />
         </span>
         <span className={styles.floatR}>
           <Link to="#" className={styles.btnChk} onClick={handleChangeFileName}>
-            <img
-              alt=""
-              src={require("assets/img/popup/ico/ico_check.png").default}
-            />
+            <img alt="" src={require("assets/img/popup/ico/ico_check.png").default} />
           </Link>
           {props.showDeleteButton ? (
             <Link to="#" className={styles.btnDel} onClick={handleDeleteFile}>
-              <img
-                alt=""
-                src={
-                  require("assets/img/popup/ico/ico_contentList_del.png")
-                    .default
-                }
-              />
+              <img alt="" src={require("assets/img/popup/ico/ico_contentList_del.png").default} />
             </Link>
           ) : null}
         </span>

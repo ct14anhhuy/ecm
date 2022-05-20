@@ -15,7 +15,7 @@ const Loading = () => {
           zIndex: 1001,
           cursor: "pointer",
           opacity: 0.6,
-          backgroundColor: "rgb(207, 207, 207)"
+          backgroundColor: "rgb(207, 207, 207)",
         }}
       />
       <div
@@ -30,25 +30,18 @@ const Loading = () => {
           position: "absolute",
           zIndex: 1012,
           cursor: "wait",
-          backgroundColor: "rgb(255, 255, 255)"
-        }}
-      >
+          backgroundColor: "rgb(255, 255, 255)",
+        }}>
         <div
           className="loading_confirm"
           style={{
             border: "0px currentColor",
             visibility: "visible",
             position: "absolute",
-            cursor: "default"
-          }}
-        >
+            cursor: "default",
+          }}>
           <p>
-            <img
-              width={32}
-              height={32}
-              alt="waiting"
-              src={require("assets/img/common/custom_progress.gif").default}
-            />
+            <img width={32} height={32} alt="waiting" src={require("assets/img/common/custom_progress.gif").default} />
             Loading...
           </p>
         </div>

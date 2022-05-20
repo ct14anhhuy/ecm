@@ -9,8 +9,8 @@ const getMyContentsAction = page => {
         type: types.GET_MY_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -26,8 +26,8 @@ const getImportantContentsAction = page => {
         type: types.GET_IMPORTANT_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -43,8 +43,8 @@ const getFavoriteContentsAction = page => {
         type: types.GET_FAVORITE_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -60,8 +60,8 @@ const getSharedContentsAction = page => {
         type: types.GET_SHARED_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -77,8 +77,8 @@ const getDepartmentContentsAction = page => {
         type: types.GET_DEPARTMENT_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -94,8 +94,8 @@ const getTrashContentsAction = page => {
         type: types.GET_TRASH_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -111,8 +111,8 @@ const getContentsFromPathAction = (dirId, page) => {
         type: types.GET_CONTENTS_FROM_PATH,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -129,8 +129,8 @@ const searchContentsAction = (searchStr, page) => {
         type: types.SEARCH_CONTENTS,
         payload: {
           pagedSet: obj,
-          fileInfos: injectSelected(obj.items)
-        }
+          fileInfos: injectSelected(obj.items),
+        },
       });
     } catch (error) {
       console.log(error);
@@ -145,8 +145,8 @@ const changeFavoriteAction = (id, employeeId) => {
       dispatch({
         type: types.CHANGE_FAVORITE,
         payload: {
-          id
-        }
+          id,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -161,8 +161,8 @@ const changeImportantAction = (id, employeeId) => {
       dispatch({
         type: types.CHANGE_IMPORTANT,
         payload: {
-          id
-        }
+          id,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -175,8 +175,8 @@ const changeCheckedAction = (id, checked) => {
     type: types.CHANGE_CHECKED,
     payload: {
       id,
-      checked
-    }
+      checked,
+    },
   };
 };
 
@@ -185,8 +185,8 @@ const selectMultiAction = (fileIds, checked) => {
     type: types.SELECT_MULTI,
     payload: {
       fileIds,
-      checked
-    }
+      checked,
+    },
   };
 };
 
@@ -194,18 +194,18 @@ const addFilesAction = fileInfos => {
   return async dispatch => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE_FILE
+        type: types.BEGIN_UPDATE_FILE,
       });
       await fileInfoService.addFiles(fileInfos);
       dispatch({
-        type: types.UPDATE_FILE_SUCCESS
+        type: types.UPDATE_FILE_SUCCESS,
       });
     } catch (error) {
       dispatch({
         type: types.UPDATE_FILE_FAILURE,
         payload: {
-          error: error.data.message
-        }
+          error: error.data.message,
+        },
       });
     }
   };
@@ -218,8 +218,8 @@ const moveToTrashAction = fileIds => {
       dispatch({
         type: types.MOVE_TO_TRASH,
         payload: {
-          fileIds
-        }
+          fileIds,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -234,8 +234,8 @@ const recoverFileAction = fileIds => {
       dispatch({
         type: types.RECOVER_FILE,
         payload: {
-          fileIds
-        }
+          fileIds,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -250,8 +250,8 @@ const deleteFileAction = fileIds => {
       dispatch({
         type: types.DELETE_FILE,
         payload: {
-          fileIds
-        }
+          fileIds,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -263,24 +263,24 @@ const editFileAction = fileInfo => {
   return async dispatch => {
     try {
       dispatch({
-        type: types.BEGIN_UPDATE_FILE
+        type: types.BEGIN_UPDATE_FILE,
       });
       await fileInfoService.editFile(fileInfo);
       dispatch({
         type: types.EDIT_FILE,
         payload: {
-          fileInfo
-        }
+          fileInfo,
+        },
       });
       dispatch({
-        type: types.UPDATE_FILE_SUCCESS
+        type: types.UPDATE_FILE_SUCCESS,
       });
     } catch (error) {
       dispatch({
         type: types.UPDATE_FILE_FAILURE,
         payload: {
-          error: error.data.message
-        }
+          error: error.data.message,
+        },
       });
     }
   };
@@ -290,8 +290,8 @@ const updatePageSizeAction = pageSize => {
   return {
     type: types.UPDATE_PAGE_SIZE,
     payload: {
-      pageSize
-    }
+      pageSize,
+    },
   };
 };
 
@@ -299,8 +299,8 @@ const updateFilterExtensionAction = filterExtension => {
   return {
     type: types.UPDATE_FILTER_EXTENSION,
     payload: {
-      filterExtension
-    }
+      filterExtension,
+    },
   };
 };
 
@@ -327,5 +327,5 @@ export {
   deleteFileAction,
   editFileAction,
   updatePageSizeAction,
-  updateFilterExtensionAction
+  updateFilterExtensionAction,
 };

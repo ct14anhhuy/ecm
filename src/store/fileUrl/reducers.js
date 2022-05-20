@@ -4,7 +4,7 @@ import produce from "immer";
 const initState = {
   editUrl: "",
   viewUrl: "",
-  shareUrl: ""
+  shareUrl: "",
 };
 
 const fileUrlReducers = (state = initState, action) =>

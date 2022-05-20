@@ -5,7 +5,7 @@ const initState = {
   data: [],
   loading: false,
   done: false,
-  error: ""
+  error: "",
 };
 
 const directoryReducers = (state = initState, action) =>

@@ -20,19 +20,10 @@ const Header = props => {
           <div className="topLt">
             <h1 className="logo">
               <Link to="#" className="logo_ci">
-                <img
-                  alt=""
-                  src={
-                    require("assets/img/layout/posco-the-great-logo.png")
-                      .default
-                  }
-                />
+                <img alt="" src={require("assets/img/layout/posco-the-great-logo.png").default} />
               </Link>
               <Link to="#" className="logo_sys">
-                <img
-                  alt=""
-                  src={require("assets/img/layout/logo_ecm.png").default}
-                />
+                <img alt="" src={require("assets/img/layout/logo_ecm.png").default} />
               </Link>
             </h1>
           </div>
@@ -43,10 +34,7 @@ const Header = props => {
               </span>
             </div>
             <span onClick={handleLogout}>
-              <img
-                alt=""
-                src={require("assets/img/layout/ico_help02.png").default}
-              />
+              <img alt="" src={require("assets/img/layout/ico_help02.png").default} />
             </span>
           </div>
         </div>
@@ -57,13 +45,13 @@ const Header = props => {
 
 const mapStateToProps = state => {
   return {
-    user: state.userReducers
+    user: state.userReducers,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logoutAction())
+    logout: () => dispatch(logoutAction()),
   };
 };
 

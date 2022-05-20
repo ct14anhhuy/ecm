@@ -6,20 +6,14 @@ const PrivateRoute = ({ children, user, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={() =>
-        user.id ? (
-          children
-        ) : (
-          <Error message="Token expires, please login via EP Lite" />
-        )
-      }
+      render={() => (user.id ? children : <Error message="Token expires, please login via EP Lite" />)}
     />
   );
 };
 
 const mapStateToProps = state => {
   return {
-    user: state.userReducers
+    user: state.userReducers,
   };
 };
 
