@@ -12,7 +12,7 @@ import { editFileAction } from "store/fileInfo/actions";
 import {
   VIEW_PERMISSION,
   EDIT_PERMISSION,
-  SPECIAL_CHARACTER,
+  SPECIAL_CHARACTER
 } from "constants/commonConstants";
 import { checkContainSpecialCharacters } from "utils/stringHelper";
 
@@ -32,8 +32,8 @@ const EditFile = props => {
     securityLevel: editItem.securityLevel,
     file: {
       fileName: editItem.name,
-      isValid: true,
-    },
+      isValid: true
+    }
   });
 
   const [showListDirectory, setShowListDirectory] = useState(false);
@@ -49,18 +49,18 @@ const EditFile = props => {
       file: {
         ...state.file,
         fileName,
-        isValid: !checkContainSpecialCharacters(fileName),
-      },
+        isValid: !checkContainSpecialCharacters(fileName)
+      }
     });
     return true;
   };
 
   useEffect(() => {
     setEditRoles(
-      fileShared.filter(e => e.permission === EDIT_PERMISSION).map(f => f.employee),
+      fileShared.filter(e => e.permission === EDIT_PERMISSION).map(f => f.employee)
     );
     setViewRoles(
-      fileShared.filter(e => e.permission === VIEW_PERMISSION).map(f => f.employee),
+      fileShared.filter(e => e.permission === VIEW_PERMISSION).map(f => f.employee)
     );
   }, [fileShared]);
 
@@ -103,19 +103,19 @@ const EditFile = props => {
       swal(
         "Invalid!",
         `Remove all special characters "${SPECIAL_CHARACTER}" in file name before confirm`,
-        "error",
+        "error"
       );
       return;
     }
     const viewEmps = viewRoles.map(e => ({
       employeeId: e.id,
       permission: VIEW_PERMISSION,
-      fileId: editItem.id,
+      fileId: editItem.id
     }));
     const editEmps = editRoles.map(e => ({
       employeeId: e.id,
       permission: EDIT_PERMISSION,
-      fileId: editItem.id,
+      fileId: editItem.id
     }));
     const fileInfo = {
       id: editItem.id,
@@ -123,7 +123,7 @@ const EditFile = props => {
       directoryId: state.directoryId,
       securityLevel: state.securityLevel,
       tag: state.tag,
-      fileShares: [...viewEmps, ...editEmps],
+      fileShares: [...viewEmps, ...editEmps]
     };
     editFile(fileInfo);
   };
@@ -148,7 +148,7 @@ const EditFile = props => {
           zIndex: 1001,
           cursor: "default",
           opacity: 0.6,
-          backgroundColor: "rgb(85, 85, 85)",
+          backgroundColor: "rgb(85, 85, 85)"
         }}
       />
       <div
@@ -160,13 +160,15 @@ const EditFile = props => {
           color: "rgb(0, 0, 0)",
           position: "absolute",
           zIndex: 1012,
-          backgroundColor: "rgb(255, 255, 255)",
-        }}>
+          backgroundColor: "rgb(255, 255, 255)"
+        }}
+      >
         <div className="popup_layer_typeB" style={{ display: "block" }}>
           <div className={styles.wrapBody}>
             <div
               className={styles.popLayerWrap}
-              style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}>
+              style={{ margin: "0px 0px 0px -400px", width: 865, height: 635 }}
+            >
               <div className={styles.header}>
                 <h1 className={styles.tit}>Edit Content</h1>
                 <Link to="#" className={styles.close} onClick={props.changeShowEditFile}>
@@ -206,7 +208,8 @@ const EditFile = props => {
                               <Link
                                 to="#"
                                 className={styles.btnBlueLine}
-                                onClick={() => setShowListDirectory(!showListDirectory)}>
+                                onClick={() => setShowListDirectory(!showListDirectory)}
+                              >
                                 <span>
                                   <em>Show All</em>
                                 </span>
@@ -222,11 +225,13 @@ const EditFile = props => {
                         showListDirectory
                           ? { height: 300, display: "block" }
                           : { height: 300, display: "none" }
-                      }>
+                      }
+                    >
                       <div className={styles.contentSelect}>
                         <div
                           className={`${styles.DivSelectyze}`}
-                          style={{ paddingLeft: 7, zIndex: 9 }}>
+                          style={{ paddingLeft: 7, zIndex: 9 }}
+                        >
                           <Link to="#" className={styles.selectyzeValue}>
                             <span>POSCO VST</span>
                           </Link>
@@ -234,12 +239,14 @@ const EditFile = props => {
                       </div>
                       <div
                         className={styles.treeCon}
-                        style={{ width: "100%", height: "100%" }}>
+                        style={{ width: "100%", height: "100%" }}
+                      >
                         <Frame
                           width="100%"
                           height="100%"
                           frameBorder={0}
-                          head={<style>{antdStyles}</style>}>
+                          head={<style>{antdStyles}</style>}
+                        >
                           <TreeView
                             nodeId={editItem.directoryId}
                             ref={tvRef}
@@ -266,7 +273,8 @@ const EditFile = props => {
                         className={`${styles.btn_safe1} ${
                           state.securityLevel === "Secret" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}>
+                        onClick={handleChangeSecurityLevel}
+                      >
                         Secret
                       </Link>
                       <Link
@@ -274,7 +282,8 @@ const EditFile = props => {
                         className={`${styles.btn_safe2} ${
                           state.securityLevel === "Secret A/Not Open" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}>
+                        onClick={handleChangeSecurityLevel}
+                      >
                         Secret A/Not Open
                       </Link>
                       <Link
@@ -282,7 +291,8 @@ const EditFile = props => {
                         className={`${styles.btn_safe3} ${
                           state.securityLevel === "Secret A" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}>
+                        onClick={handleChangeSecurityLevel}
+                      >
                         Secret A
                       </Link>
                       <Link
@@ -290,7 +300,8 @@ const EditFile = props => {
                         className={`${styles.btn_safe4} ${
                           state.securityLevel === "Secret B/Not Open" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}>
+                        onClick={handleChangeSecurityLevel}
+                      >
                         Secret B/Not Open
                       </Link>
                       <Link
@@ -298,7 +309,8 @@ const EditFile = props => {
                         className={`${styles.btn_safe5} ${
                           state.securityLevel === "Secret B" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}>
+                        onClick={handleChangeSecurityLevel}
+                      >
                         Secret B
                       </Link>
                       <Link
@@ -306,7 +318,8 @@ const EditFile = props => {
                         className={`${styles.btn_safe6} ${
                           state.securityLevel === "Public" ? styles.on : ""
                         }`}
-                        onClick={handleChangeSecurityLevel}>
+                        onClick={handleChangeSecurityLevel}
+                      >
                         Public
                       </Link>
                     </div>
@@ -353,7 +366,7 @@ const mapStateToProps = state => {
     fileInfos: state.fileInfoReducers,
     owner: state.userReducers,
     systemParams: state.systemParamsReducers,
-    fileShared: state.employeeReducers.fileShared,
+    fileShared: state.employeeReducers.fileShared
   };
 };
 
@@ -361,7 +374,7 @@ const mapDispatchToProps = dispatch => {
   return {
     changeShowEditFile: () => dispatch(changeShowEditFileAction()),
     getFileShared: fileId => dispatch(getFileSharedAction(fileId)),
-    editFile: fileInfo => dispatch(editFileAction(fileInfo)),
+    editFile: fileInfo => dispatch(editFileAction(fileInfo))
   };
 };
 

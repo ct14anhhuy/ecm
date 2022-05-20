@@ -17,5 +17,5 @@ const deleteDirectory = async id => {
 export const directoryService = {
   getDirectories,
   createDirectory,
-  deleteDirectory,
+  deleteDirectory
 };

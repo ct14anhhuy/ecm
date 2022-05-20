@@ -5,7 +5,7 @@ import { Link, NavLink, useHistory, useParams } from "react-router-dom";
 import {
   changeHeaderPathAction,
   changeMenuActiveAction,
-  changeCurrentDirectoryAction,
+  changeCurrentDirectoryAction
 } from "store/systemParams/actions";
 import { connect } from "react-redux";
 
@@ -18,7 +18,7 @@ import {
   ROUTE_IMPORTANT_CONTENTS,
   ROUTE_MY_CONTENTS,
   ROUTE_SHARED_CONTENTS,
-  ROUTE_TRASH_CONTENTS,
+  ROUTE_TRASH_CONTENTS
 } from "constants/routePaths";
 
 const LeftMenu = props => {
@@ -30,7 +30,7 @@ const LeftMenu = props => {
 
   const [selectedDirectory, setSelectedDirectory] = useState({
     id: 0,
-    isRoot: true,
+    isRoot: true
   });
 
   const handleOnSelect = (id, path, isRoot) => {
@@ -60,7 +60,8 @@ const LeftMenu = props => {
             <Link
               to="#"
               className={menuActive ? styles.tabon : ""}
-              onClick={() => changeMenuActive(true)}>
+              onClick={() => changeMenuActive(true)}
+            >
               Shortcut
             </Link>
           </li>
@@ -68,7 +69,8 @@ const LeftMenu = props => {
             <Link
               to="#"
               className={menuActive ? "" : styles.tabon}
-              onClick={() => changeMenuActive(false)}>
+              onClick={() => changeMenuActive(false)}
+            >
               Content Box
             </Link>
           </li>
@@ -76,14 +78,16 @@ const LeftMenu = props => {
       </div>
       <div
         className={styles.tabCnt}
-        style={menuActive ? { display: "block" } : { display: "none" }}>
+        style={menuActive ? { display: "block" } : { display: "none" }}
+      >
         <ul className={styles.btnBox}>
           <li className={getNavLinkClass(ROUTE_MY_CONTENTS)}>
             <NavLink
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_MY_CONTENTS}/1`}
               className={styles.btn_01}
-              onClick={e => changeHeaderPath(e.target.innerText)}>
+              onClick={e => changeHeaderPath(e.target.innerText)}
+            >
               My Contents
             </NavLink>
           </li>
@@ -92,7 +96,8 @@ const LeftMenu = props => {
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_IMPORTANT_CONTENTS}/1`}
               className={styles.btn_30}
-              onClick={e => changeHeaderPath(e.target.innerText)}>
+              onClick={e => changeHeaderPath(e.target.innerText)}
+            >
               Impotant Contents
             </NavLink>
           </li>
@@ -101,7 +106,8 @@ const LeftMenu = props => {
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_FAVORITE_CONTENTS}/1`}
               className={styles.btn_06}
-              onClick={e => changeHeaderPath(e.target.innerText)}>
+              onClick={e => changeHeaderPath(e.target.innerText)}
+            >
               Favorite Contents
             </NavLink>
           </li>
@@ -110,7 +116,8 @@ const LeftMenu = props => {
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_SHARED_CONTENTS}/1`}
               className={styles.btn_07}
-              onClick={e => changeHeaderPath(e.target.innerText)}>
+              onClick={e => changeHeaderPath(e.target.innerText)}
+            >
               Shared Contents
             </NavLink>
           </li>
@@ -119,7 +126,8 @@ const LeftMenu = props => {
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_DEPARTMENT_CONTENTS}/1`}
               className={styles.btn_16}
-              onClick={e => changeHeaderPath(e.target.innerText)}>
+              onClick={e => changeHeaderPath(e.target.innerText)}
+            >
               Departments Contents
             </NavLink>
           </li>
@@ -128,7 +136,8 @@ const LeftMenu = props => {
               activeClassName={styles.active}
               to={`/ecm/${ROUTE_TRASH_CONTENTS}/1`}
               className={styles.btn_rcb}
-              onClick={e => changeHeaderPath(e.target.innerText)}>
+              onClick={e => changeHeaderPath(e.target.innerText)}
+            >
               Trash
             </NavLink>
           </li>
@@ -136,11 +145,13 @@ const LeftMenu = props => {
       </div>
       <div
         className={styles.tabCnt}
-        style={menuActive ? { display: "none" } : { display: "block" }}>
+        style={menuActive ? { display: "none" } : { display: "block" }}
+      >
         <div className={`${styles.bgBoxLayout} ${styles.select02}`}>
           <div
             className={`${styles.DivSelectyze} ${styles.grey}`}
-            style={{ zIndex: 9999 }}>
+            style={{ zIndex: 9999 }}
+          >
             <span className={styles.selectyzeValue}>
               <span>POSCO VST</span>
             </span>
@@ -151,7 +162,8 @@ const LeftMenu = props => {
                 height="97%"
                 scrolling="auto"
                 frameBorder="0"
-                head={<style>{antdStyles}</style>}>
+                head={<style>{antdStyles}</style>}
+              >
                 <TreeView handleOnSelect={handleOnSelect} />
               </Frame>
             </div>
@@ -164,7 +176,7 @@ const LeftMenu = props => {
 
 const mapStateToProps = state => {
   return {
-    menuActive: state.systemParamsReducers.menuActive,
+    menuActive: state.systemParamsReducers.menuActive
   };
 };
 
@@ -173,7 +185,7 @@ const mapDispatchToProps = dispatch => {
     changeHeaderPath: path => dispatch(changeHeaderPathAction(path)),
     changeMenuActive: shortcutActive => dispatch(changeMenuActiveAction(shortcutActive)),
     changeCurrentDirectory: (id, isRoot) =>
-      dispatch(changeCurrentDirectoryAction(id, isRoot)),
+      dispatch(changeCurrentDirectoryAction(id, isRoot))
   };
 };
 

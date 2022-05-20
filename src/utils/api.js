@@ -10,8 +10,8 @@ const apiUrl =
 const api = axios.create({
   baseURL: apiUrl,
   headers: {
-    "Content-Type": "application/json",
-  },
+    "Content-Type": "application/json"
+  }
 });
 
 api.interceptors.request.use(
@@ -24,7 +24,7 @@ api.interceptors.request.use(
   },
   error => {
     Promise.reject(error.response);
-  },
+  }
 );
 
 api.interceptors.response.use(
@@ -35,7 +35,7 @@ api.interceptors.response.use(
       store.dispatch(logoutAction());
     }
     return Promise.reject(error.response);
-  },
+  }
 );
 
 export { api };

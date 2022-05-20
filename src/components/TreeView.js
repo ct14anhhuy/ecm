@@ -8,7 +8,7 @@ const TreeView = forwardRef((props, ref) => {
     flatTree: [],
     hirarchicalTree: [],
     newNodeName: "",
-    selectedId: 0,
+    selectedId: 0
   });
 
   const [isRootNode, setIsRootNode] = useState(false);
@@ -20,12 +20,12 @@ const TreeView = forwardRef((props, ref) => {
       name: node.name,
       title: node.name,
       parentId: node.parentId,
-      children: [],
+      children: []
     }));
 
     setState(state => ({
       ...state,
-      flatTree: res,
+      flatTree: res
     }));
 
     const hirarchicalTree = flatToHierarchy(res);
@@ -101,7 +101,7 @@ const TreeView = forwardRef((props, ref) => {
   };
 
   useImperativeHandle(ref, () => ({
-    handleGetPath,
+    handleGetPath
   }));
 
   const handleGetPath = () => {
@@ -126,7 +126,7 @@ const TreeView = forwardRef((props, ref) => {
 
 const mapStateToProps = state => {
   return {
-    directories: state.directoryReducers.data,
+    directories: state.directoryReducers.data
   };
 };
 

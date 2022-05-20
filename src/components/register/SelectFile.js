@@ -22,7 +22,8 @@ const SelectFile = props => {
     <li>
       <span
         className={styles.contentsNameView}
-        style={editFileName ? { display: "none" } : { display: "block" }}>
+        style={editFileName ? { display: "none" } : { display: "block" }}
+      >
         <Link
           to="#"
           className={styles.title}
@@ -31,8 +32,9 @@ const SelectFile = props => {
             overflow: "hidden",
             display: "block",
             whiteSpace: "nowrap",
-            msTextOverflow: "ellipsis",
-          }}>
+            msTextOverflow: "ellipsis"
+          }}
+        >
           <span className={styles.contentsExtImage}>
             <img
               alt=""
@@ -43,7 +45,8 @@ const SelectFile = props => {
           <span
             className={`${styles.contentsNameViewTitle} ${
               props.file.isValid ? null : styles.file_invalid
-            }`}>
+            }`}
+          >
             {fileName}
           </span>
         </Link>
@@ -51,7 +54,8 @@ const SelectFile = props => {
           <Link
             to="#"
             className={styles.btnChk}
-            onClick={() => setEditFileName(!editFileName)}>
+            onClick={() => setEditFileName(!editFileName)}
+          >
             <img
               alt=""
               src={require("assets/img/popup/ico/ico_contentList_edit.png").default}
@@ -69,7 +73,8 @@ const SelectFile = props => {
       </span>
       <span
         className={styles.contentsNameEdit}
-        style={editFileName ? { display: "block" } : { display: "none" }}>
+        style={editFileName ? { display: "block" } : { display: "none" }}
+      >
         <span className={`${styles.title} ${styles.floatL}`}>
           <span className={styles.contentsExtImageEdit}>
             <img

@@ -9,8 +9,8 @@ const getFileUrlAction = id => {
         type: types.GET_FILE_URL,
         payload: {
           editUrl: fileUrl[1],
-          viewUrl: fileUrl[0],
-        },
+          viewUrl: fileUrl[0]
+        }
       });
     } catch (error) {
       console.log(error);
@@ -25,8 +25,8 @@ const getFileShareUrlAction = id => {
       dispatch({
         type: types.GET_FILE_SHARE_URL,
         payload: {
-          shareUrl: fileUrl,
-        },
+          shareUrl: fileUrl
+        }
       });
     } catch (error) {
       console.log(error);

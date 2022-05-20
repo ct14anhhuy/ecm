@@ -55,12 +55,14 @@ const App = props => {
                 style={{
                   borderRightColor: "currentColor",
                   borderRightWidth: "medium",
-                  borderRightStyle: "none",
-                }}>
+                  borderRightStyle: "none"
+                }}
+              >
                 <Link
                   to="#"
                   className="btn_areaL"
-                  onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}>
+                  onClick={() => setVisibleLeftMenu(!visibleLeftMenu)}
+                >
                   <img
                     alt=""
                     src={
@@ -102,14 +104,14 @@ const App = props => {
 const mapStateToProps = state => {
   return {
     directories: state.directoryReducers.data,
-    systemParams: state.systemParamsReducers,
+    systemParams: state.systemParamsReducers
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getDirectories: () => dispatch(getDirectoriesAction()),
-    getDepartments: () => dispatch(getDepartmentsAction()),
+    getDepartments: () => dispatch(getDepartmentsAction())
   };
 };
 

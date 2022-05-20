@@ -14,7 +14,7 @@ const Navbar = props => {
 
 const mapStateToProps = state => {
   return {
-    headerPath: state.systemParamsReducers.headerPath,
+    headerPath: state.systemParamsReducers.headerPath
   };
 };
 

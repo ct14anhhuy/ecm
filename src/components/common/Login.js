@@ -17,7 +17,7 @@ const Login = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    login: () => dispatch(loginAction()),
+    login: () => dispatch(loginAction())
   };
 };
 

@@ -4,7 +4,7 @@ import * as exts from "constants/extTypes";
 import { connect } from "react-redux";
 import {
   updatePageSizeAction,
-  updateFilterExtensionAction,
+  updateFilterExtensionAction
 } from "store/fileInfo/actions";
 
 const Filter = props => {
@@ -142,12 +142,14 @@ const Filter = props => {
             <Link
               to="#"
               className="am_selectyzeValue"
-              onClick={() => setShowListRow(!showListRow)}>
+              onClick={() => setShowListRow(!showListRow)}
+            >
               {pageSize}
             </Link>
             <ul
               className="am_UlSelectize"
-              style={showListRow ? { display: "block" } : { display: "none" }}>
+              style={showListRow ? { display: "block" } : { display: "none" }}
+            >
               <li>
                 <Link to="#" onClick={handleChangePageSize}>
                   15
@@ -179,7 +181,7 @@ const Filter = props => {
 
 const mapStateToProps = state => {
   return {
-    paginationSet: state.fileInfoReducers.paginationSet,
+    paginationSet: state.fileInfoReducers.paginationSet
   };
 };
 
@@ -187,7 +189,7 @@ const mapDispatchToProps = dispatch => {
   return {
     updatePageSize: pageSize => dispatch(updatePageSizeAction(pageSize)),
     updateFilterExtension: filterExtension =>
-      dispatch(updateFilterExtensionAction(filterExtension)),
+      dispatch(updateFilterExtensionAction(filterExtension))
   };
 };
 

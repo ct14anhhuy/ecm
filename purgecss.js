@@ -13,8 +13,8 @@ const fs = require("fs");
       console.log(
         "\x1b[32m",
         `PurgeCSS saved ${Math.round(
-          (originalFileStats.size - newFileStats.size) / 1000,
-        )}kb on ${file}`,
+          (originalFileStats.size - newFileStats.size) / 1000
+        )}kb on ${file}`
       );
     });
   });

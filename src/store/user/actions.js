@@ -7,7 +7,7 @@ const loginAction = () => {
       const user = await userService.login();
       dispatch({
         type: types.LOGIN_SUCCESS,
-        payload: { user },
+        payload: { user }
       });
     } catch (error) {
       console.log(error);
@@ -17,7 +17,7 @@ const loginAction = () => {
 
 const logoutAction = () => {
   return {
-    type: types.LOGOUT,
+    type: types.LOGOUT
   };
 };
 

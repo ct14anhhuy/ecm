@@ -5,12 +5,12 @@ import {
   searchContentsAction,
   moveToTrashAction,
   recoverFileAction,
-  deleteFileAction,
+  deleteFileAction
 } from "store/fileInfo/actions";
 import { deleteDirectoryAction } from "store/directory/actions";
 import {
   changeShowAddFileAction,
-  changeShowCreateDirectoryAction,
+  changeShowCreateDirectoryAction
 } from "store/systemParams/actions";
 import swal from "sweetalert";
 import { ROUTE_TRASH_CONTENTS } from "constants/routePaths";
@@ -37,7 +37,7 @@ const OptionBox = props => {
         text: `Move ${fileIds.length} file(s) to trash!`,
         icon: "warning",
         buttons: true,
-        dangerMode: true,
+        dangerMode: true
       }).then(willDelete => {
         if (willDelete) {
           props.moveToTrash(fileIds);
@@ -55,7 +55,7 @@ const OptionBox = props => {
           text: `Remove ${fileIds.length} file(s)!`,
           icon: "warning",
           buttons: true,
-          dangerMode: true,
+          dangerMode: true
         }).then(willDelete => {
           if (willDelete) {
             props.deleteFile(fileIds);
@@ -72,7 +72,7 @@ const OptionBox = props => {
       text: "Delete this folder will delete all files inside it and cannot be recovered!",
       icon: "warning",
       buttons: true,
-      dangerMode: true,
+      dangerMode: true
     }).then(willDelete => {
       if (willDelete) {
         props.deleteDirectory(currentDirectory.id);
@@ -149,7 +149,7 @@ const OptionBox = props => {
               lineHeight: 23,
               marginRight: 0,
               float: "left",
-              msImeMode: "active",
+              msImeMode: "active"
             }}
             type="text"
             defaultValue={inpSearch}
@@ -174,7 +174,7 @@ const mapStateToProps = state => {
   return {
     user: state.userReducers,
     fileInfos: state.fileInfoReducers.data,
-    systemParams: state.systemParamsReducers,
+    systemParams: state.systemParamsReducers
   };
 };
 
@@ -186,7 +186,7 @@ const mapDispatchToProps = dispatch => {
     deleteFile: fileIds => dispatch(deleteFileAction(fileIds)),
     deleteDirectory: id => dispatch(deleteDirectoryAction(id)),
     changeShowAddFile: () => dispatch(changeShowAddFileAction()),
-    changeShowCreateDirectory: () => dispatch(changeShowCreateDirectoryAction()),
+    changeShowCreateDirectory: () => dispatch(changeShowCreateDirectoryAction())
   };
 };
 

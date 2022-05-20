@@ -13,7 +13,7 @@ const OpenContent = props => {
 
   const actions = {
     EDIT: "Edit",
-    VIEW: "View",
+    VIEW: "View"
   };
 
   useEffect(() => {
@@ -54,8 +54,9 @@ const OpenContent = props => {
           zIndex: 1001,
           cursor: "default",
           opacity: 0.6,
-          backgroundColor: "rgb(85, 85, 85)",
-        }}></div>
+          backgroundColor: "rgb(85, 85, 85)"
+        }}
+      ></div>
       <div
         className="blockUI blockMsg blockPage"
         style={{
@@ -67,11 +68,13 @@ const OpenContent = props => {
           position: "fixed",
           zIndex: 1012,
           cursor: "wait",
-          backgroundColor: "rgb(255, 255, 255)",
-        }}>
+          backgroundColor: "rgb(255, 255, 255)"
+        }}
+      >
         <div
           className="popup_layer_typeB"
-          style={{ display: "block", cursor: "default" }}>
+          style={{ display: "block", cursor: "default" }}
+        >
           <div className={styles.popLayerWrap}>
             <div className={styles.header}>
               <h1 className={styles.tit}>Open Content</h1>
@@ -120,14 +123,14 @@ const OpenContent = props => {
 const mapStateToProps = state => {
   return {
     fileUrl: state.fileUrlReducers,
-    systemParams: state.systemParamsReducers,
+    systemParams: state.systemParamsReducers
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getFileUrl: id => dispatch(getFileUrlAction(id)),
-    changeShowOpenContent: () => dispatch(changeShowOpenContentAction()),
+    changeShowOpenContent: () => dispatch(changeShowOpenContentAction())
   };
 };
 

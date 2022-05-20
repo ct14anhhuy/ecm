@@ -6,7 +6,7 @@ import {
   ROUTE_IMPORTANT_CONTENTS,
   ROUTE_MY_CONTENTS,
   ROUTE_SHARED_CONTENTS,
-  ROUTE_TRASH_CONTENTS,
+  ROUTE_TRASH_CONTENTS
 } from "constants/routePaths";
 import {
   getMyContentsAction,
@@ -15,7 +15,7 @@ import {
   getSharedContentsAction,
   getDepartmentContentsAction,
   getTrashContentsAction,
-  getContentsFromPathAction,
+  getContentsFromPathAction
 } from "store/fileInfo/actions";
 
 export const route = (path, dirId, page, directories) => {

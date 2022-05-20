@@ -62,9 +62,10 @@ const Paging = props => {
             return (
               <Link
                 to={{
-                  pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${pageIndex - 1}`,
+                  pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${pageIndex - 1}`
                 }}
-                key={index}>
+                key={index}
+              >
                 {"<"}
               </Link>
             );
@@ -74,9 +75,10 @@ const Paging = props => {
             return (
               <Link
                 to={{
-                  pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${pageIndex + 1}`,
+                  pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${pageIndex + 1}`
                 }}
-                key={index}>
+                key={index}
+              >
                 {">"}
               </Link>
             );
@@ -85,9 +87,10 @@ const Paging = props => {
             <Link
               className={page === pageIndex ? "act" : ""}
               to={{
-                pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${page}`,
+                pathname: `/ecm/${path}/${dirId ? `${dirId}/` : ""}${page}`
               }}
-              key={index}>
+              key={index}
+            >
               {page}
             </Link>
           );
@@ -99,7 +102,7 @@ const Paging = props => {
 
 const mapStateToProps = state => {
   return {
-    paginationSet: state.fileInfoReducers.paginationSet,
+    paginationSet: state.fileInfoReducers.paginationSet
   };
 };
 

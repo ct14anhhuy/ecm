@@ -15,7 +15,7 @@ const CreateDirectory = props => {
   const [showListDirectory, setShowListDirectory] = useState(false);
   const [selectedPath, setSelectedPath] = useState({
     id: props.currentDirectory.id,
-    path: "",
+    path: ""
   });
   const [path, setPath] = useState("");
 
@@ -74,8 +74,9 @@ const CreateDirectory = props => {
           zIndex: 1001,
           cursor: "default",
           opacity: 0.6,
-          backgroundColor: "rgb(85, 85, 85)",
-        }}></div>
+          backgroundColor: "rgb(85, 85, 85)"
+        }}
+      ></div>
       <div
         className="blockUI blockMsg blockPage"
         style={{
@@ -86,20 +87,24 @@ const CreateDirectory = props => {
           position: "absolute",
           zIndex: 1012,
           cursor: "wait",
-          backgroundColor: "rgb(255, 255, 255)",
-        }}>
+          backgroundColor: "rgb(255, 255, 255)"
+        }}
+      >
         <div
           className={styles.popup_layer_typeB}
-          style={{ display: "block", cursor: "default" }}>
+          style={{ display: "block", cursor: "default" }}
+        >
           <div
             className={styles.popLayerWrap}
-            style={{ margin: "-317.5px 0px 0px -432.5px", width: 865 }}>
+            style={{ margin: "-317.5px 0px 0px -432.5px", width: 865 }}
+          >
             <div className={styles.header}>
               <h1 className={styles.tit}>Create Directory</h1>
               <Link
                 to="#"
                 className={styles.close}
-                onClick={props.changeShowCreateDirectory}>
+                onClick={props.changeShowCreateDirectory}
+              >
                 <img
                   alt=""
                   src={require("assets/img/contents/ecmMain/img_close.gif").default}
@@ -146,7 +151,8 @@ const CreateDirectory = props => {
                             <Link
                               to="#"
                               className={styles.latelyHistoryBtn}
-                              onClick={() => setShowListDirectory(!showListDirectory)}>
+                              onClick={() => setShowListDirectory(!showListDirectory)}
+                            >
                               <span>Show All</span>
                             </Link>
                           </td>
@@ -160,11 +166,13 @@ const CreateDirectory = props => {
                       showListDirectory
                         ? { height: 300, display: "block" }
                         : { height: 300, display: "none" }
-                    }>
+                    }
+                  >
                     <div className={styles.contentSelect}>
                       <div
                         className={`${styles.DivSelectyze} ${styles.grey}`}
-                        style={{ paddingLeft: 7, zIndex: 9 }}>
+                        style={{ paddingLeft: 7, zIndex: 9 }}
+                      >
                         <Link to="#" className={styles.selectyzeValue}>
                           <span>POSCO VST</span>
                         </Link>
@@ -175,7 +183,8 @@ const CreateDirectory = props => {
                         width="100%"
                         height="100%"
                         frameBorder={0}
-                        head={<style>{antdStyles}</style>}>
+                        head={<style>{antdStyles}</style>}
+                      >
                         <TreeView
                           nodeId={selectedPath.id}
                           ref={tvRef}
@@ -204,14 +213,14 @@ const CreateDirectory = props => {
 const mapStateToProps = state => {
   return {
     directories: state.directoryReducers,
-    currentDirectory: state.systemParamsReducers.currentDirectory,
+    currentDirectory: state.systemParamsReducers.currentDirectory
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     createDirectory: directory => dispatch(createDirectoryAction(directory)),
-    changeShowCreateDirectory: () => dispatch(changeShowCreateDirectoryAction()),
+    changeShowCreateDirectory: () => dispatch(changeShowCreateDirectoryAction())
   };
 };
 

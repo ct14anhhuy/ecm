@@ -5,7 +5,7 @@ const getMyContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetFileInfos?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetFileInfos?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -14,7 +14,7 @@ const getImportantContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetImportantFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetImportantFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -23,7 +23,7 @@ const getFavoriteContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetFavoriteFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetFavoriteFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -32,7 +32,7 @@ const getSharedContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetSharedFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetSharedFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -41,7 +41,7 @@ const getDepartmentContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetDepartmentFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetDepartmentFiles?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -50,7 +50,7 @@ const getTrashContents = async page => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetTrashContents?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetTrashContents?filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -59,7 +59,7 @@ const getContentsFromPath = async (dirId, page) => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/GetFileInfosByDirId?dirId=${dirId}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/GetFileInfosByDirId?dirId=${dirId}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -68,7 +68,7 @@ const searchContents = async (searchStr, page) => {
   const { pageSize, filterExtension } = store.getState().fileInfoReducers.paginationSet;
   return await api
     .get(
-      `/FileInfo/Search?searchContent=${searchStr}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`,
+      `/FileInfo/Search?searchContent=${searchStr}&filterExtension=${filterExtension}&page=${page}&pageSize=${pageSize}`
     )
     .then(response => response);
 };
@@ -76,7 +76,7 @@ const searchContents = async (searchStr, page) => {
 const changeFavorite = async (fileId, employeeId) => {
   const fileFavorite = {
     fileId,
-    employeeId,
+    employeeId
   };
   return await api
     .post("/FileFavorite/AddOrRemoveFavoriteFile", fileFavorite)
@@ -86,7 +86,7 @@ const changeFavorite = async (fileId, employeeId) => {
 const changeImportant = async (fileId, employeeId) => {
   const fileImportant = {
     fileId,
-    employeeId,
+    employeeId
   };
   return await api
     .post("/FileImportant/AddOrRemoveImportantFile", fileImportant)
@@ -96,7 +96,7 @@ const changeImportant = async (fileId, employeeId) => {
 const addFiles = async fileInfos => {
   return await api
     .post("/FileInfo/AddFiles", fileInfos, {
-      headers: { "Content-type": "multipart/form-data" },
+      headers: { "Content-type": "multipart/form-data" }
     })
     .then(response => response);
 };
@@ -132,5 +132,5 @@ export const fileInfoService = {
   moveToTrash,
   recoverFile,
   deleteFile,
-  editFile,
+  editFile
 };

@@ -6,12 +6,12 @@ const initState = {
     pageIndex: 1,
     pageSize: 15,
     totalRows: 0,
-    filterExtension: "ALL",
+    filterExtension: "ALL"
   },
   data: [],
   loading: false,
   done: false,
-  error: "",
+  error: ""
 };
 
 const fileInfoReducers = (state = initState, action) =>
@@ -50,7 +50,7 @@ const fileInfoReducers = (state = initState, action) =>
         draft.data = draft.data.map(f =>
           editIds.includes(f.id)
             ? { ...f, checked: action.payload.checked }
-            : { ...f, checked: false },
+            : { ...f, checked: false }
         );
         break;
       }

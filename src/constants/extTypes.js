@@ -16,7 +16,7 @@ const VIDEO_EXTS = [
   "avi",
   "wmv",
   "flv",
-  "swf",
+  "swf"
 ];
 
 export const ALL = "ALL";
@@ -35,5 +35,5 @@ export const Extensions = {
   PDF_EXTS,
   IMAGE_EXTS,
   CAD_EXTS,
-  VIDEO_EXTS,
+  VIDEO_EXTS
 };

@@ -48,13 +48,13 @@ const Header = props => {
 
 const mapStateToProps = state => {
   return {
-    user: state.userReducers,
+    user: state.userReducers
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logoutAction()),
+    logout: () => dispatch(logoutAction())
   };
 };
 

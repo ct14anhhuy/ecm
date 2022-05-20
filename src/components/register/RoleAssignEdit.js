@@ -26,11 +26,11 @@ const RoleAssignEdit = props => {
 
   useEffect(() => {
     const deps = props.departments.map(dep =>
-      Object.assign({}, dep, { selected: false, expanded: false }),
+      Object.assign({}, dep, { selected: false, expanded: false })
     );
     const result = deps.map(dep => ({
       ...dep,
-      employees: dep.employees.map(emp => Object.assign({}, emp, { selected: false })),
+      employees: dep.employees.map(emp => Object.assign({}, emp, { selected: false }))
     }));
     setDepartments(result);
   }, [props.departments]);
@@ -49,7 +49,7 @@ const RoleAssignEdit = props => {
     const result = checkedEmps.filter(
       emp =>
         !editRoles.some(cur => emp.id === cur.id) &&
-        !viewRoles.some(cur => emp.id === cur.id),
+        !viewRoles.some(cur => emp.id === cur.id)
     );
     setEditRoles([...result.map(emp => ({ ...emp, selected: false })), ...editRoles]);
   };
@@ -68,7 +68,7 @@ const RoleAssignEdit = props => {
     const result = checkedEmps.filter(
       emp =>
         !editRoles.some(cur => emp.id === cur.id) &&
-        !viewRoles.some(cur => emp.id === cur.id),
+        !viewRoles.some(cur => emp.id === cur.id)
     );
     setViewRoles([...result.map(emp => ({ ...emp, selected: false })), ...viewRoles]);
   };
@@ -86,7 +86,7 @@ const RoleAssignEdit = props => {
     setEditRoles(editRoles.filter(emp => !emp.selected));
     setViewRoles([
       ...checkedEmps.map(emp => ({ ...emp, selected: false })),
-      ...viewRoles,
+      ...viewRoles
     ]);
   };
 
@@ -95,7 +95,7 @@ const RoleAssignEdit = props => {
     setViewRoles(viewRoles.filter(emp => !emp.selected));
     setEditRoles([
       ...checkedEmps.map(emp => ({ ...emp, selected: false })),
-      ...editRoles,
+      ...editRoles
     ]);
   };
 
@@ -121,7 +121,7 @@ const RoleAssignEdit = props => {
     newArr[arrId].selected = !newArr[arrId].selected;
     newArr[arrId].employees = newArr[arrId].employees.map(emp => ({
       ...emp,
-      selected: newArr[arrId].selected,
+      selected: newArr[arrId].selected
     }));
     setDepartments(newArr);
   };
@@ -172,9 +172,8 @@ const RoleAssignEdit = props => {
                     <th height={25}>Owner</th>
                     <td className={styles.account0}>
                       <div
-                        className={
-                          styles.innerPad0
-                        }>{`${owner.lastName} ${owner.firstName} (${owner.epLiteId})`}</div>
+                        className={styles.innerPad0}
+                      >{`${owner.lastName} ${owner.firstName} (${owner.epLiteId})`}</div>
                     </td>
                   </tr>
                 </tbody>
@@ -185,7 +184,8 @@ const RoleAssignEdit = props => {
                     <Link
                       to="#"
                       className={selectName ? styles.on : ""}
-                      onClick={() => setSelectName(true)}>
+                      onClick={() => setSelectName(true)}
+                    >
                       Name
                     </Link>
                   </li>
@@ -193,7 +193,8 @@ const RoleAssignEdit = props => {
                     <Link
                       to="#"
                       className={selectName ? "" : styles.on}
-                      onClick={() => setSelectName(false)}>
+                      onClick={() => setSelectName(false)}
+                    >
                       Department
                     </Link>
                   </li>
@@ -201,7 +202,8 @@ const RoleAssignEdit = props => {
               </div>
               <div
                 className={styles.roleBox01}
-                style={selectName ? { display: "block" } : { display: "none" }}>
+                style={selectName ? { display: "block" } : { display: "none" }}
+              >
                 <input
                   className={styles.search}
                   style={{ msImeMode: "active" }}
@@ -220,7 +222,8 @@ const RoleAssignEdit = props => {
                   <div className={styles.allCheck}>
                     <span>
                       <label
-                        className={`${styles.i_check} ${selectAll ? styles.c_on : ""}`}>
+                        className={`${styles.i_check} ${selectAll ? styles.c_on : ""}`}
+                      >
                         <input
                           name="checkbox"
                           type="checkbox"
@@ -242,7 +245,8 @@ const RoleAssignEdit = props => {
                   <Link
                     to="#"
                     className={styles.btn_delall}
-                    onClick={() => setEmployees([])}>
+                    onClick={() => setEmployees([])}
+                  >
                     Delete All
                   </Link>
                 </div>
@@ -257,7 +261,8 @@ const RoleAssignEdit = props => {
                                 <label
                                   className={`${styles.i_check} ${
                                     emp.selected ? styles.c_on : ""
-                                  }`}>
+                                  }`}
+                                >
                                   <input
                                     name="checkbox"
                                     type="checkbox"
@@ -278,7 +283,8 @@ const RoleAssignEdit = props => {
               </div>
               <div
                 className={styles.partBox01}
-                style={selectName ? { display: "none" } : { display: "block" }}>
+                style={selectName ? { display: "none" } : { display: "block" }}
+              >
                 <div className={`${styles.maxH} ${styles.type_4}`}>
                   <div className={styles.marR17} style={{ background: "none" }}>
                     <table className={styles.tblFolder}>
@@ -298,8 +304,9 @@ const RoleAssignEdit = props => {
                                       dep.selected ? styles.c_on : ""
                                     }`}
                                     style={{
-                                      marginLeft: 2,
-                                    }}>
+                                      marginLeft: 2
+                                    }}
+                                  >
                                     <input
                                       type="checkbox"
                                       onChange={() => handleDepartmentSelect(dep.id)}
@@ -328,14 +335,16 @@ const RoleAssignEdit = props => {
                               <tr
                                 key={emp.id}
                                 className={styles.groupOne}
-                                style={!dep.expanded ? { display: "none" } : {}}>
+                                style={!dep.expanded ? { display: "none" } : {}}
+                              >
                                 <td className={styles.bdr0}> </td>
                                 <td className={styles.bdr1}>
                                   <div className={styles.treeTitle}>
                                     <label
                                       className={`${styles.i_check} ${
                                         emp.selected ? styles.c_on : ""
-                                      }`}>
+                                      }`}
+                                    >
                                       <input
                                         type="checkbox"
                                         onChange={() => handleSelectStaff(emp.id)}
@@ -399,7 +408,8 @@ const RoleAssignEdit = props => {
                   <Link
                     to="#"
                     className={styles.btn_delall}
-                    onClick={() => setEditRoles([])}>
+                    onClick={() => setEditRoles([])}
+                  >
                     Delete All
                   </Link>
                 </span>
@@ -415,13 +425,15 @@ const RoleAssignEdit = props => {
                       <tr
                         key={emp.id}
                         className={emp.selected ? styles.on : ""}
-                        onClick={() => handleSelectEdit(emp.id)}>
+                        onClick={() => handleSelectEdit(emp.id)}
+                      >
                         <td>
                           <div className={styles.contentTitle}>
                             <label
                               className={`${styles.i_check} ${
                                 emp.selected ? styles.c_on : ""
-                              }`}>
+                              }`}
+                            >
                               <input
                                 name="checkbox"
                                 type="checkbox"
@@ -460,7 +472,8 @@ const RoleAssignEdit = props => {
                   <Link
                     to="#"
                     className={styles.btn_delall}
-                    onClick={() => setViewRoles([])}>
+                    onClick={() => setViewRoles([])}
+                  >
                     Delete All
                   </Link>
                 </span>
@@ -476,13 +489,15 @@ const RoleAssignEdit = props => {
                       <tr
                         key={emp.id}
                         className={emp.selected ? styles.on : ""}
-                        onClick={() => handleSelectView(emp.id)}>
+                        onClick={() => handleSelectView(emp.id)}
+                      >
                         <td>
                           <div className={styles.contentTitle}>
                             <label
                               className={`${styles.i_check} ${
                                 emp.selected ? styles.c_on : ""
-                              }`}>
+                              }`}
+                            >
                               <input
                                 name="checkbox"
                                 type="checkbox"
@@ -510,14 +525,14 @@ const RoleAssignEdit = props => {
 const mapStateToProps = state => {
   return {
     departments: state.departmentReducers.data,
-    employees: state.employeeReducers.data,
+    employees: state.employeeReducers.data
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     searchByName: name => dispatch(searchByNameAction(name)),
-    getByDepartment: depId => dispatch(getByDepartmentAction(depId)),
+    getByDepartment: depId => dispatch(getByDepartmentAction(depId))
   };
 };
 

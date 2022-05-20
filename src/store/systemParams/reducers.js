@@ -5,7 +5,7 @@ const initState = {
   headerPath: "My Contents",
   currentDirectory: {
     id: 0,
-    isRoot: true,
+    isRoot: true
   },
   menuActive: true,
   showAddFile: false,
@@ -13,7 +13,7 @@ const initState = {
   showCreateDirectory: false,
   showOpenContent: false,
   selectedItem: {},
-  editItem: {},
+  editItem: {}
 };
 
 const systemParamsReducers = (state = initState, action) =>
